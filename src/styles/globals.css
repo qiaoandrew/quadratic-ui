@@ -4,6 +4,9 @@
 
 @layer base {
   :root {
+    --highlight: 234 100% 98%;
+    --highlight-foreground: 205 61% 28%;
+
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
 
@@ -32,11 +35,12 @@
     --destructive-foreground: 210 40% 98%;
 
     --ring: 215 20.2% 65.1%;
-
-    --radius: 0.5rem;
   }
 
   .dark {
+    --highlight: 205 18% 15%;
+    --highlight-foreground: 205 62% 86%;
+
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
 
@@ -65,8 +69,6 @@
     --destructive-foreground: 210 40% 98%;
 
     --ring: 216 34% 17%;
-
-    --radius: 0.5rem;
   }
 }
 
