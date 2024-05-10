@@ -4,7 +4,6 @@ import { ThemeProvider } from "next-themes";
 import { GeistMono } from "geist/font/mono";
 
 import { cn } from "~/utils/tailwind";
-import { inter, interDisplay, generalSans } from "~/lib/fonts";
 
 export const metadata = {
   title: "quadratic/ui",
@@ -19,15 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "font-sans",
-          inter.variable,
-          interDisplay.variable,
-          generalSans.variable,
-          GeistMono.variable,
-        )}
-      >
+      <body className={cn("font-sans", GeistMono.variable)}>
         <ThemeProvider defaultTheme="dark" disableTransitionOnChange>
           {children}
         </ThemeProvider>

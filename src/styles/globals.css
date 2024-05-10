@@ -2,6 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "GeneralSans-Variable";
+  src: url("../fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterDisplay";
+  src: url("../fonts/InterDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterDisplay";
+  src: url("../fonts/InterDisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterDisplay";
+  src: url("../fonts/InterDisplay-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterDisplay";
+  src: url("../fonts/InterDisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterDisplay";
+  src: url("../fonts/InterDisplay-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "InterDisplay";
+  src: url("../fonts/InterDisplay-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter-Variable";
+  src: url("../fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter-Variable";
+  src: url("../fonts/InterVariable-Italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+}
+
 @layer base {
   :root {
     --highlight: 234 100% 98%;

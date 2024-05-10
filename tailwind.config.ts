@@ -29,9 +29,9 @@ export default {
       full: "9999px",
     },
     fontFamily: {
-      sans: ["var(--font-inter)", "sans-serif"],
-      display: ["var(--font-inter-display)", "sans-serif"],
-      logo: ["var(--font-general-sans)", "sans-serif"],
+      sans: ["Inter-Variable", "sans-serif"],
+      display: ["InterDisplay", "sans-serif"],
+      logo: ["GeneralSans-Variable", "sans-serif"],
       mono: ["var(--font-geist-mono)", "monospace"],
     },
     fontSize: {
