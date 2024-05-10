@@ -3,7 +3,8 @@ import "~/styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { GeistMono } from "geist/font/mono";
 
-import { cn } from "utils/tailwind";
+import { cn } from "~/utils/tailwind";
+import Header from "~/components/navigation/Header";
 
 export const metadata = {
   title: "quadratic/ui",
@@ -19,7 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("font-sans", GeistMono.variable)}>
-        <ThemeProvider defaultTheme="dark" disableTransitionOnChange>
+        <ThemeProvider
+          defaultTheme="dark"
+          enableSystem={false}
+          attribute="class"
+          disableTransitionOnChange
+        >
+          <Header />
           {children}
         </ThemeProvider>
       </body>

@@ -109,7 +109,7 @@
     --ring: 215 20.2% 65.1%;
   }
 
-  [data-theme="dark"] {
+  .dark {
     --highlight: 205 18% 15%;
     --highlight-foreground: 205 62% 86%;
 
@@ -146,7 +146,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply box-border border-border;
   }
 
   body {
@@ -154,5 +154,11 @@
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
+  }
+}
+
+@layer utilities {
+  .container-docs {
+    @apply w-screen px-5 3xl:mx-[calc((100vw-1352px)/2)] 3xl:max-w-[1352px] 4xl:px-0;
   }
 }
