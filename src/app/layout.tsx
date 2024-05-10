@@ -3,7 +3,7 @@ import "~/styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { GeistMono } from "geist/font/mono";
 
-import { cn } from "~/utils/tailwind";
+import { cn } from "utils/tailwind";
 
 export const metadata = {
   title: "quadratic/ui",
