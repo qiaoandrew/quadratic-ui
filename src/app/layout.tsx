@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
 
+import { ThemeProvider } from "next-themes";
 import { GeistMono } from "geist/font/mono";
 
 import { cn } from "~/utils/tailwind";
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "font-sans",
@@ -27,7 +28,9 @@ export default function RootLayout({
           GeistMono.variable,
         )}
       >
-        {children}
+        <ThemeProvider defaultTheme="dark" disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

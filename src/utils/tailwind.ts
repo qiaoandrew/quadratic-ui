@@ -1,6 +1,41 @@
 import { clsx, type ClassValue } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
+const textColorClasses = [
+  {
+    text: [
+      "highlight",
+      "highlight-foreground",
+      "background",
+      "foreground",
+      "muted",
+      "muted-foreground",
+      "accent",
+      "accent-foreground",
+      "popover",
+      "popover-foreground",
+      "border",
+      "input",
+      "card",
+      "card-foreground",
+      "primary",
+      "primary-foreground",
+      "secondary",
+      "secondary-foreground",
+      "destructive",
+      "destructive-foreground",
+      "destructive-border",
+      "warning",
+      "warning-foreground",
+      "warning-border",
+      "success",
+      "success-foreground",
+      "success-border",
+      "ring",
+    ],
+  },
+];
+
 const borderRadiusClasses = [
   {
     rounded: [
@@ -53,9 +88,12 @@ const fontSizeClassGroup = [
   },
 ];
 
-const customTwMerge = extendTailwindMerge<"font-size" | "border-radius">({
+const customTwMerge = extendTailwindMerge<
+  "text-color" | "font-size" | "border-radius"
+>({
   extend: {
     classGroups: {
+      "text-color": textColorClasses,
       "font-size": fontSizeClassGroup,
       "border-radius": borderRadiusClasses,
     },
