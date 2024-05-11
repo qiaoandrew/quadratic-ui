@@ -10,11 +10,6 @@ const readDirectory = async (relativePath: string) => {
   return fs.readdirSync(dirPath);
 };
 
-// const readFile = async (relativePath: string) => {
-//   const filePath = await getPath(relativePath);
-//   return fs.readFileSync(filePath, "utf-8");
-// };
-
 export const getPrimitivesMenuItems = async () => {
   const names = await readDirectory("src/app/docs/primitives");
   const menuItems = await Promise.all(
@@ -27,4 +22,9 @@ export const getPrimitivesMenuItems = async () => {
     }),
   );
   return menuItems;
+};
+
+export const readFile = async (relativePath: string) => {
+  const filePath = await getPath(relativePath);
+  return fs.readFileSync(filePath, "utf-8");
 };
