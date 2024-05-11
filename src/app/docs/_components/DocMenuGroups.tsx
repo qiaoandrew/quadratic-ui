@@ -1,6 +1,6 @@
 import DocMenuSectionItem from "./DocMenuSectionItem";
 
-import { DOCUMENTATION_GROUPS } from "~/constants/docs";
+import { DOC_GROUPS } from "~/constants/docs";
 
 interface DocMenuGroupsProps {
   pathname: string;
@@ -9,7 +9,7 @@ interface DocMenuGroupsProps {
 export default function DocMenuGroups({ pathname }: DocMenuGroupsProps) {
   return (
     <div>
-      {DOCUMENTATION_GROUPS.map((group) => (
+      {DOC_GROUPS.map((group) => (
         <DocMenuSectionItem
           variant="group"
           Icon={group.Icon}
