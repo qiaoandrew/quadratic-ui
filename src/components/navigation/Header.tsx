@@ -1,6 +1,7 @@
 import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
 import SearchCommandTrigger from "./SearchCommandTrigger";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -12,6 +13,7 @@ export default function Header() {
         </div>
         <div className="flex items-center gap-x-5 pr-3.5">
           <SearchCommandTrigger />
+          <ThemeToggle />
         </div>
       </div>
     </header>
