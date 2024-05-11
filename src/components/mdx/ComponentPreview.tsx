@@ -1,8 +1,9 @@
-import { readFile } from "~/utils/docs";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/Tabs";
+import CodeBlock from "./CodeBlock";
 
-import { COMPONENT_PREVIEWS } from "~/constants/component-previews";
+import { readFile } from "~/utils/docs";
 import { cn } from "~/utils/tailwind";
+import { COMPONENT_PREVIEWS } from "~/constants/component-previews";
 
 interface ComponentPreviewProps {
   id: keyof typeof COMPONENT_PREVIEWS;
@@ -20,7 +21,7 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
 
   return (
     <Tabs defaultValue="preview" className="overflow-visible rounded-3 border">
-      <TabsList>
+      <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
         <TabsTrigger value="preview" className={tabsTriggerStyles}>
           Preview
         </TabsTrigger>
@@ -33,7 +34,14 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
           <PreviewComponent />
         </div>
       </TabsContent>
-      <TabsContent value="code" className="mt-0"></TabsContent>
+      <TabsContent value="code" className="mt-0">
+        <CodeBlock
+          language="tsx"
+          className="rounded-b-[15px] rounded-t-none border-none"
+        >
+          {code}
+        </CodeBlock>
+      </TabsContent>
     </Tabs>
   );
 }

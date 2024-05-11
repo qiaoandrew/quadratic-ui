@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { GeistMono } from "geist/font/mono";
 
 import Header from "./_components/Header";
+import { Toaster } from "~/components/ui/Toaster";
 
 import { cn } from "~/utils/tailwind";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Toaster richColors visibleToasts={10} />
         </ThemeProvider>
       </body>
     </html>

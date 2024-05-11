@@ -155,6 +155,10 @@
       "rlig" 1,
       "calt" 1;
   }
+
+  prev > code span {
+    @apply font-mono;
+  }
 }
 
 @layer utilities {
