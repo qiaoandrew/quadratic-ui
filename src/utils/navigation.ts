@@ -15,16 +15,16 @@ const readDirectory = async (relativePath: string) => {
 //   return fs.readFileSync(filePath, "utf-8");
 // };
 
-export const getPrimitivesMenu = async () => {
-  const primitives = await readDirectory("src/app/docs/primitives");
-  const primitivesMenu = await Promise.all(
-    primitives.map(async (primitive) => {
+export const getPrimitivesMenuItems = async () => {
+  const names = await readDirectory("src/app/docs/primitives");
+  const menuItems = await Promise.all(
+    names.map(async (name) => {
       return {
-        id: primitive,
-        href: `/docs/primitives/${primitive}`,
-        label: formatDocMenuLabel(primitive),
+        id: name,
+        href: `/docs/primitives/${name}`,
+        label: formatDocMenuLabel(name),
       };
     }),
   );
-  return primitivesMenu;
+  return menuItems;
 };
