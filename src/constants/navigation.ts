@@ -1,27 +1,31 @@
 import { RocketIcon, ComponentIcon, GithubIcon, FigmaIcon } from "lucide-react";
 
-export const DOCUMENTATION_GROUPS = [
+import { type DocGroup } from "~/types/types";
+
+export const DOCUMENTATION_GROUPS: DocGroup[] = [
   {
     id: "getting-started",
-    title: "Getting Started",
-    Icon: RocketIcon,
     href: "/docs/getting-started/quickstart",
+    hrefPrefix: "/docs/getting-started",
+    label: "Getting Started",
+    Icon: RocketIcon,
   },
   {
     id: "components",
-    title: "Components",
+    href: "/docs/primitives/accordion",
+    hrefPrefix: "/docs/primitives",
+    label: "Components",
     Icon: ComponentIcon,
-    href: "/docs/components/accordion",
   },
   {
     id: "github",
-    title: "GitHub",
-    Icon: GithubIcon,
     href: "https://github.com/qiaoandrew/quadratic-ui",
+    label: "GitHub",
+    Icon: GithubIcon,
   },
   {
     id: "figma",
-    title: "Figma",
+    label: "Figma",
     Icon: FigmaIcon,
     href: "https://www.figma.com/community/file/1351315753275186770/quadratic-ui",
   },

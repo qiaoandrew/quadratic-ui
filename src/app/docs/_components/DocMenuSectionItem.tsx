@@ -1,25 +1,29 @@
 import * as React from "react";
+import Link from "next/link";
 import { cva, type VariantProps } from "class-variance-authority";
 import { type LucideIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
-import Link from "next/link";
 
-export interface DocMenuItemProps
+export interface DocMenuSectionItemProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof docMenuItemVariants> {
+    VariantProps<typeof docMenuSectionItemVariants> {
   Icon?: LucideIcon;
   href: string;
+  isActive: boolean;
   children: React.ReactNode;
 }
 
-const docMenuItemVariants = cva(
-  "text-muted-foreground group text-3.5 px-3.5 flex items-center gap-x-2 hover:font-semibold",
+const docMenuSectionItemVariants = cva(
+  cn(
+    "text-muted-foreground group text-3.5 px-3 flex items-center gap-x-2 rounded-2",
+    "data-[active=true]:font-semibold data-[active=true]:text-highlight-foreground",
+  ),
   {
     variants: {
       variant: {
         group: "h-9",
-        page: "h-10",
+        page: "h-10 hover:bg-accent data-[active=true]:bg-highlight",
       },
     },
     defaultVariants: {
@@ -28,19 +32,21 @@ const docMenuItemVariants = cva(
   },
 );
 
-export default function DocMenuItem({
+export default function DocMenuSectionItem({
   Icon,
   href,
   variant,
+  isActive,
   children,
-}: DocMenuItemProps) {
-  const docMenuItemStyles = cn(docMenuItemVariants({ variant }));
+}: DocMenuSectionItemProps) {
+  const docMenuItemStyles = cn(docMenuSectionItemVariants({ variant }));
 
   const icon = Icon && (
     <div
       className={cn(
         "grid size-6 place-content-center rounded-1.5 border",
         "group-hover:bg-border",
+        isActive && "bg-highlight",
       )}
     >
       <Icon size={16} />
@@ -49,7 +55,7 @@ export default function DocMenuItem({
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} className={docMenuItemStyles}>
+      <Link href={href} data-active={isActive} className={docMenuItemStyles}>
         {icon}
         {children}
       </Link>
@@ -57,7 +63,12 @@ export default function DocMenuItem({
   }
 
   return (
-    <a href={href} rel="noreferrer noopener" className={docMenuItemStyles}>
+    <a
+      href={href}
+      rel="noreferrer noopener"
+      data-active={isActive}
+      className={docMenuItemStyles}
+    >
       {icon}
       {children}
     </a>
