@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
+import SearchCommandTrigger from "./SearchCommandTrigger";
 
 export default function Header() {
   return (
@@ -9,7 +10,9 @@ export default function Header() {
           <Logo />
           <DesktopMenu />
         </div>
-        <div className="flex items-center gap-x-4 pr-3.5"></div>
+        <div className="flex items-center gap-x-5 pr-3.5">
+          <SearchCommandTrigger />
+        </div>
       </div>
     </header>
   );
