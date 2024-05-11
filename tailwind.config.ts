@@ -146,6 +146,22 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "scale-in": {
+          from: { opacity: "0", transform: "rotateX(-10deg) scale(0.9)" },
+          to: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
+        },
+        "scale-out": {
+          from: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
+          to: { opacity: "0", transform: "rotateX(-10deg) scale(0.95)" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "fade-out": {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
       },
     },
   },
