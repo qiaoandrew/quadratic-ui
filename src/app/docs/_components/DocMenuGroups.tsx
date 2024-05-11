@@ -1,6 +1,6 @@
 import DocMenuSectionItem from "./DocMenuSectionItem";
 
-import { DOCUMENTATION_GROUPS } from "~/constants/navigation";
+import { DOCUMENTATION_GROUPS } from "~/constants/docs";
 
 interface DocMenuGroupsProps {
   pathname: string;
