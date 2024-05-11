@@ -12,7 +12,7 @@ import {
   NavigationMenuLink,
   NavigationMenuDropdownList,
   NavigationMenuDropdownItem,
-} from "../ui/NavigationMenu";
+} from "../../components/ui/NavigationMenu";
 
 export default function DesktopMenu() {
   return (

@@ -1,6 +1,6 @@
 import { SearchIcon } from "lucide-react";
 
-import { Shortcut } from "../ui/Shortcut";
+import { Shortcut } from "../../components/ui/Shortcut";
 
 export default function SearchCommandTrigger() {
   return (

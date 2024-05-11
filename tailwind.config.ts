@@ -163,6 +163,11 @@ export default {
           to: { opacity: "0" },
         },
       },
+      spacing: {
+        18: "4.5rem",
+        26: "6.5rem",
+        30: "7.5rem",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import GradientText from "../typography/GradientText";
+import GradientText from "../../components/typography/GradientText";
 
 export default function Logo() {
   return (
@@ -9,7 +9,7 @@ export default function Logo() {
         <div className="absolute bottom-0 left-0 size-5 rounded-1 bg-gradient-dark dark:bg-gradient-light" />
         <div className="absolute right-0 top-0 size-5 rounded-1 border border-highlight-foreground" />
       </div>
-      <p className="text-5 font-logo font-semibold">
+      <p className="font-logo text-5 font-semibold">
         <GradientText>quadratic/ui</GradientText>
       </p>
     </Link>

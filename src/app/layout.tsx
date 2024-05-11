@@ -3,8 +3,9 @@ import "~/styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { GeistMono } from "geist/font/mono";
 
+import Header from "./_components/Header";
+
 import { cn } from "~/utils/tailwind";
-import Header from "~/components/navigation/Header";
 
 export const metadata = {
   title: "quadratic/ui",
