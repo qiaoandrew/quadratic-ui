@@ -1,6 +1,7 @@
 import AccordionDemo from "~/components/demos/accordion/AccordionDemo";
 import AlertDialogDemo from "~/components/demos/alert-dialog/AlertDialogDemo";
 import AspectRatioDemo from "~/components/demos/aspect-ratio/AspectRatioDemo";
+import AvatarDemo from "~/components/demos/avatar/AvatarDemo";
 import ButtonDemo from "~/components/demos/button/ButtonDemo";
 import SecondaryButtonDemo from "~/components/demos/button/SecondaryButtonDemo";
 import OutlineButtonDemo from "~/components/demos/button/OutlineButtonDemo";
@@ -25,6 +26,10 @@ export const COMPONENT_PREVIEWS = {
   "aspect-ratio": {
     PreviewComponent: AspectRatioDemo,
     path: "src/components/demos/aspect-ratio/AspectRatioDemo.tsx",
+  },
+  avatar: {
+    PreviewComponent: AvatarDemo,
+    path: "src/components/demos/avatar/AvatarDemo.tsx",
   },
   button: {
     PreviewComponent: ButtonDemo,
