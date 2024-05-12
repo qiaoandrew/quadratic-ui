@@ -28,3 +28,37 @@ npm install @radix-ui/react-slot
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
 
 </Steps>
+
+## Usage
+
+```tsx
+import { Button } from "~/components/ui/Button";
+```
+
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+## Link
+
+You can use the `buttonVariants` helper to create a link that looks alike a button.
+
+```tsx
+import { buttonVariants } from "~/components/ui/Button";
+```
+
+```tsx
+<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
+```
+
+Alternatively, you can set the `asChild` parameter and nest the link component.
+
+```tsx
+<Button asChild>
+  <Link href="/login">Login</Link>
+</Button>
+```
+
+## Examples
+
+### Primary

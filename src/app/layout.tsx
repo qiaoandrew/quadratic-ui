@@ -21,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("font-sans", GeistMono.variable)}>
+      <body
+        className={cn("font-sans", GeistMono.variable)}
+        suppressHydrationWarning
+      >
         <ThemeProvider
           defaultTheme="dark"
           enableSystem={false}

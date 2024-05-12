@@ -31,7 +31,7 @@ export default function CodeBlock({
         )}
       >
         <code
-          className={cn("text-3.5 leading-6", language)}
+          className="text-3.5 leading-6"
           dangerouslySetInnerHTML={{ __html: highlightedCode }}
         />
       </pre>
