@@ -1,6 +1,8 @@
 import ButtonDemo from "~/components/demos/button/ButtonDemo";
 import SecondaryButtonDemo from "~/components/demos/button/SecondaryButtonDemo";
 import OutlineButtonDemo from "~/components/demos/button/OutlineButtonDemo";
+import GhostButtonDemo from "~/components/demos/button/GhostButtonDemo";
+import LinkButtonDemo from "~/components/demos/button/LinkButtonDemo";
 import DestructiveButtonDemo from "~/components/demos/button/DestructiveButtonDemo";
 import DestructiveOutlineButtonDemo from "~/components/demos/button/DestructiveOutlineButtonDemo";
 import WarningButtonDemo from "~/components/demos/button/WarningButtonDemo";
@@ -20,6 +22,14 @@ export const COMPONENT_PREVIEWS = {
   "outline-button": {
     PreviewComponent: OutlineButtonDemo,
     path: "src/components/demos/button/OutlineButtonDemo.tsx",
+  },
+  "ghost-button": {
+    PreviewComponent: GhostButtonDemo,
+    path: "src/components/demos/button/GhostButtonDemo.tsx",
+  },
+  "link-button": {
+    PreviewComponent: LinkButtonDemo,
+    path: "src/components/demos/button/LinkButtonDemo.tsx",
   },
   "destructive-button": {
     PreviewComponent: DestructiveButtonDemo,
