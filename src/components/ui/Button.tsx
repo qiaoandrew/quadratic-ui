@@ -22,6 +22,14 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        "destructive-outline":
+          "border border-destructive-border bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        warning: "bg-warning text-warning-foreground hover:bg-warning/90",
+        "warning-outline":
+          "border border-warning-border text-warning-foreground bg-warning hover:bg-warning/90",
+        success: "bg-success text-success-foreground hover:bg-success/90",
+        "success-outline":
+          "border border-success-border text-success-foreground bg-success hover:bg-success/90",
       },
       size: {
         sm: "px-2 py-1.5 rounded-1.5 text-3.5",

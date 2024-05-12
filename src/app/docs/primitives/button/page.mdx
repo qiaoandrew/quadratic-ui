@@ -6,11 +6,9 @@ import { Steps, StepTitle, StepContent } from "~/components/mdx/Steps";
 
 <Title>Button</Title>
 <Description>Displays a button or a component that looks like a button.</Description>
-
 <ComponentPreview id="button" />
 
 ## Installation
-
 <Steps>
 
 <StepTitle>Install the following dependencies:</StepTitle>
@@ -30,29 +28,22 @@ npm install @radix-ui/react-slot
 </Steps>
 
 ## Usage
-
 ```tsx
 import { Button } from "~/components/ui/Button";
 ```
-
 ```tsx
 <Button variant="outline">Button</Button>
 ```
 
 ## Link
-
 You can use the `buttonVariants` helper to create a link that looks alike a button.
-
 ```tsx
 import { buttonVariants } from "~/components/ui/Button";
 ```
-
 ```tsx
 <Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
 ```
-
 Alternatively, you can set the `asChild` parameter and nest the link component.
-
 ```tsx
 <Button asChild>
   <Link href="/login">Login</Link>
@@ -62,3 +53,16 @@ Alternatively, you can set the `asChild` parameter and nest the link component.
 ## Examples
 
 ### Primary
+<ComponentPreview id="button" />
+
+### Secondary
+<ComponentPreview id="secondary-button" />
+
+### Outline
+<ComponentPreview id="outline-button" />
+
+### Destructive
+<ComponentPreview id="destructive-button" />
+
+### Destructive Outline
+<ComponentPreview id="destructive-outline-button" />

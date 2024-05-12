@@ -138,7 +138,16 @@
     --secondary-foreground: 0 0% 98%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 93% 94%;
+    --destructive-border: 0 91% 71%;
+
+    --warning: 0 63% 31%;
+    --warning-foreground: 0 93% 94%;
+    --warning-border: 0 84% 60%;
+
+    --success: 0 63% 31%;
+    --success-foreground: 0 93% 94%;
+    --success-border: 0 84% 60%;
 
     --ring: 240 4.9% 83.9%;
   }
