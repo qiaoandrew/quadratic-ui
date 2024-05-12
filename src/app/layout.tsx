@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { GeistMono } from "geist/font/mono";
 
 import Header from "./_components/Header";
-import { Toaster } from "~/components/ui/Toaster";
+import { Toaster } from "~/components/ui/Toast";
 
 import { cn } from "~/utils/tailwind";
 
