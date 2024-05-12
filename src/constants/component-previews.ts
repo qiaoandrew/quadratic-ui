@@ -1,3 +1,4 @@
+import AccordionDemo from "~/components/demos/accordion/AccordionDemo";
 import ButtonDemo from "~/components/demos/button/ButtonDemo";
 import SecondaryButtonDemo from "~/components/demos/button/SecondaryButtonDemo";
 import OutlineButtonDemo from "~/components/demos/button/OutlineButtonDemo";
@@ -11,6 +12,10 @@ import SuccessButtonDemo from "~/components/demos/button/SuccessButtonDemo";
 import SuccessOutlineButtonDemo from "~/components/demos/button/SuccessOutlineButtonDemo";
 
 export const COMPONENT_PREVIEWS = {
+  accordion: {
+    PreviewComponent: AccordionDemo,
+    path: "src/components/demos/accordion/AccordionDemo.tsx",
+  },
   button: {
     PreviewComponent: ButtonDemo,
     path: "src/components/demos/button/ButtonDemo.tsx",

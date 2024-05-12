@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { MDXComponents } from "mdx/types";
 
-import Id from "./components/mdx/ID";
+import Id from "./components/mdx/Id";
 import CodeBlock from "./components/mdx/CodeBlock";
 
 import { convertToHtmlId } from "./utils/docs";
@@ -22,7 +22,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     p: (props) => <p className="mt-5 text-4 text-foreground" {...props} />,
     code: (props) => (
-      <code className="font-mono text-foreground/70" {...props} />
+      <code
+        className="-mx-0.5 -my-1 rounded-1 bg-accent px-1 py-1 font-mono text-foreground/70"
+        {...props}
+      />
     ),
     pre: (
       props: React.DetailedHTMLProps<
