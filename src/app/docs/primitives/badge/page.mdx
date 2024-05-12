@@ -4,23 +4,16 @@ import ComponentPreview from "~/components/mdx/ComponentPreview";
 import ComponentSource from "~/components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/components/mdx/Steps";
 
-<Title>Button</Title>
-<Description>Displays a button or a component that looks like a button.</Description>
-<ComponentPreview id="button" />
+<Title>Badge</Title>
+<Description>Displays a badge or a component that looks like a badge.</Description>
+<ComponentPreview id="badge" />
 
 ## Installation
 <Steps>
 
-<StepTitle>Install the following dependencies:</StepTitle>
-<StepContent>
-```bash
-pnpm add @radix-ui/react-slot
-```
-</StepContent>
-
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="button" />
+<ComponentSource id="badge" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -29,58 +22,46 @@ pnpm add @radix-ui/react-slot
 
 ## Usage
 ```tsx
-import { Button } from "~/components/ui/Button";
+import { Badge } from "~/components/ui/Badge";
 ```
 ```tsx
-<Button variant="outline">Button</Button>
+<Badge variant="outline">Badge</Badge>
 ```
 
-## Link
-You can use the `buttonVariants` helper to create a link that looks alike a button.
+## Link as a Badge
+You can use the `badgeVariants` helper to create a link that looks like a badge.
 ```tsx
-import { buttonVariants } from "~/components/ui/Button";
+import { badgeVariants } from "~/components/ui/Badge";
 ```
 ```tsx
-<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
-```
-Alternatively, you can set the `asChild` parameter and nest the link component.
-```tsx
-<Button asChild>
-  <Link href="/login">Login</Link>
-</Button>
+<Link className={badgeVariants({ variant: "outline" })}>Click here</Link>
 ```
 
 ## Examples
 
-### Primary
-<ComponentPreview id="button" />
+### Default
+<ComponentPreview id="badge" />
 
 ### Secondary
-<ComponentPreview id="secondary-button" />
+<ComponentPreview id="secondary-badge" />
 
 ### Outline
-<ComponentPreview id="outline-button" />
-
-### Ghost
-<ComponentPreview id="ghost-button" />
-
-### Link
-<ComponentPreview id="link-button" />
+<ComponentPreview id="outline-badge" />
 
 ### Destructive
-<ComponentPreview id="destructive-button" />
+<ComponentPreview id="destructive-badge" />
 
 ### Destructive Outline
-<ComponentPreview id="destructive-outline-button" />
+<ComponentPreview id="destructive-outline-badge" />
 
 ### Warning
-<ComponentPreview id="warning-button" />
+<ComponentPreview id="warning-badge" />
 
 ### Warning Outline
-<ComponentPreview id="warning-outline-button" />
+<ComponentPreview id="warning-outline-badge" />
 
 ### Success
-<ComponentPreview id="success-button" />
+<ComponentPreview id="success-badge" />
 
 ### Success Outline
-<ComponentPreview id="success-outline-button" />
+<ComponentPreview id="success-outline-badge" />
