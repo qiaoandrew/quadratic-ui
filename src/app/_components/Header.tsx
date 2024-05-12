@@ -2,6 +2,7 @@ import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
 import SearchCommandTrigger from "./SearchCommandTrigger";
 import ThemeToggle from "./ThemeToggle";
+import DocMenuMobileSheet from "../docs/_components/DocMenuMobileSheet";
 
 export default function Header() {
   return (
@@ -14,6 +15,7 @@ export default function Header() {
         <div className="flex items-center gap-x-4 md:gap-x-5 md:pr-3">
           <SearchCommandTrigger />
           <ThemeToggle />
+          <DocMenuMobileSheet />
         </div>
       </div>
     </header>

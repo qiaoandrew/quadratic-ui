@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { type LucideIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
+import { SheetClose } from "~/components/ui/Sheet";
 
 export interface DocMenuSectionItemProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -11,6 +12,7 @@ export interface DocMenuSectionItemProps
   Icon?: LucideIcon;
   href: string;
   isActive: boolean;
+  isMobile?: boolean;
   children: React.ReactNode;
 }
 
@@ -37,6 +39,7 @@ export default function DocMenuSectionItem({
   href,
   variant,
   isActive,
+  isMobile,
   children,
 }: DocMenuSectionItemProps) {
   const docMenuItemStyles = cn(docMenuSectionItemVariants({ variant }));
@@ -53,16 +56,12 @@ export default function DocMenuSectionItem({
     </div>
   );
 
-  if (href.startsWith("/")) {
-    return (
-      <Link href={href} data-active={isActive} className={docMenuItemStyles}>
-        {icon}
-        {children}
-      </Link>
-    );
-  }
-
-  return (
+  const content = href.startsWith("/") ? (
+    <Link href={href} data-active={isActive} className={docMenuItemStyles}>
+      {icon}
+      {children}
+    </Link>
+  ) : (
     <a
       href={href}
       rel="noreferrer noopener"
@@ -73,4 +72,10 @@ export default function DocMenuSectionItem({
       {children}
     </a>
   );
+
+  if (isMobile) {
+    return <SheetClose asChild>{content}</SheetClose>;
+  }
+
+  return content;
 }

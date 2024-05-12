@@ -8,6 +8,7 @@ interface DocMenuSectionProps {
   title: string;
   items: DocItem[];
   isVisible: boolean;
+  isMobile?: boolean;
 }
 
 export default function DocMenuSection({
@@ -15,6 +16,7 @@ export default function DocMenuSection({
   title,
   items,
   isVisible,
+  isMobile,
 }: DocMenuSectionProps) {
   return (
     isVisible && (
@@ -25,6 +27,7 @@ export default function DocMenuSection({
             variant="page"
             href={item.href}
             isActive={item.href === pathname}
+            isMobile={isMobile}
             key={item.id}
           >
             {item.label}
