@@ -5,6 +5,14 @@ await import("./src/env.js");
 /** @type {import("next").NextConfig} */
 const config = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({});
