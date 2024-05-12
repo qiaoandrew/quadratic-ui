@@ -8,3 +8,58 @@ import Footer from "~/components/mdx/Footer";
 <Title>Alert Dialog</Title>
 <Description>A modal dialog that interrupts the user with important content and expects a response.</Description>
 <ComponentPreview id="alert-dialog" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies.</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-aspect-ratio
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<ComponentSource id="alert-dialog" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "~/components/ui/AlertDialog";
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger>Open</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Continue</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+<Footer previousLabel="Accordion" previousHref="/docs/primitives/accordion" nextLabel="Aspect Ratio" nextHref="/docs/primitives/aspect-ratio" />
