@@ -1,4 +1,5 @@
 import AccordionDemo from "~/components/demos/accordion/AccordionDemo";
+import AlertDialogDemo from "~/components/demos/alert-dialog/AlertDialogDemo";
 import ButtonDemo from "~/components/demos/button/ButtonDemo";
 import SecondaryButtonDemo from "~/components/demos/button/SecondaryButtonDemo";
 import OutlineButtonDemo from "~/components/demos/button/OutlineButtonDemo";
@@ -15,6 +16,10 @@ export const COMPONENT_PREVIEWS = {
   accordion: {
     PreviewComponent: AccordionDemo,
     path: "src/components/demos/accordion/AccordionDemo.tsx",
+  },
+  "alert-dialog": {
+    PreviewComponent: AlertDialogDemo,
+    path: "src/components/demos/alert-dialog/AlertDialogDemo.tsx",
   },
   button: {
     PreviewComponent: ButtonDemo,

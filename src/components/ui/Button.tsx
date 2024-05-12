@@ -4,10 +4,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "~/utils/tailwind";
 
+export type ButtonVariant =
+  | "default"
+  | "secondary"
+  | "outline"
+  | "ghost"
+  | "link"
+  | "destructive"
+  | "destructive-outline"
+  | "warning"
+  | "warning-outline"
+  | "success"
+  | "success-outline";
+
 const buttonVariants = cva(
   cn(
     "inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors",
-    "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2",
+    "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
     "disabled:pointer-events-none disabled:opacity-50",
   ),
   {
