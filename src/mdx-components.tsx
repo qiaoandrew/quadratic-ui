@@ -1,12 +1,25 @@
 import * as React from "react";
 import type { MDXComponents } from "mdx/types";
 
+import Id from "./components/mdx/ID";
 import CodeBlock from "./components/mdx/CodeBlock";
+
+import { convertToHtmlId } from "./utils/docs";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    h2: (props) => <h2 className="mt-16 text-7 font-semibold" {...props} />,
-    h3: (props) => <h3 className="mt-8 text-5 font-semibold" {...props} />,
+    h2: (props) => (
+      <h2 className="mt-16 text-7 font-semibold">
+        <Id id={convertToHtmlId(props.children as string)} />
+        {props.children}
+      </h2>
+    ),
+    h3: (props) => (
+      <h3 className="mt-8 text-5 font-semibold">
+        <Id id={convertToHtmlId(props.children as string)} />
+        {props.children}
+      </h3>
+    ),
     p: (props) => <p className="mt-5 text-4 text-foreground" {...props} />,
     code: (props) => (
       <code className="font-mono text-foreground/70" {...props} />

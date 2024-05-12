@@ -13,3 +13,9 @@ export type DocItem = {
   href: string;
   label: string;
 };
+
+export type DocTOCItem = {
+  type: "h2" | "h3";
+  id: string;
+  text: string;
+};
