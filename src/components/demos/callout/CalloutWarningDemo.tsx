@@ -1,0 +1,14 @@
+import { AlertTriangleIcon } from "lucide-react";
+
+import { Callout, CalloutText } from "~/components/ui/Callout";
+
+export default function CalloutWarningDemo() {
+  return (
+    <Callout variant="warning" className="max-w-lg">
+      <AlertTriangleIcon size={20} />
+      <CalloutText>
+        Use yellow callouts to give the user a warning message.
+      </CalloutText>
+    </Callout>
+  );
+}

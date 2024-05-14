@@ -5,23 +5,16 @@ import ComponentSource from "~/components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/components/mdx/Steps";
 import Footer from "~/components/mdx/Footer";
 
-<Title>Calendar</Title>
+<Title>Callout</Title>
 <Description>Displays a button or a component that looks like a button.</Description>
-<ComponentPreview id="calendar" />
+<ComponentPreview id="callout" />
 
 ## Installation
 <Steps>
 
-<StepTitle>Install the following dependencies:</StepTitle>
-<StepContent>
-```bash
-pnpm add @radix-ui/react-slot
-```
-</StepContent>
-
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="button" />
+<ComponentSource id="callout" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,10 +23,26 @@ pnpm add @radix-ui/react-slot
 
 ## Usage
 ```tsx
-import { Button } from "~/components/ui/Button";
+import { Callout, CalloutText } from "~/components/ui/Callout";
 ```
 ```tsx
-<Button variant="outline">Button</Button>
+<Callout className="max-w-lg">
+  <InfoIcon size={20} />
+  <CalloutText>
+    Use default callouts to give the user information.
+  </CalloutText>
+</Callout>
 ```
 
-<Footer previousLabel="Breadcrumb" previousHref="/docs/primitives/breadcrumb" nextLabel="Calendar" nextHref="/docs/primitives/calendar" />
+## Examples
+
+### Destructive
+<ComponentPreview id="callout-destructive" />
+
+### Warning
+<ComponentPreview id="callout-warning" />
+
+### Success
+<ComponentPreview id="callout-success" />
+
+<Footer previousLabel="Calendar" previousHref="/docs/primitives/calendar" nextLabel="Card" nextHref="/docs/primitives/card" />

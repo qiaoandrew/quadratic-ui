@@ -24,6 +24,10 @@ import ButtonWarningOutlineDemo from "~/components/demos/button/ButtonWarningOut
 import ButtonSuccessDemo from "~/components/demos/button/ButtonSuccessDemo";
 import ButtonSuccessOutlineDemo from "~/components/demos/button/ButtonSuccessOutlineDemo";
 import CalendarDemo from "~/components/demos/calendar/CalendarDemo";
+import CalloutDemo from "~/components/demos/callout/CalloutDemo";
+import CalloutDestructiveDemo from "~/components/demos/callout/CalloutDestructiveDemo";
+import CalloutWarningDemo from "~/components/demos/callout/CalloutWarningDemo";
+import CalloutSuccessDemo from "~/components/demos/callout/CalloutSuccessDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -129,5 +133,21 @@ export const COMPONENT_PREVIEWS = {
   calendar: {
     PreviewComponent: CalendarDemo,
     path: "src/components/demos/calendar/CalendarDemo.tsx",
+  },
+  callout: {
+    PreviewComponent: CalloutDemo,
+    path: "src/components/demos/callout/CalloutDemo.tsx",
+  },
+  "callout-destructive": {
+    PreviewComponent: CalloutDestructiveDemo,
+    path: "src/components/demos/callout/CalloutDestructiveDemo.tsx",
+  },
+  "callout-warning": {
+    PreviewComponent: CalloutWarningDemo,
+    path: "src/components/demos/callout/CalloutWarningDemo.tsx",
+  },
+  "callout-success": {
+    PreviewComponent: CalloutSuccessDemo,
+    path: "src/components/demos/callout/CalloutSuccessDemo.tsx",
   },
 };
