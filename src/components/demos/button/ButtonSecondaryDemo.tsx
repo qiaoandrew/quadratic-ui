@@ -1,5 +1,5 @@
 import { Button } from "~/components/ui/Button";
 
-export default function SecondaryButtonDemo() {
+export default function ButtonSecondaryDemo() {
   return <Button variant="secondary">Button</Button>;
 }

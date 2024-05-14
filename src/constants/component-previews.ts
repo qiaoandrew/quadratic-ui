@@ -4,25 +4,25 @@ import AspectRatioDemo from "~/components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/components/demos/avatar/AvatarDemo";
 import BadgeDemo from "~/components/demos/badge/BadgeDemo";
 import BreadcrumbDemo from "~/components/demos/breadcrumb/BreadcrumbDemo";
-import SecondaryBadgeDemo from "~/components/demos/badge/SecondaryBadgeDemo";
-import OutlineBadgeDemo from "~/components/demos/badge/OutlineBadgeDemo";
-import DestructiveBadgeDemo from "~/components/demos/badge/DestructiveBadgeDemo";
-import DestructiveOutlineBadgeDemo from "~/components/demos/badge/DestructiveOutlineBadgeDemo";
-import WarningBadgeDemo from "~/components/demos/badge/WarningBadgeDemo";
-import WarningOutlineBadgeDemo from "~/components/demos/badge/WarningOutlineBadgeDemo";
-import SuccessBadgeDemo from "~/components/demos/badge/SuccessBadgeDemo";
-import SuccessOutlineBadgeDemo from "~/components/demos/badge/SuccessOutlineBadgeDemo";
+import BadgeSecondaryDemo from "~/components/demos/badge/BadgeSecondaryDemo";
+import BadgeOutlineDemo from "~/components/demos/badge/BadgeOutlineDemo";
+import BadgeDestructiveDemo from "~/components/demos/badge/BadgeDestructiveDemo";
+import BadgeDestructiveOutlineDemo from "~/components/demos/badge/BadgeDestructiveOutlineDemo";
+import BadgeWarningDemo from "~/components/demos/badge/BadgeWarningDemo";
+import BadgeWarningOutlineDemo from "~/components/demos/badge/BadgeWarningOutlineDemo";
+import BadgeSuccessDemo from "~/components/demos/badge/BadgeSuccessDemo";
+import BadgeSuccessOutlineDemo from "~/components/demos/badge/BadgeSuccessOutlineDemo";
 import ButtonDemo from "~/components/demos/button/ButtonDemo";
-import SecondaryButtonDemo from "~/components/demos/button/SecondaryButtonDemo";
-import OutlineButtonDemo from "~/components/demos/button/OutlineButtonDemo";
-import GhostButtonDemo from "~/components/demos/button/GhostButtonDemo";
-import LinkButtonDemo from "~/components/demos/button/LinkButtonDemo";
-import DestructiveButtonDemo from "~/components/demos/button/DestructiveButtonDemo";
-import DestructiveOutlineButtonDemo from "~/components/demos/button/DestructiveOutlineButtonDemo";
-import WarningButtonDemo from "~/components/demos/button/WarningButtonDemo";
-import WarningOutlineButtonDemo from "~/components/demos/button/WarningOutlineButtonDemo";
-import SuccessButtonDemo from "~/components/demos/button/SuccessButtonDemo";
-import SuccessOutlineButtonDemo from "~/components/demos/button/SuccessOutlineButtonDemo";
+import ButtonSecondaryDemo from "~/components/demos/button/ButtonSecondaryDemo";
+import ButtonOutlineDemo from "~/components/demos/button/ButtonOutlineDemo";
+import ButtonGhostDemo from "~/components/demos/button/ButtonGhostDemo";
+import ButtonLinkDemo from "~/components/demos/button/ButtonLinkDemo";
+import ButtonDestructiveDemo from "~/components/demos/button/ButtonDestructiveDemo";
+import ButtonDestructiveOutlineDemo from "~/components/demos/button/ButtonDestructiveOutlineDemo";
+import ButtonWarningDemo from "~/components/demos/button/ButtonWarningDemo";
+import ButtonWarningOutlineDemo from "~/components/demos/button/ButtonWarningOutlineDemo";
+import ButtonSuccessDemo from "~/components/demos/button/ButtonSuccessDemo";
+import ButtonSuccessOutlineDemo from "~/components/demos/button/ButtonSuccessOutlineDemo";
 import CalendarDemo from "~/components/demos/calendar/CalendarDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -46,37 +46,37 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: BadgeDemo,
     path: "src/components/demos/badge/BadgeDemo.tsx",
   },
-  "secondary-badge": {
-    PreviewComponent: SecondaryBadgeDemo,
-    path: "src/components/demos/badge/SecondaryBadgeDemo.tsx",
+  "badge-secondary": {
+    PreviewComponent: BadgeSecondaryDemo,
+    path: "src/components/demos/badge/BadgeSecondaryDemo.tsx",
   },
-  "outline-badge": {
-    PreviewComponent: OutlineBadgeDemo,
-    path: "src/components/demos/badge/OutlineBadgeDemo.tsx",
+  "badge-outline": {
+    PreviewComponent: BadgeOutlineDemo,
+    path: "src/components/demos/badge/BadgeOutlineDemo.tsx",
   },
-  "destructive-badge": {
-    PreviewComponent: DestructiveBadgeDemo,
-    path: "src/components/demos/badge/DestructiveBadgeDemo.tsx",
+  "badge-destructive": {
+    PreviewComponent: BadgeDestructiveDemo,
+    path: "src/components/demos/badge/BadgeDestructiveDemo.tsx",
   },
-  "destructive-outline-badge": {
-    PreviewComponent: DestructiveOutlineBadgeDemo,
-    path: "src/components/demos/badge/DestructiveOutlineBadgeDemo.tsx",
+  "badge-destructive-outline": {
+    PreviewComponent: BadgeDestructiveOutlineDemo,
+    path: "src/components/demos/badge/BadgeDestructiveOutlineDemo.tsx",
   },
-  "warning-badge": {
-    PreviewComponent: WarningBadgeDemo,
-    path: "src/components/demos/badge/WarningBadgeDemo.tsx",
+  "badge-warning": {
+    PreviewComponent: BadgeWarningDemo,
+    path: "src/components/demos/badge/BadgeWarningDemo.tsx",
   },
-  "warning-outline-badge": {
-    PreviewComponent: WarningOutlineBadgeDemo,
-    path: "src/components/demos/badge/WarningOutlineBadgeDemo.tsx",
+  "badge-warning-outline": {
+    PreviewComponent: BadgeWarningOutlineDemo,
+    path: "src/components/demos/badge/BadgeWarningOutlineDemo.tsx",
   },
-  "success-badge": {
-    PreviewComponent: SuccessBadgeDemo,
-    path: "src/components/demos/badge/SuccessBadgeDemo.tsx",
+  "badge-success": {
+    PreviewComponent: BadgeSuccessDemo,
+    path: "src/components/demos/badge/BadgeSuccessDemo.tsx",
   },
-  "success-outline-badge": {
-    PreviewComponent: SuccessOutlineBadgeDemo,
-    path: "src/components/demos/badge/SuccessOutlineBadgeDemo.tsx",
+  "badge-success-outline": {
+    PreviewComponent: BadgeSuccessOutlineDemo,
+    path: "src/components/demos/badge/BadgeSuccessOutlineDemo.tsx",
   },
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,
@@ -86,45 +86,45 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: ButtonDemo,
     path: "src/components/demos/button/ButtonDemo.tsx",
   },
-  "secondary-button": {
-    PreviewComponent: SecondaryButtonDemo,
-    path: "src/components/demos/button/SecondaryButtonDemo.tsx",
+  "button-secondary": {
+    PreviewComponent: ButtonSecondaryDemo,
+    path: "src/components/demos/button/ButtonSecondaryDemo.tsx",
   },
-  "outline-button": {
-    PreviewComponent: OutlineButtonDemo,
-    path: "src/components/demos/button/OutlineButtonDemo.tsx",
+  "button-outline": {
+    PreviewComponent: ButtonOutlineDemo,
+    path: "src/components/demos/button/ButtonOutlineDemo.tsx",
   },
-  "ghost-button": {
-    PreviewComponent: GhostButtonDemo,
-    path: "src/components/demos/button/GhostButtonDemo.tsx",
+  "button-ghost": {
+    PreviewComponent: ButtonGhostDemo,
+    path: "src/components/demos/button/ButtonGhostDemo.tsx",
   },
-  "link-button": {
-    PreviewComponent: LinkButtonDemo,
-    path: "src/components/demos/button/LinkButtonDemo.tsx",
+  "button-link": {
+    PreviewComponent: ButtonLinkDemo,
+    path: "src/components/demos/button/ButtonLinkDemo.tsx",
   },
-  "destructive-button": {
-    PreviewComponent: DestructiveButtonDemo,
-    path: "src/components/demos/button/DestructiveButtonDemo.tsx",
+  "button-destructive": {
+    PreviewComponent: ButtonDestructiveDemo,
+    path: "src/components/demos/button/ButtonDestructiveDemo.tsx",
   },
-  "destructive-outline-button": {
-    PreviewComponent: DestructiveOutlineButtonDemo,
-    path: "src/components/demos/button/DestructiveOutlineButtonDemo.tsx",
+  "button-destructive-outline": {
+    PreviewComponent: ButtonDestructiveOutlineDemo,
+    path: "src/components/demos/button/ButtonDestructiveOutlineDemo.tsx",
   },
-  "warning-button": {
-    PreviewComponent: WarningButtonDemo,
-    path: "src/components/demos/button/WarningButtonDemo.tsx",
+  "button-warning": {
+    PreviewComponent: ButtonWarningDemo,
+    path: "src/components/demos/button/ButtonWarningDemo.tsx",
   },
-  "warning-outline-button": {
-    PreviewComponent: WarningOutlineButtonDemo,
-    path: "src/components/demos/button/WarningOutlineButtonDemo.tsx",
+  "button-warning-outline": {
+    PreviewComponent: ButtonWarningOutlineDemo,
+    path: "src/components/demos/button/ButtonWarningOutlineDemo.tsx",
   },
-  "success-button": {
-    PreviewComponent: SuccessButtonDemo,
-    path: "src/components/demos/button/SuccessButtonDemo.tsx",
+  "button-success": {
+    PreviewComponent: ButtonSuccessDemo,
+    path: "src/components/demos/button/ButtonSuccessDemo.tsx",
   },
-  "success-outline-button": {
-    PreviewComponent: SuccessOutlineButtonDemo,
-    path: "src/components/demos/button/SuccessOutlineButtonDemo.tsx",
+  "button-success-outline": {
+    PreviewComponent: ButtonSuccessOutlineDemo,
+    path: "src/components/demos/button/ButtonSuccessOutlineDemo.tsx",
   },
   calendar: {
     PreviewComponent: CalendarDemo,

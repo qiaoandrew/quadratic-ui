@@ -1,5 +1,5 @@
 import { Badge } from "~/components/ui/Badge";
 
-export default function DestructiveOutlineBadgeDemo() {
+export default function BadgeDestructiveOutlineDemo() {
   return <Badge variant="destructive-outline">Badge</Badge>;
 }
