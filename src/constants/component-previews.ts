@@ -23,6 +23,7 @@ import WarningButtonDemo from "~/components/demos/button/WarningButtonDemo";
 import WarningOutlineButtonDemo from "~/components/demos/button/WarningOutlineButtonDemo";
 import SuccessButtonDemo from "~/components/demos/button/SuccessButtonDemo";
 import SuccessOutlineButtonDemo from "~/components/demos/button/SuccessOutlineButtonDemo";
+import CalendarDemo from "~/components/demos/calendar/CalendarDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -124,5 +125,9 @@ export const COMPONENT_PREVIEWS = {
   "success-outline-button": {
     PreviewComponent: SuccessOutlineButtonDemo,
     path: "src/components/demos/button/SuccessOutlineButtonDemo.tsx",
+  },
+  calendar: {
+    PreviewComponent: CalendarDemo,
+    path: "src/components/demos/calendar/CalendarDemo.tsx",
   },
 };

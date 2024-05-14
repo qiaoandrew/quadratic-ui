@@ -3,10 +3,11 @@ import Description from "~/components/mdx/Description";
 import ComponentPreview from "~/components/mdx/ComponentPreview";
 import ComponentSource from "~/components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/components/mdx/Steps";
+import Footer from "~/components/mdx/Footer";
 
-<Title>Button</Title>
+<Title>Calendar</Title>
 <Description>Displays a button or a component that looks like a button.</Description>
-<ComponentPreview id="button" />
+<ComponentPreview id="calendar" />
 
 ## Installation
 <Steps>
@@ -35,52 +36,4 @@ import { Button } from "~/components/ui/Button";
 <Button variant="outline">Button</Button>
 ```
 
-## Link
-You can use the `buttonVariants` helper to create a link that looks alike a button.
-```tsx
-import { buttonVariants } from "~/components/ui/Button";
-```
-```tsx
-<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
-```
-Alternatively, you can set the `asChild` parameter and nest the link component.
-```tsx
-<Button asChild>
-  <Link href="/login">Login</Link>
-</Button>
-```
-
-## Examples
-
-### Primary
-<ComponentPreview id="button" />
-
-### Secondary
-<ComponentPreview id="secondary-button" />
-
-### Outline
-<ComponentPreview id="outline-button" />
-
-### Ghost
-<ComponentPreview id="ghost-button" />
-
-### Link
-<ComponentPreview id="link-button" />
-
-### Destructive
-<ComponentPreview id="destructive-button" />
-
-### Destructive Outline
-<ComponentPreview id="destructive-outline-button" />
-
-### Warning
-<ComponentPreview id="warning-button" />
-
-### Warning Outline
-<ComponentPreview id="warning-outline-button" />
-
-### Success
-<ComponentPreview id="success-button" />
-
-### Success Outline
-<ComponentPreview id="success-outline-button" />
+<Footer previousLabel="Breadcrumb" previousHref="/docs/primitives/breadcrumb" nextLabel="Calendar" nextHref="/docs/primitives/calendar" />
