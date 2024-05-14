@@ -28,6 +28,7 @@ import CalloutDemo from "~/components/demos/callout/CalloutDemo";
 import CalloutDestructiveDemo from "~/components/demos/callout/CalloutDestructiveDemo";
 import CalloutWarningDemo from "~/components/demos/callout/CalloutWarningDemo";
 import CalloutSuccessDemo from "~/components/demos/callout/CalloutSuccessDemo";
+import SelectDemo from "~/components/demos/select/SelectDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -149,5 +150,9 @@ export const COMPONENT_PREVIEWS = {
   "callout-success": {
     PreviewComponent: CalloutSuccessDemo,
     path: "src/components/demos/callout/CalloutSuccessDemo.tsx",
+  },
+  select: {
+    PreviewComponent: SelectDemo,
+    path: "src/components/demos/select/SelectDemo.tsx",
   },
 };
