@@ -28,6 +28,7 @@ import CalloutDemo from "~/components/demos/callout/CalloutDemo";
 import CalloutDestructiveDemo from "~/components/demos/callout/CalloutDestructiveDemo";
 import CalloutWarningDemo from "~/components/demos/callout/CalloutWarningDemo";
 import CalloutSuccessDemo from "~/components/demos/callout/CalloutSuccessDemo";
+import CardDemo from "~/components/demos/card/CardDemo";
 import SelectDemo from "~/components/demos/select/SelectDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -150,6 +151,10 @@ export const COMPONENT_PREVIEWS = {
   "callout-success": {
     PreviewComponent: CalloutSuccessDemo,
     path: "src/components/demos/callout/CalloutSuccessDemo.tsx",
+  },
+  card: {
+    PreviewComponent: CardDemo,
+    path: "src/components/demos/card/CardDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
