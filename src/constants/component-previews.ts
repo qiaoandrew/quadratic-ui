@@ -3,6 +3,7 @@ import AlertDialogDemo from "~/components/demos/alert-dialog/AlertDialogDemo";
 import AspectRatioDemo from "~/components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/components/demos/avatar/AvatarDemo";
 import BadgeDemo from "~/components/demos/badge/BadgeDemo";
+import BreadcrumbDemo from "~/components/demos/breadcrumb/BreadcrumbDemo";
 import SecondaryBadgeDemo from "~/components/demos/badge/SecondaryBadgeDemo";
 import OutlineBadgeDemo from "~/components/demos/badge/OutlineBadgeDemo";
 import DestructiveBadgeDemo from "~/components/demos/badge/DestructiveBadgeDemo";
@@ -75,6 +76,10 @@ export const COMPONENT_PREVIEWS = {
   "success-outline-badge": {
     PreviewComponent: SuccessOutlineBadgeDemo,
     path: "src/components/demos/badge/SuccessOutlineBadgeDemo.tsx",
+  },
+  breadcrumb: {
+    PreviewComponent: BreadcrumbDemo,
+    path: "src/components/demos/breadcrumb/BreadcrumbDemo.tsx",
   },
   button: {
     PreviewComponent: ButtonDemo,
