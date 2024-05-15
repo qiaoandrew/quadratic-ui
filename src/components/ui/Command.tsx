@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { type DialogProps } from "@radix-ui/react-dialog";
-import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
+import { Command as CommandPrimitive } from "cmdk";
 
 import { cn } from "~/utils/tailwind";
 import { Dialog, DialogContent } from "~/components/ui/Dialog";
@@ -15,7 +15,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "rounded-md flex h-full w-full flex-col overflow-hidden bg-popover text-popover-foreground",
+      "flex size-full flex-col overflow-hidden rounded-3 bg-popover text-popover-foreground",
       className,
     )}
     {...props}
@@ -28,10 +28,11 @@ type CommandDialogProps = DialogProps;
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
-      <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
-          {children}
-        </Command>
+      <DialogContent
+        showClose={false}
+        className="overflow-hidden rounded-3 p-0"
+      >
+        <Command>{children}</Command>
       </DialogContent>
     </Dialog>
   );
@@ -39,14 +40,24 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
 
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
->(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
-    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & {
+    containerClassName?: string;
+    searchIconSize?: number;
+  }
+>(({ searchIconSize = 18, containerClassName, className, ...props }, ref) => (
+  <div
+    className={cn(
+      "flex items-center gap-x-2 border-b px-3",
+      containerClassName,
+    )}
+  >
+    <Search size={searchIconSize} className="shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "rounded-md text-sm flex h-11 w-full bg-transparent py-3 outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        "flex w-full bg-transparent py-3.5 text-3.5 outline-none",
+        "placeholder:text-muted-foreground",
+        "disabled:cursor-not-allowed disabled:opacity-50",
         className,
       )}
       {...props}
@@ -75,7 +86,7 @@ const CommandEmpty = React.forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="text-sm py-6 text-center"
+    className="px-3 pb-3 pt-2.5 text-3.5"
     {...props}
   />
 ));
@@ -89,7 +100,8 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      "[&_[cmdk-group-heading]]:text-xs overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
+      "overflow-hidden p-1.5 text-foreground",
+      "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-3 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
       className,
     )}
     {...props}
@@ -117,7 +129,9 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "rounded-sm text-sm relative flex cursor-default select-none items-center px-2 py-1.5 outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default select-none items-center rounded-1.5 px-2 py-2.5 text-3.5 outline-none",
+      "aria-selected:bg-accent aria-selected:text-accent-foreground",
+      "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}
     {...props}
@@ -133,7 +147,7 @@ const CommandShortcut = ({
   return (
     <span
       className={cn(
-        "text-xs ml-auto tracking-widest text-muted-foreground",
+        "ml-auto text-3 tracking-widest text-muted-foreground",
         className,
       )}
       {...props}

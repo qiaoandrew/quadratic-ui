@@ -32,6 +32,7 @@ import CardDemo from "~/components/demos/card/CardDemo";
 import CarouselDemo from "~/components/demos/carousel/CarouselDemo";
 import CheckboxDemo from "~/components/demos/checkbox/CheckboxDemo";
 import CollapsibleDemo from "~/components/demos/collapsible/CollapsibleDemo";
+import CommandDemo from "~/components/demos/command/CommandDemo";
 import SelectDemo from "~/components/demos/select/SelectDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -170,6 +171,10 @@ export const COMPONENT_PREVIEWS = {
   collapsible: {
     PreviewComponent: CollapsibleDemo,
     path: "src/components/demos/collapsible/CollapsibleDemo.tsx",
+  },
+  command: {
+    PreviewComponent: CommandDemo,
+    path: "src/components/demos/command/CommandDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
