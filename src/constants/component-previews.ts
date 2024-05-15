@@ -30,6 +30,7 @@ import CalloutWarningDemo from "~/components/demos/callout/CalloutWarningDemo";
 import CalloutSuccessDemo from "~/components/demos/callout/CalloutSuccessDemo";
 import CardDemo from "~/components/demos/card/CardDemo";
 import CarouselDemo from "~/components/demos/carousel/CarouselDemo";
+import CheckboxDemo from "~/components/demos/checkbox/CheckboxDemo";
 import SelectDemo from "~/components/demos/select/SelectDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -160,6 +161,10 @@ export const COMPONENT_PREVIEWS = {
   carousel: {
     PreviewComponent: CarouselDemo,
     path: "src/components/demos/carousel/CarouselDemo.tsx",
+  },
+  checkbox: {
+    PreviewComponent: CheckboxDemo,
+    path: "src/components/demos/checkbox/CheckboxDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
