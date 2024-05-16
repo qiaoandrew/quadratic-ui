@@ -1,10 +1,10 @@
 import {
-  Calendar,
-  Mail,
-  Smile,
-  Settings,
-  User,
-  RocketIcon,
+  CalculatorIcon,
+  CalendarIcon,
+  CreditCardIcon,
+  SettingsIcon,
+  SmileIcon,
+  UserIcon,
 } from "lucide-react";
 
 import {
@@ -25,33 +25,34 @@ export default function CommandDemo() {
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
+          <CommandItem value="-" className="hidden" />
           <CommandItem>
-            <Calendar size={18} className="mr-2" />
+            <CalendarIcon size={18} className="mr-2" />
             <span>Calendar</span>
           </CommandItem>
           <CommandItem>
-            <Smile size={18} className="mr-2" />
+            <SmileIcon size={18} className="mr-2" />
             <span>Search Emoji</span>
           </CommandItem>
           <CommandItem>
-            <RocketIcon size={18} className="mr-2" />
-            <span>Launch</span>
+            <CalculatorIcon size={18} className="mr-2" />
+            <span>Calculator</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Settings">
           <CommandItem>
-            <User size={18} className="mr-2" />
+            <UserIcon size={18} className="mr-2" />
             <span>Profile</span>
             <CommandShortcut>⌘P</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <Mail size={18} className="mr-2" />
-            <span>Mail</span>
+            <CreditCardIcon size={18} className="mr-2" />
+            <span>Billing</span>
             <CommandShortcut>⌘B</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <Settings size={18} className="mr-2" />
+            <SettingsIcon size={18} className="mr-2" />
             <span>Settings</span>
             <CommandShortcut>⌘S</CommandShortcut>
           </CommandItem>

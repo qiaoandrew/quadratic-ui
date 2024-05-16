@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { type DialogProps } from "@radix-ui/react-dialog";
-import { Search } from "lucide-react";
 import { Command as CommandPrimitive } from "cmdk";
+import { SearchIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
 import { Dialog, DialogContent } from "~/components/ui/Dialog";
@@ -41,17 +41,18 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & {
-    containerClassName?: string;
     searchIconSize?: number;
+    containerClassName?: string;
   }
->(({ searchIconSize = 18, containerClassName, className, ...props }, ref) => (
+>(({ searchIconSize = 18, className, containerClassName, ...props }, ref) => (
   <div
     className={cn(
       "flex items-center gap-x-2 border-b px-3",
       containerClassName,
     )}
+    cmdk-input-wrapper=""
   >
-    <Search size={searchIconSize} className="shrink-0 opacity-50" />
+    <SearchIcon size={searchIconSize} className="shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
@@ -131,7 +132,7 @@ const CommandItem = React.forwardRef<
     className={cn(
       "relative flex cursor-default select-none items-center rounded-1.5 px-2 py-2.5 text-3.5 outline-none",
       "aria-selected:bg-accent aria-selected:text-accent-foreground",
-      "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
       className,
     )}
     {...props}
