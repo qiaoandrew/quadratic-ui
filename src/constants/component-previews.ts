@@ -35,6 +35,7 @@ import CollapsibleDemo from "~/components/demos/collapsible/CollapsibleDemo";
 import CommandDemo from "~/components/demos/command/CommandDemo";
 import SelectDemo from "~/components/demos/select/SelectDemo";
 import TableDemo from "~/components/demos/table/TableDemo";
+import DataTableDemo from "~/components/demos/data-table/DataTableDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -176,6 +177,10 @@ export const COMPONENT_PREVIEWS = {
   command: {
     PreviewComponent: CommandDemo,
     path: "src/components/demos/command/CommandDemo.tsx",
+  },
+  "data-table": {
+    PreviewComponent: DataTableDemo,
+    path: "src/components/demos/data-table/DataTableDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
