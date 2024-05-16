@@ -34,6 +34,7 @@ import CheckboxDemo from "~/components/demos/checkbox/CheckboxDemo";
 import CollapsibleDemo from "~/components/demos/collapsible/CollapsibleDemo";
 import CommandDemo from "~/components/demos/command/CommandDemo";
 import SelectDemo from "~/components/demos/select/SelectDemo";
+import TableDemo from "~/components/demos/table/TableDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -179,5 +180,9 @@ export const COMPONENT_PREVIEWS = {
   select: {
     PreviewComponent: SelectDemo,
     path: "src/components/demos/select/SelectDemo.tsx",
+  },
+  table: {
+    PreviewComponent: TableDemo,
+    path: "src/components/demos/table/TableDemo.tsx",
   },
 };
