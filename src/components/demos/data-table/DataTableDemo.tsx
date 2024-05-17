@@ -185,8 +185,12 @@ const columns: ColumnDef<User>[] = [
 
 export default function DataTableDemo() {
   return (
-    <div className="w-full rounded-2 border">
-      <DataTable data={USERS} columns={columns} />
+    <div className="w-full">
+      <DataTable
+        data={USERS}
+        columns={columns}
+        tableContainerClassName="w-full rounded-2 border"
+      />
     </div>
   );
 }
