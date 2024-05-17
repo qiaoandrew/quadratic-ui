@@ -19,13 +19,16 @@ import {
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  className?: string;
+  tableClassName?: string;
+  tableHeaderClassName?: string;
+  tableRowClassName?: string;
+  tableHeadClassName?: string;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
-  className,
+  tableClassName,
 }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
@@ -34,7 +37,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <Table className={className}>
+    <Table className={tableClassName}>
       <TableHeader>
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow key={headerGroup.id}>
@@ -61,7 +64,7 @@ export function DataTable<TData, TValue>({
               data-state={row.getIsSelected() && "selected"}
             >
               {row.getVisibleCells().map((cell) => (
-                <TableCell key={cell.id}>
+                <TableCell className="py-2.5" key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </TableCell>
               ))}
