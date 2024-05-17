@@ -1,8 +1,28 @@
 "use client";
 
-import { type ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontalIcon } from "lucide-react";
+import { useState } from "react";
+import {
+  type ColumnDef,
+  type Column,
+  type SortingState,
+  type ColumnFiltersState,
+  type VisibilityState,
+  flexRender,
+  getCoreRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  getFilteredRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import {
+  ChevronUpIcon,
+  ChevronDownIcon,
+  MoreHorizontalIcon,
+  ChevronsUpDownIcon,
+} from "lucide-react";
 
+import { Badge, BadgeProps } from "~/components/ui/Badge";
+import { Checkbox } from "~/components/ui/Checkbox";
 import { Button } from "~/components/ui/Button";
 import {
   DropdownMenu,
@@ -11,7 +31,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "~/components/ui/DropdownMenu";
-import { DataTable } from "~/components/ui/DataTable";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/Table";
 
 import { cn } from "~/utils/tailwind";
 
@@ -29,24 +56,12 @@ enum Status {
   Onboarding = "Onboarding",
 }
 
-const STATUS_BADGE_CLASSES: {
-  [key in Status]: {
-    text: string;
-    border: string;
-  };
+const STATUS_BADGE_VARIANTS: {
+  [key in Status]: BadgeProps["variant"];
 } = {
-  [Status.Active]: {
-    text: "text-success-foreground",
-    border: "border-success-border",
-  },
-  [Status.Inactive]: {
-    text: "text-destructive-foreground",
-    border: "border-destructive-border",
-  },
-  [Status.Onboarding]: {
-    text: "text-warning-foreground",
-    border: "border-warning-border",
-  },
+  [Status.Active]: "success-outline",
+  [Status.Inactive]: "destructive-outline",
+  [Status.Onboarding]: "warning-outline",
 };
 
 const USERS: User[] = [
@@ -125,11 +140,15 @@ const USERS: User[] = [
 const columns: ColumnDef<User>[] = [
   {
     accessorKey: "name",
-    header: "Name",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Name</DataTableSortingHeader>
+    ),
   },
   {
     accessorKey: "email",
-    header: "Email",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Email</DataTableSortingHeader>
+    ),
   },
   {
     accessorKey: "status",
@@ -137,17 +156,7 @@ const columns: ColumnDef<User>[] = [
     cell: ({ row }) => {
       const status: Status = row.getValue("status");
 
-      return (
-        <span
-          className={cn(
-            "rounded-full border px-2 py-1",
-            STATUS_BADGE_CLASSES[status].border,
-            STATUS_BADGE_CLASSES[status].text,
-          )}
-        >
-          {status}
-        </span>
-      );
+      return <Badge variant={STATUS_BADGE_VARIANTS[status]}>{status}</Badge>;
     },
   },
   {
@@ -173,9 +182,9 @@ const columns: ColumnDef<User>[] = [
             >
               Copy employee ID
             </DropdownMenuItem>
-            <DropdownMenuSeparator />
             <DropdownMenuItem>View employee details</DropdownMenuItem>
-            <DropdownMenuItem>Send email</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -183,14 +192,111 @@ const columns: ColumnDef<User>[] = [
   },
 ];
 
+interface DataTableSortingHeaderProps {
+  column: Column<User, unknown>;
+  children: React.ReactNode;
+}
+
+function DataTableSortingHeader({
+  column,
+  children,
+}: DataTableSortingHeaderProps) {
+  const Icon = !column.getIsSorted()
+    ? ChevronsUpDownIcon
+    : column.getIsSorted() === "asc"
+      ? ChevronDownIcon
+      : ChevronUpIcon;
+
+  return (
+    <Button
+      variant="ghost"
+      onClick={() => column.toggleSorting(column.getIsSorted() === "asc", true)}
+      className="p-0 hover:bg-transparent"
+    >
+      {children} <Icon size={14} className="ml-1" />
+    </Button>
+  );
+}
+
 export default function DataTableDemo() {
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [rowSelection, setRowSelection] = useState({});
+
+  console.log(sorting);
+
+  const table = useReactTable({
+    data: USERS,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    onSortingChange: setSorting,
+    getFilteredRowModel: getFilteredRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    onColumnVisibilityChange: setColumnVisibility,
+    onRowSelectionChange: setRowSelection,
+    state: {
+      sorting,
+      columnFilters,
+      columnVisibility,
+      rowSelection,
+    },
+  });
+
   return (
     <div className="w-full">
-      <DataTable
-        data={USERS}
-        columns={columns}
-        tableContainerClassName="w-full rounded-2 border"
-      />
+      <div className="w-full rounded-2 border">
+        <Table>
+          <TableHeader>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id}>
+                {headerGroup.headers.map((header) => {
+                  return (
+                    <TableHead key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext(),
+                          )}
+                    </TableHead>
+                  );
+                })}
+              </TableRow>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {table.getRowModel().rows?.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell className="py-2.5" key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center"
+                >
+                  No results.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   );
 }
