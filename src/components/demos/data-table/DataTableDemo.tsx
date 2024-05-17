@@ -21,7 +21,7 @@ import {
   ChevronsUpDownIcon,
 } from "lucide-react";
 
-import { Badge, BadgeProps } from "~/components/ui/Badge";
+import { Badge, type BadgeProps } from "~/components/ui/Badge";
 import { Checkbox } from "~/components/ui/Checkbox";
 import { Button } from "~/components/ui/Button";
 import {
@@ -139,6 +139,28 @@ const USERS: User[] = [
 
 const columns: ColumnDef<User>[] = [
   {
+    accessorKey: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+        className="block"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+        className="block"
+      />
+    ),
+  },
+  {
     accessorKey: "name",
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Name</DataTableSortingHeader>
@@ -223,8 +245,6 @@ export default function DataTableDemo() {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
-
-  console.log(sorting);
 
   const table = useReactTable({
     data: USERS,
