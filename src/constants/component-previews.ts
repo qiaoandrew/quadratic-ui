@@ -33,9 +33,10 @@ import CarouselDemo from "~/components/demos/carousel/CarouselDemo";
 import CheckboxDemo from "~/components/demos/checkbox/CheckboxDemo";
 import CollapsibleDemo from "~/components/demos/collapsible/CollapsibleDemo";
 import CommandDemo from "~/components/demos/command/CommandDemo";
+import DataTableDemo from "~/components/demos/data-table/DataTableDemo";
+import PaginationDemo from "~/components/demos/pagination/PaginationDemo";
 import SelectDemo from "~/components/demos/select/SelectDemo";
 import TableDemo from "~/components/demos/table/TableDemo";
-import DataTableDemo from "~/components/demos/data-table/DataTableDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -181,6 +182,10 @@ export const COMPONENT_PREVIEWS = {
   "data-table": {
     PreviewComponent: DataTableDemo,
     path: "src/components/demos/data-table/DataTableDemo.tsx",
+  },
+  pagination: {
+    PreviewComponent: PaginationDemo,
+    path: "src/components/demos/pagination/PaginationDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
