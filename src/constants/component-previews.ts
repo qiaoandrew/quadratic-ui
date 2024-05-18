@@ -44,6 +44,7 @@ import InputDemo from "~/app/docs/_components/demos/input/InputDemo";
 import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenuBarDemo";
+import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
@@ -232,6 +233,10 @@ export const COMPONENT_PREVIEWS = {
   menubar: {
     PreviewComponent: MenubarDemo,
     path: "src/app/docs/_components/demos/menubar/MenuBarDemo.tsx",
+  },
+  "navigation-menu": {
+    PreviewComponent: NavigationMenuDemo,
+    path: "src/app/docs/_components/demos/navigation-menu/NavigationMenuDemo.tsx",
   },
   pagination: {
     PreviewComponent: PaginationDemo,
