@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^3.4.0
+        version: 3.4.0(react-hook-form@7.51.4(react@18.2.0))
       '@mdx-js/loader':
         specifier: ^3.0.1
         version: 3.0.1(webpack@5.91.0(esbuild@0.19.12))
@@ -116,6 +119,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.51.4
+        version: 7.51.4(react@18.2.0)
       recharts:
         specifier: ^2.12.7
         version: 2.12.7(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -132,7 +138,7 @@ importers:
         specifier: ^0.9.1
         version: 0.9.1(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       zod:
-        specifier: ^3.23.3
+        specifier: ^3.23.6
         version: 3.23.6
     devDependencies:
       '@types/eslint':
@@ -512,6 +518,11 @@ packages:
     peerDependencies:
       hono: '>=3.9.0'
       zod: ^3.19.1
+
+  '@hookform/resolvers@3.4.0':
+    resolution: {integrity: sha512-+oAqK3okmoEDnvUkJ3N/mvNMeeMv5Apgy1jkoRmlaaAF4vBgcJs9tHvtXU7VE4DvPosvAUUkPOaNFunzt1dbgA==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -3077,6 +3088,12 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  react-hook-form@7.51.4:
+    resolution: {integrity: sha512-V14i8SEkh+V1gs6YtD0hdHYnoL4tp/HX/A45wWQN15CYr9bFRmmRdYStSO5L65lCCZRF+kYiSKhm9alqbcdiVA==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -3829,6 +3846,10 @@ snapshots:
     dependencies:
       hono: 4.3.2
       zod: 3.23.6
+
+  '@hookform/resolvers@3.4.0(react-hook-form@7.51.4(react@18.2.0))':
+    dependencies:
+      react-hook-form: 7.51.4(react@18.2.0)
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -6850,6 +6871,10 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.2
+
+  react-hook-form@7.51.4(react@18.2.0):
+    dependencies:
+      react: 18.2.0
 
   react-is@16.13.1: {}
 
