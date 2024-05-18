@@ -41,6 +41,7 @@ import DropdownMenuDemo from "~/app/docs/_components/demos/dropdown-menu/Dropdow
 import FormDemo from "~/app/docs/_components/demos/form/FormDemo";
 import HoverCardDemo from "~/app/docs/_components/demos/hover-card/HoverCardDemo";
 import InputDemo from "~/app/docs/_components/demos/input/InputDemo";
+import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
@@ -217,6 +218,10 @@ export const COMPONENT_PREVIEWS = {
   input: {
     PreviewComponent: InputDemo,
     path: "src/app/docs/_components/demos/input/InputDemo.tsx",
+  },
+  "input-otp": {
+    PreviewComponent: InputOTPDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPDemo.tsx",
   },
   pagination: {
     PreviewComponent: PaginationDemo,
