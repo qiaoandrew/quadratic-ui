@@ -31,6 +31,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "~/components/ui/DropdownMenu";
+import { Input } from "~/components/ui/Input";
 import {
   Table,
   TableBody,
@@ -163,16 +164,17 @@ const columns: ColumnDef<User>[] = [
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Name</DataTableSortingHeader>
     ),
+    cell: ({ row }) => <div className="w-24">{row.getValue("name")}</div>,
   },
   {
     accessorKey: "email",
-    header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Email</DataTableSortingHeader>
-    ),
+    header: "Email",
   },
   {
     accessorKey: "status",
-    header: "Status",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Status</DataTableSortingHeader>
+    ),
     cell: ({ row }) => {
       const status: Status = row.getValue("status");
 
@@ -181,7 +183,9 @@ const columns: ColumnDef<User>[] = [
   },
   {
     accessorKey: "role",
-    header: "Role",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Role</DataTableSortingHeader>
+    ),
   },
   {
     id: "actions",
@@ -227,10 +231,20 @@ function DataTableSortingHeader({
       ? ChevronDownIcon
       : ChevronUpIcon;
 
+  const toggleSorting = () => {
+    if (column.getIsSorted() === "asc") {
+      column.toggleSorting(true, true);
+    } else if (column.getIsSorted() === "desc") {
+      column.clearSorting();
+    } else {
+      column.toggleSorting(false, true);
+    }
+  };
+
   return (
     <Button
       variant="ghost"
-      onClick={() => column.toggleSorting(column.getIsSorted() === "asc", true)}
+      onClick={toggleSorting}
       className="p-0 hover:bg-transparent"
     >
       {children} <Icon size={14} className="ml-1" />
@@ -264,7 +278,17 @@ export default function DataTableDemo() {
   });
 
   return (
-    <div className="w-full">
+    <div className="flex w-full flex-col gap-y-3">
+      <div>
+        <Input
+          placeholder="Search for employees..."
+          inputSize="sm"
+          value={table.getColumn("name")?.getFilterValue() as string}
+          onChange={(event) =>
+            table.getColumn("name")?.setFilterValue(event.target.value)
+          }
+        />
+      </div>
       <div className="w-full rounded-2 border">
         <Table>
           <TableHeader>
@@ -306,7 +330,7 @@ export default function DataTableDemo() {
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center"
+                  className="h-16 text-center"
                 >
                   No results.
                 </TableCell>
