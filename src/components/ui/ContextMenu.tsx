@@ -141,7 +141,7 @@ const ContextMenuRadioItem = React.forwardRef<
   >
     <span className="absolute left-2 flex size-3.5 items-center justify-center">
       <ContextMenuPrimitive.ItemIndicator>
-        <DotIcon size={16} />
+        <DotIcon size={16} className="fill-current" />
       </ContextMenuPrimitive.ItemIndicator>
     </span>
     {children}

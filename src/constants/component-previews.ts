@@ -43,6 +43,7 @@ import HoverCardDemo from "~/app/docs/_components/demos/hover-card/HoverCardDemo
 import InputDemo from "~/app/docs/_components/demos/input/InputDemo";
 import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
+import MenubarDemo from "~/app/docs/_components/demos/menubar/MenuBarDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
@@ -227,6 +228,10 @@ export const COMPONENT_PREVIEWS = {
   label: {
     PreviewComponent: LabelDemo,
     path: "src/app/docs/_components/demos/label/LabelDemo.tsx",
+  },
+  menubar: {
+    PreviewComponent: MenubarDemo,
+    path: "src/app/docs/_components/demos/menubar/MenuBarDemo.tsx",
   },
   pagination: {
     PreviewComponent: PaginationDemo,
