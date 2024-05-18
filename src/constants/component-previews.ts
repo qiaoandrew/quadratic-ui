@@ -50,6 +50,7 @@ import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDe
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
+import SeparatorDemo from "~/app/docs/_components/demos/separator/SeparatorDemo";
 import SheetDemo from "~/app/docs/_components/demos/sheet/SheetDemo";
 import SkeletonDemo from "~/app/docs/_components/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/app/docs/_components/demos/slider/SliderDemo";
@@ -270,6 +271,10 @@ export const COMPONENT_PREVIEWS = {
   select: {
     PreviewComponent: SelectDemo,
     path: "src/app/docs/_components/demos/select/SelectDemo.tsx",
+  },
+  separator: {
+    PreviewComponent: SeparatorDemo,
+    path: "src/app/docs/_components/demos/separator/SeparatorDemo.tsx",
   },
   sheet: {
     PreviewComponent: SheetDemo,
