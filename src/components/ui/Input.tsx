@@ -17,7 +17,7 @@ const inputVariants = cva(
   {
     variants: {
       inputSize: {
-        sm: "text-3.5 rounded-2 px-2.5 py-2",
+        sm: "text-3.5 rounded-1.5 px-2.5 py-2",
         default: "text-3.5 rounded-2 px-3 py-2.5",
         lg: "text-4 rounded-2.5 px-3.5 py-3",
       },

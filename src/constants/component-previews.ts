@@ -46,6 +46,7 @@ import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenuBarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
+import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 
@@ -241,6 +242,10 @@ export const COMPONENT_PREVIEWS = {
   pagination: {
     PreviewComponent: PaginationDemo,
     path: "src/app/docs/_components/demos/pagination/PaginationDemo.tsx",
+  },
+  popover: {
+    PreviewComponent: PopoverDemo,
+    path: "src/app/docs/_components/demos/popover/PopoverDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
