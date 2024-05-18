@@ -36,6 +36,7 @@ import CommandDemo from "~/app/docs/_components/demos/command/CommandDemo";
 import ContextMenuDemo from "~/app/docs/_components/demos/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/app/docs/_components/demos/data-table/DataTableDemo";
 import DialogDemo from "~/app/docs/_components/demos/dialog/DialogDemo";
+import DrawerDemo from "~/app/docs/_components/demos/drawer/DrawerDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
@@ -192,6 +193,10 @@ export const COMPONENT_PREVIEWS = {
   dialog: {
     PreviewComponent: DialogDemo,
     path: "src/app/docs/_components/demos/dialog/DialogDemo.tsx",
+  },
+  drawer: {
+    PreviewComponent: DrawerDemo,
+    path: "src/app/docs/_components/demos/drawer/DrawerDemo.tsx",
   },
   pagination: {
     PreviewComponent: PaginationDemo,
