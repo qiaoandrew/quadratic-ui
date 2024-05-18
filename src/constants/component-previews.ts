@@ -51,6 +51,7 @@ import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
+import ToggleDemo from "~/app/docs/_components/demos/toggle/ToggleDemo";
 import TooltipDemo from "~/app/docs/_components/demos/tooltip/TooltipDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -265,6 +266,10 @@ export const COMPONENT_PREVIEWS = {
   table: {
     PreviewComponent: TableDemo,
     path: "src/app/docs/_components/demos/table/TableDemo.tsx",
+  },
+  toggle: {
+    PreviewComponent: ToggleDemo,
+    path: "src/app/docs/_components/demos/toggle/ToggleDemo.tsx",
   },
   tooltip: {
     PreviewComponent: TooltipDemo,
