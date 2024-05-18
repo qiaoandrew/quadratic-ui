@@ -35,6 +35,7 @@ import CollapsibleDemo from "~/components/demos/collapsible/CollapsibleDemo";
 import CommandDemo from "~/components/demos/command/CommandDemo";
 import ContextMenuDemo from "~/components/demos/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/components/demos/data-table/DataTableDemo";
+import DialogDemo from "~/components/demos/dialog/DialogDemo";
 import PaginationDemo from "~/components/demos/pagination/PaginationDemo";
 import SelectDemo from "~/components/demos/select/SelectDemo";
 import TableDemo from "~/components/demos/table/TableDemo";
@@ -187,6 +188,10 @@ export const COMPONENT_PREVIEWS = {
   "data-table": {
     PreviewComponent: DataTableDemo,
     path: "src/components/demos/data-table/DataTableDemo.tsx",
+  },
+  dialog: {
+    PreviewComponent: DialogDemo,
+    path: "src/components/demos/dialog/DialogDemo.tsx",
   },
   pagination: {
     PreviewComponent: PaginationDemo,

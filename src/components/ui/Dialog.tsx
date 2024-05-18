@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
 
@@ -42,7 +42,7 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-1/2 top-1/2 z-50 grid w-[calc(100%-40px)] max-w-lg -translate-x-1/2 -translate-y-1/2 gap-y-8 rounded-4 border bg-background p-6 shadow-lg duration-200",
+        "fixed left-1/2 top-1/2 z-50 grid w-[calc(100%-40px)] max-w-lg -translate-x-1/2 -translate-y-1/2 gap-y-8 rounded-4 border bg-background p-6 duration-200",
         "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]",
         "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]",
         className,
@@ -59,7 +59,7 @@ const DialogContent = React.forwardRef<
             "disabled:pointer-events-none",
           )}
         >
-          <X size={20} />
+          <XIcon size={20} />
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>
       )}
@@ -82,8 +82,8 @@ const DialogFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-col-reverse gap-3",
-      "xs:flex-row xs:justify-end xs:gap-4",
+      "flex flex-col-reverse gap-y-3",
+      "xs:flex-row xs:justify-end xs:gap-x-4",
       className,
     )}
     {...props}
