@@ -49,6 +49,7 @@ import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/Nav
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
+import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import SeparatorDemo from "~/app/docs/_components/demos/separator/SeparatorDemo";
@@ -268,6 +269,10 @@ export const COMPONENT_PREVIEWS = {
   progress: {
     PreviewComponent: ProgressDemo,
     path: "src/app/docs/_components/demos/progress/ProgressDemo.tsx",
+  },
+  resizable: {
+    PreviewComponent: ResizableDemo,
+    path: "src/app/docs/_components/demos/resizable/ResizableDemo.tsx",
   },
   "scroll-area": {
     PreviewComponent: ScrollAreaDemo,
