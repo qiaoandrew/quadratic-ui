@@ -52,6 +52,7 @@ import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 import ToggleDemo from "~/app/docs/_components/demos/toggle/ToggleDemo";
+import ToggleGroupDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupDemo";
 import TooltipDemo from "~/app/docs/_components/demos/tooltip/TooltipDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -270,6 +271,10 @@ export const COMPONENT_PREVIEWS = {
   toggle: {
     PreviewComponent: ToggleDemo,
     path: "src/app/docs/_components/demos/toggle/ToggleDemo.tsx",
+  },
+  "toggle-group": {
+    PreviewComponent: ToggleGroupDemo,
+    path: "src/app/docs/_components/demos/toggle-group/ToggleGroupDemo.tsx",
   },
   tooltip: {
     PreviewComponent: TooltipDemo,
