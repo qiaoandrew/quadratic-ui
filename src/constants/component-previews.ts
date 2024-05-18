@@ -35,6 +35,7 @@ import CollapsibleDemo from "~/app/docs/_components/demos/collapsible/Collapsibl
 import CommandDemo from "~/app/docs/_components/demos/command/CommandDemo";
 import ContextMenuDemo from "~/app/docs/_components/demos/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/app/docs/_components/demos/data-table/DataTableDemo";
+import DatePickerDemo from "~/app/docs/_components/demos/date-picker/DatePickerDemo";
 import DialogDemo from "~/app/docs/_components/demos/dialog/DialogDemo";
 import DrawerDemo from "~/app/docs/_components/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/app/docs/_components/demos/dropdown-menu/DropdownMenuDemo";
@@ -199,6 +200,10 @@ export const COMPONENT_PREVIEWS = {
   "data-table": {
     PreviewComponent: DataTableDemo,
     path: "src/app/docs/_components/demos/data-table/DataTableDemo.tsx",
+  },
+  "date-picker": {
+    PreviewComponent: DatePickerDemo,
+    path: "src/app/docs/_components/demos/date-picker/DatePickerDemo.tsx",
   },
   dialog: {
     PreviewComponent: DialogDemo,
