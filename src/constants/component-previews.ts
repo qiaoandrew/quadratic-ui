@@ -39,6 +39,7 @@ import DialogDemo from "~/app/docs/_components/demos/dialog/DialogDemo";
 import DrawerDemo from "~/app/docs/_components/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/app/docs/_components/demos/dropdown-menu/DropdownMenuDemo";
 import FormDemo from "~/app/docs/_components/demos/form/FormDemo";
+import HoverCardDemo from "~/app/docs/_components/demos/hover-card/HoverCardDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
@@ -207,6 +208,10 @@ export const COMPONENT_PREVIEWS = {
   form: {
     PreviewComponent: FormDemo,
     path: "src/app/docs/_components/demos/form/FormDemo.tsx",
+  },
+  "hover-card": {
+    PreviewComponent: HoverCardDemo,
+    path: "src/app/docs/_components/demos/hover-card/HoverCardDemo.tsx",
   },
   pagination: {
     PreviewComponent: PaginationDemo,
