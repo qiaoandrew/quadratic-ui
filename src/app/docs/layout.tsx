@@ -1,5 +1,5 @@
-import DocMenu from "./_components/DocMenu";
-import DocTOC from "./_components/DocTOC";
+import DocMenu from "./_components/navigation/DocMenu";
+import DocTOC from "./_components/navigation/DocTOC";
 
 import { getPrimitivesMenuItems, getTOCs } from "~/utils/docs";
 

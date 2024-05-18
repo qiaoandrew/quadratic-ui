@@ -20,13 +20,11 @@ export const readFile = async (relativePath: string) => {
 export const getPrimitivesMenuItems = async () => {
   const names = await readDirectory("src/app/docs/primitives");
   const menuItems = await Promise.all(
-    names.map(async (name) => {
-      return {
-        id: name,
-        href: `/docs/primitives/${name}`,
-        label: formatDocMenuLabel(name),
-      };
-    }),
+    names.map(async (name) => ({
+      id: name,
+      href: `/docs/primitives/${name}`,
+      label: formatDocMenuLabel(name),
+    })),
   );
   return menuItems;
 };

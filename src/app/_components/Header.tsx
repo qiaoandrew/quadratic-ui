@@ -2,7 +2,7 @@ import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
 import SearchCommandTrigger from "./SearchCommandTrigger";
 import ThemeToggle from "./ThemeToggle";
-import DocMenuMobileSheet from "../docs/_components/DocMenuMobileSheet";
+import DocMenuMobileSheet from "../docs/_components/navigation/DocMenuMobileSheet";
 
 export default function Header() {
   return (

@@ -1,208 +1,208 @@
-import AccordionDemo from "~/components/demos/accordion/AccordionDemo";
-import AlertDialogDemo from "~/components/demos/alert-dialog/AlertDialogDemo";
-import AspectRatioDemo from "~/components/demos/aspect-ratio/AspectRatioDemo";
-import AvatarDemo from "~/components/demos/avatar/AvatarDemo";
-import BadgeDemo from "~/components/demos/badge/BadgeDemo";
-import BreadcrumbDemo from "~/components/demos/breadcrumb/BreadcrumbDemo";
-import BadgeSecondaryDemo from "~/components/demos/badge/BadgeSecondaryDemo";
-import BadgeOutlineDemo from "~/components/demos/badge/BadgeOutlineDemo";
-import BadgeDestructiveDemo from "~/components/demos/badge/BadgeDestructiveDemo";
-import BadgeDestructiveOutlineDemo from "~/components/demos/badge/BadgeDestructiveOutlineDemo";
-import BadgeWarningDemo from "~/components/demos/badge/BadgeWarningDemo";
-import BadgeWarningOutlineDemo from "~/components/demos/badge/BadgeWarningOutlineDemo";
-import BadgeSuccessDemo from "~/components/demos/badge/BadgeSuccessDemo";
-import BadgeSuccessOutlineDemo from "~/components/demos/badge/BadgeSuccessOutlineDemo";
-import ButtonDemo from "~/components/demos/button/ButtonDemo";
-import ButtonSecondaryDemo from "~/components/demos/button/ButtonSecondaryDemo";
-import ButtonOutlineDemo from "~/components/demos/button/ButtonOutlineDemo";
-import ButtonGhostDemo from "~/components/demos/button/ButtonGhostDemo";
-import ButtonLinkDemo from "~/components/demos/button/ButtonLinkDemo";
-import ButtonDestructiveDemo from "~/components/demos/button/ButtonDestructiveDemo";
-import ButtonDestructiveOutlineDemo from "~/components/demos/button/ButtonDestructiveOutlineDemo";
-import ButtonWarningDemo from "~/components/demos/button/ButtonWarningDemo";
-import ButtonWarningOutlineDemo from "~/components/demos/button/ButtonWarningOutlineDemo";
-import ButtonSuccessDemo from "~/components/demos/button/ButtonSuccessDemo";
-import ButtonSuccessOutlineDemo from "~/components/demos/button/ButtonSuccessOutlineDemo";
-import CalendarDemo from "~/components/demos/calendar/CalendarDemo";
-import CalloutDemo from "~/components/demos/callout/CalloutDemo";
-import CalloutDestructiveDemo from "~/components/demos/callout/CalloutDestructiveDemo";
-import CalloutWarningDemo from "~/components/demos/callout/CalloutWarningDemo";
-import CalloutSuccessDemo from "~/components/demos/callout/CalloutSuccessDemo";
-import CardDemo from "~/components/demos/card/CardDemo";
-import CarouselDemo from "~/components/demos/carousel/CarouselDemo";
-import CheckboxDemo from "~/components/demos/checkbox/CheckboxDemo";
-import CollapsibleDemo from "~/components/demos/collapsible/CollapsibleDemo";
-import CommandDemo from "~/components/demos/command/CommandDemo";
-import ContextMenuDemo from "~/components/demos/context-menu/ContextMenuDemo";
-import DataTableDemo from "~/components/demos/data-table/DataTableDemo";
-import DialogDemo from "~/components/demos/dialog/DialogDemo";
-import PaginationDemo from "~/components/demos/pagination/PaginationDemo";
-import SelectDemo from "~/components/demos/select/SelectDemo";
-import TableDemo from "~/components/demos/table/TableDemo";
+import AccordionDemo from "~/app/docs/_components/demos/accordion/AccordionDemo";
+import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
+import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
+import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
+import BadgeDemo from "~/app/docs/_components/demos/badge/BadgeDemo";
+import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
+import BadgeSecondaryDemo from "~/app/docs/_components/demos/badge/BadgeSecondaryDemo";
+import BadgeOutlineDemo from "~/app/docs/_components/demos/badge/BadgeOutlineDemo";
+import BadgeDestructiveDemo from "~/app/docs/_components/demos/badge/BadgeDestructiveDemo";
+import BadgeDestructiveOutlineDemo from "~/app/docs/_components/demos/badge/BadgeDestructiveOutlineDemo";
+import BadgeWarningDemo from "~/app/docs/_components/demos/badge/BadgeWarningDemo";
+import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWarningOutlineDemo";
+import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
+import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
+import ButtonDemo from "~/app/docs/_components/demos/button/ButtonDemo";
+import ButtonSecondaryDemo from "~/app/docs/_components/demos/button/ButtonSecondaryDemo";
+import ButtonOutlineDemo from "~/app/docs/_components/demos/button/ButtonOutlineDemo";
+import ButtonGhostDemo from "~/app/docs/_components/demos/button/ButtonGhostDemo";
+import ButtonLinkDemo from "~/app/docs/_components/demos/button/ButtonLinkDemo";
+import ButtonDestructiveDemo from "~/app/docs/_components/demos/button/ButtonDestructiveDemo";
+import ButtonDestructiveOutlineDemo from "~/app/docs/_components/demos/button/ButtonDestructiveOutlineDemo";
+import ButtonWarningDemo from "~/app/docs/_components/demos/button/ButtonWarningDemo";
+import ButtonWarningOutlineDemo from "~/app/docs/_components/demos/button/ButtonWarningOutlineDemo";
+import ButtonSuccessDemo from "~/app/docs/_components/demos/button/ButtonSuccessDemo";
+import ButtonSuccessOutlineDemo from "~/app/docs/_components/demos/button/ButtonSuccessOutlineDemo";
+import CalendarDemo from "~/app/docs/_components/demos/calendar/CalendarDemo";
+import CalloutDemo from "~/app/docs/_components/demos/callout/CalloutDemo";
+import CalloutDestructiveDemo from "~/app/docs/_components/demos/callout/CalloutDestructiveDemo";
+import CalloutWarningDemo from "~/app/docs/_components/demos/callout/CalloutWarningDemo";
+import CalloutSuccessDemo from "~/app/docs/_components/demos/callout/CalloutSuccessDemo";
+import CardDemo from "~/app/docs/_components/demos/card/CardDemo";
+import CarouselDemo from "~/app/docs/_components/demos/carousel/CarouselDemo";
+import CheckboxDemo from "~/app/docs/_components/demos/checkbox/CheckboxDemo";
+import CollapsibleDemo from "~/app/docs/_components/demos/collapsible/CollapsibleDemo";
+import CommandDemo from "~/app/docs/_components/demos/command/CommandDemo";
+import ContextMenuDemo from "~/app/docs/_components/demos/context-menu/ContextMenuDemo";
+import DataTableDemo from "~/app/docs/_components/demos/data-table/DataTableDemo";
+import DialogDemo from "~/app/docs/_components/demos/dialog/DialogDemo";
+import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
+import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
+import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
     PreviewComponent: AccordionDemo,
-    path: "src/components/demos/accordion/AccordionDemo.tsx",
+    path: "src/app/docs/_components/demos/accordion/AccordionDemo.tsx",
   },
   "alert-dialog": {
     PreviewComponent: AlertDialogDemo,
-    path: "src/components/demos/alert-dialog/AlertDialogDemo.tsx",
+    path: "src/app/docs/_components/demos/alert-dialog/AlertDialogDemo.tsx",
   },
   "aspect-ratio": {
     PreviewComponent: AspectRatioDemo,
-    path: "src/components/demos/aspect-ratio/AspectRatioDemo.tsx",
+    path: "src/app/docs/_components/demos/aspect-ratio/AspectRatioDemo.tsx",
   },
   avatar: {
     PreviewComponent: AvatarDemo,
-    path: "src/components/demos/avatar/AvatarDemo.tsx",
+    path: "src/app/docs/_components/demos/avatar/AvatarDemo.tsx",
   },
   badge: {
     PreviewComponent: BadgeDemo,
-    path: "src/components/demos/badge/BadgeDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeDemo.tsx",
   },
   "badge-secondary": {
     PreviewComponent: BadgeSecondaryDemo,
-    path: "src/components/demos/badge/BadgeSecondaryDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeSecondaryDemo.tsx",
   },
   "badge-outline": {
     PreviewComponent: BadgeOutlineDemo,
-    path: "src/components/demos/badge/BadgeOutlineDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeOutlineDemo.tsx",
   },
   "badge-destructive": {
     PreviewComponent: BadgeDestructiveDemo,
-    path: "src/components/demos/badge/BadgeDestructiveDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeDestructiveDemo.tsx",
   },
   "badge-destructive-outline": {
     PreviewComponent: BadgeDestructiveOutlineDemo,
-    path: "src/components/demos/badge/BadgeDestructiveOutlineDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeDestructiveOutlineDemo.tsx",
   },
   "badge-warning": {
     PreviewComponent: BadgeWarningDemo,
-    path: "src/components/demos/badge/BadgeWarningDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeWarningDemo.tsx",
   },
   "badge-warning-outline": {
     PreviewComponent: BadgeWarningOutlineDemo,
-    path: "src/components/demos/badge/BadgeWarningOutlineDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeWarningOutlineDemo.tsx",
   },
   "badge-success": {
     PreviewComponent: BadgeSuccessDemo,
-    path: "src/components/demos/badge/BadgeSuccessDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeSuccessDemo.tsx",
   },
   "badge-success-outline": {
     PreviewComponent: BadgeSuccessOutlineDemo,
-    path: "src/components/demos/badge/BadgeSuccessOutlineDemo.tsx",
+    path: "src/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo.tsx",
   },
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,
-    path: "src/components/demos/breadcrumb/BreadcrumbDemo.tsx",
+    path: "src/app/docs/_components/demos/breadcrumb/BreadcrumbDemo.tsx",
   },
   button: {
     PreviewComponent: ButtonDemo,
-    path: "src/components/demos/button/ButtonDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonDemo.tsx",
   },
   "button-secondary": {
     PreviewComponent: ButtonSecondaryDemo,
-    path: "src/components/demos/button/ButtonSecondaryDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonSecondaryDemo.tsx",
   },
   "button-outline": {
     PreviewComponent: ButtonOutlineDemo,
-    path: "src/components/demos/button/ButtonOutlineDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonOutlineDemo.tsx",
   },
   "button-ghost": {
     PreviewComponent: ButtonGhostDemo,
-    path: "src/components/demos/button/ButtonGhostDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonGhostDemo.tsx",
   },
   "button-link": {
     PreviewComponent: ButtonLinkDemo,
-    path: "src/components/demos/button/ButtonLinkDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonLinkDemo.tsx",
   },
   "button-destructive": {
     PreviewComponent: ButtonDestructiveDemo,
-    path: "src/components/demos/button/ButtonDestructiveDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonDestructiveDemo.tsx",
   },
   "button-destructive-outline": {
     PreviewComponent: ButtonDestructiveOutlineDemo,
-    path: "src/components/demos/button/ButtonDestructiveOutlineDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonDestructiveOutlineDemo.tsx",
   },
   "button-warning": {
     PreviewComponent: ButtonWarningDemo,
-    path: "src/components/demos/button/ButtonWarningDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonWarningDemo.tsx",
   },
   "button-warning-outline": {
     PreviewComponent: ButtonWarningOutlineDemo,
-    path: "src/components/demos/button/ButtonWarningOutlineDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonWarningOutlineDemo.tsx",
   },
   "button-success": {
     PreviewComponent: ButtonSuccessDemo,
-    path: "src/components/demos/button/ButtonSuccessDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonSuccessDemo.tsx",
   },
   "button-success-outline": {
     PreviewComponent: ButtonSuccessOutlineDemo,
-    path: "src/components/demos/button/ButtonSuccessOutlineDemo.tsx",
+    path: "src/app/docs/_components/demos/button/ButtonSuccessOutlineDemo.tsx",
   },
   calendar: {
     PreviewComponent: CalendarDemo,
-    path: "src/components/demos/calendar/CalendarDemo.tsx",
+    path: "src/app/docs/_components/demos/calendar/CalendarDemo.tsx",
   },
   callout: {
     PreviewComponent: CalloutDemo,
-    path: "src/components/demos/callout/CalloutDemo.tsx",
+    path: "src/app/docs/_components/demos/callout/CalloutDemo.tsx",
   },
   "callout-destructive": {
     PreviewComponent: CalloutDestructiveDemo,
-    path: "src/components/demos/callout/CalloutDestructiveDemo.tsx",
+    path: "src/app/docs/_components/demos/callout/CalloutDestructiveDemo.tsx",
   },
   "callout-warning": {
     PreviewComponent: CalloutWarningDemo,
-    path: "src/components/demos/callout/CalloutWarningDemo.tsx",
+    path: "src/app/docs/_components/demos/callout/CalloutWarningDemo.tsx",
   },
   "callout-success": {
     PreviewComponent: CalloutSuccessDemo,
-    path: "src/components/demos/callout/CalloutSuccessDemo.tsx",
+    path: "src/app/docs/_components/demos/callout/CalloutSuccessDemo.tsx",
   },
   card: {
     PreviewComponent: CardDemo,
-    path: "src/components/demos/card/CardDemo.tsx",
+    path: "src/app/docs/_components/demos/card/CardDemo.tsx",
   },
   carousel: {
     PreviewComponent: CarouselDemo,
-    path: "src/components/demos/carousel/CarouselDemo.tsx",
+    path: "src/app/docs/_components/demos/carousel/CarouselDemo.tsx",
   },
   checkbox: {
     PreviewComponent: CheckboxDemo,
-    path: "src/components/demos/checkbox/CheckboxDemo.tsx",
+    path: "src/app/docs/_components/demos/checkbox/CheckboxDemo.tsx",
   },
   collapsible: {
     PreviewComponent: CollapsibleDemo,
-    path: "src/components/demos/collapsible/CollapsibleDemo.tsx",
+    path: "src/app/docs/_components/demos/collapsible/CollapsibleDemo.tsx",
   },
   command: {
     PreviewComponent: CommandDemo,
-    path: "src/components/demos/command/CommandDemo.tsx",
+    path: "src/app/docs/_components/demos/command/CommandDemo.tsx",
   },
   "context-menu": {
     PreviewComponent: ContextMenuDemo,
-    path: "src/components/demos/context-menu/ContextMenuDemo.tsx",
+    path: "src/app/docs/_components/demos/context-menu/ContextMenuDemo.tsx",
   },
   "data-table": {
     PreviewComponent: DataTableDemo,
-    path: "src/components/demos/data-table/DataTableDemo.tsx",
+    path: "src/app/docs/_components/demos/data-table/DataTableDemo.tsx",
   },
   dialog: {
     PreviewComponent: DialogDemo,
-    path: "src/components/demos/dialog/DialogDemo.tsx",
+    path: "src/app/docs/_components/demos/dialog/DialogDemo.tsx",
   },
   pagination: {
     PreviewComponent: PaginationDemo,
-    path: "src/components/demos/pagination/PaginationDemo.tsx",
+    path: "src/app/docs/_components/demos/pagination/PaginationDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
-    path: "src/components/demos/select/SelectDemo.tsx",
+    path: "src/app/docs/_components/demos/select/SelectDemo.tsx",
   },
   table: {
     PreviewComponent: TableDemo,
-    path: "src/components/demos/table/TableDemo.tsx",
+    path: "src/app/docs/_components/demos/table/TableDemo.tsx",
   },
 };

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
-import { Button } from "../ui/Button";
+import { Button } from "../../../../components/ui/Button";
 
 interface FooterProps {
   previousLabel?: string;

@@ -1,4 +1,9 @@
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/Tabs";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../../../../components/ui/Tabs";
 import CodeBlock from "./CodeBlock";
 
 import { readFile } from "~/utils/docs";

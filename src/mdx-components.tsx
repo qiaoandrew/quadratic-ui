@@ -1,8 +1,8 @@
 import * as React from "react";
 import type { MDXComponents } from "mdx/types";
 
-import Id from "./components/mdx/Id";
-import CodeBlock from "./components/mdx/CodeBlock";
+import Id from "./app/docs/_components/mdx/Id";
+import CodeBlock from "./app/docs/_components/mdx/CodeBlock";
 
 import { convertToHtmlId } from "./utils/docs";
 

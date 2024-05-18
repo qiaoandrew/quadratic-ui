@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { CopyIcon } from "lucide-react";
 
 import useClipboard from "~/hooks/useClipboard";
-import { Button } from "../ui/Button";
+import { Button } from "../../../../components/ui/Button";
 
 interface CopyToClipboardButtonProps {
   value: string;
