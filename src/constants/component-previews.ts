@@ -33,6 +33,7 @@ import CarouselDemo from "~/components/demos/carousel/CarouselDemo";
 import CheckboxDemo from "~/components/demos/checkbox/CheckboxDemo";
 import CollapsibleDemo from "~/components/demos/collapsible/CollapsibleDemo";
 import CommandDemo from "~/components/demos/command/CommandDemo";
+import ContextMenuDemo from "~/components/demos/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/components/demos/data-table/DataTableDemo";
 import PaginationDemo from "~/components/demos/pagination/PaginationDemo";
 import SelectDemo from "~/components/demos/select/SelectDemo";
@@ -178,6 +179,10 @@ export const COMPONENT_PREVIEWS = {
   command: {
     PreviewComponent: CommandDemo,
     path: "src/components/demos/command/CommandDemo.tsx",
+  },
+  "context-menu": {
+    PreviewComponent: ContextMenuDemo,
+    path: "src/components/demos/context-menu/ContextMenuDemo.tsx",
   },
   "data-table": {
     PreviewComponent: DataTableDemo,

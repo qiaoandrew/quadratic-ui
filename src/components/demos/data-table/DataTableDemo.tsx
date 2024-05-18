@@ -40,8 +40,6 @@ import {
   TableRow,
 } from "~/components/ui/Table";
 
-import { cn } from "~/utils/tailwind";
-
 type User = {
   id: string;
   name: string;
