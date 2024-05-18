@@ -47,6 +47,7 @@ import MenubarDemo from "~/app/docs/_components/demos/menubar/MenuBarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
+import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 
@@ -246,6 +247,10 @@ export const COMPONENT_PREVIEWS = {
   popover: {
     PreviewComponent: PopoverDemo,
     path: "src/app/docs/_components/demos/popover/PopoverDemo.tsx",
+  },
+  progress: {
+    PreviewComponent: ProgressDemo,
+    path: "src/app/docs/_components/demos/progress/ProgressDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
