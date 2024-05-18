@@ -51,6 +51,7 @@ import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
+import TooltipDemo from "~/app/docs/_components/demos/tooltip/TooltipDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -264,5 +265,9 @@ export const COMPONENT_PREVIEWS = {
   table: {
     PreviewComponent: TableDemo,
     path: "src/app/docs/_components/demos/table/TableDemo.tsx",
+  },
+  tooltip: {
+    PreviewComponent: TooltipDemo,
+    path: "src/app/docs/_components/demos/tooltip/TooltipDemo.tsx",
   },
 };
