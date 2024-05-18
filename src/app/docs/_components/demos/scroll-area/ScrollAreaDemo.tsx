@@ -1,4 +1,4 @@
-import * as React from "react";
+import { Fragment } from "react";
 
 import { ScrollArea } from "~/components/ui/ScrollArea";
 import { Separator } from "~/components/ui/Separator";
@@ -13,12 +13,10 @@ export default function ScrollAreaDemo() {
       <div className="p-3">
         <h4 className="mb-3 text-3.5 font-medium">Tags</h4>
         {tags.map((tag, i) => (
-          <>
-            <div key={tag} className="text-3.5">
-              {tag}
-            </div>
+          <Fragment key={tag}>
+            <div className="text-3.5">{tag}</div>
             {i !== tags.length - 1 && <Separator className="my-2" />}
-          </>
+          </Fragment>
         ))}
       </div>
     </ScrollArea>

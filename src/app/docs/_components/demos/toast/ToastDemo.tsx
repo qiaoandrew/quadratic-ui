@@ -18,7 +18,7 @@ export default function ToastDemo() {
         })
       }
     >
-      Show Toast
+      Show toast
     </Button>
   );
 }
