@@ -49,6 +49,7 @@ import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/Nav
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
+import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
@@ -269,6 +270,10 @@ export const COMPONENT_PREVIEWS = {
   progress: {
     PreviewComponent: ProgressDemo,
     path: "src/app/docs/_components/demos/progress/ProgressDemo.tsx",
+  },
+  "radio-group": {
+    PreviewComponent: RadioGroupDemo,
+    path: "src/app/docs/_components/demos/radio-group/RadioGroupDemo.tsx",
   },
   resizable: {
     PreviewComponent: ResizableDemo,
