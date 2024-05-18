@@ -4,8 +4,8 @@ import {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
+  PaginationNextLink,
+  PaginationPreviousLink,
 } from "~/components/ui/Pagination";
 
 export default function PaginationDemo() {
@@ -13,7 +13,7 @@ export default function PaginationDemo() {
     <Pagination>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious href="#" />
+          <PaginationPreviousLink href="#" />
         </PaginationItem>
         <PaginationItem>
           <PaginationLink href="#">1</PaginationLink>
@@ -30,7 +30,7 @@ export default function PaginationDemo() {
           <PaginationEllipsis />
         </PaginationItem>
         <PaginationItem>
-          <PaginationNext href="#" />
+          <PaginationNextLink href="#" />
         </PaginationItem>
       </PaginationContent>
     </Pagination>

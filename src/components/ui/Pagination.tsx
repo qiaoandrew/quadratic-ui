@@ -6,7 +6,11 @@ import {
   MoreHorizontalIcon,
 } from "lucide-react";
 
-import { type ButtonProps, buttonVariants } from "~/components/ui/Button";
+import {
+  type ButtonProps,
+  buttonVariants,
+  Button,
+} from "~/components/ui/Button";
 
 import { cn } from "~/utils/tailwind";
 
@@ -40,10 +44,11 @@ const PaginationItem = React.forwardRef<
 ));
 PaginationItem.displayName = "PaginationItem";
 
-type PaginationLinkProps = {
+interface PaginationLinkProps
+  extends React.ComponentProps<typeof Link>,
+    Pick<ButtonProps, "size"> {
   isActive?: boolean;
-} & Pick<ButtonProps, "size"> &
-  React.ComponentProps<typeof Link>;
+}
 
 const PaginationLink = ({
   href,
@@ -67,7 +72,7 @@ const PaginationLink = ({
 );
 PaginationLink.displayName = "PaginationLink";
 
-const PaginationPrevious = ({
+const PaginationPreviousLink = ({
   className,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) => (
@@ -81,9 +86,9 @@ const PaginationPrevious = ({
     <span>Previous</span>
   </PaginationLink>
 );
-PaginationPrevious.displayName = "PaginationPrevious";
+PaginationPreviousLink.displayName = "PaginationPreviousLink";
 
-const PaginationNext = ({
+const PaginationNextLink = ({
   className,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) => (
@@ -97,7 +102,61 @@ const PaginationNext = ({
     <ChevronRightIcon size={16} />
   </PaginationLink>
 );
-PaginationNext.displayName = "PaginationNext";
+PaginationNextLink.displayName = "PaginationNextLink";
+
+interface PaginationButtonProps extends ButtonProps {
+  isActive?: boolean;
+}
+
+const PaginationButton = ({
+  onClick,
+  isActive,
+  size = "icon",
+  className,
+  ...props
+}: PaginationButtonProps) => (
+  <Button
+    onClick={onClick}
+    variant={isActive ? "outline" : "ghost"}
+    size={size}
+    aria-current={isActive ? "page" : undefined}
+    className={className}
+    {...props}
+  />
+);
+PaginationButton.displayName = "PaginationButton";
+
+const PaginationPreviousButton = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof PaginationButton>) => (
+  <PaginationButton
+    aria-label="Go to previous page"
+    size="default"
+    className={cn("gap-1 pl-2", className)}
+    {...props}
+  >
+    <ChevronLeftIcon size={16} />
+    <span>Previous</span>
+  </PaginationButton>
+);
+PaginationPreviousButton.displayName = "PaginationPreviousButton";
+
+const PaginationNextButton = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof PaginationButton>) => (
+  <PaginationButton
+    aria-label="Go to next page"
+    size="default"
+    className={cn("gap-1 pr-2", className)}
+    {...props}
+  >
+    <span>Next</span>
+    <ChevronRightIcon size={16} />
+  </PaginationButton>
+);
+PaginationNextButton.displayName = "PaginationNextButton";
 
 const PaginationEllipsis = ({
   className,
@@ -120,6 +179,9 @@ export {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
+  PaginationNextLink,
+  PaginationPreviousLink,
+  PaginationButton,
+  PaginationNextButton,
+  PaginationPreviousButton,
 };
