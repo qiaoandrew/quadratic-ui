@@ -51,6 +51,7 @@ import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
+import TabsDemo from "~/app/docs/_components/demos/tabs/TabsDemo";
 import TextareaDemo from "~/app/docs/_components/demos/textarea/TextareaDemo";
 import ToastDemo from "~/app/docs/_components/demos/toast/ToastDemo";
 import ToggleDemo from "~/app/docs/_components/demos/toggle/ToggleDemo";
@@ -269,6 +270,10 @@ export const COMPONENT_PREVIEWS = {
   table: {
     PreviewComponent: TableDemo,
     path: "src/app/docs/_components/demos/table/TableDemo.tsx",
+  },
+  tabs: {
+    PreviewComponent: TabsDemo,
+    path: "src/app/docs/_components/demos/tabs/TabsDemo.tsx",
   },
   toast: {
     PreviewComponent: ToastDemo,
