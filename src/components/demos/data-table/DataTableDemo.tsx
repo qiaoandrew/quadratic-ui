@@ -19,6 +19,7 @@ import {
   ChevronDownIcon,
   MoreHorizontalIcon,
   ChevronsUpDownIcon,
+  SearchIcon,
 } from "lucide-react";
 
 import { Badge, type BadgeProps } from "~/components/ui/Badge";
@@ -40,6 +41,13 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/Table";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationNextButton,
+  PaginationPreviousButton,
+} from "~/components/ui/Pagination";
 
 type User = {
   id: string;
@@ -134,6 +142,279 @@ const USERS: User[] = [
     status: Status.Active,
     role: "Designer",
   },
+  {
+    id: "k2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Nathan White",
+    email: "nathan.white@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "l2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Olivia Black",
+    email: "olivia.black@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "m2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Patrick Evans",
+    email: "patrick.evans@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "n2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Quinn Walker",
+    email: "quinn.walker@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "o2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Rachel Young",
+    email: "rachel.young@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "p2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Samuel Harris",
+    email: "samuel.harris@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "r2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Uma Martinez",
+    email: "uma.martinez@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "s2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Victor King",
+    email: "victor.king@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "t2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Wendy Lee",
+    email: "wendy.lee@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "u2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Xander Perez",
+    email: "xander.perez@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "v2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Yasmine Collins",
+    email: "yasmine.collins@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "w2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Zachary Adams",
+    email: "zachary.adams@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "a3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Amanda Clark",
+    email: "amanda.clark@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "b3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Brandon Lewis",
+    email: "brandon.lewis@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "c3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Catherine Miller",
+    email: "catherine.miller@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "e3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Ella Martinez",
+    email: "ella.martinez@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "f3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Fiona Wilson",
+    email: "fiona.wilson@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "i3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Ian Wright",
+    email: "ian.wright@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "j3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Julia Harris",
+    email: "julia.harris@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "k3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Kevin Martinez",
+    email: "kevin.martinez@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "l3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Lily Clark",
+    email: "lily.clark@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "m3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Michael Lewis",
+    email: "michael.lewis@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "n3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Nancy Robinson",
+    email: "nancy.robinson@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "o3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Oliver White",
+    email: "oliver.white@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "p3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Pamela Johnson",
+    email: "pamela.johnson@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "q3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Quentin Wright",
+    email: "quentin.wright@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "r3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Rachel Brown",
+    email: "rachel.brown@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "s3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Steven Harris",
+    email: "steven.harris@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "t3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Tina Clark",
+    email: "tina.clark@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "u3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Uma Scott",
+    email: "uma.scott@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "v3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Victor Young",
+    email: "victor.young@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "w3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Wendy Hill",
+    email: "wendy.hill@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "x3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Xander Evans",
+    email: "xander.evans@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "z3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Zachary Clark",
+    email: "zachary.clark@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "a4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Amanda Lewis",
+    email: "amanda.lewis@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "c4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Catherine White",
+    email: "catherine.white@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
+  {
+    id: "d4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "David Johnson",
+    email: "david.johnson@gmail.com",
+    status: Status.Onboarding,
+    role: "Developer",
+  },
+  {
+    id: "e4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Ella Wright",
+    email: "ella.wright@gmail.com",
+    status: Status.Inactive,
+    role: "Manager",
+  },
+  {
+    id: "f4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
+    name: "Fiona Brown",
+    email: "fiona.brown@gmail.com",
+    status: Status.Active,
+    role: "Designer",
+  },
 ];
 
 const columns: ColumnDef<User>[] = [
@@ -164,7 +445,7 @@ const columns: ColumnDef<User>[] = [
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Name</DataTableSortingHeader>
     ),
-    cell: ({ row }) => <div className="w-24">{row.getValue("name")}</div>,
+    cell: ({ row }) => <div className="w-28">{row.getValue("name")}</div>,
   },
   {
     accessorKey: "email",
@@ -280,14 +561,21 @@ export default function DataTableDemo() {
   return (
     <div className="flex w-full flex-col gap-y-3">
       <div>
-        <Input
-          placeholder="Search for employees..."
-          inputSize="sm"
-          value={table.getColumn("name")?.getFilterValue() as string}
-          onChange={(event) =>
-            table.getColumn("name")?.setFilterValue(event.target.value)
-          }
-        />
+        <div className="relative">
+          <SearchIcon
+            size={16}
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+          />
+          <Input
+            placeholder="Search for employees..."
+            inputSize="sm"
+            value={table.getColumn("name")?.getFilterValue() as string}
+            onChange={(event) =>
+              table.getColumn("name")?.setFilterValue(event.target.value)
+            }
+            className="pl-8"
+          />
+        </div>
       </div>
       <div className="w-full rounded-2 border">
         <Table>
@@ -339,6 +627,24 @@ export default function DataTableDemo() {
           </TableBody>
         </Table>
       </div>
+      <Pagination className="justify-end">
+        <PaginationContent className="gap-x-3">
+          <PaginationItem>
+            <PaginationPreviousButton
+              variant="outline"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNextButton
+              variant="outline"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </div>
   );
 }
