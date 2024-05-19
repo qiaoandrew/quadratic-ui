@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SearchIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
+import { ComponentIcon, MoonIcon, SearchIcon, SunIcon } from "lucide-react";
 
-import { Shortcut } from "../../components/ui/Shortcut";
+import { Shortcut } from "~/components/ui/Shortcut";
 import {
   CommandDialog,
   CommandEmpty,
@@ -13,8 +15,17 @@ import {
   CommandList,
 } from "~/components/ui/Command";
 
-export default function CommandMenu() {
+import { GETTING_STARTED_ITEMS } from "~/constants/docs";
+import type { DocItem } from "~/types/types";
+
+interface CommandMenu {
+  primitivesMenuItems: DocItem[];
+}
+
+export default function CommandMenu({ primitivesMenuItems }: CommandMenu) {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -46,7 +57,36 @@ export default function CommandMenu() {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Getting Started">
-            <CommandItem>Test</CommandItem>
+            {GETTING_STARTED_ITEMS.map((item) => (
+              <CommandItem
+                key={item.id}
+                onSelect={() => router.push(item.href)}
+              >
+                {item.Icon && <item.Icon size={18} className="mr-2" />}
+                {item.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Primitives">
+            {primitivesMenuItems.map((item) => (
+              <CommandItem
+                key={item.id}
+                onSelect={() => router.push(item.href)}
+              >
+                <ComponentIcon size={18} className="mr-2" />
+                {item.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Theme">
+            <CommandItem onSelect={() => setTheme("light")}>
+              <SunIcon size={18} className="mr-2" />
+              Light
+            </CommandItem>
+            <CommandItem onSelect={() => setTheme("dark")}>
+              <MoonIcon size={18} className="mr-2" />
+              Dark
+            </CommandItem>
           </CommandGroup>
         </CommandList>
       </CommandDialog>

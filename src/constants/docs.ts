@@ -1,4 +1,11 @@
-import { RocketIcon, ComponentIcon, GithubIcon, FigmaIcon } from "lucide-react";
+import {
+  RocketIcon,
+  ComponentIcon,
+  GithubIcon,
+  FigmaIcon,
+  CircleCheckIcon,
+  SmileIcon,
+} from "lucide-react";
 
 import type { DocItem, DocGroup } from "~/types/types";
 
@@ -36,16 +43,19 @@ export const GETTING_STARTED_ITEMS: DocItem[] = [
     id: "introduction",
     href: "/docs/getting-started/introduction",
     label: "Introduction",
+    Icon: SmileIcon,
   },
   {
     id: "quickstart",
     href: "/docs/getting-started/quickstart",
     label: "Quickstart",
+    Icon: RocketIcon,
   },
   {
     id: "credits",
     href: "/docs/getting-started/credits",
     label: "Credits",
+    Icon: CircleCheckIcon,
   },
 ];
 

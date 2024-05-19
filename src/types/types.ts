@@ -12,6 +12,7 @@ export type DocItem = {
   id: string;
   href: string;
   label: string;
+  Icon?: LucideIcon;
 };
 
 export type DocTOCItem = {
