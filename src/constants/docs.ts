@@ -61,11 +61,6 @@ export const GETTING_STARTED_ITEMS: DocItem[] = [
 
 export const GUIDES_ITEMS: DocItem[] = [
   {
-    id: "adding-components",
-    href: "/docs/getting-started/adding-components",
-    label: "Adding Components",
-  },
-  {
     id: "customization",
     href: "/docs/getting-started/customization",
     label: "Customization",
