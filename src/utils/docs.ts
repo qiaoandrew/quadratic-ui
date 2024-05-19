@@ -61,15 +61,24 @@ const extractSections = (content: string) => {
 };
 
 export const getTOCs = async () => {
-  const names = await readDirectory("src/app/docs/primitives");
   const tocs: Record<string, DocTOCItem[]> = {};
 
+  const primitives = await readDirectory("src/app/docs/primitives");
   await Promise.all(
-    names.map(async (name) => {
+    primitives.map(async (name) => {
       const filePath = `src/app/docs/primitives/${name}/page.mdx`;
       const content = await readFile(filePath);
       const toc = extractSections(content);
+      tocs[name] = toc;
+    }),
+  );
 
+  const gettingStarted = await readDirectory("src/app/docs/getting-started");
+  await Promise.all(
+    gettingStarted.map(async (name) => {
+      const filePath = `src/app/docs/getting-started/${name}/page.mdx`;
+      const content = await readFile(filePath);
+      const toc = extractSections(content);
       tocs[name] = toc;
     }),
   );

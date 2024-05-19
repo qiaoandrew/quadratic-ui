@@ -49,6 +49,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         </CodeBlock>
       );
     },
+    a: (props) => (
+      <a
+        className="text-muted-foreground underline underline-offset-[5px]"
+        target="_blank"
+        rel="noopener noreferrer"
+        {...props}
+      />
+    ),
     ...components,
   };
 }

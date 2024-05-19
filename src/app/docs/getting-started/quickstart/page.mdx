@@ -1,1 +1,139 @@
-Quickstart
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>Quickstart</Title>
+<Description>Add quadratic/ui to your T3 project in under 10 minutes.</Description>
+
+<Steps>
+
+<StepTitle>Install [`pnpm`](https://pnpm.io/installation) if you haven't already.</StepTitle>
+
+<StepTitle>Run this script in your terminal to start the [`create-t3-app`](https://create.t3.gg/) process.</StepTitle>
+<StepContent>
+```bash
+pnpm create t3-app@latest
+```
+</StepContent>
+
+<StepTitle>Enter the name of your project.</StepTitle>
+<StepContent>
+```plaintext
+◆  What will your project be called?
+│  quadratic-ui
+```
+</StepContent>
+
+<StepTitle>Select TypeScript or JavaScript. I would recommend TypeScript.</StepTitle>
+<StepContent>
+```plaintext
+◆  Will you be using TypeScript or JavaScript?
+│  ● TypeScript
+│  ○ JavaScript
+```
+</StepContent>
+
+<StepTitle>Select "Yes" for using Tailwind CSS.</StepTitle>
+<StepContent>
+```plaintext
+◆  Will you be using Tailwind CSS for styling?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Select "Yes" or "No" for tRPC. If you don't know what it is, choose "No".</StepTitle>
+<StepContent>
+```plaintext
+◆  Would you like to use tRPC?
+│  ○ Yes / ● No
+```
+</StepContent>
+
+<StepTitle>Select your authentication provider. If you don't need authentication or aren't using NextAuth.js, choose "None".</StepTitle>
+<StepContent>
+```plaintext
+◆  What authentication provider would you like to use?
+│  ● None
+│  ○ NextAuth.js
+```
+</StepContent>
+
+<StepTitle>Select your database ORM. If you don't need a database, select "None". Otherwise, if your database is compatible, I would recommend Drizzle.</StepTitle>
+<StepContent>
+```plaintext
+◆  What database ORM would you like to use?
+│  ○ None
+│  ○ Prisma
+│  ● Drizzle
+```
+</StepContent>
+
+<StepTitle>Select whether or not you will use App Router. I recommend choosing "Yes".</StepTitle>
+<StepContent>
+```plaintext
+◆  Would you like to use Next.js App Router?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Select your database provider.</StepTitle>
+<StepContent>
+```plaintext
+◆  What database provider would you like to use?
+│  ○ SQLite (LibSQL)
+│  ○ MySQL
+│  ● PostgreSQL
+│  ○ PlanetScale
+```
+</StepContent>
+
+<StepTitle>Select "Yes" for initializing a Git repository.</StepTitle>
+<StepContent>
+```plaintext
+◆  Should we initialize a Git repository and stage the changes?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Select "Yes" for running `pnpm install`.</StepTitle>
+<StepContent>
+```plaintext
+◆  Should we run 'pnpm install' for you?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Select the default import alias.</StepTitle>
+<StepContent>
+```plaintext
+◆  What import alias would you like to use?
+│  ~/
+```
+</StepContent>
+
+<StepTitle>Create a repository on GitHub and copy the repository's URL. It should look something like this: https://github.com/qiaoandrew/quadratic-ui.git.</StepTitle>
+
+<StepTitle>Push your repository to GitHub through the command line by running the following commands in your project's root folder. Replace the GitHub link with your own.</StepTitle>
+<StepContent>
+```bash
+git remote add origin https://github.com/qiaoandrew/quadratic-ui.git
+git branch -M main
+git add .
+git commit -m 'initial commit'
+git push -u origin main
+```
+</StepContent>
+
+<StepTitle>Create a new project on Vercel and connect your new GitHub repository to the project.</StepTitle>
+
+<StepTitle>Add the following environment variable as a placeholder.</StepTitle>
+<StepContent>
+```plaintext
+DATABASE_URL="postgresql://postgres:password@localhost:5432/quadratic-ui"
+```
+</StepContent>
+
+<StepTitle>That's it!</StepTitle>
+
+</Steps>
