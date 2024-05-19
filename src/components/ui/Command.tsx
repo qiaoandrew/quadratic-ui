@@ -78,7 +78,6 @@ const CommandList = React.forwardRef<
     {...props}
   />
 ));
-
 CommandList.displayName = CommandPrimitive.List.displayName;
 
 const CommandEmpty = React.forwardRef<
@@ -87,7 +86,7 @@ const CommandEmpty = React.forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="px-3 pb-3 pt-2.5 text-3.5"
+    className="px-3.5 pb-3.5 pt-3 text-3.5"
     {...props}
   />
 ));

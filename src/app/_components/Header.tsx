@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
-import SearchCommandTrigger from "./SearchCommandTrigger";
+import CommandMenu from "./CommandMenu";
 import ThemeToggle from "./ThemeToggle";
 import DocMenuMobileSheet from "../docs/_components/navigation/DocMenuMobileSheet";
 
@@ -13,7 +13,7 @@ export default function Header() {
           <DesktopMenu />
         </div>
         <div className="flex items-center gap-x-4 md:gap-x-5 md:pr-3">
-          <SearchCommandTrigger />
+          <CommandMenu />
           <ThemeToggle />
           <DocMenuMobileSheet />
         </div>
