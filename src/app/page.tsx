@@ -1,5 +1,11 @@
-import { permanentRedirect } from "next/navigation";
+import Hero from "./_components/Hero";
+import DemosGrid from "./_components/DemosGrid";
 
 export default function HomePage() {
-  permanentRedirect("/docs/getting-started/quickstart");
+  return (
+    <>
+      <Hero />
+      <DemosGrid />
+    </>
+  );
 }
