@@ -17,7 +17,7 @@ import {
 
 export default function NavigationMenuDemo() {
   return (
-    <NavigationMenu className="hidden md:block">
+    <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>

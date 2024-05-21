@@ -10,8 +10,8 @@ export default function Hero() {
   return (
     <section
       className={cn(
-        "container-docs mb-12 mt-24",
-        "md:mt-28",
+        "container-docs mb-16 mt-24",
+        "md:mb-20 md:mt-28",
         "2xl:mb-24 2xl:mt-32",
       )}
     >

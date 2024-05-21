@@ -2,10 +2,10 @@ import AccordionDemo from "~/app/docs/_components/demos/accordion/AccordionDemo"
 import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
 import CalendarDemo from "~/app/docs/_components/demos/calendar/CalendarDemo";
 import CollapsibleDemo from "~/app/docs/_components/demos/collapsible/CollapsibleDemo";
+import ComboboxDemo from "~/app/docs/_components/demos/combobox/ComboboxDemo";
 import DatePickerDemo from "~/app/docs/_components/demos/date-picker/DatePickerDemo";
 import DrawerDemo from "~/app/docs/_components/demos/drawer/DrawerDemo";
 import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
-import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
@@ -27,8 +27,8 @@ export const DEMOS = [
     Component: CalendarDemo,
   },
   {
-    id: "navigation-menu",
-    Component: NavigationMenuDemo,
+    id: "combobox",
+    Component: ComboboxDemo,
   },
   {
     id: "input-otp",
