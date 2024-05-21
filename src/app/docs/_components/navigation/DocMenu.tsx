@@ -36,21 +36,21 @@ export default function DocMenu({
             pathname={pathname}
             title="Getting Started"
             items={GETTING_STARTED_ITEMS}
-            isVisible={pathname.includes("getting-started")}
+            isVisible={pathname.includes("getting-started") || pathname === "/"}
             isMobile={isMobile}
           />
           <DocMenuSection
             pathname={pathname}
             title="Guides"
             items={GUIDES_ITEMS}
-            isVisible={pathname.includes("getting-started")}
+            isVisible={pathname.includes("getting-started") || pathname === "/"}
             isMobile={isMobile}
           />
           <DocMenuSection
             pathname={pathname}
             title="Primitives"
             items={primitivesMenuItems}
-            isVisible={pathname.includes("primitives")}
+            isVisible={pathname.includes("primitives") || pathname === "/"}
             isMobile={isMobile}
           />
         </nav>
