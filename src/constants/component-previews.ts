@@ -32,6 +32,7 @@ import CardDemo from "~/app/docs/_components/demos/card/CardDemo";
 import CarouselDemo from "~/app/docs/_components/demos/carousel/CarouselDemo";
 import CheckboxDemo from "~/app/docs/_components/demos/checkbox/CheckboxDemo";
 import CollapsibleDemo from "~/app/docs/_components/demos/collapsible/CollapsibleDemo";
+import ComboboxDemo from "~/app/docs/_components/demos/combobox/ComboboxDemo";
 import CommandDemo from "~/app/docs/_components/demos/command/CommandDemo";
 import ContextMenuDemo from "~/app/docs/_components/demos/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/app/docs/_components/demos/data-table/DataTableDemo";
@@ -202,6 +203,10 @@ export const COMPONENT_PREVIEWS = {
   collapsible: {
     PreviewComponent: CollapsibleDemo,
     path: "src/app/docs/_components/demos/collapsible/CollapsibleDemo.tsx",
+  },
+  combobox: {
+    PreviewComponent: ComboboxDemo,
+    path: "src/app/docs/_components/demos/combobox/ComboboxDemo.tsx",
   },
   command: {
     PreviewComponent: CommandDemo,
