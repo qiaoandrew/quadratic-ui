@@ -9,7 +9,11 @@ import { cn } from "~/utils/tailwind";
 export default function Hero() {
   return (
     <section
-      className={cn("container-docs mb-16 mt-24", "md:mt-28", "2xl:mt-32")}
+      className={cn(
+        "container-docs mb-12 mt-24",
+        "md:mt-28",
+        "2xl:mb-24 2xl:mt-32",
+      )}
     >
       <div
         className={cn(
