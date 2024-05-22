@@ -5,6 +5,7 @@ import Id from "./app/docs/_components/mdx/Id";
 import CodeBlock from "./app/docs/_components/mdx/CodeBlock";
 
 import { convertToHtmlId } from "./utils/docs";
+import Link from "next/link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -51,14 +52,21 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         </CodeBlock>
       );
     },
-    a: (props) => (
-      <a
-        className="text-muted-foreground underline underline-offset-[5px]"
-        target="_blank"
-        rel="noopener noreferrer"
-        {...props}
-      />
-    ),
+    a: (props) =>
+      props.href?.startsWith("/") ? (
+        <Link
+          href={props.href}
+          className="text-muted-foreground underline underline-offset-[5px]"
+          {...props}
+        />
+      ) : (
+        <a
+          className="text-muted-foreground underline underline-offset-[5px]"
+          target="_blank"
+          rel="noopener noreferrer"
+          {...props}
+        />
+      ),
     ul: (props) => (
       <ul
         className="mt-5 flex list-inside list-disc flex-col gap-y-1"
