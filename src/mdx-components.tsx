@@ -20,7 +20,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {props.children}
       </h3>
     ),
-    p: (props) => <p className="mt-5 text-4 text-foreground" {...props} />,
+    p: (props) => (
+      <p className="mt-5 text-4 leading-7 text-foreground" {...props} />
+    ),
     code: (props) => (
       <code
         className="-mx-0.5 -my-1 rounded-1 bg-accent px-1 py-1 font-mono text-foreground/70"

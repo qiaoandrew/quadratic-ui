@@ -74,7 +74,7 @@ export default function Hero() {
               )}
               asChild
             >
-              <Link href="/docs/getting-started/installation">Get Started</Link>
+              <Link href="/docs/getting-started/quickstart">Get Started</Link>
             </Button>
             <Button
               variant="secondary"

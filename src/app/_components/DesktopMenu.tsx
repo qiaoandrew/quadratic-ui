@@ -24,8 +24,8 @@ export default function DesktopMenu() {
             <NavigationMenuDropdownList variant="card">
               <NavigationMenuDropdownItem
                 variant="card"
-                title="Installation"
-                href="/docs/getting-started/installation"
+                title="Quickstart"
+                href="/docs/getting-started/quickstart"
                 isRoute
               >
                 Follow a quick and easy installation to get you building ASAP.
