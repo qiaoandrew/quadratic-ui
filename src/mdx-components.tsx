@@ -59,6 +59,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
+    ul: (props) => (
+      <ul
+        className="mt-5 flex list-inside list-disc flex-col gap-y-1"
+        {...props}
+      />
+    ),
     ...components,
   };
 }
