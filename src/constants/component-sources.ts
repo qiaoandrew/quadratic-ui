@@ -13,6 +13,7 @@ export const COMPONENT_SOURCES = {
   checkbox: "src/components/ui/Checkbox.tsx",
   collapsible: "src/components/ui/Collapsible.tsx",
   combobox: "src/components/ui/Combobox.tsx",
+  command: "src/components/ui/Command.tsx",
   "data-table": "src/components/ui/DataTable.tsx",
   "date-picker": "src/components/ui/DatePicker.tsx",
   dialog: "src/components/ui/Dialog.tsx",
