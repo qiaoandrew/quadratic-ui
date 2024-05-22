@@ -15,13 +15,13 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
-pnpm add @radix-ui/react-slot
+pnpm add @radix-ui/react-collapsible
 ```
 </StepContent>
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="button" />
+<ComponentSource id="collapsible" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,10 +30,20 @@ pnpm add @radix-ui/react-slot
 
 ## Usage
 ```tsx
-import { Button } from "~/components/ui/Button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "~/components/ui/Collapsible";
 ```
 ```tsx
-<Button variant="outline">Button</Button>
+<Collapsible>
+  <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
+  <CollapsibleContent>
+    Yes. Free to use for personal and commercial projects. No attribution
+    required.
+  </CollapsibleContent>
+</Collapsible>
 ```
 
-<Footer previousLabel="Breadcrumb" previousHref="/docs/primitives/breadcrumb" nextLabel="Calendar" nextHref="/docs/primitives/calendar" />
+<Footer previousLabel="Checkbox" previousHref="/docs/primitives/checkbox" nextLabel="Combobox" nextHref="/docs/primitives/combobox" />
