@@ -7,7 +7,7 @@ export default function DemosGrid() {
       {DEMOS.map(({ id, Component }) => (
         <div
           className={cn(
-            "flex h-[320px] min-h-60 items-center justify-center overflow-hidden rounded-4 border border-border/50 p-6",
+            "flex h-[320px] min-h-60 items-center justify-center overflow-hidden rounded-4 border border-border/80 p-6",
           )}
           key={id}
         >
