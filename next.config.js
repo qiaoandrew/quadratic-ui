@@ -1,4 +1,3 @@
-import MillionLint from '@million/lint';
 import createMDX from "@next/mdx";
 await import("./src/env.js");
 
@@ -6,13 +5,13 @@ await import("./src/env.js");
 const config = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
-    remotePatterns: [{
-      protocol: "https",
-      hostname: "images.unsplash.com"
-    }]
-  }
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 const withMDX = createMDX({});
-export default MillionLint.next({
-  rsc: true
-})(withMDX(config));
+export default withMDX(config);
