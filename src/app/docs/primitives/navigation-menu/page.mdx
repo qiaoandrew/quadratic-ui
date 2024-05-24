@@ -15,13 +15,13 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
-pnpm add @radix-ui/react-slot
+pnpm add @radix-ui/react-navigation-menu
 ```
 </StepContent>
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="button" />
+<ComponentSource id="navigation-menu" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,10 +30,28 @@ pnpm add @radix-ui/react-slot
 
 ## Usage
 ```tsx
-import { Button } from "~/components/ui/Button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "~/components/ui/NavigationMenu";
 ```
 ```tsx
-<Button variant="outline">Button</Button>
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink>Link</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
 ```
 
 <Footer previousLabel="Menubar" previousHref="/docs/primitives/menubar" nextLabel="Pagination" nextHref="/docs/primitives/pagination" />
