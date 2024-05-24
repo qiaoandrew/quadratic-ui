@@ -64,6 +64,7 @@ export default function Hero() {
               "flex flex-col gap-y-4",
               "xs:flex-row xs:gap-x-6",
               "md:gap-x-8",
+              "2xl:gap-x-10",
             )}
           >
             <Button
