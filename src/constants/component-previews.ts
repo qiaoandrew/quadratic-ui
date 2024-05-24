@@ -45,7 +45,7 @@ import HoverCardDemo from "~/app/docs/_components/demos/hover-card/HoverCardDemo
 import InputDemo from "~/app/docs/_components/demos/input/InputDemo";
 import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
-import MenubarDemo from "~/app/docs/_components/demos/menubar/MenuBarDemo";
+import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
