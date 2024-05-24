@@ -12,16 +12,9 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 ## Installation
 <Steps>
 
-<StepTitle>Install the following dependencies:</StepTitle>
-<StepContent>
-```bash
-pnpm add @radix-ui/react-slot
-```
-</StepContent>
-
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="button" />
+<ComponentSource id="table" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,10 +23,36 @@ pnpm add @radix-ui/react-slot
 
 ## Usage
 ```tsx
-import { Button } from "~/components/ui/Button";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/Table";
 ```
 ```tsx
-<Button variant="outline">Button</Button>
+<Table>
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead className="w-[100px]">Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead>Method</TableHead>
+      <TableHead className="text-right">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell className="font-medium">INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell className="text-right">$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 ```
 
 <Footer previousLabel="Switch" previousHref="/docs/primitives/switch" nextLabel="Tabs" nextHref="/docs/primitives/tabs" />

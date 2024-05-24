@@ -15,13 +15,13 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
-pnpm add @radix-ui/react-slot
+pnpm add react-resizable-panels
 ```
 </StepContent>
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="button" />
+<ComponentSource id="resizable" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,10 +30,18 @@ pnpm add @radix-ui/react-slot
 
 ## Usage
 ```tsx
-import { Button } from "~/components/ui/Button";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "~/components/ui/Resizable";
 ```
 ```tsx
-<Button variant="outline">Button</Button>
+<ResizablePanelGroup direction="horizontal">
+  <ResizablePanel>One</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</ResizablePanelGroup>
 ```
 
 <Footer previousLabel="Radio Group" previousHref="/docs/primitives/radio-group" nextLabel="Scroll Area" nextHref="/docs/primitives/scroll-area" />
