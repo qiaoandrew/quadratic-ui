@@ -24,7 +24,7 @@ export const COMPONENT_SOURCES = {
   input: "src/components/ui/Input.tsx",
   "input-otp": "src/components/ui/InputOTP.tsx",
   label: "src/components/ui/Label.tsx",
-  menubar: "src/components/ui/MenuBar.tsx",
+  menubar: "src/components/ui/Menubar.tsx",
   "navigation-menu": "src/components/ui/NavigationMenu.tsx",
   pagination: "src/components/ui/Pagination.tsx",
   popover: "src/components/ui/Popover.tsx",
