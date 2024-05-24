@@ -15,13 +15,13 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
-pnpm add @radix-ui/react-slot
+pnpm add @radix-ui/react-tabs
 ```
 </StepContent>
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="button" />
+<ComponentSource id="tabs" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,10 +30,17 @@ pnpm add @radix-ui/react-slot
 
 ## Usage
 ```tsx
-import { Button } from "~/components/ui/Button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/Tabs";
 ```
 ```tsx
-<Button variant="outline">Button</Button>
+<Tabs defaultValue="account" className="w-[400px]">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">Make changes to your account here.</TabsContent>
+  <TabsContent value="password">Change your password here.</TabsContent>
+</Tabs>
 ```
 
 <Footer previousLabel="Table" previousHref="/docs/primitives/table" nextLabel="Textarea" nextHref="/docs/primitives/textarea" />

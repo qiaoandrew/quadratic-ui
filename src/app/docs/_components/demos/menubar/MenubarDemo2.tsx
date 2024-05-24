@@ -14,7 +14,7 @@ import {
   MenubarTrigger,
 } from "~/components/ui/Menubar";
 
-export default function MenubarDemo() {
+export default function MenubarDemo2() {
   return (
     <Menubar>
       <MenubarMenu>
