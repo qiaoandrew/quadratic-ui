@@ -32,7 +32,7 @@ export default function CommandDemo() {
           </CommandItem>
           <CommandItem>
             <SmileIcon size={18} className="mr-2" />
-            <span>Search Emoji</span>
+            <span>Search Emojis</span>
           </CommandItem>
           <CommandItem>
             <CalculatorIcon size={18} className="mr-2" />

@@ -50,13 +50,12 @@ const CommandInput = React.forwardRef<
       "flex items-center gap-x-2 border-b px-3",
       containerClassName,
     )}
-    cmdk-input-wrapper=""
   >
     <SearchIcon size={searchIconSize} className="shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "flex w-full bg-transparent py-3.5 text-3.5 outline-none",
+        "flex w-full bg-transparent py-3 text-3.5 outline-none",
         "placeholder:text-muted-foreground",
         "disabled:cursor-not-allowed disabled:opacity-50",
         className,
