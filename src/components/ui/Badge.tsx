@@ -4,21 +4,22 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "~/utils/tailwind";
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2 py-1 text-3.5 font-medium transition-colors",
+  "inline-flex items-center rounded-full px-2.5 py-1 text-3.5 font-medium transition-colors",
   {
     variants: {
       variant: {
-        default: "border-transparent bg-primary text-primary-foreground",
-        secondary: "border-transparent bg-secondary text-secondary-foreground",
-        outline: "text-foreground",
-        destructive:
-          "border-transparent bg-destructive text-destructive-foreground",
+        default: "bg-primary text-primary-foreground",
+        secondary: "bg-secondary text-secondary-foreground",
+        outline: "text-foreground border",
+        destructive: "bg-destructive text-destructive-foreground",
         "destructive-outline":
-          "border-destructive-border text-destructive-foreground",
-        warning: "border-transparent bg-warning text-warning-foreground",
-        "warning-outline": "border-warning-border text-warning-foreground",
-        success: "border-transparent bg-success text-success-foreground",
-        "success-outline": "border-success-border text-success-foreground",
+          "border border-destructive-border text-destructive-foreground",
+        warning: "bg-warning text-warning-foreground",
+        "warning-outline":
+          "border border-warning-border text-warning-foreground",
+        success: "bg-success text-success-foreground",
+        "success-outline":
+          "border border-success-border text-success-foreground",
       },
     },
     defaultVariants: {
