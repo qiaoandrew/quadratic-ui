@@ -28,7 +28,7 @@ export default function CardDemo() {
       </CardHeader>
       <CardContent>
         <form>
-          <div className="grid w-full items-center gap-y-4">
+          <div className="flex flex-col gap-y-4">
             <div className="flex flex-col gap-y-1.5">
               <Label htmlFor="name">Name</Label>
               <Input id="name" placeholder="Name of your project" />
