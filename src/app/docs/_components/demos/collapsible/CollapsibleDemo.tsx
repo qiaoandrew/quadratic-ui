@@ -17,7 +17,7 @@ export default function CollapsibleDemo() {
     <Collapsible
       open={isOpen}
       onOpenChange={setIsOpen}
-      className="flex w-full max-w-[350px] flex-col gap-y-1.5"
+      className="flex w-full max-w-[350px] flex-col gap-y-2"
     >
       <div className="flex items-center justify-between px-4">
         <h4 className="text-3.5 font-medium text-foreground">
@@ -34,14 +34,14 @@ export default function CollapsibleDemo() {
           </Button>
         </CollapsibleTrigger>
       </div>
-      <div className="rounded-1.5 border px-4 py-2 font-mono text-3.5 text-foreground">
+      <div className="rounded-1.5 border px-4 py-2 font-mono text-3.5">
         @radix-ui/primitives
       </div>
-      <CollapsibleContent className="grid gap-y-2">
-        <div className="rounded-1.5 border px-4 py-2 font-mono text-3.5 text-foreground">
+      <CollapsibleContent className="flex flex-col gap-y-2">
+        <div className="rounded-1.5 border px-4 py-2 font-mono text-3.5">
           @radix-ui/colors
         </div>
-        <div className="rounded-1.5 border px-4 py-2 font-mono text-3.5 text-foreground">
+        <div className="rounded-1.5 border px-4 py-2 font-mono text-3.5">
           @stitches/react
         </div>
       </CollapsibleContent>
