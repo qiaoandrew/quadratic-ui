@@ -55,7 +55,6 @@ export default function ContextMenuDemo() {
         <ContextMenuSeparator />
         <ContextMenuRadioGroup value="pedro">
           <ContextMenuLabel inset>People</ContextMenuLabel>
-          <ContextMenuSeparator />
           <ContextMenuRadioItem value="pedro">
             Pedro Duarte
           </ContextMenuRadioItem>
