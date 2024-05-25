@@ -24,14 +24,12 @@ export default function DialogDemo() {
             Make changes to your profile here. Click save afterwards.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-y-3">
-          <div className="grid grid-cols-4 items-center gap-4">
+        <div className="flex flex-col gap-y-3">
+          <div className="grid grid-cols-4 items-center gap-x-4 gap-y-3">
             <Label htmlFor="name" className="text-right">
               Name
             </Label>
             <Input id="name" value="Pedro Duarte" className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="username" className="text-right">
               Username
             </Label>
@@ -39,7 +37,7 @@ export default function DialogDemo() {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button type="submit">Save Changes</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
