@@ -72,7 +72,7 @@ export default function ComboboxDemo() {
           />
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup className="rounded-2 p-1">
+            <CommandGroup className="p-1">
               {FRAMEWORKS.map((framework) => (
                 <CommandItem
                   key={framework.value}
