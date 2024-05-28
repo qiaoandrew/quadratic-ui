@@ -1,23 +1,22 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 
 import {
+  navigationMenuTriggerStyle,
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuItem,
   NavigationMenuTrigger,
+  NavigationMenuLink,
   NavigationMenuDropdownList,
   NavigationMenuDropdownItem,
-  navigationMenuTriggerStyle,
 } from "~/components/ui/NavigationMenu";
 
 export default function NavigationMenuDemo() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>
@@ -25,9 +24,11 @@ export default function NavigationMenuDemo() {
             <NavigationMenuDropdownList variant="card">
               <NavigationMenuDropdownItem
                 variant="card"
-                title="Installation"
-                href="/docs/getting-started/installation"
+                title="Quickstart"
+                href="/docs/getting-started/quickstart"
                 isRoute
+                cardImg="https://images.unsplash.com/photo-1513569771920-c9e1d31714af?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                cardImgAlt="dunes texture"
               >
                 Follow a quick and easy installation to get you building ASAP.
               </NavigationMenuDropdownItem>
@@ -69,6 +70,8 @@ export default function NavigationMenuDemo() {
                 variant="card"
                 title="shadcn/ui"
                 href="https://ui.shadcn.com/"
+                cardImg="https://images.unsplash.com/photo-1608447714925-599deeb5a682?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                cardImgAlt="black pattern"
               >
                 The component library quadratic/ui is inspired by and built on
                 top of.

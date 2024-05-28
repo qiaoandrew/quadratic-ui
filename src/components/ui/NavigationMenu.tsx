@@ -5,6 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
+import Image from "next/image";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -175,6 +176,8 @@ interface NavigationMenuDropdownItemProps
   title: string;
   href: string;
   isRoute?: boolean;
+  cardImg?: string;
+  cardImgAlt?: string;
   children: React.ReactNode;
 }
 
@@ -197,54 +200,79 @@ const navigationMenuDropdownItemVariants = cva(
 const NavigationMenuDropdownItem = React.forwardRef<
   HTMLLIElement,
   NavigationMenuDropdownItemProps
->(({ title, href, isRoute, children, variant }, ref) => {
-  const navigationMenuDropdownItemStyle = cn(
-    navigationMenuDropdownItemVariants({ variant }),
-  );
-
-  const listItemContent =
-    variant === "card" ? (
-      <>
-        <div className="flex-grow"></div>
-        <h4 className="mb-1 mt-3 text-4 font-medium">{title}</h4>
-        <p className="text-3.5 leading-6 text-muted-foreground">{children}</p>
-      </>
-    ) : (
-      <>
-        <p className="mb-1 text-3.5 font-medium text-foreground">{title}</p>
-        <p className="line-clamp-2 text-3.5 leading-6 text-muted-foreground">
-          {children}
-        </p>
-      </>
+>(
+  (
+    {
+      title,
+      href,
+      isRoute,
+      cardImg: cardImage,
+      cardImgAlt: cardImageAlt,
+      children,
+      variant,
+    },
+    ref,
+  ) => {
+    const navigationMenuDropdownItemStyle = cn(
+      navigationMenuDropdownItemVariants({ variant }),
     );
 
-  if (isRoute) {
+    const listItemContent =
+      variant === "card" ? (
+        <>
+          {cardImage ? (
+            <div className="relative flex-grow overflow-hidden rounded-3">
+              <Image
+                src={cardImage}
+                alt={cardImageAlt!}
+                layout="fill"
+                objectFit="cover"
+                className="bg-cover"
+              />
+            </div>
+          ) : (
+            <div className="flex-grow" />
+          )}
+          <h4 className="mb-1 mt-3 text-4 font-medium">{title}</h4>
+          <p className="text-3.5 leading-6 text-muted-foreground">{children}</p>
+        </>
+      ) : (
+        <>
+          <p className="mb-1 text-3.5 font-medium text-foreground">{title}</p>
+          <p className="line-clamp-2 text-3.5 leading-6 text-muted-foreground">
+            {children}
+          </p>
+        </>
+      );
+
+    if (isRoute) {
+      return (
+        <li ref={ref} className={cn(variant === "card" && "row-span-3")}>
+          <Link href={href} legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuDropdownItemStyle}>
+              {listItemContent}
+            </NavigationMenuLink>
+          </Link>
+        </li>
+      );
+    }
+
     return (
       <li ref={ref} className={cn(variant === "card" && "row-span-3")}>
-        <Link href={href} legacyBehavior passHref>
-          <NavigationMenuLink className={navigationMenuDropdownItemStyle}>
+        <NavigationMenuLink asChild>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={navigationMenuDropdownItemStyle}
+          >
             {listItemContent}
-          </NavigationMenuLink>
-        </Link>
+          </a>
+        </NavigationMenuLink>
       </li>
     );
-  }
-
-  return (
-    <li ref={ref} className={cn(variant === "card" && "row-span-3")}>
-      <NavigationMenuLink asChild>
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={navigationMenuDropdownItemStyle}
-        >
-          {listItemContent}
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+  },
+);
 NavigationMenuDropdownItem.displayName = "NavigationMenuDropdownItem";
 
 export {
