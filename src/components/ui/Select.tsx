@@ -30,7 +30,10 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDownIcon size={16} className="opacity-50 duration-150" />
+      <ChevronDownIcon
+        size={16}
+        className="text-muted-foreground duration-150"
+      />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
