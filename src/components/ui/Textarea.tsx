@@ -13,9 +13,9 @@ const textareaVariants = cva(
   {
     variants: {
       size: {
-        default: "text-3.5 rounded-2 px-3 py-2.5 leading-6",
-        sm: "text-3 rounded-1.5 px-2.5 py-2 leading-5",
-        lg: "text-4 rounded-3 px-4 py-3 leading-7",
+        sm: "text-3 rounded-1.5 px-2.5 py-2",
+        default: "text-3.5 rounded-2 px-3 py-2.5",
+        lg: "text-4 rounded-2.5 px-3.5 py-3",
       },
     },
     defaultVariants: {
