@@ -63,6 +63,11 @@ import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 import TabsDemo from "~/app/docs/_components/demos/tabs/TabsDemo";
 import TextareaDemo from "~/app/docs/_components/demos/textarea/TextareaDemo";
 import ToastDemo from "~/app/docs/_components/demos/toast/ToastDemo";
+import ToastSuccessDemo from "~/app/docs/_components/demos/toast/ToastSuccessDemo";
+import ToastErrorDemo from "~/app/docs/_components/demos/toast/ToastErrorDemo";
+import ToastActionDemo from "~/app/docs/_components/demos/toast/ToastActionDemo";
+import ToastCancelDemo from "~/app/docs/_components/demos/toast/ToastCancelDemo";
+import ToastLoadingDemo from "~/app/docs/_components/demos/toast/ToastLoadingDemo";
 import ToggleDemo from "~/app/docs/_components/demos/toggle/ToggleDemo";
 import ToggleGroupDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupDemo";
 import TooltipDemo from "~/app/docs/_components/demos/tooltip/TooltipDemo";
@@ -323,6 +328,26 @@ export const COMPONENT_PREVIEWS = {
   toast: {
     PreviewComponent: ToastDemo,
     path: "src/app/docs/_components/demos/toast/ToastDemo.tsx",
+  },
+  "toast-success": {
+    PreviewComponent: ToastSuccessDemo,
+    path: "src/app/docs/_components/demos/toast/ToastSuccessDemo.tsx",
+  },
+  "toast-error": {
+    PreviewComponent: ToastErrorDemo,
+    path: "src/app/docs/_components/demos/toast/ToastErrorDemo.tsx",
+  },
+  "toast-action": {
+    PreviewComponent: ToastActionDemo,
+    path: "src/app/docs/_components/demos/toast/ToastActionDemo.tsx",
+  },
+  "toast-cancel": {
+    PreviewComponent: ToastCancelDemo,
+    path: "src/app/docs/_components/demos/toast/ToastCancelDemo.tsx",
+  },
+  "toast-loading": {
+    PreviewComponent: ToastLoadingDemo,
+    path: "src/app/docs/_components/demos/toast/ToastLoadingDemo.tsx",
   },
   textarea: {
     PreviewComponent: TextareaDemo,
