@@ -20,15 +20,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn("font-sans", GeistMono.variable)}
-        suppressHydrationWarning
-      >
+    <html
+      lang="en"
+      className={cn("font-sans", GeistMono.variable)}
+      suppressHydrationWarning
+    >
+      <body>
         <ThemeProvider
           defaultTheme="dark"
           enableSystem={false}
           attribute="class"
+          disableTransitionOnChange
         >
           <Header />
           <main>{children}</main>
