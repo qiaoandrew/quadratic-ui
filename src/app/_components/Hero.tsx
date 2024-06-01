@@ -17,8 +17,7 @@ export default function Hero() {
     >
       <div
         className={cn(
-          "flex flex-col gap-y-3",
-          "xs:gap-y-4",
+          "flex flex-col gap-y-4",
           "md:px-3",
           "lg:flex-row lg:justify-between lg:gap-x-12",
         )}
@@ -38,8 +37,7 @@ export default function Hero() {
         </h1>
         <div
           className={cn(
-            "flex flex-col gap-y-6",
-            "xs:gap-y-8",
+            "flex flex-col gap-y-8",
             "sm:gap-y-10",
             "lg:mt-2 lg:gap-y-8",
             "2xl:mt-3 2xl:gap-y-12",
@@ -47,8 +45,7 @@ export default function Hero() {
         >
           <p
             className={cn(
-              "max-w-[380px] font-display text-3.5 leading-7",
-              "xs:text-4 xs:leading-8",
+              "max-w-[380px] font-display text-4 leading-8",
               "sm:max-w-[480px] sm:text-4.5 sm:leading-8",
               "lg:max-w-[400px] lg:text-4 lg:leading-8",
               "xl:max-w-[480px] xl:text-4.5 xl:leading-8",
