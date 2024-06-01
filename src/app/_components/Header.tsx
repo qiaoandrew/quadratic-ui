@@ -16,7 +16,7 @@ export default async function Header() {
           <Logo />
           <DesktopMenu />
         </div>
-        <div className="flex items-center gap-x-4 md:gap-x-5 md:pr-3">
+        <div className="flex items-center gap-x-4 md:pr-3">
           <CommandMenu primitivesMenuItems={primitivesMenuItems} />
           <ThemeToggle />
           <DocMenuMobileSheet />

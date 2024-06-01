@@ -1,17 +1,21 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { MoonStarIcon, SunIcon } from "lucide-react";
+
+import { Button } from "~/components/ui/Button";
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <button
-      type="button"
+    <Button
+      size="icon"
+      variant="outline"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="relative size-5 rounded-full border border-foreground bg-black transition-transform duration-150 dark:rotate-180"
+      className="size-10"
     >
-      <span className="absolute inset-y-0 left-0 w-1/2 rounded-l-full bg-white" />
-    </button>
+      {theme === "light" ? <SunIcon size={18} /> : <MoonStarIcon size={18} />}
+    </Button>
   );
 }
