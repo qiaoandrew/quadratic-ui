@@ -13,7 +13,7 @@ export default function ThemeToggle() {
       size="icon"
       variant="outline"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="size-10"
+      className="md:size-10"
     >
       {theme === "light" ? <SunIcon size={18} /> : <MoonStarIcon size={18} />}
     </Button>
