@@ -165,6 +165,10 @@
     @apply box-border border-border;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-background font-sans text-foreground;
     font-feature-settings:

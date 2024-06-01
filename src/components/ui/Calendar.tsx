@@ -18,7 +18,7 @@ function Calendar({
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn("px-3 py-2.5", className)}
+      className={cn("bg-background px-3 py-2.5", className)}
       classNames={{
         caption: "flex justify-between items-center mb-0.5",
         caption_label: "text-3.5 font-medium text-foreground",
