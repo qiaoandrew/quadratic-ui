@@ -20,9 +20,13 @@ import type { DocItem } from "~/types/types";
 
 interface CommandMenu {
   primitivesMenuItems: DocItem[];
+  compositesMenuItems: DocItem[];
 }
 
-export default function CommandMenu({ primitivesMenuItems }: CommandMenu) {
+export default function CommandMenu({
+  primitivesMenuItems,
+  compositesMenuItems,
+}: CommandMenu) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const { setTheme } = useTheme();
@@ -69,6 +73,17 @@ export default function CommandMenu({ primitivesMenuItems }: CommandMenu) {
           </CommandGroup>
           <CommandGroup heading="Primitives">
             {primitivesMenuItems.map((item) => (
+              <CommandItem
+                key={item.id}
+                onSelect={() => router.push(item.href)}
+              >
+                <ComponentIcon size={18} className="mr-2" />
+                {item.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Composites">
+            {compositesMenuItems.map((item) => (
               <CommandItem
                 key={item.id}
                 onSelect={() => router.push(item.href)}
