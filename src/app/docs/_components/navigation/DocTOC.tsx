@@ -15,13 +15,12 @@ interface DocTOCProps {
 
 export default function DocTOC({ tocs }: DocTOCProps) {
   const pathname = usePathname();
-  const component = pathname.split("/")[3];
-
-  const toc = tocs[component!];
+  const tocId = pathname.split("/").slice(2).join("/");
+  const toc = tocs[tocId];
 
   const activeId = useActiveId({ ids: (toc ?? []).map((item) => item.id) });
 
-  if (!toc) return null;
+  if (!toc) throw new Error(`No TOC found for ${tocId}`);
 
   return (
     <div className="z-30 hidden w-60 shrink-0 pr-3 xl:block">

@@ -1,0 +1,46 @@
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import ComponentPreview from "~/app/docs/_components/mdx/ComponentPreview";
+import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>Aspect Ratio</Title>
+<Description>Displays content within a desired ratio.</Description>
+<ComponentPreview id="aspect-ratio" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies.</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-aspect-ratio
+```
+</StepContent>
+ca
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<ComponentSource id="aspect-ratio" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import Image from "next/image";
+ 
+import { AspectRatio } from "~/components/ui/AspectRatio";
+```
+
+```tsx
+<div className="w-[450px]">
+  <AspectRatio ratio={16 / 9}>
+    <Image src="..." alt="Image" className="rounded-md object-cover" />
+  </AspectRatio>
+</div>
+```
+
+<Footer previousLabel="Alert Dialog" previousHref="/docs/components/primitives/alert-dialog" nextLabel="Avatar" nextHref="/docs/components/primitives/avatar" />

@@ -1,0 +1,70 @@
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import ComponentPreview from "~/app/docs/_components/mdx/ComponentPreview";
+import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>Badge</Title>
+<Description>Displays a badge or a component that looks like a badge.</Description>
+<ComponentPreview id="badge" />
+
+## Installation
+<Steps>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<ComponentSource id="badge" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Badge } from "~/components/ui/Badge";
+```
+```tsx
+<Badge variant="outline">Badge</Badge>
+```
+
+## Link as a Badge
+You can use the `badgeVariants` helper to create a link that looks like a badge.
+```tsx
+import { badgeVariants } from "~/components/ui/Badge";
+```
+```tsx
+<Link className={badgeVariants({ variant: "outline" })}>Click here</Link>
+```
+
+## Examples
+
+### Default
+<ComponentPreview id="badge" />
+
+### Secondary
+<ComponentPreview id="badge-secondary" />
+
+### Outline
+<ComponentPreview id="badge-outline" />
+
+### Destructive
+<ComponentPreview id="badge-destructive" />
+
+### Destructive Outline
+<ComponentPreview id="badge-destructive-outline" />
+
+### Warning
+<ComponentPreview id="badge-warning" />
+
+### Warning Outline
+<ComponentPreview id="badge-warning-outline" />
+
+### Success
+<ComponentPreview id="badge-success" />
+
+### Success Outline
+<ComponentPreview id="badge-success-outline" />
+
+<Footer previousLabel="Avatar" previousHref="/docs/components/primitives/avatar" nextLabel="Breadcrumb" nextHref="/docs/components/primitives/breadcrumb" />

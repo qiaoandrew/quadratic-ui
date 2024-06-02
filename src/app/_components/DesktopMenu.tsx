@@ -56,7 +56,11 @@ export default function DesktopMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs/primitives/accordion" legacyBehavior passHref>
+          <Link
+            href="/docs/components/primitives/accordion"
+            legacyBehavior
+            passHref
+          >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Components
             </NavigationMenuLink>

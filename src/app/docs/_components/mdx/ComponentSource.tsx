@@ -1,6 +1,6 @@
 import CodeBlock from "./CodeBlock";
 
-import { readFile } from "~/utils/docs";
+import { readFile } from "~/utils/file-system";
 import { COMPONENT_SOURCES } from "~/constants/component-sources";
 
 interface ComponentSourceProps {

@@ -6,7 +6,7 @@ import {
 } from "../../../../components/ui/Tabs";
 import CodeBlock from "./CodeBlock";
 
-import { readFile } from "~/utils/docs";
+import { readFile } from "~/utils/file-system";
 import { cn } from "~/utils/tailwind";
 import { COMPONENT_PREVIEWS } from "~/constants/component-previews";
 

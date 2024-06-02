@@ -1,10 +1,11 @@
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/Sheet";
 import DocMenu from "./DocMenu";
 
-import { getPrimitivesMenuItems } from "~/utils/docs";
+import { getComponentsMenuItems } from "~/utils/docs";
 
 export default async function DocMenuMobileSheet() {
-  const primitivesMenuItems = await getPrimitivesMenuItems();
+  const { primitivesMenuItems, compositesMenuItems } =
+    await getComponentsMenuItems();
 
   return (
     <Sheet>
@@ -16,7 +17,11 @@ export default async function DocMenuMobileSheet() {
         </button>
       </SheetTrigger>
       <SheetContent className="px-3 py-0">
-        <DocMenu isMobile primitivesMenuItems={primitivesMenuItems} />
+        <DocMenu
+          primitivesMenuItems={primitivesMenuItems}
+          compositesMenuItems={compositesMenuItems}
+          isMobile
+        />
       </SheetContent>
     </Sheet>
   );
