@@ -20,74 +20,92 @@ import ToggleGroupDemo from "~/app/docs/_components/demos/toggle-group/ToggleGro
 export const DEMOS = [
   {
     id: "accordion",
+    href: "/docs/components/primitives/accordion",
     Component: AccordionDemo,
   },
   {
     id: "calendar",
+    href: "/docs/components/primitives/calendar",
     Component: CalendarDemo,
   },
   {
     id: "combobox",
+    href: "/docs/components/composites/combobox",
     Component: ComboboxDemo,
   },
   {
     id: "input-otp",
+    href: "/docs/components/primitives/input-otp",
     Component: InputOTPDemo,
   },
   {
     id: "drawer",
+    href: "/docs/components/primitives/drawer",
     Component: DrawerDemo,
   },
   {
     id: "toggle-group",
+    href: "/docs/components/primitives/toggle-group",
     Component: ToggleGroupDemo,
   },
   {
     id: "collapsible",
+    href: "/docs/components/primitives/collapsible",
     Component: CollapsibleDemo,
   },
   {
     id: "switch",
+    href: "/docs/components/primitives/switch",
     Component: SwitchDemo,
   },
   {
     id: "toast",
+    href: "/docs/components/primitives/toast",
     Component: ToastDemo,
   },
   {
     id: "slider",
+    href: "/docs/components/primitives/slider",
     Component: SliderDemo,
   },
   {
     id: "skeleton",
+    href: "/docs/components/primitives/skeleton",
     Component: SkeletonDemo,
   },
   {
     id: "alert-dialog",
+    href: "/docs/components/primitives/alert-dialog",
     Component: AlertDialogDemo,
   },
   {
     id: "select",
+    href: "/docs/components/primitives/select",
     Component: SelectDemo,
   },
   {
     id: "radio-group",
+    href: "/docs/components/primitives/radio-group",
     Component: RadioGroupDemo,
   },
   {
     id: "resizable",
+    href: "/docs/components/primitives/resizable",
     Component: ResizableDemo,
   },
   {
     id: "date-picker",
+    href: "/docs/components/composites/date-picker",
     Component: DatePickerDemo,
   },
   {
     id: "textarea",
+    href: "/docs/components/primitives/textarea",
     Component: TextareaDemo,
   },
   {
     id: "pagination",
+    href: "/docs/components/primitives/pagination",
     Component: PaginationDemo,
   },
 ];
