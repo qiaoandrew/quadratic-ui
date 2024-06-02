@@ -1,0 +1,89 @@
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import ComponentPreview from "~/app/docs/_components/mdx/ComponentPreview";
+import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>Button</Title>
+<Description>Displays a button or a component that looks like a button.</Description>
+<ComponentPreview id="button" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies.</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-slot
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<ComponentSource id="button" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Button } from "~/components/ui/Button";
+```
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+## Button as a Link
+You can use the `buttonVariants` helper to create a link that looks like a button.
+```tsx
+import { buttonVariants } from "~/components/ui/Button";
+```
+```tsx
+<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
+```
+Alternatively, you can set the `asChild` parameter and nest the link component.
+```tsx
+<Button asChild>
+  <Link href="/login">Login</Link>
+</Button>
+```
+
+## Examples
+
+### Default
+<ComponentPreview id="button" />
+
+### Secondary
+<ComponentPreview id="button-secondary" />
+
+### Outline
+<ComponentPreview id="button-outline" />
+
+### Ghost
+<ComponentPreview id="button-ghost" />
+
+### Link
+<ComponentPreview id="button-link" />
+
+### Destructive
+<ComponentPreview id="button-destructive" />
+
+### Destructive Outline
+<ComponentPreview id="button-destructive-outline" />
+
+### Warning
+<ComponentPreview id="button-warning" />
+
+### Warning Outline
+<ComponentPreview id="button-warning-outline" />
+
+### Success
+<ComponentPreview id="button-success" />
+
+### Success Outline
+<ComponentPreview id="button-success-outline" />
+
+<Footer previousLabel="Breadcrumb" previousHref="/docs/components/primitives/breadcrumb" nextLabel="Calendar" nextHref="/docs/components/primitives/calendar" />

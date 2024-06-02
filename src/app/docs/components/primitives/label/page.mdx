@@ -1,0 +1,39 @@
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import ComponentPreview from "~/app/docs/_components/mdx/ComponentPreview";
+import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>Label</Title>
+<Description>Renders an accessible label associated with controls.</Description>
+<ComponentPreview id="label" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-label
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<ComponentSource id="label" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Label } from "~/components/ui/Label";
+```
+```tsx
+<Label htmlFor="email">Your email address</Label>
+```
+
+<Footer previousLabel="Input OTP" previousHref="/docs/components/primitives/input-otp" nextLabel="Menubar" nextHref="/docs/components/primitives/menubar" />

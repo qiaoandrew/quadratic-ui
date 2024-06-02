@@ -1,0 +1,62 @@
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import ComponentPreview from "~/app/docs/_components/mdx/ComponentPreview";
+import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>Drawer</Title>
+<Description>A drawer component.</Description>
+<ComponentPreview id="drawer" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add vaul
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<ComponentSource id="drawer" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "~/components/ui/Drawer";
+```
+```tsx
+<Drawer>
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+      <DrawerDescription>This action cannot be undone.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <Button>Submit</Button>
+      <DrawerClose>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
+
+<Footer previousLabel="Dialog" previousHref="/docs/components/primitives/dialog" nextLabel="Dropdown Menu" nextHref="/docs/components/primitives/dropdown-menu" />

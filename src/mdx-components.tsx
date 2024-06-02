@@ -4,20 +4,20 @@ import type { MDXComponents } from "mdx/types";
 import Id from "./app/docs/_components/mdx/Id";
 import CodeBlock from "./app/docs/_components/mdx/CodeBlock";
 
-import { convertToHtmlId } from "./utils/docs";
+import { textToHtmlId } from "./utils/docs";
 import Link from "next/link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h2: (props) => (
       <h2 className="mt-16 text-7 font-semibold">
-        <Id id={convertToHtmlId(props.children as string)} />
+        <Id id={textToHtmlId(props.children as string)} />
         {props.children}
       </h2>
     ),
     h3: (props) => (
       <h3 className="mt-8 text-5 font-semibold">
-        <Id id={convertToHtmlId(props.children as string)} />
+        <Id id={textToHtmlId(props.children as string)} />
         {props.children}
       </h3>
     ),

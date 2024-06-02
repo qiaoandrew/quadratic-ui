@@ -19,8 +19,8 @@ export const DOC_GROUPS: DocGroup[] = [
   },
   {
     id: "components",
-    href: "/docs/primitives/accordion",
-    hrefPrefix: "/docs/primitives",
+    href: "/docs/components/primitives/accordion",
+    hrefPrefix: "/docs/components",
     label: "Components",
     Icon: ComponentIcon,
   },

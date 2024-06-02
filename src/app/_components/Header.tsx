@@ -4,10 +4,11 @@ import CommandMenu from "./CommandMenu";
 import ThemeToggle from "./ThemeToggle";
 import DocMenuMobileSheet from "../docs/_components/navigation/DocMenuMobileSheet";
 
-import { getPrimitivesMenuItems } from "~/utils/docs";
+import { getComponentsMenuItems } from "~/utils/docs";
 
 export default async function Header() {
-  const primitivesMenuItems = await getPrimitivesMenuItems();
+  const { primitivesMenuItems, compositesMenuItems } =
+    await getComponentsMenuItems();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-b-primary/10 bg-background/80 backdrop-blur-sm md:h-18">
@@ -17,7 +18,10 @@ export default async function Header() {
           <DesktopMenu />
         </div>
         <div className="flex items-center gap-x-4 md:pr-3">
-          <CommandMenu primitivesMenuItems={primitivesMenuItems} />
+          <CommandMenu
+            primitivesMenuItems={primitivesMenuItems}
+            compositesMenuItems={compositesMenuItems}
+          />
           <ThemeToggle />
           <DocMenuMobileSheet />
         </div>
