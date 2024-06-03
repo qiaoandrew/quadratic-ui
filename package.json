@@ -45,6 +45,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tanstack/react-table": "^8.17.3",
+    "@tremor/react": "^3.17.2",
     "@types/mdx": "^2.0.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
