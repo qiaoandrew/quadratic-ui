@@ -37,6 +37,7 @@ export default function DatePickerDemo() {
           selected={date}
           onSelect={setDate}
           initialFocus
+          className="rounded-[7px]"
         />
       </PopoverContent>
     </Popover>

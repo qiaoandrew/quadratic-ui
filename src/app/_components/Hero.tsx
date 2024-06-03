@@ -66,7 +66,7 @@ export default function Hero() {
           >
             <Button
               className={cn(
-                "bg-gradient-dark py-2.5 font-[550] dark:bg-gradient-light",
+                "bg-gradient-dark py-2.5 font-semibold dark:bg-gradient-light",
                 "xs:px-4 xs:py-3 xs:text-4",
                 "2xl:rounded-3 2xl:px-4.5 2xl:py-4 2xl:text-5",
               )}
@@ -77,7 +77,7 @@ export default function Hero() {
             <Button
               variant="secondary"
               className={cn(
-                "gap-x-2.5 border border-muted-foreground/50 bg-secondary py-2.5 font-[550]",
+                "gap-x-2.5 border border-muted-foreground/50 bg-secondary py-2.5 font-semibold",
                 "xs:gap-x-3.5 xs:px-4 xs:py-3 xs:text-4",
                 "2xl:rounded-3 2xl:px-4.5 2xl:py-4 2xl:text-5",
               )}
