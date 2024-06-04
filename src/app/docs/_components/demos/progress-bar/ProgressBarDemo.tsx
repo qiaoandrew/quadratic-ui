@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 
-import { Progress } from "~/components/ui/Progress";
+import { ProgressBar } from "~/components/ui/ProgressBar";
 
-export default function ProgressDemo() {
+export default function ProgressBarDemo() {
   const [progress, setProgress] = useState(13);
 
   useEffect(() => {
@@ -12,5 +12,5 @@ export default function ProgressDemo() {
     return () => clearTimeout(timer);
   }, []);
 
-  return <Progress value={progress} className="w-[60%]" />;
+  return <ProgressBar value={progress} className="w-[60%]" />;
 }

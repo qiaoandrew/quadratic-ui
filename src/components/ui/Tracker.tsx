@@ -1,0 +1,83 @@
+import * as React from "react";
+import * as HoverCardPrimitives from "@radix-ui/react-hover-card";
+
+import { cn } from "~/utils/tailwind";
+
+interface TrackerBlockProps {
+  key?: string | number;
+  color?: string;
+  tooltip?: string;
+}
+
+const Block = ({
+  color,
+  tooltip,
+  defaultBackgroundColor,
+}: TrackerBlockProps & {
+  defaultBackgroundColor?: string;
+}) => {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <HoverCardPrimitives.Root
+      open={open}
+      onOpenChange={setOpen}
+      openDelay={0}
+      closeDelay={0}
+    >
+      <HoverCardPrimitives.Trigger onClick={() => setOpen(true)} asChild>
+        <div
+          className={cn(
+            "h-full w-full rounded-[1px] first:rounded-l-[4px] last:rounded-r-[4px]",
+            color ?? defaultBackgroundColor,
+          )}
+        />
+      </HoverCardPrimitives.Trigger>
+      <HoverCardPrimitives.Portal>
+        <HoverCardPrimitives.Content
+          sideOffset={10}
+          side="top"
+          align="center"
+          avoidCollisions
+          className="w-auto rounded-1.5 bg-background px-2 py-1 text-3.5 text-foreground"
+        >
+          {tooltip}
+        </HoverCardPrimitives.Content>
+      </HoverCardPrimitives.Portal>
+    </HoverCardPrimitives.Root>
+  );
+};
+Block.displayName = "Tracker";
+
+interface TrackerProps extends React.HTMLAttributes<HTMLDivElement> {
+  data: TrackerBlockProps[];
+  defaultBackgroundColor?: string;
+}
+
+const Tracker = React.forwardRef<HTMLDivElement, TrackerProps>(
+  (
+    { data = [], defaultBackgroundColor = "bg-accent", className, ...props },
+    forwardedRef,
+  ) => {
+    return (
+      <div
+        ref={forwardedRef}
+        className={cn(
+          "flex h-10 w-full items-center gap-px sm:gap-0.5",
+          className,
+        )}
+        {...props}
+      >
+        {data.map((props, index) => (
+          <Block
+            key={props.key ?? index}
+            defaultBackgroundColor={defaultBackgroundColor}
+            {...props}
+          />
+        ))}
+      </div>
+    );
+  },
+);
+Tracker.displayName = "Tracker";
+
+export { Tracker, type TrackerBlockProps };

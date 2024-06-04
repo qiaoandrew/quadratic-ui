@@ -5,9 +5,9 @@ import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
 import Footer from "~/app/docs/_components/mdx/Footer";
 
-<Title>Progress</Title>
+<Title>Progress Bar</Title>
 <Description>Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.</Description>
-<ComponentPreview id="progress" />
+<ComponentPreview id="progress-bar" />
 
 ## Installation
 <Steps>
@@ -21,7 +21,7 @@ pnpm add @radix-ui/react-progress
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="progress" />
+<ComponentSource id="progress-bar" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,10 +30,10 @@ pnpm add @radix-ui/react-progress
 
 ## Usage
 ```tsx
-import { Progress } from "~/components/ui/Progress";
+import { ProgressBar } from "~/components/ui/ProgressBar";
 ```
 ```tsx
-<Progress value={33} />
+<ProgressBar value={33} />
 ```
 
 <Footer previousLabel="Popover" previousHref="/docs/components/primitives/popover" nextLabel="Radio Group" nextHref="/docs/components/primitives/radio-group" />

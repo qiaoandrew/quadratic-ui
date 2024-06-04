@@ -49,7 +49,7 @@ import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
-import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
+import ProgressBarDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaDemo";
@@ -277,9 +277,9 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: PopoverDemo,
     path: "src/app/docs/_components/demos/popover/PopoverDemo.tsx",
   },
-  progress: {
-    PreviewComponent: ProgressDemo,
-    path: "src/app/docs/_components/demos/progress/ProgressDemo.tsx",
+  "progress-bar": {
+    PreviewComponent: ProgressBarDemo,
+    path: "src/app/docs/_components/demos/progress-bar/ProgressBarDemo.tsx",
   },
   "radio-group": {
     PreviewComponent: RadioGroupDemo,
