@@ -71,6 +71,7 @@ import ToastLoadingDemo from "~/app/docs/_components/demos/toast/ToastLoadingDem
 import ToggleDemo from "~/app/docs/_components/demos/toggle/ToggleDemo";
 import ToggleGroupDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupDemo";
 import TooltipDemo from "~/app/docs/_components/demos/tooltip/TooltipDemo";
+import TrackerDemo from "~/app/docs/_components/demos/tracker/TrackerDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -325,6 +326,10 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: TabsDemo,
     path: "src/app/docs/_components/demos/tabs/TabsDemo.tsx",
   },
+  textarea: {
+    PreviewComponent: TextareaDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaDemo.tsx",
+  },
   toast: {
     PreviewComponent: ToastDemo,
     path: "src/app/docs/_components/demos/toast/ToastDemo.tsx",
@@ -349,10 +354,6 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: ToastLoadingDemo,
     path: "src/app/docs/_components/demos/toast/ToastLoadingDemo.tsx",
   },
-  textarea: {
-    PreviewComponent: TextareaDemo,
-    path: "src/app/docs/_components/demos/textarea/TextareaDemo.tsx",
-  },
   toggle: {
     PreviewComponent: ToggleDemo,
     path: "src/app/docs/_components/demos/toggle/ToggleDemo.tsx",
@@ -364,5 +365,9 @@ export const COMPONENT_PREVIEWS = {
   tooltip: {
     PreviewComponent: TooltipDemo,
     path: "src/app/docs/_components/demos/tooltip/TooltipDemo.tsx",
+  },
+  tracker: {
+    PreviewComponent: TrackerDemo,
+    path: "src/app/docs/_components/demos/tracker/TrackerDemo.tsx",
   },
 };

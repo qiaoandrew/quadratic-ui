@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import * as HoverCardPrimitives from "@radix-ui/react-hover-card";
 
@@ -27,7 +29,7 @@ const Block = ({
       <HoverCardPrimitives.Trigger onClick={() => setOpen(true)} asChild>
         <div
           className={cn(
-            "h-full w-full rounded-[1px] first:rounded-l-[4px] last:rounded-r-[4px]",
+            "h-full w-full rounded-px first:rounded-l-1 last:rounded-r-1",
             color ?? defaultBackgroundColor,
           )}
         />
@@ -38,7 +40,7 @@ const Block = ({
           side="top"
           align="center"
           avoidCollisions
-          className="w-auto rounded-1.5 bg-background px-2 py-1 text-3.5 text-foreground"
+          className="w-auto rounded-1.5 bg-foreground px-2 py-1 text-3.5 text-background"
         >
           {tooltip}
         </HoverCardPrimitives.Content>

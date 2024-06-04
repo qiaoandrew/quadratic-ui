@@ -44,4 +44,5 @@ export const COMPONENT_SOURCES = {
   toggle: "src/components/ui/Toggle.tsx",
   "toggle-group": "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
+  tracker: "src/components/ui/Tracker.tsx",
 };
