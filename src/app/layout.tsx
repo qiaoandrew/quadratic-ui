@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("font-sans", GeistMono.variable)}
+      className={cn("font-sans antialiased", GeistMono.variable)}
       suppressHydrationWarning
     >
       <body>
