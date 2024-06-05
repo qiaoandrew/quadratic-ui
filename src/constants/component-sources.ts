@@ -29,6 +29,7 @@ export const COMPONENT_SOURCES = {
   pagination: "src/components/ui/Pagination.tsx",
   popover: "src/components/ui/Popover.tsx",
   "progress-bar": "src/components/ui/ProgressBar.tsx",
+  "progress-circle": "src/components/ui/ProgressCircle.tsx",
   "radio-group": "src/components/ui/RadioGroup.tsx",
   resizable: "src/components/ui/Resizable.tsx",
   "scroll-area": "src/components/ui/ScrollArea.tsx",

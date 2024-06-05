@@ -9,15 +9,14 @@ interface TrackerBlockProps {
   key?: string | number;
   color?: string;
   tooltip?: string;
+  defaultBackgroundColor?: string;
 }
 
-const Block = ({
+const TrackerBlock = ({
   color,
   tooltip,
   defaultBackgroundColor,
-}: TrackerBlockProps & {
-  defaultBackgroundColor?: string;
-}) => {
+}: TrackerBlockProps) => {
   const [open, setOpen] = React.useState(false);
   return (
     <HoverCardPrimitives.Root
@@ -48,7 +47,7 @@ const Block = ({
     </HoverCardPrimitives.Root>
   );
 };
-Block.displayName = "Tracker";
+TrackerBlock.displayName = "Tracker";
 
 interface TrackerProps extends React.HTMLAttributes<HTMLDivElement> {
   data: TrackerBlockProps[];
@@ -70,7 +69,7 @@ const Tracker = React.forwardRef<HTMLDivElement, TrackerProps>(
         {...props}
       >
         {data.map((props, index) => (
-          <Block
+          <TrackerBlock
             key={props.key ?? index}
             defaultBackgroundColor={defaultBackgroundColor}
             {...props}

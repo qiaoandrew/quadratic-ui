@@ -25,6 +25,7 @@ export default function RootLayout({
       className={cn("font-sans antialiased", GeistMono.variable)}
       suppressHydrationWarning
     >
+      <head />
       <body>
         <ThemeProvider
           defaultTheme="dark"
