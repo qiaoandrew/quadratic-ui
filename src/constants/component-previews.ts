@@ -12,6 +12,7 @@ import BadgeWarningDemo from "~/app/docs/_components/demos/badge/BadgeWarningDem
 import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWarningOutlineDemo";
 import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
+import BarListDemo from "~/app/docs/_components/demos/bar-list/BarListDemo";
 import ButtonDemo from "~/app/docs/_components/demos/button/ButtonDemo";
 import ButtonSecondaryDemo from "~/app/docs/_components/demos/button/ButtonSecondaryDemo";
 import ButtonOutlineDemo from "~/app/docs/_components/demos/button/ButtonOutlineDemo";
@@ -126,6 +127,10 @@ export const COMPONENT_PREVIEWS = {
   "badge-success-outline": {
     PreviewComponent: BadgeSuccessOutlineDemo,
     path: "src/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo.tsx",
+  },
+  "bar-list": {
+    PreviewComponent: BarListDemo,
+    path: "src/app/docs/_components/demos/bar-list/BarListDemo.tsx",
   },
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,

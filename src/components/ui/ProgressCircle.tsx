@@ -1,8 +1,6 @@
 "use client";
 
-// Tremor Raw ProgressCircle [v0.0.0]
-
-import React from "react";
+import * as React from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 import { cn } from "~/utils/tailwind";
@@ -76,7 +74,7 @@ const ProgressCircle = React.forwardRef<SVGSVGElement, ProgressCircleProps>(
 
     return (
       <>
-        <div className={cn("relative")}>
+        <div className="relative">
           <svg
             ref={forwardedRef}
             width={radius * 2}
@@ -98,10 +96,9 @@ const ProgressCircle = React.forwardRef<SVGSVGElement, ProgressCircleProps>(
               cy={radius}
               strokeWidth={strokeWidth}
               fill="transparent"
-              stroke=""
               strokeLinecap="round"
               className={cn("transition-colors ease-linear", background())}
-            ></circle>
+            />
             {safeValue >= 0 ? (
               <circle
                 r={normalizedRadius}
@@ -111,19 +108,16 @@ const ProgressCircle = React.forwardRef<SVGSVGElement, ProgressCircleProps>(
                 strokeDasharray={`${circumference} ${circumference}`}
                 strokeDashoffset={offset}
                 fill="transparent"
-                stroke=""
                 strokeLinecap="round"
                 className={cn(
                   "transition-colors ease-linear",
                   focus(),
                   showAnimation && "transition-all duration-300 ease-in-out",
                 )}
-              ></circle>
+              />
             ) : null}
           </svg>
-          <div
-            className={cn("absolute inset-0 flex items-center justify-center")}
-          >
+          <div className="absolute inset-0 flex items-center justify-center">
             {children}
           </div>
         </div>

@@ -4,6 +4,7 @@ export const COMPONENT_SOURCES = {
   "aspect-ratio": "src/components/ui/AspectRatio.tsx",
   avatar: "src/components/ui/Avatar.tsx",
   badge: "src/components/ui/Badge.tsx",
+  "bar-list": "src/components/ui/BarList.tsx",
   breadcrumb: "src/components/ui/Breadcrumb.tsx",
   button: "src/components/ui/Button.tsx",
   calendar: "src/components/ui/Calendar.tsx",
