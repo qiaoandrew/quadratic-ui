@@ -17,18 +17,19 @@ const TrackerBlock = ({
   tooltip,
   defaultBackgroundColor,
 }: TrackerBlockProps) => {
-  const [open, setOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <HoverCardPrimitives.Root
-      open={open}
-      onOpenChange={setOpen}
+      open={isOpen}
+      onOpenChange={setIsOpen}
       openDelay={0}
       closeDelay={0}
     >
-      <HoverCardPrimitives.Trigger onClick={() => setOpen(true)} asChild>
+      <HoverCardPrimitives.Trigger onClick={() => setIsOpen(true)} asChild>
         <div
           className={cn(
-            "h-full w-full rounded-px first:rounded-l-1 last:rounded-r-1",
+            "size-full rounded-px first:rounded-l-1 last:rounded-r-1",
             color ?? defaultBackgroundColor,
           )}
         />
@@ -57,15 +58,12 @@ interface TrackerProps extends React.HTMLAttributes<HTMLDivElement> {
 const Tracker = React.forwardRef<HTMLDivElement, TrackerProps>(
   (
     { data = [], defaultBackgroundColor = "bg-accent", className, ...props },
-    forwardedRef,
+    ref,
   ) => {
     return (
       <div
-        ref={forwardedRef}
-        className={cn(
-          "flex h-10 w-full items-center gap-px sm:gap-0.5",
-          className,
-        )}
+        ref={ref}
+        className={cn("flex h-10 w-full items-center gap-x-0.5", className)}
         {...props}
       >
         {data.map((props, index) => (

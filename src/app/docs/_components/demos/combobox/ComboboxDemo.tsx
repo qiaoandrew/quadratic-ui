@@ -44,16 +44,16 @@ const FRAMEWORKS = [
 ];
 
 export default function ComboboxDemo() {
-  const [open, setOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <Button
           variant="outline"
           role="combobox"
-          aria-expanded={open}
+          aria-expanded={isOpen}
           className="w-[200px] justify-between"
         >
           {value
@@ -79,7 +79,7 @@ export default function ComboboxDemo() {
                   value={framework.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue);
-                    setOpen(false);
+                    setIsOpen(false);
                   }}
                   className="rounded-1 px-2 py-1.5 text-3.5"
                 >

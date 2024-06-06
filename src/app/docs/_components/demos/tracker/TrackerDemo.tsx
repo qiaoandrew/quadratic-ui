@@ -43,11 +43,6 @@ const DATA = [
   { color: "bg-emerald-600", tooltip: "Operational" },
   { color: "bg-emerald-600", tooltip: "Operational" },
   { color: "bg-emerald-600", tooltip: "Operational" },
-  { color: "bg-emerald-600", tooltip: "Operational" },
-  { color: "bg-emerald-600", tooltip: "Operational" },
-  { color: "bg-emerald-600", tooltip: "Operational" },
-  { color: "bg-emerald-600", tooltip: "Operational" },
-  { color: "bg-emerald-600", tooltip: "Operational" },
 ];
 
 export default function TrackerDemo() {
