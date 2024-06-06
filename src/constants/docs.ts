@@ -66,11 +66,6 @@ export const GUIDES_ITEMS: DocItem[] = [
     label: "Customization",
   },
   {
-    id: "t3-setup",
-    href: "/docs/getting-started/t3-setup",
-    label: "T3 App Setup",
-  },
-  {
     id: "contributing",
     href: "/docs/getting-started/contributing",
     label: "Contributing",
