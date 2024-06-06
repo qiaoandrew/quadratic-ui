@@ -63,7 +63,7 @@ const ProgressCircle = React.forwardRef<SVGSVGElement, ProgressCircleProps>(
       children,
       ...props
     }: ProgressCircleProps,
-    forwardedRef,
+    ref,
   ) => {
     const safeValue = Math.min(max, Math.max(value, 0));
     const normalizedRadius = radius - strokeWidth / 2;
@@ -76,7 +76,7 @@ const ProgressCircle = React.forwardRef<SVGSVGElement, ProgressCircleProps>(
       <>
         <div className="relative">
           <svg
-            ref={forwardedRef}
+            ref={ref}
             width={radius * 2}
             height={radius * 2}
             viewBox={`0 0 ${radius * 2} ${radius * 2}`}
@@ -112,7 +112,7 @@ const ProgressCircle = React.forwardRef<SVGSVGElement, ProgressCircleProps>(
                 className={cn(
                   "transition-colors ease-linear",
                   focus(),
-                  showAnimation && "transition-all duration-300 ease-in-out",
+                  showAnimation && "transition-all ease-in-out",
                 )}
               />
             ) : null}
