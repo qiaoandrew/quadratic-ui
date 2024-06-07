@@ -9,5 +9,11 @@ const DATA = [
 ];
 
 export default function BarListDemo() {
-  return <BarList data={DATA} sortOrder="descending" className="w-full" />;
+  return (
+    <BarList
+      data={DATA}
+      sortOrder="descending"
+      className="w-full max-w-[500px]"
+    />
+  );
 }

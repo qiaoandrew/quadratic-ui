@@ -20,7 +20,81 @@ interface BarListProps<T = unknown>
   sortOrder?: "ascending" | "descending" | "none";
 }
 
-function BarListInner<T>(
+const BarItem = <T,>({
+  item,
+  width,
+  showAnimation,
+  onValueChange,
+}: {
+  item: Bar<T>;
+  width: number;
+  showAnimation: boolean;
+  onValueChange?: (payload: Bar<T>) => void;
+}) => {
+  const Component = onValueChange ? "button" : "div";
+
+  return (
+    <Component
+      key={item.key ?? item.name}
+      onClick={() => onValueChange?.(item)}
+      className={cn(
+        "group w-full",
+        "outline outline-0 outline-offset-2 outline-blue-500 focus-visible:outline-2 dark:outline-blue-500",
+        onValueChange &&
+          "cursor-pointer hover:bg-gray-50 hover:dark:bg-gray-900",
+      )}
+    >
+      <div
+        className={cn(
+          "flex h-8 items-center rounded-1 bg-blue-200 transition-all dark:bg-blue-900",
+          onValueChange &&
+            "group-hover:bg-blue-300 group-hover:dark:bg-blue-800",
+          showAnimation && "duration-800",
+        )}
+        style={{ width: `${width}%` }}
+      >
+        <div className="absolute left-2 flex max-w-full">
+          {item.href ? (
+            <a
+              href={item.href}
+              className={cn(
+                "rounded truncate whitespace-nowrap text-3.5 text-gray-900 outline outline-0 outline-offset-2 outline-blue-500",
+                "dark:text-gray-50 dark:outline-blue-500",
+                "hover:underline hover:underline-offset-2",
+                "focus-visible:outline-2",
+              )}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(event) => event.stopPropagation()}
+            >
+              {item.name}
+            </a>
+          ) : (
+            <p className="truncate whitespace-nowrap text-3.5 text-foreground">
+              {item.name}
+            </p>
+          )}
+        </div>
+      </div>
+    </Component>
+  );
+};
+
+const BarLabel = <T,>({
+  item,
+  valueFormatter,
+}: {
+  item: Bar<T>;
+  valueFormatter: (value: number) => string;
+}) => (
+  <div className="mb-1.5 flex h-8 items-center justify-end">
+    <p className="truncate whitespace-nowrap text-3.5 text-foreground">
+      {valueFormatter(item.value)}
+    </p>
+  </div>
+);
+
+const BarListInner = <T,>(
   {
     data = [],
     valueFormatter = (value) => value.toString(),
@@ -30,16 +104,14 @@ function BarListInner<T>(
     className,
     ...props
   }: BarListProps<T>,
-  forwardedRef: React.ForwardedRef<HTMLDivElement>,
-) {
-  const Component = onValueChange ? "button" : "div";
+  ref: React.ForwardedRef<HTMLDivElement>,
+) => {
   const sortedData = React.useMemo(() => {
-    if (sortOrder === "none") {
-      return data;
-    }
-    return [...data].sort((a, b) => {
-      return sortOrder === "ascending" ? a.value - b.value : b.value - a.value;
-    });
+    if (sortOrder === "none") return data;
+
+    return [...data].sort((a, b) =>
+      sortOrder === "ascending" ? a.value - b.value : b.value - a.value,
+    );
   }, [data, sortOrder]);
 
   const widths = React.useMemo(() => {
@@ -49,98 +121,36 @@ function BarListInner<T>(
     );
   }, [sortedData]);
 
-  const rowHeight = "h-8";
-
   return (
     <div
-      ref={forwardedRef}
-      className={cn("flex justify-between space-x-6", className)}
+      ref={ref}
+      className={cn("flex justify-between gap-x-6", className)}
       aria-sort={sortOrder}
       {...props}
     >
-      <div className="relative w-full space-y-1.5">
+      <div className="relative flex w-full flex-col gap-y-1.5">
         {sortedData.map((item, index) => (
-          <Component
+          <BarItem
             key={item.key ?? item.name}
-            onClick={() => {
-              onValueChange?.(item);
-            }}
-            className={cn(
-              "rounded group w-full",
-              "outline outline-0 outline-offset-2 outline-blue-500 focus-visible:outline-2 dark:outline-blue-500",
-              onValueChange &&
-                "!-m-0 cursor-pointer hover:bg-gray-50 hover:dark:bg-gray-900",
-            )}
-          >
-            <div
-              className={cn(
-                "rounded flex items-center bg-blue-200 transition-all dark:bg-blue-900",
-                rowHeight,
-                onValueChange
-                  ? "group-hover:bg-blue-300 group-hover:dark:bg-blue-800"
-                  : "",
-                {
-                  "mb-0": index === sortedData.length - 1,
-                  "duration-800": showAnimation,
-                },
-              )}
-              style={{ width: `${widths[index]}%` }}
-            >
-              <div className="absolute left-2 flex max-w-full pr-2">
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    className={cn(
-                      "rounded text-sm truncate whitespace-nowrap",
-                      "text-gray-900 dark:text-gray-50",
-                      "hover:underline hover:underline-offset-2",
-                      "outline outline-0 outline-offset-2 outline-blue-500 focus-visible:outline-2 dark:outline-blue-500",
-                    )}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(event) => event.stopPropagation()}
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <p
-                    className={cn(
-                      "text-sm truncate whitespace-nowrap",
-                      "text-gray-900 dark:text-gray-50",
-                    )}
-                  >
-                    {item.name}
-                  </p>
-                )}
-              </div>
-            </div>
-          </Component>
+            item={item}
+            width={widths[index]!}
+            showAnimation={showAnimation}
+            onValueChange={onValueChange}
+          />
         ))}
       </div>
       <div>
-        {sortedData.map((item, index) => (
-          <div
+        {sortedData.map((item) => (
+          <BarLabel
             key={item.key ?? item.name}
-            className={cn(
-              "flex items-center justify-end",
-              rowHeight,
-              index === sortedData.length - 1 ? "mb-0" : "mb-1.5",
-            )}
-          >
-            <p
-              className={cn(
-                "text-sm leading-none truncate whitespace-nowrap",
-                "text-gray-900 dark:text-gray-50",
-              )}
-            >
-              {valueFormatter(item.value)}
-            </p>
-          </div>
+            item={item}
+            valueFormatter={valueFormatter}
+          />
         ))}
       </div>
     </div>
   );
-}
+};
 
 BarListInner.displayName = "BarList";
 
