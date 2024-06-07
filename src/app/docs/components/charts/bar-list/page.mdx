@@ -12,13 +12,6 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 ## Installation
 <Steps>
 
-<StepTitle>Install the following dependencies:</StepTitle>
-<StepContent>
-```bash
-pnpm add @radix-ui/react-progress
-```
-</StepContent>
-
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
 <ComponentSource id="bar-list" />
@@ -30,10 +23,10 @@ pnpm add @radix-ui/react-progress
 
 ## Usage
 ```tsx
-import { ProgressBar } from "~/components/ui/ProgressBar";
+import { BarList } from "~/components/ui/BarList";
 ```
 ```tsx
-<ProgressBar value={33} />
+<BarList data={DATA} sortOrder="descending" className="w-[120px]" />
 ```
 
 <Footer previousLabel="Popover" previousHref="/docs/components/primitives/popover" nextLabel="Radio Group" nextHref="/docs/components/primitives/radio-group" />
