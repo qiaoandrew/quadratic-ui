@@ -5,9 +5,9 @@ import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
 import Footer from "~/app/docs/_components/mdx/Footer";
 
-<Title>Popover</Title>
-<Description>Displays rich content in a portal, triggered by a button.</Description>
-<ComponentPreview id="popover" />
+<Title>Progress Bar</Title>
+<Description>Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.</Description>
+<ComponentPreview id="progress-bar" />
 
 ## Installation
 <Steps>
@@ -15,13 +15,13 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
-pnpm add @radix-ui/react-popover
+pnpm add @radix-ui/react-progress
 ```
 </StepContent>
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="popover" />
+<ComponentSource id="progress-bar" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,17 +30,10 @@ pnpm add @radix-ui/react-popover
 
 ## Usage
 ```tsx
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "~/components/ui/Popover";
+import { ProgressBar } from "~/components/ui/ProgressBar";
 ```
 ```tsx
-<Popover>
-  <PopoverTrigger>Open</PopoverTrigger>
-  <PopoverContent>Place content for the popover here.</PopoverContent>
-</Popover>
+<ProgressBar value={33} />
 ```
 
-<Footer previousLabel="Pagination" previousHref="/docs/components/primitives/pagination" nextLabel="Progress Bar" nextHref="/docs/components/primitives/progress-bar" />
+<Footer previousLabel="Popover" previousHref="/docs/components/primitives/popover" nextLabel="Radio Group" nextHref="/docs/components/primitives/radio-group" />

@@ -62,7 +62,16 @@ export const getComponentsMenuItems = async () => {
     })),
   );
 
-  return { primitivesMenuItems, compositesMenuItems };
+  const charts = await readDirectory("src/app/docs/components/charts");
+  const chartsMenuItems = await Promise.all(
+    charts.map(async (name) => ({
+      id: name,
+      href: `/docs/components/charts/${name}`,
+      label: formatLabel(name),
+    })),
+  );
+
+  return { primitivesMenuItems, compositesMenuItems, chartsMenuItems };
 };
 
 export const getTOCs = async () => {
@@ -95,6 +104,16 @@ export const getTOCs = async () => {
       const content = await readFile(filePath);
       const toc = extractSectionIds(content);
       tocs[`components/composites/${composite}`] = toc;
+    }),
+  );
+
+  const charts = await readDirectory("src/app/docs/components/charts");
+  await Promise.all(
+    charts.map(async (chart) => {
+      const filePath = `src/app/docs/components/charts/${chart}/page.mdx`;
+      const content = await readFile(filePath);
+      const toc = extractSectionIds(content);
+      tocs[`components/charts/${chart}`] = toc;
     }),
   );
 

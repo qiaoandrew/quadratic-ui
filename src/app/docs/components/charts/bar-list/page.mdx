@@ -1,0 +1,32 @@
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import ComponentPreview from "~/app/docs/_components/mdx/ComponentPreview";
+import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>Bar List</Title>
+<Description>Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.</Description>
+<ComponentPreview id="bar-list" />
+
+## Installation
+<Steps>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<ComponentSource id="bar-list" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { BarList } from "~/components/ui/BarList";
+```
+```tsx
+<BarList data={DATA} sortOrder="descending" className="w-[120px]" />
+```
+
+<Footer previousLabel="Popover" previousHref="/docs/components/primitives/popover" nextLabel="Radio Group" nextHref="/docs/components/primitives/radio-group" />

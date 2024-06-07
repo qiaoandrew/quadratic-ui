@@ -5,9 +5,9 @@ import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
 import Footer from "~/app/docs/_components/mdx/Footer";
 
-<Title>Popover</Title>
-<Description>Displays rich content in a portal, triggered by a button.</Description>
-<ComponentPreview id="popover" />
+<Title>Tracker</Title>
+<Description>Component for visualizing data related to monitoring.</Description>
+<ComponentPreview id="tracker" />
 
 ## Installation
 <Steps>
@@ -15,13 +15,13 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
-pnpm add @radix-ui/react-popover
+pnpm add @radix-ui/react-hover-card
 ```
 </StepContent>
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="popover" />
+<ComponentSource id="tracker" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -30,17 +30,12 @@ pnpm add @radix-ui/react-popover
 
 ## Usage
 ```tsx
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "~/components/ui/Popover";
+import { Tracker } from "~/components/ui/Tracker";
 ```
 ```tsx
-<Popover>
-  <PopoverTrigger>Open</PopoverTrigger>
-  <PopoverContent>Place content for the popover here.</PopoverContent>
-</Popover>
+export default function TrackerDemo() {
+  return <Tracker data={[{ color: "bg-emerald-600", tooltip: "Operational" }]} />;
+}
 ```
 
-<Footer previousLabel="Pagination" previousHref="/docs/components/primitives/pagination" nextLabel="Progress Bar" nextHref="/docs/components/primitives/progress-bar" />
+<Footer previousLabel="Popover" previousHref="/docs/components/primitives/popover" nextLabel="Radio Group" nextHref="/docs/components/primitives/radio-group" />

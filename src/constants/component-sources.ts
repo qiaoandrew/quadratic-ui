@@ -4,6 +4,7 @@ export const COMPONENT_SOURCES = {
   "aspect-ratio": "src/components/ui/AspectRatio.tsx",
   avatar: "src/components/ui/Avatar.tsx",
   badge: "src/components/ui/Badge.tsx",
+  "bar-list": "src/components/ui/BarList.tsx",
   breadcrumb: "src/components/ui/Breadcrumb.tsx",
   button: "src/components/ui/Button.tsx",
   calendar: "src/components/ui/Calendar.tsx",
@@ -28,7 +29,8 @@ export const COMPONENT_SOURCES = {
   "navigation-menu": "src/components/ui/NavigationMenu.tsx",
   pagination: "src/components/ui/Pagination.tsx",
   popover: "src/components/ui/Popover.tsx",
-  progress: "src/components/ui/Progress.tsx",
+  "progress-bar": "src/components/ui/ProgressBar.tsx",
+  "progress-circle": "src/components/ui/ProgressCircle.tsx",
   "radio-group": "src/components/ui/RadioGroup.tsx",
   resizable: "src/components/ui/Resizable.tsx",
   "scroll-area": "src/components/ui/ScrollArea.tsx",
@@ -44,4 +46,5 @@ export const COMPONENT_SOURCES = {
   toggle: "src/components/ui/Toggle.tsx",
   "toggle-group": "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
+  tracker: "src/components/ui/Tracker.tsx",
 };
