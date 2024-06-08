@@ -35,8 +35,8 @@ SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 const sheetVariants = cva(
   cn(
     "fixed z-50 bg-background p-6 transition ease-in-out gap-y-6 flex flex-col",
-    "data-[state=open]:animate-in data-[state=open]:duration-200",
-    "data-[state=closed]:animate-out data-[state=closed]:duration-200",
+    "data-[state=open]:animate-in data-[state=open]:duration-150",
+    "data-[state=closed]:animate-out data-[state=closed]:duration-150",
   ),
   {
     variants: {

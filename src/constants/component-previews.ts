@@ -59,6 +59,7 @@ import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaD
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import SeparatorDemo from "~/app/docs/_components/demos/separator/SeparatorDemo";
 import SheetDemo from "~/app/docs/_components/demos/sheet/SheetDemo";
+import SheetSideDemo from "~/app/docs/_components/demos/sheet/SheetSideDemo";
 import SkeletonDemo from "~/app/docs/_components/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/app/docs/_components/demos/slider/SliderDemo";
 import SwitchDemo from "~/app/docs/_components/demos/switch/SwitchDemo";
@@ -330,6 +331,10 @@ export const COMPONENT_PREVIEWS = {
   sheet: {
     PreviewComponent: SheetDemo,
     path: "src/app/docs/_components/demos/sheet/SheetDemo.tsx",
+  },
+  "sheet-side": {
+    PreviewComponent: SheetSideDemo,
+    path: "src/app/docs/_components/demos/sheet/SheetSideDemo.tsx",
   },
   skeleton: {
     PreviewComponent: SkeletonDemo,
