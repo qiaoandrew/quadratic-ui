@@ -3,7 +3,14 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { ComponentIcon, MoonIcon, SearchIcon, SunIcon } from "lucide-react";
+import {
+  BarChart2Icon,
+  ComponentIcon,
+  DiamondIcon,
+  MoonIcon,
+  SearchIcon,
+  SunIcon,
+} from "lucide-react";
 
 import { Shortcut } from "~/components/ui/Shortcut";
 import {
@@ -21,11 +28,13 @@ import type { DocItem } from "~/types/types";
 interface CommandMenu {
   primitivesMenuItems: DocItem[];
   compositesMenuItems: DocItem[];
+  chartsMenuItems: DocItem[];
 }
 
 export default function CommandMenu({
   primitivesMenuItems,
   compositesMenuItems,
+  chartsMenuItems,
 }: CommandMenu) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -77,7 +86,7 @@ export default function CommandMenu({
                 key={item.id}
                 onSelect={() => router.push(item.href)}
               >
-                <ComponentIcon size={18} className="mr-2" />
+                <DiamondIcon size={18} className="mr-2" />
                 {item.label}
               </CommandItem>
             ))}
@@ -89,6 +98,17 @@ export default function CommandMenu({
                 onSelect={() => router.push(item.href)}
               >
                 <ComponentIcon size={18} className="mr-2" />
+                {item.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Charts">
+            {chartsMenuItems.map((item) => (
+              <CommandItem
+                key={item.id}
+                onSelect={() => router.push(item.href)}
+              >
+                <BarChart2Icon size={18} className="mr-2" />
                 {item.label}
               </CommandItem>
             ))}

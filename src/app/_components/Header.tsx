@@ -7,7 +7,7 @@ import DocMenuMobileSheet from "../docs/_components/navigation/DocMenuMobileShee
 import { getComponentsMenuItems } from "~/utils/docs";
 
 export default async function Header() {
-  const { primitivesMenuItems, compositesMenuItems } =
+  const { primitivesMenuItems, compositesMenuItems, chartsMenuItems } =
     await getComponentsMenuItems();
 
   return (
@@ -21,6 +21,7 @@ export default async function Header() {
           <CommandMenu
             primitivesMenuItems={primitivesMenuItems}
             compositesMenuItems={compositesMenuItems}
+            chartsMenuItems={chartsMenuItems}
           />
           <ThemeToggle />
           <DocMenuMobileSheet />
