@@ -7,7 +7,7 @@ interface DocLinksProps {
 }
 
 const DocLinks = ({ children }: DocLinksProps) => {
-  return <div className="mb-10 flex flex-wrap gap-4">{children}</div>;
+  return <div className="mb-12 flex flex-wrap gap-4">{children}</div>;
 };
 
 interface DocLinkProps {
