@@ -55,6 +55,8 @@ import ProgressBarDemo from "~/app/docs/_components/demos/progress-bar/ProgressB
 import ProgressCircleDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
+import ResizableVerticalDemo from "~/app/docs/_components/demos/resizable/ResizableVerticalDemo";
+import ResizableHandleDemo from "~/app/docs/_components/demos/resizable/ResizableHandleDemo";
 import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaDemo";
 import ScrollAreaHorizontalDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaHorizontalDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
@@ -317,6 +319,14 @@ export const COMPONENT_PREVIEWS = {
   resizable: {
     PreviewComponent: ResizableDemo,
     path: "src/app/docs/_components/demos/resizable/ResizableDemo.tsx",
+  },
+  "resizable-vertical": {
+    PreviewComponent: ResizableVerticalDemo,
+    path: "src/app/docs/_components/demos/resizable/ResizableVerticalDemo.tsx",
+  },
+  "resizable-handle": {
+    PreviewComponent: ResizableHandleDemo,
+    path: "src/app/docs/_components/demos/resizable/ResizableHandleDemo.tsx",
   },
   "scroll-area": {
     PreviewComponent: ScrollAreaDemo,
