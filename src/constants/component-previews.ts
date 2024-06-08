@@ -42,6 +42,8 @@ import DatePickerDemo from "~/app/docs/_components/demos/date-picker/DatePickerD
 import DialogDemo from "~/app/docs/_components/demos/dialog/DialogDemo";
 import DrawerDemo from "~/app/docs/_components/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/app/docs/_components/demos/dropdown-menu/DropdownMenuDemo";
+import DropdownMenuCheckboxDemo from "~/app/docs/_components/demos/dropdown-menu/DropdownMenuCheckboxDemo";
+import DropdownMenuRadioGroupDemo from "~/app/docs/_components/demos/dropdown-menu/DropdownMenuRadioGroupDemo";
 import FormDemo from "~/app/docs/_components/demos/form/FormDemo";
 import HoverCardDemo from "~/app/docs/_components/demos/hover-card/HoverCardDemo";
 import InputDemo from "~/app/docs/_components/demos/input/InputDemo";
@@ -267,6 +269,14 @@ export const COMPONENT_PREVIEWS = {
   "dropdown-menu": {
     PreviewComponent: DropdownMenuDemo,
     path: "src/app/docs/_components/demos/dropdown-menu/DropdownMenuDemo.tsx",
+  },
+  "dropdown-menu-checkbox": {
+    PreviewComponent: DropdownMenuCheckboxDemo,
+    path: "src/app/docs/_components/demos/dropdown-menu/DropdownMenuCheckboxDemo.tsx",
+  },
+  "dropdown-menu-radio-group": {
+    PreviewComponent: DropdownMenuRadioGroupDemo,
+    path: "src/app/docs/_components/demos/dropdown-menu/DropdownMenuRadioGroupDemo.tsx",
   },
   form: {
     PreviewComponent: FormDemo,
