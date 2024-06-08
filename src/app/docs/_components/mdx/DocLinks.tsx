@@ -1,13 +1,18 @@
 import { Button } from "~/components/ui/Button";
 
+import { cn } from "~/utils/tailwind";
 import { DOC_LINKS_ICONS } from "~/constants/docs";
 
 interface DocLinksProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const DocLinks = ({ children }: DocLinksProps) => {
-  return <div className="mb-12 flex flex-wrap gap-4">{children}</div>;
+  return (
+    <div className={cn("mb-12 flex flex-wrap gap-4", children && "mt-5")}>
+      {children}
+    </div>
+  );
 };
 
 interface DocLinkProps {
