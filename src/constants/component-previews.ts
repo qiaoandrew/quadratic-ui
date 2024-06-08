@@ -56,6 +56,7 @@ import ProgressCircleDemo from "~/app/docs/_components/demos/progress-circle/Pro
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaDemo";
+import ScrollAreaHorizontalDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaHorizontalDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import SelectScrollableDemo from "~/app/docs/_components/demos/select/SelectScrollableDemo";
 import SeparatorDemo from "~/app/docs/_components/demos/separator/SeparatorDemo";
@@ -320,6 +321,10 @@ export const COMPONENT_PREVIEWS = {
   "scroll-area": {
     PreviewComponent: ScrollAreaDemo,
     path: "src/app/docs/_components/demos/scroll-area/ScrollAreaDemo.tsx",
+  },
+  "scroll-area-horizontal": {
+    PreviewComponent: ScrollAreaHorizontalDemo,
+    path: "src/app/docs/_components/demos/scroll-area/ScrollAreaHorizontalDemo.tsx",
   },
   select: {
     PreviewComponent: SelectDemo,
