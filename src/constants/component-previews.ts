@@ -72,6 +72,11 @@ import ToastActionDemo from "~/app/docs/_components/demos/toast/ToastActionDemo"
 import ToastCancelDemo from "~/app/docs/_components/demos/toast/ToastCancelDemo";
 import ToastLoadingDemo from "~/app/docs/_components/demos/toast/ToastLoadingDemo";
 import ToggleDemo from "~/app/docs/_components/demos/toggle/ToggleDemo";
+import ToggleOutlineDemo from "~/app/docs/_components/demos/toggle/ToggleOutlineDemo";
+import ToggleWithTextDemo from "~/app/docs/_components/demos/toggle/ToggleWithTextDemo";
+import ToggleSmallDemo from "~/app/docs/_components/demos/toggle/ToggleSmallDemo";
+import ToggleLargeDemo from "~/app/docs/_components/demos/toggle/ToggleLargeDemo";
+import ToggleDisabledDemo from "~/app/docs/_components/demos/toggle/ToggleDisabledDemo";
 import ToggleGroupDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupDemo";
 import ToggleGroupOutlineDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupOutlineDemo";
 import ToggleGroupSingleDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupSingleDemo";
@@ -377,6 +382,26 @@ export const COMPONENT_PREVIEWS = {
   toggle: {
     PreviewComponent: ToggleDemo,
     path: "src/app/docs/_components/demos/toggle/ToggleDemo.tsx",
+  },
+  "toggle-outline": {
+    PreviewComponent: ToggleOutlineDemo,
+    path: "src/app/docs/_components/demos/toggle/ToggleOutlineDemo.tsx",
+  },
+  "toggle-with-text": {
+    PreviewComponent: ToggleWithTextDemo,
+    path: "src/app/docs/_components/demos/toggle/ToggleWithTextDemo.tsx",
+  },
+  "toggle-small": {
+    PreviewComponent: ToggleSmallDemo,
+    path: "src/app/docs/_components/demos/toggle/ToggleSmallDemo.tsx",
+  },
+  "toggle-large": {
+    PreviewComponent: ToggleLargeDemo,
+    path: "src/app/docs/_components/demos/toggle/ToggleLargeDemo.tsx",
+  },
+  "toggle-disabled": {
+    PreviewComponent: ToggleDisabledDemo,
+    path: "src/app/docs/_components/demos/toggle/ToggleDisabledDemo.tsx",
   },
   "toggle-group": {
     PreviewComponent: ToggleGroupDemo,
