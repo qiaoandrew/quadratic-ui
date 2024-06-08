@@ -1,5 +1,6 @@
 import Title from "~/app/docs/_components/mdx/Title";
 import Description from "~/app/docs/_components/mdx/Description";
+import { DocLinks, DocLink } from "~/app/docs/_components/mdx/DocLinks";
 import ComponentPreview from "~/app/docs/_components/mdx/ComponentPreview";
 import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
@@ -7,6 +8,10 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 
 <Title>Toggle Group</Title>
 <Description>A set of two-state buttons that can be toggled on or off.</Description>
+<DocLinks>
+  <DocLink href="https://www.radix-ui.com/docs/primitives/components/toggle-group" icon="file-code-2">Docs</DocLink>
+  <DocLink href="https://www.radix-ui.com/docs/primitives/components/toggle-group#api-reference" icon="code-xml">API Reference</DocLink>
+</DocLinks>
 <ComponentPreview id="toggle-group" />
 
 ## Installation
@@ -39,5 +44,25 @@ import { ToggleGroup, ToggleGroupItem } from "~/components/ui/ToggleGroup";
   <ToggleGroupItem value="c">C</ToggleGroupItem>
 </ToggleGroup>
 ```
+
+## Examples
+
+### Default
+<ComponentPreview id="toggle-group" />
+
+### Outline
+<ComponentPreview id="toggle-group-outline" />
+
+### Single
+<ComponentPreview id="toggle-group-single" />
+
+### Small
+<ComponentPreview id="toggle-group-small" />
+
+### Large
+<ComponentPreview id="toggle-group-large" />
+
+### Disabled
+<ComponentPreview id="toggle-group-disabled" />
 
 <Footer previousLabel="Toggle" previousHref="/docs/components/primitives/toggle" nextLabel="Tooltip" nextHref="/docs/components/primitives/tooltip" />

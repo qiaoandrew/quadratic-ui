@@ -1,10 +1,13 @@
 import {
+  type LucideIcon,
   RocketIcon,
   ComponentIcon,
   GithubIcon,
   FigmaIcon,
   CircleCheckIcon,
   SmileIcon,
+  CodeXmlIcon,
+  FileCode2,
 } from "lucide-react";
 
 import type { DocItem, DocGroup } from "~/types/types";
@@ -71,3 +74,8 @@ export const GUIDES_ITEMS: DocItem[] = [
     label: "Contributing",
   },
 ];
+
+export const DOC_LINKS_ICONS: Record<string, LucideIcon> = {
+  "code-xml": CodeXmlIcon,
+  "file-code-2": FileCode2,
+};

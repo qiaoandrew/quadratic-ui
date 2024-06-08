@@ -3,5 +3,5 @@ interface DescriptionProps {
 }
 
 export default function Description({ children }: DescriptionProps) {
-  return <p className="mb-9 mt-2 text-4.5 text-foreground/80">{children}</p>;
+  return <p className="mt-2 text-4.5 text-foreground/80">{children}</p>;
 }

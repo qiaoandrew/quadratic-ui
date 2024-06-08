@@ -64,7 +64,7 @@ const NavigationMenuTrigger = React.forwardRef<
   >
     {children}{" "}
     <ChevronDown
-      className="relative ml-1.5 transition-transform duration-200 group-data-[state=open]:rotate-180"
+      className="relative ml-1.5 transition-transform duration-150 group-data-[state=open]:rotate-180"
       size={14}
       aria-hidden="true"
     />

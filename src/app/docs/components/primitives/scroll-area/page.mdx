@@ -1,5 +1,6 @@
 import Title from "~/app/docs/_components/mdx/Title";
 import Description from "~/app/docs/_components/mdx/Description";
+import { DocLinks, DocLink } from "~/app/docs/_components/mdx/DocLinks";
 import ComponentPreview from "~/app/docs/_components/mdx/ComponentPreview";
 import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
@@ -7,6 +8,10 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 
 <Title>Scroll Area</Title>
 <Description>Augments native scroll functionality for custom, cross-browser styling.</Description>
+<DocLinks>
+  <DocLink href="https://www.radix-ui.com/docs/primitives/components/scroll-area" icon="file-code-2">Docs</DocLink>
+  <DocLink href="https://www.radix-ui.com/docs/primitives/components/scroll-area#api-reference" icon="code-xml">API Reference</DocLink>
+</DocLinks>
 <ComponentPreview id="scroll-area" />
 
 ## Installation
@@ -42,5 +47,10 @@ import { ScrollArea } from "~/components/ui/ScrollArea";
   started laughing, they couldn't stop.
 </ScrollArea>
 ```
+
+## Examples
+
+### Horizontal Scrolling
+<ComponentPreview id="scroll-area-horizontal" />
 
 <Footer previousLabel="Resizable" previousHref="/docs/components/primitives/resizable" nextLabel="Select" nextHref="/docs/components/primitives/select" />
