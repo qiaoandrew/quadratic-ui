@@ -9,7 +9,7 @@ interface DocLinksProps {
 
 const DocLinks = ({ children }: DocLinksProps) => {
   return (
-    <div className={cn("mb-12 flex flex-wrap gap-4", children && "mt-5")}>
+    <div className={cn("mb-10 flex flex-wrap gap-4", children && "mt-5")}>
       {children}
     </div>
   );

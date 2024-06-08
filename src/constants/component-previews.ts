@@ -3,7 +3,6 @@ import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDial
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
 import BadgeDemo from "~/app/docs/_components/demos/badge/BadgeDemo";
-import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
 import BadgeSecondaryDemo from "~/app/docs/_components/demos/badge/BadgeSecondaryDemo";
 import BadgeOutlineDemo from "~/app/docs/_components/demos/badge/BadgeOutlineDemo";
 import BadgeDestructiveDemo from "~/app/docs/_components/demos/badge/BadgeDestructiveDemo";
@@ -13,6 +12,8 @@ import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWar
 import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
 import BarListDemo from "~/app/docs/_components/demos/bar-list/BarListDemo";
+import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
+import BreadcrumbLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbLinkDemo";
 import ButtonDemo from "~/app/docs/_components/demos/button/ButtonDemo";
 import ButtonSecondaryDemo from "~/app/docs/_components/demos/button/ButtonSecondaryDemo";
 import ButtonOutlineDemo from "~/app/docs/_components/demos/button/ButtonOutlineDemo";
@@ -135,6 +136,10 @@ export const COMPONENT_PREVIEWS = {
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,
     path: "src/app/docs/_components/demos/breadcrumb/BreadcrumbDemo.tsx",
+  },
+  "breadcrumb-link": {
+    PreviewComponent: BreadcrumbLinkDemo,
+    path: "src/app/docs/_components/demos/breadcrumb/BreadcrumbLinkDemo.tsx",
   },
   button: {
     PreviewComponent: ButtonDemo,

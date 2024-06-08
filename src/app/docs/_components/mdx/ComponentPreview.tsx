@@ -27,7 +27,7 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
   return (
     <Tabs
       defaultValue="preview"
-      className="mt-4 overflow-visible rounded-3 border"
+      className="mt-6 overflow-visible rounded-3 border"
     >
       <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
         <TabsTrigger value="preview" className={tabsTriggerStyles}>

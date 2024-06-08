@@ -9,10 +9,9 @@ const calloutVariants = cva(
     variants: {
       variant: {
         default: "bg-background text-foreground",
-        destructive:
-          "bg-destructive text-destructive-foreground border-destructive-border",
-        warning: "bg-warning text-warning-foreground border-warning-border",
-        success: "bg-success text-success-foreground border-success-border",
+        destructive: "text-destructive-foreground border-destructive-border",
+        warning: "text-warning-foreground border-warning-border",
+        success: "text-success-foreground border-success-border",
       },
     },
     defaultVariants: {

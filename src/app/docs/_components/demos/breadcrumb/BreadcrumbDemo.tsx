@@ -19,7 +19,7 @@ export default function BreadcrumbDemo() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">Home</BreadcrumbLink>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -29,15 +29,33 @@ export default function BreadcrumbDemo() {
               <span className="sr-only">Toggle menu</span>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="min-w-40">
-              <DropdownMenuItem>Documentation</DropdownMenuItem>
-              <DropdownMenuItem>Themes</DropdownMenuItem>
-              <DropdownMenuItem>GitHub</DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="/docs/getting-started/quickstart">Documentation</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a
+                  href="https://github.com/qiaoandrew/quadratic-ui"
+                  rel="noreferrer noopenner"
+                >
+                  GitHub
+                </a>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <a
+                  href="https://www.figma.com/community/file/1351315753275186770/quadratic-ui"
+                  rel="noreferrer noopenner"
+                >
+                  Figma
+                </a>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">Components</BreadcrumbLink>
+          <BreadcrumbLink href="/docs/components/primitives/accordion">
+            Components
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
