@@ -57,6 +57,7 @@ import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupD
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
+import SelectScrollableDemo from "~/app/docs/_components/demos/select/SelectScrollableDemo";
 import SeparatorDemo from "~/app/docs/_components/demos/separator/SeparatorDemo";
 import SheetDemo from "~/app/docs/_components/demos/sheet/SheetDemo";
 import SheetSideDemo from "~/app/docs/_components/demos/sheet/SheetSideDemo";
@@ -323,6 +324,10 @@ export const COMPONENT_PREVIEWS = {
   select: {
     PreviewComponent: SelectDemo,
     path: "src/app/docs/_components/demos/select/SelectDemo.tsx",
+  },
+  "select-scrollable": {
+    PreviewComponent: SelectScrollableDemo,
+    path: "src/app/docs/_components/demos/select/SelectScrollableDemo.tsx",
   },
   separator: {
     PreviewComponent: SeparatorDemo,
