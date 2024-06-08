@@ -73,6 +73,11 @@ import ToastCancelDemo from "~/app/docs/_components/demos/toast/ToastCancelDemo"
 import ToastLoadingDemo from "~/app/docs/_components/demos/toast/ToastLoadingDemo";
 import ToggleDemo from "~/app/docs/_components/demos/toggle/ToggleDemo";
 import ToggleGroupDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupDemo";
+import ToggleGroupOutlineDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupOutlineDemo";
+import ToggleGroupSingleDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupSingleDemo";
+import ToggleGroupSmallDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupSmallDemo";
+import ToggleGroupLargeDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupLargeDemo";
+import ToggleGroupDisabledDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupDisabledDemo";
 import TooltipDemo from "~/app/docs/_components/demos/tooltip/TooltipDemo";
 import TrackerDemo from "~/app/docs/_components/demos/tracker/TrackerDemo";
 
@@ -376,6 +381,26 @@ export const COMPONENT_PREVIEWS = {
   "toggle-group": {
     PreviewComponent: ToggleGroupDemo,
     path: "src/app/docs/_components/demos/toggle-group/ToggleGroupDemo.tsx",
+  },
+  "toggle-group-outline": {
+    PreviewComponent: ToggleGroupOutlineDemo,
+    path: "src/app/docs/_components/demos/toggle-group/ToggleGroupOutlineDemo.tsx",
+  },
+  "toggle-group-single": {
+    PreviewComponent: ToggleGroupSingleDemo,
+    path: "src/app/docs/_components/demos/toggle-group/ToggleGroupSingleDemo.tsx",
+  },
+  "toggle-group-small": {
+    PreviewComponent: ToggleGroupSmallDemo,
+    path: "src/app/docs/_components/demos/toggle-group/ToggleGroupSmallDemo.tsx",
+  },
+  "toggle-group-large": {
+    PreviewComponent: ToggleGroupLargeDemo,
+    path: "src/app/docs/_components/demos/toggle-group/ToggleGroupLargeDemo.tsx",
+  },
+  "toggle-group-disabled": {
+    PreviewComponent: ToggleGroupDisabledDemo,
+    path: "src/app/docs/_components/demos/toggle-group/ToggleGroupDisabledDemo.tsx",
   },
   tooltip: {
     PreviewComponent: TooltipDemo,
