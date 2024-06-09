@@ -16,17 +16,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h2>
     ),
     h3: (props) => (
-      <h3 className="mt-8 text-5 font-semibold">
+      <h3 className="mt-10 text-5 font-semibold">
         <Id id={textToHtmlId(props.children as string)} />
         {props.children}
       </h3>
     ),
     p: (props) => (
-      <p className="mt-5 text-4 leading-7 text-foreground" {...props} />
+      <p className="mt-4 text-4 leading-7 text-foreground" {...props} />
     ),
     code: (props) => (
       <code
-        className="-mx-0.5 -my-1 rounded-1 bg-accent px-1 py-1 font-mono text-foreground/70"
+        className="-my-1 rounded-1 bg-accent px-1 py-1 font-mono text-foreground/70"
         {...props}
       />
     ),
@@ -47,7 +47,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         childElement?.props.className?.replace("language-", "") ?? "";
 
       return (
-        <CodeBlock language={language} containerClassName="mt-5">
+        <CodeBlock language={language} containerClassName="mt-4">
           {childElement?.props.children}
         </CodeBlock>
       );

@@ -15,7 +15,6 @@ interface BarListProps<T = unknown>
   extends React.HTMLAttributes<HTMLDivElement> {
   data: Bar<T>[];
   valueFormatter?: (value: number) => string;
-  showAnimation?: boolean;
   onValueChange?: (payload: Bar<T>) => void;
   sortOrder?: "ascending" | "descending" | "none";
 }
@@ -23,12 +22,10 @@ interface BarListProps<T = unknown>
 const BarItem = <T,>({
   item,
   width,
-  showAnimation,
   onValueChange,
 }: {
   item: Bar<T>;
   width: number;
-  showAnimation: boolean;
   onValueChange?: (payload: Bar<T>) => void;
 }) => {
   const Component = onValueChange ? "button" : "div";
@@ -38,18 +35,15 @@ const BarItem = <T,>({
       key={item.key ?? item.name}
       onClick={() => onValueChange?.(item)}
       className={cn(
-        "group w-full",
-        "outline outline-0 outline-offset-2 outline-blue-500 focus-visible:outline-2 dark:outline-blue-500",
-        onValueChange &&
-          "cursor-pointer hover:bg-gray-50 hover:dark:bg-gray-900",
+        "group w-full rounded-1",
+        onValueChange && "cursor-pointer hover:bg-accent/50",
       )}
     >
       <div
         className={cn(
-          "flex h-8 items-center rounded-1 bg-blue-200 transition-all dark:bg-blue-900",
+          "flex h-8 items-center rounded-1 bg-blue-200 transition-colors dark:bg-blue-900",
           onValueChange &&
             "group-hover:bg-blue-300 group-hover:dark:bg-blue-800",
-          showAnimation && "duration-800",
         )}
         style={{ width: `${width}%` }}
       >
@@ -57,22 +51,15 @@ const BarItem = <T,>({
           {item.href ? (
             <a
               href={item.href}
-              className={cn(
-                "rounded truncate whitespace-nowrap text-3.5 text-gray-900 outline outline-0 outline-offset-2 outline-blue-500",
-                "dark:text-gray-50 dark:outline-blue-500",
-                "hover:underline hover:underline-offset-2",
-                "focus-visible:outline-2",
-              )}
+              className="rounded truncate whitespace-nowrap text-3.5 hover:underline hover:underline-offset-2"
               target="_blank"
-              rel="noreferrer"
-              onClick={(event) => event.stopPropagation()}
+              rel="noreferrer noopener"
+              onClick={(e) => e.stopPropagation()}
             >
               {item.name}
             </a>
           ) : (
-            <p className="truncate whitespace-nowrap text-3.5 text-foreground">
-              {item.name}
-            </p>
+            <p className="truncate whitespace-nowrap text-3.5">{item.name}</p>
           )}
         </div>
       </div>
@@ -88,7 +75,7 @@ const BarLabel = <T,>({
   valueFormatter: (value: number) => string;
 }) => (
   <div className="mb-1.5 flex h-8 items-center justify-end">
-    <p className="truncate whitespace-nowrap text-3.5 text-foreground">
+    <p className="truncate whitespace-nowrap text-3.5">
       {valueFormatter(item.value)}
     </p>
   </div>
@@ -98,7 +85,6 @@ const BarListInner = <T,>(
   {
     data = [],
     valueFormatter = (value) => value.toString(),
-    showAnimation = false,
     onValueChange,
     sortOrder = "descending",
     className,
@@ -116,6 +102,7 @@ const BarListInner = <T,>(
 
   const widths = React.useMemo(() => {
     const maxValue = Math.max(...sortedData.map((item) => item.value), 0);
+
     return sortedData.map((item) =>
       item.value === 0 ? 0 : Math.max((item.value / maxValue) * 100, 2),
     );
@@ -134,7 +121,6 @@ const BarListInner = <T,>(
             key={item.key ?? item.name}
             item={item}
             width={widths[index]!}
-            showAnimation={showAnimation}
             onValueChange={onValueChange}
           />
         ))}
