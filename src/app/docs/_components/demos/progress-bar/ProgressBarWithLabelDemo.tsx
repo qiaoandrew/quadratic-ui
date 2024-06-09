@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import { ProgressBar } from "~/components/ui/ProgressBar";
 
-export default function ProgressBarDemo() {
+export default function ProgressBarWithLabelDemo() {
   const [progress, setProgress] = useState(13);
 
   useEffect(() => {
@@ -16,7 +16,8 @@ export default function ProgressBarDemo() {
     <ProgressBar
       value={progress}
       showAnimation
-      className="w-full max-w-[480px]"
+      label="66%"
+      className="w-[60%]"
     />
   );
 }

@@ -11,23 +11,19 @@ type Bar<T> = T & {
   name: string;
 };
 
-interface BarListProps<T = unknown>
-  extends React.HTMLAttributes<HTMLDivElement> {
-  data: Bar<T>[];
-  valueFormatter?: (value: number) => string;
+interface BarItemProps<T = unknown> {
+  item: Bar<T>;
+  width: number;
+  showAnimation: boolean;
   onValueChange?: (payload: Bar<T>) => void;
-  sortOrder?: "ascending" | "descending" | "none";
 }
 
 const BarItem = <T,>({
   item,
   width,
+  showAnimation,
   onValueChange,
-}: {
-  item: Bar<T>;
-  width: number;
-  onValueChange?: (payload: Bar<T>) => void;
-}) => {
+}: BarItemProps<T>) => {
   const Component = onValueChange ? "button" : "div";
 
   return (
@@ -41,9 +37,10 @@ const BarItem = <T,>({
     >
       <div
         className={cn(
-          "flex h-8 items-center rounded-1 bg-blue-200 transition-colors dark:bg-blue-900",
+          "flex h-8 items-center rounded-1 bg-blue-200 transition-all dark:bg-blue-900",
           onValueChange &&
             "group-hover:bg-blue-300 group-hover:dark:bg-blue-800",
+          showAnimation && "duration-800",
         )}
         style={{ width: `${width}%` }}
       >
@@ -67,13 +64,12 @@ const BarItem = <T,>({
   );
 };
 
-const BarLabel = <T,>({
-  item,
-  valueFormatter,
-}: {
+interface BarLabelProps<T = unknown> {
   item: Bar<T>;
   valueFormatter: (value: number) => string;
-}) => (
+}
+
+const BarLabel = <T,>({ item, valueFormatter }: BarLabelProps<T>) => (
   <div className="mb-1.5 flex h-8 items-center justify-end">
     <p className="truncate whitespace-nowrap text-3.5">
       {valueFormatter(item.value)}
@@ -81,15 +77,25 @@ const BarLabel = <T,>({
   </div>
 );
 
+interface BarListInnerProps<T = unknown>
+  extends React.HTMLAttributes<HTMLDivElement> {
+  data: Bar<T>[];
+  valueFormatter?: (value: number) => string;
+  showAnimation?: boolean;
+  onValueChange?: (payload: Bar<T>) => void;
+  sortOrder?: "ascending" | "descending" | "none";
+}
+
 const BarListInner = <T,>(
   {
     data = [],
     valueFormatter = (value) => value.toString(),
+    showAnimation = false,
     onValueChange,
     sortOrder = "descending",
     className,
     ...props
-  }: BarListProps<T>,
+  }: BarListInnerProps<T>,
   ref: React.ForwardedRef<HTMLDivElement>,
 ) => {
   const sortedData = React.useMemo(() => {
@@ -122,6 +128,7 @@ const BarListInner = <T,>(
             item={item}
             width={widths[index]!}
             onValueChange={onValueChange}
+            showAnimation={showAnimation}
           />
         ))}
       </div>
@@ -141,7 +148,7 @@ const BarListInner = <T,>(
 BarListInner.displayName = "BarList";
 
 const BarList = React.forwardRef(BarListInner) as <T>(
-  p: BarListProps<T> & { ref?: React.ForwardedRef<HTMLDivElement> },
+  p: BarListInnerProps<T> & { ref?: React.ForwardedRef<HTMLDivElement> },
 ) => ReturnType<typeof BarListInner>;
 
-export { BarList, type BarListProps };
+export { BarList, type BarListInnerProps as BarListProps };

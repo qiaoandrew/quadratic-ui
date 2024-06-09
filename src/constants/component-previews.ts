@@ -59,6 +59,8 @@ import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/Nav
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressBarDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarDemo";
+import ProgressBarVariantsDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarVariantsDemo";
+import ProgressBarWithLabelDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarWithLabelDemo";
 import ProgressCircleDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
@@ -342,6 +344,14 @@ export const COMPONENT_PREVIEWS = {
   "progress-bar": {
     PreviewComponent: ProgressBarDemo,
     path: "src/app/docs/_components/demos/progress-bar/ProgressBarDemo.tsx",
+  },
+  "progress-bar-variants": {
+    PreviewComponent: ProgressBarVariantsDemo,
+    path: "src/app/docs/_components/demos/progress-bar/ProgressBarVariantsDemo.tsx",
+  },
+  "progress-bar-with-label": {
+    PreviewComponent: ProgressBarWithLabelDemo,
+    path: "src/app/docs/_components/demos/progress-bar/ProgressBarWithLabelDemo.tsx",
   },
   "progress-circle": {
     PreviewComponent: ProgressCircleDemo,
