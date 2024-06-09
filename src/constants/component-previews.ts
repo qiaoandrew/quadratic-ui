@@ -12,6 +12,11 @@ import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWar
 import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
 import BarListDemo from "~/app/docs/_components/demos/bar-list/BarListDemo";
+import BarListSortOrderDemo from "~/app/docs/_components/demos/bar-list/BarListSortOrderDemo";
+import BarListValueFormatterDemo from "~/app/docs/_components/demos/bar-list/BarListValueFormatterDemo";
+import BarListExternalLinkDemo from "~/app/docs/_components/demos/bar-list/BarListExternalLinkDemo";
+import BarListClickableDemo from "~/app/docs/_components/demos/bar-list/BarListClickableDemo";
+import BarListLinkAndClickableDemo from "~/app/docs/_components/demos/bar-list/BarListLinkAndClickableDemo";
 import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
 import BreadcrumbLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbLinkDemo";
 import ButtonDemo from "~/app/docs/_components/demos/button/ButtonDemo";
@@ -149,6 +154,26 @@ export const COMPONENT_PREVIEWS = {
   "bar-list": {
     PreviewComponent: BarListDemo,
     path: "src/app/docs/_components/demos/bar-list/BarListDemo.tsx",
+  },
+  "bar-list-sort-order": {
+    PreviewComponent: BarListSortOrderDemo,
+    path: "src/app/docs/_components/demos/bar-list/BarListSortOrderDemo.tsx",
+  },
+  "bar-list-value-formatter": {
+    PreviewComponent: BarListValueFormatterDemo,
+    path: "src/app/docs/_components/demos/bar-list/BarListValueFormatterDemo.tsx",
+  },
+  "bar-list-external-link": {
+    PreviewComponent: BarListExternalLinkDemo,
+    path: "src/app/docs/_components/demos/bar-list/BarListExternalLinkDemo.tsx",
+  },
+  "bar-list-clickable": {
+    PreviewComponent: BarListClickableDemo,
+    path: "src/app/docs/_components/demos/bar-list/BarListClickableDemo.tsx",
+  },
+  "bar-list-link-and-clickable": {
+    PreviewComponent: BarListLinkAndClickableDemo,
+    path: "src/app/docs/_components/demos/bar-list/BarListLinkAndClickableDemo.tsx",
   },
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,

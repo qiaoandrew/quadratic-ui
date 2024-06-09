@@ -9,8 +9,8 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 <Title>Bar List</Title>
 <Description>Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.</Description>
 <DocLinks>
-  <DocLink href="https://www.radix-ui.com/docs/primitives/components/accordion" icon="file-code-2">Docs</DocLink>
-  <DocLink href="https://www.radix-ui.com/docs/primitives/components/accordion#api-reference" icon="code-xml">API Reference</DocLink>
+  <DocLink href="https://raw.tremor.so/docs/visualizations/barlist" icon="file-code-2">Docs</DocLink>
+  <DocLink href="https://raw.tremor.so/docs/visualizations/barlist#api-reference-barlist" icon="code-xml">API Reference</DocLink>
 </DocLinks>
 <ComponentPreview id="bar-list" />
 
@@ -31,7 +31,29 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 import { BarList } from "~/components/ui/BarList";
 ```
 ```tsx
-<BarList data={DATA} sortOrder="descending" className="w-[120px]" />
+<BarList data={DATA} sortOrder="descending" className="w-[480px]" />
 ```
+
+## Examples
+
+### Sort Order
+To set sort order, add the `sortOrder` prop as `ascending` or `descending`. Set it to `none` to disable sorting.
+<ComponentPreview id="bar-list-sort-order" />
+
+### Value Formatter
+Use the `valueFormatter` prop to format the value of each item in the list.
+<ComponentPreview id="bar-list-value-formatter" />
+
+### Link
+When `href` is in the array, labels become anchor tags.
+<ComponentPreview id="bar-list-external-link" />
+
+### Clickable
+When `onValueChange` is added to the `BarList`, the bars become clickable.
+<ComponentPreview id="bar-list-clickable" />
+
+### Link and Clickable
+`href` and `onValueChange` can be combined.
+<ComponentPreview id="bar-list-link-and-clickable" />
 
 <Footer previousLabel="Popover" previousHref="/docs/components/primitives/popover" nextLabel="Radio Group" nextHref="/docs/components/primitives/radio-group" />
