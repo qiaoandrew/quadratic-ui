@@ -62,6 +62,9 @@ import ProgressBarDemo from "~/app/docs/_components/demos/progress-bar/ProgressB
 import ProgressBarVariantsDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarVariantsDemo";
 import ProgressBarWithLabelDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarWithLabelDemo";
 import ProgressCircleDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleDemo";
+import ProgressCircleVariantsDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleVariantsDemo";
+import ProgressCircleWithChildrenDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleWithChildrenDemo";
+import ProgressCircleStrokeWidthAndRadiusDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleStrokeWidthAndRadiusDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ResizableVerticalDemo from "~/app/docs/_components/demos/resizable/ResizableVerticalDemo";
@@ -356,6 +359,18 @@ export const COMPONENT_PREVIEWS = {
   "progress-circle": {
     PreviewComponent: ProgressCircleDemo,
     path: "src/app/docs/_components/demos/progress-circle/ProgressCircleDemo.tsx",
+  },
+  "progress-circle-variants": {
+    PreviewComponent: ProgressCircleVariantsDemo,
+    path: "src/app/docs/_components/demos/progress-circle/ProgressCircleVariantsDemo.tsx",
+  },
+  "progress-circle-with-children": {
+    PreviewComponent: ProgressCircleWithChildrenDemo,
+    path: "src/app/docs/_components/demos/progress-circle/ProgressCircleWithChildrenDemo.tsx",
+  },
+  "progress-circle-stroke-width-and-radius": {
+    PreviewComponent: ProgressCircleStrokeWidthAndRadiusDemo,
+    path: "src/app/docs/_components/demos/progress-circle/ProgressCircleStrokeWidthAndRadiusDemo.tsx",
   },
   "radio-group": {
     PreviewComponent: RadioGroupDemo,
