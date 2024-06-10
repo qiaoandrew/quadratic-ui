@@ -3,6 +3,7 @@ import { type Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   content: ["./src/**/*.tsx"],
+  safelist: ["md:px-0"],
   theme: {
     borderRadius: {
       none: "0",
