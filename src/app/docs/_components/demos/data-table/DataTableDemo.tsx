@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import {
   type ColumnDef,
   type Column,
@@ -70,12 +70,14 @@ const columns: ColumnDef<Test>[] = [
       />
     ),
     cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-        className="block size-3.5"
-      />
+      <TableCell>
+        <Checkbox
+          checked={row.getIsSelected()}
+          onCheckedChange={(value) => row.toggleSelected(!!value)}
+          aria-label="Select row"
+          className="block size-3.5"
+        />
+      </TableCell>
     ),
   },
   {
@@ -83,24 +85,33 @@ const columns: ColumnDef<Test>[] = [
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Name</DataTableSortingHeader>
     ),
-    cell: ({ row }) => <div className="w-28">{row.getValue("name")}</div>,
+    cell: ({ row }) => (
+      <TableCell className="w-[180px]">{row.getValue("name")}</TableCell>
+    ),
   },
   {
     accessorKey: "status",
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Status</DataTableSortingHeader>
     ),
+    cell: ({ row }) => <StatusCell status={row.getValue("status")} />,
   },
   {
     accessorKey: "type",
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Type</DataTableSortingHeader>
     ),
+    cell: ({ row }) => <TypeCell type={row.getValue("type")} />,
   },
   {
     accessorKey: "domain",
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Domain</DataTableSortingHeader>
+    ),
+    cell: ({ row }) => (
+      <TableCell className="w-[160px] max-w-[160px] overflow-hidden truncate">
+        {row.getValue("domain")}
+      </TableCell>
     ),
   },
   {
@@ -108,11 +119,17 @@ const columns: ColumnDef<Test>[] = [
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Tags</DataTableSortingHeader>
     ),
+    cell: ({ row }) => (
+      <TagsCell tags={row.getValue("tags")} className="w-[60px]" />
+    ),
   },
   {
     accessorKey: "envs",
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Envs</DataTableSortingHeader>
+    ),
+    cell: ({ row }) => (
+      <TagsCell tags={row.getValue("envs")} className="w-[140px]" />
     ),
   },
   {
@@ -120,11 +137,30 @@ const columns: ColumnDef<Test>[] = [
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Team</DataTableSortingHeader>
     ),
+    cell: ({ row }) => <TeamCell team={row.getValue("team")} />,
   },
   {
     accessorKey: "uptime",
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Uptime</DataTableSortingHeader>
+    ),
+    cell: ({ row }) => <UptimeCell uptime={row.getValue("uptime")} />,
+  },
+  {
+    id: "lastModified",
+    accessorKey: "lastModified",
+    header: ({ column }) => (
+      <DataTableSortingHeader
+        column={column}
+        className="flex-row-reverse justify-start"
+      >
+        Last Modified
+      </DataTableSortingHeader>
+    ),
+    cell: ({ row }) => (
+      <TableCell className="w-[140px] shrink-0 text-right">
+        {getTimeAgo(row.getValue("lastModified"))}
+      </TableCell>
     ),
   },
 ];
@@ -200,7 +236,7 @@ export default function DataTableDemo() {
         </DropdownMenu>
       </div>
       <div className="overflow-auto rounded-2 border">
-        <Table>
+        <Table className="w-max">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -222,6 +258,29 @@ export default function DataTableDemo() {
               </TableRow>
             ))}
           </TableHeader>
+          <TableBody>
+            {table.getRowModel().rows?.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <Fragment key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
+                    </Fragment>
+                  ))}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={columns.length}>No results.</TableCell>
+              </TableRow>
+            )}
+          </TableBody>
         </Table>
       </div>
     </div>
@@ -248,14 +307,117 @@ function DataTableSortingHeader({
       variant="ghost"
       onClick={() => column.toggleSorting()}
       className={cn(
-        "w-full justify-start p-0 py-2 pl-3 hover:bg-transparent",
+        "w-full justify-start gap-x-1 p-0 py-2 pl-3 hover:bg-transparent",
         className,
       )}
     >
-      {children} {Icon && <Icon size={14} className="ml-1" />}
+      {children} {Icon && <Icon size={14} />}
     </Button>
   );
 }
+
+function StatusCell({ status }: { status: TestStatus }) {
+  return (
+    <TableCell className="w-[90px]">
+      <div
+        className={cn(
+          "w-[70px] rounded-1 py-1 text-center text-3 font-medium uppercase",
+          status === TestStatus.OK && "bg-success text-success-foreground",
+          status === TestStatus.Alert &&
+            "bg-destructive text-destructive-foreground",
+          status === TestStatus.Paused && "bg-muted text-muted-foreground",
+        )}
+      >
+        {status}
+      </div>
+    </TableCell>
+  );
+}
+
+function TypeCell({ type }: { type: TestType }) {
+  const Icon = TEST_TYPE_ICON[type];
+
+  return (
+    <TableCell className="w-[120px]">
+      <div className="flex items-center gap-x-1.5">
+        <Icon size={14} className="text-muted-foreground" />
+        {type}
+      </div>
+    </TableCell>
+  );
+}
+
+function TagsCell({ tags, className }: { tags: string[]; className?: string }) {
+  return (
+    <TableCell className={className}>
+      <div className="flex items-center gap-x-1.5">
+        {tags.map((tag, i) => (
+          <div className="rounded-1 bg-muted px-1.5 py-1" key={i}>
+            {tag}
+          </div>
+        ))}
+      </div>
+    </TableCell>
+  );
+}
+
+function TeamCell({ team }: { team: string }) {
+  return (
+    <TableCell className="w-[150px]">
+      <span className="rounded-full border px-2 py-1">{team}</span>
+    </TableCell>
+  );
+}
+
+function UptimeCell({ uptime }: { uptime: number | null }) {
+  const failureWidth = uptime === null ? "100%" : `calc(100% - ${uptime}%)`;
+
+  return (
+    <TableCell className="max-w-[120px]">
+      {uptime === null && (
+        <span className=" italic text-muted-foreground">No uptime data</span>
+      )}
+      {uptime !== null && (
+        <span className="flex items-center justify-between gap-x-1 font-semibold">
+          {uptime}%
+          <span className="relative h-4 w-[84px] bg-success">
+            <span
+              className={cn(`absolute inset-y-0 right-0 bg-destructive`)}
+              style={{ width: failureWidth }}
+            />
+          </span>
+        </span>
+      )}
+    </TableCell>
+  );
+}
+
+const getTimeAgo = (timestamp: string) => {
+  const date = new Date(timestamp);
+  const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
+  let interval = Math.floor(seconds / 31536000);
+
+  if (interval > 1) {
+    return `${interval} Years Ago`;
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return `${interval} Months Ago`;
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return `${interval} Days Ago`;
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return `${interval} Hours Ago`;
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return `${interval} Minutes Ago`;
+  }
+  return `${Math.floor(seconds)} Seconds Ago`;
+};
 
 enum TestStatus {
   OK = "OK",
