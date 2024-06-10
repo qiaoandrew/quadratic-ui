@@ -19,12 +19,19 @@ import {
   ChevronUpIcon,
   CodeIcon,
   CodeXmlIcon,
+  CopyIcon,
+  EditIcon,
   GlobeIcon,
   LockIcon,
+  MoreVerticalIcon,
+  PauseIcon,
   SearchIcon,
   SmartphoneIcon,
   SquareDashedBottomCodeIcon,
+  TrashIcon,
   UnplugIcon,
+  VideoIcon,
+  ZapIcon,
 } from "lucide-react";
 
 import { Checkbox } from "~/components/ui/Checkbox";
@@ -170,8 +177,70 @@ const columns: ColumnDef<Test>[] = [
       </DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="w-[140px] shrink-0 text-right">
+      <TableCell className="w-[140px] max-w-[140px] shrink-0 text-right">
         {getTimeAgo(row.getValue("lastModified"))}
+      </TableCell>
+    ),
+  },
+  {
+    id: "actions",
+    header: () => <TableHead />,
+    cell: () => (
+      <TableCell className="last:pr-2">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="size-6 rounded-1 hover:border hover:border-muted-foreground"
+            >
+              <span className="sr-only">Open menu</span>
+              <MoreVerticalIcon size={16} />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48">
+            <DropdownMenuItem>
+              <PauseIcon
+                size={14}
+                fill="text-muted-foreground"
+                className="mr-2 text-muted-foreground"
+              />
+              Pause
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <ZapIcon
+                size={14}
+                fill="text-muted-foreground"
+                className="mr-2 text-muted-foreground"
+              />
+              Run Test Now
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <EditIcon size={14} className="mr-2 text-muted-foreground" />
+              Edit Test
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <VideoIcon size={14} className="mr-2 text-muted-foreground" />
+              Edit Recording
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <CopyIcon size={14} className="mr-2 text-muted-foreground" />
+              Clone
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <LockIcon size={14} className="mr-2 text-muted-foreground" />
+              Permissions
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <TrashIcon size={14} className="mr-2 text-muted-foreground" />
+              Delete
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </TableCell>
     ),
   },
@@ -226,7 +295,7 @@ export default function DataTableDemo() {
               Columns
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-36">
+          <DropdownMenuContent align="end" className="w-44">
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
@@ -382,7 +451,7 @@ function UptimeCell({ uptime }: { uptime: number | null }) {
   const failureWidth = uptime === null ? "100%" : `calc(100% - ${uptime}%)`;
 
   return (
-    <TableCell className="max-w-[120px]">
+    <TableCell className="w-[160px] max-w-[160px]">
       {uptime === null && (
         <span className=" italic text-muted-foreground">No uptime data</span>
       )}

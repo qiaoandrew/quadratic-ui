@@ -488,11 +488,7 @@ const columns: ColumnDef<User>[] = [
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(user.id)}
-              >
-                Copy employee ID
-              </DropdownMenuItem>
+              <DropdownMenuItem>Copy employee ID</DropdownMenuItem>
               <DropdownMenuItem>View employee details</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Delete</DropdownMenuItem>
