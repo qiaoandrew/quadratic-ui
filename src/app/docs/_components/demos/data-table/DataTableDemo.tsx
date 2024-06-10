@@ -57,20 +57,22 @@ import { cn } from "~/utils/tailwind";
 
 const columns: ColumnDef<Test>[] = [
   {
-    accessorKey: "select",
+    id: "select",
     header: ({ table }) => (
-      <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
-        }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-        className="block size-3.5"
-      />
+      <TableHead className="pr-3">
+        <Checkbox
+          checked={
+            table.getIsAllPageRowsSelected() ||
+            (table.getIsSomePageRowsSelected() && "indeterminate")
+          }
+          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          aria-label="Select all"
+          className="block size-3.5"
+        />
+      </TableHead>
     ),
     cell: ({ row }) => (
-      <TableCell>
+      <TableCell className="px-3">
         <Checkbox
           checked={row.getIsSelected()}
           onCheckedChange={(value) => row.toggleSelected(!!value)}
@@ -81,32 +83,38 @@ const columns: ColumnDef<Test>[] = [
     ),
   },
   {
+    id: "name",
     accessorKey: "name",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Name</DataTableSortingHeader>
+      <DataTableSortingHead column={column}>Name</DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="w-[180px]">{row.getValue("name")}</TableCell>
+      <TableCell className="w-[180px] max-w-[180px] overflow-hidden truncate">
+        {row.getValue("name")}
+      </TableCell>
     ),
   },
   {
+    id: "status",
     accessorKey: "status",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Status</DataTableSortingHeader>
+      <DataTableSortingHead column={column}>Status</DataTableSortingHead>
     ),
     cell: ({ row }) => <StatusCell status={row.getValue("status")} />,
   },
   {
+    id: "type",
     accessorKey: "type",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Type</DataTableSortingHeader>
+      <DataTableSortingHead column={column}>Type</DataTableSortingHead>
     ),
     cell: ({ row }) => <TypeCell type={row.getValue("type")} />,
   },
   {
+    id: "domain",
     accessorKey: "domain",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Domain</DataTableSortingHeader>
+      <DataTableSortingHead column={column}>Domain</DataTableSortingHead>
     ),
     cell: ({ row }) => (
       <TableCell className="w-[160px] max-w-[160px] overflow-hidden truncate">
@@ -115,34 +123,38 @@ const columns: ColumnDef<Test>[] = [
     ),
   },
   {
+    id: "tags",
     accessorKey: "tags",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Tags</DataTableSortingHeader>
+      <DataTableSortingHead column={column}>Tags</DataTableSortingHead>
     ),
     cell: ({ row }) => (
       <TagsCell tags={row.getValue("tags")} className="w-[60px]" />
     ),
   },
   {
+    id: "envs",
     accessorKey: "envs",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Envs</DataTableSortingHeader>
+      <DataTableSortingHead column={column}>Envs</DataTableSortingHead>
     ),
     cell: ({ row }) => (
       <TagsCell tags={row.getValue("envs")} className="w-[140px]" />
     ),
   },
   {
+    id: "team",
     accessorKey: "team",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Team</DataTableSortingHeader>
+      <DataTableSortingHead column={column}>Team</DataTableSortingHead>
     ),
     cell: ({ row }) => <TeamCell team={row.getValue("team")} />,
   },
   {
+    id: "uptime",
     accessorKey: "uptime",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Uptime</DataTableSortingHeader>
+      <DataTableSortingHead column={column}>Uptime</DataTableSortingHead>
     ),
     cell: ({ row }) => <UptimeCell uptime={row.getValue("uptime")} />,
   },
@@ -150,12 +162,12 @@ const columns: ColumnDef<Test>[] = [
     id: "lastModified",
     accessorKey: "lastModified",
     header: ({ column }) => (
-      <DataTableSortingHeader
+      <DataTableSortingHead
         column={column}
         className="flex-row-reverse justify-start"
       >
         Last Modified
-      </DataTableSortingHeader>
+      </DataTableSortingHead>
     ),
     cell: ({ row }) => (
       <TableCell className="w-[140px] shrink-0 text-right">
@@ -236,25 +248,20 @@ export default function DataTableDemo() {
         </DropdownMenu>
       </div>
       <div className="overflow-auto rounded-2 border">
-        <Table className="w-max">
+        <Table className="w-max min-w-full">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead
-                      className={cn("p-0", header.id === "select" && "pl-3")}
-                      key={header.id}
-                    >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
-                    </TableHead>
-                  );
-                })}
+                {headerGroup.headers.map((header) =>
+                  header.isPlaceholder ? (
+                    <TableHead key={header.id} />
+                  ) : (
+                    flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )
+                  ),
+                )}
               </TableRow>
             ))}
           </TableHeader>
@@ -287,32 +294,34 @@ export default function DataTableDemo() {
   );
 }
 
-interface DataTableSortingHeaderProps {
+interface DataTableSortingHeadProps {
   column: Column<Test, unknown>;
   className?: string;
   children: React.ReactNode;
 }
 
-function DataTableSortingHeader({
+function DataTableSortingHead({
   column,
   className,
   children,
-}: DataTableSortingHeaderProps) {
+}: DataTableSortingHeadProps) {
   const Icon =
     column.getIsSorted() &&
     (column.getIsSorted() === "asc" ? ChevronUpIcon : ChevronDownIcon);
 
   return (
-    <Button
-      variant="ghost"
-      onClick={() => column.toggleSorting()}
-      className={cn(
-        "w-full justify-start gap-x-1 p-0 py-2 pl-3 hover:bg-transparent",
-        className,
-      )}
-    >
-      {children} {Icon && <Icon size={14} />}
-    </Button>
+    <TableHead className="p-0">
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting()}
+        className={cn(
+          "w-full justify-start gap-x-1 p-0 py-2 pl-3 hover:bg-transparent",
+          className,
+        )}
+      >
+        {children} {Icon && <Icon size={14} />}
+      </Button>
+    </TableHead>
   );
 }
 
@@ -338,10 +347,10 @@ function TypeCell({ type }: { type: TestType }) {
   const Icon = TEST_TYPE_ICON[type];
 
   return (
-    <TableCell className="w-[120px]">
+    <TableCell className="w-[120px] max-w-[120px] overflow-hidden">
       <div className="flex items-center gap-x-1.5">
-        <Icon size={14} className="text-muted-foreground" />
-        {type}
+        <Icon size={14} className="shrink-0 text-muted-foreground" />
+        <p className="overlow-hidden grow truncate">{type}</p>
       </div>
     </TableCell>
   );
