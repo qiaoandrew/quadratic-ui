@@ -22,7 +22,7 @@ import { cn } from "~/utils/tailwind";
 export default function TableDemo() {
   return (
     <div className="overflow-auto rounded-2 border">
-      <Table className="w-[1200px]">
+      <Table className="w-max">
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
@@ -39,17 +39,17 @@ export default function TableDemo() {
         <TableBody>
           {TESTS.map((test) => (
             <TableRow key={test.id}>
-              <TableCell className="max-w-[180px]">{test.name}</TableCell>
+              <TableCell className="w-[180px]">{test.name}</TableCell>
               <StatusCell status={test.status} />
               <TypeCell type={test.type} />
-              <TableCell className="max-w-[160px] overflow-hidden truncate whitespace-nowrap">
+              <TableCell className="w-[160px] max-w-[160px] overflow-hidden truncate">
                 {test.domain}
               </TableCell>
-              <TagsCell tags={test.tags} className="max-w-[60px]" />
-              <TagsCell tags={test.envs} />
+              <TagsCell tags={test.tags} className="w-[60px]" />
+              <TagsCell tags={test.envs} className="w-[140px]" />
               <TeamCell team={test.team} />
               <UptimeCell uptime={test.uptime} />
-              <TableCell className="max-w-[130px] text-right text-3">
+              <TableCell className="w-[140px] text-right">
                 {getTimeAgo(test.lastModified)}
               </TableCell>
             </TableRow>
@@ -62,7 +62,7 @@ export default function TableDemo() {
 
 function StatusCell({ status }: { status: TestStatus }) {
   return (
-    <TableCell className="w-[90px] max-w-[90px]">
+    <TableCell className="w-[90px]">
       <div
         className={cn(
           "w-[70px] rounded-1 py-1 text-center text-3 font-medium uppercase",
@@ -82,7 +82,7 @@ function TypeCell({ type }: { type: TestType }) {
   const Icon = TEST_TYPE_ICON[type];
 
   return (
-    <TableCell className="max-w-[120px]">
+    <TableCell className="w-[120px]">
       <div className="flex items-center gap-x-1.5">
         <Icon size={14} className="text-muted-foreground" />
         {type}
@@ -96,7 +96,7 @@ function TagsCell({ tags, className }: { tags: string[]; className?: string }) {
     <TableCell className={className}>
       <div className="flex items-center gap-x-1.5">
         {tags.map((tag, i) => (
-          <div className="rounded-1 bg-muted px-1.5 py-1 text-3" key={i}>
+          <div className="rounded-1 bg-muted px-1.5 py-1" key={i}>
             {tag}
           </div>
         ))}
@@ -107,8 +107,8 @@ function TagsCell({ tags, className }: { tags: string[]; className?: string }) {
 
 function TeamCell({ team }: { team: string }) {
   return (
-    <TableCell className="max-w-[140px]">
-      <span className="rounded-full border px-2 py-1 text-3">{team}</span>
+    <TableCell className="w-[150px]">
+      <span className="rounded-full border px-2 py-1">{team}</span>
     </TableCell>
   );
 }
@@ -119,12 +119,10 @@ function UptimeCell({ uptime }: { uptime: number | null }) {
   return (
     <TableCell className="max-w-[120px]">
       {uptime === null && (
-        <span className="text-3 italic text-muted-foreground">
-          No uptime data
-        </span>
+        <span className=" italic text-muted-foreground">No uptime data</span>
       )}
       {uptime !== null && (
-        <span className="flex items-center justify-between gap-x-1 text-3 font-semibold">
+        <span className="flex items-center justify-between gap-x-1 font-semibold">
           {uptime}%
           <span className="relative h-4 w-[84px] bg-success">
             <span
@@ -325,208 +323,4 @@ const TESTS: Test[] = [
     uptime: 99.8,
     lastModified: "2023-05-30T09:48:12.678Z",
   },
-  // {
-  //   id: "f1g2h3i4-j5k6-l7m8-n9o0-pqrstuvwxyzab",
-  //   name: "API Rate Limiting",
-  //   status: TestStatus.OK,
-  //   type: TestType.API,
-  //   domain: "api.notion.so/rate-limit",
-  //   tags: ["p0"],
-  //   envs: ["prod"],
-  //   team: "Backend"],
-  //   uptime: 97.9,
-  //   lastModified: "2023-01-18T17:29:45.789Z",
-  // },
-  // {
-  //   id: "e1f2g3h4-i5j6-k7l8-m9n0-opqrstuvwxyz",
-  //   name: "Mobile Push Notifications",
-  //   status: TestStatus.OK,
-  //   type: TestType.Mobile,
-  //   domain: "m.notion.so/notifications",
-  //   tags: ["p1"],
-  //   envs: ["prod"],
-  //   team: "Mobile"],
-  //   uptime: 100,
-  //   lastModified: "2023-03-08T10:56:34.123Z",
-  // },
-  // {
-  //   id: "d1e2f3g4-h5i6-j7k8-l9m0-nopqrstuvwxy",
-  //   name: "WebSocket Message Delivery",
-  //   status: TestStatus.OK,
-  //   type: TestType.WebSocket,
-  //   domain: "ws.notion.so/messages",
-  //   tags: ["p0"],
-  //   envs: ["prod"],
-  //   team: "Realtime"],
-  //   uptime: 98.4,
-  //   lastModified: "2023-04-12T12:34:56.456Z",
-  // },
-  // {
-  //   id: "c1d2e3f4-g5h6-i7j8-k9l0-mnopqrstuvwx",
-  //   name: "SSL Expiration Check",
-  //   status: TestStatus.OK,
-  //   type: TestType.SSL,
-  //   domain: "www.notion.so",
-  //   tags: ["p0"],
-  //   envs: ["prod"],
-  //   team: "Security"],
-  //   uptime: null,
-  //   lastModified: "2023-02-21T14:47:39.678Z",
-  // },
-  // {
-  //   id: "b1c2d3e4-f5g6-h7i8-j9k0-lmnopqrstuvw",
-  //   name: "gRPC Payment Service",
-  //   status: TestStatus.OK,
-  //   type: TestType.gRPC,
-  //   domain: "api.notion.so/payment",
-  //   tags: ["p1"],
-  //   envs: ["prod"],
-  //   team: "Payments"],
-  //   uptime: 99.0,
-  //   lastModified: "2023-03-29T16:58:21.890Z",
-  // },
-  // {
-  //   id: "a1b2c3d4-e5f6-g7h8-i9j0-klmnopqrstuv",
-  //   name: "Multistep Order Processing",
-  //   status: TestStatus.Paused,
-  //   type: TestType.MultistepAPI,
-  //   domain: "api.notion.so/order",
-  //   tags: ["p2"],
-  //   envs: ["staging"],
-  //   team: "E-commerce"],
-  //   uptime: 98.2,
-  //   lastModified: "2023-05-02T11:23:45.123Z",
-  // },
-  // {
-  //   id: "z1y2x3w4-v5u6-t7s8-r9q0-ponmlkjihgfe",
-  //   name: "API Key Validation",
-  //   status: TestStatus.OK,
-  //   type: TestType.API,
-  //   domain: "api.notion.so/key-validation",
-  //   tags: ["p0"],
-  //   envs: ["prod"],
-  //   team: "Security"],
-  //   uptime: 100,
-  //   lastModified: "2023-06-04T13:12:34.456Z",
-  // },
-  // {
-  //   id: "x1w2v3u4-t5s6-r7q8-p9o0-nmlkjihgfe",
-  //   name: "User Profile Picture Upload",
-  //   status: TestStatus.OK,
-  //   type: TestType.Browser,
-  //   domain: "www.notion.so/upload-profile-pic",
-  //   tags: ["p1"],
-  //   envs: ["prod"],
-  //   team: "Frontend"],
-  //   uptime: 99.6,
-  //   lastModified: "2023-03-18T14:28:39.567Z",
-  // },
-  // {
-  //   id: "w1v2u3t4-s5r6-q7p8-o9n0-lkjihgfedcba",
-  //   name: "Document Collaboration",
-  //   status: TestStatus.OK,
-  //   type: TestType.WebSocket,
-  //   domain: "ws.notion.so/collaboration",
-  //   tags: ["p2"],
-  //   envs: ["prod"],
-  //   team: "Realtime"],
-  //   uptime: 97.8,
-  //   lastModified: "2023-05-06T16:47:12.890Z",
-  // },
-  // {
-  //   id: "v1u2t3s4-r5q6-p7o8-n9m0-kjihgfedcb",
-  //   name: "Mobile Document Editing",
-  //   status: TestStatus.Paused,
-  //   type: TestType.Mobile,
-  //   domain: "m.notion.so/edit-document",
-  //   tags: ["p0"],
-  //   envs: ["prod"],
-  //   team: "Mobile"],
-  //   uptime: 100,
-  //   lastModified: "2023-04-30T12:39:45.678Z",
-  // },
-  // {
-  //   id: "u1t2s3r4-q5p6-o7n8-m9l0-jihgfedcba",
-  //   name: "Multistep Payment Process",
-  //   status: TestStatus.OK,
-  //   type: TestType.MultistepAPI,
-  //   domain: "api.notion.so/payment-process",
-  //   tags: ["p1"],
-  //   envs: ["staging"],
-  //   team: "Payments"],
-  //   uptime: 98.3,
-  //   lastModified: "2023-03-10T09:58:27.345Z",
-  // },
-  // {
-  //   id: "t1s2r3q4-p5o6-n7m8-l9k0-ihgfedcbazyx",
-  //   name: "Notification Delivery",
-  //   status: TestStatus.OK,
-  //   type: TestType.API,
-  //   domain: "api.notion.so/notifications",
-  //   tags: ["p0"],
-  //   envs: ["prod"],
-  //   team: "Backend"],
-  //   uptime: 99.9,
-  //   lastModified: "2023-01-25T15:16:38.456Z",
-  // },
-  // {
-  //   id: "s1r2q3p4-o5n6-m7l8-k9j0-hgfedcba",
-  //   name: "API User Authentication",
-  //   status: TestStatus.Alert,
-  //   type: TestType.API,
-  //   domain: "api.notion.so/authenticate",
-  //   tags: ["p0"],
-  //   envs: ["prod"],
-  //   team: "Authentication"],
-  //   uptime: 100,
-  //   lastModified: "2023-06-07T10:47:45.123Z",
-  // },
-  // {
-  //   id: "r1q2p3o4-n5m6-l7k8-j9i0-gfedcba",
-  //   name: "API Data Encryption",
-  //   status: TestStatus.OK,
-  //   type: TestType.API,
-  //   domain: "api.notion.so/encrypt",
-  //   tags: ["p1"],
-  //   envs: ["prod"],
-  //   team: "Security"],
-  //   uptime: 98.1,
-  //   lastModified: "2023-02-22T14:38:56.789Z",
-  // },
-  // {
-  //   id: "q1p2o3n4-m5l6-k7j8-i9h0-fedcba",
-  //   name: "Mobile API Integration",
-  //   status: TestStatus.OK,
-  //   type: TestType.Mobile,
-  //   domain: "m.notion.so/api",
-  //   tags: ["p2"],
-  //   envs: ["prod"],
-  //   team: "Mobile"],
-  //   uptime: 99.7,
-  //   lastModified: "2023-03-29T11:27:39.456Z",
-  // },
-  // {
-  //   id: "p1o2n3m4-l5k6-j7i8-h9g0-edcba",
-  //   name: "Multistep Profile Update",
-  //   status: TestStatus.OK,
-  //   type: TestType.MultistepAPI,
-  //   domain: "api.notion.so/update-profile",
-  //   tags: ["p1"],
-  //   envs: ["staging"],
-  //   team: "Backend"],
-  //   uptime: 97.5,
-  //   lastModified: "2023-05-01T12:16:49.678Z",
-  // },
-  // {
-  //   id: "o1n2m3l4-k5j6-i7h8-g9f0-dcba",
-  //   name: "WebSocket Real-time Updates",
-  //   status: TestStatus.Alert,
-  //   type: TestType.WebSocket,
-  //   domain: "ws.notion.so/updates",
-  //   tags: ["p0"],
-  //   envs: ["prod"],
-  //   team: "Realtime"],
-  //   uptime: 98.9,
-  //   lastModified: "2023-04-11T16:28:50.123Z",
-  // },
 ];

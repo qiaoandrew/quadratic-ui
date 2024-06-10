@@ -15,14 +15,18 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import {
-  ChevronUpIcon,
   ChevronDownIcon,
-  MoreHorizontalIcon,
-  ChevronsUpDownIcon,
+  ChevronUpIcon,
+  CodeIcon,
+  CodeXmlIcon,
+  GlobeIcon,
+  LockIcon,
   SearchIcon,
+  SmartphoneIcon,
+  SquareDashedBottomCodeIcon,
+  UnplugIcon,
 } from "lucide-react";
 
-import { Badge, type BadgeProps } from "~/components/ui/Badge";
 import { Checkbox } from "~/components/ui/Checkbox";
 import { Button } from "~/components/ui/Button";
 import {
@@ -49,376 +53,9 @@ import {
   PaginationNextButton,
   PaginationPreviousButton,
 } from "~/components/ui/Pagination";
+import { cn } from "~/utils/tailwind";
 
-type User = {
-  id: string;
-  name: string;
-  email: string;
-  status: Status;
-  role: string;
-};
-
-enum Status {
-  Active = "Active",
-  Inactive = "Inactive",
-  Onboarding = "Onboarding",
-}
-
-const STATUS_BADGE_VARIANTS: {
-  [key in Status]: BadgeProps["variant"];
-} = {
-  [Status.Active]: "success-outline",
-  [Status.Inactive]: "destructive-outline",
-  [Status.Onboarding]: "warning-outline",
-};
-
-const USERS: User[] = [
-  {
-    id: "eb93361a-6e6b-4ca7-bdfa-8cb197d58c5f",
-    name: "John Doe",
-    email: "john.doe@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "f1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Jane Grant",
-    email: "jane.grant@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "e1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Alice Smith",
-    email: "alice.smith@gmail.com",
-    status: Status.Inactive,
-    role: "Designer",
-  },
-  {
-    id: "d1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Bob Brown",
-    email: "bob.brown@gmail.com",
-    status: Status.Active,
-    role: "Manager",
-  },
-  {
-    id: "c1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Charlie Davis",
-    email: "charlie.davis@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "f1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Isabella Lewis",
-    email: "isabella.lewis@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "g1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Jack Hill",
-    email: "jack.hill@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "h1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Karen Scott",
-    email: "karen.scott@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "i1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Liam Green",
-    email: "liam.green@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "j1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Mia Adams",
-    email: "mia.adams@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "k2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Nathan White",
-    email: "nathan.white@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "l2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Olivia Black",
-    email: "olivia.black@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "m2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Patrick Evans",
-    email: "patrick.evans@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "n2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Quinn Walker",
-    email: "quinn.walker@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "o2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Rachel Young",
-    email: "rachel.young@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "p2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Samuel Harris",
-    email: "samuel.harris@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "r2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Uma Martinez",
-    email: "uma.martinez@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "s2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Victor King",
-    email: "victor.king@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "t2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Wendy Lee",
-    email: "wendy.lee@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "u2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Xander Perez",
-    email: "xander.perez@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "v2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Yasmine Collins",
-    email: "yasmine.collins@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "w2a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Zachary Adams",
-    email: "zachary.adams@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "a3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Amanda Clark",
-    email: "amanda.clark@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "b3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Brandon Lewis",
-    email: "brandon.lewis@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "c3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Catherine Miller",
-    email: "catherine.miller@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "e3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Ella Martinez",
-    email: "ella.martinez@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "f3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Fiona Wilson",
-    email: "fiona.wilson@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "i3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Ian Wright",
-    email: "ian.wright@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "j3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Julia Harris",
-    email: "julia.harris@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "k3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Kevin Martinez",
-    email: "kevin.martinez@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "l3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Lily Clark",
-    email: "lily.clark@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "m3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Michael Lewis",
-    email: "michael.lewis@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "n3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Nancy Robinson",
-    email: "nancy.robinson@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "o3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Oliver White",
-    email: "oliver.white@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "p3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Pamela Johnson",
-    email: "pamela.johnson@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "q3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Quentin Wright",
-    email: "quentin.wright@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "r3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Rachel Brown",
-    email: "rachel.brown@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "s3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Steven Harris",
-    email: "steven.harris@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "t3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Tina Clark",
-    email: "tina.clark@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "u3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Uma Scott",
-    email: "uma.scott@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "v3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Victor Young",
-    email: "victor.young@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "w3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Wendy Hill",
-    email: "wendy.hill@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "x3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Xander Evans",
-    email: "xander.evans@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "z3a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Zachary Clark",
-    email: "zachary.clark@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "a4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Amanda Lewis",
-    email: "amanda.lewis@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "c4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Catherine White",
-    email: "catherine.white@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "d4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "David Johnson",
-    email: "david.johnson@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "e4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Ella Wright",
-    email: "ella.wright@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "f4a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Fiona Brown",
-    email: "fiona.brown@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-];
-
-const columns: ColumnDef<User>[] = [
+const columns: ColumnDef<Test>[] = [
   {
     accessorKey: "select",
     header: ({ table }) => (
@@ -449,96 +86,48 @@ const columns: ColumnDef<User>[] = [
     cell: ({ row }) => <div className="w-28">{row.getValue("name")}</div>,
   },
   {
-    accessorKey: "email",
-    header: "Email",
-  },
-  {
     accessorKey: "status",
     header: ({ column }) => (
       <DataTableSortingHeader column={column}>Status</DataTableSortingHeader>
     ),
-    cell: ({ row }) => {
-      const status: Status = row.getValue("status");
-
-      return <Badge variant={STATUS_BADGE_VARIANTS[status]}>{status}</Badge>;
-    },
   },
   {
-    accessorKey: "role",
+    accessorKey: "type",
     header: ({ column }) => (
-      <DataTableSortingHeader column={column}>Role</DataTableSortingHeader>
+      <DataTableSortingHeader column={column}>Type</DataTableSortingHeader>
     ),
   },
   {
-    id: "actions",
-    cell: ({ row }) => {
-      const user: User = row.original;
-
-      return (
-        <div className="flex w-full justify-end">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="size-8 rounded-1.5"
-              >
-                <span className="sr-only">Open menu</span>
-                <MoreHorizontalIcon size={16} />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(user.id)}
-              >
-                Copy employee ID
-              </DropdownMenuItem>
-              <DropdownMenuItem>View employee details</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Delete</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      );
-    },
+    accessorKey: "domain",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Domain</DataTableSortingHeader>
+    ),
+  },
+  {
+    accessorKey: "tags",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Tags</DataTableSortingHeader>
+    ),
+  },
+  {
+    accessorKey: "envs",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Envs</DataTableSortingHeader>
+    ),
+  },
+  {
+    accessorKey: "team",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Team</DataTableSortingHeader>
+    ),
+  },
+  {
+    accessorKey: "uptime",
+    header: ({ column }) => (
+      <DataTableSortingHeader column={column}>Uptime</DataTableSortingHeader>
+    ),
   },
 ];
-
-interface DataTableSortingHeaderProps {
-  column: Column<User, unknown>;
-  children: React.ReactNode;
-}
-
-function DataTableSortingHeader({
-  column,
-  children,
-}: DataTableSortingHeaderProps) {
-  const Icon = !column.getIsSorted()
-    ? ChevronsUpDownIcon
-    : column.getIsSorted() === "asc"
-      ? ChevronDownIcon
-      : ChevronUpIcon;
-
-  const toggleSorting = () => {
-    if (column.getIsSorted() === "asc") {
-      column.toggleSorting(true, true);
-    } else if (column.getIsSorted() === "desc") {
-      column.clearSorting();
-    } else {
-      column.toggleSorting(false, true);
-    }
-  };
-
-  return (
-    <Button
-      variant="ghost"
-      onClick={toggleSorting}
-      className="p-0 hover:bg-transparent"
-    >
-      {children} <Icon size={14} className="ml-1" />
-    </Button>
-  );
-}
 
 export default function DataTableDemo() {
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -547,7 +136,7 @@ export default function DataTableDemo() {
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
-    data: USERS,
+    data: TESTS,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -610,14 +199,17 @@ export default function DataTableDemo() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="w-full rounded-2 border">
+      <div className="overflow-auto rounded-2 border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="h-11" key={header.id}>
+                    <TableHead
+                      className={cn("p-0", header.id === "select" && "pl-3")}
+                      key={header.id}
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -630,54 +222,403 @@ export default function DataTableDemo() {
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell className="h-[52px] py-2.5" key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-16 text-center"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
         </Table>
       </div>
-      <Pagination className="justify-end">
-        <PaginationContent className="gap-x-3">
-          <PaginationItem>
-            <PaginationPreviousButton
-              variant="outline"
-              onClick={() => table.previousPage()}
-              disabled={!table.getCanPreviousPage()}
-            />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNextButton
-              variant="outline"
-              onClick={() => table.nextPage()}
-              disabled={!table.getCanNextPage()}
-            />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
     </div>
   );
 }
+
+interface DataTableSortingHeaderProps {
+  column: Column<Test, unknown>;
+  className?: string;
+  children: React.ReactNode;
+}
+
+function DataTableSortingHeader({
+  column,
+  className,
+  children,
+}: DataTableSortingHeaderProps) {
+  const Icon =
+    column.getIsSorted() &&
+    (column.getIsSorted() === "asc" ? ChevronUpIcon : ChevronDownIcon);
+
+  return (
+    <Button
+      variant="ghost"
+      onClick={() => column.toggleSorting()}
+      className={cn(
+        "w-full justify-start p-0 py-2 pl-3 hover:bg-transparent",
+        className,
+      )}
+    >
+      {children} {Icon && <Icon size={14} className="ml-1" />}
+    </Button>
+  );
+}
+
+enum TestStatus {
+  OK = "OK",
+  Alert = "Alert",
+  Paused = "Paused",
+}
+
+enum TestType {
+  Browser = "Browser",
+  API = "API",
+  MultistepAPI = "Multistep API",
+  Mobile = "Mobile",
+  WebSocket = "WebSocket",
+  SSL = "SSL",
+  gRPC = "gRPC",
+}
+
+const TEST_TYPE_ICON = {
+  [TestType.Browser]: GlobeIcon,
+  [TestType.API]: CodeIcon,
+  [TestType.MultistepAPI]: CodeXmlIcon,
+  [TestType.Mobile]: SmartphoneIcon,
+  [TestType.WebSocket]: UnplugIcon,
+  [TestType.SSL]: LockIcon,
+  [TestType.gRPC]: SquareDashedBottomCodeIcon,
+};
+
+type Test = {
+  id: string;
+  name: string;
+  status: TestStatus;
+  type: TestType;
+  domain: string;
+  tags: string[];
+  envs: string[];
+  team: string;
+  uptime: number | null;
+  lastModified: string;
+};
+
+const TESTS: Test[] = [
+  {
+    id: "eb93361a-6e6b-4ca7-bdfa-8cb197d58c5f",
+    name: "User Login",
+    status: TestStatus.OK,
+    type: TestType.Browser,
+    domain: "www.notion.so/login",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Authentication",
+    uptime: 100,
+    lastModified: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "a1b2c3d4-e5f6-7g8h-9i0j-klmnopqrstuv",
+    name: "Sign-Up Flow",
+    status: TestStatus.Paused,
+    type: TestType.Browser,
+    domain: "www.notion.so/signup",
+    tags: ["p1"],
+    envs: ["staging"],
+    team: "Onboarding",
+    uptime: 95,
+    lastModified: "2023-03-01T12:34:56.789Z",
+  },
+  {
+    id: "w1x2y3z4-a5b6-c7d8-e9f0-ghijklmnopqr",
+    name: "User Data API",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/user",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Backend",
+    uptime: 90.7,
+    lastModified: "2023-02-15T09:21:45.123Z",
+  },
+  {
+    id: "s1t2u3v4-w5x6-y7z8-a9b0-cdefghijklmn",
+    name: "Document Creation",
+    status: TestStatus.OK,
+    type: TestType.Browser,
+    domain: "www.notion.so/create-document",
+    tags: ["p2"],
+    envs: ["prod", "staging"],
+    team: "Editor",
+    uptime: 100,
+    lastModified: "2023-05-10T08:17:24.456Z",
+  },
+  {
+    id: "o1p2q3r4-s5t6-u7v8-w9x0-yzabcdefghijkl",
+    name: "Mobile Login",
+    status: TestStatus.OK,
+    type: TestType.Mobile,
+    domain: "m.notion.so/login",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Mobile",
+    uptime: 99.9,
+    lastModified: "2023-04-05T15:32:18.789Z",
+  },
+  {
+    id: "m1n2o3p4-q5r6-s7t8-u9v0-wxyzabcdefghij",
+    name: "WebSocket Connection",
+    status: TestStatus.Alert,
+    type: TestType.WebSocket,
+    domain: "ws.notion.so/connect",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Realtime",
+    uptime: 97.3,
+    lastModified: "2023-01-20T11:45:33.567Z",
+  },
+  {
+    id: "k1l2m3n4-o5p6-q7r8-s9t0-uvwxyzabcdefg",
+    name: "Payment Gateway",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/payment",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Payments",
+    uptime: 100,
+    lastModified: "2023-06-01T10:12:45.678Z",
+  },
+  {
+    id: "j1k2l3m4-n5o6-p7q8-r9s0-tuvwxyzabcdef",
+    name: "SSL Certificate Check",
+    status: TestStatus.OK,
+    type: TestType.SSL,
+    domain: "www.notion.so",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Security",
+    uptime: null,
+    lastModified: "2023-02-28T14:27:36.890Z",
+  },
+  {
+    id: "i1j2k3l4-m5n6-o7p8-q9r0-stuvwxyzabcde",
+    name: "gRPC User Service",
+    status: TestStatus.OK,
+    type: TestType.gRPC,
+    domain: "api.notion.so/user",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Backend",
+    uptime: 99.2,
+    lastModified: "2023-03-14T16:38:49.012Z",
+  },
+  {
+    id: "g1h2i3j4-k5l6-m7n8-o9p0-qrsuvwxyzabc",
+    name: "User Profile Load",
+    status: TestStatus.OK,
+    type: TestType.Browser,
+    domain: "www.notion.so/profile",
+    tags: ["p2"],
+    envs: ["prod"],
+    team: "Frontend",
+    uptime: 99.8,
+    lastModified: "2023-05-30T09:48:12.678Z",
+  },
+  {
+    id: "f1g2h3i4-j5k6-l7m8-n9o0-pqrstuvwxyzab",
+    name: "API Rate Limiting",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/rate-limit",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Backend",
+    uptime: 97.9,
+    lastModified: "2023-01-18T17:29:45.789Z",
+  },
+  {
+    id: "e1f2g3h4-i5j6-k7l8-m9n0-opqrstuvwxyz",
+    name: "Mobile Push Notifications",
+    status: TestStatus.OK,
+    type: TestType.Mobile,
+    domain: "m.notion.so/notifications",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Mobile",
+    uptime: 100,
+    lastModified: "2023-03-08T10:56:34.123Z",
+  },
+  {
+    id: "d1e2f3g4-h5i6-j7k8-l9m0-nopqrstuvwxy",
+    name: "WebSocket Message Delivery",
+    status: TestStatus.OK,
+    type: TestType.WebSocket,
+    domain: "ws.notion.so/messages",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Realtime",
+    uptime: 98.4,
+    lastModified: "2023-04-12T12:34:56.456Z",
+  },
+  {
+    id: "c1d2e3f4-g5h6-i7j8-k9l0-mnopqrstuvwx",
+    name: "SSL Expiration Check",
+    status: TestStatus.OK,
+    type: TestType.SSL,
+    domain: "www.notion.so",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Security",
+    uptime: null,
+    lastModified: "2023-02-21T14:47:39.678Z",
+  },
+  {
+    id: "b1c2d3e4-f5g6-h7i8-j9k0-lmnopqrstuvw",
+    name: "gRPC Payment Service",
+    status: TestStatus.OK,
+    type: TestType.gRPC,
+    domain: "api.notion.so/payment",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Payments",
+    uptime: 99.0,
+    lastModified: "2023-03-29T16:58:21.890Z",
+  },
+  {
+    id: "a1b2c3d4-e5f6-g7h8-i9j0-klmnopqrstuv",
+    name: "Multistep Order Processing",
+    status: TestStatus.Paused,
+    type: TestType.MultistepAPI,
+    domain: "api.notion.so/order",
+    tags: ["p2"],
+    envs: ["staging"],
+    team: "E-commerce",
+    uptime: 98.2,
+    lastModified: "2023-05-02T11:23:45.123Z",
+  },
+  {
+    id: "z1y2x3w4-v5u6-t7s8-r9q0-ponmlkjihgfe",
+    name: "API Key Validation",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/key-validation",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Security",
+    uptime: 100,
+    lastModified: "2023-06-04T13:12:34.456Z",
+  },
+  {
+    id: "x1w2v3u4-t5s6-r7q8-p9o0-nmlkjihgfe",
+    name: "User Profile Picture Upload",
+    status: TestStatus.OK,
+    type: TestType.Browser,
+    domain: "www.notion.so/upload-profile-pic",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Frontend",
+    uptime: 99.6,
+    lastModified: "2023-03-18T14:28:39.567Z",
+  },
+  {
+    id: "w1v2u3t4-s5r6-q7p8-o9n0-lkjihgfedcba",
+    name: "Document Collaboration",
+    status: TestStatus.OK,
+    type: TestType.WebSocket,
+    domain: "ws.notion.so/collaboration",
+    tags: ["p2"],
+    envs: ["prod"],
+    team: "Realtime",
+    uptime: 97.8,
+    lastModified: "2023-05-06T16:47:12.890Z",
+  },
+  {
+    id: "v1u2t3s4-r5q6-p7o8-n9m0-kjihgfedcb",
+    name: "Mobile Document Editing",
+    status: TestStatus.Paused,
+    type: TestType.Mobile,
+    domain: "m.notion.so/edit-document",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Mobile",
+    uptime: 100,
+    lastModified: "2023-04-30T12:39:45.678Z",
+  },
+  {
+    id: "u1t2s3r4-q5p6-o7n8-m9l0-jihgfedcba",
+    name: "Multistep Payment Process",
+    status: TestStatus.OK,
+    type: TestType.MultistepAPI,
+    domain: "api.notion.so/payment-process",
+    tags: ["p1"],
+    envs: ["staging"],
+    team: "Payments",
+    uptime: 98.3,
+    lastModified: "2023-03-10T09:58:27.345Z",
+  },
+  {
+    id: "t1s2r3q4-p5o6-n7m8-l9k0-ihgfedcbazyx",
+    name: "Notification Delivery",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/notifications",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Backend",
+    uptime: 99.9,
+    lastModified: "2023-01-25T15:16:38.456Z",
+  },
+  {
+    id: "s1r2q3p4-o5n6-m7l8-k9j0-hgfedcba",
+    name: "API User Authentication",
+    status: TestStatus.Alert,
+    type: TestType.API,
+    domain: "api.notion.so/authenticate",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Authentication",
+    uptime: 100,
+    lastModified: "2023-06-07T10:47:45.123Z",
+  },
+  {
+    id: "r1q2p3o4-n5m6-l7k8-j9i0-gfedcba",
+    name: "API Data Encryption",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/encrypt",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Security",
+    uptime: 98.1,
+    lastModified: "2023-02-22T14:38:56.789Z",
+  },
+  {
+    id: "q1p2o3n4-m5l6-k7j8-i9h0-fedcba",
+    name: "Mobile API Integration",
+    status: TestStatus.OK,
+    type: TestType.Mobile,
+    domain: "m.notion.so/api",
+    tags: ["p2"],
+    envs: ["prod"],
+    team: "Mobile",
+    uptime: 99.7,
+    lastModified: "2023-03-29T11:27:39.456Z",
+  },
+  {
+    id: "p1o2n3m4-l5k6-j7i8-h9g0-edcba",
+    name: "Multistep Profile Update",
+    status: TestStatus.OK,
+    type: TestType.MultistepAPI,
+    domain: "api.notion.so/update-profile",
+    tags: ["p1"],
+    envs: ["staging"],
+    team: "Backend",
+    uptime: 97.5,
+    lastModified: "2023-05-01T12:16:49.678Z",
+  },
+  {
+    id: "o1n2m3l4-k5j6-i7h8-g9f0-dcba",
+    name: "WebSocket Real-time Updates",
+    status: TestStatus.Alert,
+    type: TestType.WebSocket,
+    domain: "ws.notion.so/updates",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Realtime",
+    uptime: 98.9,
+    lastModified: "2023-04-11T16:28:50.123Z",
+  },
+];
