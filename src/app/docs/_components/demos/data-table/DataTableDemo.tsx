@@ -280,7 +280,7 @@ export default function DataTableDemo() {
             className="absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
           />
           <Input
-            placeholder="Search for employees..."
+            placeholder="Search for tests..."
             inputSize="sm"
             value={table.getColumn("name")?.getFilterValue() as string}
             onChange={(event) =>
@@ -359,6 +359,30 @@ export default function DataTableDemo() {
           </TableBody>
         </Table>
       </div>
+      <Pagination className="justify-end">
+        <PaginationContent className="gap-x-3">
+          <PaginationItem>
+            <PaginationPreviousButton
+              variant="outline"
+              size="sm"
+              iconSize={14}
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+              className="py-2 pl-1.5"
+            />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNextButton
+              variant="outline"
+              size="sm"
+              iconSize={14}
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+              className="py-2 pr-1.5"
+            />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </div>
   );
 }
@@ -860,5 +884,41 @@ const TESTS: Test[] = [
     team: "Realtime",
     uptime: 98.9,
     lastModified: "2023-04-11T16:28:50.123Z",
+  },
+  {
+    id: "y1z2x3w4-v5u6-t7s8-r9q0-ponmlkjihgfe",
+    name: "File Upload API",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/file-upload",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Backend",
+    uptime: 98.5,
+    lastModified: "2023-04-25T11:24:36.456Z",
+  },
+  {
+    id: "z2y3x4w5-v6u7-t8s9-r0q1-ponmlkjihgfe",
+    name: "Mobile Sign-Up Flow",
+    status: TestStatus.OK,
+    type: TestType.Mobile,
+    domain: "m.notion.so/signup",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Mobile",
+    uptime: 99.2,
+    lastModified: "2023-03-22T14:35:47.789Z",
+  },
+  {
+    id: "a2b3c4d5-e6f7-g8h9-i0j1-klmnopqrstuv",
+    name: "Document Sharing",
+    status: TestStatus.Paused,
+    type: TestType.Browser,
+    domain: "www.notion.so/share-document",
+    tags: ["p2"],
+    envs: ["staging"],
+    team: "Collaboration",
+    uptime: 95.3,
+    lastModified: "2023-05-18T10:47:58.123Z",
   },
 ];
