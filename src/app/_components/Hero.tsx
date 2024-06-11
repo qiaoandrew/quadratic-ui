@@ -24,8 +24,7 @@ export default function Hero() {
       >
         <h1
           className={cn(
-            "max-w-[370px] shrink-0 font-logo text-7 font-semibold leading-10",
-            "xs:text-8 xs:leading-11",
+            "max-w-[370px] shrink-0 font-logo text-8 font-semibold leading-11",
             "sm:max-w-[410px] sm:text-9 sm:leading-13",
             "xl:max-w-[500px] xl:text-11 xl:leading-15",
             "2xl:max-w-[580px] 2xl:text-12 2xl:leading-16",
@@ -66,8 +65,7 @@ export default function Hero() {
           >
             <Button
               className={cn(
-                "bg-gradient-dark py-2.5 font-semibold dark:bg-gradient-light",
-                "xs:px-4 xs:py-3 xs:text-4",
+                "bg-gradient-dark px-4 py-2.5 text-4 font-semibold dark:bg-gradient-light",
                 "2xl:rounded-3 2xl:px-4.5 2xl:py-4 2xl:text-5",
               )}
               asChild
@@ -77,8 +75,7 @@ export default function Hero() {
             <Button
               variant="secondary"
               className={cn(
-                "gap-x-2.5 border border-muted-foreground/50 bg-secondary py-2.5 font-semibold",
-                "xs:gap-x-3.5 xs:px-4 xs:py-3 xs:text-4",
+                "gap-x-3.5 border border-muted-foreground/50 bg-secondary px-4 py-2.5 text-4 font-semibold",
                 "2xl:rounded-3 2xl:px-4.5 2xl:py-4 2xl:text-5",
               )}
               asChild
