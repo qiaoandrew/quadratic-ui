@@ -13,14 +13,14 @@ import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/docs";
 interface DocMenuProps {
   primitivesMenuItems: DocItem[];
   compositesMenuItems: DocItem[];
-  chartsMenuItems: DocItem[];
+  visualizationsMenuItems: DocItem[];
   isMobile?: boolean;
 }
 
 export default function DocMenu({
   primitivesMenuItems,
   compositesMenuItems,
-  chartsMenuItems,
+  visualizationsMenuItems,
   isMobile,
 }: DocMenuProps) {
   const pathname = usePathname();
@@ -66,8 +66,8 @@ export default function DocMenu({
           />
           <DocMenuSection
             pathname={pathname}
-            title="Charts"
-            items={chartsMenuItems}
+            title="Visualizations"
+            items={visualizationsMenuItems}
             isVisible={pathname.includes("components") || pathname === "/"}
             isMobile={isMobile}
           />

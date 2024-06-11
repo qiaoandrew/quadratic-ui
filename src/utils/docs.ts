@@ -62,16 +62,22 @@ export const getComponentsMenuItems = async () => {
     })),
   );
 
-  const charts = await readDirectory("src/app/docs/components/charts");
-  const chartsMenuItems = await Promise.all(
-    charts.map(async (name) => ({
+  const visualizations = await readDirectory(
+    "src/app/docs/components/visualizations",
+  );
+  const visualizationsMenuItems = await Promise.all(
+    visualizations.map(async (name) => ({
       id: name,
-      href: `/docs/components/charts/${name}`,
+      href: `/docs/components/visualizations/${name}`,
       label: formatLabel(name),
     })),
   );
 
-  return { primitivesMenuItems, compositesMenuItems, chartsMenuItems };
+  return {
+    primitivesMenuItems,
+    compositesMenuItems,
+    visualizationsMenuItems,
+  };
 };
 
 export const getTOCs = async () => {
@@ -107,13 +113,15 @@ export const getTOCs = async () => {
     }),
   );
 
-  const charts = await readDirectory("src/app/docs/components/charts");
+  const visualizations = await readDirectory(
+    "src/app/docs/components/visualizations",
+  );
   await Promise.all(
-    charts.map(async (chart) => {
-      const filePath = `src/app/docs/components/charts/${chart}/page.mdx`;
+    visualizations.map(async (visualization) => {
+      const filePath = `src/app/docs/components/visualizations/${visualization}/page.mdx`;
       const content = await readFile(filePath);
       const toc = extractSectionIds(content);
-      tocs[`components/charts/${chart}`] = toc;
+      tocs[`components/visualizations/${visualization}`] = toc;
     }),
   );
 

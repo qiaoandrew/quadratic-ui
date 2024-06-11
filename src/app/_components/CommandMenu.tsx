@@ -28,13 +28,13 @@ import type { DocItem } from "~/types/types";
 interface CommandMenu {
   primitivesMenuItems: DocItem[];
   compositesMenuItems: DocItem[];
-  chartsMenuItems: DocItem[];
+  visualizationsMenuItems: DocItem[];
 }
 
 export default function CommandMenu({
   primitivesMenuItems,
   compositesMenuItems,
-  chartsMenuItems,
+  visualizationsMenuItems,
 }: CommandMenu) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -107,8 +107,8 @@ export default function CommandMenu({
               </CommandItem>
             ))}
           </CommandGroup>
-          <CommandGroup heading="Charts">
-            {chartsMenuItems.map((item) => (
+          <CommandGroup heading="Visualizations">
+            {visualizationsMenuItems.map((item) => (
               <CommandItem
                 key={item.id}
                 onSelect={() => onSelect(() => router.push(item.href))}
