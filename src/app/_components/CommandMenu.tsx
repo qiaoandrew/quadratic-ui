@@ -51,6 +51,11 @@ export default function CommandMenu({
     return () => document.removeEventListener("keydown", down);
   }, []);
 
+  const onSelect = (action: () => void) => {
+    action();
+    setIsOpen(false);
+  };
+
   return (
     <>
       <button
@@ -73,7 +78,7 @@ export default function CommandMenu({
             {GETTING_STARTED_ITEMS.map((item) => (
               <CommandItem
                 key={item.id}
-                onSelect={() => router.push(item.href)}
+                onSelect={() => onSelect(() => router.push(item.href))}
               >
                 {item.Icon && <item.Icon size={18} className="mr-2" />}
                 {item.label}
@@ -84,7 +89,7 @@ export default function CommandMenu({
             {primitivesMenuItems.map((item) => (
               <CommandItem
                 key={item.id}
-                onSelect={() => router.push(item.href)}
+                onSelect={() => onSelect(() => router.push(item.href))}
               >
                 <DiamondIcon size={18} className="mr-2" />
                 {item.label}
@@ -95,7 +100,7 @@ export default function CommandMenu({
             {compositesMenuItems.map((item) => (
               <CommandItem
                 key={item.id}
-                onSelect={() => router.push(item.href)}
+                onSelect={() => onSelect(() => router.push(item.href))}
               >
                 <ComponentIcon size={18} className="mr-2" />
                 {item.label}
@@ -106,7 +111,7 @@ export default function CommandMenu({
             {chartsMenuItems.map((item) => (
               <CommandItem
                 key={item.id}
-                onSelect={() => router.push(item.href)}
+                onSelect={() => onSelect(() => router.push(item.href))}
               >
                 <BarChart2Icon size={18} className="mr-2" />
                 {item.label}
@@ -114,11 +119,11 @@ export default function CommandMenu({
             ))}
           </CommandGroup>
           <CommandGroup heading="Theme">
-            <CommandItem onSelect={() => setTheme("light")}>
+            <CommandItem onSelect={() => onSelect(() => setTheme("light"))}>
               <SunIcon size={18} className="mr-2" />
               Light
             </CommandItem>
-            <CommandItem onSelect={() => setTheme("dark")}>
+            <CommandItem onSelect={() => onSelect(() => setTheme("dark"))}>
               <MoonIcon size={18} className="mr-2" />
               Dark
             </CommandItem>

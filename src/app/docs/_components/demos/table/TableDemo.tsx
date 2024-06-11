@@ -1,9 +1,17 @@
 import {
+  CodeIcon,
+  CodeXmlIcon,
+  GlobeIcon,
+  LockIcon,
+  SmartphoneIcon,
+  SquareDashedBottomCodeIcon,
+  UnplugIcon,
+} from "lucide-react";
+
+import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -11,153 +19,308 @@ import {
 
 import { cn } from "~/utils/tailwind";
 
-type User = {
-  id: string;
-  name: string;
-  email: string;
-  status: Status;
-  role: string;
-};
-
-enum Status {
-  Active = "Active",
-  Inactive = "Inactive",
-  Onboarding = "Onboarding",
-}
-
-const STATUS_BADGE_CLASSES: {
-  [key in Status]: {
-    text: string;
-    border: string;
-  };
-} = {
-  [Status.Active]: {
-    text: "text-success-foreground",
-    border: "border-success-border",
-  },
-  [Status.Inactive]: {
-    text: "text-destructive-foreground",
-    border: "border-destructive-border",
-  },
-  [Status.Onboarding]: {
-    text: "text-warning-foreground",
-    border: "border-warning-border",
-  },
-};
-
-const USERS: User[] = [
-  {
-    id: "eb93361a-6e6b-4ca7-bdfa-8cb197d58c5f",
-    name: "John Doe",
-    email: "john.doe@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "f1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Jane Grant",
-    email: "jane.grant@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "e1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Alice Smith",
-    email: "alice.smith@gmail.com",
-    status: Status.Inactive,
-    role: "Designer",
-  },
-  {
-    id: "d1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Bob Brown",
-    email: "bob.brown@gmail.com",
-    status: Status.Active,
-    role: "Manager",
-  },
-  {
-    id: "c1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Charlie Davis",
-    email: "charlie.davis@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "f1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Isabella Lewis",
-    email: "isabella.lewis@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "g1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Jack Hill",
-    email: "jack.hill@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-  {
-    id: "h1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Karen Scott",
-    email: "karen.scott@gmail.com",
-    status: Status.Inactive,
-    role: "Manager",
-  },
-  {
-    id: "i1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Liam Green",
-    email: "liam.green@gmail.com",
-    status: Status.Onboarding,
-    role: "Developer",
-  },
-  {
-    id: "j1a7b6d3-6b0c-4c7a-9a3e-8c1f7d58c5f",
-    name: "Mia Adams",
-    email: "mia.adams@gmail.com",
-    status: Status.Active,
-    role: "Designer",
-  },
-];
-
 export default function TableDemo() {
   return (
-    <Table>
-      <TableCaption className="text-left">
-        A list of your employees.
-      </TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead className="text-right">Role</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {USERS.slice(0, 10).map((user) => (
-          <TableRow key={user.id}>
-            <TableCell className="font-medium">{user.name}</TableCell>
-            <TableCell>{user.email}</TableCell>
-            <TableCell>
-              <span
-                className={cn(
-                  "rounded-full border px-2 py-1",
-                  STATUS_BADGE_CLASSES[user.status].border,
-                  STATUS_BADGE_CLASSES[user.status].text,
-                )}
-              >
-                {user.status}
-              </span>
-            </TableCell>
-            <TableCell className="text-right">{user.role}</TableCell>
+    <div className="overflow-auto rounded-2 border">
+      <Table className="w-max">
+        <TableHeader>
+          <TableRow>
+            <TableHead>Name</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead>Type</TableHead>
+            <TableHead>Domain</TableHead>
+            <TableHead>Tags</TableHead>
+            <TableHead>Envs</TableHead>
+            <TableHead>Teams</TableHead>
+            <TableHead>Uptime</TableHead>
+            <TableHead className="text-right">Last Modified</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Count</TableCell>
-          <TableCell className="text-right">10</TableCell>
-        </TableRow>
-      </TableFooter>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {TESTS.map((test) => (
+            <TableRow key={test.id}>
+              <TableCell className="w-[180px]">{test.name}</TableCell>
+              <StatusCell status={test.status} />
+              <TypeCell type={test.type} />
+              <TableCell className="w-[160px] max-w-[160px] overflow-hidden truncate">
+                {test.domain}
+              </TableCell>
+              <TagsCell tags={test.tags} className="w-[60px]" />
+              <TagsCell tags={test.envs} className="w-[140px]" />
+              <TeamCell team={test.team} />
+              <UptimeCell uptime={test.uptime} />
+              <TableCell className="w-[140px] text-right">
+                {getTimeAgo(test.lastModified)}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 }
+
+function StatusCell({ status }: { status: TestStatus }) {
+  return (
+    <TableCell className="w-[90px]">
+      <div
+        className={cn(
+          "w-[70px] rounded-1 py-1 text-center text-3 font-medium uppercase",
+          status === TestStatus.OK && "bg-success text-success-foreground",
+          status === TestStatus.Alert &&
+            "bg-destructive text-destructive-foreground",
+          status === TestStatus.Paused && "bg-muted text-muted-foreground",
+        )}
+      >
+        {status}
+      </div>
+    </TableCell>
+  );
+}
+
+function TypeCell({ type }: { type: TestType }) {
+  const Icon = TEST_TYPE_ICON[type];
+
+  return (
+    <TableCell className="w-[120px]">
+      <div className="flex items-center gap-x-1.5">
+        <Icon size={14} className="text-muted-foreground" />
+        {type}
+      </div>
+    </TableCell>
+  );
+}
+
+function TagsCell({ tags, className }: { tags: string[]; className?: string }) {
+  return (
+    <TableCell className={className}>
+      <div className="flex items-center gap-x-1.5">
+        {tags.map((tag, i) => (
+          <div className="rounded-1 bg-muted px-1.5 py-1" key={i}>
+            {tag}
+          </div>
+        ))}
+      </div>
+    </TableCell>
+  );
+}
+
+function TeamCell({ team }: { team: string }) {
+  return (
+    <TableCell className="w-[150px]">
+      <span className="rounded-full border px-2 py-1">{team}</span>
+    </TableCell>
+  );
+}
+
+function UptimeCell({ uptime }: { uptime: number | null }) {
+  const failureWidth = uptime === null ? "100%" : `calc(100% - ${uptime}%)`;
+
+  return (
+    <TableCell className="max-w-[120px]">
+      {uptime === null && (
+        <span className=" italic text-muted-foreground">No uptime data</span>
+      )}
+      {uptime !== null && (
+        <span className="flex items-center justify-between gap-x-1 font-semibold">
+          {uptime}%
+          <span className="relative h-4 w-[84px] bg-success">
+            <span
+              className={cn(`absolute inset-y-0 right-0 bg-destructive`)}
+              style={{ width: failureWidth }}
+            />
+          </span>
+        </span>
+      )}
+    </TableCell>
+  );
+}
+
+const getTimeAgo = (timestamp: string) => {
+  const date = new Date(timestamp);
+  const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
+  let interval = Math.floor(seconds / 31536000);
+
+  if (interval > 1) {
+    return `${interval} Years Ago`;
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return `${interval} Months Ago`;
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return `${interval} Days Ago`;
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return `${interval} Hours Ago`;
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return `${interval} Minutes Ago`;
+  }
+  return `${Math.floor(seconds)} Seconds Ago`;
+};
+
+enum TestStatus {
+  OK = "OK",
+  Alert = "Alert",
+  Paused = "Paused",
+}
+
+enum TestType {
+  Browser = "Browser",
+  API = "API",
+  MultistepAPI = "Multistep API",
+  Mobile = "Mobile",
+  WebSocket = "WebSocket",
+  SSL = "SSL",
+  gRPC = "gRPC",
+}
+
+const TEST_TYPE_ICON = {
+  [TestType.Browser]: GlobeIcon,
+  [TestType.API]: CodeIcon,
+  [TestType.MultistepAPI]: CodeXmlIcon,
+  [TestType.Mobile]: SmartphoneIcon,
+  [TestType.WebSocket]: UnplugIcon,
+  [TestType.SSL]: LockIcon,
+  [TestType.gRPC]: SquareDashedBottomCodeIcon,
+};
+
+type Test = {
+  id: string;
+  name: string;
+  status: TestStatus;
+  type: TestType;
+  domain: string;
+  tags: string[];
+  envs: string[];
+  team: string;
+  uptime: number | null;
+  lastModified: string;
+};
+
+const TESTS: Test[] = [
+  {
+    id: "eb93361a-6e6b-4ca7-bdfa-8cb197d58c5f",
+    name: "User Login",
+    status: TestStatus.OK,
+    type: TestType.Browser,
+    domain: "www.notion.so/login",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Authentication",
+    uptime: 100,
+    lastModified: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "a1b2c3d4-e5f6-7g8h-9i0j-klmnopqrstuv",
+    name: "Sign-Up Flow",
+    status: TestStatus.Paused,
+    type: TestType.Browser,
+    domain: "www.notion.so/signup",
+    tags: ["p1"],
+    envs: ["staging"],
+    team: "Onboarding",
+    uptime: 95,
+    lastModified: "2023-03-01T12:34:56.789Z",
+  },
+  {
+    id: "w1x2y3z4-a5b6-c7d8-e9f0-ghijklmnopqr",
+    name: "User Data API",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/user",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Backend",
+    uptime: 90.7,
+    lastModified: "2023-02-15T09:21:45.123Z",
+  },
+  {
+    id: "s1t2u3v4-w5x6-y7z8-a9b0-cdefghijklmn",
+    name: "Document Creation",
+    status: TestStatus.OK,
+    type: TestType.Browser,
+    domain: "www.notion.so/create-document",
+    tags: ["p2"],
+    envs: ["prod", "staging"],
+    team: "Editor",
+    uptime: 100,
+    lastModified: "2023-05-10T08:17:24.456Z",
+  },
+  {
+    id: "o1p2q3r4-s5t6-u7v8-w9x0-yzabcdefghijkl",
+    name: "Mobile Login",
+    status: TestStatus.OK,
+    type: TestType.Mobile,
+    domain: "m.notion.so/login",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Mobile",
+    uptime: 99.9,
+    lastModified: "2023-04-05T15:32:18.789Z",
+  },
+  {
+    id: "m1n2o3p4-q5r6-s7t8-u9v0-wxyzabcdefghij",
+    name: "WebSocket Connection",
+    status: TestStatus.Alert,
+    type: TestType.WebSocket,
+    domain: "ws.notion.so/connect",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Realtime",
+    uptime: 97.3,
+    lastModified: "2023-01-20T11:45:33.567Z",
+  },
+  {
+    id: "k1l2m3n4-o5p6-q7r8-s9t0-uvwxyzabcdefg",
+    name: "Payment Gateway",
+    status: TestStatus.OK,
+    type: TestType.API,
+    domain: "api.notion.so/payment",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Payments",
+    uptime: 100,
+    lastModified: "2023-06-01T10:12:45.678Z",
+  },
+  {
+    id: "j1k2l3m4-n5o6-p7q8-r9s0-tuvwxyzabcdef",
+    name: "SSL Certificate Check",
+    status: TestStatus.OK,
+    type: TestType.SSL,
+    domain: "www.notion.so",
+    tags: ["p0"],
+    envs: ["prod"],
+    team: "Security",
+    uptime: null,
+    lastModified: "2023-02-28T14:27:36.890Z",
+  },
+  {
+    id: "i1j2k3l4-m5n6-o7p8-q9r0-stuvwxyzabcde",
+    name: "gRPC User Service",
+    status: TestStatus.OK,
+    type: TestType.gRPC,
+    domain: "api.notion.so/user",
+    tags: ["p1"],
+    envs: ["prod"],
+    team: "Backend",
+    uptime: 99.2,
+    lastModified: "2023-03-14T16:38:49.012Z",
+  },
+  {
+    id: "g1h2i3j4-k5l6-m7n8-o9p0-qrsuvwxyzabc",
+    name: "User Profile Load",
+    status: TestStatus.OK,
+    type: TestType.Browser,
+    domain: "www.notion.so/profile",
+    tags: ["p2"],
+    envs: ["prod"],
+    team: "Frontend",
+    uptime: 99.8,
+    lastModified: "2023-05-30T09:48:12.678Z",
+  },
+];

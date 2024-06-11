@@ -128,15 +128,16 @@ PaginationButton.displayName = "PaginationButton";
 
 const PaginationPreviousButton = ({
   className,
+  iconSize = 16,
   ...props
-}: React.ComponentProps<typeof PaginationButton>) => (
+}: React.ComponentProps<typeof PaginationButton> & { iconSize?: number }) => (
   <PaginationButton
     aria-label="Go to previous page"
     size="default"
     className={cn("gap-1 pl-2", className)}
     {...props}
   >
-    <ChevronLeftIcon size={16} />
+    <ChevronLeftIcon size={iconSize} />
     <span>Previous</span>
   </PaginationButton>
 );
@@ -144,8 +145,9 @@ PaginationPreviousButton.displayName = "PaginationPreviousButton";
 
 const PaginationNextButton = ({
   className,
+  iconSize = 16,
   ...props
-}: React.ComponentProps<typeof PaginationButton>) => (
+}: React.ComponentProps<typeof PaginationButton> & { iconSize?: number }) => (
   <PaginationButton
     aria-label="Go to next page"
     size="default"
@@ -153,7 +155,7 @@ const PaginationNextButton = ({
     {...props}
   >
     <span>Next</span>
-    <ChevronRightIcon size={16} />
+    <ChevronRightIcon size={iconSize} />
   </PaginationButton>
 );
 PaginationNextButton.displayName = "PaginationNextButton";
