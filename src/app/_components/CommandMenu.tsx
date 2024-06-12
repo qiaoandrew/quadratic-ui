@@ -12,7 +12,6 @@ import {
   SunIcon,
 } from "lucide-react";
 
-import { Shortcut } from "~/components/ui/Shortcut";
 import {
   CommandDialog,
   CommandEmpty,
@@ -20,6 +19,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
+  CommandShortcut,
 } from "~/components/ui/Command";
 
 import { GETTING_STARTED_ITEMS } from "~/constants/docs";
@@ -48,6 +48,7 @@ export default function CommandMenu({
       }
     };
     document.addEventListener("keydown", down);
+
     return () => document.removeEventListener("keydown", down);
   }, []);
 
@@ -67,7 +68,7 @@ export default function CommandMenu({
           <SearchIcon size={16} />
           <p className="text-3.5">Search documentation...</p>
         </div>
-        <Shortcut size="default">⌘K</Shortcut>
+        <CommandShortcut>⌘K</CommandShortcut>
       </button>
 
       <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
