@@ -11,12 +11,6 @@ import BadgeWarningDemo from "~/app/docs/_components/demos/badge/BadgeWarningDem
 import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWarningOutlineDemo";
 import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
-import BarListDemo from "~/app/docs/_components/demos/bar-list/BarListDemo";
-import BarListSortOrderDemo from "~/app/docs/_components/demos/bar-list/BarListSortOrderDemo";
-import BarListValueFormatterDemo from "~/app/docs/_components/demos/bar-list/BarListValueFormatterDemo";
-import BarListExternalLinkDemo from "~/app/docs/_components/demos/bar-list/BarListExternalLinkDemo";
-import BarListClickableDemo from "~/app/docs/_components/demos/bar-list/BarListClickableDemo";
-import BarListLinkAndClickableDemo from "~/app/docs/_components/demos/bar-list/BarListLinkAndClickableDemo";
 import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
 import BreadcrumbLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbLinkDemo";
 import ButtonDemo from "~/app/docs/_components/demos/button/ButtonDemo";
@@ -58,13 +52,7 @@ import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
-import ProgressBarDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarDemo";
-import ProgressBarVariantsDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarVariantsDemo";
-import ProgressBarWithLabelDemo from "~/app/docs/_components/demos/progress-bar/ProgressBarWithLabelDemo";
-import ProgressCircleDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleDemo";
-import ProgressCircleVariantsDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleVariantsDemo";
-import ProgressCircleWithChildrenDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleWithChildrenDemo";
-import ProgressCircleStrokeWidthAndRadiusDemo from "~/app/docs/_components/demos/progress-circle/ProgressCircleStrokeWidthAndRadiusDemo";
+import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ResizableVerticalDemo from "~/app/docs/_components/demos/resizable/ResizableVerticalDemo";
@@ -101,7 +89,6 @@ import ToggleGroupSmallDemo from "~/app/docs/_components/demos/toggle-group/Togg
 import ToggleGroupLargeDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupLargeDemo";
 import ToggleGroupDisabledDemo from "~/app/docs/_components/demos/toggle-group/ToggleGroupDisabledDemo";
 import TooltipDemo from "~/app/docs/_components/demos/tooltip/TooltipDemo";
-import TrackerDemo from "~/app/docs/_components/demos/tracker/TrackerDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -155,30 +142,6 @@ export const COMPONENT_PREVIEWS = {
   "badge-success-outline": {
     PreviewComponent: BadgeSuccessOutlineDemo,
     path: "src/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo.tsx",
-  },
-  "bar-list": {
-    PreviewComponent: BarListDemo,
-    path: "src/app/docs/_components/demos/bar-list/BarListDemo.tsx",
-  },
-  "bar-list-sort-order": {
-    PreviewComponent: BarListSortOrderDemo,
-    path: "src/app/docs/_components/demos/bar-list/BarListSortOrderDemo.tsx",
-  },
-  "bar-list-value-formatter": {
-    PreviewComponent: BarListValueFormatterDemo,
-    path: "src/app/docs/_components/demos/bar-list/BarListValueFormatterDemo.tsx",
-  },
-  "bar-list-external-link": {
-    PreviewComponent: BarListExternalLinkDemo,
-    path: "src/app/docs/_components/demos/bar-list/BarListExternalLinkDemo.tsx",
-  },
-  "bar-list-clickable": {
-    PreviewComponent: BarListClickableDemo,
-    path: "src/app/docs/_components/demos/bar-list/BarListClickableDemo.tsx",
-  },
-  "bar-list-link-and-clickable": {
-    PreviewComponent: BarListLinkAndClickableDemo,
-    path: "src/app/docs/_components/demos/bar-list/BarListLinkAndClickableDemo.tsx",
   },
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,
@@ -344,33 +307,9 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: PopoverDemo,
     path: "src/app/docs/_components/demos/popover/PopoverDemo.tsx",
   },
-  "progress-bar": {
-    PreviewComponent: ProgressBarDemo,
-    path: "src/app/docs/_components/demos/progress-bar/ProgressBarDemo.tsx",
-  },
-  "progress-bar-variants": {
-    PreviewComponent: ProgressBarVariantsDemo,
-    path: "src/app/docs/_components/demos/progress-bar/ProgressBarVariantsDemo.tsx",
-  },
-  "progress-bar-with-label": {
-    PreviewComponent: ProgressBarWithLabelDemo,
-    path: "src/app/docs/_components/demos/progress-bar/ProgressBarWithLabelDemo.tsx",
-  },
-  "progress-circle": {
-    PreviewComponent: ProgressCircleDemo,
-    path: "src/app/docs/_components/demos/progress-circle/ProgressCircleDemo.tsx",
-  },
-  "progress-circle-variants": {
-    PreviewComponent: ProgressCircleVariantsDemo,
-    path: "src/app/docs/_components/demos/progress-circle/ProgressCircleVariantsDemo.tsx",
-  },
-  "progress-circle-with-children": {
-    PreviewComponent: ProgressCircleWithChildrenDemo,
-    path: "src/app/docs/_components/demos/progress-circle/ProgressCircleWithChildrenDemo.tsx",
-  },
-  "progress-circle-stroke-width-and-radius": {
-    PreviewComponent: ProgressCircleStrokeWidthAndRadiusDemo,
-    path: "src/app/docs/_components/demos/progress-circle/ProgressCircleStrokeWidthAndRadiusDemo.tsx",
+  progress: {
+    PreviewComponent: ProgressDemo,
+    path: "src/app/docs/_components/demos/progress/ProgressDemo.tsx",
   },
   "radio-group": {
     PreviewComponent: RadioGroupDemo,
@@ -515,9 +454,5 @@ export const COMPONENT_PREVIEWS = {
   tooltip: {
     PreviewComponent: TooltipDemo,
     path: "src/app/docs/_components/demos/tooltip/TooltipDemo.tsx",
-  },
-  tracker: {
-    PreviewComponent: TrackerDemo,
-    path: "src/app/docs/_components/demos/tracker/TrackerDemo.tsx",
   },
 };

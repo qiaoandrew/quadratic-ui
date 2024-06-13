@@ -61,22 +61,9 @@ export const getComponentsMenuItems = async () => {
       label: formatLabel(name),
     })),
   );
-
-  const visualizations = await readDirectory(
-    "src/app/docs/components/visualizations",
-  );
-  const visualizationsMenuItems = await Promise.all(
-    visualizations.map(async (name) => ({
-      id: name,
-      href: `/docs/components/visualizations/${name}`,
-      label: formatLabel(name),
-    })),
-  );
-
   return {
     primitivesMenuItems,
     compositesMenuItems,
-    visualizationsMenuItems,
   };
 };
 
@@ -110,18 +97,6 @@ export const getTOCs = async () => {
       const content = await readFile(filePath);
       const toc = extractSectionIds(content);
       tocs[`components/composites/${composite}`] = toc;
-    }),
-  );
-
-  const visualizations = await readDirectory(
-    "src/app/docs/components/visualizations",
-  );
-  await Promise.all(
-    visualizations.map(async (visualization) => {
-      const filePath = `src/app/docs/components/visualizations/${visualization}/page.mdx`;
-      const content = await readFile(filePath);
-      const toc = extractSectionIds(content);
-      tocs[`components/visualizations/${visualization}`] = toc;
     }),
   );
 
