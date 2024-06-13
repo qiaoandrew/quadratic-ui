@@ -10,7 +10,7 @@ import { cn } from "~/utils/tailwind";
 
 export const metadata = {
   title: "quadratic/ui",
-  description: "Build your side project faster.",
+  description: "The fastest way to build your next project.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
