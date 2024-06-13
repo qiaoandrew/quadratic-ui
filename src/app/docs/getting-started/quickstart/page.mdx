@@ -8,22 +8,35 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 
 <Steps>
 
-<StepTitle>Create a Next.js app with TypeScript and Tailwind CSS installed. If you don't know where to start, look [here](https://nextjs.org/docs/getting-started/installation). I also recommend using [pnpm](https://pnpm.io/) as your package manager.</StepTitle>
+<StepTitle>Create a Next.js app with TypeScript and Tailwind CSS installed. I recommend using [create-t3-app](https://create.t3.gg/en/installation#pnpm) and using [pnpm](https://pnpm.io/) as your package manager. For a detailed walkthrough, check out this [guide](/docs/getting-started/create-t3-app).</StepTitle>
 
 <StepTitle>Add the following dependencies to your project.</StepTitle>
 <StepContent>
 ```bash
-pnpm add tailwindcss-animate class-variance-authority clsx tailwind-merge tailwind-variants tailwind-variants lucide-react
+pnpm add tailwindcss-animate class-variance-authority clsx tailwind-merge
 ```
 </StepContent>
 
-<StepTitle>Replace your `tailwind.config.ts` with this.</StepTitle>
-```ts
-import { type Config } from "tailwindcss";
+<StepTitle>Add [Lucide](https://lucide.dev/), an icon library, to your project..</StepTitle>
+<StepContent>
+```bash
+pnpm add lucide-react
+```
+</StepContent>
 
+<StepTitle>Make the following changes to your `tailwind.config.ts` file.</StepTitle>
+<StepContent>
+Add the `darkMode` property to the root of your config.
+```ts
 export default {
   darkMode: ["class"],
-  content: ["./src/**/*.tsx"],
+  ...
+} satisfies Config;
+```
+Add the `borderRadius`, `fontSize`, `lineHeight`, and `screens` object to `theme`.
+```ts
+export default {
+  ...
   theme: {
     borderRadius: {
       none: "0",
@@ -49,12 +62,6 @@ export default {
       15: "3.75rem",
       16: "4rem",
       full: "9999px",
-    },
-    fontFamily: {
-      sans: ["Inter-Variable", "sans-serif"],
-      display: ["InterDisplay", "sans-serif"],
-      logo: ["GeneralSans-Variable", "sans-serif"],
-      mono: ["var(--font-geist-mono)", "monospace"],
     },
     fontSize: {
       2.5: ["0.625rem", "0.75rem"],
@@ -103,20 +110,18 @@ export default {
       "4xl": "1600px",
       "5xl": "1800px",
     },
+    ...
+  },
+  ...
+} satisfies Config;
+```
+Under `theme.extend`, add this `colors` object.
+```ts
+export default {
+  ...
+  theme: {
+    ...
     extend: {
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "caret-blink": "caret-blink 1.25s ease-out infinite",
-        "scale-in": "scale-in 0.2s ease",
-        "scale-out": "scale-out 0.2s ease",
-        "fade-in": "fade-in 200ms ease",
-        "fade-out": "fade-out 200ms ease",
-      },
-      backgroundImage: {
-        "gradient-light": "linear-gradient(90deg, #BCF3F3 0%, #798FDE 100%)",
-        "gradient-dark": "linear-gradient(90deg, #0D8888 0%, #1D3FB5 100%)",
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -167,50 +172,18 @@ export default {
           foreground: "hsl(var(--highlight-foreground))",
         },
       },
-      height: {
-        18: "4.5rem",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "caret-blink": {
-          "0%,70%,100%": { opacity: "1" },
-          "20%,50%": { opacity: "0" },
-        },
-        "scale-in": {
-          from: { opacity: "0", transform: "rotateX(-10deg) scale(0.9)" },
-          to: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
-        },
-        "scale-out": {
-          from: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
-          to: { opacity: "0", transform: "rotateX(-10deg) scale(0.95)" },
-        },
-        "fade-in": {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        "fade-out": {
-          from: { opacity: "1" },
-          to: { opacity: "0" },
-        },
-      },
-      spacing: {
-        4.5: "1.125rem",
-        18: "4.5rem",
-        26: "6.5rem",
-        30: "7.5rem",
-      },
     },
   },
+} satisfies Config;
+```
+Add the `tailwindcss-animate` plugin to root of the config.
+```ts
+export default {
+  ...
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 ```
+</StepContent>
 
 <StepTitle>Add the following colors to your `styles/globals.css` file.</StepTitle>
 <StepContent>

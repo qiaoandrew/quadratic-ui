@@ -1,4 +1,4 @@
-export const COMPONENT_SOURCES = {
+export const FILE_SOURCES = {
   accordion: "src/components/ui/Accordion.tsx",
   "alert-dialog": "src/components/ui/AlertDialog.tsx",
   "aspect-ratio": "src/components/ui/AspectRatio.tsx",

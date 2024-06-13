@@ -1,16 +1,16 @@
 import CodeBlock from "./CodeBlock";
 
 import { readFile } from "~/utils/file-system";
-import { COMPONENT_SOURCES } from "~/constants/component-sources";
+import { FILE_SOURCES } from "~/constants/file-sources";
 
 interface ComponentSourceProps {
-  id: keyof typeof COMPONENT_SOURCES;
+  id: keyof typeof FILE_SOURCES;
 }
 
 export default async function ComponentSource({ id }: ComponentSourceProps) {
-  if (!COMPONENT_SOURCES[id]) return null;
+  if (!FILE_SOURCES[id]) return null;
 
-  const path = COMPONENT_SOURCES[id];
+  const path = FILE_SOURCES[id];
   const code = await readFile(path);
 
   return (
