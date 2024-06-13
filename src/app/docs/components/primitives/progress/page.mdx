@@ -6,13 +6,13 @@ import ComponentSource from "~/app/docs/_components/mdx/ComponentSource";
 import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
 import Footer from "~/app/docs/_components/mdx/Footer";
 
-<Title>Tracker</Title>
-<Description>Component for visualizing data related to monitoring.</Description>
+<Title>Progress</Title>
+<Description>Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.</Description>
 <DocLinks>
-  <DocLink href="https://raw.tremor.so/docs/visualizations/tracker" icon="file-code-2">Docs</DocLink>
-  <DocLink href="https://raw.tremor.so/docs/visualizations/tracker#api-reference-tracker" icon="code-xml">API Reference</DocLink>
+  <DocLink href="https://www.radix-ui.com/docs/primitives/components/progress" icon="file-code-2">Docs</DocLink>
+  <DocLink href="https://www.radix-ui.com/docs/primitives/components/progress#api-reference" icon="code-xml">API Reference</DocLink>
 </DocLinks>
-<ComponentPreview id="tracker" />
+<ComponentPreview id="progress" />
 
 ## Installation
 <Steps>
@@ -20,13 +20,13 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
-pnpm add @radix-ui/react-hover-card
+pnpm add @radix-ui/react-progress
 ```
 </StepContent>
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
-<ComponentSource id="tracker" />
+<ComponentSource id="progress" />
 </StepContent>
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
@@ -35,12 +35,10 @@ pnpm add @radix-ui/react-hover-card
 
 ## Usage
 ```tsx
-import { Tracker } from "~/components/ui/Tracker";
+import { Progress } from "~/components/ui/Progress";
 ```
 ```tsx
-export default function TrackerDemo() {
-  return <Tracker data={[{ color: "bg-emerald-600", tooltip: "Operational" }]} />;
-}
+<Progress value={33} />
 ```
 
-<Footer previousLabel="Progress Circle" previousHref="/docs/components/visualizations/progress-circle" />
+<Footer previousLabel="Popover" previousHref="/docs/components/primitives/popover" nextLabel="Radio Group" nextHref="/docs/components/primitives/radio-group" />

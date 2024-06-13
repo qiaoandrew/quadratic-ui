@@ -4,7 +4,7 @@ import DocMenu from "./DocMenu";
 import { getComponentsMenuItems } from "~/utils/docs";
 
 export default async function DocMenuMobileSheet() {
-  const { primitivesMenuItems, compositesMenuItems, visualizationsMenuItems } =
+  const { primitivesMenuItems, compositesMenuItems } =
     await getComponentsMenuItems();
 
   return (
@@ -20,7 +20,6 @@ export default async function DocMenuMobileSheet() {
         <DocMenu
           primitivesMenuItems={primitivesMenuItems}
           compositesMenuItems={compositesMenuItems}
-          visualizationsMenuItems={visualizationsMenuItems}
           isMobile
         />
       </SheetContent>

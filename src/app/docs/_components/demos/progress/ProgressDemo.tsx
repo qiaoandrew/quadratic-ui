@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 
-import { ProgressBar } from "~/components/ui/ProgressBar";
+import { Progress } from "~/components/ui/Progress";
 
-export default function ProgressBarDemo() {
+export default function ProgressDemo() {
   const [progress, setProgress] = useState(13);
 
   useEffect(() => {
@@ -12,11 +12,5 @@ export default function ProgressBarDemo() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
-    <ProgressBar
-      value={progress}
-      showAnimation
-      className="w-full max-w-[480px]"
-    />
-  );
+  return <Progress value={progress} className="w-full max-w-[480px]" />;
 }
