@@ -1,4 +1,4 @@
-export const COMPONENT_SOURCES = {
+export const FILE_SOURCES = {
   accordion: "src/components/ui/Accordion.tsx",
   "alert-dialog": "src/components/ui/AlertDialog.tsx",
   "aspect-ratio": "src/components/ui/AspectRatio.tsx",
@@ -44,4 +44,5 @@ export const COMPONENT_SOURCES = {
   toggle: "src/components/ui/Toggle.tsx",
   "toggle-group": "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
+  tailwind: "src/utils/tailwind.ts",
 };

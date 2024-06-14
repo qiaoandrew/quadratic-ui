@@ -8,6 +8,7 @@ import {
   SmileIcon,
   CodeXmlIcon,
   FileCode2,
+  AtomIcon,
 } from "lucide-react";
 
 import type { DocItem, DocGroup } from "~/types/types";
@@ -63,6 +64,12 @@ export const GETTING_STARTED_ITEMS: DocItem[] = [
 ];
 
 export const GUIDES_ITEMS: DocItem[] = [
+  {
+    id: "create-t3-app",
+    href: "/docs/getting-started/create-t3-app",
+    label: "create-t3-app",
+    Icon: AtomIcon,
+  },
   {
     id: "customization",
     href: "/docs/getting-started/customization",

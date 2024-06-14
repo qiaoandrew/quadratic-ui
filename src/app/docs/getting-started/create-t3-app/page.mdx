@@ -1,0 +1,175 @@
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>create-t3-app</Title>
+<Description>The best way to start building full-stack Next.js apps.</Description>
+
+<Steps>
+
+<StepTitle>Install the [`pnpm`](https://pnpm.io/installation) package manager on your system if you haven't already.</StepTitle>
+
+<StepTitle>Run this script in your terminal to start the [`create-t3-app`](https://create.t3.gg/) process.</StepTitle>
+<StepContent>
+```bash
+pnpm create t3-app@latest
+```
+</StepContent>
+
+<StepTitle>Enter the name of your project.</StepTitle>
+<StepContent>
+```plaintext
+◆  What will your project be called?
+│  quadratic-ui
+```
+</StepContent>
+
+<StepTitle>Select TypeScript.</StepTitle>
+<StepContent>
+```plaintext
+◆  Will you be using TypeScript or JavaScript?
+│  ● TypeScript
+│  ○ JavaScript
+```
+</StepContent>
+
+<StepTitle>Select Tailwind CSS.</StepTitle>
+<StepContent>
+```plaintext
+◆  Will you be using Tailwind CSS for styling?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Choose whether or not to use tRPC.</StepTitle>
+<StepContent>
+```plaintext
+◆  Would you like to use tRPC?
+│  ○ Yes / ● No
+```
+</StepContent>
+
+<StepTitle>Select your authentication provider. If you don't need authentication or aren't using NextAuth.js, choose "None".</StepTitle>
+<StepContent>
+```plaintext
+◆  What authentication provider would you like to use?
+│  ● None
+│  ○ NextAuth.js
+```
+</StepContent>
+
+<StepTitle>Select your database ORM. If you don't need a database, select "None". Otherwise, if your database is compatible, I would recommend Drizzle.</StepTitle>
+<StepContent>
+```plaintext
+◆  What database ORM would you like to use?
+│  ○ None
+│  ○ Prisma
+│  ● Drizzle
+```
+</StepContent>
+
+<StepTitle>Choose the App Router.</StepTitle>
+<StepContent>
+```plaintext
+◆  Would you like to use Next.js App Router?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Select your database provider.</StepTitle>
+<StepContent>
+```plaintext
+◆  What database provider would you like to use?
+│  ○ SQLite (LibSQL)
+│  ○ MySQL
+│  ● PostgreSQL
+│  ○ PlanetScale
+```
+</StepContent>
+
+<StepTitle>Choose to initialize a Git repository.</StepTitle>
+<StepContent>
+```plaintext
+◆  Should we initialize a Git repository and stage the changes?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Choose to run `pnpm install`.</StepTitle>
+<StepContent>
+```plaintext
+◆  Should we run 'pnpm install' for you?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Select the default import alias.</StepTitle>
+<StepContent>
+```plaintext
+◆  What import alias would you like to use?
+│  ~/
+```
+</StepContent>
+
+<StepTitle>Wait for the installation to complete. Your terminal should look like this.</StepTitle>
+<StepContent>
+```plaintext
+✔ quadratic-ui scaffolded successfully!
+
+Adding boilerplate...
+✔ Successfully setup boilerplate for drizzle
+✔ Successfully setup boilerplate for tailwind
+✔ Successfully setup boilerplate for dbContainer
+✔ Successfully setup boilerplate for envVariables
+✔ Successfully setup boilerplate for eslint
+
+Installing dependencies...
+✔ Successfully installed dependencies!
+
+Initializing Git...
+✔ Successfully initialized and staged git
+
+Next steps:
+  cd test
+  Start up a database, if needed using './start-database.sh'
+  pnpm db:push
+  pnpm dev
+  git commit -m "initial commit"
+```
+</StepContent>
+
+<StepTitle>Create a repository on GitHub and copy the repository's URL. It should look something like this: `https://github.com/qiaoandrew/quadratic-ui.git`.</StepTitle>
+
+<StepTitle>Change into your project's root directory. Run the following command, replacing `quadratic-ui` with the name of your project.</StepTitle>
+<StepContent>
+```bash
+cd quadratic-ui
+```
+</StepContent>
+
+<StepTitle>Push your repository to GitHub through the command line by running the following commands in your project's root folder. Replace the GitHub link with your own.</StepTitle>
+<StepContent>
+```bash
+git remote add origin https://github.com/qiaoandrew/quadratic-ui.git
+git branch -M main
+git add .
+git commit -m 'initial commit'
+git push -u origin main
+```
+</StepContent>
+
+<StepTitle>Create a new project on [Vercel](https://vercel.com/new). Log in with your GitHub account and connect your new GitHub repository to the project.</StepTitle>
+
+<StepTitle>Add the following environment variable as a placeholder under the "Environment Variables" section.</StepTitle>
+<StepContent>
+```plaintext
+DATABASE_URL="postgresql://postgres:password@localhost:5432/test"
+```
+</StepContent>
+
+<StepTitle>Click deploy!</StepTitle>
+
+<StepTitle>Follow the [quickstart guide](/docs/getting-started/quickstart) to get started with quadratic/ui.</StepTitle>
+
+</Steps>
