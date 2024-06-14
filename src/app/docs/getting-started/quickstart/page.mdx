@@ -33,7 +33,9 @@ export default {
   ...
 } satisfies Config;
 ```
+
 Add the `borderRadius`, `fontSize`, `lineHeight`, and `screens` object to `theme`.
+
 ```ts
 export default {
   ...
@@ -115,7 +117,9 @@ export default {
   ...
 } satisfies Config;
 ```
+
 Under `theme.extend`, add this `colors` object.
+
 ```ts
 export default {
   ...
@@ -176,13 +180,16 @@ export default {
   },
 } satisfies Config;
 ```
+
 Add the `tailwindcss-animate` plugin to root of the config.
+
 ```ts
 export default {
   ...
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 ```
+
 </StepContent>
 
 <StepTitle>Add the following colors to your `styles/globals.css` file.</StepTitle>
