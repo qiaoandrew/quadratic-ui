@@ -3,11 +3,11 @@ import CodeBlock from "./CodeBlock";
 import { readFile } from "~/utils/file-system";
 import { FILE_SOURCES } from "~/constants/file-sources";
 
-interface ComponentSourceProps {
+interface FileSourceProps {
   id: keyof typeof FILE_SOURCES;
 }
 
-export default async function ComponentSource({ id }: ComponentSourceProps) {
+export default async function FileSource({ id }: FileSourceProps) {
   if (!FILE_SOURCES[id]) return null;
 
   const path = FILE_SOURCES[id];

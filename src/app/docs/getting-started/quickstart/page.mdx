@@ -1,5 +1,6 @@
 import Title from "~/app/docs/_components/mdx/Title";
 import Description from "~/app/docs/_components/mdx/Description";
+import FileSource from "~/app/docs/_components/mdx/FileSource";
 import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
 import Footer from "~/app/docs/_components/mdx/Footer";
 
@@ -8,7 +9,7 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 
 <Steps>
 
-<StepTitle>Create a Next.js app with TypeScript and Tailwind CSS installed. I recommend using [create-t3-app](https://create.t3.gg/en/installation#pnpm) and using [pnpm](https://pnpm.io/) as your package manager. For a detailed walkthrough, check out this [guide](/docs/getting-started/create-t3-app).</StepTitle>
+<StepTitle>Create a Next.js app with TypeScript and Tailwind CSS. I recommend using [create-t3-app](https://create.t3.gg/en/installation#pnpm) with [pnpm](https://pnpm.io/). Check out my [detailed guide](/docs/getting-started/create-t3-app) on create-t3-app. Otherwise, you can follow the [Next.js installation instructions](https://nextjs.org/docs/app/api-reference/create-next-app).</StepTitle>
 
 <StepTitle>Add the following dependencies to your project.</StepTitle>
 <StepContent>
@@ -17,7 +18,7 @@ pnpm add tailwindcss-animate class-variance-authority clsx tailwind-merge
 ```
 </StepContent>
 
-<StepTitle>Add [Lucide](https://lucide.dev/), an icon library, to your project..</StepTitle>
+<StepTitle>Add the [Lucide](https://lucide.dev/) icon library to your project.</StepTitle>
 <StepContent>
 ```bash
 pnpm add lucide-react
@@ -192,7 +193,7 @@ export default {
 
 </StepContent>
 
-<StepTitle>Add the following colors to your `styles/globals.css` file.</StepTitle>
+<StepTitle>Add the following colors and styles to your `styles/globals.css` file.</StepTitle>
 <StepContent>
 ```css
 @tailwind base;
@@ -205,28 +206,25 @@ export default {
     --highlight-foreground: 205 61% 28%;
 
     --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --foreground: 240 10% 4%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --primary: 240 6% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 240 5% 96%;
+    --accent-foreground: 240 6% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --popover-foreground: 240 10% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --card-foreground: 240 10% 4%;
 
     --destructive: 0 93% 94%;
     --destructive-foreground: 0 70% 35%;
@@ -240,36 +238,35 @@ export default {
     --success-foreground: 143 64% 24%;
     --success-border: 142 69% 58%;
 
-    --ring: 215 20.2% 65.1%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 240 5% 65%;
   }
 
   .dark {
     --highlight: 205 18% 15%;
     --highlight-foreground: 205 62% 86%;
 
-    --background: 240 10% 3.9%;
+    --background: 240 10% 4%;
     --foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 6% 10%;
 
-    --accent: 240 3.7% 15.9%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 6% 10%;
     --accent-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 240 10% 4%;
     --popover-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-
-    --card: 240 10% 3.9%;
+    --card: 240 10% 4%;
     --card-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
 
     --destructive: 0 70% 35%;
     --destructive-foreground: 0 93% 94%;
@@ -283,7 +280,9 @@ export default {
     --success-foreground: 141 84% 93%;
     --success-border: 142 69% 58%;
 
-    --ring: 240 4.9% 83.9%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 240 5% 84%;
   }
 }
 
@@ -293,7 +292,10 @@ export default {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 ```
@@ -301,228 +303,7 @@ export default {
 
 <StepTitle>Add a `cn` helper to `utils/tailwind.ts`. This makes it easier to add conditional Tailwind CSS classes.</StepTitle>
 <StepContent>
-```ts
-import { clsx, type ClassValue } from "clsx";
-import { extendTailwindMerge } from "tailwind-merge";
-
-const textColorClasses = [
-  {
-    text: [
-      "highlight",
-      "highlight-foreground",
-      "background",
-      "foreground",
-      "muted",
-      "popover",
-      "muted-foreground",
-      "popover-foreground",
-      "border",
-      "input",
-      "card",
-      "card-foreground",
-      "primary",
-      "primary-foreground",
-      "secondary",
-      "secondary-foreground",
-      "accent",
-      "accent-foreground",
-      "destructive",
-      "destructive-foreground",
-      "destructive-border",
-      "warning",
-      "warning-foreground",
-      "warning-border",
-      "success",
-      "success-foreground",
-      "success-border",
-      "ring",
-    ],
-  },
-];
-
-const borderRadiusClasses = [
-  {
-    rounded: [
-      "none",
-      "px",
-      "0.5",
-      "1",
-      "1.5",
-      "2",
-      "2.5",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-      "13",
-      "14",
-      "15",
-      "16",
-      "full",
-    ],
-  },
-];
-
-const fontSizeClassGroup = [
-  {
-    text: [
-      "3",
-      "3.5",
-      "4",
-      "4.5",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-      "13",
-      "14",
-      "15",
-      "16",
-    ],
-  },
-];
-
-const customTwMerge = extendTailwindMerge<
-  "text-color" | "font-size" | "border-radius"
->({
-  extend: {
-    classGroups: {
-      "text-color": textColorClasses,
-      "font-size": fontSizeClassGroup,
-      "border-radius": borderRadiusClasses,
-    },
-  },
-});
-
-export function cn(...inputs: ClassValue[]) {
-  return customTwMerge(clsx(inputs));
-}
-```
-</StepContent>
-
-<StepTitle>Add the following to your `utils/charts.ts`. This is for Tremor Raw chart components.</StepTitle>
-<StepContent>
-```ts
-export type ColorUtility = "bg" | "stroke" | "fill" | "text";
-
-export const chartColors = {
-  blue: {
-    bg: "bg-blue-500",
-    stroke: "stroke-blue-500",
-    fill: "fill-blue-500",
-    text: "text-blue-500",
-  },
-  emerald: {
-    bg: "bg-emerald-500",
-    stroke: "stroke-emerald-500",
-    fill: "fill-emerald-500",
-    text: "text-emerald-500",
-  },
-  violet: {
-    bg: "bg-violet-500",
-    stroke: "stroke-violet-500",
-    fill: "fill-violet-500",
-    text: "text-violet-500",
-  },
-  amber: {
-    bg: "bg-amber-500",
-    stroke: "stroke-amber-500",
-    fill: "fill-amber-500",
-    text: "text-amber-500",
-  },
-  gray: {
-    bg: "bg-gray-500",
-    stroke: "stroke-gray-500",
-    fill: "fill-gray-500",
-    text: "text-gray-500",
-  },
-  cyan: {
-    bg: "bg-cyan-500",
-    stroke: "stroke-cyan-500",
-    fill: "fill-cyan-500",
-    text: "text-cyan-500",
-  },
-  pink: {
-    bg: "bg-pink-500",
-    stroke: "stroke-pink-500",
-    fill: "fill-pink-500",
-    text: "text-pink-500",
-  },
-} as const satisfies Record<
-  string,
-  {
-    [key in ColorUtility]: string;
-  }
->;
-
-export type AvailableChartColorsKeys = keyof typeof chartColors;
-
-export const AvailableChartColors: AvailableChartColorsKeys[] = Object.keys(
-  chartColors,
-) as Array<AvailableChartColorsKeys>;
-
-export const constructCategoryColors = (
-  categories: string[],
-  colors: AvailableChartColorsKeys[],
-): Map<string, AvailableChartColorsKeys> => {
-  const categoryColors = new Map<string, AvailableChartColorsKeys>();
-  categories.forEach((category, index) => {
-    categoryColors.set(category, colors[index % colors.length]!);
-  });
-  return categoryColors;
-};
-
-export const getColorClassName = (
-  color: AvailableChartColorsKeys,
-  type: ColorUtility,
-): string => {
-  const fallbackColor = {
-    bg: "bg-gray-500",
-    stroke: "stroke-gray-500",
-    fill: "fill-gray-500",
-    text: "text-gray-500",
-  };
-  return chartColors[color]?.[type] ?? fallbackColor[type];
-};
-
-export const getYAxisDomain = (
-  autoMinValue: boolean,
-  minValue: number | undefined,
-  maxValue: number | undefined,
-) => {
-  const minDomain = autoMinValue ? "auto" : minValue ?? 0;
-  const maxDomain = maxValue ?? "auto";
-  return [minDomain, maxDomain];
-};
-
-export function hasOnlyOneValueForKey(
-  array: never[],
-  keyToCheck: string,
-): boolean {
-  const val: never[] = [];
-
-  for (const obj of array) {
-    if (Object.prototype.hasOwnProperty.call(obj, keyToCheck)) {
-      val.push(obj[keyToCheck]);
-      if (val.length > 1) {
-        return false;
-      }
-    }
-  }
-
-  return true;
-}
-```
+<FileSource id="tailwind" />
 </StepContent>
 
 <StepTitle>That's it! Have fun developing!</StepTitle>

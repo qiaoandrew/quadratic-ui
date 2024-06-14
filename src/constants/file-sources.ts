@@ -34,7 +34,7 @@ export const FILE_SOURCES = {
   "scroll-area": "src/components/ui/ScrollArea.tsx",
   select: "src/components/ui/Select.tsx",
   separator: "src/components/ui/Separator.tsx",
-  sheet: "src/components/ui/Sheet.tsx",
+  sheet: "src/componexnts/ui/Sheet.tsx",
   skeleton: "src/components/ui/Skeleton.tsx",
   slider: "src/components/ui/Slider.tsx",
   switch: "src/components/ui/Switch.tsx",
@@ -44,4 +44,5 @@ export const FILE_SOURCES = {
   toggle: "src/components/ui/Toggle.tsx",
   "toggle-group": "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
+  tailwind: "src/utils/tailwind.ts",
 };
