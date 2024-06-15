@@ -9,7 +9,7 @@ const Steps = ({ className, children }: StepsProps) => {
   return (
     <div
       className={cn(
-        "ml-4 mt-5 border-l border-l-border pl-8 [counter-reset:step] md:ml-0",
+        "ml-4 mt-6 border-l border-l-border pl-8 [counter-reset:step] md:ml-0",
         className,
       )}
     >

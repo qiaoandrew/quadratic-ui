@@ -1,0 +1,59 @@
+import Title from "~/app/docs/_components/mdx/Title";
+import Description from "~/app/docs/_components/mdx/Description";
+import { DocLinks, DocLink } from "~/app/docs/_components/mdx/DocLinks";
+import { Steps, StepTitle, StepContent } from "~/app/docs/_components/mdx/Steps";
+import FileSource from "~/app/docs/_components/mdx/FileSource";
+import Footer from "~/app/docs/_components/mdx/Footer";
+
+<Title>Dark Mode</Title>
+<Description>Set up dark mode using `next-themes`.</Description>
+<DocLinks>
+  <DocLink href="https://github.com/pacocoursey/next-themes" icon="file-code-2">Docs</DocLink>
+  <DocLink href="https://github.com/pacocoursey/next-themes?tab=readme-ov-file#api" icon="code-xml">API Reference</DocLink>
+</DocLinks>
+
+<Steps>
+
+<StepTitle>Install the next-themes package.</StepTitle>
+<StepContent>
+```bash
+pnpm add next-themes
+```
+</StepContent>
+
+<StepTitle>Edit your root `layout.tsx` file to include the `ThemeProvider` component.</StepTitle>
+<StepContent>
+```tsx
+import "~/styles/globals.css";
+
+import { ThemeProvider } from "next-themes";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body>
+        <ThemeProvider
+          defaultTheme="dark"
+          attribute="class"
+          disableTransitionOnChange
+        >
+          <Header />
+          <main>{children}</main>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+</StepContent>
+
+<StepTitle>Add your theme toggle component. Mine looks like this. Learn more about toggling your theme [here](https://github.com/pacocoursey/next-themes?tab=readme-ov-file#usetheme).</StepTitle>
+<FileSource id="theme-toggle" />
+
+
+</Steps>

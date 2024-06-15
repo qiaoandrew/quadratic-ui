@@ -45,4 +45,5 @@ export const FILE_SOURCES = {
   "toggle-group": "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
   tailwind: "src/utils/tailwind.ts",
+  "theme-toggle": "src/app/_components/ThemeToggle.tsx",
 };

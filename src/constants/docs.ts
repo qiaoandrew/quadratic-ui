@@ -9,6 +9,7 @@ import {
   CodeXmlIcon,
   FileCode2,
   AtomIcon,
+  MoonIcon,
 } from "lucide-react";
 
 import type { DocItem, DocGroup } from "~/types/types";
@@ -69,6 +70,12 @@ export const GUIDES_ITEMS: DocItem[] = [
     href: "/docs/getting-started/create-t3-app",
     label: "create-t3-app",
     Icon: AtomIcon,
+  },
+  {
+    id: "dark-mode",
+    href: "/docs/getting-started/dark-mode",
+    label: "Dark Mode",
+    Icon: MoonIcon,
   },
   {
     id: "customization",
