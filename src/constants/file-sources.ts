@@ -14,6 +14,7 @@ export const FILE_SOURCES = {
   collapsible: "src/components/ui/Collapsible.tsx",
   combobox: "src/components/ui/Combobox.tsx",
   command: "src/components/ui/Command.tsx",
+  "context-menu": "src/components/ui/ContextMenu.tsx",
   "data-table": "src/components/ui/DataTable.tsx",
   "date-picker": "src/components/ui/DatePicker.tsx",
   dialog: "src/components/ui/Dialog.tsx",
@@ -40,10 +41,14 @@ export const FILE_SOURCES = {
   switch: "src/components/ui/Switch.tsx",
   table: "src/components/ui/Table.tsx",
   tabs: "src/components/ui/Tabs.tsx",
+  textarea: "src/components/ui/Textarea.tsx",
   toast: "src/components/ui/Toast.tsx",
   toggle: "src/components/ui/Toggle.tsx",
   "toggle-group": "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
   tailwind: "src/utils/tailwind.ts",
   "theme-toggle": "src/app/_components/ThemeToggle.tsx",
+  "combobox-demo": "src/app/docs/_components/demos/combobox/ComboboxDemo.tsx",
+  "date-picker-demo":
+    "src/app/docs/_components/demos/date-picker/DatePickerDemo.tsx",
 };

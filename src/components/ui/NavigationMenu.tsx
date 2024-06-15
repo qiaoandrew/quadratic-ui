@@ -1,11 +1,11 @@
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva, type VariantProps } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
-import Image from "next/image";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,

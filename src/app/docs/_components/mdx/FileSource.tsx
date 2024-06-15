@@ -8,7 +8,7 @@ interface FileSourceProps {
 }
 
 export default async function FileSource({ id }: FileSourceProps) {
-  if (!FILE_SOURCES[id]) return null;
+  if (!FILE_SOURCES[id]) throw new Error(`File source not found: ${id}`);
 
   const path = FILE_SOURCES[id];
   const code = await readFile(path);
