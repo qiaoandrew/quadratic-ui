@@ -3,8 +3,9 @@ import Link from "next/link";
 import { cva, type VariantProps } from "class-variance-authority";
 import { type LucideIcon } from "lucide-react";
 
-import { cn } from "~/utils/tailwind";
 import { SheetClose } from "~/components/ui/Sheet";
+
+import { cn } from "~/utils/tailwind";
 
 export interface DocMenuSectionItemProps
   extends React.HTMLAttributes<HTMLDivElement>,

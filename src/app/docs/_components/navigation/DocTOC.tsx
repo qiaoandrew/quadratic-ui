@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import useActiveId from "~/hooks/useActiveID";
+import { useActiveId } from "~/hooks/useActiveID";
 import { ScrollArea } from "~/components/ui/ScrollArea";
 
 import { cn } from "~/utils/tailwind";

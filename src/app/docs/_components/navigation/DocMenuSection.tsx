@@ -1,7 +1,7 @@
-import { type DocItem } from "~/types/types";
-
 import DocMenuSectionTitle from "./DocMenuSectionTitle";
 import DocMenuSectionItem from "./DocMenuSectionItem";
+
+import type { DocItem } from "~/types/types";
 
 interface DocMenuSectionProps {
   pathname: string;

@@ -4,7 +4,7 @@ interface useActiveSectionProps {
   ids: string[];
 }
 
-export default function useActiveId({ ids }: useActiveSectionProps) {
+export const useActiveId = ({ ids }: useActiveSectionProps) => {
   const [activeId, setActiveId] = useState("");
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -38,4 +38,4 @@ export default function useActiveId({ ids }: useActiveSectionProps) {
   }, [ids]);
 
   return activeId;
-}
+};

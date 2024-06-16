@@ -6,8 +6,9 @@ import useEmblaCarousel, {
 } from "embla-carousel-react";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
-import { cn } from "~/utils/tailwind";
 import { Button } from "~/components/ui/Button";
+
+import { cn } from "~/utils/tailwind";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
