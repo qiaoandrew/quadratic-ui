@@ -66,6 +66,7 @@ export default function DocMenuSectionItem({
     <a
       href={href}
       rel="noreferrer noopener"
+      target="_blank"
       data-active={isActive}
       className={docMenuItemStyles}
     >
