@@ -21,7 +21,9 @@ export default function CodeBlock({
           className,
         )}
       >
-        <code className="text-3.5 leading-6">{children}</code>
+        <code className="text-3.5 leading-6 text-foreground/70">
+          {children}
+        </code>
       </pre>
       <CopyToClipboardButton value={children} />
     </div>

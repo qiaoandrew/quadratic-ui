@@ -35,20 +35,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         React.HTMLAttributes<HTMLPreElement>,
         HTMLPreElement
       >,
-    ) => {
-      const childElement = props.children as
-        | React.ReactElement<{
-            className?: string;
-            children?: React.ReactNode;
-          }>
-        | undefined;
-
-      return (
-        <CodeBlock containerClassName="mt-4">
-          {childElement?.props.children as string}
-        </CodeBlock>
-      );
-    },
+    ) => (
+      <CodeBlock containerClassName="mt-4">
+        {props.children as string}
+      </CodeBlock>
+    ),
     a: (props) =>
       props.href?.startsWith("/") ? (
         <Link
