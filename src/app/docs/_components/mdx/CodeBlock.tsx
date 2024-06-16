@@ -1,41 +1,29 @@
-import * as React from "react";
-import hljs from "highlight.js/lib/common";
-import "highlight.js/styles/tokyo-night-dark.min.css";
-
 import CopyToClipboardButton from "./CopyToClipboardButton";
 
 import { cn } from "~/utils/tailwind";
 
 interface CodeBlockProps {
-  language: string;
   containerClassName?: string;
   className?: string;
-  children: React.ReactNode;
+  children: string;
 }
 
 export default function CodeBlock({
-  language,
   containerClassName,
   className,
   children,
 }: CodeBlockProps) {
-  const codeString = React.Children.toArray(children).join("");
-  const highlightedCode = hljs.highlight(codeString, { language }).value;
-
   return (
     <div className={cn("relative", containerClassName)}>
       <pre
         className={cn(
-          "max-h-[480px] overflow-auto rounded-3 border bg-border/40 p-4",
+          "max-h-[480px] overflow-auto rounded-3 border bg-border/30 p-4",
           className,
         )}
       >
-        <code
-          className="text-3.5 leading-6"
-          dangerouslySetInnerHTML={{ __html: highlightedCode }}
-        />
+        <code className="text-3.5 leading-6">{children}</code>
       </pre>
-      <CopyToClipboardButton value={codeString} />
+      <CopyToClipboardButton value={children} />
     </div>
   );
 }

@@ -43,12 +43,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           }>
         | undefined;
 
-      const language =
-        childElement?.props.className?.replace("language-", "") ?? "";
-
       return (
-        <CodeBlock language={language} containerClassName="mt-4">
-          {childElement?.props.children}
+        <CodeBlock containerClassName="mt-4">
+          {childElement?.props.children as string}
         </CodeBlock>
       );
     },

@@ -13,9 +13,5 @@ export default async function FileSource({ id }: FileSourceProps) {
   const path = FILE_SOURCES[id];
   const code = await readFile(path);
 
-  return (
-    <CodeBlock language="tsx" className="mt-5">
-      {code}
-    </CodeBlock>
-  );
+  return <CodeBlock className="mt-5">{code}</CodeBlock>;
 }
