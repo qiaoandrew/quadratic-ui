@@ -47,6 +47,9 @@ import DropdownMenuRadioGroupDemo from "~/app/docs/_components/demos/dropdown-me
 import FormDemo from "~/app/docs/_components/demos/form/FormDemo";
 import HoverCardDemo from "~/app/docs/_components/demos/hover-card/HoverCardDemo";
 import InputDemo from "~/app/docs/_components/demos/input/InputDemo";
+import InputDisabledDemo from "~/app/docs/_components/demos/input/InputDisabledDemo";
+import InputWithLabelDemo from "~/app/docs/_components/demos/input/InputWithLabelDemo";
+import InputFormDemo from "~/app/docs/_components/demos/input/InputFormDemo";
 import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
@@ -287,6 +290,18 @@ export const COMPONENT_PREVIEWS = {
   input: {
     PreviewComponent: InputDemo,
     path: "src/app/docs/_components/demos/input/InputDemo.tsx",
+  },
+  "input-disabled": {
+    PreviewComponent: InputDisabledDemo,
+    path: "src/app/docs/_components/demos/input/InputDisabledDemo.tsx",
+  },
+  "input-with-label": {
+    PreviewComponent: InputWithLabelDemo,
+    path: "src/app/docs/_components/demos/input/InputWithLabelDemo.tsx",
+  },
+  "input-form": {
+    PreviewComponent: InputFormDemo,
+    path: "src/app/docs/_components/demos/input/InputFormDemo.tsx",
   },
   "input-otp": {
     PreviewComponent: InputOTPDemo,
