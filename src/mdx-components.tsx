@@ -35,23 +35,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         React.HTMLAttributes<HTMLPreElement>,
         HTMLPreElement
       >,
-    ) => {
-      const childElement = props.children as
-        | React.ReactElement<{
-            className?: string;
-            children?: React.ReactNode;
-          }>
-        | undefined;
-
-      const language =
-        childElement?.props.className?.replace("language-", "") ?? "";
-
-      return (
-        <CodeBlock language={language} containerClassName="mt-4">
-          {childElement?.props.children}
-        </CodeBlock>
-      );
-    },
+    ) => (
+      <CodeBlock containerClassName="mt-4">
+        {props.children as string}
+      </CodeBlock>
+    ),
     a: (props) =>
       props.href?.startsWith("/") ? (
         <Link
