@@ -17,6 +17,8 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 ## Installation
 <Steps>
 
+<StepTitle>Install [`Label`](/docs/components/primitives/label) if you haven't already.</StepTitle>
+
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
@@ -36,7 +38,7 @@ pnpm add @radix-ui/react-label @radix-ui/react-slot react-hook-form @hookform/re
 ## Usage
 <Steps>
 
-<StepTitle>Create a form schema using [Zod](https://zod.dev/).</StepTitle>
+<StepTitle>Create a schema using [Zod](https://zod.dev/). This defines the shape for your form.</StepTitle>
 <StepContent>
 ```tsx
 "use client";
@@ -64,7 +66,7 @@ const formSchema = z.object({
   }),
 });
 
-export function ProfileForm() {
+export default function ProfileForm() {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -81,6 +83,8 @@ export function ProfileForm() {
   }
 }
 ```
+
+You'll need to provide default values for each field since `FormField` is a controlled component. See the [React Hook Form docs](https://react-hook-form.com/docs/usecontroller) to learn more about controlled components.
 </StepContent>
 
 <StepTitle>Build your form using `Form` components.</StepTitle>
@@ -109,7 +113,7 @@ const formSchema = z.object({
   }),
 });
 
-export function ProfileForm() {
+export default function ProfileForm() {
   // ...
 
   return (
@@ -140,4 +144,19 @@ export function ProfileForm() {
 
 </Steps>
 
-<Footer previousLabel="Dropdown Menu" previousHref="/docs/components/primitives/dropdown-menu" nextLabel="Hover Card" nextHref="/docs/components/primitives/hover-card" />
+## Examples
+
+See the following links for more examples on how to use the `Form` component with other components.
+
+- [Checkbox](/docs/components/primitives/checkbox)
+- [Input](/docs/components/primitives/input)
+- [Input OTP](/docs/components/primitives/input-otp)
+- [Radio Group](/docs/components/primitives/radio-group)
+- [Select](/docs/components/primitives/select)
+- [Slider](/docs/components/primitives/slider)
+- [Switch](/docs/components/primitives/switch)
+- [Textarea](/docs/components/primitives/textarea)
+- [Combobox](/docs/components/composites/combobox)
+- [Date Picker](/docs/components/composites/date-picker)
+
+<Footer previousLabel="Data Table" previousHref="/docs/components/patterns/data-table"  />

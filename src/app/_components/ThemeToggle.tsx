@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { GhostIcon, MoonStarIcon, SunIcon } from "lucide-react";
+import { MoonStarIcon, SparklesIcon, SunIcon } from "lucide-react";
 
 import { Button } from "~/components/ui/Button";
 
@@ -17,7 +17,7 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <div className="flex size-9 items-center justify-center rounded-2 border text-foreground md:size-10">
-        <GhostIcon size={18} />
+        <SparklesIcon size={18} />
       </div>
     );
   }

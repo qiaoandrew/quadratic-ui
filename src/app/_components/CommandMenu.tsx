@@ -8,6 +8,7 @@ import {
   DiamondIcon,
   MoonIcon,
   SearchIcon,
+  SquareAsteriskIcon,
   SunIcon,
 } from "lucide-react";
 
@@ -27,11 +28,13 @@ import type { DocItem } from "~/types/types";
 interface CommandMenu {
   primitivesMenuItems: DocItem[];
   compositesMenuItems: DocItem[];
+  patternsMenuItems: DocItem[];
 }
 
 export default function CommandMenu({
   primitivesMenuItems,
   compositesMenuItems,
+  patternsMenuItems,
 }: CommandMenu) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -101,6 +104,17 @@ export default function CommandMenu({
                 onSelect={() => onSelect(() => router.push(item.href))}
               >
                 <ComponentIcon size={18} className="mr-2" />
+                {item.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Patterns">
+            {patternsMenuItems.map((item) => (
+              <CommandItem
+                key={item.id}
+                onSelect={() => onSelect(() => router.push(item.href))}
+              >
+                <SquareAsteriskIcon size={18} className="mr-2" />
                 {item.label}
               </CommandItem>
             ))}

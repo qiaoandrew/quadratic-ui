@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-export default function useClipboard() {
+export const useClipboard = () => {
   const copyToClipboard = useCallback(
     async (text: string, onSuccess?: () => void, onError?: () => void) => {
       try {
@@ -15,4 +15,4 @@ export default function useClipboard() {
   );
 
   return { copyToClipboard };
-}
+};

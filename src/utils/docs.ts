@@ -61,9 +61,20 @@ export const getComponentsMenuItems = async () => {
       label: formatLabel(name),
     })),
   );
+
+  const patterns = await readDirectory("src/app/docs/components/patterns");
+  const patternsMenuItems = await Promise.all(
+    patterns.map(async (name) => ({
+      id: name,
+      href: `/docs/components/patterns/${name}`,
+      label: formatLabel(name),
+    })),
+  );
+
   return {
     primitivesMenuItems,
     compositesMenuItems,
+    patternsMenuItems,
   };
 };
 
@@ -97,6 +108,16 @@ export const getTOCs = async () => {
       const content = await readFile(filePath);
       const toc = extractSectionIds(content);
       tocs[`components/composites/${composite}`] = toc;
+    }),
+  );
+
+  const patterns = await readDirectory("src/app/docs/components/patterns");
+  await Promise.all(
+    patterns.map(async (pattern) => {
+      const filePath = `src/app/docs/components/patterns/${pattern}/page.mdx`;
+      const content = await readFile(filePath);
+      const toc = extractSectionIds(content);
+      tocs[`components/patterns/${pattern}`] = toc;
     }),
   );
 

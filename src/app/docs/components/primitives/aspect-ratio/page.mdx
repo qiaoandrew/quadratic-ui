@@ -23,7 +23,7 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 pnpm add @radix-ui/react-aspect-ratio
 ```
 </StepContent>
-ca
+
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
 <FileSource id="aspect-ratio" />
@@ -41,11 +41,14 @@ import { AspectRatio } from "~/components/ui/AspectRatio";
 ```
 
 ```tsx
-<div className="w-[450px]">
-  <AspectRatio ratio={16 / 9}>
-    <Image src="..." alt="Image" className="rounded-md object-cover" />
-  </AspectRatio>
-</div>
+<AspectRatio ratio={16 / 9} className="overflow-hidden rounded-2 bg-muted">
+  <Image
+    src="https://images.unsplash.com/photo-1715412406818-48241c841c9e?q=80&w=2828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="Photo by Drew Beamer"
+    fill
+    className="object-cover"
+  />
+</AspectRatio>
 ```
 
 <Footer previousLabel="Alert Dialog" previousHref="/docs/components/primitives/alert-dialog" nextLabel="Avatar" nextHref="/docs/components/primitives/avatar" />

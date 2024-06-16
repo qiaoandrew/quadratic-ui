@@ -6,7 +6,7 @@ import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import { cn } from "~/utils/tailwind";
 
 const HoverCard = ({ ...props }) => (
-  <HoverCardPrimitive.Root openDelay={300} closeDelay={150} {...props} />
+  <HoverCardPrimitive.Root openDelay={150} closeDelay={50} {...props} />
 );
 
 const HoverCardTrigger = HoverCardPrimitive.Trigger;
@@ -20,7 +20,7 @@ const HoverCardContent = React.forwardRef<
     align={align}
     sideOffset={sideOffset}
     className={cn(
-      "z-50 w-64 rounded-2 border bg-popover px-4 pb-5 pt-4 text-popover-foreground outline-none",
+      "z-50 w-64 rounded-2 border bg-popover p-4 text-popover-foreground outline-none",
       "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
       "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
       "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",

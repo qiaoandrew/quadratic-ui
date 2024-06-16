@@ -17,14 +17,14 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 ## Installation
 <Steps>
 
+<StepTitle>Install [`Button`](/docs/components/primitives/button) if you haven't already.</StepTitle>
+
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
 pnpm add react-day-picker date-fns
 ```
 </StepContent>
-
-<StepTitle>Install [`Button`](/docs/components/primitives/button) if you haven't already.</StepTitle>
 
 <StepTitle>Copy and paste the following code into your project.</StepTitle>
 <StepContent>
@@ -39,17 +39,18 @@ pnpm add react-day-picker date-fns
 ```tsx
 import { Calendar } from "~/components/ui/Calendar";
 ```
+
 ```tsx
-const [date, setDate] = React.useState<Date | undefined>(new Date());
- 
-return (
-  <Calendar
-    mode="single"
-    selected={date}
-    onSelect={setDate}
-    className="rounded-3 border"
-  />
-);
+const [date, setDate] = useState<Date | undefined>(new Date());
+```
+
+```tsx
+<Calendar
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+  className="rounded-3 border"
+/>
 ```
 
 <Footer previousLabel="Button" previousHref="/docs/components/primitives/button" nextLabel="Callout" nextHref="/docs/components/primitives/callout" />

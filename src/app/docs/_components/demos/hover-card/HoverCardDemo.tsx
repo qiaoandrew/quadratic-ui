@@ -17,7 +17,10 @@ export default function HoverCardDemo() {
       <HoverCardContent className="w-72">
         <div className="flex justify-between gap-x-4">
           <Avatar>
-            <AvatarImage src="https://github.com/vercel.png" />
+            <AvatarImage
+              src="https://github.com/vercel.png"
+              className="rounded-full border"
+            />
             <AvatarFallback>VC</AvatarFallback>
           </Avatar>
           <div>

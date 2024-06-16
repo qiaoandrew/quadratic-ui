@@ -5,8 +5,9 @@ import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";
 
-import { cn } from "~/utils/tailwind";
 import { Dialog, DialogContent } from "~/components/ui/Dialog";
+
+import { cn } from "~/utils/tailwind";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
