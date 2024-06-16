@@ -52,10 +52,19 @@ import {
 </Breadcrumb>
 ```
 
-## Examples
+## Next.js Link
+Use the `asChild` prop on `<BreadcrumbLink />`.
 
-### Link Component
-To use Next.js's link component, use the `asChild` prop on `<BreadcrumbLink />`.
-<ComponentPreview id="breadcrumb-link" />
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink asChild>
+        <Link href="/">Home</Link>
+      </BreadcrumbLink>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
 
 <Footer previousLabel="Badge" previousHref="/docs/components/primitives/badge" nextLabel="Button" nextHref="/docs/components/primitives/button" />

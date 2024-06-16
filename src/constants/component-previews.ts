@@ -12,7 +12,6 @@ import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWar
 import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
 import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
-import BreadcrumbLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbLinkDemo";
 import ButtonDemo from "~/app/docs/_components/demos/button/ButtonDemo";
 import ButtonSecondaryDemo from "~/app/docs/_components/demos/button/ButtonSecondaryDemo";
 import ButtonOutlineDemo from "~/app/docs/_components/demos/button/ButtonOutlineDemo";
@@ -146,10 +145,6 @@ export const COMPONENT_PREVIEWS = {
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,
     path: "src/app/docs/_components/demos/breadcrumb/BreadcrumbDemo.tsx",
-  },
-  "breadcrumb-link": {
-    PreviewComponent: BreadcrumbLinkDemo,
-    path: "src/app/docs/_components/demos/breadcrumb/BreadcrumbLinkDemo.tsx",
   },
   button: {
     PreviewComponent: ButtonDemo,
