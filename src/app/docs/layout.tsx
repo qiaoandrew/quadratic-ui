@@ -8,7 +8,7 @@ interface DocsLayoutProps {
 }
 
 export default async function DocsLayout({ children }: DocsLayoutProps) {
-  const { primitivesMenuItems, compositesMenuItems } =
+  const { primitivesMenuItems, compositesMenuItems, patternsMenuItems } =
     await getComponentsMenuItems();
   const tocs = await getTOCs();
 
@@ -17,6 +17,7 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
       <DocMenu
         primitivesMenuItems={primitivesMenuItems}
         compositesMenuItems={compositesMenuItems}
+        patternsMenuItems={patternsMenuItems}
       />
       <div className="flex gap-x-16 pt-24 md:ml-[304px] md:pt-26">
         <div className="grow overflow-x-hidden px-0.5 pb-30">{children}</div>
