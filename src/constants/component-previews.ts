@@ -51,6 +51,10 @@ import InputDisabledDemo from "~/app/docs/_components/demos/input/InputDisabledD
 import InputWithLabelDemo from "~/app/docs/_components/demos/input/InputWithLabelDemo";
 import InputFormDemo from "~/app/docs/_components/demos/input/InputFormDemo";
 import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
+import InputOTPPatternDemo from "~/app/docs/_components/demos/input-otp/InputOTPPatternDemo";
+import InputOTPSeparatorDemo from "~/app/docs/_components/demos/input-otp/InputOTPSeparatorDemo";
+import InputOTPControlledDemo from "~/app/docs/_components/demos/input-otp/InputOTPControlledDemo";
+import InputOTPFormDemo from "~/app/docs/_components/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
@@ -58,6 +62,7 @@ import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDe
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
+import RadioGroupFormDemo from "~/app/docs/_components/demos/radio-group/RadioGroupFormDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ResizableVerticalDemo from "~/app/docs/_components/demos/resizable/ResizableVerticalDemo";
 import ResizableHandleDemo from "~/app/docs/_components/demos/resizable/ResizableHandleDemo";
@@ -307,6 +312,22 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: InputOTPDemo,
     path: "src/app/docs/_components/demos/input-otp/InputOTPDemo.tsx",
   },
+  "input-otp-pattern": {
+    PreviewComponent: InputOTPPatternDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPPatternDemo.tsx",
+  },
+  "input-otp-separator": {
+    PreviewComponent: InputOTPSeparatorDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPSeparatorDemo.tsx",
+  },
+  "input-otp-controlled": {
+    PreviewComponent: InputOTPControlledDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPControlledDemo.tsx",
+  },
+  "input-otp-form": {
+    PreviewComponent: InputOTPFormDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPFormDemo.tsx",
+  },
   label: {
     PreviewComponent: LabelDemo,
     path: "src/app/docs/_components/demos/label/LabelDemo.tsx",
@@ -334,6 +355,10 @@ export const COMPONENT_PREVIEWS = {
   "radio-group": {
     PreviewComponent: RadioGroupDemo,
     path: "src/app/docs/_components/demos/radio-group/RadioGroupDemo.tsx",
+  },
+  "radio-group-form": {
+    PreviewComponent: RadioGroupFormDemo,
+    path: "src/app/docs/_components/demos/radio-group/RadioGroupFormDemo.tsx",
   },
   resizable: {
     PreviewComponent: ResizableDemo,
