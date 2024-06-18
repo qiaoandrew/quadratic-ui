@@ -76,6 +76,7 @@ import SheetDemo from "~/app/docs/_components/demos/sheet/SheetDemo";
 import SheetSideDemo from "~/app/docs/_components/demos/sheet/SheetSideDemo";
 import SkeletonDemo from "~/app/docs/_components/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/app/docs/_components/demos/slider/SliderDemo";
+import SliderFormDemo from "~/app/docs/_components/demos/slider/SliderFormDemo";
 import SwitchDemo from "~/app/docs/_components/demos/switch/SwitchDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 import TabsDemo from "~/app/docs/_components/demos/tabs/TabsDemo";
@@ -412,6 +413,10 @@ export const COMPONENT_PREVIEWS = {
   slider: {
     PreviewComponent: SliderDemo,
     path: "src/app/docs/_components/demos/slider/SliderDemo.tsx",
+  },
+  "slider-form": {
+    PreviewComponent: SliderFormDemo,
+    path: "src/app/docs/_components/demos/slider/SliderFormDemo.tsx",
   },
   switch: {
     PreviewComponent: SwitchDemo,
