@@ -70,6 +70,7 @@ import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaD
 import ScrollAreaHorizontalDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaHorizontalDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import SelectScrollableDemo from "~/app/docs/_components/demos/select/SelectScrollableDemo";
+import SelectFormDemo from "~/app/docs/_components/demos/select/SelectFormDemo";
 import SeparatorDemo from "~/app/docs/_components/demos/separator/SeparatorDemo";
 import SheetDemo from "~/app/docs/_components/demos/sheet/SheetDemo";
 import SheetSideDemo from "~/app/docs/_components/demos/sheet/SheetSideDemo";
@@ -387,6 +388,10 @@ export const COMPONENT_PREVIEWS = {
   "select-scrollable": {
     PreviewComponent: SelectScrollableDemo,
     path: "src/app/docs/_components/demos/select/SelectScrollableDemo.tsx",
+  },
+  "select-form": {
+    PreviewComponent: SelectFormDemo,
+    path: "src/app/docs/_components/demos/select/SelectFormDemo.tsx",
   },
   separator: {
     PreviewComponent: SeparatorDemo,
