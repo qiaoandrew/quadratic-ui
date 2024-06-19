@@ -78,6 +78,7 @@ import SkeletonDemo from "~/app/docs/_components/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/app/docs/_components/demos/slider/SliderDemo";
 import SliderFormDemo from "~/app/docs/_components/demos/slider/SliderFormDemo";
 import SwitchDemo from "~/app/docs/_components/demos/switch/SwitchDemo";
+import SwitchFormDemo from "~/app/docs/_components/demos/switch/SwitchFormDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 import TabsDemo from "~/app/docs/_components/demos/tabs/TabsDemo";
 import TextareaDemo from "~/app/docs/_components/demos/textarea/TextareaDemo";
@@ -421,6 +422,10 @@ export const COMPONENT_PREVIEWS = {
   switch: {
     PreviewComponent: SwitchDemo,
     path: "src/app/docs/_components/demos/switch/SwitchDemo.tsx",
+  },
+  "switch-form": {
+    PreviewComponent: SwitchFormDemo,
+    path: "src/app/docs/_components/demos/switch/SwitchFormDemo.tsx",
   },
   table: {
     PreviewComponent: TableDemo,
