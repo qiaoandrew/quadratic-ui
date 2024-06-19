@@ -4,6 +4,7 @@ import AccordionMultipleDemo from "~/app/docs/_components/demos/accordion/Accord
 import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
+import AvatarTooltipDemo from "~/app/docs/_components/demos/avatar/AvatarTooltipDemo";
 import BadgeDemo from "~/app/docs/_components/demos/badge/BadgeDemo";
 import BadgeSecondaryDemo from "~/app/docs/_components/demos/badge/BadgeSecondaryDemo";
 import BadgeOutlineDemo from "~/app/docs/_components/demos/badge/BadgeOutlineDemo";
@@ -137,6 +138,10 @@ export const COMPONENT_PREVIEWS = {
   avatar: {
     PreviewComponent: AvatarDemo,
     path: "src/app/docs/_components/demos/avatar/AvatarDemo.tsx",
+  },
+  "avatar-tooltip": {
+    PreviewComponent: AvatarTooltipDemo,
+    path: "src/app/docs/_components/demos/avatar/AvatarTooltipDemo.tsx",
   },
   badge: {
     PreviewComponent: BadgeDemo,
