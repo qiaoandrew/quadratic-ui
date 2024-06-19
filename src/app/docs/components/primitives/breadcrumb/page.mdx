@@ -52,19 +52,19 @@ import {
 </Breadcrumb>
 ```
 
-## Next.js Link
-Use the `asChild` prop on `<BreadcrumbLink />`.
+## Examples
 
-```tsx
-<Breadcrumb>
-  <BreadcrumbList>
-    <BreadcrumbItem>
-      <BreadcrumbLink asChild>
-        <Link href="/">Home</Link>
-      </BreadcrumbLink>
-    </BreadcrumbItem>
-  </BreadcrumbList>
-</Breadcrumb>
-```
+### Anchor Link
+By default, `<BreadcrumbLink />` renders an `<a />` element.
+<ComponentPreview id="breadcrumb-anchor-link" />
+
+### Next.js Link
+Use the `asChild` prop to use the Next.js `<Link />` component.
+<ComponentPreview id="breadcrumb-nextjs-link" />
+
+### With Dropdown
+Compose `<BreadcrumbItem />` with `<DropdownMenu />` to create a dropdown in the breadcrumb.
+
+<ComponentPreview id="breadcrumb" />
 
 <Footer previousLabel="Badge" previousHref="/docs/components/primitives/badge" nextLabel="Button" nextHref="/docs/components/primitives/button" />
