@@ -17,7 +17,7 @@ import {
   FormMessage,
 } from "~/components/ui/Form";
 
-const FORM_ITEMS = [
+const CHECKBOX_ITEMS = [
   {
     id: "recents",
     label: "Recents",
@@ -75,20 +75,23 @@ export default function CheckboxFormDemo() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex w-full max-w-[320px] flex-col gap-y-8"
+      >
         <FormField
           control={form.control}
           name="items"
           render={() => (
             <FormItem className="flex flex-col gap-y-4">
-              <div className="flex flex-col gap-y-0.5">
-                <FormLabel className="text-4.5 ">Sidebar</FormLabel>
+              <div className="flex flex-col gap-y-1">
+                <FormLabel className="text-4.5">Sidebar</FormLabel>
                 <FormDescription>
-                  Select the items you want to display in the sidebar.
+                  Select the items you want to display.
                 </FormDescription>
               </div>
               <div className="flex flex-col gap-y-1.5">
-                {FORM_ITEMS.map((item) => (
+                {CHECKBOX_ITEMS.map((item) => (
                   <FormField
                     key={item.id}
                     control={form.control}
@@ -97,20 +100,20 @@ export default function CheckboxFormDemo() {
                       return (
                         <FormItem
                           key={item.id}
-                          className="flex flex-row items-center gap-x-2"
+                          className="flex items-center gap-x-2"
                         >
                           <FormControl>
                             <Checkbox
                               checked={field.value?.includes(item.id)}
-                              onCheckedChange={(checked) => {
-                                return checked
+                              onCheckedChange={(checked) =>
+                                checked
                                   ? field.onChange([...field.value, item.id])
                                   : field.onChange(
                                       field.value?.filter(
                                         (value) => value !== item.id,
                                       ),
-                                    );
-                              }}
+                                    )
+                              }
                             />
                           </FormControl>
                           <FormLabel>{item.label}</FormLabel>
