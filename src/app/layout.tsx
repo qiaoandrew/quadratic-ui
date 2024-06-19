@@ -26,7 +26,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head />
-      <body>
+      <body suppressHydrationWarning>
         <ThemeProvider
           defaultTheme="dark"
           enableSystem={false}

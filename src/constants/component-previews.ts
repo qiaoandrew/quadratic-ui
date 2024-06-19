@@ -2,6 +2,7 @@ import AccordionDemo from "~/app/docs/_components/demos/accordion/AccordionDemo"
 import AccordionSingleNonCollapsibleDemo from "~/app/docs/_components/demos/accordion/AccordionSingleNonCollapsibleDemo";
 import AccordionMultipleDemo from "~/app/docs/_components/demos/accordion/AccordionMultipleDemo";
 import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
+import AlertDialogControlledDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
 import AvatarTooltipDemo from "~/app/docs/_components/demos/avatar/AvatarTooltipDemo";
@@ -130,6 +131,10 @@ export const COMPONENT_PREVIEWS = {
   "alert-dialog": {
     PreviewComponent: AlertDialogDemo,
     path: "src/app/docs/_components/demos/alert-dialog/AlertDialogDemo.tsx",
+  },
+  "alert-dialog-controlled": {
+    PreviewComponent: AlertDialogControlledDemo,
+    path: "src/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo.tsx",
   },
   "aspect-ratio": {
     PreviewComponent: AspectRatioDemo,
