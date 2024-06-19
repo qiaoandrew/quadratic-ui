@@ -1,4 +1,6 @@
 import AccordionDemo from "~/app/docs/_components/demos/accordion/AccordionDemo";
+import AccordionSingleNonCollapsibleDemo from "~/app/docs/_components/demos/accordion/AccordionSingleNonCollapsibleDemo";
+import AccordionMultipleDemo from "~/app/docs/_components/demos/accordion/AccordionMultipleDemo";
 import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
@@ -115,6 +117,14 @@ export const COMPONENT_PREVIEWS = {
   accordion: {
     PreviewComponent: AccordionDemo,
     path: "src/app/docs/_components/demos/accordion/AccordionDemo.tsx",
+  },
+  "accordion-non-collapsible": {
+    PreviewComponent: AccordionSingleNonCollapsibleDemo,
+    path: "src/app/docs/_components/demos/accordion/AccordionSingleNonCollapsibleDemo.tsx",
+  },
+  "accordion-multiple": {
+    PreviewComponent: AccordionMultipleDemo,
+    path: "src/app/docs/_components/demos/accordion/AccordionMultipleDemo.tsx",
   },
   "alert-dialog": {
     PreviewComponent: AlertDialogDemo,
