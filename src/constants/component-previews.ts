@@ -8,6 +8,7 @@ import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
 import AvatarInitialsDemo from "~/app/docs/_components/demos/avatar/AvatarInitialsDemo";
 import AvatarTooltipDemo from "~/app/docs/_components/demos/avatar/AvatarTooltipDemo";
 import BadgeDemo from "~/app/docs/_components/demos/badge/BadgeDemo";
+import BadgeNextjsLinkDemo from "~/app/docs/_components/demos/badge/BadgeNextjsLinkDemo";
 import BadgeSecondaryDemo from "~/app/docs/_components/demos/badge/BadgeSecondaryDemo";
 import BadgeOutlineDemo from "~/app/docs/_components/demos/badge/BadgeOutlineDemo";
 import BadgeDestructiveDemo from "~/app/docs/_components/demos/badge/BadgeDestructiveDemo";
@@ -156,6 +157,10 @@ export const COMPONENT_PREVIEWS = {
   badge: {
     PreviewComponent: BadgeDemo,
     path: "src/app/docs/_components/demos/badge/BadgeDemo.tsx",
+  },
+  "badge-nextjs-link": {
+    PreviewComponent: BadgeNextjsLinkDemo,
+    path: "src/app/docs/_components/demos/badge/BadgeNextjsLinkDemo.tsx",
   },
   "badge-secondary": {
     PreviewComponent: BadgeSecondaryDemo,

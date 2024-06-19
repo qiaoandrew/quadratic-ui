@@ -31,19 +31,14 @@ import { Badge } from "~/components/ui/Badge";
 <Badge>Badge</Badge>
 ```
 
-## Next.js Link
-Use the `badgeVariants` helper to make `<Link />` look like `<Badge />`.
-```tsx
-import { badgeVariants } from "~/components/ui/Badge";
-```
-```tsx
-<Link className={badgeVariants({ variant: "outline" })}>Click here</Link>
-```
-
 ## Examples
 
 ### Default
 <ComponentPreview id="badge" />
+
+### Next.js Link
+Use the `badgeVariants` helper to make `<Link />` look like `<Badge />`.
+<ComponentPreview id="badge-nextjs-link" />
 
 ### Secondary
 <ComponentPreview id="badge-secondary" />
