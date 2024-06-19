@@ -5,6 +5,7 @@ import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDial
 import AlertDialogControlledDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
+import AvatarInitialsDemo from "~/app/docs/_components/demos/avatar/AvatarInitialsDemo";
 import AvatarTooltipDemo from "~/app/docs/_components/demos/avatar/AvatarTooltipDemo";
 import BadgeDemo from "~/app/docs/_components/demos/badge/BadgeDemo";
 import BadgeSecondaryDemo from "~/app/docs/_components/demos/badge/BadgeSecondaryDemo";
@@ -143,6 +144,10 @@ export const COMPONENT_PREVIEWS = {
   avatar: {
     PreviewComponent: AvatarDemo,
     path: "src/app/docs/_components/demos/avatar/AvatarDemo.tsx",
+  },
+  "avatar-initials": {
+    PreviewComponent: AvatarInitialsDemo,
+    path: "src/app/docs/_components/demos/avatar/AvatarInitialsDemo.tsx",
   },
   "avatar-tooltip": {
     PreviewComponent: AvatarTooltipDemo,
