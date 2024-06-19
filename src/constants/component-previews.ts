@@ -21,6 +21,7 @@ import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDe
 import BreadcrumbAnchorLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbAnchorLinkDemo";
 import BreadcrumbNextjsLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbNextjsLinkDemo";
 import ButtonDemo from "~/app/docs/_components/demos/button/ButtonDemo";
+import ButtonNextjsLinkDemo from "~/app/docs/_components/demos/button/ButtonNextjsLinkDemo";
 import ButtonSecondaryDemo from "~/app/docs/_components/demos/button/ButtonSecondaryDemo";
 import ButtonOutlineDemo from "~/app/docs/_components/demos/button/ButtonOutlineDemo";
 import ButtonGhostDemo from "~/app/docs/_components/demos/button/ButtonGhostDemo";
@@ -211,6 +212,10 @@ export const COMPONENT_PREVIEWS = {
   button: {
     PreviewComponent: ButtonDemo,
     path: "src/app/docs/_components/demos/button/ButtonDemo.tsx",
+  },
+  "button-nextjs-link": {
+    PreviewComponent: ButtonNextjsLinkDemo,
+    path: "src/app/docs/_components/demos/button/ButtonNextjsLinkDemo.tsx",
   },
   "button-secondary": {
     PreviewComponent: ButtonSecondaryDemo,

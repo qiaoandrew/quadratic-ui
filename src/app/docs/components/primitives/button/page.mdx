@@ -38,29 +38,14 @@ import { Button } from "~/components/ui/Button";
 <Button variant="outline">Button</Button>
 ```
 
-## Next.js Link
-Use the `buttonVariants` helper to make `<Link />` look like `<Button />`.
-
-```tsx
-import { buttonVariants } from "~/components/ui/Button";
-```
-
-```tsx
-<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
-```
-
-Alternatively, use the `asChild` prop on `<Button />`.
-
-```tsx
-<Button asChild>
-  <Link href="/login">Login</Link>
-</Button>
-```
-
 ## Examples
 
 ### Default
 <ComponentPreview id="button" />
+
+### Next.js Link
+Use the `asChild` prop on `<Button />` to use the Next.js `<Link />` component.
+<ComponentPreview id="button-nextjs-link" />
 
 ### Secondary
 <ComponentPreview id="button-secondary" />
