@@ -82,6 +82,11 @@ import SwitchFormDemo from "~/app/docs/_components/demos/switch/SwitchFormDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 import TabsDemo from "~/app/docs/_components/demos/tabs/TabsDemo";
 import TextareaDemo from "~/app/docs/_components/demos/textarea/TextareaDemo";
+import TextareaDisabledDemo from "~/app/docs/_components/demos/textarea/TextareaDisabledDemo";
+import TextareaWithLabelDemo from "~/app/docs/_components/demos/textarea/TextareaWithLabelDemo";
+import TextareaWithTextDemo from "~/app/docs/_components/demos/textarea/TextareaWithTextDemo";
+import TextareaWithButtonDemo from "~/app/docs/_components/demos/textarea/TextareaWithButtonDemo";
+import TextareaFormDemo from "~/app/docs/_components/demos/textarea/TextareaFormDemo";
 import ToastDemo from "~/app/docs/_components/demos/toast/ToastDemo";
 import ToastSuccessDemo from "~/app/docs/_components/demos/toast/ToastSuccessDemo";
 import ToastErrorDemo from "~/app/docs/_components/demos/toast/ToastErrorDemo";
@@ -438,6 +443,26 @@ export const COMPONENT_PREVIEWS = {
   textarea: {
     PreviewComponent: TextareaDemo,
     path: "src/app/docs/_components/demos/textarea/TextareaDemo.tsx",
+  },
+  "textarea-disabled": {
+    PreviewComponent: TextareaDisabledDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaDisabledDemo.tsx",
+  },
+  "textarea-with-label": {
+    PreviewComponent: TextareaWithLabelDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaWithLabelDemo.tsx",
+  },
+  "textarea-with-text": {
+    PreviewComponent: TextareaWithTextDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaWithTextDemo.tsx",
+  },
+  "textarea-with-button": {
+    PreviewComponent: TextareaWithButtonDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaWithButtonDemo.tsx",
+  },
+  "textarea-form": {
+    PreviewComponent: TextareaFormDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaFormDemo.tsx",
   },
   toast: {
     PreviewComponent: ToastDemo,
