@@ -41,6 +41,8 @@ import CommandDemo from "~/app/docs/_components/demos/command/CommandDemo";
 import ContextMenuDemo from "~/app/docs/_components/demos/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/app/docs/_components/demos/data-table/DataTableDemo";
 import DatePickerDemo from "~/app/docs/_components/demos/date-picker/DatePickerDemo";
+import DatePickerRangeDemo from "~/app/docs/_components/demos/date-picker/DatePickerRangeDemo";
+import DatePickerFormDemo from "~/app/docs/_components/demos/date-picker/DatePickerFormDemo";
 import DialogDemo from "~/app/docs/_components/demos/dialog/DialogDemo";
 import DrawerDemo from "~/app/docs/_components/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/app/docs/_components/demos/dropdown-menu/DropdownMenuDemo";
@@ -281,6 +283,14 @@ export const COMPONENT_PREVIEWS = {
   "date-picker": {
     PreviewComponent: DatePickerDemo,
     path: "src/app/docs/_components/demos/date-picker/DatePickerDemo.tsx",
+  },
+  "date-picker-range": {
+    PreviewComponent: DatePickerRangeDemo,
+    path: "src/app/docs/_components/demos/date-picker/DatePickerRangeDemo.tsx",
+  },
+  "date-picker-form": {
+    PreviewComponent: DatePickerFormDemo,
+    path: "src/app/docs/_components/demos/date-picker/DatePickerFormDemo.tsx",
   },
   dialog: {
     PreviewComponent: DialogDemo,
