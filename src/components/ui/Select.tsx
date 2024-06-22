@@ -23,7 +23,7 @@ const SelectTrigger = React.forwardRef<
       "placeholder:text-muted-foreground",
       "focus:outline-none focus:ring-1 focus:ring-ring focus:ring-offset-1",
       "disabled:cursor-not-allowed disabled:opacity-50",
-      "[&>span]:line-clamp-1 [&>span]:text-left",
+      "[&>span]:line-clamp-1 [&>span]:text-left [&>svg]:data-[state=open]:rotate-180",
       className,
     )}
     {...props}

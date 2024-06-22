@@ -48,18 +48,19 @@ export default function InputFormDemo() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[360px]">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex w-full max-w-[360px] flex-col gap-y-8"
+      >
         <FormField
           control={form.control}
           name="username"
           render={({ field }) => (
-            <FormItem>
-              <div className="mb-3 flex flex-col gap-y-2">
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
-              </div>
+            <FormItem className="flex flex-col gap-y-2">
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input placeholder="shadcn" {...field} />
+              </FormControl>
               <FormDescription>
                 This is your public display name.
               </FormDescription>
@@ -67,7 +68,7 @@ export default function InputFormDemo() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="mt-6">
+        <Button type="submit" className="self-start">
           Submit
         </Button>
       </form>
