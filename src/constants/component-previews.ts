@@ -44,7 +44,6 @@ import CheckboxDisabledDemo from "~/app/docs/_components/demos/checkbox/Checkbox
 import CheckboxFormDemo from "~/app/docs/_components/demos/checkbox/CheckboxFormDemo";
 import CollapsibleDemo from "~/app/docs/_components/demos/collapsible/CollapsibleDemo";
 import ComboboxDemo from "~/app/docs/_components/demos/combobox/ComboboxDemo";
-import ComboboxResponsiveDemo from "~/app/docs/_components/demos/combobox/ComboboxResponsiveDemo";
 import ComboboxFormDemo from "~/app/docs/_components/demos/combobox/ComboboxFormDemo";
 import CommandDemo from "~/app/docs/_components/demos/command/CommandDemo";
 import ContextMenuDemo from "~/app/docs/_components/demos/context-menu/ContextMenuDemo";
@@ -303,10 +302,6 @@ export const COMPONENT_PREVIEWS = {
   combobox: {
     PreviewComponent: ComboboxDemo,
     path: "src/app/docs/_components/demos/combobox/ComboboxDemo.tsx",
-  },
-  "combobox-responsive": {
-    PreviewComponent: ComboboxResponsiveDemo,
-    path: "src/app/docs/_components/demos/combobox/ComboboxResponsiveDemo.tsx",
   },
   "combobox-form": {
     PreviewComponent: ComboboxFormDemo,
