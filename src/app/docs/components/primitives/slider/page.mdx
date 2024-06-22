@@ -39,10 +39,16 @@ import { Slider } from "~/components/ui/Slider";
 ```
 
 ```tsx
-<Slider defaultValue={[33]} max={100} step={1} />
+<Slider defaultValue={[33]} max={100} step={1}>
+  <SliderThumb />
+</Slider>
 ```
 
 ## Examples
+
+### Multiple Thumbs
+Add a `<SliderThumb />` child for each thumb you want to display. The length of the `value` array must match the number of thumbs.
+<ComponentPreview id="slider-multiple-thumbs" />
 
 ### Form
 <ComponentPreview id="slider-form" />

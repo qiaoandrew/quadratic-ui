@@ -89,6 +89,7 @@ import SheetDemo from "~/app/docs/_components/demos/sheet/SheetDemo";
 import SheetSideDemo from "~/app/docs/_components/demos/sheet/SheetSideDemo";
 import SkeletonDemo from "~/app/docs/_components/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/app/docs/_components/demos/slider/SliderDemo";
+import SliderMultipleThumbsDemo from "~/app/docs/_components/demos/slider/SliderMultipleThumbsDemo";
 import SliderFormDemo from "~/app/docs/_components/demos/slider/SliderFormDemo";
 import SwitchDemo from "~/app/docs/_components/demos/switch/SwitchDemo";
 import SwitchFormDemo from "~/app/docs/_components/demos/switch/SwitchFormDemo";
@@ -484,6 +485,10 @@ export const COMPONENT_PREVIEWS = {
   slider: {
     PreviewComponent: SliderDemo,
     path: "src/app/docs/_components/demos/slider/SliderDemo.tsx",
+  },
+  "slider-multiple-thumbs": {
+    PreviewComponent: SliderMultipleThumbsDemo,
+    path: "src/app/docs/_components/demos/slider/SliderMultipleThumbsDemo.tsx",
   },
   "slider-form": {
     PreviewComponent: SliderFormDemo,

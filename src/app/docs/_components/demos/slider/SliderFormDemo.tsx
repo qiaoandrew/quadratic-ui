@@ -58,6 +58,9 @@ export default function SliderFormDemo() {
               <FormLabel>Power Level</FormLabel>
               <FormControl>
                 <Slider
+                  min={0}
+                  max={100}
+                  step={1}
                   value={[field.value]}
                   onValueChange={(value) => field.onChange(value[0])}
                 >
