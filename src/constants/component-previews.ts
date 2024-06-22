@@ -98,8 +98,6 @@ import TabsDemo from "~/app/docs/_components/demos/tabs/TabsDemo";
 import TextareaDemo from "~/app/docs/_components/demos/textarea/TextareaDemo";
 import TextareaDisabledDemo from "~/app/docs/_components/demos/textarea/TextareaDisabledDemo";
 import TextareaWithLabelDemo from "~/app/docs/_components/demos/textarea/TextareaWithLabelDemo";
-import TextareaWithTextDemo from "~/app/docs/_components/demos/textarea/TextareaWithTextDemo";
-import TextareaWithButtonDemo from "~/app/docs/_components/demos/textarea/TextareaWithButtonDemo";
 import TextareaFormDemo from "~/app/docs/_components/demos/textarea/TextareaFormDemo";
 import ToastDemo from "~/app/docs/_components/demos/toast/ToastDemo";
 import ToastSuccessDemo from "~/app/docs/_components/demos/toast/ToastSuccessDemo";
@@ -521,14 +519,6 @@ export const COMPONENT_PREVIEWS = {
   "textarea-with-label": {
     PreviewComponent: TextareaWithLabelDemo,
     path: "src/app/docs/_components/demos/textarea/TextareaWithLabelDemo.tsx",
-  },
-  "textarea-with-text": {
-    PreviewComponent: TextareaWithTextDemo,
-    path: "src/app/docs/_components/demos/textarea/TextareaWithTextDemo.tsx",
-  },
-  "textarea-with-button": {
-    PreviewComponent: TextareaWithButtonDemo,
-    path: "src/app/docs/_components/demos/textarea/TextareaWithButtonDemo.tsx",
   },
   "textarea-form": {
     PreviewComponent: TextareaFormDemo,
