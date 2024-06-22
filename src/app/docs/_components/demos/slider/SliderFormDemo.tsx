@@ -15,23 +15,21 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/ui/Form";
-import { Input } from "~/components/ui/Input";
+import { Slider, SliderThumb } from "~/components/ui/Slider";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Your username must be at least 2 characters.",
-  }),
+  value: z.number().min(0).max(100),
 });
 
-export default function InputFormDemo() {
+export default function SliderFormDemo() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      value: 50,
     },
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
+  function onSubmit(data: z.infer<typeof formSchema>) {
     toast(
       <div className="flex w-full flex-col gap-y-3">
         <p className="text-3.5 font-medium">
@@ -44,25 +42,34 @@ export default function InputFormDemo() {
         </pre>
       </div>,
     );
-  };
+  }
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex w-full max-w-[360px] flex-col gap-y-8"
+        className="flex w-full max-w-[320px] flex-col gap-y-8"
       >
         <FormField
           control={form.control}
-          name="username"
+          name="value"
           render={({ field }) => (
-            <FormItem className="flex flex-col gap-y-2">
-              <FormLabel>Username</FormLabel>
+            <FormItem className="flex flex-col gap-y-3">
+              <FormLabel>Power Level</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Slider
+                  min={0}
+                  max={100}
+                  step={1}
+                  value={[field.value]}
+                  onValueChange={(value) => field.onChange(value[0])}
+                >
+                  <SliderThumb />
+                </Slider>
               </FormControl>
-              <FormDescription>
-                This is your public display name.
+              <FormDescription className="flex justify-between">
+                <span>0</span>
+                <span>100</span>
               </FormDescription>
               <FormMessage />
             </FormItem>

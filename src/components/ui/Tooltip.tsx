@@ -7,12 +7,11 @@ import { cn } from "~/utils/tailwind";
 
 const TooltipProvider = TooltipPrimitive.Provider;
 
-const Tooltip = ({ ...props }) => (
-  <TooltipPrimitive.Root delayDuration={0} {...props} />
+const Tooltip = (props: React.ComponentProps<typeof TooltipPrimitive.Root>) => (
+  <TooltipPrimitive.Root delayDuration={props.delayDuration ?? 0} {...props} />
 );
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
-
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>

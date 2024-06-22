@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import { useState } from "react";
 import { CheckIcon, ChevronsUpDownIcon } from "lucide-react";
 
 import { Button } from "~/components/ui/Button";
@@ -44,8 +44,8 @@ const FRAMEWORKS = [
 ];
 
 export default function ComboboxDemo() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [value, setValue] = useState("");
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>

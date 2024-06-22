@@ -15,19 +15,17 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/ui/Form";
-import { Input } from "~/components/ui/Input";
+import { Textarea } from "~/components/ui/Textarea";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Your username must be at least 2 characters.",
-  }),
+  message: z.string(),
 });
 
-export default function InputFormDemo() {
+export default function TextareaFormDemo() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      message: "",
     },
   });
 
@@ -54,15 +52,15 @@ export default function InputFormDemo() {
       >
         <FormField
           control={form.control}
-          name="username"
+          name="message"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-y-2">
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Message</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Textarea placeholder="Enter your message..." {...field} />
               </FormControl>
               <FormDescription>
-                This is your public display name.
+                Send us your positive and constructive feedback.
               </FormDescription>
               <FormMessage />
             </FormItem>

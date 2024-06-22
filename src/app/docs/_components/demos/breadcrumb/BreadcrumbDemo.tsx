@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -19,7 +21,9 @@ export default function BreadcrumbDemo() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href="/">Home</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -53,8 +57,8 @@ export default function BreadcrumbDemo() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/docs/components/primitives/accordion">
-            Components
+          <BreadcrumbLink asChild>
+            <Link href="/docs/components/primitives/accordion">Components</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />

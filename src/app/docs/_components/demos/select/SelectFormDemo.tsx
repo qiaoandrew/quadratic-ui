@@ -15,23 +15,28 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/ui/Form";
-import { Input } from "~/components/ui/Input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "~/components/ui/Select";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Your username must be at least 2 characters.",
-  }),
+  email: z
+    .string({
+      required_error: "Please select an email to display.",
+    })
+    .email(),
 });
 
-export default function InputFormDemo() {
+export default function SelectFormDemo() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "",
-    },
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
+  function onSubmit(data: z.infer<typeof formSchema>) {
     toast(
       <div className="flex w-full flex-col gap-y-3">
         <p className="text-3.5 font-medium">
@@ -44,25 +49,36 @@ export default function InputFormDemo() {
         </pre>
       </div>,
     );
-  };
+  }
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex w-full max-w-[360px] flex-col gap-y-8"
+        className="flex w-full max-w-[320px] flex-col gap-y-8"
       >
         <FormField
           control={form.control}
-          name="username"
+          name="email"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-y-2">
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
+              <FormLabel>Email</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a verified email to display" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {SELECT_ITEMS.map((item) => (
+                    <SelectItem key={item} value={item}>
+                      {item}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
               <FormDescription>
-                This is your public display name.
+                Manage email addresses in your settings.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -75,3 +91,5 @@ export default function InputFormDemo() {
     </Form>
   );
 }
+
+const SELECT_ITEMS = ["m@example.com", "m@google.com", "m@support.com"];

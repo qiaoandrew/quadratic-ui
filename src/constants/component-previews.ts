@@ -1,8 +1,14 @@
 import AccordionDemo from "~/app/docs/_components/demos/accordion/AccordionDemo";
+import AccordionSingleNonCollapsibleDemo from "~/app/docs/_components/demos/accordion/AccordionSingleNonCollapsibleDemo";
+import AccordionMultipleDemo from "~/app/docs/_components/demos/accordion/AccordionMultipleDemo";
 import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
+import AlertDialogControlledDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
+import AvatarInitialsDemo from "~/app/docs/_components/demos/avatar/AvatarInitialsDemo";
+import AvatarTooltipDemo from "~/app/docs/_components/demos/avatar/AvatarTooltipDemo";
 import BadgeDemo from "~/app/docs/_components/demos/badge/BadgeDemo";
+import BadgeNextjsLinkDemo from "~/app/docs/_components/demos/badge/BadgeNextjsLinkDemo";
 import BadgeSecondaryDemo from "~/app/docs/_components/demos/badge/BadgeSecondaryDemo";
 import BadgeOutlineDemo from "~/app/docs/_components/demos/badge/BadgeOutlineDemo";
 import BadgeDestructiveDemo from "~/app/docs/_components/demos/badge/BadgeDestructiveDemo";
@@ -12,7 +18,10 @@ import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWar
 import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
 import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
+import BreadcrumbAnchorLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbAnchorLinkDemo";
+import BreadcrumbNextjsLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbNextjsLinkDemo";
 import ButtonDemo from "~/app/docs/_components/demos/button/ButtonDemo";
+import ButtonNextjsLinkDemo from "~/app/docs/_components/demos/button/ButtonNextjsLinkDemo";
 import ButtonSecondaryDemo from "~/app/docs/_components/demos/button/ButtonSecondaryDemo";
 import ButtonOutlineDemo from "~/app/docs/_components/demos/button/ButtonOutlineDemo";
 import ButtonGhostDemo from "~/app/docs/_components/demos/button/ButtonGhostDemo";
@@ -35,10 +44,14 @@ import CheckboxDisabledDemo from "~/app/docs/_components/demos/checkbox/Checkbox
 import CheckboxFormDemo from "~/app/docs/_components/demos/checkbox/CheckboxFormDemo";
 import CollapsibleDemo from "~/app/docs/_components/demos/collapsible/CollapsibleDemo";
 import ComboboxDemo from "~/app/docs/_components/demos/combobox/ComboboxDemo";
+import ComboboxResponsiveDemo from "~/app/docs/_components/demos/combobox/ComboboxResponsiveDemo";
+import ComboboxFormDemo from "~/app/docs/_components/demos/combobox/ComboboxFormDemo";
 import CommandDemo from "~/app/docs/_components/demos/command/CommandDemo";
 import ContextMenuDemo from "~/app/docs/_components/demos/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/app/docs/_components/demos/data-table/DataTableDemo";
 import DatePickerDemo from "~/app/docs/_components/demos/date-picker/DatePickerDemo";
+import DatePickerRangeDemo from "~/app/docs/_components/demos/date-picker/DatePickerRangeDemo";
+import DatePickerFormDemo from "~/app/docs/_components/demos/date-picker/DatePickerFormDemo";
 import DialogDemo from "~/app/docs/_components/demos/dialog/DialogDemo";
 import DrawerDemo from "~/app/docs/_components/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/app/docs/_components/demos/dropdown-menu/DropdownMenuDemo";
@@ -51,6 +64,10 @@ import InputDisabledDemo from "~/app/docs/_components/demos/input/InputDisabledD
 import InputWithLabelDemo from "~/app/docs/_components/demos/input/InputWithLabelDemo";
 import InputFormDemo from "~/app/docs/_components/demos/input/InputFormDemo";
 import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
+import InputOTPPatternDemo from "~/app/docs/_components/demos/input-otp/InputOTPPatternDemo";
+import InputOTPSeparatorDemo from "~/app/docs/_components/demos/input-otp/InputOTPSeparatorDemo";
+import InputOTPControlledDemo from "~/app/docs/_components/demos/input-otp/InputOTPControlledDemo";
+import InputOTPFormDemo from "~/app/docs/_components/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
@@ -58,6 +75,7 @@ import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDe
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
+import RadioGroupFormDemo from "~/app/docs/_components/demos/radio-group/RadioGroupFormDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ResizableVerticalDemo from "~/app/docs/_components/demos/resizable/ResizableVerticalDemo";
 import ResizableHandleDemo from "~/app/docs/_components/demos/resizable/ResizableHandleDemo";
@@ -65,15 +83,22 @@ import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaD
 import ScrollAreaHorizontalDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaHorizontalDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
 import SelectScrollableDemo from "~/app/docs/_components/demos/select/SelectScrollableDemo";
+import SelectFormDemo from "~/app/docs/_components/demos/select/SelectFormDemo";
 import SeparatorDemo from "~/app/docs/_components/demos/separator/SeparatorDemo";
 import SheetDemo from "~/app/docs/_components/demos/sheet/SheetDemo";
 import SheetSideDemo from "~/app/docs/_components/demos/sheet/SheetSideDemo";
 import SkeletonDemo from "~/app/docs/_components/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/app/docs/_components/demos/slider/SliderDemo";
+import SliderMultipleThumbsDemo from "~/app/docs/_components/demos/slider/SliderMultipleThumbsDemo";
+import SliderFormDemo from "~/app/docs/_components/demos/slider/SliderFormDemo";
 import SwitchDemo from "~/app/docs/_components/demos/switch/SwitchDemo";
+import SwitchFormDemo from "~/app/docs/_components/demos/switch/SwitchFormDemo";
 import TableDemo from "~/app/docs/_components/demos/table/TableDemo";
 import TabsDemo from "~/app/docs/_components/demos/tabs/TabsDemo";
 import TextareaDemo from "~/app/docs/_components/demos/textarea/TextareaDemo";
+import TextareaDisabledDemo from "~/app/docs/_components/demos/textarea/TextareaDisabledDemo";
+import TextareaWithLabelDemo from "~/app/docs/_components/demos/textarea/TextareaWithLabelDemo";
+import TextareaFormDemo from "~/app/docs/_components/demos/textarea/TextareaFormDemo";
 import ToastDemo from "~/app/docs/_components/demos/toast/ToastDemo";
 import ToastSuccessDemo from "~/app/docs/_components/demos/toast/ToastSuccessDemo";
 import ToastErrorDemo from "~/app/docs/_components/demos/toast/ToastErrorDemo";
@@ -99,9 +124,21 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: AccordionDemo,
     path: "src/app/docs/_components/demos/accordion/AccordionDemo.tsx",
   },
+  "accordion-non-collapsible": {
+    PreviewComponent: AccordionSingleNonCollapsibleDemo,
+    path: "src/app/docs/_components/demos/accordion/AccordionSingleNonCollapsibleDemo.tsx",
+  },
+  "accordion-multiple": {
+    PreviewComponent: AccordionMultipleDemo,
+    path: "src/app/docs/_components/demos/accordion/AccordionMultipleDemo.tsx",
+  },
   "alert-dialog": {
     PreviewComponent: AlertDialogDemo,
     path: "src/app/docs/_components/demos/alert-dialog/AlertDialogDemo.tsx",
+  },
+  "alert-dialog-controlled": {
+    PreviewComponent: AlertDialogControlledDemo,
+    path: "src/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo.tsx",
   },
   "aspect-ratio": {
     PreviewComponent: AspectRatioDemo,
@@ -111,9 +148,21 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: AvatarDemo,
     path: "src/app/docs/_components/demos/avatar/AvatarDemo.tsx",
   },
+  "avatar-initials": {
+    PreviewComponent: AvatarInitialsDemo,
+    path: "src/app/docs/_components/demos/avatar/AvatarInitialsDemo.tsx",
+  },
+  "avatar-tooltip": {
+    PreviewComponent: AvatarTooltipDemo,
+    path: "src/app/docs/_components/demos/avatar/AvatarTooltipDemo.tsx",
+  },
   badge: {
     PreviewComponent: BadgeDemo,
     path: "src/app/docs/_components/demos/badge/BadgeDemo.tsx",
+  },
+  "badge-nextjs-link": {
+    PreviewComponent: BadgeNextjsLinkDemo,
+    path: "src/app/docs/_components/demos/badge/BadgeNextjsLinkDemo.tsx",
   },
   "badge-secondary": {
     PreviewComponent: BadgeSecondaryDemo,
@@ -151,9 +200,21 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: BreadcrumbDemo,
     path: "src/app/docs/_components/demos/breadcrumb/BreadcrumbDemo.tsx",
   },
+  "breadcrumb-anchor-link": {
+    PreviewComponent: BreadcrumbAnchorLinkDemo,
+    path: "src/app/docs/_components/demos/breadcrumb/BreadcrumbAnchorLinkDemo.tsx",
+  },
+  "breadcrumb-nextjs-link": {
+    PreviewComponent: BreadcrumbNextjsLinkDemo,
+    path: "src/app/docs/_components/demos/breadcrumb/BreadcrumbNextjsLinkDemo.tsx",
+  },
   button: {
     PreviewComponent: ButtonDemo,
     path: "src/app/docs/_components/demos/button/ButtonDemo.tsx",
+  },
+  "button-nextjs-link": {
+    PreviewComponent: ButtonNextjsLinkDemo,
+    path: "src/app/docs/_components/demos/button/ButtonNextjsLinkDemo.tsx",
   },
   "button-secondary": {
     PreviewComponent: ButtonSecondaryDemo,
@@ -243,6 +304,14 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: ComboboxDemo,
     path: "src/app/docs/_components/demos/combobox/ComboboxDemo.tsx",
   },
+  "combobox-responsive": {
+    PreviewComponent: ComboboxResponsiveDemo,
+    path: "src/app/docs/_components/demos/combobox/ComboboxResponsiveDemo.tsx",
+  },
+  "combobox-form": {
+    PreviewComponent: ComboboxFormDemo,
+    path: "src/app/docs/_components/demos/combobox/ComboboxFormDemo.tsx",
+  },
   command: {
     PreviewComponent: CommandDemo,
     path: "src/app/docs/_components/demos/command/CommandDemo.tsx",
@@ -258,6 +327,14 @@ export const COMPONENT_PREVIEWS = {
   "date-picker": {
     PreviewComponent: DatePickerDemo,
     path: "src/app/docs/_components/demos/date-picker/DatePickerDemo.tsx",
+  },
+  "date-picker-range": {
+    PreviewComponent: DatePickerRangeDemo,
+    path: "src/app/docs/_components/demos/date-picker/DatePickerRangeDemo.tsx",
+  },
+  "date-picker-form": {
+    PreviewComponent: DatePickerFormDemo,
+    path: "src/app/docs/_components/demos/date-picker/DatePickerFormDemo.tsx",
   },
   dialog: {
     PreviewComponent: DialogDemo,
@@ -307,6 +384,22 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: InputOTPDemo,
     path: "src/app/docs/_components/demos/input-otp/InputOTPDemo.tsx",
   },
+  "input-otp-pattern": {
+    PreviewComponent: InputOTPPatternDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPPatternDemo.tsx",
+  },
+  "input-otp-separator": {
+    PreviewComponent: InputOTPSeparatorDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPSeparatorDemo.tsx",
+  },
+  "input-otp-controlled": {
+    PreviewComponent: InputOTPControlledDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPControlledDemo.tsx",
+  },
+  "input-otp-form": {
+    PreviewComponent: InputOTPFormDemo,
+    path: "src/app/docs/_components/demos/input-otp/InputOTPFormDemo.tsx",
+  },
   label: {
     PreviewComponent: LabelDemo,
     path: "src/app/docs/_components/demos/label/LabelDemo.tsx",
@@ -334,6 +427,10 @@ export const COMPONENT_PREVIEWS = {
   "radio-group": {
     PreviewComponent: RadioGroupDemo,
     path: "src/app/docs/_components/demos/radio-group/RadioGroupDemo.tsx",
+  },
+  "radio-group-form": {
+    PreviewComponent: RadioGroupFormDemo,
+    path: "src/app/docs/_components/demos/radio-group/RadioGroupFormDemo.tsx",
   },
   resizable: {
     PreviewComponent: ResizableDemo,
@@ -363,6 +460,10 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: SelectScrollableDemo,
     path: "src/app/docs/_components/demos/select/SelectScrollableDemo.tsx",
   },
+  "select-form": {
+    PreviewComponent: SelectFormDemo,
+    path: "src/app/docs/_components/demos/select/SelectFormDemo.tsx",
+  },
   separator: {
     PreviewComponent: SeparatorDemo,
     path: "src/app/docs/_components/demos/separator/SeparatorDemo.tsx",
@@ -383,9 +484,21 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: SliderDemo,
     path: "src/app/docs/_components/demos/slider/SliderDemo.tsx",
   },
+  "slider-multiple-thumbs": {
+    PreviewComponent: SliderMultipleThumbsDemo,
+    path: "src/app/docs/_components/demos/slider/SliderMultipleThumbsDemo.tsx",
+  },
+  "slider-form": {
+    PreviewComponent: SliderFormDemo,
+    path: "src/app/docs/_components/demos/slider/SliderFormDemo.tsx",
+  },
   switch: {
     PreviewComponent: SwitchDemo,
     path: "src/app/docs/_components/demos/switch/SwitchDemo.tsx",
+  },
+  "switch-form": {
+    PreviewComponent: SwitchFormDemo,
+    path: "src/app/docs/_components/demos/switch/SwitchFormDemo.tsx",
   },
   table: {
     PreviewComponent: TableDemo,
@@ -398,6 +511,18 @@ export const COMPONENT_PREVIEWS = {
   textarea: {
     PreviewComponent: TextareaDemo,
     path: "src/app/docs/_components/demos/textarea/TextareaDemo.tsx",
+  },
+  "textarea-disabled": {
+    PreviewComponent: TextareaDisabledDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaDisabledDemo.tsx",
+  },
+  "textarea-with-label": {
+    PreviewComponent: TextareaWithLabelDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaWithLabelDemo.tsx",
+  },
+  "textarea-form": {
+    PreviewComponent: TextareaFormDemo,
+    path: "src/app/docs/_components/demos/textarea/TextareaFormDemo.tsx",
   },
   toast: {
     PreviewComponent: ToastDemo,
