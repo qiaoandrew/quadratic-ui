@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from "~/components/ui/Select";
 
-const FormSchema = z.object({
+const formSchema = z.object({
   email: z
     .string({
       required_error: "Please select an email to display.",
@@ -32,11 +32,11 @@ const FormSchema = z.object({
 });
 
 export default function SelectFormDemo() {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit(data: z.infer<typeof formSchema>) {
     toast(
       <div className="flex w-full flex-col gap-y-3">
         <p className="text-3.5 font-medium">
@@ -70,9 +70,11 @@ export default function SelectFormDemo() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="m@example.com">m@example.com</SelectItem>
-                  <SelectItem value="m@google.com">m@google.com</SelectItem>
-                  <SelectItem value="m@support.com">m@support.com</SelectItem>
+                  {SELECT_ITEMS.map((item) => (
+                    <SelectItem key={item} value={item}>
+                      {item}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
               <FormDescription>
@@ -89,3 +91,5 @@ export default function SelectFormDemo() {
     </Form>
   );
 }
+
+const SELECT_ITEMS = ["m@example.com", "m@google.com", "m@support.com"];

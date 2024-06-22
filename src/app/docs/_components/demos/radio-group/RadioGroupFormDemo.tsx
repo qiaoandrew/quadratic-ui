@@ -17,21 +17,6 @@ import {
 } from "~/components/ui/Form";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/RadioGroup";
 
-const RADIO_GROUP_ITEMS = [
-  {
-    id: "all",
-    label: "All new messages",
-  },
-  {
-    id: "mentions",
-    label: "Direct messages and mentions",
-  },
-  {
-    id: "none",
-    label: "Nothing",
-  },
-];
-
 const formSchema = z.object({
   type: z.enum(["all", "mentions", "none"], {
     required_error: "You need to select a notification type.",
@@ -103,3 +88,18 @@ export default function RadioGroupFormDemo() {
     </Form>
   );
 }
+
+const RADIO_GROUP_ITEMS = [
+  {
+    id: "all",
+    label: "All new messages",
+  },
+  {
+    id: "mentions",
+    label: "Direct messages and mentions",
+  },
+  {
+    id: "none",
+    label: "Nothing",
+  },
+];
