@@ -6,7 +6,7 @@ export default function InputDisabledDemo() {
       type="email"
       placeholder="Email"
       disabled
-      className="max-w-[360px]"
+      className="max-w-[320px]"
     />
   );
 }

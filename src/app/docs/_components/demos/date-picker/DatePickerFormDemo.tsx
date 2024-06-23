@@ -98,9 +98,7 @@ export default function DatePickerFormDemo() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="self-start">
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );

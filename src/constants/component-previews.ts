@@ -40,6 +40,7 @@ import CalloutSuccessDemo from "~/app/docs/_components/demos/callout/CalloutSucc
 import CardDemo from "~/app/docs/_components/demos/card/CardDemo";
 import CarouselDemo from "~/app/docs/_components/demos/carousel/CarouselDemo";
 import CheckboxDemo from "~/app/docs/_components/demos/checkbox/CheckboxDemo";
+import CheckboxDefaultDemo from "~/app/docs/_components/demos/checkbox/CheckboxDefaultDemo";
 import CheckboxDisabledDemo from "~/app/docs/_components/demos/checkbox/CheckboxDisabledDemo";
 import CheckboxFormDemo from "~/app/docs/_components/demos/checkbox/CheckboxFormDemo";
 import CollapsibleDemo from "~/app/docs/_components/demos/collapsible/CollapsibleDemo";
@@ -285,6 +286,10 @@ export const COMPONENT_PREVIEWS = {
   checkbox: {
     PreviewComponent: CheckboxDemo,
     path: "src/app/docs/_components/demos/checkbox/CheckboxDemo.tsx",
+  },
+  "checkbox-default": {
+    PreviewComponent: CheckboxDefaultDemo,
+    path: "src/app/docs/_components/demos/checkbox/CheckboxDefaultDemo.tsx",
   },
   "checkbox-disabled": {
     PreviewComponent: CheckboxDisabledDemo,

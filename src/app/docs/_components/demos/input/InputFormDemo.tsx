@@ -50,7 +50,7 @@ export default function InputFormDemo() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex w-full max-w-[360px] flex-col gap-y-8"
+        className="flex w-full max-w-[320px] flex-col gap-y-8"
       >
         <FormField
           control={form.control}
@@ -68,9 +68,7 @@ export default function InputFormDemo() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="self-start">
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );

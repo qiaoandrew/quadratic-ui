@@ -75,9 +75,7 @@ export default function SliderFormDemo() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="self-start">
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );

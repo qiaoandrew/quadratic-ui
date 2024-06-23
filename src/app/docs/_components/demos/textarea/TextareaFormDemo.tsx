@@ -66,9 +66,7 @@ export default function TextareaFormDemo() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="self-start">
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );
