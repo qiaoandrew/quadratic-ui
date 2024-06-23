@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { cn } from "~/utils/tailwind";
+
 import GradientText from "~/components/typography/GradientText";
 import { Button } from "~/components/ui/Button";
-
-import { cn } from "~/utils/tailwind";
 
 export default function Hero() {
   return (
@@ -65,7 +65,8 @@ export default function Hero() {
           >
             <Button
               className={cn(
-                "bg-gradient-dark px-4 py-2.5 text-4 font-semibold dark:bg-gradient-light",
+                "bg-gradient-dark px-4 py-2.5 text-4 font-semibold text-background transition-shadow dark:bg-gradient-light",
+                "md:hover:shadow-[0px_8px_24px_0px_rgba(0,0,0,0.1)] md:dark:hover:shadow-[0px_8px_24px_0px_rgba(255,255,255,0.2)]",
                 "2xl:rounded-3 2xl:px-4.5 2xl:py-4 2xl:text-5",
               )}
               asChild
@@ -76,6 +77,7 @@ export default function Hero() {
               variant="secondary"
               className={cn(
                 "gap-x-3.5 border border-muted-foreground/50 bg-secondary px-4 py-2.5 text-4 font-semibold",
+                "md:hover:shadow-[0px_8px_24px_0px_rgba(0,0,0,0.05)] md:dark:hover:shadow-[0px_8px_24px_0px_rgba(255,255,255,0.1)]",
                 "2xl:rounded-3 2xl:px-4.5 2xl:py-4 2xl:text-5",
               )}
               asChild
