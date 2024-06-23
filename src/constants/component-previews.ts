@@ -64,7 +64,6 @@ import InputWithLabelDemo from "~/app/docs/_components/demos/input/InputWithLabe
 import InputFormDemo from "~/app/docs/_components/demos/input/InputFormDemo";
 import InputOTPDemo from "~/app/docs/_components/demos/input-otp/InputOTPDemo";
 import InputOTPPatternDemo from "~/app/docs/_components/demos/input-otp/InputOTPPatternDemo";
-import InputOTPSeparatorDemo from "~/app/docs/_components/demos/input-otp/InputOTPSeparatorDemo";
 import InputOTPControlledDemo from "~/app/docs/_components/demos/input-otp/InputOTPControlledDemo";
 import InputOTPFormDemo from "~/app/docs/_components/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
@@ -382,10 +381,6 @@ export const COMPONENT_PREVIEWS = {
   "input-otp-pattern": {
     PreviewComponent: InputOTPPatternDemo,
     path: "src/app/docs/_components/demos/input-otp/InputOTPPatternDemo.tsx",
-  },
-  "input-otp-separator": {
-    PreviewComponent: InputOTPSeparatorDemo,
-    path: "src/app/docs/_components/demos/input-otp/InputOTPSeparatorDemo.tsx",
   },
   "input-otp-controlled": {
     PreviewComponent: InputOTPControlledDemo,
