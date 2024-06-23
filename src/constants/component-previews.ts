@@ -47,6 +47,7 @@ import CollapsibleDemo from "~/app/docs/_components/demos/collapsible/Collapsibl
 import ComboboxDemo from "~/app/docs/_components/demos/combobox/ComboboxDemo";
 import ComboboxFormDemo from "~/app/docs/_components/demos/combobox/ComboboxFormDemo";
 import CommandDemo from "~/app/docs/_components/demos/command/CommandDemo";
+import CommandDialogDemo from "~/app/docs/_components/demos/command/CommandDialogDemo";
 import ContextMenuDemo from "~/app/docs/_components/demos/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/app/docs/_components/demos/data-table/DataTableDemo";
 import DatePickerDemo from "~/app/docs/_components/demos/date-picker/DatePickerDemo";
@@ -314,6 +315,10 @@ export const COMPONENT_PREVIEWS = {
   command: {
     PreviewComponent: CommandDemo,
     path: "src/app/docs/_components/demos/command/CommandDemo.tsx",
+  },
+  "command-dialog": {
+    PreviewComponent: CommandDialogDemo,
+    path: "src/app/docs/_components/demos/command/CommandDialogDemo.tsx",
   },
   "context-menu": {
     PreviewComponent: ContextMenuDemo,
