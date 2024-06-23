@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 
 import {
-  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
