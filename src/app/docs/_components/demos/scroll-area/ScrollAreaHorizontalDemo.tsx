@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { ScrollArea, ScrollBar } from "~/components/ui/ScrollArea";
+import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 
 export type Artwork = {
   artist: string;
@@ -47,7 +47,7 @@ export default function ScrollAreaHorizontalDemo() {
           </figure>
         ))}
       </div>
-      <ScrollBar orientation="horizontal" />
+      <ScrollAreaBar orientation="horizontal" />
     </ScrollArea>
   );
 }
