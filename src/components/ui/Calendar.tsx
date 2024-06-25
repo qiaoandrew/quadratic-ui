@@ -4,9 +4,9 @@ import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";
 
-import { buttonVariants } from "~/components/ui/Button";
-
 import { cn } from "~/utils/tailwind";
+
+import { buttonVariants } from "~/components/ui/Button";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
@@ -19,7 +19,7 @@ function Calendar({
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn("bg-background px-3 py-2.5", className)}
+      className={cn("bg-background p-2.5", className)}
       classNames={{
         months: "flex flex-col sm:flex-row gap-y-4 sm:gap-x-4 sm:gap-y-0",
         caption: "flex justify-between items-center mb-0.5",
