@@ -12,6 +12,9 @@ import {
   SunIcon,
 } from "lucide-react";
 
+import { GETTING_STARTED_ITEMS } from "~/constants/docs";
+import type { DocItem } from "~/types/types";
+
 import {
   CommandDialog,
   CommandEmpty,
@@ -21,9 +24,6 @@ import {
   CommandList,
   CommandShortcut,
 } from "~/components/ui/Command";
-
-import { GETTING_STARTED_ITEMS } from "~/constants/docs";
-import type { DocItem } from "~/types/types";
 
 interface CommandMenu {
   primitivesMenuItems: DocItem[];

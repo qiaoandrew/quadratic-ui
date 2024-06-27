@@ -1,11 +1,11 @@
 import * as React from "react";
+import Link from "next/link";
 import type { MDXComponents } from "mdx/types";
+
+import { textToHtmlId } from "./utils/docs";
 
 import Id from "./app/docs/_components/mdx/Id";
 import CodeBlock from "./app/docs/_components/mdx/CodeBlock";
-
-import { textToHtmlId } from "./utils/docs";
-import Link from "next/link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {

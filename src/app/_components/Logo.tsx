@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import GradientText from "../../components/typography/GradientText";
+import GradientText from "~/components/typography/GradientText";
 
 export default function Logo() {
   return (

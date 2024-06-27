@@ -1,7 +1,7 @@
+import { getComponentsMenuItems, getTOCs } from "~/utils/docs";
+
 import DocMenu from "./_components/navigation/DocMenu";
 import DocTOC from "./_components/navigation/DocTOC";
-
-import { getComponentsMenuItems, getTOCs } from "~/utils/docs";
 
 interface DocsLayoutProps {
   children: React.ReactNode;

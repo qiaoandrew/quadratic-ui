@@ -1,10 +1,10 @@
+import { getComponentsMenuItems } from "~/utils/docs";
+
 import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
 import CommandMenu from "./CommandMenu";
 import ThemeToggle from "./ThemeToggle";
 import DocMenuMobileSheet from "../docs/_components/navigation/DocMenuMobileSheet";
-
-import { getComponentsMenuItems } from "~/utils/docs";
 
 export default async function Header() {
   const { primitivesMenuItems, compositesMenuItems, patternsMenuItems } =

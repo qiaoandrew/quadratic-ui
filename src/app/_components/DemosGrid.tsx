@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 
-import { Button } from "~/components/ui/Button";
-
 import { cn } from "~/utils/tailwind";
 import { DEMOS } from "~/constants/demos";
+
+import { Button } from "~/components/ui/Button";
 
 export default function DemosGrid() {
   return (

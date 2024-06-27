@@ -17,6 +17,7 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <div className="flex size-9 items-center justify-center rounded-2 border text-foreground md:size-10">
+        {/* bejeweled */}
         <SparklesIcon size={18} />
       </div>
     );

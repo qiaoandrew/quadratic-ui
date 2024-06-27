@@ -165,19 +165,11 @@
     @apply box-border border-border;
   }
 
-  html {
-    @apply scroll-smooth;
-  }
-
   body {
     @apply bg-background font-sans text-foreground;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
-  }
-
-  prev > code span {
-    @apply font-mono;
   }
 }
 
@@ -193,9 +185,5 @@
   .step::before {
     @apply absolute -mt-1 ml-[-50px] inline-flex size-9 items-center justify-center rounded-full border-4 border-background bg-muted text-4 text-muted-foreground;
     content: counter(step);
-  }
-
-  .h3-next-p + p {
-    @apply mt-3;
   }
 }
