@@ -31,12 +31,14 @@ export default function ComboboxDemo() {
           variant="outline"
           role="combobox"
           aria-expanded={isOpen}
-          className="w-[200px] justify-between"
+          className="w-[200px] justify-between gap-x-2 overflow-hidden"
         >
-          {value
-            ? FRAMEWORKS.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <ChevronsUpDownIcon size={16} className="ml-2 shrink-0 opacity-50" />
+          <span className="truncate">
+            {value
+              ? FRAMEWORKS.find((framework) => framework.value === value)?.label
+              : "Select framework..."}
+          </span>
+          <ChevronsUpDownIcon size={16} className="shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -63,11 +65,11 @@ export default function ComboboxDemo() {
                   <CheckIcon
                     size={16}
                     className={cn(
-                      "mr-2",
+                      "mr-2 shrink-0",
                       value === framework.value ? "opacity-100" : "opacity-0",
                     )}
                   />
-                  {framework.label}
+                  <span className="truncate">{framework.label}</span>
                 </CommandItem>
               ))}
             </CommandGroup>
