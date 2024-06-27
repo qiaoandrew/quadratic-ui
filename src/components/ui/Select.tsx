@@ -140,7 +140,6 @@ const SelectItem = React.forwardRef<
         <CheckIcon size={16} />
       </SelectPrimitive.ItemIndicator>
     </span>
-
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
 ));

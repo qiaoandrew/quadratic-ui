@@ -44,9 +44,9 @@ export default function ComboboxDemo() {
       <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandInput
-            placeholder="Search framework..."
+            placeholder="Search frameworks..."
             searchIconSize={14}
-            containerClassName="gap-x-1.5"
+            containerClassName="gap-x-2.5"
             className="py-2.5"
           />
           <CommandList>
@@ -60,15 +60,16 @@ export default function ComboboxDemo() {
                     setValue(currentValue === value ? "" : currentValue);
                     setIsOpen(false);
                   }}
-                  className="rounded-1 px-2 py-1.5 text-3.5"
+                  className="rounded-1 py-1.5 pl-8 pr-2 text-3.5"
                 >
-                  <CheckIcon
-                    size={16}
-                    className={cn(
-                      "mr-2 shrink-0",
-                      value === framework.value ? "opacity-100" : "opacity-0",
-                    )}
-                  />
+                  <span className="absolute left-2 flex size-3.5 items-center justify-center">
+                    <CheckIcon
+                      size={16}
+                      className={cn(
+                        value === framework.value ? "opacity-100" : "opacity-0",
+                      )}
+                    />
+                  </span>
                   <span className="truncate">{framework.label}</span>
                 </CommandItem>
               ))}
