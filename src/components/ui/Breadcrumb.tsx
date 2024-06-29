@@ -66,7 +66,7 @@ const BreadcrumbPage = React.forwardRef<
     role="link"
     aria-disabled="true"
     aria-current="page"
-    className={cn("font-normal text-foreground", className)}
+    className={cn("text-foreground", className)}
     {...props}
   />
 ));
@@ -98,7 +98,7 @@ const BreadcrumbEllipsis = ({
     className={cn("flex size-9 items-center justify-center", className)}
     {...props}
   >
-    <MoreHorizontalIcon size={16} />
+    <MoreHorizontalIcon size={16} className="focus:outline-none" />
     <span className="sr-only">More</span>
   </span>
 );
