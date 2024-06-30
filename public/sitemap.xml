@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://www.quadratic-ui.com/</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/getting-started/quickstart</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/getting-started/introduction</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/getting-started/credits</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/getting-started/create-t3-app</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/getting-started/dark-mode</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/getting-started/customization</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/getting-started/contributing</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/accordion</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/alert-dialog</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/aspect-ratio</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/avatar</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/badge</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/breadcrumb</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/button</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/calendar</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/callout</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/checkbox</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/command</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/context-menu</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/dialog</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/dropdown-menu</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/hover-card</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/input</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/input-otp</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/label</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/menubar</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/navigation-menu</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/pagination</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/popover</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/progress</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/radio-group</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/resizable</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/scroll-area</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/select</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/separator</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/skeleton</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/slider</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/switch</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/table</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/tabs</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/textarea</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/toast</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/toggle</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/toggle-group</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/primitives/tooltip</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/composites/combobox</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/composites/date-picker</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/patterns/card</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/patterns/carousel</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/patterns/data-table</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/patterns/drawer</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/patterns/form</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.quadratic-ui.com/docs/components/patterns/sheet</loc>
+  <lastmod>2024-06-30T15:29:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
