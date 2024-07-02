@@ -4,7 +4,7 @@ import { Callout, CalloutText } from "~/components/ui/Callout";
 
 export default function CalloutDestructiveDemo() {
   return (
-    <Callout variant="destructive" className="max-w-lg">
+    <Callout variant="destructive" className="max-w-128">
       <AlertCircleIcon size={20} />
       <CalloutText>
         Use red callouts to give the user an error message.

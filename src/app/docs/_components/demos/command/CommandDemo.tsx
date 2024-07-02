@@ -20,7 +20,7 @@ import {
 
 export default function CommandDemo() {
   return (
-    <Command className="max-w-[480px] border">
+    <Command className="max-w-128 border">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
