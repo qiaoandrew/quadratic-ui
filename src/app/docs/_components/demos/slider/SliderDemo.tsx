@@ -11,7 +11,7 @@ export default function SliderDemo({ className, ...props }: SliderProps) {
       min={0}
       max={100}
       step={1}
-      className={cn("w-full max-w-[360px]", className)}
+      className={cn("w-full max-w-80", className)}
       {...props}
     >
       <SliderThumb />

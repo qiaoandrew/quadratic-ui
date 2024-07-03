@@ -5,7 +5,7 @@ import { cn } from "~/utils/tailwind";
 
 const textareaVariants = cva(
   cn(
-    "min-h-[60px] w-full border border-input bg-background ring-offset-background",
+    "min-h-16 w-full border border-input bg-background ring-offset-background",
     "placeholder:text-muted-foreground",
     "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
     "disabled:cursor-not-allowed disabled:opacity-50",
@@ -13,7 +13,8 @@ const textareaVariants = cva(
   {
     variants: {
       size: {
-        sm: "text-3 rounded-1.5 px-2.5 py-2",
+        xs: "text-3.5 rounded-1 px-2 py-1.5",
+        sm: "text-3.5 rounded-1.5 px-2.5 py-2",
         default: "text-3.5 rounded-2 px-3 py-2.5",
         lg: "text-4 rounded-2.5 px-3.5 py-3",
       },
