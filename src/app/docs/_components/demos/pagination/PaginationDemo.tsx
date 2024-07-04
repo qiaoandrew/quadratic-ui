@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import {
@@ -15,6 +16,14 @@ import {
 const TOTAL_PAGES = 3;
 
 export default function PaginationDemo() {
+  return (
+    <Suspense>
+      <PaginationDemoContent />
+    </Suspense>
+  );
+}
+
+function PaginationDemoContent() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
