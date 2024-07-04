@@ -32,9 +32,9 @@ const Calendar = ({
         table: "w-full border-collapse",
         head_row: "flex",
         head_cell:
-          "text-muted-foreground size-8 flex justify-center items-center font-normal text-[12.8px]",
+          "text-muted-foreground rounded-1.5 size-8 flex justify-center items-center font-normal text-[12.8px]",
         row: "flex w-full",
-        cell: "relative p-0 text-center text-3.5 focus-within:relative [&:has([aria-selected].day-range-end)]:rounded-r-1.5 [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-1.5 last:[&:has([aria-selected])]:rounded-r-1.5 focus-within:relative focus-within:z-20",
+        cell: "relative p-0 text-center text-3.5 focus-within:relative focus-within:relative focus-within:z-20",
         day: cn(
           buttonVariants({ variant: "ghost", size: "icon" }),
           "size-8 p-0 font-normal aria-selected:opacity-100",
