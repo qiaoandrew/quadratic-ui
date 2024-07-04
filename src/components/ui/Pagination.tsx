@@ -1,5 +1,4 @@
 import * as React from "react";
-import Link from "next/link";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -8,11 +7,7 @@ import {
 
 import { cn } from "~/utils/tailwind";
 
-import {
-  type ButtonProps,
-  buttonVariants,
-  Button,
-} from "~/components/ui/Button";
+import { type ButtonProps, Button } from "~/components/ui/Button";
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
@@ -43,66 +38,6 @@ const PaginationItem = React.forwardRef<
   <li ref={ref} className={className} {...props} />
 ));
 PaginationItem.displayName = "PaginationItem";
-
-interface PaginationLinkProps
-  extends React.ComponentProps<typeof Link>,
-    Pick<ButtonProps, "size"> {
-  isActive?: boolean;
-}
-
-const PaginationLink = ({
-  href,
-  isActive,
-  size = "icon",
-  className,
-  ...props
-}: PaginationLinkProps) => (
-  <Link
-    href={href}
-    aria-current={isActive ? "page" : undefined}
-    className={cn(
-      buttonVariants({
-        variant: isActive ? "outline" : "ghost",
-        size,
-      }),
-      className,
-    )}
-    {...props}
-  />
-);
-PaginationLink.displayName = "PaginationLink";
-
-const PaginationPreviousLink = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
-    aria-label="Go to previous page"
-    size="default"
-    className={cn("gap-1 pl-2", className)}
-    {...props}
-  >
-    <ChevronLeftIcon size={16} />
-    <span>Previous</span>
-  </PaginationLink>
-);
-PaginationPreviousLink.displayName = "PaginationPreviousLink";
-
-const PaginationNextLink = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
-    aria-label="Go to next page"
-    size="default"
-    className={cn("gap-1 pr-2", className)}
-    {...props}
-  >
-    <span>Next</span>
-    <ChevronRightIcon size={16} />
-  </PaginationLink>
-);
-PaginationNextLink.displayName = "PaginationNextLink";
 
 interface PaginationButtonProps extends ButtonProps {
   isActive?: boolean;
@@ -180,9 +115,6 @@ export {
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-  PaginationNextLink,
-  PaginationPreviousLink,
   PaginationButton,
   PaginationNextButton,
   PaginationPreviousButton,

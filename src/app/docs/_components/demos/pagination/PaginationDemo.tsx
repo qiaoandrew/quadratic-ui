@@ -1,36 +1,86 @@
+"use client";
+
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
 import {
   Pagination,
+  PaginationButton,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-  PaginationNextLink,
-  PaginationPreviousLink,
+  PaginationNextButton,
+  PaginationPreviousButton,
 } from "~/components/ui/Pagination";
 
+const TOTAL_PAGES = 3;
+
 export default function PaginationDemo() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const curPage = parseInt(searchParams.get("page")?.toString() ?? "1");
+
+  const handleChangePage = (page: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("page", page.toString());
+
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const handlePrevPage = () => {
+    if (curPage > 1) {
+      handleChangePage(curPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (curPage < TOTAL_PAGES) {
+      handleChangePage(curPage + 1);
+    }
+  };
+
   return (
     <Pagination>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPreviousLink href="?page=1" />
+          <PaginationPreviousButton
+            onClick={handlePrevPage}
+            disabled={curPage === 1}
+          />
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink href="?page=1">1</PaginationLink>
+          <PaginationButton
+            onClick={() => handleChangePage(1)}
+            isActive={curPage === 1}
+          >
+            1
+          </PaginationButton>
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink href="?page=2" isActive>
+          <PaginationButton
+            onClick={() => handleChangePage(2)}
+            isActive={curPage === 2}
+          >
             2
-          </PaginationLink>
+          </PaginationButton>
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink href="?page=3">3</PaginationLink>
+          <PaginationButton
+            onClick={() => handleChangePage(3)}
+            isActive={curPage === 3}
+          >
+            3
+          </PaginationButton>
         </PaginationItem>
         <PaginationItem>
           <PaginationEllipsis />
         </PaginationItem>
         <PaginationItem>
-          <PaginationNextLink href="?page=3" />
+          <PaginationNextButton
+            onClick={handleNextPage}
+            disabled={curPage === TOTAL_PAGES}
+          />
         </PaginationItem>
       </PaginationContent>
     </Pagination>
