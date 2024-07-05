@@ -66,7 +66,7 @@ export default function DrawerDemo() {
               control={form.control}
               name="goal"
               render={({ field }) => (
-                <FormItem className="px-4 pb-0 pt-4">
+                <FormItem className="flex flex-col gap-y-3 px-4 pb-0 pt-4">
                   <FormControl>
                     <div className="flex items-center justify-center gap-x-2">
                       <Button
@@ -101,7 +101,7 @@ export default function DrawerDemo() {
                       </Button>
                     </div>
                   </FormControl>
-                  <div className="mt-3 h-32">
+                  <div className="h-32">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={DATA}>
                         <Bar
