@@ -19,7 +19,7 @@ export type ButtonVariant =
 
 const buttonVariants = cva(
   cn(
-    "inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors transition-opacity",
+    "inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-all duration-150",
     "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
     "disabled:pointer-events-none disabled:opacity-50",
   ),
