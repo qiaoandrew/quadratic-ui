@@ -25,7 +25,9 @@ export default function RootLayout({
       className={cn("scroll-smooth font-sans antialiased", GeistMono.variable)}
       suppressHydrationWarning
     >
-      <head />
+      <head>
+        <meta name="robots" content="index, follow" />
+      </head>
       <body suppressHydrationWarning>
         <ThemeProvider
           defaultTheme="dark"
