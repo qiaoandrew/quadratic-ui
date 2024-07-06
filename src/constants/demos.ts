@@ -40,7 +40,7 @@ export const DEMOS = [
   },
   {
     id: "drawer",
-    href: "/docs/components/primitives/drawer",
+    href: "/docs/components/patterns/drawer",
     Component: DrawerDemo,
   },
   {
@@ -50,7 +50,7 @@ export const DEMOS = [
   },
   {
     id: "collapsible",
-    href: "/docs/components/primitives/collapsible",
+    href: "/docs/components/patterns/collapsible",
     Component: CollapsibleDemo,
   },
   {
@@ -90,7 +90,7 @@ export const DEMOS = [
   },
   {
     id: "resizable",
-    href: "/docs/components/primitives/resizable",
+    href: "/docs/components/patterns/resizable",
     Component: ResizableDemo,
   },
   {
