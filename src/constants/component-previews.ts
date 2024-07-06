@@ -78,7 +78,7 @@ import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupD
 import RadioGroupFormDemo from "~/app/docs/_components/demos/radio-group/RadioGroupFormDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
 import ResizableVerticalDemo from "~/app/docs/_components/demos/resizable/ResizableVerticalDemo";
-import ResizableHandleDemo from "~/app/docs/_components/demos/resizable/ResizableHandleDemo";
+import ResizableNoHandleDemo from "~/app/docs/_components/demos/resizable/ResizableNoHandleDemo";
 import ScrollAreaDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaDemo";
 import ScrollAreaHorizontalDemo from "~/app/docs/_components/demos/scroll-area/ScrollAreaHorizontalDemo";
 import SelectDemo from "~/app/docs/_components/demos/select/SelectDemo";
@@ -440,9 +440,9 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: ResizableVerticalDemo,
     path: "src/app/docs/_components/demos/resizable/ResizableVerticalDemo.tsx",
   },
-  "resizable-handle": {
-    PreviewComponent: ResizableHandleDemo,
-    path: "src/app/docs/_components/demos/resizable/ResizableHandleDemo.tsx",
+  "resizable-no-handle": {
+    PreviewComponent: ResizableNoHandleDemo,
+    path: "src/app/docs/_components/demos/resizable/ResizableNoHandleDemo.tsx",
   },
   "scroll-area": {
     PreviewComponent: ScrollAreaDemo,

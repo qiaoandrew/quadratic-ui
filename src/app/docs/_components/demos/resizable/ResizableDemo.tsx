@@ -8,11 +8,11 @@ export default function ResizableDemo() {
   return (
     <ResizablePanelGroup
       direction="horizontal"
-      className="max-w-md rounded-2 border"
+      className="max-w-112 rounded-2 border"
     >
       <ResizablePanel defaultSize={50}>
-        <div className="flex h-[200px] items-center justify-center p-6">
-          <span className="font-semibold">One</span>
+        <div className="flex h-56 items-center justify-center p-6">
+          <p className="text-4 font-semibold">One</p>
         </div>
       </ResizablePanel>
       <ResizableHandle withHandle />
@@ -20,13 +20,13 @@ export default function ResizableDemo() {
         <ResizablePanelGroup direction="vertical">
           <ResizablePanel defaultSize={25}>
             <div className="flex h-full items-center justify-center p-6">
-              <span className="font-semibold">Two</span>
+              <p className="text-4 font-semibold">Two</p>
             </div>
           </ResizablePanel>
           <ResizableHandle withHandle />
           <ResizablePanel defaultSize={75}>
             <div className="flex h-full items-center justify-center p-6">
-              <span className="font-semibold">Three</span>
+              <p className="text-4 font-semibold">Three</p>
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>
