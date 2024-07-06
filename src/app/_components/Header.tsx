@@ -7,8 +7,12 @@ import ThemeToggle from "./ThemeToggle";
 import DocMenuMobileSheet from "../docs/_components/navigation/DocMenuMobileSheet";
 
 export default async function Header() {
-  const { primitivesMenuItems, compositesMenuItems, patternsMenuItems } =
-    await getComponentsMenuItems();
+  const {
+    primitivesMenuItems,
+    compositesMenuItems,
+    patternsMenuItems,
+    chartsMenuItems,
+  } = await getComponentsMenuItems();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-b-primary/10 bg-background/80 backdrop-blur-sm md:h-18">
@@ -22,6 +26,7 @@ export default async function Header() {
             primitivesMenuItems={primitivesMenuItems}
             compositesMenuItems={compositesMenuItems}
             patternsMenuItems={patternsMenuItems}
+            chartsMenuItems={chartsMenuItems}
           />
           <ThemeToggle />
           <DocMenuMobileSheet />

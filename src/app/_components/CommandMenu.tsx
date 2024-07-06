@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import {
+  BarChart2Icon,
   ComponentIcon,
   DiamondIcon,
   MoonIcon,
@@ -29,12 +30,14 @@ interface CommandMenu {
   primitivesMenuItems: DocItem[];
   compositesMenuItems: DocItem[];
   patternsMenuItems: DocItem[];
+  chartsMenuItems: DocItem[];
 }
 
 export default function CommandMenu({
   primitivesMenuItems,
   compositesMenuItems,
   patternsMenuItems,
+  chartsMenuItems,
 }: CommandMenu) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -115,6 +118,17 @@ export default function CommandMenu({
                 onSelect={() => onSelect(() => router.push(item.href))}
               >
                 <SquareAsteriskIcon size={18} className="mr-2" />
+                {item.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Charts">
+            {chartsMenuItems.map((item) => (
+              <CommandItem
+                key={item.id}
+                onSelect={() => onSelect(() => router.push(item.href))}
+              >
+                <BarChart2Icon size={18} className="mr-2" />
                 {item.label}
               </CommandItem>
             ))}
