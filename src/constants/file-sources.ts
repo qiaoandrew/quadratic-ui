@@ -10,6 +10,7 @@ export const FILE_SOURCES = {
   callout: "src/components/ui/Callout.tsx",
   card: "src/components/ui/Card.tsx",
   carousel: "src/components/ui/Carousel.tsx",
+  chart: "src/components/ui/Chart.tsx",
   checkbox: "src/components/ui/Checkbox.tsx",
   collapsible: "src/components/ui/Collapsible.tsx",
   combobox: "src/components/ui/Combobox.tsx",

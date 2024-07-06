@@ -39,6 +39,11 @@ import CalloutWarningDemo from "~/app/docs/_components/demos/callout/CalloutWarn
 import CalloutSuccessDemo from "~/app/docs/_components/demos/callout/CalloutSuccessDemo";
 import CardDemo from "~/app/docs/_components/demos/card/CardDemo";
 import CarouselDemo from "~/app/docs/_components/demos/carousel/CarouselDemo";
+import ChartsDemo from "~/app/docs/_components/demos/charts/ChartsDemo";
+import ChartsAxisDemo from "~/app/docs/_components/demos/charts/ChartsAxisDemo";
+import ChartsGridDemo from "~/app/docs/_components/demos/charts/ChartsGridDemo";
+import ChartsLegendDemo from "~/app/docs/_components/demos/charts/ChartsLegendDemo";
+import ChartsTooltipDemo from "~/app/docs/_components/demos/charts/ChartsTooltipDemo";
 import CheckboxDemo from "~/app/docs/_components/demos/checkbox/CheckboxDemo";
 import CheckboxDefaultDemo from "~/app/docs/_components/demos/checkbox/CheckboxDefaultDemo";
 import CheckboxDisabledDemo from "~/app/docs/_components/demos/checkbox/CheckboxDisabledDemo";
@@ -283,6 +288,26 @@ export const COMPONENT_PREVIEWS = {
   carousel: {
     PreviewComponent: CarouselDemo,
     path: "src/app/docs/_components/demos/carousel/CarouselDemo.tsx",
+  },
+  charts: {
+    PreviewComponent: ChartsDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsDemo.tsx",
+  },
+  "charts-axis": {
+    PreviewComponent: ChartsAxisDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsAxisDemo.tsx",
+  },
+  "charts-grid": {
+    PreviewComponent: ChartsGridDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsGridDemo.tsx",
+  },
+  "charts-legend": {
+    PreviewComponent: ChartsLegendDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsLegendDemo.tsx",
+  },
+  "charts-tooltip": {
+    PreviewComponent: ChartsTooltipDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsTooltipDemo.tsx",
   },
   checkbox: {
     PreviewComponent: CheckboxDemo,

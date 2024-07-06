@@ -12,4 +12,121 @@ import Footer from "~/app/docs/_components/mdx/Footer";
 ## Installation
 <Steps>
 
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add recharts
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="chart" />
+</StepContent>
+
+<StepTitle>Add the following colors to your `globals.css` file.</StepTitle>
+<StepContent>
+```css
+@layer base {
+  :root {
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+```
+</StepContent>
+
+</Steps>
+
+## Usage
+
+Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.
+
+### Basic
+
+<Steps>
+
+<StepTitle>Define your data.</StepTitle>
+<StepContent>
+```tsx
+const CHART_DATA = [
+  { month: "January", desktop: 186, mobile: 80 },
+  { month: "February", desktop: 305, mobile: 200 },
+  { month: "March", desktop: 237, mobile: 120 },
+  { month: "April", desktop: 73, mobile: 190 },
+  { month: "May", desktop: 209, mobile: 130 },
+  { month: "June", desktop: 214, mobile: 140 },
+];
+```
+</StepContent>
+
+<StepTitle>Define your chart configuration.</StepTitle>
+<StepContent>
+The chart config holds configuration for the chart. This is where you place human-readable strings, such as labels, icons and color tokens for theming.
+```tsx
+import { type ChartConfig } from "@/components/ui/Chart";
+
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "#2563eb",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "#60a5fa",
+  },
+} satisfies ChartConfig;
+```
+</StepContent>
+
+<StepTitle>Build your chart using Recharts components.</StepTitle>
+<StepContent>
+Remember to set a minimum height on the `ChartContainer` component. This is required for the chart to be responsive.
+<ComponentPreview id="charts" />
+</StepContent>
+
+</Steps>
+
+### Add Grid
+
+Let's add a grid to the chart.
+
+<Steps>
+
+<StepTitle>Import the `CartesianGrid` component.</StepTitle>
+<StepContent>
+```tsx
+import { Bar, BarChart, CartesianGrid } from "recharts";
+```
+</StepContent>
+
+<StepTitle>Add the `CartesianGrid` component to your chart.</StepTitle>
+<StepContent>
+```tsx
+<ChartContainer config={chartConfig} className="min-h-56 w-full">
+  <BarChart accessibilityLayer data={chartData}>
+    <CartesianGrid vertical={false} />
+    <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+    <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+  </BarChart>
+</ChartContainer>
+```
+</StepContent>
+
+<StepTitle>A grid is added to the chart.</StepTitle>
+<StepContent>
+<ComponentPreview id="charts-grid" />
+</StepContent>
+
 </Steps>
