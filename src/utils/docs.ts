@@ -71,10 +71,28 @@ export const getComponentsMenuItems = async () => {
     })),
   );
 
+  const charts = await readDirectory("src/app/docs/components/charts");
+  const chartsMenuItems = await Promise.all(
+    charts.map(async (name) => ({
+      id: name,
+      href: `/docs/components/charts/${name}`,
+      label: formatLabel(name),
+    })),
+  );
+
+  const introductionIndex = chartsMenuItems.findIndex(
+    (item) => item.id === "introduction",
+  );
+  const [item] = chartsMenuItems.splice(introductionIndex, 1);
+  if (item) {
+    chartsMenuItems.unshift(item);
+  }
+
   return {
     primitivesMenuItems,
     compositesMenuItems,
     patternsMenuItems,
+    chartsMenuItems,
   };
 };
 
@@ -118,6 +136,16 @@ export const getTOCs = async () => {
       const content = await readFile(filePath);
       const toc = extractSectionIds(content);
       tocs[`components/patterns/${pattern}`] = toc;
+    }),
+  );
+
+  const charts = await readDirectory("src/app/docs/components/charts");
+  await Promise.all(
+    charts.map(async (chart) => {
+      const filePath = `src/app/docs/components/charts/${chart}/page.mdx`;
+      const content = await readFile(filePath);
+      const toc = extractSectionIds(content);
+      tocs[`components/charts/${chart}`] = toc;
     }),
   );
 

@@ -14,6 +14,7 @@ interface DocMenuProps {
   primitivesMenuItems: DocItem[];
   compositesMenuItems: DocItem[];
   patternsMenuItems: DocItem[];
+  chartsMenuItems: DocItem[];
   isMobile?: boolean;
 }
 
@@ -21,6 +22,7 @@ export default function DocMenu({
   primitivesMenuItems,
   compositesMenuItems,
   patternsMenuItems,
+  chartsMenuItems,
   isMobile,
 }: DocMenuProps) {
   const pathname = usePathname();
@@ -68,6 +70,13 @@ export default function DocMenu({
             pathname={pathname}
             title="Patterns"
             items={patternsMenuItems}
+            isVisible={pathname.includes("components") || pathname === "/"}
+            isMobile={isMobile}
+          />
+          <DocMenuSection
+            pathname={pathname}
+            title="Charts"
+            items={chartsMenuItems}
             isVisible={pathname.includes("components") || pathname === "/"}
             isMobile={isMobile}
           />
