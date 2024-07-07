@@ -75,7 +75,7 @@ const CHART_DATA = [
 <StepContent>
 The chart config holds configuration for the chart. This is where you place human-readable strings, such as labels, icons and color tokens for theming.
 ```tsx
-import { type ChartConfig } from "@/components/ui/Chart";
+import { type ChartConfig } from "~/components/ui/Chart";
 
 const chartConfig = {
   desktop: {
@@ -167,6 +167,47 @@ import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 <StepTitle>An x-axis is added to the chart.</StepTitle>
 <StepContent>
 <ComponentPreview id="charts-axis" />
+</StepContent>
+
+</Steps>
+
+### Add Tooltip
+
+To add a tooltip, we'll use the custom `ChartTooltip` and `ChartTooltipContent` components from `Chart`.
+
+<Steps>
+
+<StepTitle>Import the `ChartTooltip` and `ChartTooltipContent` components.</StepTitle>
+<StepContent>
+```tsx
+import { ChartTooltip, ChartTooltipContent } from "~/components/ui/Chart";
+```
+</StepContent>
+
+<StepTitle>Add the components to your chart.</StepTitle>
+<StepContent>
+```tsx
+<ChartContainer config={chartConfig} className="h-56 w-full">
+  <BarChart accessibilityLayer data={chartData}>
+    <CartesianGrid vertical={false} />
+    <XAxis
+      dataKey="month"
+      tickLine={false}
+      tickMargin={10}
+      axisLine={false}
+      tickFormatter={(value) => value.slice(0, 3)}
+    />
+    <ChartTooltip content={<ChartTooltipContent />} />
+    <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+    <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+  </BarChart>
+</ChartContainer>
+```
+</StepContent>
+
+<StepTitle>A tooltip is added to the chart.</StepTitle>
+<StepContent>
+<ComponentPreview id="charts-tooltip" />
 </StepContent>
 
 </Steps>

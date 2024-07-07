@@ -31,7 +31,7 @@ const chartConfig = {
 
 export default function ChartsTooltipDemo() {
   return (
-    <ChartContainer config={chartConfig} className="min-h-56 w-full">
+    <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
       <BarChart accessibilityLayer data={chartData}>
         <CartesianGrid vertical={false} />
         <XAxis

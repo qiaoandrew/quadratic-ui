@@ -132,7 +132,7 @@ const ChartTooltipContent = React.forwardRef<
     const { config } = useChart();
 
     const tooltipLabel = React.useMemo(() => {
-      if (hideLabel ?? !payload?.length) {
+      if (hideLabel || !payload?.length) {
         return null;
       }
 
@@ -167,7 +167,7 @@ const ChartTooltipContent = React.forwardRef<
       labelKey,
     ]);
 
-    if (!active ?? !payload?.length) {
+    if (!active || !payload?.length) {
       return null;
     }
 
@@ -177,7 +177,7 @@ const ChartTooltipContent = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          "rounded-lg grid min-w-[8rem] items-start gap-1.5 border border-border/50 bg-background px-2.5 py-1.5 text-3 shadow-xl",
+          "grid min-w-32 items-start gap-1.5 rounded-1.5 border border-border/50 bg-background px-2.5 py-1.5 text-3",
           className,
         )}
       >
