@@ -1,10 +1,9 @@
-import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config: NextConfig = {
+const config = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
     remotePatterns: [
@@ -18,5 +17,5 @@ const config: NextConfig = {
     ignoreDuringBuilds: true,
   },
 };
-const withMDX = createMDX({});
+const withMDX = createMDX();
 export default withMDX(config);
