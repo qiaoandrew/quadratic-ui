@@ -17,6 +17,11 @@ import BadgeWarningDemo from "~/app/docs/_components/demos/badge/BadgeWarningDem
 import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWarningOutlineDemo";
 import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
+import BarChartDemo from "~/app/docs/_components/demos/bar-chart/BarChartDemo";
+import BarChartHorizontalDemo from "~/app/docs/_components/demos/bar-chart/BarChartHorizontalDemo";
+import BarChartMultipleDemo from "~/app/docs/_components/demos/bar-chart/BarChartMultipleDemo";
+import BarChartLabelDemo from "~/app/docs/_components/demos/bar-chart/BarChartLabelDemo";
+import BarChartCustomLabelDemo from "~/app/docs/_components/demos/bar-chart/BarChartCustomLabelDemo";
 import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
 import BreadcrumbAnchorLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbAnchorLinkDemo";
 import BreadcrumbNextjsLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbNextjsLinkDemo";
@@ -200,6 +205,26 @@ export const COMPONENT_PREVIEWS = {
   "badge-success-outline": {
     PreviewComponent: BadgeSuccessOutlineDemo,
     path: "src/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo.tsx",
+  },
+  "bar-chart": {
+    PreviewComponent: BarChartDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartDemo.tsx",
+  },
+  "bar-chart-horizontal": {
+    PreviewComponent: BarChartHorizontalDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartHorizontalDemo.tsx",
+  },
+  "bar-chart-multiple": {
+    PreviewComponent: BarChartMultipleDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartMultipleDemo.tsx",
+  },
+  "bar-chart-label": {
+    PreviewComponent: BarChartLabelDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartLabelDemo.tsx",
+  },
+  "bar-chart-custom-label": {
+    PreviewComponent: BarChartCustomLabelDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartCustomLabelDemo.tsx",
   },
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,
