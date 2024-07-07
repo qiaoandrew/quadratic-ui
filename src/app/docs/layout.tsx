@@ -25,7 +25,7 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
         chartsMenuItems={chartsMenuItems}
       />
       <div className="flex gap-x-16 pt-24 md:ml-[304px] md:pt-26">
-        <div className="grow overflow-x-hidden px-0.5 pb-12">{children}</div>
+        <div className="grow overflow-x-hidden px-0.5 pb-16">{children}</div>
         <DocTOC tocs={tocs} />
       </div>
     </div>
