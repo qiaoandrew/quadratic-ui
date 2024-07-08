@@ -84,6 +84,7 @@ import InputOTPPatternDemo from "~/app/docs/_components/demos/input-otp/InputOTP
 import InputOTPControlledDemo from "~/app/docs/_components/demos/input-otp/InputOTPControlledDemo";
 import InputOTPFormDemo from "~/app/docs/_components/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
+import LineChartDemo from "~/app/docs/_components/demos/line-chart/LineChartDemo";
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
@@ -478,6 +479,10 @@ export const COMPONENT_PREVIEWS = {
   label: {
     PreviewComponent: LabelDemo,
     path: "src/app/docs/_components/demos/label/LabelDemo.tsx",
+  },
+  "line-chart": {
+    PreviewComponent: LineChartDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartDemo.tsx",
   },
   menubar: {
     PreviewComponent: MenubarDemo,

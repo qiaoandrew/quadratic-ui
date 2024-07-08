@@ -41,14 +41,15 @@ export default async function ComponentPreview({
           Code
         </TabsTrigger>
       </TabsList>
-      <TabsContent
-        value="preview"
-        className={cn(
-          "mt-0 flex min-h-56 items-center justify-center p-4 md:min-h-96 md:p-8",
-          contentClassName,
-        )}
-      >
-        <PreviewComponent />
+      <TabsContent value="preview" className="mt-0">
+        <div
+          className={cn(
+            "flex min-h-56 items-center justify-center p-4 md:min-h-96 md:p-8",
+            contentClassName,
+          )}
+        >
+          <PreviewComponent />
+        </div>
       </TabsContent>
       <TabsContent value="code" className="mt-0">
         <CodeBlock className="rounded-b-[15px] rounded-t-none border-none">
