@@ -1,6 +1,6 @@
 "use client";
 
-import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
+import { CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts";
 
 import {
   type ChartConfig,
@@ -10,18 +10,22 @@ import {
 } from "~/components/ui/Chart";
 
 const CHART_DATA = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "January", desktop: 186, mobile: 80 },
+  { month: "February", desktop: 305, mobile: 200 },
+  { month: "March", desktop: 237, mobile: 120 },
+  { month: "April", desktop: 73, mobile: 190 },
+  { month: "May", desktop: 209, mobile: 130 },
+  { month: "June", desktop: 214, mobile: 140 },
 ];
 
 const chartConfig = {
   desktop: {
     label: "Desktop",
     color: "hsl(var(--chart-1))",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;
 
@@ -32,6 +36,7 @@ export default function LineChartLabelDemo() {
         accessibilityLayer
         data={CHART_DATA}
         margin={{
+          top: 20,
           left: 12,
           right: 12,
         }}
@@ -46,15 +51,27 @@ export default function LineChartLabelDemo() {
         />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent hideLabel />}
+          content={<ChartTooltipContent indicator="line" />}
         />
         <Line
           dataKey="desktop"
           type="natural"
           stroke="var(--color-desktop)"
           strokeWidth={2}
-          dot={false}
-        />
+          dot={{
+            fill: "var(--color-desktop)",
+          }}
+          activeDot={{
+            r: 6,
+          }}
+        >
+          <LabelList
+            position="top"
+            offset={12}
+            className="fill-foreground"
+            fontSize={12}
+          />
+        </Line>
       </LineChart>
     </ChartContainer>
   );

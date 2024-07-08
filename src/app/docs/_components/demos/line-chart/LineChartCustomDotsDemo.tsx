@@ -1,5 +1,6 @@
 "use client";
 
+import { GitCommitVerticalIcon } from "lucide-react";
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 
 import {
@@ -52,7 +53,28 @@ export default function LineChartCustomDotsDemo() {
           type="natural"
           stroke="var(--color-desktop)"
           strokeWidth={2}
-          dot={false}
+          dot={({
+            cx,
+            cy,
+            payload,
+          }: {
+            cx: number;
+            cy: number;
+            payload: { month: string };
+          }) => {
+            const r = 24;
+            return (
+              <GitCommitVerticalIcon
+                key={payload.month}
+                x={cx - r / 2}
+                y={cy - r / 2}
+                width={r}
+                height={r}
+                fill="hsl(var(--background))"
+                stroke="var(--color-desktop)"
+              />
+            );
+          }}
         />
       </LineChart>
     </ChartContainer>

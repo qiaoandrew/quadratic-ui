@@ -17,6 +17,7 @@ const CHART_DATA = [
   { month: "May", desktop: 209 },
   { month: "June", desktop: 214 },
 ];
+
 const chartConfig = {
   desktop: {
     label: "Desktop",
@@ -52,7 +53,12 @@ export default function LineChartDotsDemo() {
           type="natural"
           stroke="var(--color-desktop)"
           strokeWidth={2}
-          dot={false}
+          dot={{
+            fill: "var(--color-desktop)",
+          }}
+          activeDot={{
+            r: 6,
+          }}
         />
       </LineChart>
     </ChartContainer>
