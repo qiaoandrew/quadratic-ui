@@ -52,7 +52,7 @@ export default async function ComponentPreview({
         </div>
       </TabsContent>
       <TabsContent value="code" className="mt-0">
-        <CodeBlock className="rounded-b-[15px] rounded-t-none border-none">
+        <CodeBlock className="rounded-b-[11px] rounded-t-none border-none">
           {code}
         </CodeBlock>
       </TabsContent>
