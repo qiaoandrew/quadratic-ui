@@ -12,9 +12,13 @@ import { COMPONENT_PREVIEWS } from "~/constants/component-previews";
 
 interface ComponentPreviewProps {
   id: keyof typeof COMPONENT_PREVIEWS;
+  contentClassName?: string;
 }
 
-export default async function ComponentPreview({ id }: ComponentPreviewProps) {
+export default async function ComponentPreview({
+  id,
+  contentClassName,
+}: ComponentPreviewProps) {
   const { PreviewComponent, path } = COMPONENT_PREVIEWS[id];
 
   const code = await readFile(path);
@@ -37,10 +41,14 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
           Code
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="preview" className="mt-0">
-        <div className="flex min-h-56 items-center justify-center p-4 md:min-h-96 md:p-8">
-          <PreviewComponent />
-        </div>
+      <TabsContent
+        value="preview"
+        className={cn(
+          "mt-0 flex min-h-56 items-center justify-center p-4 md:min-h-96 md:p-8",
+          contentClassName,
+        )}
+      >
+        <PreviewComponent />
       </TabsContent>
       <TabsContent value="code" className="mt-0">
         <CodeBlock className="rounded-b-[15px] rounded-t-none border-none">

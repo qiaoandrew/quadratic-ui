@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import {
   type ChartConfig,
@@ -9,7 +9,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "~/components/ui/Chart";
-import { Separator } from "~/components/ui/Separator";
 
 const CHART_DATA = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },
@@ -158,8 +157,9 @@ export default function BarChartInteractiveDemo() {
           accessibilityLayer
           data={CHART_DATA}
           margin={{
-            left: 0,
-            right: 0,
+            left: 20,
+            right: 20,
+            bottom: 20,
           }}
         >
           <CartesianGrid vertical={false} />
