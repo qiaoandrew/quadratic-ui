@@ -80,10 +80,10 @@ export const getComponentsMenuItems = async () => {
     })),
   );
 
-  const introductionIndex = chartsMenuItems.findIndex(
-    (item) => item.id === "introduction",
+  const chartsIntroductionIndex = chartsMenuItems.findIndex(
+    (item) => item.id === "charts-introduction",
   );
-  const [item] = chartsMenuItems.splice(introductionIndex, 1);
+  const [item] = chartsMenuItems.splice(chartsIntroductionIndex, 1);
   if (item) {
     chartsMenuItems.unshift(item);
   }

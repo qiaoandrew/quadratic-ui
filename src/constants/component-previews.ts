@@ -22,6 +22,11 @@ import BarChartHorizontalDemo from "~/app/docs/_components/demos/bar-chart/BarCh
 import BarChartMultipleDemo from "~/app/docs/_components/demos/bar-chart/BarChartMultipleDemo";
 import BarChartLabelDemo from "~/app/docs/_components/demos/bar-chart/BarChartLabelDemo";
 import BarChartCustomLabelDemo from "~/app/docs/_components/demos/bar-chart/BarChartCustomLabelDemo";
+import BarChartMixedDemo from "~/app/docs/_components/demos/bar-chart/BarChartMixedDemo";
+import BarChartStackedLegendDemo from "~/app/docs/_components/demos/bar-chart/BarChartStackedLegendDemo";
+import BarChartActiveDemo from "~/app/docs/_components/demos/bar-chart/BarChartActiveDemo";
+import BarChartNegativeDemo from "~/app/docs/_components/demos/bar-chart/BarChartNegativeDemo";
+import BarChartInteractiveDemo from "~/app/docs/_components/demos/bar-chart/BarChartInteractiveDemo";
 import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
 import BreadcrumbAnchorLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbAnchorLinkDemo";
 import BreadcrumbNextjsLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbNextjsLinkDemo";
@@ -225,6 +230,26 @@ export const COMPONENT_PREVIEWS = {
   "bar-chart-custom-label": {
     PreviewComponent: BarChartCustomLabelDemo,
     path: "src/app/docs/_components/demos/bar-chart/BarChartCustomLabelDemo.tsx",
+  },
+  "bar-chart-mixed": {
+    PreviewComponent: BarChartMixedDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartMixedDemo.tsx",
+  },
+  "bar-chart-stacked-legend": {
+    PreviewComponent: BarChartStackedLegendDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartStackedLegendDemo.tsx",
+  },
+  "bar-chart-active": {
+    PreviewComponent: BarChartActiveDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartActiveDemo.tsx",
+  },
+  "bar-chart-negative": {
+    PreviewComponent: BarChartNegativeDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartNegativeDemo.tsx",
+  },
+  "bar-chart-interactive": {
+    PreviewComponent: BarChartInteractiveDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartInteractiveDemo.tsx",
   },
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,

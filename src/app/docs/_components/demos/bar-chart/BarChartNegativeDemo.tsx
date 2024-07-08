@@ -1,6 +1,6 @@
 "use client";
 
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, LabelList, XAxis } from "recharts";
 
 import {
   type ChartConfig,
@@ -25,22 +25,19 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export default function BarChartHorizontalDemo() {
+export default function BarChartNegativeDemo() {
   return (
-    <ChartContainer config={chartConfig} className="min-h-56 w-full max-w-96">
+    <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <BarChart
         accessibilityLayer
         data={CHART_DATA}
-        layout="vertical"
         margin={{
-          left: -20,
+          top: 20,
         }}
       >
-        <CartesianGrid horizontal={false} />
-        <XAxis type="number" dataKey="desktop" hide />
-        <YAxis
+        <CartesianGrid vertical={false} />
+        <XAxis
           dataKey="month"
-          type="category"
           tickLine={false}
           tickMargin={10}
           axisLine={false}
@@ -50,7 +47,14 @@ export default function BarChartHorizontalDemo() {
           cursor={false}
           content={<ChartTooltipContent hideLabel />}
         />
-        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={6}>
+          <LabelList
+            position="top"
+            offset={12}
+            className="fill-foreground"
+            fontSize={12}
+          />
+        </Bar>
       </BarChart>
     </ChartContainer>
   );

@@ -25,7 +25,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export default function BarChartHorizontalDemo() {
+export default function BarChartInteractiveDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-56 w-full max-w-96">
       <BarChart
