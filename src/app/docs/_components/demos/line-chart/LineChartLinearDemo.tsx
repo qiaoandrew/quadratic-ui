@@ -17,6 +17,7 @@ const CHART_DATA = [
   { month: "May", desktop: 209 },
   { month: "June", desktop: 214 },
 ];
+
 const chartConfig = {
   desktop: {
     label: "Desktop",
@@ -49,7 +50,7 @@ export default function LineChartLinearDemo() {
         />
         <Line
           dataKey="desktop"
-          type="natural"
+          type="linear"
           stroke="var(--color-desktop)"
           strokeWidth={2}
           dot={false}

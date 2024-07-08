@@ -49,7 +49,7 @@ export default function LineChartStepDemo() {
         />
         <Line
           dataKey="desktop"
-          type="natural"
+          type="step"
           stroke="var(--color-desktop)"
           strokeWidth={2}
           dot={false}
