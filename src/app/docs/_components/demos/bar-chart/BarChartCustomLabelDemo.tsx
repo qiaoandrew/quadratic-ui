@@ -43,9 +43,7 @@ export default function BarChartMultipleDemo() {
         accessibilityLayer
         data={CHART_DATA}
         layout="vertical"
-        margin={{
-          right: 16,
-        }}
+        margin={{ right: 16 }}
       >
         <CartesianGrid horizontal={false} />
         <YAxis
@@ -54,7 +52,7 @@ export default function BarChartMultipleDemo() {
           tickLine={false}
           tickMargin={10}
           axisLine={false}
-          tickFormatter={(value) => value.slice(0, 3)}
+          tickFormatter={(value: string) => value.slice(0, 3)}
           hide
         />
         <XAxis dataKey="desktop" type="number" hide />

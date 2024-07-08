@@ -32,9 +32,7 @@ export default function BarChartActiveDemo() {
         accessibilityLayer
         data={CHART_DATA}
         layout="vertical"
-        margin={{
-          left: -20,
-        }}
+        margin={{ left: -20 }}
       >
         <CartesianGrid horizontal={false} />
         <XAxis type="number" dataKey="desktop" hide />
@@ -44,7 +42,7 @@ export default function BarChartActiveDemo() {
           tickLine={false}
           tickMargin={10}
           axisLine={false}
-          tickFormatter={(value) => value.slice(0, 3)}
+          tickFormatter={(value: string) => value.slice(0, 3)}
         />
         <ChartTooltip
           cursor={false}

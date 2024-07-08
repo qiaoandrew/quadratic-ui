@@ -28,13 +28,7 @@ const chartConfig = {
 export default function BarChartNegativeDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
-      <BarChart
-        accessibilityLayer
-        data={CHART_DATA}
-        margin={{
-          top: 20,
-        }}
-      >
+      <BarChart accessibilityLayer data={CHART_DATA} margin={{ top: 20 }}>
         <CartesianGrid vertical={false} />
         <XAxis
           dataKey="month"

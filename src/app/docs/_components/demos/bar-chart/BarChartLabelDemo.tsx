@@ -28,20 +28,14 @@ const chartConfig = {
 export default function BarChartLabelDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
-      <BarChart
-        accessibilityLayer
-        data={CHART_DATA}
-        margin={{
-          top: 20,
-        }}
-      >
+      <BarChart accessibilityLayer data={CHART_DATA} margin={{ top: 20 }}>
         <CartesianGrid vertical={false} />
         <XAxis
           dataKey="month"
           tickLine={false}
           tickMargin={10}
           axisLine={false}
-          tickFormatter={(value) => value.slice(0, 3)}
+          tickFormatter={(value: string) => value.slice(0, 3)}
         />
         <ChartTooltip
           cursor={false}

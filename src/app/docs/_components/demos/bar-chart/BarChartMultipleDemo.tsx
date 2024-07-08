@@ -43,9 +43,7 @@ export default function BarChartMultipleDemo() {
         accessibilityLayer
         data={CHART_DATA}
         layout="vertical"
-        margin={{
-          right: 16,
-        }}
+        margin={{ right: 16 }}
       >
         <CartesianGrid horizontal={false} />
         <YAxis
