@@ -17,7 +17,6 @@ const CHART_DATA = [
   { month: "May", desktop: 209 },
   { month: "June", desktop: 214 },
 ];
-
 const chartConfig = {
   desktop: {
     label: "Desktop",
@@ -25,7 +24,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export default function LineChartDemo() {
+export default function LineChartCustomDotsDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <LineChart

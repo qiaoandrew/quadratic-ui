@@ -85,6 +85,15 @@ import InputOTPControlledDemo from "~/app/docs/_components/demos/input-otp/Input
 import InputOTPFormDemo from "~/app/docs/_components/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
 import LineChartDemo from "~/app/docs/_components/demos/line-chart/LineChartDemo";
+import LineChartLinearDemo from "~/app/docs/_components/demos/line-chart/LineChartLinearDemo";
+import LineChartStepDemo from "~/app/docs/_components/demos/line-chart/LineChartStepDemo";
+import LineChartMultipleDemo from "~/app/docs/_components/demos/line-chart/LineChartMultipleDemo";
+import LineChartDotsDemo from "~/app/docs/_components/demos/line-chart/LineChartDotsDemo";
+import LineChartCustomDotsDemo from "~/app/docs/_components/demos/line-chart/LineChartCustomDotsDemo";
+import LineChartDotsColorsDemo from "~/app/docs/_components/demos/line-chart/LineChartDotsColorsDemo";
+import LineChartLabelDemo from "~/app/docs/_components/demos/line-chart/LineChartLabelDemo";
+import LineChartCustomLabelDemo from "~/app/docs/_components/demos/line-chart/LineChartCustomLabelDemo";
+import LineChartInteractiveDemo from "~/app/docs/_components/demos/line-chart/LineChartInteractiveDemo";
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
@@ -483,6 +492,42 @@ export const COMPONENT_PREVIEWS = {
   "line-chart": {
     PreviewComponent: LineChartDemo,
     path: "src/app/docs/_components/demos/line-chart/LineChartDemo.tsx",
+  },
+  "line-chart-linear": {
+    PreviewComponent: LineChartLinearDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartLinearDemo.tsx",
+  },
+  "line-chart-step": {
+    PreviewComponent: LineChartStepDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartStepDemo.tsx",
+  },
+  "line-chart-multiple": {
+    PreviewComponent: LineChartMultipleDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartMultipleDemo.tsx",
+  },
+  "line-chart-dots": {
+    PreviewComponent: LineChartDotsDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartDotsDemo.tsx",
+  },
+  "line-chart-custom-dots": {
+    PreviewComponent: LineChartCustomDotsDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartCustomDotsDemo.tsx",
+  },
+  "line-chart-dots-colors": {
+    PreviewComponent: LineChartDotsColorsDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartDotsColorsDemo.tsx",
+  },
+  "line-chart-label": {
+    PreviewComponent: LineChartLabelDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartLabelDemo.tsx",
+  },
+  "line-chart-custom-label": {
+    PreviewComponent: LineChartCustomLabelDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartCustomLabelDemo.tsx",
+  },
+  "line-chart-interactive": {
+    PreviewComponent: LineChartInteractiveDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartInteractiveDemo.tsx",
   },
   menubar: {
     PreviewComponent: MenubarDemo,

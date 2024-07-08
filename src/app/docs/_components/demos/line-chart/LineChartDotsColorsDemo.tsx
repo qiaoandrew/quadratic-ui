@@ -25,7 +25,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export default function LineChartDemo() {
+export default function LineChartDotsColorsDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <LineChart
