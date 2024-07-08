@@ -42,12 +42,7 @@ export default function BarChartLabelDemo() {
           content={<ChartTooltipContent hideLabel />}
         />
         <Bar dataKey="desktop" fill="var(--color-desktop)" radius={6}>
-          <LabelList
-            position="top"
-            offset={12}
-            className="fill-foreground"
-            fontSize={12}
-          />
+          <LabelList position="top" offset={12} className="fill-foreground" />
         </Bar>
       </BarChart>
     </ChartContainer>

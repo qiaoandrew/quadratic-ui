@@ -68,14 +68,12 @@ export default function BarChartMultipleDemo() {
             position="insideLeft"
             offset={8}
             className="fill-[--color-label]"
-            fontSize={12}
           />
           <LabelList
             dataKey="desktop"
             position="right"
             offset={8}
             className="fill-foreground"
-            fontSize={12}
           />
         </Bar>
       </BarChart>

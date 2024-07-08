@@ -52,7 +52,7 @@ export default function BarChartMultipleDemo() {
           tickLine={false}
           tickMargin={10}
           axisLine={false}
-          tickFormatter={(value) => value.slice(0, 3)}
+          tickFormatter={(value: string) => value.slice(0, 3)}
           hide
         />
         <XAxis dataKey="desktop" type="number" hide />
@@ -71,14 +71,12 @@ export default function BarChartMultipleDemo() {
             position="insideLeft"
             offset={8}
             className="fill-[--color-label]"
-            fontSize={12}
           />
           <LabelList
             dataKey="desktop"
             position="right"
             offset={8}
             className="fill-foreground"
-            fontSize={12}
           />
         </Bar>
       </BarChart>

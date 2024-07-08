@@ -32,7 +32,7 @@ export default function BarChartHorizontalDemo() {
         accessibilityLayer
         data={CHART_DATA}
         layout="vertical"
-        margin={{ left: -20 }}
+        margin={{ left: -15 }}
       >
         <CartesianGrid horizontal={false} />
         <XAxis type="number" dataKey="desktop" hide />

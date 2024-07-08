@@ -1,6 +1,6 @@
 "use client";
 
-import { Bar, BarChart, CartesianGrid, LabelList, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, Cell, LabelList } from "recharts";
 
 import {
   type ChartConfig,
@@ -10,44 +10,46 @@ import {
 } from "~/components/ui/Chart";
 
 const CHART_DATA = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "January", visitors: 186 },
+  { month: "February", visitors: 205 },
+  { month: "March", visitors: -207 },
+  { month: "April", visitors: 173 },
+  { month: "May", visitors: -209 },
+  { month: "June", visitors: 214 },
 ];
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "hsl(var(--chart-1))",
+  visitors: {
+    label: "Visitors",
   },
 } satisfies ChartConfig;
 
 export default function BarChartNegativeDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
-      <BarChart accessibilityLayer data={CHART_DATA} margin={{ top: 20 }}>
+      <BarChart accessibilityLayer data={CHART_DATA}>
         <CartesianGrid vertical={false} />
-        <XAxis
-          dataKey="month"
-          tickLine={false}
-          tickMargin={10}
-          axisLine={false}
-          tickFormatter={(value) => value.slice(0, 3)}
-        />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent hideLabel />}
+          content={<ChartTooltipContent hideLabel hideIndicator />}
         />
-        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={6}>
+        <Bar dataKey="visitors" radius={4}>
           <LabelList
             position="top"
+            dataKey="month"
+            fillOpacity={1}
             offset={12}
-            className="fill-foreground"
-            fontSize={12}
           />
+          {CHART_DATA.map((item) => (
+            <Cell
+              key={item.month}
+              fill={
+                item.visitors > 0
+                  ? "hsl(var(--chart-1))"
+                  : "hsl(var(--chart-2))"
+              }
+            />
+          ))}
         </Bar>
       </BarChart>
     </ChartContainer>
