@@ -17,7 +17,7 @@ export default function CodeBlock({
     <div className={cn("relative", containerClassName)}>
       <pre
         className={cn(
-          "max-h-[480px] overflow-auto rounded-3 border bg-border/30 p-4",
+          "max-h-112 overflow-auto rounded-3 border bg-accent/70 p-4",
           className,
         )}
       >

@@ -65,7 +65,7 @@ export default function CommandMenu({
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="hidden h-10 w-[300px] items-center justify-between rounded-2 border pl-2.5 pr-3 text-muted-foreground transition-colors hover:bg-accent/50 xl:flex 2xl:w-[360px]"
+        className="hidden h-10 w-80 items-center justify-between rounded-2 border pl-2.5 pr-3 text-muted-foreground transition-colors hover:bg-accent/50 xl:flex 2xl:w-96"
       >
         <div className="flex items-center gap-x-1.5">
           <SearchIcon size={16} />
