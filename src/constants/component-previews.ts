@@ -103,6 +103,11 @@ import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import RadarChartDemo from "~/app/docs/_components/demos/radar-chart/RadarChartDemo";
 import RadialChartDemo from "~/app/docs/_components/demos/radial-chart/RadialChartDemo";
+import RadialChartLabelDemo from "~/app/docs/_components/demos/radial-chart/RadialChartLabelDemo";
+import RadialChartGridDemo from "~/app/docs/_components/demos/radial-chart/RadialChartGridDemo";
+import RadialChartTextDemo from "~/app/docs/_components/demos/radial-chart/RadialChartTextDemo";
+import RadialChartShapeDemo from "~/app/docs/_components/demos/radial-chart/RadialChartShapeDemo";
+import RadialChartStackedDemo from "~/app/docs/_components/demos/radial-chart/RadialChartStackedDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import RadioGroupFormDemo from "~/app/docs/_components/demos/radio-group/RadioGroupFormDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
@@ -568,6 +573,26 @@ export const COMPONENT_PREVIEWS = {
   "radial-chart": {
     PreviewComponent: RadialChartDemo,
     path: "src/app/docs/_components/demos/radial-chart/RadialChartDemo.tsx",
+  },
+  "radial-chart-label": {
+    PreviewComponent: RadialChartLabelDemo,
+    path: "src/app/docs/_components/demos/radial-chart/RadialChartLabelDemo.tsx",
+  },
+  "radial-chart-grid": {
+    PreviewComponent: RadialChartGridDemo,
+    path: "src/app/docs/_components/demos/radial-chart/RadialChartGridDemo.tsx",
+  },
+  "radial-chart-text": {
+    PreviewComponent: RadialChartTextDemo,
+    path: "src/app/docs/_components/demos/radial-chart/RadialChartTextDemo.tsx",
+  },
+  "radial-chart-shape": {
+    PreviewComponent: RadialChartShapeDemo,
+    path: "src/app/docs/_components/demos/radial-chart/RadialChartShapeDemo.tsx",
+  },
+  "radial-chart-stacked": {
+    PreviewComponent: RadialChartStackedDemo,
+    path: "src/app/docs/_components/demos/radial-chart/RadialChartStackedDemo.tsx",
   },
   "radio-group": {
     PreviewComponent: RadioGroupDemo,
