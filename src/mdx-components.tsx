@@ -21,6 +21,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {props.children}
       </h3>
     ),
+    h4: (props) => (
+      <h4 className="mt-6 text-4 font-semibold">
+        <Id id={textToHtmlId(props.children as string)} />
+        {props.children}
+      </h4>
+    ),
     p: (props) => (
       <p className="mt-4 text-4 leading-7 text-foreground" {...props} />
     ),

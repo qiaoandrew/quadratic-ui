@@ -13,7 +13,7 @@ export default function DemosGrid() {
         {DEMOS.map(({ id, href, Component }) => (
           <div
             className={cn(
-              "group relative flex h-[320px] min-h-60 items-center justify-center rounded-4 border border-opacity-80 p-6 transition-colors",
+              "group relative flex max-h-80 min-h-80 items-center justify-center rounded-4 border border-opacity-80 p-6 transition-colors",
               "md:hover:border-ring/20 md:hover:bg-accent/30",
             )}
             key={id}

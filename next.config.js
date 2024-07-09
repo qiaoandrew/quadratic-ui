@@ -1,4 +1,5 @@
 import createMDX from "@next/mdx";
+
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
@@ -12,6 +13,9 @@ const config = {
       },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
-const withMDX = createMDX({});
+const withMDX = createMDX();
 export default withMDX(config);

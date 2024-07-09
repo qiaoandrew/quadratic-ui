@@ -3,6 +3,7 @@ import AccordionSingleNonCollapsibleDemo from "~/app/docs/_components/demos/acco
 import AccordionMultipleDemo from "~/app/docs/_components/demos/accordion/AccordionMultipleDemo";
 import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
 import AlertDialogControlledDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo";
+import AreaChartDemo from "~/app/docs/_components/demos/area-chart/AreaChartDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
 import AvatarInitialsDemo from "~/app/docs/_components/demos/avatar/AvatarInitialsDemo";
@@ -17,6 +18,16 @@ import BadgeWarningDemo from "~/app/docs/_components/demos/badge/BadgeWarningDem
 import BadgeWarningOutlineDemo from "~/app/docs/_components/demos/badge/BadgeWarningOutlineDemo";
 import BadgeSuccessDemo from "~/app/docs/_components/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo";
+import BarChartDemo from "~/app/docs/_components/demos/bar-chart/BarChartDemo";
+import BarChartHorizontalDemo from "~/app/docs/_components/demos/bar-chart/BarChartHorizontalDemo";
+import BarChartMultipleDemo from "~/app/docs/_components/demos/bar-chart/BarChartMultipleDemo";
+import BarChartLabelDemo from "~/app/docs/_components/demos/bar-chart/BarChartLabelDemo";
+import BarChartCustomLabelDemo from "~/app/docs/_components/demos/bar-chart/BarChartCustomLabelDemo";
+import BarChartMixedDemo from "~/app/docs/_components/demos/bar-chart/BarChartMixedDemo";
+import BarChartStackedLegendDemo from "~/app/docs/_components/demos/bar-chart/BarChartStackedLegendDemo";
+import BarChartActiveDemo from "~/app/docs/_components/demos/bar-chart/BarChartActiveDemo";
+import BarChartNegativeDemo from "~/app/docs/_components/demos/bar-chart/BarChartNegativeDemo";
+import BarChartInteractiveDemo from "~/app/docs/_components/demos/bar-chart/BarChartInteractiveDemo";
 import BreadcrumbDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbDemo";
 import BreadcrumbAnchorLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbAnchorLinkDemo";
 import BreadcrumbNextjsLinkDemo from "~/app/docs/_components/demos/breadcrumb/BreadcrumbNextjsLinkDemo";
@@ -39,6 +50,11 @@ import CalloutWarningDemo from "~/app/docs/_components/demos/callout/CalloutWarn
 import CalloutSuccessDemo from "~/app/docs/_components/demos/callout/CalloutSuccessDemo";
 import CardDemo from "~/app/docs/_components/demos/card/CardDemo";
 import CarouselDemo from "~/app/docs/_components/demos/carousel/CarouselDemo";
+import ChartsDemo from "~/app/docs/_components/demos/charts/ChartsDemo";
+import ChartsAxisDemo from "~/app/docs/_components/demos/charts/ChartsAxisDemo";
+import ChartsGridDemo from "~/app/docs/_components/demos/charts/ChartsGridDemo";
+import ChartsLegendDemo from "~/app/docs/_components/demos/charts/ChartsLegendDemo";
+import ChartsTooltipDemo from "~/app/docs/_components/demos/charts/ChartsTooltipDemo";
 import CheckboxDemo from "~/app/docs/_components/demos/checkbox/CheckboxDemo";
 import CheckboxDefaultDemo from "~/app/docs/_components/demos/checkbox/CheckboxDefaultDemo";
 import CheckboxDisabledDemo from "~/app/docs/_components/demos/checkbox/CheckboxDisabledDemo";
@@ -69,11 +85,24 @@ import InputOTPPatternDemo from "~/app/docs/_components/demos/input-otp/InputOTP
 import InputOTPControlledDemo from "~/app/docs/_components/demos/input-otp/InputOTPControlledDemo";
 import InputOTPFormDemo from "~/app/docs/_components/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/app/docs/_components/demos/label/LabelDemo";
+import LineChartDemo from "~/app/docs/_components/demos/line-chart/LineChartDemo";
+import LineChartLinearDemo from "~/app/docs/_components/demos/line-chart/LineChartLinearDemo";
+import LineChartStepDemo from "~/app/docs/_components/demos/line-chart/LineChartStepDemo";
+import LineChartMultipleDemo from "~/app/docs/_components/demos/line-chart/LineChartMultipleDemo";
+import LineChartDotsDemo from "~/app/docs/_components/demos/line-chart/LineChartDotsDemo";
+import LineChartCustomDotsDemo from "~/app/docs/_components/demos/line-chart/LineChartCustomDotsDemo";
+import LineChartDotsColorsDemo from "~/app/docs/_components/demos/line-chart/LineChartDotsColorsDemo";
+import LineChartLabelDemo from "~/app/docs/_components/demos/line-chart/LineChartLabelDemo";
+import LineChartCustomLabelDemo from "~/app/docs/_components/demos/line-chart/LineChartCustomLabelDemo";
+import LineChartInteractiveDemo from "~/app/docs/_components/demos/line-chart/LineChartInteractiveDemo";
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
+import PieChartDemo from "~/app/docs/_components/demos/pie-chart/PieChartDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
+import RadarChartDemo from "~/app/docs/_components/demos/radar-chart/RadarChartDemo";
+import RadialChartDemo from "~/app/docs/_components/demos/radial-chart/RadialChartDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import RadioGroupFormDemo from "~/app/docs/_components/demos/radio-group/RadioGroupFormDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
@@ -140,6 +169,10 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: AlertDialogControlledDemo,
     path: "src/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo.tsx",
   },
+  "area-chart": {
+    PreviewComponent: AreaChartDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartDemo.tsx",
+  },
   "aspect-ratio": {
     PreviewComponent: AspectRatioDemo,
     path: "src/app/docs/_components/demos/aspect-ratio/AspectRatioDemo.tsx",
@@ -195,6 +228,46 @@ export const COMPONENT_PREVIEWS = {
   "badge-success-outline": {
     PreviewComponent: BadgeSuccessOutlineDemo,
     path: "src/app/docs/_components/demos/badge/BadgeSuccessOutlineDemo.tsx",
+  },
+  "bar-chart": {
+    PreviewComponent: BarChartDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartDemo.tsx",
+  },
+  "bar-chart-horizontal": {
+    PreviewComponent: BarChartHorizontalDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartHorizontalDemo.tsx",
+  },
+  "bar-chart-multiple": {
+    PreviewComponent: BarChartMultipleDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartMultipleDemo.tsx",
+  },
+  "bar-chart-label": {
+    PreviewComponent: BarChartLabelDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartLabelDemo.tsx",
+  },
+  "bar-chart-custom-label": {
+    PreviewComponent: BarChartCustomLabelDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartCustomLabelDemo.tsx",
+  },
+  "bar-chart-mixed": {
+    PreviewComponent: BarChartMixedDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartMixedDemo.tsx",
+  },
+  "bar-chart-stacked-legend": {
+    PreviewComponent: BarChartStackedLegendDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartStackedLegendDemo.tsx",
+  },
+  "bar-chart-active": {
+    PreviewComponent: BarChartActiveDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartActiveDemo.tsx",
+  },
+  "bar-chart-negative": {
+    PreviewComponent: BarChartNegativeDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartNegativeDemo.tsx",
+  },
+  "bar-chart-interactive": {
+    PreviewComponent: BarChartInteractiveDemo,
+    path: "src/app/docs/_components/demos/bar-chart/BarChartInteractiveDemo.tsx",
   },
   breadcrumb: {
     PreviewComponent: BreadcrumbDemo,
@@ -283,6 +356,26 @@ export const COMPONENT_PREVIEWS = {
   carousel: {
     PreviewComponent: CarouselDemo,
     path: "src/app/docs/_components/demos/carousel/CarouselDemo.tsx",
+  },
+  charts: {
+    PreviewComponent: ChartsDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsDemo.tsx",
+  },
+  "charts-axis": {
+    PreviewComponent: ChartsAxisDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsAxisDemo.tsx",
+  },
+  "charts-grid": {
+    PreviewComponent: ChartsGridDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsGridDemo.tsx",
+  },
+  "charts-legend": {
+    PreviewComponent: ChartsLegendDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsLegendDemo.tsx",
+  },
+  "charts-tooltip": {
+    PreviewComponent: ChartsTooltipDemo,
+    path: "src/app/docs/_components/demos/charts/ChartsTooltipDemo.tsx",
   },
   checkbox: {
     PreviewComponent: CheckboxDemo,
@@ -404,6 +497,46 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: LabelDemo,
     path: "src/app/docs/_components/demos/label/LabelDemo.tsx",
   },
+  "line-chart": {
+    PreviewComponent: LineChartDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartDemo.tsx",
+  },
+  "line-chart-linear": {
+    PreviewComponent: LineChartLinearDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartLinearDemo.tsx",
+  },
+  "line-chart-step": {
+    PreviewComponent: LineChartStepDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartStepDemo.tsx",
+  },
+  "line-chart-multiple": {
+    PreviewComponent: LineChartMultipleDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartMultipleDemo.tsx",
+  },
+  "line-chart-dots": {
+    PreviewComponent: LineChartDotsDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartDotsDemo.tsx",
+  },
+  "line-chart-custom-dots": {
+    PreviewComponent: LineChartCustomDotsDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartCustomDotsDemo.tsx",
+  },
+  "line-chart-dots-colors": {
+    PreviewComponent: LineChartDotsColorsDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartDotsColorsDemo.tsx",
+  },
+  "line-chart-label": {
+    PreviewComponent: LineChartLabelDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartLabelDemo.tsx",
+  },
+  "line-chart-custom-label": {
+    PreviewComponent: LineChartCustomLabelDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartCustomLabelDemo.tsx",
+  },
+  "line-chart-interactive": {
+    PreviewComponent: LineChartInteractiveDemo,
+    path: "src/app/docs/_components/demos/line-chart/LineChartInteractiveDemo.tsx",
+  },
   menubar: {
     PreviewComponent: MenubarDemo,
     path: "src/app/docs/_components/demos/menubar/MenubarDemo.tsx",
@@ -416,6 +549,10 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: PaginationDemo,
     path: "src/app/docs/_components/demos/pagination/PaginationDemo.tsx",
   },
+  "pie-chart": {
+    PreviewComponent: PieChartDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartDemo.tsx",
+  },
   popover: {
     PreviewComponent: PopoverDemo,
     path: "src/app/docs/_components/demos/popover/PopoverDemo.tsx",
@@ -423,6 +560,14 @@ export const COMPONENT_PREVIEWS = {
   progress: {
     PreviewComponent: ProgressDemo,
     path: "src/app/docs/_components/demos/progress/ProgressDemo.tsx",
+  },
+  "radar-chart": {
+    PreviewComponent: RadarChartDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartDemo.tsx",
+  },
+  "radial-chart": {
+    PreviewComponent: RadialChartDemo,
+    path: "src/app/docs/_components/demos/radial-chart/RadialChartDemo.tsx",
   },
   "radio-group": {
     PreviewComponent: RadioGroupDemo,

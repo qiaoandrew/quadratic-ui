@@ -19,8 +19,9 @@ export interface DocMenuSectionItemProps
 
 const docMenuSectionItemVariants = cva(
   cn(
-    "text-muted-foreground group text-3.5 px-3 flex items-center gap-x-2 rounded-2",
+    "text-muted-foreground group text-3.5 px-3 flex items-center gap-x-2 rounded-2 outline-none",
     "data-[active=true]:font-semibold data-[active=true]:text-highlight-foreground",
+    "focus-visible:bg-accent",
   ),
   {
     variants: {

@@ -45,7 +45,6 @@
     "@radix-ui/react-tooltip": "^1.1.1",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tanstack/react-table": "^8.17.3",
-    "@types/mdx": "^2.0.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
@@ -74,6 +73,7 @@
   },
   "devDependencies": {
     "@types/eslint": "^8.56.10",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^20.14.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
