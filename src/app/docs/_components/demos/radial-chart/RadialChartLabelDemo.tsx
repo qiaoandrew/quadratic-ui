@@ -1,6 +1,6 @@
 "use client";
 
-import { RadialBar, RadialBarChart } from "recharts";
+import { LabelList, RadialBar, RadialBarChart } from "recharts";
 
 import {
   type ChartConfig,
@@ -46,12 +46,25 @@ const chartConfig = {
 export default function RadialChartLabelDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
-      <RadialBarChart data={CHART_DATA} innerRadius={30} outerRadius={110}>
+      <RadialBarChart
+        data={CHART_DATA}
+        startAngle={-90}
+        endAngle={380}
+        innerRadius={30}
+        outerRadius={110}
+      >
         <ChartTooltip
           cursor={false}
           content={<ChartTooltipContent hideLabel nameKey="browser" />}
         />
-        <RadialBar dataKey="visitors" background />
+        <RadialBar dataKey="visitors" background>
+          <LabelList
+            position="insideStart"
+            dataKey="browser"
+            className="fill-white capitalize mix-blend-luminosity"
+            fontSize={11}
+          />
+        </RadialBar>
       </RadialBarChart>
     </ChartContainer>
   );

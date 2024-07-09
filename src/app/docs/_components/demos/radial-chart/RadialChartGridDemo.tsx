@@ -1,6 +1,6 @@
 "use client";
 
-import { RadialBar, RadialBarChart } from "recharts";
+import { PolarGrid, RadialBar, RadialBarChart } from "recharts";
 
 import {
   type ChartConfig,
@@ -46,12 +46,13 @@ const chartConfig = {
 export default function RadialChartGridDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
-      <RadialBarChart data={CHART_DATA} innerRadius={30} outerRadius={110}>
+      <RadialBarChart data={CHART_DATA} innerRadius={30} outerRadius={100}>
         <ChartTooltip
           cursor={false}
           content={<ChartTooltipContent hideLabel nameKey="browser" />}
         />
-        <RadialBar dataKey="visitors" background />
+        <PolarGrid gridType="circle" />
+        <RadialBar dataKey="visitors" />
       </RadialBarChart>
     </ChartContainer>
   );
