@@ -13,9 +13,6 @@ const config = {
       },
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 };
 const withMDX = createMDX();
 export default withMDX(config);
