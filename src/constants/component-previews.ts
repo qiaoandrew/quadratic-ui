@@ -3,6 +3,7 @@ import AccordionSingleNonCollapsibleDemo from "~/app/docs/_components/demos/acco
 import AccordionMultipleDemo from "~/app/docs/_components/demos/accordion/AccordionMultipleDemo";
 import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
 import AlertDialogControlledDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo";
+import AreaChartDemo from "~/app/docs/_components/demos/area-chart/AreaChartDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
 import AvatarInitialsDemo from "~/app/docs/_components/demos/avatar/AvatarInitialsDemo";
@@ -97,8 +98,11 @@ import LineChartInteractiveDemo from "~/app/docs/_components/demos/line-chart/Li
 import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
+import PieChartDemo from "~/app/docs/_components/demos/pie-chart/PieChartDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
+import RadarChartDemo from "~/app/docs/_components/demos/radar-chart/RadarChartDemo";
+import RadialChartDemo from "~/app/docs/_components/demos/radial-chart/RadialChartDemo";
 import RadioGroupDemo from "~/app/docs/_components/demos/radio-group/RadioGroupDemo";
 import RadioGroupFormDemo from "~/app/docs/_components/demos/radio-group/RadioGroupFormDemo";
 import ResizableDemo from "~/app/docs/_components/demos/resizable/ResizableDemo";
@@ -164,6 +168,10 @@ export const COMPONENT_PREVIEWS = {
   "alert-dialog-controlled": {
     PreviewComponent: AlertDialogControlledDemo,
     path: "src/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo.tsx",
+  },
+  "area-chart": {
+    PreviewComponent: AreaChartDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartDemo.tsx",
   },
   "aspect-ratio": {
     PreviewComponent: AspectRatioDemo,
@@ -541,6 +549,10 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: PaginationDemo,
     path: "src/app/docs/_components/demos/pagination/PaginationDemo.tsx",
   },
+  "pie-chart": {
+    PreviewComponent: PieChartDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartDemo.tsx",
+  },
   popover: {
     PreviewComponent: PopoverDemo,
     path: "src/app/docs/_components/demos/popover/PopoverDemo.tsx",
@@ -548,6 +560,14 @@ export const COMPONENT_PREVIEWS = {
   progress: {
     PreviewComponent: ProgressDemo,
     path: "src/app/docs/_components/demos/progress/ProgressDemo.tsx",
+  },
+  "radar-chart": {
+    PreviewComponent: RadarChartDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartDemo.tsx",
+  },
+  "radial-chart": {
+    PreviewComponent: RadialChartDemo,
+    path: "src/app/docs/_components/demos/radial-chart/RadialChartDemo.tsx",
   },
   "radio-group": {
     PreviewComponent: RadioGroupDemo,
