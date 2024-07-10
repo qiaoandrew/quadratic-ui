@@ -99,6 +99,15 @@ import MenubarDemo from "~/app/docs/_components/demos/menubar/MenubarDemo";
 import NavigationMenuDemo from "~/app/docs/_components/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/app/docs/_components/demos/pagination/PaginationDemo";
 import PieChartDemo from "~/app/docs/_components/demos/pie-chart/PieChartDemo";
+import PieChartLabelDemo from "~/app/docs/_components/demos/pie-chart/PieChartLabelDemo";
+import PieChartCustomLabelDemo from "~/app/docs/_components/demos/pie-chart/PieChartCustomLabelDemo";
+import PieChartLabelListDemo from "~/app/docs/_components/demos/pie-chart/PieChartLabelListDemo";
+import PieChartLegendDemo from "~/app/docs/_components/demos/pie-chart/PieChartLegendDemo";
+import PieChartDonutDemo from "~/app/docs/_components/demos/pie-chart/PieChartDonutDemo";
+import PieChartDonutActiveDemo from "~/app/docs/_components/demos/pie-chart/PieChartDonutActiveDemo";
+import PieChartDonutWithTextDemo from "~/app/docs/_components/demos/pie-chart/PieChartDonutWithTextDemo";
+import PieChartStackedDemo from "~/app/docs/_components/demos/pie-chart/PieChartStackedDemo";
+import PieChartInteractiveDemo from "~/app/docs/_components/demos/pie-chart/PieChartInteractiveDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import RadarChartDemo from "~/app/docs/_components/demos/radar-chart/RadarChartDemo";
@@ -570,6 +579,42 @@ export const COMPONENT_PREVIEWS = {
   "pie-chart": {
     PreviewComponent: PieChartDemo,
     path: "src/app/docs/_components/demos/pie-chart/PieChartDemo.tsx",
+  },
+  "pie-chart-label": {
+    PreviewComponent: PieChartLabelDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartLabelDemo.tsx",
+  },
+  "pie-chart-custom-label": {
+    PreviewComponent: PieChartCustomLabelDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartCustomLabelDemo.tsx",
+  },
+  "pie-chart-label-list": {
+    PreviewComponent: PieChartLabelListDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartLabelListDemo.tsx",
+  },
+  "pie-chart-legend": {
+    PreviewComponent: PieChartLegendDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartLegendDemo.tsx",
+  },
+  "pie-chart-donut": {
+    PreviewComponent: PieChartDonutDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartDonutDemo.tsx",
+  },
+  "pie-chart-donut-active": {
+    PreviewComponent: PieChartDonutActiveDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartDonutActiveDemo.tsx",
+  },
+  "pie-chart-donut-with-text": {
+    PreviewComponent: PieChartDonutWithTextDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartDonutWithTextDemo.tsx",
+  },
+  "pie-chart-stacked": {
+    PreviewComponent: PieChartStackedDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartStackedDemo.tsx",
+  },
+  "pie-chart-interactive": {
+    PreviewComponent: PieChartInteractiveDemo,
+    path: "src/app/docs/_components/demos/pie-chart/PieChartInteractiveDemo.tsx",
   },
   popover: {
     PreviewComponent: PopoverDemo,
