@@ -4,6 +4,14 @@ import AccordionMultipleDemo from "~/app/docs/_components/demos/accordion/Accord
 import AlertDialogDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogDemo";
 import AlertDialogControlledDemo from "~/app/docs/_components/demos/alert-dialog/AlertDialogControlledDemo";
 import AreaChartDemo from "~/app/docs/_components/demos/area-chart/AreaChartDemo";
+import AreaChartLinearDemo from "~/app/docs/_components/demos/area-chart/AreaChartLinearDemo";
+import AreaChartStepDemo from "~/app/docs/_components/demos/area-chart/AreaChartStepDemo";
+import AreaChartStackedDemo from "~/app/docs/_components/demos/area-chart/AreaChartStackedDemo";
+import AreaChartStackedExpandedDemo from "~/app/docs/_components/demos/area-chart/AreaChartStackedExpandedDemo";
+import AreaChartLegendDemo from "~/app/docs/_components/demos/area-chart/AreaChartLegendDemo";
+import AreaChartIconsDemo from "~/app/docs/_components/demos/area-chart/AreaChartIconsDemo";
+import AreaChartGradientDemo from "~/app/docs/_components/demos/area-chart/AreaChartGradientDemo";
+import AreaChartAxesDemo from "~/app/docs/_components/demos/area-chart/AreaChartAxesDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
 import AvatarInitialsDemo from "~/app/docs/_components/demos/avatar/AvatarInitialsDemo";
@@ -199,6 +207,38 @@ export const COMPONENT_PREVIEWS = {
   "area-chart": {
     PreviewComponent: AreaChartDemo,
     path: "src/app/docs/_components/demos/area-chart/AreaChartDemo.tsx",
+  },
+  "area-chart-linear": {
+    PreviewComponent: AreaChartLinearDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartLinearDemo.tsx",
+  },
+  "area-chart-step": {
+    PreviewComponent: AreaChartStepDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartStepDemo.tsx",
+  },
+  "area-chart-stacked": {
+    PreviewComponent: AreaChartStackedDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartStackedDemo.tsx",
+  },
+  "area-chart-stacked-expanded": {
+    PreviewComponent: AreaChartStackedExpandedDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartStackedExpandedDemo.tsx",
+  },
+  "area-chart-legend": {
+    PreviewComponent: AreaChartLegendDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartLegendDemo.tsx",
+  },
+  "area-chart-icons": {
+    PreviewComponent: AreaChartIconsDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartIconsDemo.tsx",
+  },
+  "area-chart-gradient": {
+    PreviewComponent: AreaChartGradientDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartGradientDemo.tsx",
+  },
+  "area-chart-axes": {
+    PreviewComponent: AreaChartAxesDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartAxesDemo.tsx",
   },
   "aspect-ratio": {
     PreviewComponent: AspectRatioDemo,
