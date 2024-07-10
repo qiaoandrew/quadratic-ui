@@ -5,8 +5,6 @@ import { Pie, PieChart } from "recharts";
 import {
   type ChartConfig,
   ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
 } from "~/components/ui/Chart";
