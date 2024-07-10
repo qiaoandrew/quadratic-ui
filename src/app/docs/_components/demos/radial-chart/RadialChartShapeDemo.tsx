@@ -1,13 +1,14 @@
 "use client";
 
-import { Label, PolarGrid, PolarRadiusAxis, RadialBar, RadialBarChart } from "recharts";
-
 import {
-  type ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "~/components/ui/Chart";
+  Label,
+  PolarGrid,
+  PolarRadiusAxis,
+  RadialBar,
+  RadialBarChart,
+} from "recharts";
+
+import { type ChartConfig, ChartContainer } from "~/components/ui/Chart";
 
 const CHART_DATA = [
   { browser: "safari", visitors: 1260, fill: "var(--color-safari)" },
@@ -54,7 +55,7 @@ export default function RadialChartShapeDemo() {
                     <tspan
                       x={viewBox.cx}
                       y={viewBox.cy}
-                      className="text-9 fill-foreground font-bold"
+                      className="fill-foreground text-9 font-bold"
                     >
                       {CHART_DATA[0]!.visitors.toLocaleString()}
                     </tspan>

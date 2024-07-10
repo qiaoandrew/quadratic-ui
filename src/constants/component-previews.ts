@@ -102,6 +102,19 @@ import PieChartDemo from "~/app/docs/_components/demos/pie-chart/PieChartDemo";
 import PopoverDemo from "~/app/docs/_components/demos/popover/PopoverDemo";
 import ProgressDemo from "~/app/docs/_components/demos/progress/ProgressDemo";
 import RadarChartDemo from "~/app/docs/_components/demos/radar-chart/RadarChartDemo";
+import RadarChartDotsDemo from "~/app/docs/_components/demos/radar-chart/RadarChartDotsDemo";
+import RadarChartMultipleDemo from "~/app/docs/_components/demos/radar-chart/RadarChartMultipleDemo";
+import RadarChartLinesOnlyDemo from "~/app/docs/_components/demos/radar-chart/RadarChartLinesOnlyDemo";
+import RadarChartCustomLabelDemo from "~/app/docs/_components/demos/radar-chart/RadarChartCustomLabelDemo";
+import RadarChartRadiusAxisDemo from "~/app/docs/_components/demos/radar-chart/RadarChartRadiusAxisDemo";
+import RadarChartGridCustomDemo from "~/app/docs/_components/demos/radar-chart/RadarChartGridCustomDemo";
+import RadarChartGridFilledDemo from "~/app/docs/_components/demos/radar-chart/RadarChartGridFilledDemo";
+import RadarChartGridNoneDemo from "~/app/docs/_components/demos/radar-chart/RadarChartGridNoneDemo";
+import RadarChartGridCircleDemo from "~/app/docs/_components/demos/radar-chart/RadarChartGridCircleDemo";
+import RadarChartGridCircleNoLinesDemo from "~/app/docs/_components/demos/radar-chart/RadarChartGridCircleNoLinesDemo";
+import RadarChartGridCircleFilledDemo from "~/app/docs/_components/demos/radar-chart/RadarChartGridCircleFilledDemo";
+import RadarChartLegendDemo from "~/app/docs/_components/demos/radar-chart/RadarChartLegendDemo";
+import RadarChartIconsDemo from "~/app/docs/_components/demos/radar-chart/RadarChartIconsDemo";
 import RadialChartDemo from "~/app/docs/_components/demos/radial-chart/RadialChartDemo";
 import RadialChartLabelDemo from "~/app/docs/_components/demos/radial-chart/RadialChartLabelDemo";
 import RadialChartGridDemo from "~/app/docs/_components/demos/radial-chart/RadialChartGridDemo";
@@ -569,6 +582,58 @@ export const COMPONENT_PREVIEWS = {
   "radar-chart": {
     PreviewComponent: RadarChartDemo,
     path: "src/app/docs/_components/demos/radar-chart/RadarChartDemo.tsx",
+  },
+  "radar-chart-dots": {
+    PreviewComponent: RadarChartDotsDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartDotsDemo.tsx",
+  },
+  "radar-chart-multiple": {
+    PreviewComponent: RadarChartMultipleDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartMultipleDemo.tsx",
+  },
+  "radar-chart-lines-only": {
+    PreviewComponent: RadarChartLinesOnlyDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartLinesOnlyDemo.tsx",
+  },
+  "radar-chart-custom-label": {
+    PreviewComponent: RadarChartCustomLabelDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartCustomLabelDemo.tsx",
+  },
+  "radar-chart-radius-axis": {
+    PreviewComponent: RadarChartRadiusAxisDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartRadiusAxisDemo.tsx",
+  },
+  "radar-chart-grid-custom": {
+    PreviewComponent: RadarChartGridCustomDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartGridCustomDemo.tsx",
+  },
+  "radar-chart-grid-filled": {
+    PreviewComponent: RadarChartGridFilledDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartGridFilledDemo.tsx",
+  },
+  "radar-chart-grid-none": {
+    PreviewComponent: RadarChartGridNoneDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartGridNoneDemo.tsx",
+  },
+  "radar-chart-grid-circle": {
+    PreviewComponent: RadarChartGridCircleDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartGridCircleDemo.tsx",
+  },
+  "radar-chart-grid-circle-no-lines": {
+    PreviewComponent: RadarChartGridCircleNoLinesDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartGridCircleNoLinesDemo.tsx",
+  },
+  "radar-chart-grid-circle-filled": {
+    PreviewComponent: RadarChartGridCircleFilledDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartGridCircleFilledDemo.tsx",
+  },
+  "radar-chart-legend": {
+    PreviewComponent: RadarChartLegendDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartLegendDemo.tsx",
+  },
+  "radar-chart-icons": {
+    PreviewComponent: RadarChartIconsDemo,
+    path: "src/app/docs/_components/demos/radar-chart/RadarChartIconsDemo.tsx",
   },
   "radial-chart": {
     PreviewComponent: RadialChartDemo,
