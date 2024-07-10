@@ -1,6 +1,7 @@
 "use client";
 
-import { Pie, PieChart } from "recharts";
+import { useMemo } from "react";
+import { Label, Pie, PieChart } from "recharts";
 
 import {
   type ChartConfig,
@@ -44,6 +45,11 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export default function PieChartDonutWithTextDemo() {
+  const totalVisitors = useMemo(
+    () => CHART_DATA.reduce((acc, curr) => acc + curr.visitors, 0),
+    [],
+  );
+
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <PieChart>
@@ -51,7 +57,43 @@ export default function PieChartDonutWithTextDemo() {
           cursor={false}
           content={<ChartTooltipContent hideLabel />}
         />
-        <Pie data={CHART_DATA} dataKey="visitors" nameKey="browser" />
+        <Pie
+          data={CHART_DATA}
+          dataKey="visitors"
+          nameKey="browser"
+          innerRadius={60}
+          strokeWidth={5}
+        >
+          <Label
+            content={({ viewBox }) => {
+              if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                return (
+                  <text
+                    x={viewBox.cx}
+                    y={viewBox.cy}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                  >
+                    <tspan
+                      x={viewBox.cx}
+                      y={viewBox.cy}
+                      className="fill-foreground text-9 font-bold"
+                    >
+                      {totalVisitors.toLocaleString()}
+                    </tspan>
+                    <tspan
+                      x={viewBox.cx}
+                      y={(viewBox.cy ?? 0) + 24}
+                      className="fill-muted-foreground"
+                    >
+                      Visitors
+                    </tspan>
+                  </text>
+                );
+              }
+            }}
+          />
+        </Pie>
       </PieChart>
     </ChartContainer>
   );

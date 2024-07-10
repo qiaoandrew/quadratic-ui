@@ -1,6 +1,6 @@
 "use client";
 
-import { Pie, PieChart } from "recharts";
+import { LabelList, Pie, PieChart } from "recharts";
 
 import {
   type ChartConfig,
@@ -48,10 +48,19 @@ export default function PieChartLabelListDemo() {
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <PieChart>
         <ChartTooltip
-          cursor={false}
-          content={<ChartTooltipContent hideLabel />}
+          content={<ChartTooltipContent nameKey="visitors" hideLabel />}
         />
-        <Pie data={CHART_DATA} dataKey="visitors" nameKey="browser" />
+        <Pie data={CHART_DATA} dataKey="visitors">
+          <LabelList
+            dataKey="browser"
+            className="fill-background"
+            stroke="none"
+            fontSize={12}
+            formatter={(value: keyof typeof chartConfig) =>
+              chartConfig[value]?.label
+            }
+          />
+        </Pie>
       </PieChart>
     </ChartContainer>
   );

@@ -9,36 +9,49 @@ import {
   ChartTooltipContent,
 } from "~/components/ui/Chart";
 
-const CHART_DATA = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
+const DESKTOP_DATA = [
+  { month: "january", desktop: 186, fill: "var(--color-january)" },
+  { month: "february", desktop: 305, fill: "var(--color-february)" },
+  { month: "march", desktop: 237, fill: "var(--color-march)" },
+  { month: "april", desktop: 173, fill: "var(--color-april)" },
+  { month: "may", desktop: 209, fill: "var(--color-may)" },
+];
+const MOBILE_DATA = [
+  { month: "january", mobile: 80, fill: "var(--color-january)" },
+  { month: "february", mobile: 200, fill: "var(--color-february)" },
+  { month: "march", mobile: 120, fill: "var(--color-march)" },
+  { month: "april", mobile: 190, fill: "var(--color-april)" },
+  { month: "may", mobile: 130, fill: "var(--color-may)" },
 ];
 
 const chartConfig = {
   visitors: {
     label: "Visitors",
   },
-  chrome: {
-    label: "Chrome",
+  desktop: {
+    label: "Desktop",
+  },
+  mobile: {
+    label: "Mobile",
+  },
+  january: {
+    label: "January",
     color: "hsl(var(--chart-1))",
   },
-  safari: {
-    label: "Safari",
+  february: {
+    label: "February",
     color: "hsl(var(--chart-2))",
   },
-  firefox: {
-    label: "Firefox",
+  march: {
+    label: "March",
     color: "hsl(var(--chart-3))",
   },
-  edge: {
-    label: "Edge",
+  april: {
+    label: "April",
     color: "hsl(var(--chart-4))",
   },
-  other: {
-    label: "Other",
+  may: {
+    label: "May",
     color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig;
@@ -48,10 +61,28 @@ export default function PieChartStackedDemo() {
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <PieChart>
         <ChartTooltip
-          cursor={false}
-          content={<ChartTooltipContent hideLabel />}
+          content={
+            <ChartTooltipContent
+              labelKey="visitors"
+              nameKey="month"
+              indicator="line"
+              labelFormatter={(_, payload) => {
+                const dataKey = payload?.[0]?.dataKey;
+                if (dataKey && dataKey in chartConfig) {
+                  return chartConfig[dataKey as keyof typeof chartConfig].label;
+                }
+                return "";
+              }}
+            />
+          }
         />
-        <Pie data={CHART_DATA} dataKey="visitors" nameKey="browser" />
+        <Pie data={DESKTOP_DATA} dataKey="desktop" outerRadius={60} />
+        <Pie
+          data={MOBILE_DATA}
+          dataKey="mobile"
+          innerRadius={70}
+          outerRadius={90}
+        />
       </PieChart>
     </ChartContainer>
   );

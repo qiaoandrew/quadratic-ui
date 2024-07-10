@@ -51,7 +51,12 @@ export default function PieChartDonutDemo() {
           cursor={false}
           content={<ChartTooltipContent hideLabel />}
         />
-        <Pie data={CHART_DATA} dataKey="visitors" nameKey="browser" />
+        <Pie
+          data={CHART_DATA}
+          dataKey="visitors"
+          nameKey="browser"
+          innerRadius={60}
+        />
       </PieChart>
     </ChartContainer>
   );

@@ -47,11 +47,8 @@ export default function PieChartLabelDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <PieChart>
-        <ChartTooltip
-          cursor={false}
-          content={<ChartTooltipContent hideLabel />}
-        />
-        <Pie data={CHART_DATA} dataKey="visitors" nameKey="browser" />
+        <ChartTooltip content={<ChartTooltipContent hideLabel />} />
+        <Pie data={CHART_DATA} dataKey="visitors" label nameKey="browser" />
       </PieChart>
     </ChartContainer>
   );

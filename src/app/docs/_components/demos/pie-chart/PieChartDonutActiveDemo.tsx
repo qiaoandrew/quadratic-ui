@@ -1,6 +1,7 @@
 "use client";
 
-import { Pie, PieChart } from "recharts";
+import { Pie, PieChart, Sector } from "recharts";
+import type { PieSectorDataItem } from "recharts/types/polar/Pie";
 
 import {
   type ChartConfig,
@@ -51,7 +52,17 @@ export default function PieChartDonutActiveDemo() {
           cursor={false}
           content={<ChartTooltipContent hideLabel />}
         />
-        <Pie data={CHART_DATA} dataKey="visitors" nameKey="browser" />
+        <Pie
+          data={CHART_DATA}
+          dataKey="visitors"
+          nameKey="browser"
+          innerRadius={60}
+          strokeWidth={5}
+          activeIndex={0}
+          activeShape={({ outerRadius = 0, ...props }: PieSectorDataItem) => (
+            <Sector {...props} outerRadius={outerRadius + 10} />
+          )}
+        />
       </PieChart>
     </ChartContainer>
   );

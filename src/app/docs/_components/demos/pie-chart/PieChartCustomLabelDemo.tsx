@@ -48,10 +48,48 @@ export default function PieChartCustomLabelDemo() {
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <PieChart>
         <ChartTooltip
-          cursor={false}
-          content={<ChartTooltipContent hideLabel />}
+          content={<ChartTooltipContent nameKey="visitors" hideLabel />}
         />
-        <Pie data={CHART_DATA} dataKey="visitors" nameKey="browser" />
+        <Pie
+          data={CHART_DATA}
+          dataKey="visitors"
+          labelLine={false}
+          label={({
+            cx,
+            cy,
+            x,
+            y,
+            textAnchor,
+            dominantBaseline,
+            payload,
+          }: {
+            cx: number;
+            cy: number;
+            x: number;
+            y: number;
+            textAnchor: string;
+            dominantBaseline: string;
+            payload: (typeof CHART_DATA)[number];
+          }) => {
+            return (
+              <text
+                cx={cx}
+                cy={cy}
+                x={x}
+                y={y}
+                textAnchor={textAnchor}
+                dominantBaseline={dominantBaseline}
+                fill="hsla(var(--foreground))"
+              >
+                {`${
+                  chartConfig[payload.browser as keyof typeof chartConfig]
+                    ?.label
+                } (${payload.visitors})`}
+              </text>
+            );
+          }}
+          nameKey="browser"
+        />
       </PieChart>
     </ChartContainer>
   );
