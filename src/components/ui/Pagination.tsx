@@ -25,7 +25,7 @@ const PaginationContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ul
     ref={ref}
-    className={cn("flex flex-row items-center gap-1", className)}
+    className={cn("flex flex-row items-center gap-x-1", className)}
     {...props}
   />
 ));
@@ -86,7 +86,7 @@ const PaginationNextButton = ({
   <PaginationButton
     aria-label="Go to next page"
     size="default"
-    className={cn("gap-1 pr-2", className)}
+    className={cn("gap-x-1 pr-2", className)}
     {...props}
   >
     <span>Next</span>
