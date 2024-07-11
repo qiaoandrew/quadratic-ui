@@ -25,7 +25,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export default function AreaChartDemo() {
+export default function AreaChartLinearDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <AreaChart
@@ -46,11 +46,11 @@ export default function AreaChartDemo() {
         />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent indicator="line" />}
+          content={<ChartTooltipContent indicator="dot" hideLabel />}
         />
         <Area
           dataKey="desktop"
-          type="natural"
+          type="linear"
           fill="var(--color-desktop)"
           fillOpacity={0.4}
           stroke="var(--color-desktop)"

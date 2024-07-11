@@ -1,6 +1,7 @@
 "use client";
 
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { ActivityIcon } from "lucide-react";
 
 import {
   type ChartConfig,
@@ -22,10 +23,11 @@ const chartConfig = {
   desktop: {
     label: "Desktop",
     color: "hsl(var(--chart-1))",
+    icon: ActivityIcon,
   },
 } satisfies ChartConfig;
 
-export default function AreaChartDemo() {
+export default function AreaChartStepDemo() {
   return (
     <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <AreaChart
@@ -46,11 +48,11 @@ export default function AreaChartDemo() {
         />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent indicator="line" />}
+          content={<ChartTooltipContent hideLabel />}
         />
         <Area
           dataKey="desktop"
-          type="natural"
+          type="step"
           fill="var(--color-desktop)"
           fillOpacity={0.4}
           stroke="var(--color-desktop)"
