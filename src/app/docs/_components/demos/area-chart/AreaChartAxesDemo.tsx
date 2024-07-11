@@ -1,6 +1,6 @@
 "use client";
 
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import {
   type ChartConfig,
@@ -36,7 +36,7 @@ export default function AreaChartAxesDemo() {
         accessibilityLayer
         data={CHART_DATA}
         margin={{
-          left: 12,
+          left: -20,
           right: 12,
         }}
       >
@@ -48,10 +48,8 @@ export default function AreaChartAxesDemo() {
           tickMargin={8}
           tickFormatter={(value: string) => value.slice(0, 3)}
         />
-        <ChartTooltip
-          cursor={false}
-          content={<ChartTooltipContent indicator="dot" />}
-        />
+        <YAxis tickLine={false} axisLine={false} tickMargin={8} tickCount={3} />
+        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
         <Area
           dataKey="mobile"
           type="natural"

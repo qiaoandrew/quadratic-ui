@@ -48,14 +48,37 @@ export default function AreaChartGradientDemo() {
           tickMargin={8}
           tickFormatter={(value: string) => value.slice(0, 3)}
         />
-        <ChartTooltip
-          cursor={false}
-          content={<ChartTooltipContent indicator="dot" />}
-        />
+        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+        <defs>
+          <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
+            <stop
+              offset="5%"
+              stopColor="var(--color-desktop)"
+              stopOpacity={0.8}
+            />
+            <stop
+              offset="95%"
+              stopColor="var(--color-desktop)"
+              stopOpacity={0.1}
+            />
+          </linearGradient>
+          <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
+            <stop
+              offset="5%"
+              stopColor="var(--color-mobile)"
+              stopOpacity={0.8}
+            />
+            <stop
+              offset="95%"
+              stopColor="var(--color-mobile)"
+              stopOpacity={0.1}
+            />
+          </linearGradient>
+        </defs>
         <Area
           dataKey="mobile"
           type="natural"
-          fill="var(--color-mobile)"
+          fill="url(#fillMobile)"
           fillOpacity={0.4}
           stroke="var(--color-mobile)"
           stackId="a"
@@ -63,7 +86,7 @@ export default function AreaChartGradientDemo() {
         <Area
           dataKey="desktop"
           type="natural"
-          fill="var(--color-desktop)"
+          fill="url(#fillDesktop)"
           fillOpacity={0.4}
           stroke="var(--color-desktop)"
           stackId="a"

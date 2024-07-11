@@ -1,12 +1,15 @@
 "use client";
 
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { TrendingDownIcon, TrendingUpIcon } from "lucide-react";
 
 import {
   type ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
 } from "~/components/ui/Chart";
 
 const CHART_DATA = [
@@ -22,10 +25,12 @@ const chartConfig = {
   desktop: {
     label: "Desktop",
     color: "hsl(var(--chart-1))",
+    icon: TrendingDownIcon,
   },
   mobile: {
     label: "Mobile",
     color: "hsl(var(--chart-2))",
+    icon: TrendingUpIcon,
   },
 } satisfies ChartConfig;
 
@@ -50,7 +55,7 @@ export default function AreaChartIconsDemo() {
         />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent indicator="dot" />}
+          content={<ChartTooltipContent indicator="line" />}
         />
         <Area
           dataKey="mobile"
@@ -68,6 +73,7 @@ export default function AreaChartIconsDemo() {
           stroke="var(--color-desktop)"
           stackId="a"
         />
+        <ChartLegend content={<ChartLegendContent />} />
       </AreaChart>
     </ChartContainer>
   );

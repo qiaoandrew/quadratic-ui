@@ -7,6 +7,8 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
 } from "~/components/ui/Chart";
 
 const CHART_DATA = [
@@ -50,7 +52,7 @@ export default function AreaChartLegendDemo() {
         />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent indicator="dot" />}
+          content={<ChartTooltipContent indicator="line" />}
         />
         <Area
           dataKey="mobile"
@@ -68,6 +70,7 @@ export default function AreaChartLegendDemo() {
           stroke="var(--color-desktop)"
           stackId="a"
         />
+        <ChartLegend content={<ChartLegendContent />} />
       </AreaChart>
     </ChartContainer>
   );

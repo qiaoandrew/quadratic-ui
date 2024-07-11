@@ -12,6 +12,7 @@ import AreaChartLegendDemo from "~/app/docs/_components/demos/area-chart/AreaCha
 import AreaChartIconsDemo from "~/app/docs/_components/demos/area-chart/AreaChartIconsDemo";
 import AreaChartGradientDemo from "~/app/docs/_components/demos/area-chart/AreaChartGradientDemo";
 import AreaChartAxesDemo from "~/app/docs/_components/demos/area-chart/AreaChartAxesDemo";
+import AreaChartInteractiveDemo from "~/app/docs/_components/demos/area-chart/AreaChartInteractiveDemo";
 import AspectRatioDemo from "~/app/docs/_components/demos/aspect-ratio/AspectRatioDemo";
 import AvatarDemo from "~/app/docs/_components/demos/avatar/AvatarDemo";
 import AvatarInitialsDemo from "~/app/docs/_components/demos/avatar/AvatarInitialsDemo";
@@ -239,6 +240,10 @@ export const COMPONENT_PREVIEWS = {
   "area-chart-axes": {
     PreviewComponent: AreaChartAxesDemo,
     path: "src/app/docs/_components/demos/area-chart/AreaChartAxesDemo.tsx",
+  },
+  "area-chart-interactive": {
+    PreviewComponent: AreaChartInteractiveDemo,
+    path: "src/app/docs/_components/demos/area-chart/AreaChartInteractiveDemo.tsx",
   },
   "aspect-ratio": {
     PreviewComponent: AspectRatioDemo,
