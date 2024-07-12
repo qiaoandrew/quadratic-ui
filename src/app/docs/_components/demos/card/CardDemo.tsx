@@ -21,7 +21,7 @@ import {
 
 export default function CardDemo() {
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-96">
       <CardHeader>
         <CardTitle>Create Project</CardTitle>
         <CardDescription>Deploy your new project in one-click.</CardDescription>
