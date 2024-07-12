@@ -10,7 +10,7 @@ import {
 export default function SelectDemo() {
   return (
     <Select>
-      <SelectTrigger className="w-[200px]">
+      <SelectTrigger className="w-48">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>

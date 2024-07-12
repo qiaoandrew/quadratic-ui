@@ -31,7 +31,7 @@ export default function ComboboxDemo() {
           variant="outline"
           role="combobox"
           aria-expanded={isOpen}
-          className="w-[200px] justify-between gap-x-2 overflow-hidden"
+          className="w-48 justify-between overflow-hidden"
         >
           <span className="truncate">
             {value
@@ -41,7 +41,7 @@ export default function ComboboxDemo() {
           <ChevronsUpDownIcon size={16} className="shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-48 p-0">
         <Command>
           <CommandInput
             placeholder="Search frameworks..."
