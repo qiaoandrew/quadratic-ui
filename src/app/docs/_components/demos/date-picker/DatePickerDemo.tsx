@@ -14,8 +14,6 @@ import {
   PopoverTrigger,
 } from "~/components/ui/Popover";
 
-import { cn } from "~/utils/tailwind";
-
 export default function DatePickerDemo() {
   const [date, setDate] = useState<Date>();
 
