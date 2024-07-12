@@ -56,7 +56,7 @@ export default function DatePickerFormDemo() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex w-full max-w-[320px] flex-col gap-y-8"
+        className="flex w-full max-w-80 flex-col gap-y-8"
       >
         <FormField
           control={form.control}

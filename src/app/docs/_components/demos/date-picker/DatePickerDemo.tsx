@@ -4,6 +4,8 @@ import { useState } from "react";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 
+import { cn } from "~/utils/tailwind";
+
 import { Button } from "~/components/ui/Button";
 import { Calendar } from "~/components/ui/Calendar";
 import {
@@ -23,7 +25,7 @@ export default function DatePickerDemo() {
         <Button
           variant="outline"
           className={cn(
-            "w-[200px] justify-start px-3 text-left",
+            "w-48 justify-start px-3 text-left",
             !date && "text-muted-foreground",
           )}
         >

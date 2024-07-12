@@ -28,7 +28,7 @@ export default function DatePickerRangeDemo() {
           id="date"
           variant="outline"
           className={cn(
-            "w-[280px] justify-start px-3 text-left",
+            "w-72 justify-start px-3 text-left",
             !date && "text-muted-foreground",
           )}
         >
