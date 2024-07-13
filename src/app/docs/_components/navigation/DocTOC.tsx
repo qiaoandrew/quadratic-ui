@@ -26,15 +26,15 @@ export default function DocTOC({ tocs }: DocTOCProps) {
     <div className="z-30 hidden w-60 shrink-0 pr-3 xl:block">
       <div className="fixed bottom-0 top-20 w-full">
         <ScrollArea showScrollbar={false} className="h-full">
-          <nav className="grid gap-y-2.5 py-6">
+          <nav className="flex flex-col items-start gap-y-2.5 py-6">
             {toc.map((item) => (
               <Link
                 href={`#${item.id}`}
                 className={cn(
-                  "text-3.5",
+                  "text-3.5 focus-visible:outline-none",
                   item.id === activeId
                     ? "font-medium text-highlight-foreground"
-                    : "text-muted-foreground hover:text-accent-foreground",
+                    : "text-muted-foreground hover:text-accent-foreground focus-visible:text-foreground",
                   item.type === "h3" && "ml-6",
                 )}
                 key={item.id}
