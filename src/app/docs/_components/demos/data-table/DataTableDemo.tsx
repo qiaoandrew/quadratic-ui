@@ -34,6 +34,8 @@ import {
   ZapIcon,
 } from "lucide-react";
 
+import { cn } from "~/utils/tailwind";
+
 import { Checkbox } from "~/components/ui/Checkbox";
 import { Button } from "~/components/ui/Button";
 import {
@@ -60,7 +62,6 @@ import {
   PaginationNextButton,
   PaginationPreviousButton,
 } from "~/components/ui/Pagination";
-import { cn } from "~/utils/tailwind";
 
 const columns: ColumnDef<Test>[] = [
   {
@@ -420,10 +421,10 @@ function DataTableSortingHead({
 
 function StatusCell({ status }: { status: TestStatus }) {
   return (
-    <TableCell className="w-[90px]">
+    <TableCell className="w-24">
       <div
         className={cn(
-          "w-[70px] rounded-1 py-1 text-center text-3 font-medium uppercase",
+          "w-18 rounded-1 py-1 text-center text-3 font-medium uppercase",
           status === TestStatus.OK && "bg-success text-success-foreground",
           status === TestStatus.Alert &&
             "bg-destructive text-destructive-foreground",
@@ -440,7 +441,7 @@ function TypeCell({ type }: { type: TestType }) {
   const Icon = TEST_TYPE_ICON[type];
 
   return (
-    <TableCell className="w-[120px] max-w-[120px] overflow-hidden">
+    <TableCell className="w-32 max-w-32 overflow-hidden">
       <div className="flex items-center gap-x-1.5">
         <Icon size={14} className="shrink-0 text-muted-foreground" />
         <p className="overlow-hidden grow truncate">{type}</p>
@@ -465,7 +466,7 @@ function TagsCell({ tags, className }: { tags: string[]; className?: string }) {
 
 function TeamCell({ team }: { team: string }) {
   return (
-    <TableCell className="w-[150px]">
+    <TableCell className="w-36">
       <span className="rounded-full border px-2 py-1">{team}</span>
     </TableCell>
   );
@@ -475,16 +476,16 @@ function UptimeCell({ uptime }: { uptime: number | null }) {
   const failureWidth = uptime === null ? "100%" : `calc(100% - ${uptime}%)`;
 
   return (
-    <TableCell className="w-[160px] max-w-[160px]">
+    <TableCell className="w-40 max-w-40">
       {uptime === null && (
         <span className=" italic text-muted-foreground">No uptime data</span>
       )}
       {uptime !== null && (
         <span className="flex items-center justify-between gap-x-1 font-semibold">
           {uptime}%
-          <span className="relative h-4 w-[84px] bg-success">
+          <span className="relative h-4 w-20 bg-success">
             <span
-              className={cn(`absolute inset-y-0 right-0 bg-destructive`)}
+              className="absolute inset-y-0 right-0 bg-destructive"
               style={{ width: failureWidth }}
             />
           </span>

@@ -8,6 +8,8 @@ import {
   UnplugIcon,
 } from "lucide-react";
 
+import { cn } from "~/utils/tailwind";
+
 import {
   Table,
   TableBody,
@@ -16,8 +18,6 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/Table";
-
-import { cn } from "~/utils/tailwind";
 
 export default function TableDemo() {
   return (
@@ -39,17 +39,19 @@ export default function TableDemo() {
         <TableBody>
           {TESTS.map((test) => (
             <TableRow key={test.id}>
-              <TableCell className="w-[180px]">{test.name}</TableCell>
+              <TableCell className="w-44 max-w-44 overflow-hidden truncate">
+                {test.name}
+              </TableCell>
               <StatusCell status={test.status} />
               <TypeCell type={test.type} />
-              <TableCell className="w-[160px] max-w-[160px] overflow-hidden truncate">
+              <TableCell className="w-40 max-w-40 overflow-hidden truncate">
                 {test.domain}
               </TableCell>
-              <TagsCell tags={test.tags} className="w-[60px]" />
-              <TagsCell tags={test.envs} className="w-[140px]" />
+              <TagsCell tags={test.tags} className="w-16" />
+              <TagsCell tags={test.envs} className="w-36" />
               <TeamCell team={test.team} />
               <UptimeCell uptime={test.uptime} />
-              <TableCell className="w-[140px] text-right">
+              <TableCell className="w-36 text-right">
                 {getTimeAgo(test.lastModified)}
               </TableCell>
             </TableRow>
@@ -62,10 +64,10 @@ export default function TableDemo() {
 
 function StatusCell({ status }: { status: TestStatus }) {
   return (
-    <TableCell className="w-[90px]">
+    <TableCell className="w-24">
       <div
         className={cn(
-          "w-[70px] rounded-1 py-1 text-center text-3 font-medium uppercase",
+          "w-18 rounded-1 py-1 text-center text-3 font-medium uppercase",
           status === TestStatus.OK && "bg-success text-success-foreground",
           status === TestStatus.Alert &&
             "bg-destructive text-destructive-foreground",
@@ -82,10 +84,10 @@ function TypeCell({ type }: { type: TestType }) {
   const Icon = TEST_TYPE_ICON[type];
 
   return (
-    <TableCell className="w-[120px]">
+    <TableCell className="w-32 max-w-32 overflow-hidden">
       <div className="flex items-center gap-x-1.5">
-        <Icon size={14} className="text-muted-foreground" />
-        {type}
+        <Icon size={14} className="shrink-0 text-muted-foreground" />
+        <p className="overlow-hidden grow truncate">{type}</p>
       </div>
     </TableCell>
   );
@@ -107,7 +109,7 @@ function TagsCell({ tags, className }: { tags: string[]; className?: string }) {
 
 function TeamCell({ team }: { team: string }) {
   return (
-    <TableCell className="w-[150px]">
+    <TableCell className="w-36">
       <span className="rounded-full border px-2 py-1">{team}</span>
     </TableCell>
   );
@@ -117,16 +119,16 @@ function UptimeCell({ uptime }: { uptime: number | null }) {
   const failureWidth = uptime === null ? "100%" : `calc(100% - ${uptime}%)`;
 
   return (
-    <TableCell className="max-w-[120px]">
+    <TableCell className="w-40 max-w-40">
       {uptime === null && (
         <span className=" italic text-muted-foreground">No uptime data</span>
       )}
       {uptime !== null && (
         <span className="flex items-center justify-between gap-x-1 font-semibold">
           {uptime}%
-          <span className="relative h-4 w-[84px] bg-success">
+          <span className="relative h-4 w-20 bg-success">
             <span
-              className={cn(`absolute inset-y-0 right-0 bg-destructive`)}
+              className="absolute inset-y-0 right-0 bg-destructive"
               style={{ width: failureWidth }}
             />
           </span>
