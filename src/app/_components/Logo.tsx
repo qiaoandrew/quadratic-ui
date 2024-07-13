@@ -6,7 +6,7 @@ export default function Logo() {
   return (
     <Link
       href="/"
-      className="focus-visible:outline- flex items-center gap-x-2   "
+      className="flex items-center gap-x-2 focus-visible:outline-none"
     >
       <div className="relative size-6">
         <div className="absolute bottom-0 left-0 size-5 rounded-1 bg-gradient-dark dark:bg-gradient-light" />
