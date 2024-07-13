@@ -44,7 +44,7 @@ const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = cva(
   cn(
-    "group inline-flex w-max items-center justify-center rounded-2 p-2 text-3.5 font-medium transition-colors",
+    "group inline-flex gap-x-1.5 w-max items-center justify-center rounded-2 p-2 text-3.5 font-medium transition-colors",
     "hover:bg-accent hover:text-accent-foreground",
     "focus:bg-accent focus:text-accent-foreground focus:outline-none",
     "disabled:pointer-events-none disabled:opacity-50",
@@ -62,9 +62,9 @@ const NavigationMenuTrigger = React.forwardRef<
     className={cn(navigationMenuTriggerStyle(), "group", className)}
     {...props}
   >
-    {children}{" "}
+    {children}
     <ChevronDown
-      className="relative ml-1.5 transition-transform duration-150 group-data-[state=open]:rotate-180"
+      className="relative transition-transform duration-150 group-data-[state=open]:rotate-180"
       size={14}
       aria-hidden="true"
     />
@@ -142,7 +142,7 @@ interface NavigationMenuDropdownListProps
 }
 
 const navigationMenuDropdownListVariants = cva(
-  "grid gap-x-3 gap-y-1 p-4 w-[400px] md:w-[480px] lg:w-[520px]",
+  "grid gap-x-3 gap-y-1 p-4 w-80 lg:w-128",
   {
     variants: {
       variant: {
@@ -200,79 +200,68 @@ const navigationMenuDropdownItemVariants = cva(
 const NavigationMenuDropdownItem = React.forwardRef<
   HTMLLIElement,
   NavigationMenuDropdownItemProps
->(
-  (
-    {
-      title,
-      href,
-      isRoute,
-      cardImg: cardImage,
-      cardImgAlt: cardImageAlt,
-      children,
-      variant,
-    },
-    ref,
-  ) => {
-    const navigationMenuDropdownItemStyle = cn(
-      navigationMenuDropdownItemVariants({ variant }),
+>(({ title, href, isRoute, cardImg, cardImgAlt, children, variant }, ref) => {
+  const navigationMenuDropdownItemStyle = cn(
+    navigationMenuDropdownItemVariants({ variant }),
+  );
+
+  const listItemContent =
+    variant === "card" ? (
+      <div className="flex flex-col gap-y-3">
+        {cardImg ? (
+          <div className="relative flex-grow overflow-hidden rounded-3">
+            <Image
+              src={cardImg}
+              alt={cardImgAlt!}
+              layout="fill"
+              objectFit="cover"
+              className="bg-cover"
+            />
+          </div>
+        ) : (
+          <div className="flex-grow" />
+        )}
+        <div className="flex flex-col gap-y-1">
+          <h4 className="text-4 font-medium">{title}</h4>
+          <p className="text-3.5 leading-6 text-muted-foreground">{children}</p>
+        </div>
+      </div>
+    ) : (
+      <div className="flex flex-col gap-y-1">
+        <p className="text-3.5 font-medium text-foreground">{title}</p>
+        <p className="line-clamp-2 text-3.5 leading-6 text-muted-foreground">
+          {children}
+        </p>
+      </div>
     );
 
-    const listItemContent =
-      variant === "card" ? (
-        <>
-          {cardImage ? (
-            <div className="relative flex-grow overflow-hidden rounded-3">
-              <Image
-                src={cardImage}
-                alt={cardImageAlt!}
-                layout="fill"
-                objectFit="cover"
-                className="bg-cover"
-              />
-            </div>
-          ) : (
-            <div className="flex-grow" />
-          )}
-          <h4 className="mb-1 mt-3 text-4 font-medium">{title}</h4>
-          <p className="text-3.5 leading-6 text-muted-foreground">{children}</p>
-        </>
-      ) : (
-        <>
-          <p className="mb-1 text-3.5 font-medium text-foreground">{title}</p>
-          <p className="line-clamp-2 text-3.5 leading-6 text-muted-foreground">
-            {children}
-          </p>
-        </>
-      );
-
-    if (isRoute) {
-      return (
-        <li ref={ref} className={cn(variant === "card" && "row-span-3")}>
-          <Link href={href} legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuDropdownItemStyle}>
-              {listItemContent}
-            </NavigationMenuLink>
-          </Link>
-        </li>
-      );
-    }
-
+  if (isRoute) {
     return (
       <li ref={ref} className={cn(variant === "card" && "row-span-3")}>
-        <NavigationMenuLink asChild>
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={navigationMenuDropdownItemStyle}
-          >
+        <Link href={href} legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuDropdownItemStyle}>
             {listItemContent}
-          </a>
-        </NavigationMenuLink>
+          </NavigationMenuLink>
+        </Link>
       </li>
     );
-  },
-);
+  }
+
+  return (
+    <li ref={ref} className={cn(variant === "card" && "row-span-3")}>
+      <NavigationMenuLink asChild>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={navigationMenuDropdownItemStyle}
+        >
+          {listItemContent}
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
 NavigationMenuDropdownItem.displayName = "NavigationMenuDropdownItem";
 
 export {
