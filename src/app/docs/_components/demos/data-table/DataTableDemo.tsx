@@ -97,7 +97,7 @@ const columns: ColumnDef<Test>[] = [
       <DataTableSortingHead column={column}>Name</DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="w-[180px] max-w-[180px] overflow-hidden truncate">
+      <TableCell className="w-44 max-w-44 overflow-hidden truncate">
         {row.getValue("name")}
       </TableCell>
     ),
@@ -125,7 +125,7 @@ const columns: ColumnDef<Test>[] = [
       <DataTableSortingHead column={column}>Domain</DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="w-[160px] max-w-[160px] overflow-hidden truncate">
+      <TableCell className="w-40 max-w-40 overflow-hidden truncate">
         {row.getValue("domain")}
       </TableCell>
     ),
@@ -137,7 +137,7 @@ const columns: ColumnDef<Test>[] = [
       <DataTableSortingHead column={column}>Tags</DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TagsCell tags={row.getValue("tags")} className="w-[60px]" />
+      <TagsCell tags={row.getValue("tags")} className="w-16" />
     ),
   },
   {
@@ -147,7 +147,7 @@ const columns: ColumnDef<Test>[] = [
       <DataTableSortingHead column={column}>Envs</DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TagsCell tags={row.getValue("envs")} className="w-[140px]" />
+      <TagsCell tags={row.getValue("envs")} className="w-36" />
     ),
   },
   {
@@ -178,7 +178,7 @@ const columns: ColumnDef<Test>[] = [
       </DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="w-[140px] max-w-[140px] shrink-0 text-right">
+      <TableCell className="w-36 text-right">
         {getTimeAgo(row.getValue("lastModified"))}
       </TableCell>
     ),
@@ -190,11 +190,7 @@ const columns: ColumnDef<Test>[] = [
       <TableCell className="last:pr-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="size-6 rounded-1 hover:border hover:border-muted-foreground"
-            >
+            <Button variant="ghost" size="icon" className="size-6 rounded-1">
               <span className="sr-only">Open menu</span>
               <MoreVerticalIcon size={16} />
             </Button>
