@@ -25,6 +25,8 @@ import {
   CommandList,
   CommandShortcut,
 } from "~/components/ui/Command";
+import { Button } from "~/components/ui/Button";
+import { cn } from "~/utils/tailwind";
 
 interface CommandMenu {
   primitivesMenuItems: DocItem[];
@@ -62,20 +64,23 @@ export default function CommandMenu({
 
   return (
     <>
-      <button
-        type="button"
+      <Button
+        variant="outline"
         onClick={() => setIsOpen(true)}
-        className="hidden h-10 w-80 items-center justify-between rounded-2 border pl-2.5 pr-3 text-muted-foreground transition-colors hover:bg-accent/50 xl:flex 2xl:w-96"
+        className={cn(
+          "hidden h-10 w-80 items-center justify-between rounded-2 pl-2.5 pr-3 text-muted-foreground",
+          "hover:bg-accent/50 hover:text-muted-foreground",
+          "xl:flex 2xl:w-96",
+        )}
       >
-        <div className="flex items-center gap-x-1.5">
+        <span className="flex items-center gap-x-1.5">
           <SearchIcon size={16} />
           <p className="text-3.5">Search documentation...</p>
-        </div>
+        </span>
         <CommandShortcut>⌘K</CommandShortcut>
-      </button>
-
+      </Button>
       <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
-        <CommandInput placeholder="Search documentation..." />
+        <CommandInput placeholder="Search documentatin..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Getting Started">
@@ -83,8 +88,9 @@ export default function CommandMenu({
               <CommandItem
                 key={item.id}
                 onSelect={() => onSelect(() => router.push(item.href))}
+                className="gap-x-2"
               >
-                {item.Icon && <item.Icon size={18} className="mr-2" />}
+                {item.Icon && <item.Icon size={18} />}
                 {item.label}
               </CommandItem>
             ))}
@@ -94,8 +100,9 @@ export default function CommandMenu({
               <CommandItem
                 key={item.id}
                 onSelect={() => onSelect(() => router.push(item.href))}
+                className="gap-x-2"
               >
-                <DiamondIcon size={18} className="mr-2" />
+                <DiamondIcon size={18} />
                 {item.label}
               </CommandItem>
             ))}
@@ -105,8 +112,9 @@ export default function CommandMenu({
               <CommandItem
                 key={item.id}
                 onSelect={() => onSelect(() => router.push(item.href))}
+                className="gap-x-2"
               >
-                <ComponentIcon size={18} className="mr-2" />
+                <ComponentIcon size={18} />
                 {item.label}
               </CommandItem>
             ))}
@@ -116,8 +124,9 @@ export default function CommandMenu({
               <CommandItem
                 key={item.id}
                 onSelect={() => onSelect(() => router.push(item.href))}
+                className="gap-x-2"
               >
-                <SquareAsteriskIcon size={18} className="mr-2" />
+                <SquareAsteriskIcon size={18} />
                 {item.label}
               </CommandItem>
             ))}
@@ -127,19 +136,26 @@ export default function CommandMenu({
               <CommandItem
                 key={item.id}
                 onSelect={() => onSelect(() => router.push(item.href))}
+                className="gap-x-2"
               >
-                <BarChart2Icon size={18} className="mr-2" />
+                <BarChart2Icon size={18} />
                 {item.label}
               </CommandItem>
             ))}
           </CommandGroup>
           <CommandGroup heading="Theme">
-            <CommandItem onSelect={() => onSelect(() => setTheme("light"))}>
-              <SunIcon size={18} className="mr-2" />
+            <CommandItem
+              onSelect={() => onSelect(() => setTheme("light"))}
+              className="gap-x-2"
+            >
+              <SunIcon size={18} />
               Light
             </CommandItem>
-            <CommandItem onSelect={() => onSelect(() => setTheme("dark"))}>
-              <MoonIcon size={18} className="mr-2" />
+            <CommandItem
+              onSelect={() => onSelect(() => setTheme("dark"))}
+              className="gap-x-2"
+            >
+              <MoonIcon size={18} />
               Dark
             </CommandItem>
           </CommandGroup>
