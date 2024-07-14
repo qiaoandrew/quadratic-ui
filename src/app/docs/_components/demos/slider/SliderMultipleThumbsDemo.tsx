@@ -14,7 +14,7 @@ export default function SliderMultipleThumbsDemo({
       min={0}
       max={100}
       step={1}
-      className={cn("w-full max-w-[360px]", className)}
+      className={cn("w-full max-w-96", className)}
       {...props}
     >
       <SliderThumb />
