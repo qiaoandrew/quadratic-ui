@@ -63,7 +63,11 @@ import {
   PaginationPreviousButton,
 } from "~/components/ui/Pagination";
 
-const columns: ColumnDef<Test>[] = [
+type ColumnMeta = {
+  name: string;
+};
+
+const columns: ColumnDef<Test, ColumnMeta>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -89,6 +93,9 @@ const columns: ColumnDef<Test>[] = [
         />
       </TableCell>
     ),
+    meta: {
+      name: "Select",
+    },
   },
   {
     id: "name",
@@ -101,6 +108,9 @@ const columns: ColumnDef<Test>[] = [
         {row.getValue("name")}
       </TableCell>
     ),
+    meta: {
+      name: "Name",
+    },
   },
   {
     id: "status",
@@ -109,6 +119,9 @@ const columns: ColumnDef<Test>[] = [
       <DataTableSortingHead column={column}>Status</DataTableSortingHead>
     ),
     cell: ({ row }) => <StatusCell status={row.getValue("status")} />,
+    meta: {
+      name: "Status",
+    },
   },
   {
     id: "type",
@@ -117,6 +130,9 @@ const columns: ColumnDef<Test>[] = [
       <DataTableSortingHead column={column}>Type</DataTableSortingHead>
     ),
     cell: ({ row }) => <TypeCell type={row.getValue("type")} />,
+    meta: {
+      name: "Type",
+    },
   },
   {
     id: "domain",
@@ -129,6 +145,9 @@ const columns: ColumnDef<Test>[] = [
         {row.getValue("domain")}
       </TableCell>
     ),
+    meta: {
+      name: "Domain",
+    },
   },
   {
     id: "tags",
@@ -139,6 +158,9 @@ const columns: ColumnDef<Test>[] = [
     cell: ({ row }) => (
       <TagsCell tags={row.getValue("tags")} className="w-16" />
     ),
+    meta: {
+      name: "Tags",
+    },
   },
   {
     id: "envs",
@@ -149,6 +171,9 @@ const columns: ColumnDef<Test>[] = [
     cell: ({ row }) => (
       <TagsCell tags={row.getValue("envs")} className="w-36" />
     ),
+    meta: {
+      name: "Envs",
+    },
   },
   {
     id: "team",
@@ -157,6 +182,9 @@ const columns: ColumnDef<Test>[] = [
       <DataTableSortingHead column={column}>Team</DataTableSortingHead>
     ),
     cell: ({ row }) => <TeamCell team={row.getValue("team")} />,
+    meta: {
+      name: "Team",
+    },
   },
   {
     id: "uptime",
@@ -165,6 +193,9 @@ const columns: ColumnDef<Test>[] = [
       <DataTableSortingHead column={column}>Uptime</DataTableSortingHead>
     ),
     cell: ({ row }) => <UptimeCell uptime={row.getValue("uptime")} />,
+    meta: {
+      name: "Uptime",
+    },
   },
   {
     id: "lastModified",
@@ -182,6 +213,9 @@ const columns: ColumnDef<Test>[] = [
         {getTimeAgo(row.getValue("lastModified"))}
       </TableCell>
     ),
+    meta: {
+      name: "Last Modified",
+    },
   },
   {
     id: "actions",
@@ -240,6 +274,9 @@ const columns: ColumnDef<Test>[] = [
         </DropdownMenu>
       </TableCell>
     ),
+    meta: {
+      name: "Actions",
+    },
   },
 ];
 
@@ -296,38 +333,36 @@ export default function DataTableDemo() {
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
+              .map((column) => (
+                <DropdownMenuCheckboxItem
+                  key={column.id}
+                  className="capitalize"
+                  checked={column.getIsVisible()}
+                  onCheckedChange={(value) => column.toggleVisibility(!!value)}
+                >
+                  {(column.columnDef.meta as ColumnMeta).name}
+                </DropdownMenuCheckboxItem>
+              ))}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
       <div className="overflow-auto rounded-2 border">
-        <Table className="w-max min-w-full">
+        <Table className="w-max min-w-full table-fixed">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) =>
-                  header.isPlaceholder ? (
-                    <TableHead key={header.id} />
-                  ) : (
-                    flexRender(
-                      header.column.columnDef.header,
-                      header.getContext(),
-                    )
-                  ),
-                )}
+                {headerGroup.headers.map((header) => (
+                  <Fragment key={header.id}>
+                    {header.isPlaceholder ? (
+                      <TableHead />
+                    ) : (
+                      flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )
+                    )}
+                  </Fragment>
+                ))}
               </TableRow>
             ))}
           </TableHeader>
@@ -385,7 +420,7 @@ export default function DataTableDemo() {
 }
 
 interface DataTableSortingHeadProps {
-  column: Column<Test, unknown>;
+  column: Column<Test, ColumnMeta>;
   className?: string;
   children: React.ReactNode;
 }
