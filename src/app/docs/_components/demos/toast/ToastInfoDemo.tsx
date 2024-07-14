@@ -8,9 +8,7 @@ export default function ToastInfoDemo() {
   return (
     <Button
       variant="outline"
-      onClick={() =>
-        toast.info("Please arrive 10 minutes before the start time.")
-      }
+      onClick={() => toast.info("Arrive 10 minutes before the start time.")}
     >
       Show Toast
     </Button>
