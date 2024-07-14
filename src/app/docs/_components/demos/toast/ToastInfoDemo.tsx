@@ -4,11 +4,13 @@ import { toast } from "sonner";
 
 import { Button } from "~/components/ui/Button";
 
-export default function ToastSuccessDemo() {
+export default function ToastInfoDemo() {
   return (
     <Button
       variant="outline"
-      onClick={() => toast.success("Event created successfully.")}
+      onClick={() =>
+        toast.info("Please arrive 10 minutes before the start time.")
+      }
     >
       Show Toast
     </Button>

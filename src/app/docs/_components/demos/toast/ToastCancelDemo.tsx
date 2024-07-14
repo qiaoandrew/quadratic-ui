@@ -9,10 +9,10 @@ export default function ToastCancelDemo() {
     <Button
       variant="outline"
       onClick={() =>
-        toast("Account created.", {
+        toast("Event created.", {
           cancel: {
             label: "Undo",
-            onClick: () => console.log("Undo!"),
+            onClick: () => console.log("Undone."),
           },
         })
       }

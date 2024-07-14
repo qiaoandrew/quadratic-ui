@@ -9,10 +9,10 @@ export default function ToastLoadingDemo() {
     <Button
       variant="outline"
       onClick={() =>
-        toast.loading("Loading accounts...", {
+        toast.loading("Saving event...", {
           cancel: {
             label: "Cancel",
-            onClick: () => console.log("Cancel!"),
+            onClick: () => console.log("Cancelled."),
           },
         })
       }

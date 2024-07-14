@@ -9,10 +9,10 @@ export default function ToastActionDemo() {
     <Button
       variant="outline"
       onClick={() =>
-        toast("Account added.", {
+        toast("Event created.", {
           action: {
-            label: "View Account",
-            onClick: () => console.log("View Account!"),
+            label: "View Event",
+            onClick: () => console.log("Event viewed."),
           },
         })
       }

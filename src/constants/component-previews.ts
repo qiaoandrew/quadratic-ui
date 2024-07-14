@@ -166,7 +166,9 @@ import TextareaWithLabelDemo from "~/app/docs/_components/demos/textarea/Textare
 import TextareaFormDemo from "~/app/docs/_components/demos/textarea/TextareaFormDemo";
 import ToastDemo from "~/app/docs/_components/demos/toast/ToastDemo";
 import ToastSuccessDemo from "~/app/docs/_components/demos/toast/ToastSuccessDemo";
+import ToastWarningDemo from "~/app/docs/_components/demos/toast/ToastWarningDemo";
 import ToastErrorDemo from "~/app/docs/_components/demos/toast/ToastErrorDemo";
+import ToastInfoDemo from "~/app/docs/_components/demos/toast/ToastInfoDemo";
 import ToastActionDemo from "~/app/docs/_components/demos/toast/ToastActionDemo";
 import ToastCancelDemo from "~/app/docs/_components/demos/toast/ToastCancelDemo";
 import ToastLoadingDemo from "~/app/docs/_components/demos/toast/ToastLoadingDemo";
@@ -857,9 +859,17 @@ export const COMPONENT_PREVIEWS = {
     PreviewComponent: ToastSuccessDemo,
     path: "src/app/docs/_components/demos/toast/ToastSuccessDemo.tsx",
   },
+  "toast-warning": {
+    PreviewComponent: ToastWarningDemo,
+    path: "src/app/docs/_components/demos/toast/ToastWarningDemo.tsx",
+  },
   "toast-error": {
     PreviewComponent: ToastErrorDemo,
     path: "src/app/docs/_components/demos/toast/ToastErrorDemo.tsx",
+  },
+  "toast-info": {
+    PreviewComponent: ToastInfoDemo,
+    path: "src/app/docs/_components/demos/toast/ToastInfoDemo.tsx",
   },
   "toast-action": {
     PreviewComponent: ToastActionDemo,

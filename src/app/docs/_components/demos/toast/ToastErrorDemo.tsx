@@ -8,7 +8,7 @@ export default function ToastErrorDemo() {
   return (
     <Button
       variant="outline"
-      onClick={() => toast.error("Failed to create account.")}
+      onClick={() => toast.error("An error occurred while creating the event.")}
     >
       Show Toast
     </Button>
