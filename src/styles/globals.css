@@ -100,17 +100,21 @@
     --card: 0 0% 100%;
     --card-foreground: 240 10% 4%;
 
-    --destructive: 0 93% 94%;
-    --destructive-foreground: 0 70% 35%;
-    --destructive-border: 0 91% 71%;
+    --destructive: 0 100% 97%;
+    --destructive-foreground: 0 100% 45%;
+    --destructive-border: 358 100% 94%;
 
-    --warning: 55 97% 88%;
-    --warning-foreground: 32 81% 29%;
-    --warning-border: 48 96% 53%;
+    --warning: 48 100% 97%;
+    --warning-foreground: 31 92% 45%;
+    --warning-border: 49 91% 91%;
 
-    --success: 141 84% 93%;
-    --success-foreground: 143 64% 24%;
-    --success-border: 142 69% 58%;
+    --success: 145 81% 96%;
+    --success-foreground: 140 100% 27%;
+    --success-border: 146 91% 91%;
+
+    --info: 208 100% 97%;
+    --info-foreground: 210 92% 45%;
+    --info-border: 221 91% 91%;
 
     --border: 240 6% 90%;
     --input: 240 6% 90%;
@@ -148,17 +152,21 @@
     --card: 240 10% 4%;
     --card-foreground: 0 0% 98%;
 
-    --destructive: 0 70% 35%;
-    --destructive-foreground: 0 93% 94%;
-    --destructive-border: 0 91% 71%;
+    --destructive: 358 76% 10%;
+    --destructive-foreground: 358 100% 81%;
+    --destructive-border: 357 90% 16%;
 
-    --warning: 32 81% 29%;
-    --warning-foreground: 55 97% 88%;
-    --warning-border: 48 96% 53%;
+    --warning: 64 100% 6%;
+    --warning-foreground: 46 87% 65%;
+    --warning-border: 60 100% 12%;
 
-    --success: 143 64% 24%;
-    --success-foreground: 141 84% 93%;
-    --success-border: 142 69% 58%;
+    --success: 149 100% 6%;
+    --success-foreground: 150 87% 65%;
+    --success-border: 148 100% 12%;
+
+    --info: 215 100% 6%;
+    --info-foreground: 216 87% 65%;
+    --info-border: 223 100% 12%;
 
     --border: 240 4% 16%;
     --input: 240 4% 16%;

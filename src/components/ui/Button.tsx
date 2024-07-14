@@ -42,7 +42,7 @@ const buttonVariants = cva(
           "border border-warning-border text-warning-foreground hover:bg-warning/30",
         success: "bg-success text-success-foreground hover:bg-success/90",
         "success-outline":
-          "border border-success-border text-success-foregroundcess hover:bg-success/30",
+          "border border-success-border text-success-foreground hover:bg-success/30",
       },
       size: {
         sm: "px-2 py-1.5 rounded-1.5 text-3.5",
