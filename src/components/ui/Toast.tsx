@@ -26,7 +26,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
           warning: "bg-warning text-warning-foreground border-warning-border",
           error:
             "bg-destructive text-destructive-foreground border-destructive-border",
-          info: "bg-info text-info-foreground border-info-border",
+          info: "bg-info text-info-foreground border-[var(--info-border)]",
         },
       }}
       className="toaster group"
