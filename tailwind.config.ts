@@ -125,6 +125,11 @@ export default {
           foreground: "hsl(var(--success-foreground))",
           border: "hsl(var(--success-border))",
         },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--info-foreground))",
+          border: "hsl(var(--info-border))",
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",

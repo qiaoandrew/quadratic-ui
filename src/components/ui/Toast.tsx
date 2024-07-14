@@ -19,12 +19,14 @@ const Toaster = ({ ...props }: ToasterProps) => {
           title: "text-3.5",
           description: "text-3.5 text-muted-foreground",
           actionButton:
-            "rounded-1.5 bg-primary text-primary-foreground text-3.5",
-          cancelButton: "rounded-1.5 bg-muted text-muted-foreground text-3.5",
-          success: "bg-success text-success-foreground border-success",
-          warning: "bg-warning text-warning-foreground border-warning",
-          error: "bg-error text-error-foreground border-error",
-          info: "bg-info text-info-foreground border-info",
+            "rounded-1.5 bg-primary text-primary-foreground text-3 px-2 py-1.5 font-medium",
+          cancelButton:
+            "rounded-1.5 bg-muted text-muted-foreground text-3 px-2 py-1.5 font-medium",
+          success: "bg-success text-success-foreground border-success-border",
+          warning: "bg-warning text-warning-foreground border-warning-border",
+          error:
+            "bg-destructive text-destructive-foreground border-destructive-border",
+          info: "bg-info text-info-foreground border-info-border",
         },
       }}
       className="toaster group"
