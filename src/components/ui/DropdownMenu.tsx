@@ -36,7 +36,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <ChevronRightIcon size={16} className="ml-auto" />
+    <ChevronRightIcon size={16} className="ml-auto shrink-0" />
   </DropdownMenuPrimitive.SubTrigger>
 ));
 DropdownMenuSubTrigger.displayName =
