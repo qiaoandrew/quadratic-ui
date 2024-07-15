@@ -207,7 +207,7 @@ const NavigationMenuDropdownItem = React.forwardRef<
 
   const listItemContent =
     variant === "card" ? (
-      <div className="flex flex-col gap-y-3">
+      <>
         {cardImg ? (
           <div className="relative flex-grow overflow-hidden rounded-3">
             <Image
@@ -221,11 +221,9 @@ const NavigationMenuDropdownItem = React.forwardRef<
         ) : (
           <div className="flex-grow" />
         )}
-        <div className="flex flex-col gap-y-1">
-          <h4 className="text-4 font-medium">{title}</h4>
-          <p className="text-3.5 leading-6 text-muted-foreground">{children}</p>
-        </div>
-      </div>
+        <h4 className="mb-1 mt-3 text-4 font-medium">{title}</h4>
+        <p className="text-3.5 leading-6 text-muted-foreground">{children}</p>
+      </>
     ) : (
       <div className="flex flex-col gap-y-1">
         <p className="text-3.5 font-medium text-foreground">{title}</p>
