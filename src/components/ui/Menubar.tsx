@@ -66,7 +66,7 @@ const MenubarSubTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <ChevronRightIcon size={16} className="ml-auto" />
+    <ChevronRightIcon size={16} className="ml-auto shrink-0" />
   </MenubarPrimitive.SubTrigger>
 ));
 MenubarSubTrigger.displayName = MenubarPrimitive.SubTrigger.displayName;
