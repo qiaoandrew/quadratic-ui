@@ -24,7 +24,7 @@ export default async function ComponentPreview({
   const code = await readFile(path);
 
   const tabsTriggerStyles = cn(
-    "rounded-none border-b border-b-transparent px-4 py-3",
+    "rounded-none border-b border-b-transparent px-4 py-3 first:rounded-tl-3",
     "data-[state=active]:border-b-highlight-foreground data-[state=active]:bg-transparent data-[state=active]:text-highlight-foreground",
   );
 
@@ -51,7 +51,7 @@ export default async function ComponentPreview({
           <PreviewComponent />
         </div>
       </TabsContent>
-      <TabsContent value="code" className="mt-0">
+      <TabsContent value="code" className="mt-0 rounded-b-3">
         <CodeBlock className="rounded-b-[11px] rounded-t-none border-none">
           {code}
         </CodeBlock>

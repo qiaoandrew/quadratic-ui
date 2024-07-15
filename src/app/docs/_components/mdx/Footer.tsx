@@ -51,7 +51,7 @@ function FooterLink({ direction, href, label }: FooterLinkProps) {
       className={cn(
         "p-0 text-foreground/80 transition-colors",
         "hover:bg-transparent hover:text-foreground",
-        "focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-0",
+        "focus-visible:text-foreground focus-visible:ring-0 focus-visible:ring-offset-0",
       )}
       asChild
     >
