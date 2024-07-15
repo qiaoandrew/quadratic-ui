@@ -207,14 +207,17 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-8 rounded-full transition-colors duration-150 disabled:opacity-30",
+        "absolute size-8 rounded-full transition-colors duration-150",
         orientation === "horizontal"
           ? "left-4 top-1/2 -translate-y-1/2"
           : "left-1/2 top-4 -translate-x-1/2 rotate-90",
+        !canScrollPrev && "opacity-30",
         className,
       )}
-      disabled={!canScrollPrev}
-      onClick={scrollPrev}
+      onClick={(e) => {
+        e.preventDefault();
+        if (canScrollPrev) scrollPrev();
+      }}
       {...props}
     >
       <ChevronLeftIcon size={16} />
@@ -236,14 +239,17 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-8 rounded-full transition-colors duration-150 disabled:opacity-30",
+        "absolute size-8 rounded-full transition-colors duration-150",
         orientation === "horizontal"
           ? "right-4 top-1/2 -translate-y-1/2"
           : "bottom-4 left-1/2 -translate-x-1/2 rotate-90",
+        !canScrollNext && "opacity-30",
         className,
       )}
-      disabled={!canScrollNext}
-      onClick={scrollNext}
+      onClick={(e) => {
+        e.preventDefault();
+        if (canScrollNext) scrollNext();
+      }}
       {...props}
     >
       <ChevronRightIcon size={16} />
