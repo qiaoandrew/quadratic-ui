@@ -48,7 +48,7 @@ export default function TextareaFormDemo() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex w-full max-w-[360px] flex-col gap-y-8"
+        className="flex w-full max-w-96 flex-col gap-y-8"
       >
         <FormField
           control={form.control}
@@ -57,7 +57,11 @@ export default function TextareaFormDemo() {
             <FormItem className="flex flex-col gap-y-2">
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Enter your message..." {...field} />
+                <Textarea
+                  placeholder="Enter your message..."
+                  {...field}
+                  className="max-h-56"
+                />
               </FormControl>
               <FormDescription>
                 Send us your positive and constructive feedback.

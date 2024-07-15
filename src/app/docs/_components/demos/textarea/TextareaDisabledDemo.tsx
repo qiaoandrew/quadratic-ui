@@ -5,7 +5,7 @@ export default function TextareaDisabledDemo() {
     <Textarea
       placeholder="Type your message here."
       disabled
-      className="max-w-96"
+      className="max-h-56 max-w-96"
     />
   );
 }
