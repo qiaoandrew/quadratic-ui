@@ -22,13 +22,15 @@ const Calendar = ({
       className={cn("bg-background p-2.5", className)}
       classNames={{
         months: "flex flex-col sm:flex-row gap-y-4 sm:gap-x-4 sm:gap-y-0",
-        caption: "flex justify-between items-center mb-0.5",
-        caption_label: "text-3.5 font-medium text-foreground",
+        caption: "flex justify-center items-center relative h-8",
+        caption_label: "text-3.5 font-medium",
         nav: "gap-x-1 flex items-center",
         nav_button: cn(
-          buttonVariants({ variant: "outline", size: "icon" }),
-          "size-7 rounded-1.5",
+          buttonVariants({ variant: "ghost", size: "icon" }),
+          "size-8 rounded-1.5",
         ),
+        nav_button_previous: "absolute left-0",
+        nav_button_next: "absolute right-0",
         table: "w-full border-collapse",
         head_row: "flex",
         head_cell:
@@ -53,8 +55,8 @@ const Calendar = ({
         ...classNames,
       }}
       components={{
-        IconLeft: () => <ChevronLeft size={16} />,
-        IconRight: () => <ChevronRight size={16} />,
+        IconLeft: () => <ChevronLeft size={18} />,
+        IconRight: () => <ChevronRight size={18} />,
       }}
       {...props}
     />
