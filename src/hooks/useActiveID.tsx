@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import { useDebouncedCallback } from "use-debounce";
 
-interface useActiveSectionProps {
+interface useActiveIdProps {
   ids: string[];
 }
 
-export const useActiveId = ({ ids }: useActiveSectionProps) => {
+export const useActiveId = ({ ids }: useActiveIdProps) => {
   const [activeId, setActiveId] = useState<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
