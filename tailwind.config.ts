@@ -82,7 +82,6 @@ export default {
       "4xl": "1600px",
       "5xl": "1800px",
     },
-
     extend: {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
