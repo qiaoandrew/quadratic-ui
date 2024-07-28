@@ -36,16 +36,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    pre: (
-      props: React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLPreElement>,
-        HTMLPreElement
-      >,
-    ) => (
-      <CodeBlock containerClassName="mt-4">
-        {props.children as string}
-      </CodeBlock>
-    ),
+    pre: (props) => {
+      const children = props.children as { props: { children: string } };
+
+      return (
+        <CodeBlock containerClassName="mt-4">
+          {children.props.children}
+        </CodeBlock>
+      );
+    },
     a: (props) =>
       props.href?.startsWith("/") ? (
         <Link
