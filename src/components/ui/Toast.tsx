@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { Toaster as Sonner } from "sonner";
+import { cn } from "~/utils/tailwind";
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
@@ -31,6 +32,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
           info: "bg-info text-info-foreground border-[var(--info-border)]",
         },
       }}
+      cn={cn}
       className="toaster group"
       {...props}
     />
