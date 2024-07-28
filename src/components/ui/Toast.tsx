@@ -22,8 +22,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
             "rounded-1.5 bg-primary text-primary-foreground text-3 px-2 py-1.5 font-medium",
           cancelButton:
             "rounded-1.5 bg-muted text-muted-foreground text-3 px-2 py-1.5 font-medium",
-          success: "bg-success text-success-foreground border-success-border",
-          warning: "bg-warning text-warning-foreground border-warning-border",
+          success:
+            "bg-success text-success-foreground border-[var(--success-border)]",
+          warning:
+            "bg-warning text-warning-foreground border-[var(--warning-border)]",
           error:
             "bg-destructive text-destructive-foreground border-destructive-border",
           info: "bg-info text-info-foreground border-[var(--info-border)]",
