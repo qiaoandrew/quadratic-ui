@@ -183,6 +183,10 @@
     @apply box-border border-border;
   }
 
+  html {
+    @apply scroll-smooth font-sans antialiased;
+  }
+
   body {
     @apply bg-background font-sans text-foreground;
     font-feature-settings:

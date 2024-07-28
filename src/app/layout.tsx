@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("scroll-smooth font-sans antialiased", GeistMono.variable)}
+      className={cn("", GeistMono.variable)}
       suppressHydrationWarning
     >
       <head>
