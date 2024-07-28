@@ -13,7 +13,7 @@ import {
   SunIcon,
 } from "lucide-react";
 
-import { GETTING_STARTED_ITEMS } from "~/constants/docs";
+import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/docs";
 import type { DocItem } from "~/types/types";
 
 import {
@@ -85,6 +85,18 @@ export default function CommandMenu({
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Getting Started">
             {GETTING_STARTED_ITEMS.map((item) => (
+              <CommandItem
+                key={item.id}
+                onSelect={() => onSelect(() => router.push(item.href))}
+                className="gap-x-2"
+              >
+                {item.Icon && <item.Icon size={18} />}
+                {item.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Guides">
+            {GUIDES_ITEMS.map((item) => (
               <CommandItem
                 key={item.id}
                 onSelect={() => onSelect(() => router.push(item.href))}

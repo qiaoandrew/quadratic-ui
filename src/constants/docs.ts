@@ -10,6 +10,8 @@ import {
   FileCode2,
   AtomIcon,
   MoonIcon,
+  PaletteIcon,
+  GitMergeIcon,
 } from "lucide-react";
 
 import type { DocItem, DocGroup } from "~/types/types";
@@ -81,11 +83,13 @@ export const GUIDES_ITEMS: DocItem[] = [
     id: "customization",
     href: "/docs/getting-started/customization",
     label: "Customization",
+    Icon: PaletteIcon,
   },
   {
     id: "contributing",
     href: "/docs/getting-started/contributing",
     label: "Contributing",
+    Icon: GitMergeIcon,
   },
 ];
 
