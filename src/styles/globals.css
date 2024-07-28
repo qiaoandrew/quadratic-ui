@@ -178,9 +178,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 160 60% 45%;
   }
-}
 
-@layer base {
   * {
     @apply box-border border-border;
   }

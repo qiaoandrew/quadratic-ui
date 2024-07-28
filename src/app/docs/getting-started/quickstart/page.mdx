@@ -78,14 +78,14 @@ export default {
       6: ["1.5rem", "2rem"],
       7: ["1.75rem", "2.25rem"],
       8: ["2rem", "2.5rem"],
-      9: ["2.25rem", "2.5rem"],
-      10: ["2.5rem", "2.75rem"],
-      11: ["2.75rem", "1"],
-      12: ["3rem", "1"],
-      13: ["3.25rem", "1"],
-      14: ["3.5rem", "1"],
-      15: ["3.75rem", "1"],
-      16: ["4rem", "1"],
+      9: ["2.25rem", "2.75rem"],
+      10: ["2.5rem", "3rem"],
+      11: ["2.75rem", "3.5rem"],
+      12: ["3rem", "4rem"],
+      13: ["3.25rem", "4.5rem"],
+      14: ["3.5rem", "5rem"],
+      15: ["3.75rem", "5.5rem"],
+      16: ["4rem", "6rem"],
     },
     lineHeight: {
       5: "1.25rem",
@@ -158,6 +158,11 @@ export default {
           foreground: "hsl(var(--success-foreground))",
           border: "hsl(var(--success-border))",
         },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--info-foreground))",
+          border: "hsl(var(--info-border))",
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
@@ -192,7 +197,6 @@ export default {
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 ```
-
 </StepContent>
 
 <StepTitle>Add the following colors and styles to your `styles/globals.css` file.</StepTitle>
@@ -228,21 +232,31 @@ export default {
     --card: 0 0% 100%;
     --card-foreground: 240 10% 4%;
 
-    --destructive: 0 93% 94%;
-    --destructive-foreground: 0 70% 35%;
-    --destructive-border: 0 91% 71%;
+    --destructive: 0 100% 97%;
+    --destructive-foreground: 0 100% 45%;
+    --destructive-border: 358 100% 94%;
 
-    --warning: 55 97% 88%;
-    --warning-foreground: 32 81% 29%;
-    --warning-border: 48 96% 53%;
+    --warning: 48 100% 97%;
+    --warning-foreground: 31 92% 45%;
+    --warning-border: 49 91% 91%;
 
-    --success: 141 84% 93%;
-    --success-foreground: 143 64% 24%;
-    --success-border: 142 69% 58%;
+    --success: 145 81% 96%;
+    --success-foreground: 140 100% 27%;
+    --success-border: 146 91% 91%;
+
+    --info: 208 100% 97%;
+    --info-foreground: 210 92% 45%;
+    --info-border: 221 91% 91%;
 
     --border: 240 6% 90%;
     --input: 240 6% 90%;
     --ring: 240 5% 65%;
+
+    --chart-1: 173 58% 39%;
+    --chart-2: 12 76% 61%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
   }
 
   .dark {
@@ -270,25 +284,33 @@ export default {
     --card: 240 10% 4%;
     --card-foreground: 0 0% 98%;
 
-    --destructive: 0 70% 35%;
-    --destructive-foreground: 0 93% 94%;
-    --destructive-border: 0 91% 71%;
+    --destructive: 358 76% 10%;
+    --destructive-foreground: 358 100% 81%;
+    --destructive-border: 357 90% 16%;
 
-    --warning: 32 81% 29%;
-    --warning-foreground: 55 97% 88%;
-    --warning-border: 48 96% 53%;
+    --warning: 64 100% 6%;
+    --warning-foreground: 46 87% 65%;
+    --warning-border: 60 100% 12%;
 
-    --success: 143 64% 24%;
-    --success-foreground: 141 84% 93%;
-    --success-border: 142 69% 58%;
+    --success: 149 100% 6%;
+    --success-foreground: 150 87% 65%;
+    --success-border: 148 100% 12%;
+
+    --info: 215 100% 6%;
+    --info-foreground: 216 87% 65%;
+    --info-border: 223 100% 12%;
 
     --border: 240 4% 16%;
     --input: 240 4% 16%;
     --ring: 240 5% 84%;
-  }
-}
 
-@layer base {
+    --chart-1: 220 70% 50%;
+    --chart-2: 340 75% 55%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 160 60% 45%;
+  }
+
   * {
     @apply box-border border-border;
   }
@@ -303,7 +325,7 @@ export default {
 ```
 </StepContent>
 
-<StepTitle>Add a `cn` helper to `utils/tailwind.ts`. This makes it easier to add conditional Tailwind CSS classes.</StepTitle>
+<StepTitle>Add a `cn` helper to `utils/tailwind.ts`. It's a utility function used to efficiently merge Tailwind CSS classes in JS without having sylte conflicts.</StepTitle>
 <StepContent>
 <FileSource id="tailwind" />
 </StepContent>
