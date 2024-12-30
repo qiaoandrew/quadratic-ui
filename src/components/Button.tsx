@@ -10,8 +10,6 @@ const buttonVariants = tv({
     "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",
-    // TODO: account for this in compound variants
-    "[&_svg]:size-4",
   ],
   variants: {
     variant: {
@@ -49,8 +47,83 @@ const buttonVariants = tv({
   compoundVariants: [
     {
       size: "xs",
-      subject: "text",
-      className: "px-2 h-8 rounded-1.5",
+      subject: ["text", "text-icon", "icon-text"],
+      className: "px-2 h-8 rounded-1.5 gap-x-1 [&_svg]:size-3",
+    },
+    {
+      size: "sm",
+      subject: ["text", "text-icon", "icon-text"],
+      className: "px-2.5 h-9 rounded-2 gap-x-1 [&_svg]:size-3.5",
+    },
+    {
+      size: "md",
+      subject: ["text", "text-icon", "icon-text"],
+      className: "px-2.5 h-9 rounded-2 gap-x-1.5 [&_svg]:size-3.5",
+    },
+    {
+      size: "lg",
+      subject: ["text", "text-icon", "icon-text"],
+      className: "px-4.5 h-10 rounded-2.5 gap-x-2 [&_svg]:size-4.5",
+    },
+    {
+      size: "xs",
+      subject: "text-icon",
+      className: "pr-1.5",
+    },
+    {
+      size: "xs",
+      subject: "icon-text",
+      className: "pl-1.5",
+    },
+    {
+      size: "sm",
+      subject: "text-icon",
+      className: "pr-2",
+    },
+    {
+      size: "sm",
+      subject: "icon-text",
+      className: "pl-2",
+    },
+    {
+      size: "md",
+      subject: "text-icon",
+      className: "pr-2.5",
+    },
+    {
+      size: "md",
+      subject: "icon-text",
+      className: "pl-2.5",
+    },
+    {
+      size: "lg",
+      subject: "text-icon",
+      className: "pr-3",
+    },
+    {
+      size: "lg",
+      subject: "icon-text",
+      className: "pl-3",
+    },
+    {
+      size: "xs",
+      subject: "icon",
+      className: "size-8 rounded-1.5 [&_svg]:size-4",
+    },
+    {
+      size: "sm",
+      subject: "icon",
+      className: "size-9 rounded-2 [&_svg]:size-4.5",
+    },
+    {
+      size: "md",
+      subject: "icon",
+      className: "size-10 rounded-2 [&_svg]:size-5",
+    },
+    {
+      size: "lg",
+      subject: "icon",
+      className: "size-12 rounded-2.5 [&_svg]:size-6",
     },
   ],
   defaultVariants: {
