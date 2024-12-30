@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { GeistMono } from "geist/font/mono";
+import { ThemeProvider } from "next-themes";
 
 import { inter, interDisplay } from "~/utils/fonts";
 
@@ -17,9 +18,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${interDisplay.variable} ${GeistMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
+          enableSystem={false}
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
