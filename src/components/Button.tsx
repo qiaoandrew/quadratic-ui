@@ -16,14 +16,21 @@ const buttonVariants = tv({
   variants: {
     variant: {
       primary: "bg-primary text-primary-foreground hover:bg-primary/90",
-      secondary:
-        "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-      destructive:
-        "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+      secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
       outline:
-        "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+        "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
       ghost: "hover:bg-accent hover:text-accent-foreground",
       link: "text-primary underline-offset-4 hover:underline",
+      destructive:
+        "bg-destructive text-destructive-foreground hover:bg-destructive/50",
+      "destructive-outline":
+        "border border-destructive-border bg-destructive text-destructive-foreground hover:bg-destructive/50",
+      warning: "bg-warning text-warning-foreground hover:bg-warning/50",
+      "warning-outline":
+        "border border-warning-border bg-warning text-warning-foreground hover:bg-warning/50",
+      success: "bg-success text-success-foreground hover:bg-success/50",
+      "success-outline":
+        "border border-success-border bg-success text-success-foreground hover:bg-success/50",
     },
     size: {
       sm: "",
