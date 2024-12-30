@@ -3,6 +3,104 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
+
+    --primary: 240 6% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 100%;
+    --secondary-foreground: 240 6% 10%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 240 5% 96%;
+    --accent-foreground: 240 6% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --destructive: 0 100% 97%;
+    --destructive-foreground: 0 100% 45%;
+    --destructive-border: 358 100% 94%;
+
+    --warning: 48 100% 97%;
+    --warning-foreground: 31 92% 45%;
+    --warning-border: 49 91% 91%;
+
+    --success: 145 81% 96%;
+    --success-foreground: 140 100% 27%;
+    --success-border: 146 91% 91%;
+
+    --info: 208 100% 97%;
+    --info-foreground: 210 92% 45%;
+    --info-border: 221 91% 91%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 240 5% 65%;
+
+    --chart-1: 173 58% 39%;
+    --chart-2: 12 76% 61%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 180 7% 97%;
+
+    --primary: 180 7% 97%;
+    --primary-foreground: 240 6% 10%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 180 7% 97%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 6% 10%;
+    --accent-foreground: 180 7% 97%;
+
+    --popover: 240 10% 4%;
+    --popover-foreground: 180 7% 97%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 180 7% 97%;
+
+    --destructive: 358 76% 10%;
+    --destructive-foreground: 358 100% 81%;
+    --destructive-border: 357 90% 16%;
+
+    --warning: 64 100% 6%;
+    --warning-foreground: 46 87% 65%;
+    --warning-border: 60 100% 12%;
+
+    --success: 149 100% 6%;
+    --success-foreground: 150 87% 65%;
+    --success-border: 148 100% 12%;
+
+    --info: 215 100% 6%;
+    --info-foreground: 216 87% 65%;
+    --info-border: 223 100% 12%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 240 5% 84%;
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 340 75% 55%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 160 60% 45%;
+  }
+
   * {
     @apply border-border;
   }
