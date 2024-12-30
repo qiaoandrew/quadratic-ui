@@ -34,7 +34,7 @@ export default {
     fontFamily: {
       sans: ["var(--font-sans)", ...fontFamily.sans],
       display: ["var(--font-display)", ...fontFamily.sans],
-      mono: ["var(--font-geist-mono)", "monospace"],
+      mono: ["var(--font-geist-mono)", ...fontFamily.mono],
     },
     fontSize: {
       3: ["0.75rem", "1rem"],
