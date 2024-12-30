@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
+import { GeistMono } from "geist/font/mono";
 
 import { inter, interDisplay } from "~/utils/fonts";
 
@@ -14,7 +15,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${interDisplay.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${interDisplay.variable} ${GeistMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
