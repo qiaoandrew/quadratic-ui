@@ -164,7 +164,9 @@ export default {
     },
     extend: {
       animation: {},
-      backgroundImage: {},
+      backgroundImage: {
+        "gradient-light": "linear-gradient(90deg, #F7F8F8 0%, #919191 100%)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
