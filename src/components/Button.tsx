@@ -33,6 +33,7 @@ const buttonVariants = tv({
         "border border-success-border bg-success text-success-foreground hover:bg-success/50",
     },
     size: {
+      xs: "",
       sm: "",
       md: "",
       lg: "",
@@ -47,9 +48,9 @@ const buttonVariants = tv({
   },
   compoundVariants: [
     {
-      size: "sm",
+      size: "xs",
       subject: "text",
-      className: "",
+      className: "px-2 h-8 rounded-1.5",
     },
   ],
   defaultVariants: {

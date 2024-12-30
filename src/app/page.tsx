@@ -6,7 +6,7 @@ import { Button } from "~/components/Button";
 export default function HomePage() {
   const ref = useRef(null);
   return (
-    <Button variant="primary" ref={ref}>
+    <Button variant="primary" size="xs" ref={ref}>
       Primary
     </Button>
   );

@@ -31,6 +31,11 @@ export default {
       16: "4rem",
       full: "9999px",
     },
+    fontFamily: {
+      sans: ["var(--font-sans)", ...fontFamily.sans],
+      display: ["var(--font-display)", ...fontFamily.sans],
+      mono: ["var(--font-geist-mono)", "monospace"],
+    },
     fontSize: {
       3: ["0.75rem", "1rem"],
       3.5: ["0.875rem", "1.25rem"],
@@ -215,9 +220,6 @@ export default {
           DEFAULT: "hsl(var(--heart))",
           border: "hsl(var(--heart-border))",
         },
-      },
-      fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
       keyframes: {},
     },
