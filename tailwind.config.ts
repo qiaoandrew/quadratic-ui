@@ -77,7 +77,19 @@ export default {
       23: "5.75rem",
       24: "6rem",
     },
-    screens: {},
+    screens: {
+      "3xs": "300px",
+      "2xs": "360px",
+      xs: "480px",
+      sm: "640px",
+      md: "768px",
+      lg: "840px",
+      xl: "1024px",
+      "2xl": "1280px",
+      "3xl": "1400px",
+      "4xl": "1600px",
+      "5xl": "1800px",
+    },
     spacing: {
       0: "0rem",
       0.25: "0.0625rem",
@@ -164,7 +176,9 @@ export default {
     },
     extend: {
       animation: {},
-      backgroundImage: {},
+      backgroundImage: {
+        "gradient-light": "linear-gradient(90deg, #F7F8F8 0%, #919191 100%)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -222,6 +236,9 @@ export default {
         },
       },
       keyframes: {},
+      opacity: {
+        3: ".03",
+      },
     },
   },
   plugins: [tailwindcssAnimate],
