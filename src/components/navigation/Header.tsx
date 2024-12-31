@@ -82,11 +82,11 @@ export default function Header() {
           <ThemeToggle />
         </div>
       </div>
-      <nav className="grid grid-cols-2 gap-x-3 gap-y-6 p-3 xl:hidden">
+      <nav className="grid grid-cols-2 gap-x-3 gap-y-6 p-3 sm:gap-y-8 xl:hidden">
         {MOBILE_NAVIGATION_ITEMS.map((item) => (
           <Link
             href={item.href}
-            className="font-display text-5 font-semibold"
+            className="font-display text-5 font-semibold sm:text-6"
             key={item.id}
           >
             {item.label}
