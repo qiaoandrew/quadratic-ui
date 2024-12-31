@@ -18,10 +18,10 @@ export default function DesktopMenuGroupItem({
         item.size === "lg" && "row-span-2",
       )}
     >
-      <h3 className="mb-0.5 text-4 font-medium text-foreground">
+      <h3 className="mb-0.5 text-3.5 font-medium text-foreground 3xl:text-4">
         {item.label}
       </h3>
-      <p className="max-w-[220px] text-3.5 leading-6 text-muted-foreground">
+      <p className="line-clamp-2 max-w-[220px] text-3.5 leading-6 text-muted-foreground">
         {item.description}
       </p>
     </Link>

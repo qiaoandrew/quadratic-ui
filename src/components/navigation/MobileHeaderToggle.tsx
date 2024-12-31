@@ -15,7 +15,7 @@ export default function MobileHeaderToggle({
       onClick={() => setIsMobileMenuOpen((prev) => !prev)}
       className={cn(
         "flex size-9 items-center justify-center self-center",
-        "3xl:hidden",
+        "xl:hidden",
       )}
     >
       <span className="relative size-5">
