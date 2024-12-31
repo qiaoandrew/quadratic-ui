@@ -6,7 +6,7 @@ export default function HorizontalDividers() {
   const threeColumnDividerCount = Math.ceil(LANDING_DEMOS.length / 3);
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 inset-y-7 z-20 flex flex-col gap-y-16">
+    <div className="pointer-events-none absolute inset-x-0 inset-y-7 z-10 flex flex-col gap-y-16">
       {Array.from({ length: LANDING_DEMOS.length }).map((_, i) => (
         <div
           className={cn(

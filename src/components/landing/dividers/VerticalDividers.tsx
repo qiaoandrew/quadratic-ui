@@ -4,7 +4,7 @@ export default function VerticalDividers() {
   return (
     <div
       className={cn(
-        "pointer-events-none absolute inset-x-6 inset-y-0 grid",
+        "pointer-events-none absolute inset-x-6 inset-y-0 z-10 grid",
         "md:grid-cols-2 md:gap-x-8 3xl:inset-x-[calc((100vw-1248px)/2)]",
         "3xl:grid-cols-3",
       )}
