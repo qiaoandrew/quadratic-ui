@@ -4,7 +4,7 @@ import GradientText from "~/components/effects/GradientText";
 
 export default function Hero() {
   return (
-    <section className="px-6 pt-21 md:pt-24 xl:pt-32 3xl:px-[calc((100vw-1248px)/2)]">
+    <section className="mb-12 px-6 pt-21 md:pt-24 xl:pt-32 3xl:px-[calc((100vw-1248px)/2)]">
       <h1
         className={cn(
           "max-w-[328px] font-display text-7 font-semibold leading-10",

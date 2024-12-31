@@ -26,7 +26,7 @@ export default function Header() {
   const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState<boolean>(false);
 
   const [activeDesktopMenuGroupItems, setActiveDesktopMenuGroupItems] =
-    useState<DesktopHeaderGroupItem["items"]>();
+    useState<DesktopHeaderGroupItem["items"]>([]);
 
   const openDesktopMenu = (items: DesktopHeaderGroupItem["items"]) => {
     setActiveDesktopMenuGroupItems(items);
@@ -41,7 +41,7 @@ export default function Header() {
     <header
       onMouseLeave={() => setIsDesktopMenuOpen(false)}
       className={cn(
-        "fixed inset-x-3 top-3 flex flex-col gap-y-2 overflow-hidden rounded-2.5 bg-highlight backdrop-blur transition-[height]",
+        "fixed inset-x-3 top-3 z-50 flex flex-col gap-y-2 overflow-hidden rounded-2.5 bg-highlight/80 backdrop-blur transition-[height]",
         "xl:top-6 xl:rounded-3.5",
         "3xl:inset-x-[calc((100vw-1280px)/2)]",
         isMobileMenuOpen ? "h-[calc(100dvh-1.5rem)]" : "h-11",
@@ -94,7 +94,7 @@ export default function Header() {
         ))}
       </nav>
       <nav className="hidden grid-flow-col grid-cols-4 gap-4 px-4 pb-4 xl:grid xl:h-[260px] xl:min-h-[260px] 2xl:h-[296px] 2xl:min-h-[296px]">
-        {activeDesktopMenuGroupItems?.map((item) => (
+        {activeDesktopMenuGroupItems.map((item) => (
           <DesktopMenuGroupItem item={item} key={item.id} />
         ))}
       </nav>
