@@ -1,6 +1,6 @@
-import Demo from "~/components/landing/Demo";
-import HorizontalDividers from "~/components/landing/HorizontalDividers";
-import VerticalDividers from "~/components/landing/VerticalDividers";
+import Demo from "~/components/landing/demos/Demo";
+import HorizontalDividers from "~/components/landing/dividers/HorizontalDividers";
+import VerticalDividers from "~/components/landing/dividers/VerticalDividers";
 
 export default function Demos() {
   return (
