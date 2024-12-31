@@ -99,6 +99,8 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 160 60% 45%;
+
+    --highlight: 240 6% 7%;
   }
 
   * {
@@ -110,7 +112,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;

@@ -175,7 +175,10 @@ export default {
       320: "80rem",
     },
     extend: {
-      animation: {},
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
       backgroundImage: {
         "gradient-light": "linear-gradient(90deg, #F7F8F8 0%, #919191 100%)",
       },
@@ -185,7 +188,9 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        highlight: "hsl(var(--highlight))",
+        highlight: {
+          DEFAULT: "hsl(var(--highlight))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -235,7 +240,16 @@ export default {
           border: "hsl(var(--heart-border))",
         },
       },
-      keyframes: {},
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
       opacity: {
         3: ".03",
       },

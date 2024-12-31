@@ -101,8 +101,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
       {
         id: "introduction",
         label: "Introduction",
-        description:
-          "Learn about quadratic/ui&apos;s vision and core principles.",
+        description: "Learn about quadratic/ui\'s vision and core principles.",
         href: "/docs/getting-started/introduction",
         size: "sm",
       },

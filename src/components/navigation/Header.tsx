@@ -26,7 +26,7 @@ export default function Header() {
   const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState<boolean>(false);
 
   const [activeDesktopMenuGroupItems, setActiveDesktopMenuGroupItems] =
-    useState<DesktopHeaderGroupItem["items"]>();
+    useState<DesktopHeaderGroupItem["items"]>([]);
 
   const openDesktopMenu = (items: DesktopHeaderGroupItem["items"]) => {
     setActiveDesktopMenuGroupItems(items);
@@ -41,25 +41,26 @@ export default function Header() {
     <header
       onMouseLeave={() => setIsDesktopMenuOpen(false)}
       className={cn(
-        "fixed inset-x-3 top-3 flex flex-col gap-y-2 overflow-hidden rounded-2.5 bg-foreground/5 backdrop-blur transition-[height]",
-        "3xl:inset-x-[calc((100vw-1280px)/2)] 3xl:top-6 3xl:rounded-3.5",
+        "fixed inset-x-3 top-3 z-50 flex flex-col gap-y-2 overflow-hidden rounded-2.5 bg-highlight/65 backdrop-blur transition-[height]",
+        "xl:top-6 xl:rounded-3.5",
+        "3xl:inset-x-[calc((100vw-1280px)/2)]",
         isMobileMenuOpen ? "h-[calc(100dvh-1.5rem)]" : "h-11",
-        isDesktopMenuOpen ? "3xl:h-[356px]" : "3xl:h-13",
+        isDesktopMenuOpen ? "xl:h-80 2xl:h-[356px]" : "xl:h-13",
       )}
     >
       <div
         className={cn(
           "flex h-11 shrink-0 items-stretch justify-between pl-3 pr-1.5",
-          "3xl:h-13 3xl:px-4",
+          "xl:h-13 xl:px-4",
         )}
       >
         <div className="flex items-stretch">
           <Logo onMouseEnter={closeDesktopMenu} />
           <div
             onMouseEnter={closeDesktopMenu}
-            className="hidden w-4 3xl:block"
+            className="hidden w-4 xl:block"
           />
-          <nav className="hidden items-stretch 3xl:flex">
+          <nav className="hidden items-stretch xl:flex">
             {DESKTOP_NAVIGATION_ITEMS.map((item) => (
               <DesktopHeaderItem
                 item={item}
@@ -76,24 +77,24 @@ export default function Header() {
         />
         <div
           onMouseEnter={closeDesktopMenu}
-          className="hidden grow items-center justify-end gap-x-2 3xl:flex"
+          className="hidden grow items-center justify-end gap-x-2 xl:flex"
         >
           <ThemeToggle />
         </div>
       </div>
-      <nav className="grid grid-cols-2 gap-x-3 gap-y-6 p-3 3xl:hidden">
+      <nav className="grid grid-cols-2 gap-x-3 gap-y-6 p-3 sm:gap-y-8 xl:hidden">
         {MOBILE_NAVIGATION_ITEMS.map((item) => (
           <Link
             href={item.href}
-            className="font-display text-5 font-semibold"
+            className="font-display text-5 font-semibold sm:text-6"
             key={item.id}
           >
             {item.label}
           </Link>
         ))}
       </nav>
-      <nav className="hidden h-[296px] min-h-[296px] grid-flow-col grid-cols-4 gap-4 px-4 pb-4 3xl:grid">
-        {activeDesktopMenuGroupItems?.map((item) => (
+      <nav className="hidden grid-flow-col grid-cols-4 gap-4 px-4 pb-4 xl:grid xl:h-[260px] xl:min-h-[260px] 2xl:h-[296px] 2xl:min-h-[296px]">
+        {activeDesktopMenuGroupItems.map((item) => (
           <DesktopMenuGroupItem item={item} key={item.id} />
         ))}
       </nav>
