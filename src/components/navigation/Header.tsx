@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 import { cn } from "~/utils/tailwind";
 import { type DesktopHeaderGroupItem } from "~/types/navigation";
@@ -14,6 +15,11 @@ import DesktopHeaderItem from "~/components/navigation/DesktopHeaderItem";
 import DesktopMenuGroupItem from "~/components/navigation/DesktopMenuGroupItem";
 import Logo from "~/components/navigation/Logo";
 import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
+
+const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
+  ssr: false,
+  loading: () => <div className="size-8" />,
+});
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -71,7 +77,9 @@ export default function Header() {
         <div
           onMouseEnter={closeDesktopMenu}
           className="hidden grow items-center justify-end gap-x-2 3xl:flex"
-        ></div>
+        >
+          <ThemeToggle />
+        </div>
       </div>
       <nav className="grid grid-cols-2 gap-x-3 gap-y-6 p-3 3xl:hidden">
         {MOBILE_NAVIGATION_ITEMS.map((item) => (
