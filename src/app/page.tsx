@@ -1,5 +1,5 @@
-import Demos from "~/components/landing/Demos";
-import Hero from "~/components/landing/Hero";
+import Demos from "~/components/landing/sections/Demos";
+import Hero from "~/components/landing/sections/Hero";
 
 export default function Page() {
   return (
