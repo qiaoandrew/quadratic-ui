@@ -11,7 +11,7 @@ export default function AccordionDemo() {
       type="single"
       collapsible
       defaultValue="item-2"
-      className="w-full max-w-72"
+      className="z-10 w-full max-w-72"
     >
       <AccordionItem value="item-1">
         <AccordionTrigger className="py-3 text-3 [&_svg]:size-3.5">
