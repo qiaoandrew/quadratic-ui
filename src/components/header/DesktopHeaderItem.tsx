@@ -17,25 +17,18 @@ export default function DesktopHeaderItem({
   openDesktopMenu,
   closeDesktopMenu,
 }: DesktopHeaderItemProps) {
-  const className =
-    "flex items-center cursor-pointer px-4 py-2 text-3.5 font-medium text-muted-foreground";
+  const styles =
+    "flex items-center cursor-pointer px-4 text-3.5 font-medium text-muted-foreground";
 
   if (item.type === DesktopHeaderItemType.Group) {
     return (
-      <span
-        onMouseEnter={() => openDesktopMenu(item.items)}
-        className={className}
-      >
+      <span onMouseEnter={() => openDesktopMenu(item.items)} className={styles}>
         {item.label}
       </span>
     );
   } else if (item.href.startsWith("/")) {
     return (
-      <Link
-        href={item.href}
-        onMouseEnter={closeDesktopMenu}
-        className={className}
-      >
+      <Link href={item.href} onMouseEnter={closeDesktopMenu} className={styles}>
         {item.label}
       </Link>
     );
@@ -46,7 +39,7 @@ export default function DesktopHeaderItem({
         target="_blank"
         rel="noreferrer noopener"
         onMouseEnter={closeDesktopMenu}
-        className={className}
+        className={styles}
       >
         {item.label}
       </a>

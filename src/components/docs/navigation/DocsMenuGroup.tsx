@@ -32,14 +32,14 @@ export default function DocsMenuGroup({
     </div>
   );
 
-  const docsMenuGroupStyles = cn(
+  const styles = cn(
     "group flex items-center gap-x-2 text-3.5 font-medium",
     isActive ? "text-foreground" : "text-muted-foreground",
   );
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} className={docsMenuGroupStyles}>
+      <Link href={href} className={styles}>
         {icon}
         {children}
       </Link>
@@ -50,7 +50,7 @@ export default function DocsMenuGroup({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={docsMenuGroupStyles}
+        className={styles}
       >
         {icon}
         {children}
