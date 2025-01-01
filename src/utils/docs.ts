@@ -1,5 +1,5 @@
 import { readDirectory, readFile } from "~/utils/fs";
-import type { DocsTOCItem } from "~/types/docs";
+import type { DocsItem, DocsTOCItem } from "~/types/docs";
 
 export function textToHtmlId(text: string) {
   if (!text.trim()) {
@@ -12,6 +12,19 @@ export function textToHtmlId(text: string) {
     .toLowerCase()
     .replace(/ /g, "-")
     .replace(/[^\w-]+/g, "");
+}
+
+const CAPITAL_WORDS = ["otp"];
+
+export function formatLabel(label: string) {
+  return label
+    .split("-")
+    .map((word) =>
+      CAPITAL_WORDS.includes(word)
+        ? word.toUpperCase()
+        : word.charAt(0).toUpperCase() + word.slice(1),
+    )
+    .join(" ");
 }
 
 function extractSectionIds(content: string) {
@@ -62,3 +75,18 @@ export async function getTOCs() {
 
   return tocs;
 }
+
+export const getComponentsMenuItems = async () => {
+  const primitives = await readDirectory("src/app/docs/components/primitives");
+  const primitivesMenuItems: DocsItem[] = await Promise.all(
+    primitives.map(async (name) => ({
+      id: name,
+      href: `/docs/components/primitives/${name}`,
+      label: formatLabel(name),
+    })),
+  );
+
+  return {
+    primitivesMenuItems,
+  };
+};
