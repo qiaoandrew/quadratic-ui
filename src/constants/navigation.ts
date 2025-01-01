@@ -133,7 +133,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
   {
     id: "components",
     label: "Components",
-    type: DesktopHeaderItemType.Route,
+    type: DesktopHeaderItemType.Link,
     href: "/docs/components/accordion",
   },
   {
@@ -189,13 +189,13 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
   {
     id: "github",
     label: "GitHub",
-    type: DesktopHeaderItemType.Hyperlink,
+    type: DesktopHeaderItemType.Link,
     href: "https://github.com/qiaoandrew/quadratic-ui",
   },
   {
     id: "figma",
     label: "Figma",
-    type: DesktopHeaderItemType.Hyperlink,
+    type: DesktopHeaderItemType.Link,
     href: "https://www.figma.com/community/file/1351315753275186770/quadratic-ui-shadcn-ui-design-system-component-library",
   },
 ];

@@ -1,0 +1,56 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Button</Title>
+<Description>Displays a button or a component that looks like a button.</Description>
+<ComponentPreview id="button" />
+
+## Installation
+<Steps>
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-slot
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="button" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+</Steps>
+
+## Usage
+```tsx
+import { Button } from "~/components/ui/Button";
+```
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+## Next.js Link
+Use the `asChild` prop on `<Button />` to use the Next.js `<Link />` component.
+```tsx
+<Button asChild>
+  <Link href="/docs/components/primitives/button">Button</Link>
+</Button>
+```
+
+## Examples
+
+### Primary
+<ComponentPreview id="button" />
+
+### Secondary
+<ComponentPreview id="button" />
+
+### Outline
+<ComponentPreview id="button" />
+
+<Footer previousLabel="Breadcrumb" previousHref="/docs/components/primitives/breadcrumb" nextLabel="Calendar" nextHref="/docs/components/primitives/calendar" />

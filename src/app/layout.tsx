@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 
 import { inter, interDisplay } from "~/utils/fonts";
 
-import Header from "~/components/navigation/Header";
+import Header from "~/components/header/Header";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
