@@ -145,7 +145,6 @@ function Button({
   variant,
   size,
   asChild = false,
-  // TODO: check that ref passing through
   ...props
 }: ButtonProps) {
   const Comp = asChild ? Slot : "button";
