@@ -2,7 +2,7 @@ import { Button } from "~/components/ui/Button";
 
 export default function AlertDialogDemo() {
   return (
-    <div className="z-10 flex flex-col gap-y-5 rounded-3 border bg-background p-4.5">
+    <div className="z-10 flex max-w-[340px] flex-col gap-y-5 rounded-3 border bg-background p-4.5">
       <div className="flex flex-col gap-y-1.5">
         <p className="text-3.5 font-semibold">Are you absolutely sure?</p>
         <p className="text-2.5 leading-4 text-muted-foreground">

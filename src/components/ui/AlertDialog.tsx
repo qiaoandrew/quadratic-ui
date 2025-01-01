@@ -1,6 +1,3 @@
-"use client";
-
-import * as React from "react";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 
 import { cn } from "~/utils/tailwind";
@@ -16,7 +13,7 @@ const AlertDialogPortal = AlertDialogPrimitive.Portal;
 function AlertDialogOverlay({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Overlay>) {
   return (
     <AlertDialogPrimitive.Overlay
       className={cn(
@@ -33,7 +30,7 @@ function AlertDialogOverlay({
 function AlertDialogContent({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Content>) {
   return (
     <AlertDialogPortal>
       <AlertDialogOverlay />
@@ -79,7 +76,7 @@ function AlertDialogFooter({
 function AlertDialogTitle({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Title>) {
   return (
     <AlertDialogPrimitive.Title
       className={cn("text-5 font-semibold", className)}
@@ -91,7 +88,7 @@ function AlertDialogTitle({
 function AlertDialogDescription({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {
   return (
     <AlertDialogPrimitive.Description
       className={cn("text-3.5 leading-6 text-muted-foreground", className)}
@@ -106,8 +103,7 @@ function AlertDialogAction({
   size,
   subject,
   ...props
-}: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action> &
-  ButtonProps) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Action> & ButtonProps) {
   return (
     <AlertDialogPrimitive.Action
       className={cn(buttonVariants({ variant, size, subject }), className)}
@@ -122,8 +118,7 @@ function AlertDialogCancel({
   size,
   subject,
   ...props
-}: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel> &
-  ButtonProps) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Cancel> & ButtonProps) {
   return (
     <AlertDialogPrimitive.Cancel
       className={cn(buttonVariants({ variant, size, subject }), className)}

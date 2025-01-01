@@ -1,5 +1,6 @@
 import AccordionDemo from "~/components/landing/demos/AccordionDemo";
 import AlertDialogDemo from "~/components/landing/demos/AlertDialogDemo";
+import AvatarDemo from "~/components/landing/demos/AvatarDemo";
 
 export const LANDING_DEMOS = [
   {
@@ -16,9 +17,9 @@ export const LANDING_DEMOS = [
   },
   {
     id: "avatar",
-    label: "",
-    href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    label: "Avatar",
+    href: "/docs/components/primitives/avatar",
+    Demo: AvatarDemo,
   },
   {
     id: "badge",
