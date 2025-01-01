@@ -1,5 +1,4 @@
-import type { IconType } from "@icons-pack/react-simple-icons";
-import type { LucideIcon } from "lucide-react";
+import type { Icon } from "~/types/ui";
 
 export type DocsTOCItem = {
   type: "h2" | "h3";
@@ -12,12 +11,12 @@ export type DocsGroup = {
   href: string;
   groupHrefPrefix?: string;
   label: string;
-  Icon: LucideIcon | IconType;
+  Icon: Icon;
 };
 
 export type DocsItem = {
   id: string;
   href: string;
   label: string;
-  Icon: LucideIcon | IconType;
+  Icon: Icon;
 };
