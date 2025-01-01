@@ -2,6 +2,8 @@ import AccordionDemo from "~/components/landing/demos/AccordionDemo";
 import AlertDialogDemo from "~/components/landing/demos/AlertDialogDemo";
 import AvatarDemo from "~/components/landing/demos/AvatarDemo";
 import BadgeDemo from "~/components/landing/demos/BadgeDemo";
+import BreadcrumbDemo from "~/components/landing/demos/BreadcrumbDemo";
+import ButtonDemo from "~/components/landing/demos/ButtonDemo";
 
 export const LANDING_DEMOS = [
   {
@@ -30,15 +32,15 @@ export const LANDING_DEMOS = [
   },
   {
     id: "breadcrumb",
-    label: "",
-    href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    label: "Breadcrumb",
+    href: "/docs/components/primitives/breadcrumb",
+    Demo: BreadcrumbDemo,
   },
   {
     id: "button",
-    label: "",
-    href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    label: "Button",
+    href: "/docs/components/primitives/button",
+    Demo: ButtonDemo,
   },
   {
     id: "calendar",

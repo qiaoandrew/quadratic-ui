@@ -1,4 +1,3 @@
-import * as React from "react";
 import type { VariantProps } from "tailwind-variants";
 
 import { cn, tv } from "~/utils/tailwind";
