@@ -1,4 +1,5 @@
 import AccordionDemo from "~/components/landing/demos/AccordionDemo";
+import AlertDialogDemo from "~/components/landing/demos/AlertDialogDemo";
 
 export const LANDING_DEMOS = [
   {
@@ -9,9 +10,9 @@ export const LANDING_DEMOS = [
   },
   {
     id: "alert-dialog",
-    label: "",
-    href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    label: "Alert Dialog",
+    href: "/docs/components/primitives/alert-dialog",
+    Demo: AlertDialogDemo,
   },
   {
     id: "avatar",
