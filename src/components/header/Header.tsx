@@ -81,14 +81,15 @@ export default function Header() {
             onMouseEnter={closeDesktopMenu}
             className="hidden grow items-center justify-end gap-x-2 xl:flex"
           >
+            {/* TODO: add command */}
             <ThemeToggle />
           </div>
         </div>
-        <nav className="grid grid-cols-2 gap-x-3 gap-y-6 p-3 sm:gap-y-8 xl:hidden">
+        <nav className="grid grid-cols-2 gap-x-3 gap-y-6 p-3 xs:gap-y-8 xl:hidden">
           {MOBILE_NAVIGATION_ITEMS.map((item) => (
             <Link
               href={item.href}
-              className="font-display text-5 font-semibold sm:text-6"
+              className="font-display text-5 font-semibold xs:text-6"
               key={item.id}
             >
               {item.label}
