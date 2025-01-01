@@ -14,7 +14,7 @@ export default function DesktopMenuGroupItem({
     <Link
       href={item.href}
       className={cn(
-        "rounded-2.5 bg-highlight/50 p-3.5",
+        "rounded-2.5 bg-muted/30 p-3.5",
         item.size === "lg" && "row-span-2",
       )}
     >
