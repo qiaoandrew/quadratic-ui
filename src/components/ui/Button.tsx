@@ -48,22 +48,22 @@ const buttonVariants = tv({
     {
       size: "xs",
       subject: ["text", "text-icon", "icon-text"],
-      className: "px-2 h-8 rounded-1.5 gap-x-1 [&_svg]:size-3",
+      className: "h-8 gap-x-1 rounded-1.5 px-2 text-3.5 [&_svg]:size-3",
     },
     {
       size: "sm",
       subject: ["text", "text-icon", "icon-text"],
-      className: "px-2.5 h-9 rounded-2 gap-x-1 [&_svg]:size-3.5",
+      className: "h-9 gap-x-1 rounded-2 px-2.5 text-3.5 [&_svg]:size-3.5",
     },
     {
       size: "md",
       subject: ["text", "text-icon", "icon-text"],
-      className: "px-2.5 h-9 rounded-2 gap-x-1.5 [&_svg]:size-3.5",
+      className: "h-10 gap-x-1.5 rounded-2 px-3.5 text-3.5 [&_svg]:size-3.5",
     },
     {
       size: "lg",
       subject: ["text", "text-icon", "icon-text"],
-      className: "px-4.5 h-10 rounded-2.5 gap-x-2 [&_svg]:size-4.5",
+      className: "h-12 gap-x-2 rounded-2.5 px-4.5 text-4 [&_svg]:size-4.5",
     },
     {
       size: "xs",
