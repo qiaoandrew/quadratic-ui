@@ -118,3 +118,14 @@
       "calt" 1;
   }
 }
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step::before {
+    @apply absolute -ml-[50px] -mt-1.5 inline-flex size-9 items-center justify-center rounded-full border-4 border-background bg-muted text-4 text-muted-foreground;
+    content: counter(step);
+  }
+}

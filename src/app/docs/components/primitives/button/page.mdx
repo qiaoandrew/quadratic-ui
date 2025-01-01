@@ -1,12 +1,29 @@
 import Title from "~/components/docs/mdx/Title";
 import Description from "~/components/docs/mdx/Description";
 import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import FileSource from "~/components/docs/mdx/FileSource";
 
 <Title>Button</Title>
 <Description>Displays a button or a component that looks like a button.</Description>
 <ComponentPreview id="button" />
 
 ## Installation
+<Steps>
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-slot
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="button" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+</Steps>
 
 ## Usage
 ```tsx

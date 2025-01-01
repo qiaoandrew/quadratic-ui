@@ -9,14 +9,13 @@ interface CodeBlockProps {
 
 export default function CodeBlock({ children, className }: CodeBlockProps) {
   return (
-    <pre
-      className={cn(
-        "relative max-h-112 overflow-auto rounded-3 border bg-accent/70 p-4",
-        className,
-      )}
-    >
-      <code className="text-3.5 leading-6 text-foreground/70">{children}</code>
+    <div className={cn("relative rounded-2.5 border bg-accent/70", className)}>
+      <pre className="max-h-112 overflow-auto overscroll-contain p-4">
+        <code className="text-3.5 leading-6 text-foreground/70">
+          {children}
+        </code>
+      </pre>
       <CopyToClipboardButton text={children} />
-    </pre>
+    </div>
   );
 }
