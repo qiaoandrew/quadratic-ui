@@ -37,6 +37,7 @@ export default {
       mono: ["var(--font-geist-mono)", ...fontFamily.mono],
     },
     fontSize: {
+      2.5: ["0.625rem", "0.875rem"],
       3: ["0.75rem", "1rem"],
       3.5: ["0.875rem", "1.25rem"],
       4: ["1rem", "1.5rem"],

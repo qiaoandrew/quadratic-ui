@@ -39,11 +39,11 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-50 h-3 bg-background/60 backdrop-blur xl:h-6" />
+      <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur xl:h-6" />
       <header
         onMouseLeave={() => setIsDesktopMenuOpen(false)}
         className={cn(
-          "fixed inset-x-3 top-3 z-50 flex flex-col gap-y-2 overflow-hidden rounded-2.5 bg-highlight/65 backdrop-blur transition-[height]",
+          "fixed inset-x-3 top-3 z-40 flex flex-col gap-y-2 overflow-hidden rounded-2.5 border border-border/50 bg-highlight/65 backdrop-blur transition-[height]",
           "xl:top-6 xl:rounded-3.5",
           "3xl:inset-x-[calc((100vw-1280px)/2)]",
           isMobileMenuOpen ? "h-[calc(100dvh-1.5rem)]" : "h-11",
@@ -52,8 +52,8 @@ export default function Header() {
       >
         <div
           className={cn(
-            "flex h-11 shrink-0 items-stretch justify-between pl-3 pr-1.5",
-            "xl:h-13 xl:px-4",
+            "flex h-[42px] shrink-0 items-stretch justify-between pl-3 pr-1.5",
+            "xl:h-[50px] xl:px-4",
           )}
         >
           <div className="flex items-stretch">
