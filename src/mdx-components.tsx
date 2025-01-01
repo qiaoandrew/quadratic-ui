@@ -27,7 +27,11 @@ export function useMDXComponents(components: MDXComponents) {
 
       const props = children.props as { children: string };
 
-      return <CodeBlock className="mt-4">{props.children}</CodeBlock>;
+      return (
+        <CodeBlock className="mt-4 [&:where(h2+&)]:mt-5">
+          {props.children}
+        </CodeBlock>
+      );
     },
   };
 }
