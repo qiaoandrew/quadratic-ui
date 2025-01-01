@@ -134,7 +134,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
     id: "components",
     label: "Components",
     type: DesktopHeaderItemType.Link,
-    href: "/docs/components/accordion",
+    href: "/docs/components/primitives/accordion",
   },
   {
     id: "resources",
