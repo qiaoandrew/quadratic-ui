@@ -17,7 +17,12 @@ import { Button } from "~/components/ui/Button";
 ```
 
 ## Next.js Link
-<ComponentPreview id="button" />
+Use the `asChild` prop on `<Button />` to use the Next.js `<Link />` component.
+```tsx
+<Button asChild>
+  <Link href="/docs/components/primitives/button">Button</Link>
+</Button>
+```
 
 ## Variants
 
