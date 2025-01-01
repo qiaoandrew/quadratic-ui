@@ -3,6 +3,7 @@ import type { MDXComponents } from "mdx/types";
 import { textToHtmlId } from "~/utils/docs";
 
 import Id from "~/components/docs/mdx/Id";
+import CodeBlock from "~/components/docs/mdx/CodeBlock";
 
 export function useMDXComponents(components: MDXComponents) {
   return {
@@ -19,5 +20,14 @@ export function useMDXComponents(components: MDXComponents) {
         {children}
       </h3>
     ),
+    pre: ({ children }: React.ComponentProps<"pre">) => {
+      if (!children || typeof children !== "object" || !("props" in children)) {
+        return null;
+      }
+
+      const props = children.props as { children: string };
+
+      return <CodeBlock className="mt-4">{props.children}</CodeBlock>;
+    },
   };
 }
