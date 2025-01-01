@@ -5,9 +5,8 @@ export type MobileHeaderItem = {
 };
 
 export enum DesktopHeaderItemType {
-  Group = "group",
-  Route = "route",
-  Hyperlink = "hyperlink",
+  Group,
+  Link,
 }
 
 export type DesktopHeaderItem = {
@@ -27,6 +26,6 @@ export type DesktopHeaderGroupItem = {
 };
 
 export type DesktopHeaderLinkItem = {
-  type: DesktopHeaderItemType.Route | DesktopHeaderItemType.Hyperlink;
+  type: DesktopHeaderItemType.Link;
   href: string;
 };

@@ -29,7 +29,7 @@ export default function DesktopHeaderItem({
         {item.label}
       </span>
     );
-  } else if (item.type === DesktopHeaderItemType.Route) {
+  } else if (item.href.startsWith("/")) {
     return (
       <Link
         href={item.href}
