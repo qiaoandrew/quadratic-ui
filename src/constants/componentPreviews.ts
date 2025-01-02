@@ -28,15 +28,18 @@ import ButtonSuccessOutlineDemo from "~/components/docs/demos/button/ButtonSucce
 import ButtonWarningDemo from "~/components/docs/demos/button/ButtonWarningDemo";
 import ButtonWarningOutlineDemo from "~/components/docs/demos/button/ButtonWarningOutlineDemo";
 import CalendarDemo from "~/components/docs/demos/calendar/CalendarDemo";
-import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
-import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
-import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
 import CalloutDemo from "~/components/docs/demos/callout/CalloutDemo";
 import CalloutDestructiveDemo from "~/components/docs/demos/callout/CalloutDestructiveDemo";
 import CalloutWarningDemo from "~/components/docs/demos/callout/CalloutWarningDemo";
 import CalloutSuccessDemo from "~/components/docs/demos/callout/CalloutSuccessDemo";
 import CalloutInfoDemo from "~/components/docs/demos/callout/CalloutInfoDemo";
 import CardDemo from "~/components/docs/demos/card/CardDemo";
+import CheckboxDemo from "~/components/docs/demos/checkbox/CheckboxDemo";
+import CheckboxDisabledDemo from "~/components/docs/demos/checkbox/CheckboxDisabledDemo";
+import CheckboxFormDemo from "~/components/docs/demos/checkbox/CheckboxFormDemo";
+import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
+import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
+import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -182,6 +185,18 @@ export const COMPONENT_PREVIEWS = {
   card: {
     Preview: CardDemo,
     path: "src/components/docs/demos/card/CardDemo.tsx",
+  },
+  checkbox: {
+    Preview: CheckboxDemo,
+    path: "src/components/docs/demos/checkbox/CheckboxDemo.tsx",
+  },
+  checkboxDisabled: {
+    Preview: CheckboxDisabledDemo,
+    path: "src/components/docs/demos/checkbox/CheckboxDisabledDemo.tsx",
+  },
+  checkboxForm: {
+    Preview: CheckboxFormDemo,
+    path: "src/components/docs/demos/checkbox/CheckboxFormDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,

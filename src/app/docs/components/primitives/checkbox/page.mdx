@@ -1,0 +1,47 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Checkbox</Title>
+<Description>A control that allows the user to toggle between checked and not checked.</Description>
+<ComponentPreview id="checkbox" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-checkbox
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="checkbox" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Checkbox } from "~/components/ui/Checkbox";
+```
+```tsx
+<Checkbox />
+```
+
+## Examples
+
+### Disabled
+<ComponentPreview id="checkboxDisabled" />
+
+### Form
+<ComponentPreview id="checkboxForm" />
+
+<Footer previousLabel="Callout" previousHref="/docs/components/primitives/callout" nextLabel="Command" nextHref="/docs/components/primitives/command" />
