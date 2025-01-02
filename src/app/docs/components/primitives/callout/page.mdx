@@ -1,0 +1,54 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Callout</Title>
+<Description>Displays a button or a component that looks like a button.</Description>
+<ComponentPreview id="callout" />
+
+## Installation
+<Steps>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="callout" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Callout, CalloutText } from "~/components/ui/Callout";
+```
+```tsx
+<Callout className="max-w-128">
+  <InfoIcon size={20} />
+  <CalloutText>
+    Use default callouts to give the user information.
+  </CalloutText>
+</Callout>
+```
+
+## Examples
+
+### Default
+<ComponentPreview id="callout" />
+
+### Destructive
+<ComponentPreview id="calloutDestructive" />
+
+### Warning
+<ComponentPreview id="calloutWarning" />
+
+### Success
+<ComponentPreview id="calloutSuccess" />
+
+### Info
+<ComponentPreview id="calloutInfo" />
+
+<Footer previousLabel="Calendar" previousHref="/docs/components/primitives/calendar" nextLabel="Checkbox" nextHref="/docs/components/primitives/checkbox" />

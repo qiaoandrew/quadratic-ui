@@ -31,6 +31,11 @@ import CalendarDemo from "~/components/docs/demos/calendar/CalendarDemo";
 import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
+import CalloutDemo from "~/components/docs/demos/callout/CalloutDemo";
+import CalloutDestructiveDemo from "~/components/docs/demos/callout/CalloutDestructiveDemo";
+import CalloutWarningDemo from "~/components/docs/demos/callout/CalloutWarningDemo";
+import CalloutSuccessDemo from "~/components/docs/demos/callout/CalloutSuccessDemo";
+import CalloutInfoDemo from "~/components/docs/demos/callout/CalloutInfoDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -152,6 +157,26 @@ export const COMPONENT_PREVIEWS = {
   calendar: {
     Preview: CalendarDemo,
     path: "src/components/docs/demos/calendar/CalendarDemo.tsx",
+  },
+  callout: {
+    Preview: CalloutDemo,
+    path: "src/components/docs/demos/callout/CalloutDemo.tsx",
+  },
+  calloutDestructive: {
+    Preview: CalloutDestructiveDemo,
+    path: "src/components/docs/demos/callout/CalloutDestructiveDemo.tsx",
+  },
+  calloutWarning: {
+    Preview: CalloutWarningDemo,
+    path: "src/components/docs/demos/callout/CalloutWarningDemo.tsx",
+  },
+  calloutSuccess: {
+    Preview: CalloutSuccessDemo,
+    path: "src/components/docs/demos/callout/CalloutSuccessDemo.tsx",
+  },
+  calloutInfo: {
+    Preview: CalloutInfoDemo,
+    path: "src/components/docs/demos/callout/CalloutInfoDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,
