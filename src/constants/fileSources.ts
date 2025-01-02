@@ -17,7 +17,6 @@ export const FILE_SOURCES = {
   command: "src/components/ui/Command.tsx",
   contextMenu: "src/components/ui/ContextMenu.tsx",
   dataTable: "src/components/ui/DataTable.tsx",
-  datePicker: "src/components/ui/DatePicker.tsx",
   dialog: "src/components/ui/Dialog.tsx",
   drawer: "src/components/ui/Drawer.tsx",
   dropdownMenu: "src/components/ui/DropdownMenu.tsx",
@@ -47,4 +46,5 @@ export const FILE_SOURCES = {
   toggle: "src/components/ui/Toggle.tsx",
   toggleGroup: "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
+  datePickerDemo: "src/components/docs/demos/date-picker/DatePickerDemo.tsx",
 };

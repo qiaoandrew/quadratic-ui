@@ -27,6 +27,10 @@ import ButtonSuccessDemo from "~/components/docs/demos/button/ButtonSuccessDemo"
 import ButtonSuccessOutlineDemo from "~/components/docs/demos/button/ButtonSuccessOutlineDemo";
 import ButtonWarningDemo from "~/components/docs/demos/button/ButtonWarningDemo";
 import ButtonWarningOutlineDemo from "~/components/docs/demos/button/ButtonWarningOutlineDemo";
+import CalendarDemo from "~/components/docs/demos/calendar/CalendarDemo";
+import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
+import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
+import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -144,5 +148,21 @@ export const COMPONENT_PREVIEWS = {
   buttonSuccessOutline: {
     Preview: ButtonSuccessOutlineDemo,
     path: "src/components/docs/demos/button/ButtonSuccessOutlineDemo.tsx",
+  },
+  calendar: {
+    Preview: CalendarDemo,
+    path: "src/components/docs/demos/calendar/CalendarDemo.tsx",
+  },
+  datePicker: {
+    Preview: DatePickerDemo,
+    path: "src/components/docs/demos/date-picker/DatePickerDemo.tsx",
+  },
+  datePickerRange: {
+    Preview: DatePickerRangeDemo,
+    path: "src/components/docs/demos/date-picker/DatePickerRangeDemo.tsx",
+  },
+  datePickerForm: {
+    Preview: DatePickerFormDemo,
+    path: "src/components/docs/demos/date-picker/DatePickerFormDemo.tsx",
   },
 };

@@ -7,7 +7,7 @@ export default {
   darkMode: ["class"],
   theme: {
     borderRadius: {
-      none: "0",
+      0: "0",
       0.25: "0.0625rem",
       0.5: "0.125rem",
       1: "0.25rem",
