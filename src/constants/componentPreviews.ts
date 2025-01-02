@@ -34,6 +34,7 @@ import CalloutWarningDemo from "~/components/docs/demos/callout/CalloutWarningDe
 import CalloutSuccessDemo from "~/components/docs/demos/callout/CalloutSuccessDemo";
 import CalloutInfoDemo from "~/components/docs/demos/callout/CalloutInfoDemo";
 import CardDemo from "~/components/docs/demos/card/CardDemo";
+import CarouselDemo from "~/components/docs/demos/carousel/CarouselDemo";
 import CheckboxDemo from "~/components/docs/demos/checkbox/CheckboxDemo";
 import CheckboxDisabledDemo from "~/components/docs/demos/checkbox/CheckboxDisabledDemo";
 import CheckboxFormDemo from "~/components/docs/demos/checkbox/CheckboxFormDemo";
@@ -185,6 +186,10 @@ export const COMPONENT_PREVIEWS = {
   card: {
     Preview: CardDemo,
     path: "src/components/docs/demos/card/CardDemo.tsx",
+  },
+  carousel: {
+    Preview: CarouselDemo,
+    path: "src/components/docs/demos/carousel/CarouselDemo.tsx",
   },
   checkbox: {
     Preview: CheckboxDemo,
