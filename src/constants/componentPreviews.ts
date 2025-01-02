@@ -1,6 +1,7 @@
 import AccordionDemo from "~/components/docs/demos/accordion/AccordionDemo";
 import AccordionMultipleDemo from "~/components/docs/demos/accordion/AccordionMultipleDemo";
 import AccordionSingleNonCollapsibleDemo from "~/components/docs/demos/accordion/AccordionSingleNonCollapsibleDemo";
+import AlertDialogControlledDemo from "~/components/docs/demos/alert-dialog/AlertDialogControlledDemo";
 import AlertDialogDemo from "~/components/docs/demos/alert-dialog/AlertDialogDemo";
 import ButtonDemo from "~/components/docs/demos/button/ButtonDemo";
 import ButtonDestructiveDemo from "~/components/docs/demos/button/ButtonDestructiveDemo";
@@ -31,7 +32,7 @@ export const COMPONENT_PREVIEWS = {
     path: "src/components/docs/demos/alert-dialog/AlertDialogDemo.tsx",
   },
   alertDialogControlled: {
-    Preview: AlertDialogDemo,
+    Preview: AlertDialogControlledDemo,
     path: "src/components/docs/demos/alert-dialog/AlertDialogControlledDemo.tsx",
   },
   button: {

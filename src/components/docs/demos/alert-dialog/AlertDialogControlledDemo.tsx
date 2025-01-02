@@ -44,12 +44,15 @@ export default function AlertDialogControlledDemo() {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel className="px-4.5">Cancel</AlertDialogCancel>
-          <AlertDialogAction className="relative px-5" onClick={onDeleteClick}>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction
+            className="relative [&_svg]:size-4.5"
+            onClick={onDeleteClick}
+          >
             <span className={cn(loading && "opacity-0")}>Delete</span>
             {loading && (
               <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <Loader2Icon className="size-5.5 animate-spin" />
+                <Loader2Icon className="animate-spin" />
               </span>
             )}
           </AlertDialogAction>
