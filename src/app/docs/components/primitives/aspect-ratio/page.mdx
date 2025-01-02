@@ -1,0 +1,53 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Aspect Ratio</Title>
+<Description>Displays content within a desired ratio.</Description>
+<ComponentPreview id="aspectRatio" />
+
+## Installation
+<Steps>
+<StepTitle>Install the following dependencies.</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-aspect-ratio
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="aspectRatio" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+</Steps>
+
+## Usage
+```tsx
+import Image from "next/image";
+ 
+import { AspectRatio } from "~/components/ui/AspectRatio";
+```
+
+```tsx
+<AspectRatio ratio={16 / 9} className="overflow-hidden rounded-2 bg-muted">
+  <Image
+    src="https://images.unsplash.com/photo-1715412406818-48241c841c9e?q=80&w=2828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="Photo by Drew Beamer"
+    fill
+    className="object-cover"
+  />
+</AspectRatio>
+```
+
+## Examples
+
+### Next.js Image
+Have `<AspectRatio>` define the size of the image, and add the `fill` prop and `object-cover` class to `<Image>`.
+<ComponentPreview id="aspectRatio" />
+
+<Footer previousLabel="Alert Dialog" previousHref="/docs/components/primitives/alert-dialog" nextLabel="Avatar" nextHref="/docs/components/primitives/avatar" />

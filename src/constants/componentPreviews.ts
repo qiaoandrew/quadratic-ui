@@ -3,6 +3,7 @@ import AccordionMultipleDemo from "~/components/docs/demos/accordion/AccordionMu
 import AccordionSingleNonCollapsibleDemo from "~/components/docs/demos/accordion/AccordionSingleNonCollapsibleDemo";
 import AlertDialogControlledDemo from "~/components/docs/demos/alert-dialog/AlertDialogControlledDemo";
 import AlertDialogDemo from "~/components/docs/demos/alert-dialog/AlertDialogDemo";
+import AspectRatioDemo from "~/components/docs/demos/aspect-ratio/AspectRatioDemo";
 import ButtonDemo from "~/components/docs/demos/button/ButtonDemo";
 import ButtonDestructiveDemo from "~/components/docs/demos/button/ButtonDestructiveDemo";
 import ButtonDestructiveOutlineDemo from "~/components/docs/demos/button/ButtonDestructiveOutlineDemo";
@@ -34,6 +35,10 @@ export const COMPONENT_PREVIEWS = {
   alertDialogControlled: {
     Preview: AlertDialogControlledDemo,
     path: "src/components/docs/demos/alert-dialog/AlertDialogControlledDemo.tsx",
+  },
+  aspectRatio: {
+    Preview: AspectRatioDemo,
+    path: "src/components/docs/demos/aspect-ratio/AspectRatioDemo.tsx",
   },
   button: {
     Preview: ButtonDemo,
