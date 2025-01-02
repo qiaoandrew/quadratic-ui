@@ -4,6 +4,9 @@ import AccordionSingleNonCollapsibleDemo from "~/components/docs/demos/accordion
 import AlertDialogControlledDemo from "~/components/docs/demos/alert-dialog/AlertDialogControlledDemo";
 import AlertDialogDemo from "~/components/docs/demos/alert-dialog/AlertDialogDemo";
 import AspectRatioDemo from "~/components/docs/demos/aspect-ratio/AspectRatioDemo";
+import AvatarDemo from "~/components/docs/demos/avatar/AvatarDemo";
+import AvatarInitialsDemo from "~/components/docs/demos/avatar/AvatarInitialsDemo";
+import AvatarTooltipDemo from "~/components/docs/demos/avatar/AvatarTooltipDemo";
 import ButtonDemo from "~/components/docs/demos/button/ButtonDemo";
 import ButtonDestructiveDemo from "~/components/docs/demos/button/ButtonDestructiveDemo";
 import ButtonDestructiveOutlineDemo from "~/components/docs/demos/button/ButtonDestructiveOutlineDemo";
@@ -39,6 +42,18 @@ export const COMPONENT_PREVIEWS = {
   aspectRatio: {
     Preview: AspectRatioDemo,
     path: "src/components/docs/demos/aspect-ratio/AspectRatioDemo.tsx",
+  },
+  avatar: {
+    Preview: AvatarDemo,
+    path: "src/components/docs/demos/avatar/AvatarDemo.tsx",
+  },
+  avatarInitials: {
+    Preview: AvatarInitialsDemo,
+    path: "src/components/docs/demos/avatar/AvatarInitialsDemo.tsx",
+  },
+  avatarTooltip: {
+    Preview: AvatarTooltipDemo,
+    path: "src/components/docs/demos/avatar/AvatarTooltipDemo.tsx",
   },
   button: {
     Preview: ButtonDemo,

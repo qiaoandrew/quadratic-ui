@@ -1,0 +1,55 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Avatar</Title>
+<Description>An image element with a fallback for representing the user.</Description>
+<ComponentPreview id="avatar" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-avatar
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="avatar" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/Avatar";
+```
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/qiaoandrew.png" alt="@qiaoandrew" />
+  <AvatarFallback>AQ</AvatarFallback>
+</Avatar>
+```
+
+## Examples
+
+### Fallback
+`<AvatarFallback>` is rendered while `<AvatarImage>` is loading.
+<ComponentPreview id="avatar" />
+
+### Initials
+Remove `<AvatarImage>` to display static content, like initials in this case.
+<ComponentPreview id="avatarInitials" />
+
+### Tooltip
+<ComponentPreview id="avatarTooltip" />
+
+<Footer previousLabel="Aspect Ratio" previousHref="/docs/components/primitives/aspect-ratio" nextLabel="Badge" nextHref="/docs/components/primitives/badge" />
