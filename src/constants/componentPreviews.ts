@@ -7,6 +7,15 @@ import AspectRatioDemo from "~/components/docs/demos/aspect-ratio/AspectRatioDem
 import AvatarDemo from "~/components/docs/demos/avatar/AvatarDemo";
 import AvatarInitialsDemo from "~/components/docs/demos/avatar/AvatarInitialsDemo";
 import AvatarTooltipDemo from "~/components/docs/demos/avatar/AvatarTooltipDemo";
+import BadgeDemo from "~/components/docs/demos/badge/BadgeDemo";
+import BadgeSecondaryDemo from "~/components/docs/demos/badge/BadgeSecondaryDemo";
+import BadgeOutlineDemo from "~/components/docs/demos/badge/BadgeOutlineDemo";
+import BadgeDestructiveDemo from "~/components/docs/demos/badge/BadgeDestructiveDemo";
+import BadgeDestructiveOutlineDemo from "~/components/docs/demos/badge/BadgeDestructiveOutlineDemo";
+import BadgeSuccessDemo from "~/components/docs/demos/badge/BadgeSuccessDemo";
+import BadgeSuccessOutlineDemo from "~/components/docs/demos/badge/BadgeSuccessOutlineDemo";
+import BadgeWarningDemo from "~/components/docs/demos/badge/BadgeWarningDemo";
+import BadgeWarningOutlineDemo from "~/components/docs/demos/badge/BadgeWarningOutlineDemo";
 import ButtonDemo from "~/components/docs/demos/button/ButtonDemo";
 import ButtonDestructiveDemo from "~/components/docs/demos/button/ButtonDestructiveDemo";
 import ButtonDestructiveOutlineDemo from "~/components/docs/demos/button/ButtonDestructiveOutlineDemo";
@@ -54,6 +63,42 @@ export const COMPONENT_PREVIEWS = {
   avatarTooltip: {
     Preview: AvatarTooltipDemo,
     path: "src/components/docs/demos/avatar/AvatarTooltipDemo.tsx",
+  },
+  badge: {
+    Preview: BadgeDemo,
+    path: "src/components/docs/demos/badge/BadgeDemo.tsx",
+  },
+  badgeSecondary: {
+    Preview: BadgeSecondaryDemo,
+    path: "src/components/docs/demos/badge/BadgeSecondaryDemo.tsx",
+  },
+  badgeOutline: {
+    Preview: BadgeOutlineDemo,
+    path: "src/components/docs/demos/badge/BadgeOutlineDemo.tsx",
+  },
+  badgeDestructive: {
+    Preview: BadgeDestructiveDemo,
+    path: "src/components/docs/demos/badge/BadgeDestructiveDemo.tsx",
+  },
+  badgeDestructiveOutline: {
+    Preview: BadgeDestructiveOutlineDemo,
+    path: "src/components/docs/demos/badge/BadgeDestructiveOutlineDemo.tsx",
+  },
+  badgeWarning: {
+    Preview: BadgeWarningDemo,
+    path: "src/components/docs/demos/badge/BadgeWarningDemo.tsx",
+  },
+  badgeWarningOutline: {
+    Preview: BadgeWarningOutlineDemo,
+    path: "src/components/docs/demos/badge/BadgeWarningOutlineDemo.tsx",
+  },
+  badgeSuccess: {
+    Preview: BadgeSuccessDemo,
+    path: "src/components/docs/demos/badge/BadgeSuccessDemo.tsx",
+  },
+  badgeSuccessOutline: {
+    Preview: BadgeSuccessOutlineDemo,
+    path: "src/components/docs/demos/badge/BadgeSuccessOutlineDemo.tsx",
   },
   button: {
     Preview: ButtonDemo,
