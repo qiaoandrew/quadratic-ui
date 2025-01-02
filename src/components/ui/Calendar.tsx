@@ -1,7 +1,8 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
+
 import { buttonVariants } from "~/components/ui/Button";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
@@ -17,20 +18,18 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn("bg-background p-2.5", className)}
       classNames={{
-        months:
-          "flex flex-col sm:flex-row gap-y-4 sm:gap-x-4 sm:gap-y-0 relative",
-        month_caption: "flex justify-center h-8 relative items-center",
+        months: "flex flex-col sm:flex-row gap-4 relative",
+        month_caption: "flex justify-center h-8 items-center",
         caption_label: "text-3.5 font-medium",
         nav: "absolute inset-x-0",
         button_previous: cn(
           buttonVariants({ variant: "ghost", subject: "icon", size: "xs" }),
-          "absolute left-0 z-10 [&_svg]:size-4.5",
+          "absolute left-0 top-0 z-10 [&_svg]:size-4.5",
         ),
         button_next: cn(
           buttonVariants({ variant: "ghost", subject: "icon", size: "xs" }),
           "absolute right-0 top-0 z-10 [&_svg]:size-4.5",
         ),
-        month_grid: "w-full border-collapse",
         weekdays: "flex",
         week: "flex",
         weekday:
@@ -39,7 +38,7 @@ function Calendar({
           buttonVariants({ variant: "ghost", subject: "icon", size: "xs" }),
           "p-0 text-3.5 font-normal",
           props.mode === "range" &&
-            "rounded-0 [&.day-range-end]:rounded-r-1.5 [&.day-range-start]:rounded-l-1.5",
+            "[&[aria-selected]]:rounded-0 [&.day-range-end[aria-selected='true']]:rounded-r-1.5 [&.day-range-start[aria-selected='true']]:rounded-l-1.5",
         ),
         day_button: "size-full",
         range_start: "day-range-start",
