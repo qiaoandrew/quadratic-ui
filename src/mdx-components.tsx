@@ -21,7 +21,7 @@ export function useMDXComponents(components: MDXComponents) {
       </h3>
     ),
     p: ({ children }: React.ComponentProps<"p">) => (
-      <p className="mt-4 text-4 leading-7 text-foreground [&:where(h2+&)]:mt-3.5">
+      <p className="mt-4 text-4 leading-7 text-foreground [&:where(h2+&)]:mt-3.5 [&:where(h3+&)]:mt-2.5">
         {children}
       </p>
     ),
