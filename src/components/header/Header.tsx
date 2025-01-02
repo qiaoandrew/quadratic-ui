@@ -25,16 +25,23 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState<boolean>(false);
 
+  const [activeDesktopMenuGroupIdx, setActiveDesktopMenuGroupIdx] =
+    useState<number>(-1);
   const [activeDesktopMenuGroupItems, setActiveDesktopMenuGroupItems] =
     useState<DesktopHeaderGroupItem["items"]>([]);
 
-  const openDesktopMenu = (items: DesktopHeaderGroupItem["items"]) => {
+  const openDesktopMenu = (
+    idx: number,
+    items: DesktopHeaderGroupItem["items"],
+  ) => {
+    setActiveDesktopMenuGroupIdx(idx);
     setActiveDesktopMenuGroupItems(items);
     setIsDesktopMenuOpen(true);
   };
 
   const closeDesktopMenu = () => {
     setIsDesktopMenuOpen(false);
+    setActiveDesktopMenuGroupIdx(-1);
   };
 
   return (
@@ -63,9 +70,11 @@ export default function Header() {
               className="hidden w-4 xl:block"
             />
             <nav className="hidden items-stretch xl:flex">
-              {DESKTOP_NAVIGATION_ITEMS.map((item) => (
+              {DESKTOP_NAVIGATION_ITEMS.map((item, idx) => (
                 <DesktopHeaderItem
+                  idx={idx}
                   item={item}
+                  activeDesktopMenuGroupIdx={activeDesktopMenuGroupIdx}
                   openDesktopMenu={openDesktopMenu}
                   closeDesktopMenu={closeDesktopMenu}
                   key={item.id}
