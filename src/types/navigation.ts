@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 export type MobileHeaderItem = {
   id: string;
   label: string;
@@ -22,6 +24,7 @@ export type DesktopHeaderGroupItem = {
     description: string;
     href: string;
     size: "sm" | "lg";
+    Graphic?: () => JSX.Element;
   }>;
 };
 
