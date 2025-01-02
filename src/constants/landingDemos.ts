@@ -4,6 +4,8 @@ import AvatarDemo from "~/components/landing/demos/AvatarDemo";
 import BadgeDemo from "~/components/landing/demos/BadgeDemo";
 import BreadcrumbDemo from "~/components/landing/demos/BreadcrumbDemo";
 import ButtonDemo from "~/components/landing/demos/ButtonDemo";
+import CalendarDemo from "~/components/landing/demos/CalendarDemo";
+import CalloutDemo from "~/components/landing/demos/CalloutDemo";
 
 export const LANDING_DEMOS = [
   {
@@ -46,13 +48,13 @@ export const LANDING_DEMOS = [
     id: "calendar",
     label: "Calendar",
     href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    Demo: CalendarDemo,
   },
   {
     id: "callout",
     label: "Callout",
     href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    Demo: CalloutDemo,
   },
   {
     id: "card",
