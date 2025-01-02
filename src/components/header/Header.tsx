@@ -48,7 +48,7 @@ export default function Header() {
     <>
       <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur xl:h-6" />
       <header
-        onMouseLeave={() => setIsDesktopMenuOpen(false)}
+        onMouseLeave={closeDesktopMenu}
         className={cn(
           "fixed inset-x-3 top-3 z-40 flex flex-col gap-y-2 overflow-hidden rounded-2.5 border border-border/50 bg-background/60 backdrop-blur transition-[height]",
           "xl:top-6 xl:rounded-3.5",

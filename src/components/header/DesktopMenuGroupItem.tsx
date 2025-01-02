@@ -14,7 +14,8 @@ export default function DesktopMenuGroupItem({
     <Link
       href={item.href}
       className={cn(
-        "relative flex flex-col gap-y-0.5 overflow-hidden rounded-2.5 bg-muted/30 p-3.5",
+        "relative flex flex-col gap-y-0.5 overflow-hidden rounded-2.5 border border-border/50 bg-accent/30 p-3.5 transition-colors",
+        "hover:bg-accent/80",
         item.size === "lg" && "row-span-2",
       )}
     >
