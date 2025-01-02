@@ -16,6 +16,7 @@ import BadgeSuccessDemo from "~/components/docs/demos/badge/BadgeSuccessDemo";
 import BadgeSuccessOutlineDemo from "~/components/docs/demos/badge/BadgeSuccessOutlineDemo";
 import BadgeWarningDemo from "~/components/docs/demos/badge/BadgeWarningDemo";
 import BadgeWarningOutlineDemo from "~/components/docs/demos/badge/BadgeWarningOutlineDemo";
+import BreadcrumbDemo from "~/components/docs/demos/breadcrumb/BreadcrumbDemo";
 import ButtonDemo from "~/components/docs/demos/button/ButtonDemo";
 import ButtonDestructiveDemo from "~/components/docs/demos/button/ButtonDestructiveDemo";
 import ButtonDestructiveOutlineDemo from "~/components/docs/demos/button/ButtonDestructiveOutlineDemo";
@@ -99,6 +100,10 @@ export const COMPONENT_PREVIEWS = {
   badgeSuccessOutline: {
     Preview: BadgeSuccessOutlineDemo,
     path: "src/components/docs/demos/badge/BadgeSuccessOutlineDemo.tsx",
+  },
+  breadcrumb: {
+    Preview: BreadcrumbDemo,
+    path: "src/components/docs/demos/breadcrumb/BreadcrumbDemo.tsx",
   },
   button: {
     Preview: ButtonDemo,

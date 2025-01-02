@@ -82,7 +82,10 @@ function BreadcrumbEllipsis({
     <span
       role="presentation"
       aria-hidden="true"
-      className={cn("flex size-6 items-center justify-center", className)}
+      className={cn(
+        "flex size-6 items-center justify-center rounded-1 transition-colors hover:bg-accent",
+        className,
+      )}
       {...props}
     >
       <MoreHorizontalIcon className="size-4" />
