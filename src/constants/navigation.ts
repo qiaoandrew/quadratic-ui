@@ -4,6 +4,13 @@ import {
   type MobileHeaderItem,
 } from "~/types/navigation";
 
+import NextGraphic from "~/components/header/graphics/NextGraphic";
+import ReactGraphic from "~/components/header/graphics/ReactGraphic";
+import ShadcnUIGraphic from "~/components/header/graphics/ShadcnUIGraphic";
+import T3Graphic from "~/components/header/graphics/T3Graphic";
+import TailwindCSSGraphic from "~/components/header/graphics/TailwindCSSGraphic";
+import TailwindVariantsGraphic from "~/components/header/graphics/TailwindVariantsGraphic";
+
 export const MOBILE_NAVIGATION_ITEMS: MobileHeaderItem[] = [
   {
     id: "components",
@@ -147,6 +154,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
         description: "Beautiful components to copy and paste into your apps.",
         href: "https://ui.shadcn.com",
         size: "lg",
+        Graphic: ShadcnUIGraphic,
       },
       {
         id: "next-js",
@@ -154,6 +162,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
         description: "The React Framework for the Web. By Vercel.",
         href: "https://nextjs.org",
         size: "sm",
+        Graphic: NextGraphic,
       },
       {
         id: "react",
@@ -161,6 +170,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
         description: "The library for web and native user interfaces. By Meta.",
         href: "https://reactjs.org",
         size: "sm",
+        Graphic: ReactGraphic,
       },
       {
         id: "t3",
@@ -168,6 +178,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
         description: "The best way to start a full-stack, typesafe Next.js app",
         href: "https://create.t3.gg",
         size: "lg",
+        Graphic: T3Graphic,
       },
       {
         id: "tailwind-css",
@@ -175,14 +186,16 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
         description: "A utility-first CSS framework to build any design.",
         href: "https://tailwindcss.com",
         size: "sm",
+        Graphic: TailwindCSSGraphic,
       },
       {
         id: "tailwind-variants",
         label: "Tailwind Variants",
         description:
-          "A collection of Tailwind CSS classes for common UI patterns.",
+          "The power of Tailwind combined with a first-class variant API.",
         href: "https://www.tailwind-variants.org",
         size: "sm",
+        Graphic: TailwindVariantsGraphic,
       },
     ],
   },

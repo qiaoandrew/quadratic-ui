@@ -25,23 +25,30 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState<boolean>(false);
 
+  const [activeDesktopMenuGroupIdx, setActiveDesktopMenuGroupIdx] =
+    useState<number>(-1);
   const [activeDesktopMenuGroupItems, setActiveDesktopMenuGroupItems] =
     useState<DesktopHeaderGroupItem["items"]>([]);
 
-  const openDesktopMenu = (items: DesktopHeaderGroupItem["items"]) => {
+  const openDesktopMenu = (
+    idx: number,
+    items: DesktopHeaderGroupItem["items"],
+  ) => {
+    setActiveDesktopMenuGroupIdx(idx);
     setActiveDesktopMenuGroupItems(items);
     setIsDesktopMenuOpen(true);
   };
 
   const closeDesktopMenu = () => {
     setIsDesktopMenuOpen(false);
+    setActiveDesktopMenuGroupIdx(-1);
   };
 
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur xl:h-6" />
       <header
-        onMouseLeave={() => setIsDesktopMenuOpen(false)}
+        onMouseLeave={closeDesktopMenu}
         className={cn(
           "fixed inset-x-3 top-3 z-40 flex flex-col gap-y-2 overflow-hidden rounded-2.5 border border-border/50 bg-background/60 backdrop-blur transition-[height]",
           "xl:top-6 xl:rounded-3.5",
@@ -63,9 +70,11 @@ export default function Header() {
               className="hidden w-4 xl:block"
             />
             <nav className="hidden items-stretch xl:flex">
-              {DESKTOP_NAVIGATION_ITEMS.map((item) => (
+              {DESKTOP_NAVIGATION_ITEMS.map((item, idx) => (
                 <DesktopHeaderItem
+                  idx={idx}
                   item={item}
+                  activeDesktopMenuGroupIdx={activeDesktopMenuGroupIdx}
                   openDesktopMenu={openDesktopMenu}
                   closeDesktopMenu={closeDesktopMenu}
                   key={item.id}
