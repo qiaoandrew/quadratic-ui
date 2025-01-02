@@ -1,0 +1,74 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Alert Dialog</Title>
+<Description>A modal dialog that interrupts the user with important content and expects a response.</Description>
+<ComponentPreview id="alertDialog" />
+
+## Installation
+<Steps>
+<StepTitle>Install [`Button`](/docs/components/primitives/button) if you haven't already.</StepTitle>
+
+<StepTitle>Install the following dependencies.</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-alert-dialog
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="alertDialog" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+</Steps>
+
+## Usage
+```tsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "~/components/ui/AlertDialog";
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger>Open</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Continue</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+## Examples
+
+### Default
+<ComponentPreview id="alertDialog" />
+
+### Controlled
+Use the controlled props to programmatically close the Alert Dialog. Here, I'm emulating an asynchronous action to delay the closing of the dialog.
+<ComponentPreview id="alertDialogControlled" />
+
+<Footer previousLabel="Accordion" previousHref="/docs/components/primitives/accordion" nextLabel="Aspect Ratio" nextHref="/docs/components/primitives/aspect-ratio" />

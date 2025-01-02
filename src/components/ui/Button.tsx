@@ -143,6 +143,7 @@ function Button({
   className,
   variant,
   size,
+  subject,
   asChild = false,
   ...props
 }: ButtonProps) {
@@ -150,7 +151,7 @@ function Button({
 
   return (
     <Comp
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size, subject, className }))}
       {...props}
     />
   );

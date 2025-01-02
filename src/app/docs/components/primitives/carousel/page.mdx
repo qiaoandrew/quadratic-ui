@@ -1,0 +1,58 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Carousel</Title>
+<Description>A carousel with motion and swipe built using Embla.</Description>
+<ComponentPreview id="carousel" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install [`Button`](/docs/components/primitives/button) if you haven't already.</StepTitle>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add embla-carousel-react
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="carousel" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+<StepTitle>There is a LOT you can do with Embla Carousel. Take a look at its [documentation](https://www.embla-carousel.com/get-started/react/) to see how it can fit your needs.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "~/components/ui/Carousel";
+```
+
+```tsx
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>1</CarouselItem>
+    <CarouselItem>2</CarouselItem>
+    <CarouselItem>3</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+<Footer previousLabel="Card" previousHref="/docs/components/patterns/card" nextLabel="Collapsible" nextHref="/docs/components/patterns/collapsible" />

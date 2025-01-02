@@ -1,0 +1,73 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Badge</Title>
+<Description>Displays a badge or a component that looks like a badge.</Description>
+<ComponentPreview id="badge" />
+
+## Installation
+<Steps>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="badge" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Badge } from "~/components/ui/Badge";
+```
+```tsx
+<Badge>Badge</Badge>
+```
+
+## Next.js Link
+Use the `badgeVariants` helper to make `<Link />` look like `<Badge />`.
+```tsx
+import Link from "next/link";
+import { badgeVariants } from "~/components/ui/Badge";
+```
+```tsx
+<Link href="/" className={badgeVariants({ variant: "outline" })}>
+    Home
+</Link>
+```
+
+## Examples
+
+### Default
+<ComponentPreview id="badge" />
+
+### Secondary
+<ComponentPreview id="badgeSecondary" />
+
+### Outline
+<ComponentPreview id="badgeOutline" />
+
+### Destructive
+<ComponentPreview id="badgeDestructive" />
+
+### Destructive Outline
+<ComponentPreview id="badgeDestructiveOutline" />
+
+### Warning
+<ComponentPreview id="badgeWarning" />
+
+### Warning Outline
+<ComponentPreview id="badgeWarningOutline" />
+
+### Success
+<ComponentPreview id="badgeSuccess" />
+
+### Success Outline
+<ComponentPreview id="badgeSuccessOutline" />
+
+<Footer previousLabel="Avatar" previousHref="/docs/components/primitives/avatar" nextLabel="Breadcrumb" nextHref="/docs/components/primitives/breadcrumb" />

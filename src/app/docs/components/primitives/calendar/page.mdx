@@ -1,0 +1,56 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Calendar</Title>
+<Description>A date field component that allows users to enter and edit date.</Description>
+<ComponentPreview id="calendar" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install [`<Button />`](/docs/components/primitives/button) if you haven't already.</StepTitle>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add react-day-picker date-fns
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="calendar" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Calendar } from "~/components/ui/Calendar";
+```
+
+```tsx
+const [date, setDate] = useState<Date | undefined>(new Date());
+```
+
+```tsx
+<Calendar
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+  className="rounded-3 border"
+/>
+```
+
+## Date Picker
+You can use the `<Calendar />` component to build a date picker. See the [`<DatePicker />`](/docs/components/composites/date-picker) component for more information.
+
+<ComponentPreview id="datePicker" />
+
+<Footer previousLabel="Button" previousHref="/docs/components/primitives/button" nextLabel="Callout" nextHref="/docs/components/primitives/callout" />

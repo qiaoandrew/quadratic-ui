@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { MDXComponents } from "mdx/types";
 
 import { textToHtmlId } from "~/utils/docs";
@@ -21,7 +22,7 @@ export function useMDXComponents(components: MDXComponents) {
       </h3>
     ),
     p: ({ children }: React.ComponentProps<"p">) => (
-      <p className="mt-4 text-4 leading-7 text-foreground [&:where(h2+&)]:mt-3.5">
+      <p className="mt-4 text-4 leading-7 text-foreground/80 [&:where(h2+&)]:mt-3.5 [&:where(h3+&)]:mt-2">
         {children}
       </p>
     ),
@@ -43,5 +44,23 @@ export function useMDXComponents(components: MDXComponents) {
         </CodeBlock>
       );
     },
+    a: ({ href, children }: React.ComponentProps<"a">) =>
+      href?.startsWith("/") ? (
+        <Link
+          href={href}
+          className="text-muted-foreground underline underline-offset-[5px]"
+        >
+          {children}
+        </Link>
+      ) : (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground underline underline-offset-[5px]"
+        >
+          {children}
+        </a>
+      ),
   };
 }

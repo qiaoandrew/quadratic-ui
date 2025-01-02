@@ -1,0 +1,101 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Breadcrumb</Title>
+<Description>Displays the path to the current resource using a hierarchy of links.</Description>
+<ComponentPreview id="breadcrumb" />
+
+## Installation
+<Steps>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="breadcrumb" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "~/components/ui/Breadcrumb";
+```
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Next.js Link
+Use the `asChild` prop on `<BreadcrumbLink />` to use the Next.js `<Link />` component.
+```tsx
+import Link from "next/link";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "~/components/ui/Breadcrumb";
+```
+```tsx
+<Breadcrumb>
+    <BreadcrumbList>
+    <BreadcrumbItem>
+        <BreadcrumbLink asChild>
+        <Link href="/">Home</Link>
+        </BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+        <BreadcrumbLink asChild>
+        <Link href="/docs/getting-started/quickstart">Documentation</Link>
+        </BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+        <BreadcrumbLink asChild>
+        <Link href="/docs/components/primitives/accordion">Components</Link>
+        </BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+        <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+    </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Examples
+
+### With Dropdown
+Compose `<BreadcrumbItem />` with `<DropdownMenu />` to create a dropdown in the breadcrumb.
+
+<ComponentPreview id="breadcrumb" />
+
+<Footer previousLabel="Badge" previousHref="/docs/components/primitives/badge" nextLabel="Button" nextHref="/docs/components/primitives/button" />

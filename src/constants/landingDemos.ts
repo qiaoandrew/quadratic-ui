@@ -1,6 +1,9 @@
 import AccordionDemo from "~/components/landing/demos/AccordionDemo";
 import AlertDialogDemo from "~/components/landing/demos/AlertDialogDemo";
 import AvatarDemo from "~/components/landing/demos/AvatarDemo";
+import BadgeDemo from "~/components/landing/demos/BadgeDemo";
+import BreadcrumbDemo from "~/components/landing/demos/BreadcrumbDemo";
+import ButtonDemo from "~/components/landing/demos/ButtonDemo";
 
 export const LANDING_DEMOS = [
   {
@@ -23,55 +26,55 @@ export const LANDING_DEMOS = [
   },
   {
     id: "badge",
-    label: "",
-    href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    label: "Badge",
+    href: "/docs/components/primitives/badge",
+    Demo: BadgeDemo,
   },
   {
     id: "breadcrumb",
-    label: "",
-    href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    label: "Breadcrumb",
+    href: "/docs/components/primitives/breadcrumb",
+    Demo: BreadcrumbDemo,
   },
   {
     id: "button",
-    label: "",
-    href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    label: "Button",
+    href: "/docs/components/primitives/button",
+    Demo: ButtonDemo,
   },
   {
     id: "calendar",
-    label: "",
+    label: "Calendar",
     href: "/docs/components/primitives/",
     Demo: AccordionDemo,
   },
   {
     id: "callout",
-    label: "",
+    label: "Callout",
     href: "/docs/components/primitives/",
     Demo: AccordionDemo,
   },
   {
     id: "card",
-    label: "",
+    label: "Card",
     href: "/docs/components/primitives/",
     Demo: AccordionDemo,
   },
   {
     id: "checkbox",
-    label: "",
+    label: "Checkbox",
     href: "/docs/components/primitives/",
     Demo: AccordionDemo,
   },
   {
     id: "collapsible",
-    label: "",
+    label: "Collapsible",
     href: "/docs/components/primitives/",
     Demo: AccordionDemo,
   },
   {
     id: "combobox",
-    label: "",
+    label: "Combobox",
     href: "/docs/components/primitives/",
     Demo: AccordionDemo,
   },

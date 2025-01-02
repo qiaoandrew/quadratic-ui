@@ -18,5 +18,5 @@ export type DocsItem = {
   id: string;
   href: string;
   label: string;
-  Icon: Icon;
+  Icon?: Icon;
 };

@@ -1,0 +1,33 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Date Picker</Title>
+<Description>A date picker component with range and presets.</Description>
+<ComponentPreview id="datePicker" />
+
+## Installation
+<Steps>
+
+<StepTitle>Date Picker is built using a composition of the `<Popover />` and `<Calendar />` components. Follow installation for [Popover](/docs/components/primitives/popover) and [Calendar](/docs/components/primitives/calendar).</StepTitle>
+
+</Steps>
+
+## Usage
+<FileSource id="datePickerDemo" />
+
+## Examples
+
+### Default
+<ComponentPreview id="datePicker" />
+
+### Range
+<ComponentPreview id="datePickerRange" />
+
+### Form
+<ComponentPreview id="datePickerForm" />
+
+<Footer previousLabel="Combobox" previousHref="/docs/components/composites/combobox" nextLabel="Card" nextHref="/docs/components/patterns/card" />
