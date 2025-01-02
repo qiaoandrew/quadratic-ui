@@ -36,6 +36,7 @@ import CalloutDestructiveDemo from "~/components/docs/demos/callout/CalloutDestr
 import CalloutWarningDemo from "~/components/docs/demos/callout/CalloutWarningDemo";
 import CalloutSuccessDemo from "~/components/docs/demos/callout/CalloutSuccessDemo";
 import CalloutInfoDemo from "~/components/docs/demos/callout/CalloutInfoDemo";
+import CardDemo from "~/components/docs/demos/card/CardDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -177,6 +178,10 @@ export const COMPONENT_PREVIEWS = {
   calloutInfo: {
     Preview: CalloutInfoDemo,
     path: "src/components/docs/demos/callout/CalloutInfoDemo.tsx",
+  },
+  card: {
+    Preview: CardDemo,
+    path: "src/components/docs/demos/card/CardDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,

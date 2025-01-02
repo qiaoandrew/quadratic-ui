@@ -1,0 +1,51 @@
+import { cn } from "~/utils/tailwind";
+
+function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cn(
+        "rounded-4 border bg-card px-6 pb-6 pt-5 text-card-foreground",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function CardHeader({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className={cn("flex flex-col gap-y-1.5 pb-5", className)} {...props} />
+  );
+}
+
+function CardBody({ ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div {...props} />;
+}
+
+function CardFooter({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("flex items-center pt-6", className)} {...props} />;
+}
+
+function CardTitle({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return <h3 className={cn("text-5 font-semibold", className)} {...props} />;
+}
+
+function CardDescription({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <p className={cn("text-3.5 text-muted-foreground", className)} {...props} />
+  );
+}
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardBody };
