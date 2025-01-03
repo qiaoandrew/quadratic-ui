@@ -107,7 +107,11 @@ export default function Header() {
         </nav>
         <nav className="hidden grid-flow-col grid-cols-4 gap-4 px-4 pb-4 xl:grid xl:h-[260px] xl:min-h-[260px] 2xl:h-[296px] 2xl:min-h-[296px]">
           {activeDesktopMenuGroupItems.map((item) => (
-            <DesktopMenuGroupItem item={item} key={item.id} />
+            <DesktopMenuGroupItem
+              closeDesktopMenu={closeDesktopMenu}
+              item={item}
+              key={item.id}
+            />
           ))}
         </nav>
       </header>
