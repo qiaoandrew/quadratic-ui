@@ -4,15 +4,18 @@ import { cn } from "~/utils/tailwind";
 import type { DesktopHeaderGroupItem } from "~/types/navigation";
 
 interface DesktopMenuGroupItemProps {
+  closeDesktopMenu: () => void;
   item: DesktopHeaderGroupItem["items"][number];
 }
 
 export default function DesktopMenuGroupItem({
+  closeDesktopMenu,
   item,
 }: DesktopMenuGroupItemProps) {
   return (
     <Link
       href={item.href}
+      onClick={closeDesktopMenu}
       className={cn(
         "relative flex flex-col gap-y-0.5 overflow-hidden rounded-2.5 border border-border/50 bg-accent/30 p-3.5 transition-colors",
         "hover:bg-accent/80",

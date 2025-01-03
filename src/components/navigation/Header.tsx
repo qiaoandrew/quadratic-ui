@@ -11,10 +11,10 @@ import {
   DESKTOP_NAVIGATION_ITEMS,
 } from "~/constants/navigation";
 
-import DesktopHeaderItem from "~/components/header/DesktopHeaderItem";
-import DesktopMenuGroupItem from "~/components/header/DesktopMenuGroupItem";
-import Logo from "~/components/header/Logo";
-import MobileHeaderToggle from "~/components/header/MobileHeaderToggle";
+import DesktopHeaderItem from "~/components/navigation/DesktopHeaderItem";
+import DesktopMenuGroupItem from "~/components/navigation/DesktopMenuGroupItem";
+import Logo from "~/components/navigation/Logo";
+import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
@@ -107,7 +107,11 @@ export default function Header() {
         </nav>
         <nav className="hidden grid-flow-col grid-cols-4 gap-4 px-4 pb-4 xl:grid xl:h-[260px] xl:min-h-[260px] 2xl:h-[296px] 2xl:min-h-[296px]">
           {activeDesktopMenuGroupItems.map((item) => (
-            <DesktopMenuGroupItem item={item} key={item.id} />
+            <DesktopMenuGroupItem
+              closeDesktopMenu={closeDesktopMenu}
+              item={item}
+              key={item.id}
+            />
           ))}
         </nav>
       </header>

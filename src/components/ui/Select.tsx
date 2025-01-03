@@ -149,7 +149,7 @@ function SelectSeparator({
 }: React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>) {
   return (
     <SelectPrimitive.Separator
-      className={cn("-mx-1 my-1 h-0.25 bg-muted", className)}
+      className={cn("-mx-1 my-1 h-0.25 bg-border", className)}
       {...props}
     />
   );
