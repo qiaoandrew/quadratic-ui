@@ -3,7 +3,10 @@ import type { VariantProps } from "tailwind-variants";
 import { tv, cn } from "~/utils/tailwind";
 
 const calloutVariants = tv({
-  base: "relative flex w-full gap-x-2.5 rounded-2.5 border px-3 py-3.5 text-3.5 [&>svg]:size-5",
+  base: [
+    "relative flex w-full gap-x-2.5 rounded-2.5 border px-3 py-3.5 text-3.5",
+    "[&>svg]:size-5 [&>svg]:shrink-0",
+  ],
   variants: {
     variant: {
       default: "border-border bg-background text-foreground",
