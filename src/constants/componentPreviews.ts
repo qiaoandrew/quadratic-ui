@@ -38,6 +38,7 @@ import CarouselDemo from "~/components/docs/demos/carousel/CarouselDemo";
 import CheckboxDemo from "~/components/docs/demos/checkbox/CheckboxDemo";
 import CheckboxDisabledDemo from "~/components/docs/demos/checkbox/CheckboxDisabledDemo";
 import CheckboxFormDemo from "~/components/docs/demos/checkbox/CheckboxFormDemo";
+import CollapsibleDemo from "~/components/docs/demos/collapsible/CollapsibleDemo";
 import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
@@ -202,6 +203,10 @@ export const COMPONENT_PREVIEWS = {
   checkboxForm: {
     Preview: CheckboxFormDemo,
     path: "src/components/docs/demos/checkbox/CheckboxFormDemo.tsx",
+  },
+  collapsible: {
+    Preview: CollapsibleDemo,
+    path: "src/components/docs/demos/collapsible/CollapsibleDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,
