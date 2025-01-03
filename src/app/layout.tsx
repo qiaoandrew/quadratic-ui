@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { inter, interDisplay } from "~/utils/fonts";
 
 import Header from "~/components/header/Header";
+import Spotlight from "~/components/effects/Spotlight";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -32,6 +33,7 @@ export default function RootLayout({
           enableSystem={false}
         >
           <Header />
+          <Spotlight />
           <main>{children}</main>
         </ThemeProvider>
       </body>
