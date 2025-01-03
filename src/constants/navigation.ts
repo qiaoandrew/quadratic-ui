@@ -1,15 +1,16 @@
 import {
   DesktopHeaderItemType,
   type DesktopHeaderItem,
+  type FooterGroup,
   type MobileHeaderItem,
 } from "~/types/navigation";
 
-import NextGraphic from "~/components/header/graphics/NextGraphic";
-import ReactGraphic from "~/components/header/graphics/ReactGraphic";
-import ShadcnUIGraphic from "~/components/header/graphics/ShadcnUIGraphic";
-import T3Graphic from "~/components/header/graphics/T3Graphic";
-import TailwindCSSGraphic from "~/components/header/graphics/TailwindCSSGraphic";
-import TailwindVariantsGraphic from "~/components/header/graphics/TailwindVariantsGraphic";
+import NextGraphic from "~/components/navigation/graphics/NextGraphic";
+import ReactGraphic from "~/components/navigation/graphics/ReactGraphic";
+import ShadcnUIGraphic from "~/components/navigation/graphics/ShadcnUIGraphic";
+import T3Graphic from "~/components/navigation/graphics/T3Graphic";
+import TailwindCSSGraphic from "~/components/navigation/graphics/TailwindCSSGraphic";
+import TailwindVariantsGraphic from "~/components/navigation/graphics/TailwindVariantsGraphic";
 
 export const MOBILE_NAVIGATION_ITEMS: MobileHeaderItem[] = [
   {
@@ -210,5 +211,97 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
     label: "Figma",
     type: DesktopHeaderItemType.Link,
     href: "https://www.figma.com/community/file/1351315753275186770/quadratic-ui-shadcn-ui-design-system-component-library",
+  },
+];
+
+export const FOOTER_NAVIGATION_ITEMS: FooterGroup[] = [
+  {
+    id: "getting-started",
+    label: "Getting Started",
+    items: [
+      {
+        id: "introduction",
+        label: "Introduction",
+        href: "/docs/getting-started/introduction",
+      },
+      {
+        id: "quickstart",
+        label: "Quickstart",
+        href: "/docs/getting-started/quickstart",
+      },
+      {
+        id: "credits",
+        label: "Credits",
+        href: "/docs/getting-started/credits",
+      },
+    ],
+  },
+  {
+    id: "guides",
+    label: "Guides",
+    items: [
+      {
+        id: "create-t3-app",
+        label: "Create T3 App",
+        href: "/docs/getting-started/create-t3-app",
+      },
+      {
+        id: "dark-mode",
+        label: "Dark Mode",
+        href: "/docs/getting-started/dark-mode",
+      },
+      {
+        id: "customization",
+        label: "Customization",
+        href: "/docs/getting-started/customization",
+      },
+      {
+        id: "contributing",
+        label: "Contributing",
+        href: "/docs/getting-started/contributing",
+      },
+    ],
+  },
+  {
+    id: "components",
+    label: "Components",
+    items: [
+      {
+        id: "primitives",
+        label: "Primitives",
+        href: "/docs/components/primitives/accordion",
+      },
+      {
+        id: "charts",
+        label: "Charts",
+        href: "/docs/components/charts/bar-chart",
+      },
+    ],
+  },
+  {
+    id: "resources",
+    label: "Resources",
+    items: [
+      {
+        id: "shadcn-ui",
+        label: "shadcn/ui",
+        href: "https://ui.shadcn.com",
+      },
+      {
+        id: "radix-ui",
+        label: "Radix UI",
+        href: "https://www.radix-ui.com",
+      },
+      {
+        id: "next-js",
+        label: "Next.js",
+        href: "https://nextjs.org",
+      },
+      {
+        id: "tailwind-css",
+        label: "Tailwind CSS",
+        href: "https://tailwindcss.com",
+      },
+    ],
   },
 ];

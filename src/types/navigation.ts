@@ -32,3 +32,13 @@ export type DesktopHeaderLinkItem = {
   type: DesktopHeaderItemType.Link;
   href: string;
 };
+
+export type FooterGroup = {
+  id: string;
+  label: string;
+  items: Array<{
+    id: string;
+    label: string;
+    href: string;
+  }>;
+};

@@ -11,10 +11,10 @@ import {
   DESKTOP_NAVIGATION_ITEMS,
 } from "~/constants/navigation";
 
-import DesktopHeaderItem from "~/components/header/DesktopHeaderItem";
-import DesktopMenuGroupItem from "~/components/header/DesktopMenuGroupItem";
-import Logo from "~/components/header/Logo";
-import MobileHeaderToggle from "~/components/header/MobileHeaderToggle";
+import DesktopHeaderItem from "~/components/navigation/DesktopHeaderItem";
+import DesktopMenuGroupItem from "~/components/navigation/DesktopMenuGroupItem";
+import Logo from "~/components/navigation/Logo";
+import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,

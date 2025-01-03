@@ -6,7 +6,7 @@ import VerticalDividers from "~/components/landing/dividers/VerticalDividers";
 
 export default function Demos() {
   return (
-    <section className="relative grid gap-x-8 px-6 pt-7 md:grid-cols-2 3xl:grid-cols-3 3xl:px-[calc((100vw-1248px)/2)]">
+    <section className="relative grid gap-x-8 px-6 pb-12 pt-7 md:grid-cols-2 3xl:grid-cols-3 3xl:px-[calc((100vw-1248px)/2)]">
       <VerticalDividers />
       <HorizontalDividers />
       {LANDING_DEMOS.map((demo) => (
