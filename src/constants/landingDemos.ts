@@ -6,6 +6,8 @@ import BreadcrumbDemo from "~/components/landing/demos/BreadcrumbDemo";
 import ButtonDemo from "~/components/landing/demos/ButtonDemo";
 import CalendarDemo from "~/components/landing/demos/CalendarDemo";
 import CalloutDemo from "~/components/landing/demos/CalloutDemo";
+import CardDemo from "~/components/landing/demos/CardDemo";
+import CheckboxDemo from "~/components/landing/demos/CheckboxDemo";
 
 export const LANDING_DEMOS = [
   {
@@ -60,13 +62,13 @@ export const LANDING_DEMOS = [
     id: "card",
     label: "Card",
     href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    Demo: CardDemo,
   },
   {
     id: "checkbox",
     label: "Checkbox",
     href: "/docs/components/primitives/",
-    Demo: AccordionDemo,
+    Demo: CheckboxDemo,
   },
   {
     id: "collapsible",

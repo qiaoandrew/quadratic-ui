@@ -22,14 +22,14 @@ function SelectTrigger({
         "focus:outline-none focus:ring-1 focus:ring-ring",
         "disabled:cursor-not-allowed disabled:opacity-50",
         "[&>span]:line-clamp-1 [&>span]:text-left",
-        "[&>svg]:transition-transform [&>svg]:data-[state=open]:rotate-180",
+        "[&>svg]:size-4 [&>svg]:text-muted-foreground [&>svg]:transition-transform [&>svg]:data-[state=open]:rotate-180",
         className,
       )}
       {...props}
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="size-4 text-muted-foreground" />
+        <ChevronDownIcon />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );
