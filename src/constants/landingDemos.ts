@@ -7,6 +7,7 @@ import ButtonDemo from "~/components/landing/demos/ButtonDemo";
 import CalendarDemo from "~/components/landing/demos/CalendarDemo";
 import CalloutDemo from "~/components/landing/demos/CalloutDemo";
 import CardDemo from "~/components/landing/demos/CardDemo";
+import CarouselDemo from "~/components/landing/demos/CarouselDemo";
 import CheckboxDemo from "~/components/landing/demos/CheckboxDemo";
 
 export const LANDING_DEMOS = [
@@ -63,6 +64,12 @@ export const LANDING_DEMOS = [
     label: "Card",
     href: "/docs/components/primitives/",
     Demo: CardDemo,
+  },
+  {
+    id: "carousel",
+    label: "Carousel",
+    href: "/docs/components/primitives/",
+    Demo: CarouselDemo,
   },
   {
     id: "checkbox",

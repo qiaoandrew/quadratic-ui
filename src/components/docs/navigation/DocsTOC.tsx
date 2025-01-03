@@ -44,7 +44,7 @@ export default function DocsTOC({ tocs }: DocsTOCProps) {
               </Link>
             ))}
           </nav>
-          <ScrollBar className="bg-transparent" />
+          <ScrollBar className="[&>div]:bg-transparent" />
         </ScrollArea>
       </div>
     </div>
