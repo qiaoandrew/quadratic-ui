@@ -64,8 +64,7 @@ function AlertDialogFooter({
     <div
       className={cn(
         "flex flex-col-reverse gap-y-3 pt-7",
-        "xs:flex-row xs:justify-end xs:gap-x-4",
-        "md:pt-8",
+        "xs:flex-row xs:justify-end xs:gap-x-4 xs:pt-8",
         className,
       )}
       {...props}

@@ -39,9 +39,12 @@ import CheckboxDemo from "~/components/docs/demos/checkbox/CheckboxDemo";
 import CheckboxDisabledDemo from "~/components/docs/demos/checkbox/CheckboxDisabledDemo";
 import CheckboxFormDemo from "~/components/docs/demos/checkbox/CheckboxFormDemo";
 import CollapsibleDemo from "~/components/docs/demos/collapsible/CollapsibleDemo";
+import CommandDemo from "~/components/docs/demos/command/CommandDemo";
+import CommandDialogDemo from "~/components/docs/demos/command/CommandDialogDemo";
 import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
+import DialogDemo from "~/components/docs/demos/dialog/DialogDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -208,6 +211,14 @@ export const COMPONENT_PREVIEWS = {
     Preview: CollapsibleDemo,
     path: "src/components/docs/demos/collapsible/CollapsibleDemo.tsx",
   },
+  command: {
+    Preview: CommandDemo,
+    path: "src/components/docs/demos/command/CommandDemo.tsx",
+  },
+  commandDialog: {
+    Preview: CommandDialogDemo,
+    path: "src/components/docs/demos/command/CommandDialogDemo.tsx",
+  },
   datePicker: {
     Preview: DatePickerDemo,
     path: "src/components/docs/demos/date-picker/DatePickerDemo.tsx",
@@ -219,5 +230,9 @@ export const COMPONENT_PREVIEWS = {
   datePickerForm: {
     Preview: DatePickerFormDemo,
     path: "src/components/docs/demos/date-picker/DatePickerFormDemo.tsx",
+  },
+  dialog: {
+    Preview: DialogDemo,
+    path: "src/components/docs/demos/dialog/DialogDemo.tsx",
   },
 };

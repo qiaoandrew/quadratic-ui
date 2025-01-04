@@ -23,9 +23,9 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
   return (
     <Tabs
       defaultValue="preview"
-      className="mt-8 overflow-visible rounded-3 border [&:where(h3+&)]:mt-4"
+      className="mt-9 overflow-visible rounded-3 border [&:where(h3+&)]:mt-4"
     >
-      <TabsList className="rounded-0 h-auto w-full justify-start border-b bg-transparent p-0">
+      <TabsList className="h-auto w-full justify-start rounded-0 border-b bg-transparent p-0">
         <TabsTrigger value="preview" className={tabsTriggerStyles}>
           Preview
         </TabsTrigger>
@@ -39,7 +39,7 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
         </div>
       </TabsContent>
       <TabsContent value="code" className="mt-0">
-        <CodeBlock className="rounded-b-[11px] rounded-t-none border-none">
+        <CodeBlock className="rounded-t-none rounded-b-[11px] border-none">
           {code}
         </CodeBlock>
       </TabsContent>
