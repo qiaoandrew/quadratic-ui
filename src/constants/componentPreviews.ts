@@ -54,6 +54,10 @@ import InputDemo from "~/components/docs/demos/input/InputDemo";
 import InputDisabledDemo from "~/components/docs/demos/input/InputDisabledDemo";
 import InputWithLabelDemo from "~/components/docs/demos/input/InputWithLabelDemo";
 import InputFormDemo from "~/components/docs/demos/input/InputFormDemo";
+import InputOTPDemo from "~/components/docs/demos/input-otp/InputOTPDemo";
+import InputOTPControlledDemo from "~/components/docs/demos/input-otp/InputOTPControlledDemo";
+import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatternDemo";
+import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -279,5 +283,21 @@ export const COMPONENT_PREVIEWS = {
   inputForm: {
     Preview: InputFormDemo,
     path: "src/components/docs/demos/input/InputFormDemo.tsx",
+  },
+  inputOTP: {
+    Preview: InputOTPDemo,
+    path: "src/components/docs/demos/input-otp/InputOTPDemo.tsx",
+  },
+  inputOTPControlled: {
+    Preview: InputOTPControlledDemo,
+    path: "src/components/docs/demos/input-otp/InputOTPControlledDemo.tsx",
+  },
+  inputOTPPattern: {
+    Preview: InputOTPPatternDemo,
+    path: "src/components/docs/demos/input-otp/InputOTPPatternDemo.tsx",
+  },
+  inputOTPForm: {
+    Preview: InputOTPFormDemo,
+    path: "src/components/docs/demos/input-otp/InputOTPFormDemo.tsx",
   },
 };

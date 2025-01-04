@@ -26,8 +26,7 @@ function Callout({
   className,
   variant,
   ...props
-}: React.HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof calloutVariants>) {
+}: React.ComponentProps<"div"> & VariantProps<typeof calloutVariants>) {
   return (
     <div
       role="alert"

@@ -149,11 +149,11 @@ function ContextMenuSeparator({
   );
 }
 
-function ContextMenuShortcutGroup(props: React.HTMLAttributes<HTMLDivElement>) {
+function ContextMenuShortcutGroup(props: React.ComponentProps<"div">) {
   return <ShortcutGroup {...props} />;
 }
 
-function ContextMenuShortcut(props: React.HTMLAttributes<HTMLSpanElement>) {
+function ContextMenuShortcut(props: React.ComponentProps<"span">) {
   return <Shortcut {...props} />;
 }
 

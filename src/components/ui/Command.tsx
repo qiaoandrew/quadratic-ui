@@ -140,11 +140,11 @@ function CommandItem({
   );
 }
 
-function CommandShortcutGroup(props: React.HTMLAttributes<HTMLDivElement>) {
+function CommandShortcutGroup(props: React.ComponentProps<"div">) {
   return <ShortcutGroup {...props} />;
 }
 
-function CommandShortcut(props: React.HTMLAttributes<HTMLSpanElement>) {
+function CommandShortcut(props: React.ComponentProps<"span">) {
   return <Shortcut {...props} />;
 }
 

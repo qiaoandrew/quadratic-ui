@@ -66,7 +66,7 @@ function ShortcutGroup({
   children,
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: React.ComponentProps<"div">) {
   return (
     <div className={cn("ml-auto flex gap-x-1", className)} {...props}>
       {children}
@@ -78,7 +78,7 @@ function Shortcut({
   children,
   className,
   ...props
-}: React.HTMLAttributes<HTMLSpanElement>) {
+}: React.ComponentProps<"span">) {
   return (
     <span
       className={cn(

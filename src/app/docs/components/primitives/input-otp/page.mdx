@@ -4,3 +4,96 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Input OTP</Title>
+<Description>Accessible one-time password component with copy paste functionality.</Description>
+<ComponentPreview id="inputOTP" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add input-otp
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="inputOTP" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+<StepTitle>Add the following animations to your `tailwind.config.ts` file.</StepTitle>
+<StepContent>
+```ts
+import { type Config } from "tailwindcss";
+
+export default {
+  darkMode: ["class"],
+  content: ["./src/**/*.tsx"],
+  theme: {
+    extend: {
+      animation: {
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
+      },
+      keyframes: {
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
+        },
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+```
+</StepContent>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "~/components/ui/InputOTP";
+```
+```tsx
+<InputOTP maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTP>
+```
+
+## Examples
+
+### Pattern
+Use the `pattern` prop to define a custom regex pattern for the input.
+<ComponentPreview id="inputOTPPattern" />
+
+### Separator
+Use `<InputOTPSeparator />` to add a separator between the groups of input.
+<ComponentPreview id="inputOTP" />
+
+### Controlled
+Use the `value` and `onChange` props to control the input value.
+<ComponentPreview id="inputOTPControlled" />
+
+### Form
+<ComponentPreview id="inputOTPForm" />
+
+<Footer previousLabel="Input" previousHref="/docs/components/primitives/input" nextLabel="Label" nextHref="/docs/components/primitives/label" />

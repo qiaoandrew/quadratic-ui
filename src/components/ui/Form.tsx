@@ -74,10 +74,7 @@ const FormItemContext = createContext<FormItemContextValue>(
   {} as FormItemContextValue,
 );
 
-function FormItem({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function FormItem({ className, ...props }: React.ComponentProps<"div">) {
   const id = useId();
 
   return (

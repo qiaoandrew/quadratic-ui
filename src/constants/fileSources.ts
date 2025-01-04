@@ -23,7 +23,7 @@ export const FILE_SOURCES = {
   form: "src/components/ui/Form.tsx",
   hoverCard: "src/components/ui/HoverCard.tsx",
   input: "src/components/ui/Input.tsx",
-  inputOtp: "src/components/ui/InputOTP.tsx",
+  inputOTP: "src/components/ui/InputOTP.tsx",
   label: "src/components/ui/Label.tsx",
   menubar: "src/components/ui/Menubar.tsx",
   navigationMenu: "src/components/ui/NavigationMenu.tsx",

@@ -50,7 +50,7 @@ function AlertDialogContent({
 function AlertDialogHeader({
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: React.ComponentProps<"div">) {
   return (
     <div className={cn("flex flex-col gap-y-1.5", className)} {...props} />
   );
@@ -59,7 +59,7 @@ function AlertDialogHeader({
 function AlertDialogFooter({
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: React.ComponentProps<"div">) {
   return (
     <div
       className={cn(

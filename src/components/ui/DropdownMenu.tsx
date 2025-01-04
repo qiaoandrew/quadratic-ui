@@ -151,13 +151,11 @@ function DropdownMenuSeparator({
   );
 }
 
-function DropdownMenuShortcutGroup(
-  props: React.HTMLAttributes<HTMLDivElement>,
-) {
+function DropdownMenuShortcutGroup(props: React.ComponentProps<"div">) {
   return <ShortcutGroup {...props} />;
 }
 
-function DropdownMenuShortcut(props: React.HTMLAttributes<HTMLSpanElement>) {
+function DropdownMenuShortcut(props: React.ComponentProps<"span">) {
   return <Shortcut {...props} />;
 }
 

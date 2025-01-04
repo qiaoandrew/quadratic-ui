@@ -68,10 +68,7 @@ function DialogContent({
   );
 }
 
-function DialogHeader({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       className={cn("flex flex-col gap-y-1.5 pb-5", "xs:pb-6", className)}
@@ -80,17 +77,11 @@ function DialogHeader({
   );
 }
 
-function DialogBody({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function DialogBody({ className, ...props }: React.ComponentProps<"div">) {
   return <div className={className} {...props} />;
 }
 
-function DialogFooter({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function DialogFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       className={cn(
