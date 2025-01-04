@@ -133,9 +133,8 @@ const buttonVariants = tv({
 });
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ComponentProps<"button">,
     VariantProps<typeof buttonVariants> {
-  ref?: React.Ref<HTMLButtonElement>;
   asChild?: boolean;
 }
 

@@ -61,6 +61,12 @@ import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import ToggleDemo from "~/components/docs/demos/toggle/ToggleDemo";
+import ToggleOutlineDemo from "~/components/docs/demos/toggle/ToggleOutlineDemo";
+import ToggleWithTextDemo from "~/components/docs/demos/toggle/ToggleWithTextDemo";
+import ToggleSmallDemo from "~/components/docs/demos/toggle/ToggleSmallDemo";
+import ToggleLargeDemo from "~/components/docs/demos/toggle/ToggleLargeDemo";
+import ToggleDisabledDemo from "~/components/docs/demos/toggle/ToggleDisabledDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -314,5 +320,29 @@ export const COMPONENT_PREVIEWS = {
   separator: {
     Preview: SeparatorDemo,
     path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  toggle: {
+    Preview: ToggleDemo,
+    path: "src/components/docs/demos/toggle/ToggleDemo.tsx",
+  },
+  toggleOutline: {
+    Preview: ToggleOutlineDemo,
+    path: "src/components/docs/demos/toggle/ToggleOutlineDemo.tsx",
+  },
+  toggleWithText: {
+    Preview: ToggleWithTextDemo,
+    path: "src/components/docs/demos/toggle/ToggleWithTextDemo.tsx",
+  },
+  toggleSmall: {
+    Preview: ToggleSmallDemo,
+    path: "src/components/docs/demos/toggle/ToggleSmallDemo.tsx",
+  },
+  toggleLarge: {
+    Preview: ToggleLargeDemo,
+    path: "src/components/docs/demos/toggle/ToggleLargeDemo.tsx",
+  },
+  toggleDisabled: {
+    Preview: ToggleDisabledDemo,
+    path: "src/components/docs/demos/toggle/ToggleDisabledDemo.tsx",
   },
 };

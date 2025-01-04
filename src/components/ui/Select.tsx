@@ -55,7 +55,7 @@ function SelectScrollUpButton({
 function SelectScrollDownButton({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>) {
+}: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {
   return (
     <SelectPrimitive.ScrollDownButton
       className={cn(
@@ -74,7 +74,7 @@ function SelectContent({
   children,
   position = "popper",
   ...props
-}: React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>) {
+}: React.ComponentProps<typeof SelectPrimitive.Content>) {
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
@@ -109,7 +109,7 @@ function SelectContent({
 function SelectLabel({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>) {
+}: React.ComponentProps<typeof SelectPrimitive.Label>) {
   return (
     <SelectPrimitive.Label
       className={cn("px-2 py-1 text-3.5 font-semibold", className)}
@@ -122,7 +122,7 @@ function SelectItem({
   className,
   children,
   ...props
-}: React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>) {
+}: React.ComponentProps<typeof SelectPrimitive.Item>) {
   return (
     <SelectPrimitive.Item
       className={cn(
@@ -146,7 +146,7 @@ function SelectItem({
 function SelectSeparator({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>) {
+}: React.ComponentProps<typeof SelectPrimitive.Separator>) {
   return (
     <SelectPrimitive.Separator
       className={cn("-mx-1 my-1 h-0.25 bg-border", className)}

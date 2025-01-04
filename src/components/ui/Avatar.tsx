@@ -32,7 +32,7 @@ function AvatarImage({
 function AvatarFallback({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>) {
+}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
   return (
     <AvatarPrimitive.Fallback
       className={cn(
