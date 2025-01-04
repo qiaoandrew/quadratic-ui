@@ -59,6 +59,7 @@ import InputOTPControlledDemo from "~/components/docs/demos/input-otp/InputOTPCo
 import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatternDemo";
 import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
+import MenubarDemo from "~/components/docs/demos/menubar/MenubarDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
 import SwitchDemo from "~/components/docs/demos/switch/SwitchDemo";
@@ -324,6 +325,10 @@ export const COMPONENT_PREVIEWS = {
   label: {
     Preview: LabelDemo,
     path: "src/components/docs/demos/label/LabelDemo.tsx",
+  },
+  menubar: {
+    Preview: MenubarDemo,
+    path: "src/components/docs/demos/menubar/MenubarDemo.tsx",
   },
   progress: {
     Preview: ProgressDemo,

@@ -1,6 +1,8 @@
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-react";
 
+import { cn } from "~/utils/tailwind";
+
 import {
   menuContentVariants,
   menuItemVariants,
@@ -64,7 +66,9 @@ function DropdownMenuContent({
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
         sideOffset={sideOffset}
-        className={menuContentVariants({ className })}
+        className={menuContentVariants({
+          className: cn("data-[state=closed]:animate-out", className),
+        })}
         {...props}
       />
     </DropdownMenuPrimitive.Portal>

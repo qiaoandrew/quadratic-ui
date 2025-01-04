@@ -183,7 +183,7 @@ export default {
       backgroundImage: {
         "gradient-light": "linear-gradient(90deg, #F7F8F8 0%, #919191 100%)",
         spotlight:
-          "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 85%, 0.12) 0, hsla(0, 0%, 55%, 0.05) 50%, hsla(0, 0%, 45%, 0) 80%)",
+          "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 85%, 0.08) 0, hsla(0, 0%, 55%, 0.02) 50%, hsla(0, 0%, 45%, 0) 80%)",
       },
       colors: {
         border: "hsl(var(--border))",

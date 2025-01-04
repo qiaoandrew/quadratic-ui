@@ -1,6 +1,8 @@
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
 import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-react";
 
+import { cn } from "~/utils/tailwind";
+
 import {
   menuSeparatorVariants,
   Shortcut,
@@ -62,7 +64,9 @@ function ContextMenuContent({
   return (
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
-        className={menuContentVariants({ className })}
+        className={menuContentVariants({
+          className: cn("data-[state=closed]:animate-out", className),
+        })}
         {...props}
       />
     </ContextMenuPrimitive.Portal>
