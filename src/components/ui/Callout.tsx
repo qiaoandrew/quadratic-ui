@@ -30,7 +30,7 @@ function Callout({
   return (
     <div
       role="alert"
-      className={cn(calloutVariants({ variant }), className)}
+      className={cn(calloutVariants({ variant, className }))}
       {...props}
     />
   );

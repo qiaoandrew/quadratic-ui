@@ -61,6 +61,10 @@ import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import TextareaDemo from "~/components/docs/demos/textarea/TextareaDemo";
+import TextareaDisabledDemo from "~/components/docs/demos/textarea/TextareaDisabledDemo";
+import TextareaWithLabelDemo from "~/components/docs/demos/textarea/TextareaWithLabelDemo";
+import TextareaFormDemo from "~/components/docs/demos/textarea/TextareaFormDemo";
 import ToggleDemo from "~/components/docs/demos/toggle/ToggleDemo";
 import ToggleOutlineDemo from "~/components/docs/demos/toggle/ToggleOutlineDemo";
 import ToggleWithTextDemo from "~/components/docs/demos/toggle/ToggleWithTextDemo";
@@ -326,6 +330,22 @@ export const COMPONENT_PREVIEWS = {
   separator: {
     Preview: SeparatorDemo,
     path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  textarea: {
+    Preview: TextareaDemo,
+    path: "src/components/docs/demos/textarea/TextareaDemo.tsx",
+  },
+  textareaDisabled: {
+    Preview: TextareaDisabledDemo,
+    path: "src/components/docs/demos/textarea/TextareaDisabledDemo.tsx",
+  },
+  textareaWithLabel: {
+    Preview: TextareaWithLabelDemo,
+    path: "src/components/docs/demos/textarea/TextareaWithLabelDemo.tsx",
+  },
+  textareaForm: {
+    Preview: TextareaFormDemo,
+    path: "src/components/docs/demos/textarea/TextareaFormDemo.tsx",
   },
   toggle: {
     Preview: ToggleDemo,
