@@ -4,3 +4,59 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Drawer</Title>
+<Description>A drawer component.</Description>
+<ComponentPreview id="drawer" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add vaul
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="drawer" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "~/components/ui/Drawer";
+```
+```tsx
+<Drawer>
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+      <DrawerDescription>This action cannot be undone.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <Button>Submit</Button>
+      <DrawerClose>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
+
+<Footer previousLabel="Data Table" previousHref="/docs/components/patterns/data-table" nextLabel="Form" nextHref="/docs/components/patterns/form" />

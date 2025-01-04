@@ -46,6 +46,7 @@ import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
 import DialogDemo from "~/components/docs/demos/dialog/DialogDemo";
+import DrawerDemo from "~/components/docs/demos/drawer/DrawerDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -239,5 +240,9 @@ export const COMPONENT_PREVIEWS = {
   dialog: {
     Preview: DialogDemo,
     path: "src/components/docs/demos/dialog/DialogDemo.tsx",
+  },
+  drawer: {
+    Preview: DrawerDemo,
+    path: "src/components/docs/demos/drawer/DrawerDemo.tsx",
   },
 };
