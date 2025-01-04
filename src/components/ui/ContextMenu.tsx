@@ -4,9 +4,11 @@ import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-react";
 import { cn } from "~/utils/tailwind";
 
 import {
-  SharedMenuSeparator,
-  SharedMenuShortcut,
-  SharedMenuShortcutGroup,
+  menuSeparatorVariants,
+  Shortcut,
+  ShortcutGroup,
+  menuSubTriggerVariants,
+  menuLabelVariants,
 } from "~/components/ui/SharedMenu";
 
 const ContextMenu = ContextMenuPrimitive.Root;
@@ -31,17 +33,11 @@ function ContextMenuSubTrigger({
 }) {
   return (
     <ContextMenuPrimitive.SubTrigger
-      className={cn(
-        "flex cursor-default select-none items-center rounded-1 px-2 py-1.5 text-3.5 outline-none",
-        "focus:bg-accent focus:text-accent-foreground",
-        "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
-        inset && "pl-8",
-        className,
-      )}
+      className={menuSubTriggerVariants({ inset, className })}
       {...props}
     >
       {children}
-      <ChevronRightIcon className="ml-auto size-4" />
+      <ChevronRightIcon />
     </ContextMenuPrimitive.SubTrigger>
   );
 }
@@ -166,32 +162,30 @@ function ContextMenuLabel({
 }) {
   return (
     <ContextMenuPrimitive.Label
-      className={cn(
-        "px-2 py-1 text-3.5 font-semibold",
-        inset && "pl-8",
-        className,
-      )}
+      className={menuLabelVariants({ inset, className })}
       {...props}
     />
   );
 }
 
-function ContextMenuSeparator(
-  props: React.ComponentProps<typeof ContextMenuPrimitive.Separator>,
-) {
+function ContextMenuSeparator({
+  className,
+  ...props
+}: React.ComponentProps<typeof ContextMenuPrimitive.Separator>) {
   return (
-    <ContextMenuPrimitive.Separator asChild>
-      <SharedMenuSeparator {...props} />
-    </ContextMenuPrimitive.Separator>
+    <ContextMenuPrimitive.Separator
+      className={menuSeparatorVariants({ className })}
+      {...props}
+    />
   );
 }
 
 function ContextMenuShortcutGroup(props: React.HTMLAttributes<HTMLDivElement>) {
-  return <SharedMenuShortcutGroup {...props} />;
+  return <ShortcutGroup {...props} />;
 }
 
 function ContextMenuShortcut(props: React.HTMLAttributes<HTMLSpanElement>) {
-  return <SharedMenuShortcut {...props} />;
+  return <Shortcut {...props} />;
 }
 
 export {
