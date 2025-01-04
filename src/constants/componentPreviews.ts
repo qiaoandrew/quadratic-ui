@@ -61,6 +61,8 @@ import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import SwitchDemo from "~/components/docs/demos/switch/SwitchDemo";
+import SwitchFormDemo from "~/components/docs/demos/switch/SwitchFormDemo";
 import TextareaDemo from "~/components/docs/demos/textarea/TextareaDemo";
 import TextareaDisabledDemo from "~/components/docs/demos/textarea/TextareaDisabledDemo";
 import TextareaWithLabelDemo from "~/components/docs/demos/textarea/TextareaWithLabelDemo";
@@ -330,6 +332,14 @@ export const COMPONENT_PREVIEWS = {
   separator: {
     Preview: SeparatorDemo,
     path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  switch: {
+    Preview: SwitchDemo,
+    path: "src/components/docs/demos/switch/SwitchDemo.tsx",
+  },
+  switchForm: {
+    Preview: SwitchFormDemo,
+    path: "src/components/docs/demos/switch/SwitchFormDemo.tsx",
   },
   textarea: {
     Preview: TextareaDemo,
