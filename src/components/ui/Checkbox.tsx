@@ -6,7 +6,7 @@ import { cn } from "~/utils/tailwind";
 function Checkbox({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>) {
+}: React.ComponentProps<typeof CheckboxPrimitive.Root>) {
   return (
     <CheckboxPrimitive.Root
       className={cn(

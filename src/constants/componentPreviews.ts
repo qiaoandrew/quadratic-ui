@@ -38,9 +38,41 @@ import CarouselDemo from "~/components/docs/demos/carousel/CarouselDemo";
 import CheckboxDemo from "~/components/docs/demos/checkbox/CheckboxDemo";
 import CheckboxDisabledDemo from "~/components/docs/demos/checkbox/CheckboxDisabledDemo";
 import CheckboxFormDemo from "~/components/docs/demos/checkbox/CheckboxFormDemo";
+import CollapsibleDemo from "~/components/docs/demos/collapsible/CollapsibleDemo";
+import CommandDemo from "~/components/docs/demos/command/CommandDemo";
+import CommandDialogDemo from "~/components/docs/demos/command/CommandDialogDemo";
+import ContextMenuDemo from "~/components/docs/demos/context-menu/ContextMenuDemo";
 import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
+import DialogDemo from "~/components/docs/demos/dialog/DialogDemo";
+import DrawerDemo from "~/components/docs/demos/drawer/DrawerDemo";
+import DropdownMenuDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuDemo";
+import DropdownMenuCheckboxDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuCheckboxDemo";
+import DropdownMenuRadioGroupDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo";
+import InputDemo from "~/components/docs/demos/input/InputDemo";
+import InputDisabledDemo from "~/components/docs/demos/input/InputDisabledDemo";
+import InputWithLabelDemo from "~/components/docs/demos/input/InputWithLabelDemo";
+import InputFormDemo from "~/components/docs/demos/input/InputFormDemo";
+import InputOTPDemo from "~/components/docs/demos/input-otp/InputOTPDemo";
+import InputOTPControlledDemo from "~/components/docs/demos/input-otp/InputOTPControlledDemo";
+import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatternDemo";
+import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
+import LabelDemo from "~/components/docs/demos/label/LabelDemo";
+import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
+import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import ToggleDemo from "~/components/docs/demos/toggle/ToggleDemo";
+import ToggleOutlineDemo from "~/components/docs/demos/toggle/ToggleOutlineDemo";
+import ToggleWithTextDemo from "~/components/docs/demos/toggle/ToggleWithTextDemo";
+import ToggleSmallDemo from "~/components/docs/demos/toggle/ToggleSmallDemo";
+import ToggleLargeDemo from "~/components/docs/demos/toggle/ToggleLargeDemo";
+import ToggleDisabledDemo from "~/components/docs/demos/toggle/ToggleDisabledDemo";
+import ToggleGroupDemo from "~/components/docs/demos/toggle-group/ToggleGroupDemo";
+import ToggleGroupOutlineDemo from "~/components/docs/demos/toggle-group/ToggleGroupOutlineDemo";
+import ToggleGroupSingleDemo from "~/components/docs/demos/toggle-group/ToggleGroupSingleDemo";
+import ToggleGroupSmallDemo from "~/components/docs/demos/toggle-group/ToggleGroupSmallDemo";
+import ToggleGroupLargeDemo from "~/components/docs/demos/toggle-group/ToggleGroupLargeDemo";
+import ToggleGroupDisabledDemo from "~/components/docs/demos/toggle-group/ToggleGroupDisabledDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -203,6 +235,22 @@ export const COMPONENT_PREVIEWS = {
     Preview: CheckboxFormDemo,
     path: "src/components/docs/demos/checkbox/CheckboxFormDemo.tsx",
   },
+  collapsible: {
+    Preview: CollapsibleDemo,
+    path: "src/components/docs/demos/collapsible/CollapsibleDemo.tsx",
+  },
+  command: {
+    Preview: CommandDemo,
+    path: "src/components/docs/demos/command/CommandDemo.tsx",
+  },
+  commandDialog: {
+    Preview: CommandDialogDemo,
+    path: "src/components/docs/demos/command/CommandDialogDemo.tsx",
+  },
+  contextMenu: {
+    Preview: ContextMenuDemo,
+    path: "src/components/docs/demos/context-menu/ContextMenuDemo.tsx",
+  },
   datePicker: {
     Preview: DatePickerDemo,
     path: "src/components/docs/demos/date-picker/DatePickerDemo.tsx",
@@ -214,5 +262,117 @@ export const COMPONENT_PREVIEWS = {
   datePickerForm: {
     Preview: DatePickerFormDemo,
     path: "src/components/docs/demos/date-picker/DatePickerFormDemo.tsx",
+  },
+  dialog: {
+    Preview: DialogDemo,
+    path: "src/components/docs/demos/dialog/DialogDemo.tsx",
+  },
+  drawer: {
+    Preview: DrawerDemo,
+    path: "src/components/docs/demos/drawer/DrawerDemo.tsx",
+  },
+  dropdownMenu: {
+    Preview: DropdownMenuDemo,
+    path: "src/components/docs/demos/dropdown-menu/DropdownMenuDemo.tsx",
+  },
+  dropdownMenuCheckbox: {
+    Preview: DropdownMenuCheckboxDemo,
+    path: "src/components/docs/demos/dropdown-menu/DropdownMenuCheckboxDemo.tsx",
+  },
+  dropdownMenuRadioGroup: {
+    Preview: DropdownMenuRadioGroupDemo,
+    path: "src/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo.tsx",
+  },
+  input: {
+    Preview: InputDemo,
+    path: "src/components/docs/demos/input/InputDemo.tsx",
+  },
+  inputDisabled: {
+    Preview: InputDisabledDemo,
+    path: "src/components/docs/demos/input/InputDisabledDemo.tsx",
+  },
+  inputWithLabel: {
+    Preview: InputWithLabelDemo,
+    path: "src/components/docs/demos/input/InputWithLabelDemo.tsx",
+  },
+  inputForm: {
+    Preview: InputFormDemo,
+    path: "src/components/docs/demos/input/InputFormDemo.tsx",
+  },
+  inputOTP: {
+    Preview: InputOTPDemo,
+    path: "src/components/docs/demos/input-otp/InputOTPDemo.tsx",
+  },
+  inputOTPControlled: {
+    Preview: InputOTPControlledDemo,
+    path: "src/components/docs/demos/input-otp/InputOTPControlledDemo.tsx",
+  },
+  inputOTPPattern: {
+    Preview: InputOTPPatternDemo,
+    path: "src/components/docs/demos/input-otp/InputOTPPatternDemo.tsx",
+  },
+  inputOTPForm: {
+    Preview: InputOTPFormDemo,
+    path: "src/components/docs/demos/input-otp/InputOTPFormDemo.tsx",
+  },
+  label: {
+    Preview: LabelDemo,
+    path: "src/components/docs/demos/label/LabelDemo.tsx",
+  },
+  progress: {
+    Preview: ProgressDemo,
+    path: "src/components/docs/demos/progress/ProgressDemo.tsx",
+  },
+  separator: {
+    Preview: SeparatorDemo,
+    path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  toggle: {
+    Preview: ToggleDemo,
+    path: "src/components/docs/demos/toggle/ToggleDemo.tsx",
+  },
+  toggleOutline: {
+    Preview: ToggleOutlineDemo,
+    path: "src/components/docs/demos/toggle/ToggleOutlineDemo.tsx",
+  },
+  toggleWithText: {
+    Preview: ToggleWithTextDemo,
+    path: "src/components/docs/demos/toggle/ToggleWithTextDemo.tsx",
+  },
+  toggleSmall: {
+    Preview: ToggleSmallDemo,
+    path: "src/components/docs/demos/toggle/ToggleSmallDemo.tsx",
+  },
+  toggleLarge: {
+    Preview: ToggleLargeDemo,
+    path: "src/components/docs/demos/toggle/ToggleLargeDemo.tsx",
+  },
+  toggleDisabled: {
+    Preview: ToggleDisabledDemo,
+    path: "src/components/docs/demos/toggle/ToggleDisabledDemo.tsx",
+  },
+  toggleGroup: {
+    Preview: ToggleGroupDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupDemo.tsx",
+  },
+  toggleGroupOutline: {
+    Preview: ToggleGroupOutlineDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupOutlineDemo.tsx",
+  },
+  toggleGroupSingle: {
+    Preview: ToggleGroupSingleDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupSingleDemo.tsx",
+  },
+  toggleGroupSmall: {
+    Preview: ToggleGroupSmallDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupSmallDemo.tsx",
+  },
+  toggleGroupLarge: {
+    Preview: ToggleGroupLargeDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupLargeDemo.tsx",
+  },
+  toggleGroupDisabled: {
+    Preview: ToggleGroupDisabledDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupDisabledDemo.tsx",
   },
 };

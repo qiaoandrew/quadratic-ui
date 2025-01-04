@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useId } from "react";
 
 import type * as LabelPrimitive from "@radix-ui/react-label";
@@ -72,10 +74,7 @@ const FormItemContext = createContext<FormItemContextValue>(
   {} as FormItemContextValue,
 );
 
-function FormItem({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function FormItem({ className, ...props }: React.ComponentProps<"div">) {
   const id = useId();
 
   return (
@@ -94,9 +93,7 @@ function FormLabel({
   return <Label className={className} htmlFor={formItemId} {...props} />;
 }
 
-function FormControl({
-  ...props
-}: React.ComponentPropsWithoutRef<typeof Slot>) {
+function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
   const { error, formItemId, formDescriptionId, formMessageId } =
     useFormField();
 
@@ -114,10 +111,7 @@ function FormControl({
   );
 }
 
-function FormDescription({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLParagraphElement>) {
+function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
   const { formDescriptionId } = useFormField();
 
   return (
@@ -133,7 +127,7 @@ function FormMessage({
   className,
   children,
   ...props
-}: React.HTMLAttributes<HTMLParagraphElement>) {
+}: React.ComponentProps<"p">) {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message) : children;
 

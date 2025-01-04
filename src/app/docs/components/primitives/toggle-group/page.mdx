@@ -1,0 +1,65 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Toggle Group</Title>
+<Description>A set of two-state buttons that can be toggled on or off.</Description>
+<ComponentPreview id="toggleGroup" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install [`Toggle`](/docs/components/primitives/toggle) if you haven't already.</StepTitle>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-toggle-group
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="toggleGroup" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { ToggleGroup, ToggleGroupItem } from "~/components/ui/ToggleGroup";
+```
+```tsx
+<ToggleGroup type="single">
+  <ToggleGroupItem value="a">A</ToggleGroupItem>
+  <ToggleGroupItem value="b">B</ToggleGroupItem>
+  <ToggleGroupItem value="c">C</ToggleGroupItem>
+</ToggleGroup>
+```
+
+## Examples
+
+### Default
+<ComponentPreview id="toggleGroup" />
+
+### Outline
+<ComponentPreview id="toggleGroupOutline" />
+
+### Single
+<ComponentPreview id="toggleGroupSingle" />
+
+### Small
+<ComponentPreview id="toggleGroupSmall" />
+
+### Large
+<ComponentPreview id="toggleGroupLarge" />
+
+### Disabled
+<ComponentPreview id="toggleGroupDisabled" />
+
+<Footer previousLabel="Toggle" previousHref="/docs/components/primitives/toggle" nextLabel="Tooltip" nextHref="/docs/components/primitives/tooltip" />

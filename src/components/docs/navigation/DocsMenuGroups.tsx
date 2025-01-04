@@ -8,7 +8,7 @@ interface DocsMenuGroupsProps {
 
 export default function DocsMenuGroups({ pathname }: DocsMenuGroupsProps) {
   return (
-    <div className="flex flex-col gap-y-2 px-2.5">
+    <div className="flex flex-col gap-y-2 px-3">
       {DOCS_GROUPS.map((group) => (
         <DocsMenuGroup
           href={group.href}

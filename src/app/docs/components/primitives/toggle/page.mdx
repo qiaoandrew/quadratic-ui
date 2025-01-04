@@ -1,0 +1,56 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Toggle</Title>
+<Description>A two-state button that can be either on or off.</Description>
+<ComponentPreview id="toggle" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-toggle
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="toggle" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Toggle } from "@/components/ui/Toggle";
+```
+```tsx
+<Toggle>Toggle</Toggle>;
+```
+
+## Examples
+
+### Outline
+<ComponentPreview id="toggleOutline" />
+
+### With Text
+<ComponentPreview id="toggleWithText" />
+
+### Small
+<ComponentPreview id="toggleSmall" />
+
+### Large
+<ComponentPreview id="toggleLarge" />
+
+### Disabled
+<ComponentPreview id="toggleDisabled" />
+
+<Footer previousLabel="Toast" previousHref="/docs/components/primitives/toast" nextLabel="Toggle Group" nextHref="/docs/components/primitives/toggle-group" />

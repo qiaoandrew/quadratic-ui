@@ -57,7 +57,7 @@ function Carousel({
   className,
   children,
   ...props
-}: React.HTMLAttributes<HTMLDivElement> & CarouselProps) {
+}: React.ComponentProps<"div"> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
     {
       ...opts,
@@ -147,10 +147,7 @@ function Carousel({
   );
 }
 
-function CarouselContent({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   const { carouselRef, orientation } = useCarousel();
 
   return (
@@ -167,10 +164,7 @@ function CarouselContent({
   );
 }
 
-function CarouselItem({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
   const { orientation } = useCarousel();
 
   return (

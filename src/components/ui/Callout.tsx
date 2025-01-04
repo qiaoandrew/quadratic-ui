@@ -26,8 +26,7 @@ function Callout({
   className,
   variant,
   ...props
-}: React.HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof calloutVariants>) {
+}: React.ComponentProps<"div"> & VariantProps<typeof calloutVariants>) {
   return (
     <div
       role="alert"
@@ -37,10 +36,7 @@ function Callout({
   );
 }
 
-function CalloutText({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLHeadingElement>) {
+function CalloutText({ className, ...props }: React.ComponentProps<"h5">) {
   return <h5 className={className} {...props} />;
 }
 

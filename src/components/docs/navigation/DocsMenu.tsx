@@ -36,7 +36,7 @@ export default function DocsMenu({ primitivesMenuItems }: DocsMenuProps) {
             />
           )}
         </nav>
-        <ScrollBar className="bg-transparent" />
+        <ScrollBar className="[&>div]:bg-transparent" />
       </ScrollArea>
     </aside>
   );

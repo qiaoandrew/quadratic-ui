@@ -1,0 +1,67 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Dialog</Title>
+<Description>A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.</Description>
+<ComponentPreview id="dialog" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-dialog
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="dialog" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "~/components/ui/Dialog";
+```
+```tsx
+<Dialog>
+  <DialogTrigger asChild>
+    <Button variant="outline">Edit Profile</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Edit Profile</DialogTitle>
+      <DialogDescription>
+        Make changes to your profile here. Click save afterwards.
+      </DialogDescription>
+    </DialogHeader>
+    <div className="grid grid-cols-4 items-center gap-x-4 gap-y-3">
+      <Label htmlFor="name" className="text-right">
+        Name
+      </Label>
+      <Input id="name" value="Pedro Duarte" className="col-span-3" />
+    </div>
+    <DialogFooter>
+      <Button type="submit">Save Changes</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+<Footer previousLabel="Context Menu" previousHref="/docs/components/primitives/context-menu" nextLabel="Dropdown Menu" nextHref="/docs/components/primitives/dropdown-menu" />

@@ -1,0 +1,39 @@
+import ComponentPreview from "~/components/docs/mdx/ComponentPreview";
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+<Title>Separator</Title>
+<Description>Visually or semantically separates content.</Description>
+<ComponentPreview id="separator" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-separator
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="separator" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Separator } from "~/components/ui/Separator";
+```
+```tsx
+<Separator />
+```
+
+<Footer previousLabel="Select" previousHref="/docs/components/primitives/select" nextLabel="Skeleton" nextHref="/docs/components/primitives/skeleton" />
