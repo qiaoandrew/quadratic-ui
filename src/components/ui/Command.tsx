@@ -8,8 +8,8 @@ import { cn } from "~/utils/tailwind";
 
 import { Dialog, DialogContent, DialogTitle } from "~/components/ui/Dialog";
 import {
-  SharedMenuItemShortcut,
-  SharedMenuItemShortcutGroup,
+  SharedMenuShortcut,
+  SharedMenuShortcutGroup,
   SharedMenuSeparator,
 } from "~/components/ui/SharedMenu";
 import { VisuallyHidden } from "~/components/ui/VisuallyHidden";
@@ -108,12 +108,13 @@ function CommandGroup({
   );
 }
 
-function CommandSeparator(
-  props: React.ComponentProps<typeof CommandPrimitive.Separator>,
-) {
+function CommandSeparator({
+  className,
+  ...props
+}: React.ComponentProps<typeof CommandPrimitive.Separator>) {
   return (
     <CommandPrimitive.Separator asChild>
-      <SharedMenuSeparator {...props} />
+      <SharedMenuSeparator {...props} className={cn("my-0", className)} />
     </CommandPrimitive.Separator>
   );
 }
@@ -137,11 +138,11 @@ function CommandItem({
 }
 
 function CommandShortcutGroup(props: React.HTMLAttributes<HTMLDivElement>) {
-  return <SharedMenuItemShortcutGroup {...props} />;
+  return <SharedMenuShortcutGroup {...props} />;
 }
 
 function CommandShortcut(props: React.HTMLAttributes<HTMLSpanElement>) {
-  return <SharedMenuItemShortcut {...props} />;
+  return <SharedMenuShortcut {...props} />;
 }
 
 export {

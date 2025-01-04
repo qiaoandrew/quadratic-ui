@@ -41,6 +41,7 @@ import CheckboxFormDemo from "~/components/docs/demos/checkbox/CheckboxFormDemo"
 import CollapsibleDemo from "~/components/docs/demos/collapsible/CollapsibleDemo";
 import CommandDemo from "~/components/docs/demos/command/CommandDemo";
 import CommandDialogDemo from "~/components/docs/demos/command/CommandDialogDemo";
+import ContextMenuDemo from "~/components/docs/demos/context-menu/ContextMenuDemo";
 import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
@@ -218,6 +219,10 @@ export const COMPONENT_PREVIEWS = {
   commandDialog: {
     Preview: CommandDialogDemo,
     path: "src/components/docs/demos/command/CommandDialogDemo.tsx",
+  },
+  contextMenu: {
+    Preview: ContextMenuDemo,
+    path: "src/components/docs/demos/context-menu/ContextMenuDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,

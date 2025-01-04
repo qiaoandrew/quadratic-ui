@@ -1,7 +1,8 @@
-import { Separator } from "~/components/ui/Separator";
 import { cn } from "~/utils/tailwind";
 
-function SharedMenuItemShortcutGroup({
+import { Separator } from "~/components/ui/Separator";
+
+function SharedMenuShortcutGroup({
   children,
   className,
   ...props
@@ -13,7 +14,7 @@ function SharedMenuItemShortcutGroup({
   );
 }
 
-function SharedMenuItemShortcut({
+function SharedMenuShortcut({
   children,
   className,
   ...props
@@ -35,11 +36,7 @@ function SharedMenuSeparator({
   className,
   ...props
 }: React.ComponentProps<typeof Separator>) {
-  return <Separator className={cn("-mx-1", className)} {...props} />;
+  return <Separator className={cn("-mx-1 my-1", className)} {...props} />;
 }
 
-export {
-  SharedMenuItemShortcutGroup,
-  SharedMenuItemShortcut,
-  SharedMenuSeparator,
-};
+export { SharedMenuShortcutGroup, SharedMenuShortcut, SharedMenuSeparator };

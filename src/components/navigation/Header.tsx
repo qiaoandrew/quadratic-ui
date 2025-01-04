@@ -60,7 +60,7 @@ export default function Header() {
         <div
           className={cn(
             "flex h-[42px] shrink-0 items-stretch justify-between pl-3 pr-1.5",
-            "xl:h-[50px] xl:px-4",
+            "xl:h-[50px] xl:pr-3",
           )}
         >
           <div className="flex items-stretch">
