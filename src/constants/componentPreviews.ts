@@ -60,6 +60,7 @@ import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatte
 import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
+import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -309,5 +310,9 @@ export const COMPONENT_PREVIEWS = {
   progress: {
     Preview: ProgressDemo,
     path: "src/components/docs/demos/progress/ProgressDemo.tsx",
+  },
+  separator: {
+    Preview: SeparatorDemo,
+    path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
   },
 };
