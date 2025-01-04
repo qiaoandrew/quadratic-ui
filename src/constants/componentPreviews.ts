@@ -50,6 +50,10 @@ import DrawerDemo from "~/components/docs/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuDemo";
 import DropdownMenuCheckboxDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuCheckboxDemo";
 import DropdownMenuRadioGroupDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo";
+import InputDemo from "~/components/docs/demos/input/InputDemo";
+import InputDisabledDemo from "~/components/docs/demos/input/InputDisabledDemo";
+import InputWithLabelDemo from "~/components/docs/demos/input/InputWithLabelDemo";
+import InputFormDemo from "~/components/docs/demos/input/InputFormDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -259,5 +263,21 @@ export const COMPONENT_PREVIEWS = {
   dropdownMenuRadioGroup: {
     Preview: DropdownMenuRadioGroupDemo,
     path: "src/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo.tsx",
+  },
+  input: {
+    Preview: InputDemo,
+    path: "src/components/docs/demos/input/InputDemo.tsx",
+  },
+  inputDisabled: {
+    Preview: InputDisabledDemo,
+    path: "src/components/docs/demos/input/InputDisabledDemo.tsx",
+  },
+  inputWithLabel: {
+    Preview: InputWithLabelDemo,
+    path: "src/components/docs/demos/input/InputWithLabelDemo.tsx",
+  },
+  inputForm: {
+    Preview: InputFormDemo,
+    path: "src/components/docs/demos/input/InputFormDemo.tsx",
   },
 };

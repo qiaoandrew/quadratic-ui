@@ -23,7 +23,7 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
   return (
     <Tabs
       defaultValue="preview"
-      className="mt-9 overflow-visible rounded-3 border [&:where(h3+&)]:mt-4"
+      className="mt-4 overflow-visible rounded-3 border [&:where([data-spacing=large]+&)]:mt-9"
     >
       <TabsList className="h-auto w-full justify-start rounded-0 border-b bg-transparent p-0">
         <TabsTrigger value="preview" className={tabsTriggerStyles}>
