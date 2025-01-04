@@ -47,6 +47,9 @@ import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerR
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
 import DialogDemo from "~/components/docs/demos/dialog/DialogDemo";
 import DrawerDemo from "~/components/docs/demos/drawer/DrawerDemo";
+import DropdownMenuDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuDemo";
+import DropdownMenuCheckboxDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuCheckboxDemo";
+import DropdownMenuRadioGroupDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -244,5 +247,17 @@ export const COMPONENT_PREVIEWS = {
   drawer: {
     Preview: DrawerDemo,
     path: "src/components/docs/demos/drawer/DrawerDemo.tsx",
+  },
+  dropdownMenu: {
+    Preview: DropdownMenuDemo,
+    path: "src/components/docs/demos/dropdown-menu/DropdownMenuDemo.tsx",
+  },
+  dropdownMenuCheckbox: {
+    Preview: DropdownMenuCheckboxDemo,
+    path: "src/components/docs/demos/dropdown-menu/DropdownMenuCheckboxDemo.tsx",
+  },
+  dropdownMenuRadioGroup: {
+    Preview: DropdownMenuRadioGroupDemo,
+    path: "src/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo.tsx",
   },
 };

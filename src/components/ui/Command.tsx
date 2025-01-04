@@ -11,8 +11,8 @@ import {
   menuSeparatorVariants,
   Shortcut,
   ShortcutGroup,
-} from "~/components/ui/SharedMenu";
-import { VisuallyHidden } from "~/components/ui/VisuallyHidden";
+} from "~/components/ui/_Menu";
+import { VisuallyHidden } from "~/components/ui/_VisuallyHidden";
 
 function Command({
   className,

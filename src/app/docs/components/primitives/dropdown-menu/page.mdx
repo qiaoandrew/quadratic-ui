@@ -4,3 +4,61 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Dropdown Menu</Title>
+<Description>Displays a menu to the user — such as a set of actions or functions — triggered by a button.</Description>
+<ComponentPreview id="dropdownMenu" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-dropdown-menu
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="dropdownMenu" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "~/components/ui/DropdownMenu";
+```
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+## Examples
+
+### Checkbox
+<ComponentPreview id="dropdownMenuCheckbox" />
+
+### Radio Group
+<ComponentPreview id="dropdownMenuRadioGroup" />
+
+<Footer previousLabel="Dialog" previousHref="/docs/components/primitives/dialog" nextLabel="Input" nextHref="/docs/components/primitives/input" />
