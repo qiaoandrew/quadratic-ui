@@ -67,6 +67,12 @@ import ToggleWithTextDemo from "~/components/docs/demos/toggle/ToggleWithTextDem
 import ToggleSmallDemo from "~/components/docs/demos/toggle/ToggleSmallDemo";
 import ToggleLargeDemo from "~/components/docs/demos/toggle/ToggleLargeDemo";
 import ToggleDisabledDemo from "~/components/docs/demos/toggle/ToggleDisabledDemo";
+import ToggleGroupDemo from "~/components/docs/demos/toggle-group/ToggleGroupDemo";
+import ToggleGroupOutlineDemo from "~/components/docs/demos/toggle-group/ToggleGroupOutlineDemo";
+import ToggleGroupSingleDemo from "~/components/docs/demos/toggle-group/ToggleGroupSingleDemo";
+import ToggleGroupSmallDemo from "~/components/docs/demos/toggle-group/ToggleGroupSmallDemo";
+import ToggleGroupLargeDemo from "~/components/docs/demos/toggle-group/ToggleGroupLargeDemo";
+import ToggleGroupDisabledDemo from "~/components/docs/demos/toggle-group/ToggleGroupDisabledDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -344,5 +350,29 @@ export const COMPONENT_PREVIEWS = {
   toggleDisabled: {
     Preview: ToggleDisabledDemo,
     path: "src/components/docs/demos/toggle/ToggleDisabledDemo.tsx",
+  },
+  toggleGroup: {
+    Preview: ToggleGroupDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupDemo.tsx",
+  },
+  toggleGroupOutline: {
+    Preview: ToggleGroupOutlineDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupOutlineDemo.tsx",
+  },
+  toggleGroupSingle: {
+    Preview: ToggleGroupSingleDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupSingleDemo.tsx",
+  },
+  toggleGroupSmall: {
+    Preview: ToggleGroupSmallDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupSmallDemo.tsx",
+  },
+  toggleGroupLarge: {
+    Preview: ToggleGroupLargeDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupLargeDemo.tsx",
+  },
+  toggleGroupDisabled: {
+    Preview: ToggleGroupDisabledDemo,
+    path: "src/components/docs/demos/toggle-group/ToggleGroupDisabledDemo.tsx",
   },
 };
