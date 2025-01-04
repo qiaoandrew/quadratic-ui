@@ -65,7 +65,8 @@ function ContextMenuContent({
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         className={menuContentVariants({
-          className: cn("data-[state=closed]:animate-out", className),
+          hasClosedAnimateOut: true,
+          className,
         })}
         {...props}
       />

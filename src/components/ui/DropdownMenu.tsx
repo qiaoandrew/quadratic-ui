@@ -67,7 +67,8 @@ function DropdownMenuContent({
       <DropdownMenuPrimitive.Content
         sideOffset={sideOffset}
         className={menuContentVariants({
-          className: cn("data-[state=closed]:animate-out", className),
+          hasClosedAnimateOut: true,
+          className,
         })}
         {...props}
       />

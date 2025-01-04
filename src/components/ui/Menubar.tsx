@@ -101,6 +101,7 @@ function MenubarContent({
         alignOffset={alignOffset}
         sideOffset={sideOffset}
         className={menuContentVariants({
+          hasClosedAnimateOut: false,
           className: cn("min-w-48", className),
         })}
         {...props}
