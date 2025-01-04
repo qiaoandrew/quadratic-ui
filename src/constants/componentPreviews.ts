@@ -58,6 +58,7 @@ import InputOTPDemo from "~/components/docs/demos/input-otp/InputOTPDemo";
 import InputOTPControlledDemo from "~/components/docs/demos/input-otp/InputOTPControlledDemo";
 import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatternDemo";
 import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
+import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -299,5 +300,9 @@ export const COMPONENT_PREVIEWS = {
   inputOTPForm: {
     Preview: InputOTPFormDemo,
     path: "src/components/docs/demos/input-otp/InputOTPFormDemo.tsx",
+  },
+  label: {
+    Preview: LabelDemo,
+    path: "src/components/docs/demos/label/LabelDemo.tsx",
   },
 };
