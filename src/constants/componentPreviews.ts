@@ -87,6 +87,14 @@ import TextareaDemo from "~/components/docs/demos/textarea/TextareaDemo";
 import TextareaDisabledDemo from "~/components/docs/demos/textarea/TextareaDisabledDemo";
 import TextareaWithLabelDemo from "~/components/docs/demos/textarea/TextareaWithLabelDemo";
 import TextareaFormDemo from "~/components/docs/demos/textarea/TextareaFormDemo";
+import ToastDemo from "~/components/docs/demos/toast/ToastDemo";
+import ToastSuccessDemo from "~/components/docs/demos/toast/ToastSuccessDemo";
+import ToastWarningDemo from "~/components/docs/demos/toast/ToastWarningDemo";
+import ToastErrorDemo from "~/components/docs/demos/toast/ToastErrorDemo";
+import ToastInfoDemo from "~/components/docs/demos/toast/ToastInfoDemo";
+import ToastActionDemo from "~/components/docs/demos/toast/ToastActionDemo";
+import ToastUndoDemo from "~/components/docs/demos/toast/ToastUndoDemo";
+import ToastLoadingDemo from "~/components/docs/demos/toast/ToastLoadingDemo";
 import ToggleDemo from "~/components/docs/demos/toggle/ToggleDemo";
 import ToggleOutlineDemo from "~/components/docs/demos/toggle/ToggleOutlineDemo";
 import ToggleWithTextDemo from "~/components/docs/demos/toggle/ToggleWithTextDemo";
@@ -457,6 +465,38 @@ export const COMPONENT_PREVIEWS = {
   textareaForm: {
     Preview: TextareaFormDemo,
     path: "src/components/docs/demos/textarea/TextareaFormDemo.tsx",
+  },
+  toast: {
+    Preview: ToastDemo,
+    path: "src/components/docs/demos/toast/ToastDemo.tsx",
+  },
+  toastSuccess: {
+    Preview: ToastSuccessDemo,
+    path: "src/components/docs/demos/toast/ToastSuccessDemo.tsx",
+  },
+  toastWarning: {
+    Preview: ToastWarningDemo,
+    path: "src/components/docs/demos/toast/ToastWarningDemo.tsx",
+  },
+  toastError: {
+    Preview: ToastErrorDemo,
+    path: "src/components/docs/demos/toast/ToastErrorDemo.tsx",
+  },
+  toastInfo: {
+    Preview: ToastInfoDemo,
+    path: "src/components/docs/demos/toast/ToastInfoDemo.tsx",
+  },
+  toastAction: {
+    Preview: ToastActionDemo,
+    path: "src/components/docs/demos/toast/ToastActionDemo.tsx",
+  },
+  toastUndo: {
+    Preview: ToastUndoDemo,
+    path: "src/components/docs/demos/toast/ToastUndoDemo.tsx",
+  },
+  toastLoading: {
+    Preview: ToastLoadingDemo,
+    path: "src/components/docs/demos/toast/ToastLoadingDemo.tsx",
   },
   toggle: {
     Preview: ToggleDemo,

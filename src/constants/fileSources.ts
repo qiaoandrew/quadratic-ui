@@ -41,7 +41,7 @@ export const FILE_SOURCES = {
   table: "src/components/ui/Table.tsx",
   tabs: "src/components/ui/Tabs.tsx",
   textarea: "src/components/ui/Textarea.tsx",
-  toast: "src/components/ui/Toast.tsx",
+  toaster: "src/components/ui/Toaster.tsx",
   toggle: "src/components/ui/Toggle.tsx",
   toggleGroup: "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
