@@ -64,6 +64,7 @@ import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import MenubarDemo from "~/components/docs/demos/menubar/MenubarDemo";
 import PaginationDemo from "~/components/docs/demos/pagination/PaginationDemo";
+import PopoverDemo from "~/components/docs/demos/popover/PopoverDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
 import RadioGroupDemo from "~/components/docs/demos/radio-group/RadioGroupDemo";
 import RadioGroupFormDemo from "~/components/docs/demos/radio-group/RadioGroupFormDemo";
@@ -364,6 +365,10 @@ export const COMPONENT_PREVIEWS = {
   pagination: {
     Preview: PaginationDemo,
     path: "src/components/docs/demos/pagination/PaginationDemo.tsx",
+  },
+  popover: {
+    Preview: PopoverDemo,
+    path: "src/components/docs/demos/popover/PopoverDemo.tsx",
   },
   progress: {
     Preview: ProgressDemo,
