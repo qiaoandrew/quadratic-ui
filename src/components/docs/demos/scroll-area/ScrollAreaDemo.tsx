@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import { ScrollArea } from "~/components/ui/ScrollArea";
+import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 import { Separator } from "~/components/ui/Separator";
 
 const tags = Array.from({ length: 50 }).map(
@@ -19,6 +19,7 @@ export default function ScrollAreaDemo() {
           </Fragment>
         ))}
       </div>
+      <ScrollAreaBar />
     </ScrollArea>
   );
 }

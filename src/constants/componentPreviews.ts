@@ -66,6 +66,8 @@ import RadioGroupFormDemo from "~/components/docs/demos/radio-group/RadioGroupFo
 import ResizableDemo from "~/components/docs/demos/resizable/ResizableDemo";
 import ResizableVerticalDemo from "~/components/docs/demos/resizable/ResizableVerticalDemo";
 import ResizableNoHandleDemo from "~/components/docs/demos/resizable/ResizableNoHandleDemo";
+import ScrollAreaDemo from "~/components/docs/demos/scroll-area/ScrollAreaDemo";
+import ScrollAreaHorizontalDemo from "~/components/docs/demos/scroll-area/ScrollAreaHorizontalDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
 import SkeletonDemo from "~/components/docs/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/components/docs/demos/slider/SliderDemo";
@@ -363,6 +365,14 @@ export const COMPONENT_PREVIEWS = {
   resizableNoHandle: {
     Preview: ResizableNoHandleDemo,
     path: "src/components/docs/demos/resizable/ResizableNoHandleDemo.tsx",
+  },
+  scrollArea: {
+    Preview: ScrollAreaDemo,
+    path: "src/components/docs/demos/scroll-area/ScrollAreaDemo.tsx",
+  },
+  scrollAreaHorizontal: {
+    Preview: ScrollAreaHorizontalDemo,
+    path: "src/components/docs/demos/scroll-area/ScrollAreaHorizontalDemo.tsx",
   },
   separator: {
     Preview: SeparatorDemo,

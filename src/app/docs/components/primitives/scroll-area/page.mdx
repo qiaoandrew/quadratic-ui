@@ -4,3 +4,53 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Scroll Area</Title>
+<Description>Augments native scroll functionality for custom, cross-browser styling.</Description>
+<ComponentPreview id="scrollArea" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-scroll-area
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="scrollArea" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { ScrollArea } from "~/components/ui/ScrollArea";
+```
+```tsx
+<ScrollArea className="h-48 w-[350px] rounded-md border p-4">
+  Jokester began sneaking into the castle in the middle of the night and leaving
+  jokes all over the place: under the king's pillow, in his soup, even in the
+  royal toilet. The king was furious, but he couldn't seem to stop Jokester. And
+  then, one day, the people of the kingdom discovered that the jokes left by
+  Jokester were so funny that they couldn't help but laugh. And once they
+  started laughing, they couldn't stop.
+</ScrollArea>
+```
+
+## Examples
+
+### Vertical Scrolling
+By default, `<ScrollArea>` will scroll vertically.
+<ComponentPreview id="scrollArea" />
+
+### Horizontal Scrolling
+Add `<ScrollAreaBar orientation="horizontal" />` as a child of `<ScrollArea>` to enable horizontal scrolling.
+<ComponentPreview id="scrollAreaHorizontal" />
+
+<Footer previousLabel="Radio Group" previousHref="/docs/components/primitives/radio-group" nextLabel="Select" nextHref="/docs/components/primitives/select" />
