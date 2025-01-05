@@ -13,7 +13,6 @@ export const FILE_SOURCES = {
   chart: "src/components/ui/Chart.tsx",
   checkbox: "src/components/ui/Checkbox.tsx",
   collapsible: "src/components/ui/Collapsible.tsx",
-  combobox: "src/components/ui/Combobox.tsx",
   command: "src/components/ui/Command.tsx",
   contextMenu: "src/components/ui/ContextMenu.tsx",
   dataTable: "src/components/ui/DataTable.tsx",
@@ -46,5 +45,6 @@ export const FILE_SOURCES = {
   toggle: "src/components/ui/Toggle.tsx",
   toggleGroup: "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
+  comboboxDemo: "src/components/docs/demos/combobox/ComboboxDemo.tsx",
   datePickerDemo: "src/components/docs/demos/date-picker/DatePickerDemo.tsx",
 };

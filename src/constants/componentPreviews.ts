@@ -39,6 +39,8 @@ import CheckboxDemo from "~/components/docs/demos/checkbox/CheckboxDemo";
 import CheckboxDisabledDemo from "~/components/docs/demos/checkbox/CheckboxDisabledDemo";
 import CheckboxFormDemo from "~/components/docs/demos/checkbox/CheckboxFormDemo";
 import CollapsibleDemo from "~/components/docs/demos/collapsible/CollapsibleDemo";
+import ComboboxDemo from "~/components/docs/demos/combobox/ComboboxDemo";
+import ComboboxFormDemo from "~/components/docs/demos/combobox/ComboboxFormDemo";
 import CommandDemo from "~/components/docs/demos/command/CommandDemo";
 import CommandDialogDemo from "~/components/docs/demos/command/CommandDialogDemo";
 import ContextMenuDemo from "~/components/docs/demos/context-menu/ContextMenuDemo";
@@ -260,6 +262,14 @@ export const COMPONENT_PREVIEWS = {
   collapsible: {
     Preview: CollapsibleDemo,
     path: "src/components/docs/demos/collapsible/CollapsibleDemo.tsx",
+  },
+  combobox: {
+    Preview: ComboboxDemo,
+    path: "src/components/docs/demos/combobox/ComboboxDemo.tsx",
+  },
+  comboboxForm: {
+    Preview: ComboboxFormDemo,
+    path: "src/components/docs/demos/combobox/ComboboxFormDemo.tsx",
   },
   command: {
     Preview: CommandDemo,

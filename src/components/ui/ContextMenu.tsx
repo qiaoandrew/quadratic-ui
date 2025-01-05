@@ -1,8 +1,6 @@
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
 import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-react";
 
-import { cn } from "~/utils/tailwind";
-
 import {
   menuSeparatorVariants,
   Shortcut,
