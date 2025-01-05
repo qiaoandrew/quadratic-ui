@@ -83,6 +83,7 @@ import SliderMultipleThumbsDemo from "~/components/docs/demos/slider/SliderMulti
 import SliderFormDemo from "~/components/docs/demos/slider/SliderFormDemo";
 import SwitchDemo from "~/components/docs/demos/switch/SwitchDemo";
 import SwitchFormDemo from "~/components/docs/demos/switch/SwitchFormDemo";
+import TabsDemo from "~/components/docs/demos/tabs/TabsDemo";
 import TextareaDemo from "~/components/docs/demos/textarea/TextareaDemo";
 import TextareaDisabledDemo from "~/components/docs/demos/textarea/TextareaDisabledDemo";
 import TextareaWithLabelDemo from "~/components/docs/demos/textarea/TextareaWithLabelDemo";
@@ -449,6 +450,10 @@ export const COMPONENT_PREVIEWS = {
   switchForm: {
     Preview: SwitchFormDemo,
     path: "src/components/docs/demos/switch/SwitchFormDemo.tsx",
+  },
+  tabs: {
+    Preview: TabsDemo,
+    path: "src/components/docs/demos/tabs/TabsDemo.tsx",
   },
   textarea: {
     Preview: TextareaDemo,
