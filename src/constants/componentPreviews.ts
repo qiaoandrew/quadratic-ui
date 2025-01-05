@@ -61,6 +61,8 @@ import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import MenubarDemo from "~/components/docs/demos/menubar/MenubarDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
+import RadioGroupDemo from "~/components/docs/demos/radio-group/RadioGroupDemo";
+import RadioGroupFormDemo from "~/components/docs/demos/radio-group/RadioGroupFormDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
 import SwitchDemo from "~/components/docs/demos/switch/SwitchDemo";
 import SwitchFormDemo from "~/components/docs/demos/switch/SwitchFormDemo";
@@ -333,6 +335,14 @@ export const COMPONENT_PREVIEWS = {
   progress: {
     Preview: ProgressDemo,
     path: "src/components/docs/demos/progress/ProgressDemo.tsx",
+  },
+  radioGroup: {
+    Preview: RadioGroupDemo,
+    path: "src/components/docs/demos/radio-group/RadioGroupDemo.tsx",
+  },
+  radioGroupForm: {
+    Preview: RadioGroupFormDemo,
+    path: "src/components/docs/demos/radio-group/RadioGroupFormDemo.tsx",
   },
   separator: {
     Preview: SeparatorDemo,
