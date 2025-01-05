@@ -7,7 +7,7 @@ import { GETTING_STARTED_ITEMS } from "~/constants/docs";
 
 import DocsMenuGroups from "~/components/docs/navigation/DocsMenuGroups";
 import DocsMenuSection from "~/components/docs/navigation/DocsMenuSection";
-import { ScrollArea, ScrollBar } from "~/components/ui/ScrollArea";
+import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 
 interface DocsMenuProps {
   primitivesMenuItems: DocsItem[];
@@ -36,7 +36,7 @@ export default function DocsMenu({ primitivesMenuItems }: DocsMenuProps) {
             />
           )}
         </nav>
-        <ScrollBar className="[&>div]:bg-transparent" />
+        <ScrollAreaBar className="[&>div]:bg-transparent" />
       </ScrollArea>
     </aside>
   );

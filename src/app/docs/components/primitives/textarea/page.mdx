@@ -4,3 +4,44 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Textarea</Title>
+<Description>Displays a form textarea or a component that looks like a textarea.</Description>
+<ComponentPreview id="textarea" />
+
+## Installation
+<Steps>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="textarea" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Textarea } from "~/components/ui/Textarea";
+```
+```tsx
+<Textarea />
+```
+
+## Examples
+
+### Default
+<ComponentPreview id="textarea" />
+
+### Disabled
+Use the `disabled` prop to make the textarea field disabled.
+<ComponentPreview id="textareaDisabled" />
+
+### With Label
+<ComponentPreview id="textareaWithLabel" />
+
+### Form
+<ComponentPreview id="textareaForm" />
+
+<Footer previousLabel="Tabs" previousHref="/docs/components/primitives/tabs" nextLabel="Toast" nextHref="/docs/components/primitives/toast" />

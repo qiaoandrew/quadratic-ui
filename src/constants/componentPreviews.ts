@@ -59,8 +59,29 @@ import InputOTPControlledDemo from "~/components/docs/demos/input-otp/InputOTPCo
 import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatternDemo";
 import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
+import MenubarDemo from "~/components/docs/demos/menubar/MenubarDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
+import RadioGroupDemo from "~/components/docs/demos/radio-group/RadioGroupDemo";
+import RadioGroupFormDemo from "~/components/docs/demos/radio-group/RadioGroupFormDemo";
+import ResizableDemo from "~/components/docs/demos/resizable/ResizableDemo";
+import ResizableVerticalDemo from "~/components/docs/demos/resizable/ResizableVerticalDemo";
+import ResizableNoHandleDemo from "~/components/docs/demos/resizable/ResizableNoHandleDemo";
+import ScrollAreaDemo from "~/components/docs/demos/scroll-area/ScrollAreaDemo";
+import ScrollAreaHorizontalDemo from "~/components/docs/demos/scroll-area/ScrollAreaHorizontalDemo";
+import SelectDemo from "~/components/docs/demos/select/SelectDemo";
+import SelectScrollableDemo from "~/components/docs/demos/select/SelectScrollableDemo";
+import SelectFormDemo from "~/components/docs/demos/select/SelectFormDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import SkeletonDemo from "~/components/docs/demos/skeleton/SkeletonDemo";
+import SliderDemo from "~/components/docs/demos/slider/SliderDemo";
+import SliderMultipleThumbsDemo from "~/components/docs/demos/slider/SliderMultipleThumbsDemo";
+import SliderFormDemo from "~/components/docs/demos/slider/SliderFormDemo";
+import SwitchDemo from "~/components/docs/demos/switch/SwitchDemo";
+import SwitchFormDemo from "~/components/docs/demos/switch/SwitchFormDemo";
+import TextareaDemo from "~/components/docs/demos/textarea/TextareaDemo";
+import TextareaDisabledDemo from "~/components/docs/demos/textarea/TextareaDisabledDemo";
+import TextareaWithLabelDemo from "~/components/docs/demos/textarea/TextareaWithLabelDemo";
+import TextareaFormDemo from "~/components/docs/demos/textarea/TextareaFormDemo";
 import ToggleDemo from "~/components/docs/demos/toggle/ToggleDemo";
 import ToggleOutlineDemo from "~/components/docs/demos/toggle/ToggleOutlineDemo";
 import ToggleWithTextDemo from "~/components/docs/demos/toggle/ToggleWithTextDemo";
@@ -73,6 +94,7 @@ import ToggleGroupSingleDemo from "~/components/docs/demos/toggle-group/ToggleGr
 import ToggleGroupSmallDemo from "~/components/docs/demos/toggle-group/ToggleGroupSmallDemo";
 import ToggleGroupLargeDemo from "~/components/docs/demos/toggle-group/ToggleGroupLargeDemo";
 import ToggleGroupDisabledDemo from "~/components/docs/demos/toggle-group/ToggleGroupDisabledDemo";
+import TooltipDemo from "~/components/docs/demos/tooltip/TooltipDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -319,13 +341,97 @@ export const COMPONENT_PREVIEWS = {
     Preview: LabelDemo,
     path: "src/components/docs/demos/label/LabelDemo.tsx",
   },
+  menubar: {
+    Preview: MenubarDemo,
+    path: "src/components/docs/demos/menubar/MenubarDemo.tsx",
+  },
   progress: {
     Preview: ProgressDemo,
     path: "src/components/docs/demos/progress/ProgressDemo.tsx",
   },
+  radioGroup: {
+    Preview: RadioGroupDemo,
+    path: "src/components/docs/demos/radio-group/RadioGroupDemo.tsx",
+  },
+  radioGroupForm: {
+    Preview: RadioGroupFormDemo,
+    path: "src/components/docs/demos/radio-group/RadioGroupFormDemo.tsx",
+  },
+  resizable: {
+    Preview: ResizableDemo,
+    path: "src/components/docs/demos/resizable/ResizableDemo.tsx",
+  },
+  resizableVertical: {
+    Preview: ResizableVerticalDemo,
+    path: "src/components/docs/demos/resizable/ResizableVerticalDemo.tsx",
+  },
+  resizableNoHandle: {
+    Preview: ResizableNoHandleDemo,
+    path: "src/components/docs/demos/resizable/ResizableNoHandleDemo.tsx",
+  },
+  scrollArea: {
+    Preview: ScrollAreaDemo,
+    path: "src/components/docs/demos/scroll-area/ScrollAreaDemo.tsx",
+  },
+  scrollAreaHorizontal: {
+    Preview: ScrollAreaHorizontalDemo,
+    path: "src/components/docs/demos/scroll-area/ScrollAreaHorizontalDemo.tsx",
+  },
+  select: {
+    Preview: SelectDemo,
+    path: "src/components/docs/demos/select/SelectDemo.tsx",
+  },
+  selectScrollable: {
+    Preview: SelectScrollableDemo,
+    path: "src/components/docs/demos/select/SelectScrollableDemo.tsx",
+  },
+  selectForm: {
+    Preview: SelectFormDemo,
+    path: "src/components/docs/demos/select/SelectFormDemo.tsx",
+  },
   separator: {
     Preview: SeparatorDemo,
     path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  skeleton: {
+    Preview: SkeletonDemo,
+    path: "src/components/docs/demos/skeleton/SkeletonDemo.tsx",
+  },
+  slider: {
+    Preview: SliderDemo,
+    path: "src/components/docs/demos/slider/SliderDemo.tsx",
+  },
+  sliderMultipleThumbs: {
+    Preview: SliderMultipleThumbsDemo,
+    path: "src/components/docs/demos/slider/SliderMultipleThumbsDemo.tsx",
+  },
+  sliderForm: {
+    Preview: SliderFormDemo,
+    path: "src/components/docs/demos/slider/SliderFormDemo.tsx",
+  },
+  switch: {
+    Preview: SwitchDemo,
+    path: "src/components/docs/demos/switch/SwitchDemo.tsx",
+  },
+  switchForm: {
+    Preview: SwitchFormDemo,
+    path: "src/components/docs/demos/switch/SwitchFormDemo.tsx",
+  },
+  textarea: {
+    Preview: TextareaDemo,
+    path: "src/components/docs/demos/textarea/TextareaDemo.tsx",
+  },
+  textareaDisabled: {
+    Preview: TextareaDisabledDemo,
+    path: "src/components/docs/demos/textarea/TextareaDisabledDemo.tsx",
+  },
+  textareaWithLabel: {
+    Preview: TextareaWithLabelDemo,
+    path: "src/components/docs/demos/textarea/TextareaWithLabelDemo.tsx",
+  },
+  textareaForm: {
+    Preview: TextareaFormDemo,
+    path: "src/components/docs/demos/textarea/TextareaFormDemo.tsx",
   },
   toggle: {
     Preview: ToggleDemo,
@@ -374,5 +480,9 @@ export const COMPONENT_PREVIEWS = {
   toggleGroupDisabled: {
     Preview: ToggleGroupDisabledDemo,
     path: "src/components/docs/demos/toggle-group/ToggleGroupDisabledDemo.tsx",
+  },
+  tooltip: {
+    Preview: TooltipDemo,
+    path: "src/components/docs/demos/tooltip/TooltipDemo.tsx",
   },
 };

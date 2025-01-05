@@ -4,3 +4,29 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Skeleton</Title>
+<Description>Use to show a placeholder while content is loading.</Description>
+<ComponentPreview id="skeleton" />
+
+## Installation
+<Steps>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="skeleton" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Skeleton } from "~/components/ui/Skeleton";
+```
+```tsx
+ <Skeleton className="h-4 w-64" />
+```
+
+<Footer previousLabel="Separator" previousHref="/docs/components/primitives/separator" nextLabel="Slider" nextHref="/docs/components/primitives/slider" />

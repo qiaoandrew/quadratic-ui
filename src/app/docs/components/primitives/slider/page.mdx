@@ -4,3 +4,48 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Slider</Title>
+<Description>An input where the user selects a value from within a given range.</Description>
+<ComponentPreview id="slider" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-slider
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="slider" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Slider } from "~/components/ui/Slider";
+```
+
+```tsx
+<Slider defaultValue={[33]} max={100} step={1}>
+  <SliderThumb />
+</Slider>
+```
+
+## Examples
+
+### Multiple Thumbs
+Add a `<SliderThumb />` child for each thumb you want to display. The length of the `value` array must match the number of thumbs.
+<ComponentPreview id="sliderMultipleThumbs" />
+
+### Form
+<ComponentPreview id="sliderForm" />
+
+<Footer previousLabel="Skeleton" previousHref="/docs/components/primitives/skeleton" nextLabel="Switch" nextHref="/docs/components/primitives/switch" />

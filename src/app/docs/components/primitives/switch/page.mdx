@@ -4,3 +4,41 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Switch</Title>
+<Description>A control that allows the user to toggle between checked and not checked.</Description>
+<ComponentPreview id="switch" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-switch
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="switch" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Switch } from "~/components/ui/Switch";
+```
+```tsx
+<Switch />
+```
+
+## Examples
+
+### Form
+<ComponentPreview id="switchForm" />
+
+<Footer previousLabel="Slider" previousHref="/docs/components/primitives/slider" nextLabel="Table" nextHref="/docs/components/primitives/table" />
