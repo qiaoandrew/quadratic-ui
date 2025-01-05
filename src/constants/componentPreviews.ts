@@ -67,6 +67,9 @@ import ResizableDemo from "~/components/docs/demos/resizable/ResizableDemo";
 import ResizableVerticalDemo from "~/components/docs/demos/resizable/ResizableVerticalDemo";
 import ResizableNoHandleDemo from "~/components/docs/demos/resizable/ResizableNoHandleDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import SliderDemo from "~/components/docs/demos/slider/SliderDemo";
+import SliderMultipleThumbsDemo from "~/components/docs/demos/slider/SliderMultipleThumbsDemo";
+import SliderFormDemo from "~/components/docs/demos/slider/SliderFormDemo";
 import SwitchDemo from "~/components/docs/demos/switch/SwitchDemo";
 import SwitchFormDemo from "~/components/docs/demos/switch/SwitchFormDemo";
 import TextareaDemo from "~/components/docs/demos/textarea/TextareaDemo";
@@ -363,6 +366,18 @@ export const COMPONENT_PREVIEWS = {
   separator: {
     Preview: SeparatorDemo,
     path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  slider: {
+    Preview: SliderDemo,
+    path: "src/components/docs/demos/slider/SliderDemo.tsx",
+  },
+  sliderMultipleThumbs: {
+    Preview: SliderMultipleThumbsDemo,
+    path: "src/components/docs/demos/slider/SliderMultipleThumbsDemo.tsx",
+  },
+  sliderForm: {
+    Preview: SliderFormDemo,
+    path: "src/components/docs/demos/slider/SliderFormDemo.tsx",
   },
   switch: {
     Preview: SwitchDemo,
