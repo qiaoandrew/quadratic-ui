@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "~/utils/tailwind";
 import type { DocsTOCItem } from "~/types/docs";
 import useActiveId from "~/hooks/useActiveId";
-import { ScrollArea, ScrollBar } from "~/components/ui/ScrollArea";
+import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 
 interface DocsTOCProps {
   tocs: Record<string, DocsTOCItem[]>;
@@ -44,7 +44,7 @@ export default function DocsTOC({ tocs }: DocsTOCProps) {
               </Link>
             ))}
           </nav>
-          <ScrollBar className="[&>div]:bg-transparent" />
+          <ScrollAreaBar className="[&>div]:bg-transparent" />
         </ScrollArea>
       </div>
     </div>

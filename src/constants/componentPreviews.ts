@@ -67,6 +67,7 @@ import ResizableDemo from "~/components/docs/demos/resizable/ResizableDemo";
 import ResizableVerticalDemo from "~/components/docs/demos/resizable/ResizableVerticalDemo";
 import ResizableNoHandleDemo from "~/components/docs/demos/resizable/ResizableNoHandleDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import SkeletonDemo from "~/components/docs/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/components/docs/demos/slider/SliderDemo";
 import SliderMultipleThumbsDemo from "~/components/docs/demos/slider/SliderMultipleThumbsDemo";
 import SliderFormDemo from "~/components/docs/demos/slider/SliderFormDemo";
@@ -366,6 +367,10 @@ export const COMPONENT_PREVIEWS = {
   separator: {
     Preview: SeparatorDemo,
     path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  skeleton: {
+    Preview: SkeletonDemo,
+    path: "src/components/docs/demos/skeleton/SkeletonDemo.tsx",
   },
   slider: {
     Preview: SliderDemo,
