@@ -3,6 +3,11 @@ import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
 
+import {
+  menuLabelVariants,
+  menuSeparatorVariants,
+} from "~/components/ui/_Menu";
+
 const Select = SelectPrimitive.Root;
 
 const SelectGroup = SelectPrimitive.Group;
@@ -17,7 +22,7 @@ function SelectTrigger({
   return (
     <SelectPrimitive.Trigger
       className={cn(
-        "flex h-10 w-full items-center justify-between whitespace-nowrap rounded-2 border border-input bg-background px-3 text-3.5 ring-offset-background",
+        "flex h-10 w-full items-center justify-between rounded-2 border border-input bg-background px-3 text-3.5 ring-offset-background",
         "placeholder:text-muted-foreground",
         "focus:outline-none focus:ring-1 focus:ring-ring",
         "disabled:cursor-not-allowed disabled:opacity-50",
@@ -112,7 +117,7 @@ function SelectLabel({
 }: React.ComponentProps<typeof SelectPrimitive.Label>) {
   return (
     <SelectPrimitive.Label
-      className={cn("px-2 py-1 text-3.5 font-semibold", className)}
+      className={menuLabelVariants({ inset: false, className })}
       {...props}
     />
   );
@@ -149,7 +154,7 @@ function SelectSeparator({
 }: React.ComponentProps<typeof SelectPrimitive.Separator>) {
   return (
     <SelectPrimitive.Separator
-      className={cn("-mx-1 my-1 h-0.25 bg-border", className)}
+      className={menuSeparatorVariants({ className })}
       {...props}
     />
   );

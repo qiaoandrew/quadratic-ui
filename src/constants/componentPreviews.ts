@@ -68,6 +68,9 @@ import ResizableVerticalDemo from "~/components/docs/demos/resizable/ResizableVe
 import ResizableNoHandleDemo from "~/components/docs/demos/resizable/ResizableNoHandleDemo";
 import ScrollAreaDemo from "~/components/docs/demos/scroll-area/ScrollAreaDemo";
 import ScrollAreaHorizontalDemo from "~/components/docs/demos/scroll-area/ScrollAreaHorizontalDemo";
+import SelectDemo from "~/components/docs/demos/select/SelectDemo";
+import SelectScrollableDemo from "~/components/docs/demos/select/SelectScrollableDemo";
+import SelectFormDemo from "~/components/docs/demos/select/SelectFormDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
 import SkeletonDemo from "~/components/docs/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/components/docs/demos/slider/SliderDemo";
@@ -373,6 +376,18 @@ export const COMPONENT_PREVIEWS = {
   scrollAreaHorizontal: {
     Preview: ScrollAreaHorizontalDemo,
     path: "src/components/docs/demos/scroll-area/ScrollAreaHorizontalDemo.tsx",
+  },
+  select: {
+    Preview: SelectDemo,
+    path: "src/components/docs/demos/select/SelectDemo.tsx",
+  },
+  selectScrollable: {
+    Preview: SelectScrollableDemo,
+    path: "src/components/docs/demos/select/SelectScrollableDemo.tsx",
+  },
+  selectForm: {
+    Preview: SelectFormDemo,
+    path: "src/components/docs/demos/select/SelectFormDemo.tsx",
   },
   separator: {
     Preview: SeparatorDemo,
