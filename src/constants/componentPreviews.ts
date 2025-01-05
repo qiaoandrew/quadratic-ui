@@ -63,6 +63,9 @@ import MenubarDemo from "~/components/docs/demos/menubar/MenubarDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
 import RadioGroupDemo from "~/components/docs/demos/radio-group/RadioGroupDemo";
 import RadioGroupFormDemo from "~/components/docs/demos/radio-group/RadioGroupFormDemo";
+import ResizableDemo from "~/components/docs/demos/resizable/ResizableDemo";
+import ResizableVerticalDemo from "~/components/docs/demos/resizable/ResizableVerticalDemo";
+import ResizableNoHandleDemo from "~/components/docs/demos/resizable/ResizableNoHandleDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
 import SwitchDemo from "~/components/docs/demos/switch/SwitchDemo";
 import SwitchFormDemo from "~/components/docs/demos/switch/SwitchFormDemo";
@@ -343,6 +346,18 @@ export const COMPONENT_PREVIEWS = {
   radioGroupForm: {
     Preview: RadioGroupFormDemo,
     path: "src/components/docs/demos/radio-group/RadioGroupFormDemo.tsx",
+  },
+  resizable: {
+    Preview: ResizableDemo,
+    path: "src/components/docs/demos/resizable/ResizableDemo.tsx",
+  },
+  resizableVertical: {
+    Preview: ResizableVerticalDemo,
+    path: "src/components/docs/demos/resizable/ResizableVerticalDemo.tsx",
+  },
+  resizableNoHandle: {
+    Preview: ResizableNoHandleDemo,
+    path: "src/components/docs/demos/resizable/ResizableNoHandleDemo.tsx",
   },
   separator: {
     Preview: SeparatorDemo,

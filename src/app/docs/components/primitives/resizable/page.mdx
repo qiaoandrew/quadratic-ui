@@ -4,3 +4,53 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Resizable</Title>
+<Description>Accessible resizable panel groups and layouts with keyboard support.</Description>
+<ComponentPreview id="resizable" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add react-resizable-panels
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="resizable" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "~/components/ui/Resizable";
+```
+```tsx
+<ResizablePanelGroup direction="horizontal">
+  <ResizablePanel>One</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</ResizablePanelGroup>
+```
+
+## Examples
+
+### Vertical
+<ComponentPreview id="resizableVertical" />
+
+### No Handle
+Remove the `withHandle` prop from `<ResizableHandle />` to hide the handle.
+<ComponentPreview id="resizableNoHandle" />
+
+<Footer previousLabel="Hover Card" previousHref="/docs/components/patterns/hover-card" nextLabel="Sheet" nextHref="/docs/components/patterns/sheet" />
