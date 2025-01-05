@@ -85,6 +85,7 @@ import ToggleGroupSingleDemo from "~/components/docs/demos/toggle-group/ToggleGr
 import ToggleGroupSmallDemo from "~/components/docs/demos/toggle-group/ToggleGroupSmallDemo";
 import ToggleGroupLargeDemo from "~/components/docs/demos/toggle-group/ToggleGroupLargeDemo";
 import ToggleGroupDisabledDemo from "~/components/docs/demos/toggle-group/ToggleGroupDisabledDemo";
+import TooltipDemo from "~/components/docs/demos/tooltip/TooltipDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -434,5 +435,9 @@ export const COMPONENT_PREVIEWS = {
   toggleGroupDisabled: {
     Preview: ToggleGroupDisabledDemo,
     path: "src/components/docs/demos/toggle-group/ToggleGroupDisabledDemo.tsx",
+  },
+  tooltip: {
+    Preview: TooltipDemo,
+    path: "src/components/docs/demos/tooltip/TooltipDemo.tsx",
   },
 };
