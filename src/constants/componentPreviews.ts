@@ -63,6 +63,7 @@ import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatte
 import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import MenubarDemo from "~/components/docs/demos/menubar/MenubarDemo";
+import PaginationDemo from "~/components/docs/demos/pagination/PaginationDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
 import RadioGroupDemo from "~/components/docs/demos/radio-group/RadioGroupDemo";
 import RadioGroupFormDemo from "~/components/docs/demos/radio-group/RadioGroupFormDemo";
@@ -359,6 +360,10 @@ export const COMPONENT_PREVIEWS = {
   menubar: {
     Preview: MenubarDemo,
     path: "src/components/docs/demos/menubar/MenubarDemo.tsx",
+  },
+  pagination: {
+    Preview: PaginationDemo,
+    path: "src/components/docs/demos/pagination/PaginationDemo.tsx",
   },
   progress: {
     Preview: ProgressDemo,
