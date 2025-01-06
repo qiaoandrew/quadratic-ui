@@ -50,17 +50,18 @@ function CommandInput({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Input>) {
   return (
-    <div className="flex items-center gap-x-2 border-b px-3">
-      <SearchIcon className="size-4 shrink-0 text-muted-foreground" />
-      <CommandPrimitive.Input
-        className={cn(
-          "flex h-11 w-full items-center bg-transparent text-3.5 outline-none",
-          "placeholder:text-muted-foreground",
-          "disabled:cursor-not-allowed disabled:opacity-50",
-          className,
-        )}
-        {...props}
-      />
+    <div
+      className={cn(
+        "relative flex items-center border-b pl-9 pr-3",
+        "[&>svg]:absolute [&>svg]:left-3 [&>svg]:top-1/2 [&>svg]:size-4 [&>svg]:-translate-y-1/2 [&>svg]:text-muted-foreground",
+        "[&>[cmdk-input]]:h-11 [&>[cmdk-input]]:w-full [&>[cmdk-input]]:items-center [&>[cmdk-input]]:bg-transparent [&>[cmdk-input]]:text-3.5 [&>[cmdk-input]]:outline-none",
+        "[&>[cmdk-input]]:placeholder:text-muted-foreground",
+        "[&>[cmdk-input]]:disabled:cursor-not-allowed [&>[cmdk-input]]:disabled:opacity-50",
+        className,
+      )}
+    >
+      <SearchIcon />
+      <CommandPrimitive.Input {...props} />
     </div>
   );
 }
@@ -129,10 +130,10 @@ function CommandItem({
   return (
     <CommandPrimitive.Item
       className={cn(
-        "relative flex h-10 cursor-pointer select-none items-center gap-x-2 rounded-1.5 px-2 text-3.5 outline-none",
+        "relative flex h-10 cursor-pointer select-none items-center rounded-1.5 pl-8.5 pr-3 text-3.5 outline-none",
         "data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground",
         "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
-        "[&_svg]:pointer-events-none [&_svg]:size-4.5 [&_svg]:shrink-0",
+        "[&>svg]:left-2 [&>svg]:top-1/2 [&>svg]:-translate-y-1/2 [&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:size-4.5",
         className,
       )}
       {...props}

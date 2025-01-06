@@ -4,3 +4,45 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Hover Card</Title>
+<Description>View preview content available behind a link.</Description>
+<ComponentPreview id="hoverCard" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-hover-card
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="hoverCard" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "~/components/ui/HoverCard";
+```
+```tsx
+<HoverCard>
+  <HoverCardTrigger>Hover</HoverCardTrigger>
+  <HoverCardContent>
+    The React Framework – created and maintained by @vercel.
+  </HoverCardContent>
+</HoverCard>
+```
+
+<Footer previousLabel="Form" previousHref="/docs/components/patterns/form" nextLabel="Resizable" nextHref="/docs/components/patterns/resizable" />

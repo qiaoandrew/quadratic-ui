@@ -4,3 +4,43 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Tabs</Title>
+<Description>A set of layered sections of content—known as tab panels—that are displayed one at a time.</Description>
+<ComponentPreview id="tabs" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-tabs
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="tabs" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/Tabs";
+```
+```tsx
+<Tabs defaultValue="account" className="w-[400px]">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">Make changes to your account here.</TabsContent>
+  <TabsContent value="password">Change your password here.</TabsContent>
+</Tabs>
+```
+
+<Footer previousLabel="Table" previousHref="/docs/components/primitives/table" nextLabel="Textarea" nextHref="/docs/components/primitives/textarea" />

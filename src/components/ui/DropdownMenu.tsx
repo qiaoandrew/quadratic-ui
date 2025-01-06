@@ -1,8 +1,6 @@
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-react";
 
-import { cn } from "~/utils/tailwind";
-
 import {
   menuContentVariants,
   menuItemVariants,

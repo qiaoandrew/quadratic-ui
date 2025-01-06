@@ -8,6 +8,7 @@ import { inter, interDisplay } from "~/utils/fonts";
 
 import Header from "~/components/navigation/Header";
 import Spotlight from "~/components/effects/Spotlight";
+import { Toaster } from "~/components/ui/Toaster";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -35,6 +36,7 @@ export default function RootLayout({
           <Header />
           <Spotlight />
           <main>{children}</main>
+          <Toaster visibleToasts={10} />
         </ThemeProvider>
       </body>
     </html>

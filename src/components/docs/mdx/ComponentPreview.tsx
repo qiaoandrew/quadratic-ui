@@ -34,7 +34,7 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="preview" className="mt-0">
-        <div className="flex min-h-64 items-center justify-center p-4 md:min-h-96 md:p-8 xl:p-12">
+        <div className="flex min-h-64 items-center justify-center p-4 md:min-h-96 md:p-8">
           <Preview />
         </div>
       </TabsContent>

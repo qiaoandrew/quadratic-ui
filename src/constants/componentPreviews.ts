@@ -39,9 +39,12 @@ import CheckboxDemo from "~/components/docs/demos/checkbox/CheckboxDemo";
 import CheckboxDisabledDemo from "~/components/docs/demos/checkbox/CheckboxDisabledDemo";
 import CheckboxFormDemo from "~/components/docs/demos/checkbox/CheckboxFormDemo";
 import CollapsibleDemo from "~/components/docs/demos/collapsible/CollapsibleDemo";
+import ComboboxDemo from "~/components/docs/demos/combobox/ComboboxDemo";
+import ComboboxFormDemo from "~/components/docs/demos/combobox/ComboboxFormDemo";
 import CommandDemo from "~/components/docs/demos/command/CommandDemo";
 import CommandDialogDemo from "~/components/docs/demos/command/CommandDialogDemo";
 import ContextMenuDemo from "~/components/docs/demos/context-menu/ContextMenuDemo";
+import DataTableDemo from "~/components/docs/demos/data-table/DataTableDemo";
 import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
@@ -50,6 +53,7 @@ import DrawerDemo from "~/components/docs/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuDemo";
 import DropdownMenuCheckboxDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuCheckboxDemo";
 import DropdownMenuRadioGroupDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo";
+import HoverCardDemo from "~/components/docs/demos/hover-card/HoverCardDemo";
 import InputDemo from "~/components/docs/demos/input/InputDemo";
 import InputDisabledDemo from "~/components/docs/demos/input/InputDisabledDemo";
 import InputWithLabelDemo from "~/components/docs/demos/input/InputWithLabelDemo";
@@ -60,6 +64,8 @@ import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatte
 import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import MenubarDemo from "~/components/docs/demos/menubar/MenubarDemo";
+import PaginationDemo from "~/components/docs/demos/pagination/PaginationDemo";
+import PopoverDemo from "~/components/docs/demos/popover/PopoverDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
 import RadioGroupDemo from "~/components/docs/demos/radio-group/RadioGroupDemo";
 import RadioGroupFormDemo from "~/components/docs/demos/radio-group/RadioGroupFormDemo";
@@ -78,10 +84,20 @@ import SliderMultipleThumbsDemo from "~/components/docs/demos/slider/SliderMulti
 import SliderFormDemo from "~/components/docs/demos/slider/SliderFormDemo";
 import SwitchDemo from "~/components/docs/demos/switch/SwitchDemo";
 import SwitchFormDemo from "~/components/docs/demos/switch/SwitchFormDemo";
+import TableDemo from "~/components/docs/demos/table/TableDemo";
+import TabsDemo from "~/components/docs/demos/tabs/TabsDemo";
 import TextareaDemo from "~/components/docs/demos/textarea/TextareaDemo";
 import TextareaDisabledDemo from "~/components/docs/demos/textarea/TextareaDisabledDemo";
 import TextareaWithLabelDemo from "~/components/docs/demos/textarea/TextareaWithLabelDemo";
 import TextareaFormDemo from "~/components/docs/demos/textarea/TextareaFormDemo";
+import ToastDemo from "~/components/docs/demos/toast/ToastDemo";
+import ToastSuccessDemo from "~/components/docs/demos/toast/ToastSuccessDemo";
+import ToastWarningDemo from "~/components/docs/demos/toast/ToastWarningDemo";
+import ToastErrorDemo from "~/components/docs/demos/toast/ToastErrorDemo";
+import ToastInfoDemo from "~/components/docs/demos/toast/ToastInfoDemo";
+import ToastActionDemo from "~/components/docs/demos/toast/ToastActionDemo";
+import ToastUndoDemo from "~/components/docs/demos/toast/ToastUndoDemo";
+import ToastLoadingDemo from "~/components/docs/demos/toast/ToastLoadingDemo";
 import ToggleDemo from "~/components/docs/demos/toggle/ToggleDemo";
 import ToggleOutlineDemo from "~/components/docs/demos/toggle/ToggleOutlineDemo";
 import ToggleWithTextDemo from "~/components/docs/demos/toggle/ToggleWithTextDemo";
@@ -261,6 +277,14 @@ export const COMPONENT_PREVIEWS = {
     Preview: CollapsibleDemo,
     path: "src/components/docs/demos/collapsible/CollapsibleDemo.tsx",
   },
+  combobox: {
+    Preview: ComboboxDemo,
+    path: "src/components/docs/demos/combobox/ComboboxDemo.tsx",
+  },
+  comboboxForm: {
+    Preview: ComboboxFormDemo,
+    path: "src/components/docs/demos/combobox/ComboboxFormDemo.tsx",
+  },
   command: {
     Preview: CommandDemo,
     path: "src/components/docs/demos/command/CommandDemo.tsx",
@@ -272,6 +296,10 @@ export const COMPONENT_PREVIEWS = {
   contextMenu: {
     Preview: ContextMenuDemo,
     path: "src/components/docs/demos/context-menu/ContextMenuDemo.tsx",
+  },
+  dataTable: {
+    Preview: DataTableDemo,
+    path: "src/components/docs/demos/data-table/DataTableDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,
@@ -304,6 +332,10 @@ export const COMPONENT_PREVIEWS = {
   dropdownMenuRadioGroup: {
     Preview: DropdownMenuRadioGroupDemo,
     path: "src/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo.tsx",
+  },
+  hoverCard: {
+    Preview: HoverCardDemo,
+    path: "src/components/docs/demos/hover-card/HoverCardDemo.tsx",
   },
   input: {
     Preview: InputDemo,
@@ -344,6 +376,14 @@ export const COMPONENT_PREVIEWS = {
   menubar: {
     Preview: MenubarDemo,
     path: "src/components/docs/demos/menubar/MenubarDemo.tsx",
+  },
+  pagination: {
+    Preview: PaginationDemo,
+    path: "src/components/docs/demos/pagination/PaginationDemo.tsx",
+  },
+  popover: {
+    Preview: PopoverDemo,
+    path: "src/components/docs/demos/popover/PopoverDemo.tsx",
   },
   progress: {
     Preview: ProgressDemo,
@@ -417,6 +457,14 @@ export const COMPONENT_PREVIEWS = {
     Preview: SwitchFormDemo,
     path: "src/components/docs/demos/switch/SwitchFormDemo.tsx",
   },
+  table: {
+    Preview: TableDemo,
+    path: "src/components/docs/demos/table/TableDemo.tsx",
+  },
+  tabs: {
+    Preview: TabsDemo,
+    path: "src/components/docs/demos/tabs/TabsDemo.tsx",
+  },
   textarea: {
     Preview: TextareaDemo,
     path: "src/components/docs/demos/textarea/TextareaDemo.tsx",
@@ -432,6 +480,38 @@ export const COMPONENT_PREVIEWS = {
   textareaForm: {
     Preview: TextareaFormDemo,
     path: "src/components/docs/demos/textarea/TextareaFormDemo.tsx",
+  },
+  toast: {
+    Preview: ToastDemo,
+    path: "src/components/docs/demos/toast/ToastDemo.tsx",
+  },
+  toastSuccess: {
+    Preview: ToastSuccessDemo,
+    path: "src/components/docs/demos/toast/ToastSuccessDemo.tsx",
+  },
+  toastWarning: {
+    Preview: ToastWarningDemo,
+    path: "src/components/docs/demos/toast/ToastWarningDemo.tsx",
+  },
+  toastError: {
+    Preview: ToastErrorDemo,
+    path: "src/components/docs/demos/toast/ToastErrorDemo.tsx",
+  },
+  toastInfo: {
+    Preview: ToastInfoDemo,
+    path: "src/components/docs/demos/toast/ToastInfoDemo.tsx",
+  },
+  toastAction: {
+    Preview: ToastActionDemo,
+    path: "src/components/docs/demos/toast/ToastActionDemo.tsx",
+  },
+  toastUndo: {
+    Preview: ToastUndoDemo,
+    path: "src/components/docs/demos/toast/ToastUndoDemo.tsx",
+  },
+  toastLoading: {
+    Preview: ToastLoadingDemo,
+    path: "src/components/docs/demos/toast/ToastLoadingDemo.tsx",
   },
   toggle: {
     Preview: ToggleDemo,
