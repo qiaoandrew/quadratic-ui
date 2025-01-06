@@ -5,6 +5,7 @@ import { textToHtmlId } from "~/utils/docs";
 
 import Id from "~/components/docs/mdx/Id";
 import CodeBlock from "~/components/docs/mdx/CodeBlock";
+import type React from "react";
 
 export function useMDXComponents(components: MDXComponents) {
   return {
@@ -62,5 +63,11 @@ export function useMDXComponents(components: MDXComponents) {
           {children}
         </a>
       ),
+    ul: (props: React.ComponentProps<"ul">) => (
+      <ul
+        className="mt-6 flex list-inside list-disc flex-col gap-y-1"
+        {...props}
+      />
+    ),
   };
 }

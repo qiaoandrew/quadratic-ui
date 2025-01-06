@@ -4,3 +4,154 @@ import FileSource from "~/components/docs/mdx/FileSource";
 import Footer from "~/components/docs/mdx/Footer";
 import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
 import Title from "~/components/docs/mdx/Title";
+
+<Title>Form</Title>
+<Description>Building forms with React Hook Form and Zod.</Description>
+<ComponentPreview id="form" />
+
+## Installation
+<Steps>
+
+<StepTitle>Install [`Label`](/docs/components/primitives/label) if you haven't already.</StepTitle>
+
+<StepTitle>Install the following dependencies:</StepTitle>
+<StepContent>
+```bash
+pnpm add @radix-ui/react-label @radix-ui/react-slot react-hook-form @hookform/resolvers zod
+```
+</StepContent>
+
+<StepTitle>Copy and paste the following code into your project.</StepTitle>
+<StepContent>
+<FileSource id="form" />
+</StepContent>
+
+<StepTitle>Update the import paths to match your project setup.</StepTitle>
+
+</Steps>
+
+## Usage
+<Steps>
+
+<StepTitle>Create a schema using [Zod](https://zod.dev/). This defines the shape for your form.</StepTitle>
+<StepContent>
+```tsx
+"use client";
+
+import { z } from "zod";
+
+const formSchema = z.object({
+  username: z.string().min(2).max(50),
+});
+```
+</StepContent>
+
+<StepTitle>Use the `useForm` hook from `react-hook-form` to create a form.</StepTitle>
+<StepContent>
+```tsx
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+});
+
+export default function ProfileForm() {
+  // 1. Define your form.
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+    },
+  });
+
+  // 2. Define a submit handler.
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
+}
+```
+
+You'll need to provide default values for each field since `FormField` is a controlled component. See the [React Hook Form docs](https://react-hook-form.com/docs/usecontroller) to learn more about controlled components.
+</StepContent>
+
+<StepTitle>Build your form using `Form` components.</StepTitle>
+```tsx
+"use client"
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "~/components/ui/Button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "~/components/ui/Form";
+import { Input } from "~/components/ui/Input";
+
+const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+});
+
+export default function ProfileForm() {
+  // ...
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="username"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input placeholder="shadcn" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
+  );
+}
+```
+
+</Steps>
+
+## Examples
+
+See the following links for more examples on how to use the `Form` component with other components.
+
+- [Checkbox](/docs/components/primitives/checkbox#form)
+- [Input](/docs/components/primitives/input#form)
+- [Input OTP](/docs/components/primitives/input-otp#form)
+- [Radio Group](/docs/components/primitives/radio-group#form)
+- [Select](/docs/components/primitives/select#form)
+- [Slider](/docs/components/primitives/slider#form)
+- [Switch](/docs/components/primitives/switch#form)
+- [Textarea](/docs/components/primitives/textarea#form)
+- [Combobox](/docs/components/composites/combobox#form)
+- [Date Picker](/docs/components/composites/date-picker#form)
+
+<Footer previousLabel="Drawer" previousHref="/docs/components/patterns/drawer" nextLabel="Hover Card" nextHref="/docs/components/patterns/hover-card" />

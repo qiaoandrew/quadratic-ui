@@ -53,6 +53,7 @@ import DrawerDemo from "~/components/docs/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuDemo";
 import DropdownMenuCheckboxDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuCheckboxDemo";
 import DropdownMenuRadioGroupDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo";
+import FormDemo from "~/components/docs/demos/form/FormDemo";
 import HoverCardDemo from "~/components/docs/demos/hover-card/HoverCardDemo";
 import InputDemo from "~/components/docs/demos/input/InputDemo";
 import InputDisabledDemo from "~/components/docs/demos/input/InputDisabledDemo";
@@ -64,6 +65,7 @@ import InputOTPPatternDemo from "~/components/docs/demos/input-otp/InputOTPPatte
 import InputOTPFormDemo from "~/components/docs/demos/input-otp/InputOTPFormDemo";
 import LabelDemo from "~/components/docs/demos/label/LabelDemo";
 import MenubarDemo from "~/components/docs/demos/menubar/MenubarDemo";
+import NavigationMenuDemo from "~/components/docs/demos/navigation-menu/NavigationMenuDemo";
 import PaginationDemo from "~/components/docs/demos/pagination/PaginationDemo";
 import PopoverDemo from "~/components/docs/demos/popover/PopoverDemo";
 import ProgressDemo from "~/components/docs/demos/progress/ProgressDemo";
@@ -78,6 +80,8 @@ import SelectDemo from "~/components/docs/demos/select/SelectDemo";
 import SelectScrollableDemo from "~/components/docs/demos/select/SelectScrollableDemo";
 import SelectFormDemo from "~/components/docs/demos/select/SelectFormDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import SheetDemo from "~/components/docs/demos/sheet/SheetDemo";
+import SheetSideDemo from "~/components/docs/demos/sheet/SheetSideDemo";
 import SkeletonDemo from "~/components/docs/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/components/docs/demos/slider/SliderDemo";
 import SliderMultipleThumbsDemo from "~/components/docs/demos/slider/SliderMultipleThumbsDemo";
@@ -333,6 +337,10 @@ export const COMPONENT_PREVIEWS = {
     Preview: DropdownMenuRadioGroupDemo,
     path: "src/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo.tsx",
   },
+  form: {
+    Preview: FormDemo,
+    path: "src/components/docs/demos/form/FormDemo.tsx",
+  },
   hoverCard: {
     Preview: HoverCardDemo,
     path: "src/components/docs/demos/hover-card/HoverCardDemo.tsx",
@@ -376,6 +384,10 @@ export const COMPONENT_PREVIEWS = {
   menubar: {
     Preview: MenubarDemo,
     path: "src/components/docs/demos/menubar/MenubarDemo.tsx",
+  },
+  navigationMenu: {
+    Preview: NavigationMenuDemo,
+    path: "src/components/docs/demos/navigation-menu/NavigationMenuDemo.tsx",
   },
   pagination: {
     Preview: PaginationDemo,
@@ -432,6 +444,14 @@ export const COMPONENT_PREVIEWS = {
   separator: {
     Preview: SeparatorDemo,
     path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  sheet: {
+    Preview: SheetDemo,
+    path: "src/components/docs/demos/sheet/SheetDemo.tsx",
+  },
+  sheetSide: {
+    Preview: SheetSideDemo,
+    path: "src/components/docs/demos/sheet/SheetSideDemo.tsx",
   },
   skeleton: {
     Preview: SkeletonDemo,
