@@ -44,6 +44,7 @@ import ComboboxFormDemo from "~/components/docs/demos/combobox/ComboboxFormDemo"
 import CommandDemo from "~/components/docs/demos/command/CommandDemo";
 import CommandDialogDemo from "~/components/docs/demos/command/CommandDialogDemo";
 import ContextMenuDemo from "~/components/docs/demos/context-menu/ContextMenuDemo";
+import DataTableDemo from "~/components/docs/demos/data-table/DataTableDemo";
 import DatePickerDemo from "~/components/docs/demos/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/date-picker/DatePickerFormDemo";
@@ -295,6 +296,10 @@ export const COMPONENT_PREVIEWS = {
   contextMenu: {
     Preview: ContextMenuDemo,
     path: "src/components/docs/demos/context-menu/ContextMenuDemo.tsx",
+  },
+  dataTable: {
+    Preview: DataTableDemo,
+    path: "src/components/docs/demos/data-table/DataTableDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,

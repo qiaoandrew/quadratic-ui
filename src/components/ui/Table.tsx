@@ -50,6 +50,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       className={cn(
         "h-9 pl-3 text-left align-middle font-medium text-muted-foreground",
+        "last:pr-3",
         "[&:has([role=checkbox])]:pr-0",
         className,
       )}

@@ -11,8 +11,8 @@ const inputVariants = tv({
   ],
   variants: {
     inputSize: {
-      xs: "h-8 rounded-1 px-2 text-3.5",
-      sm: "h-9 rounded-1.5 px-2.5 text-3.5",
+      xs: "h-8 rounded-1.5 px-2 text-3.5",
+      sm: "h-9 rounded-2 px-2.5 text-3.5",
       md: "h-10 rounded-2 px-3 text-3.5",
       lg: "h-11 rounded-2.5 px-3.5 text-4",
     },
