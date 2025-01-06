@@ -2,6 +2,14 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 
 import { cn } from "~/utils/tailwind";
 
+import {
+  dialogContentVariants,
+  dialogDescriptionVariants,
+  dialogFooterVariants,
+  dialogHeaderVariants,
+  dialogOverlayVariants,
+  dialogTitleVariants,
+} from "~/components/ui/_Dialog";
 import { buttonVariants, type ButtonProps } from "~/components/ui/Button";
 
 const AlertDialog = AlertDialogPrimitive.Root;
@@ -16,12 +24,7 @@ function AlertDialogOverlay({
 }: React.ComponentProps<typeof AlertDialogPrimitive.Overlay>) {
   return (
     <AlertDialogPrimitive.Overlay
-      className={cn(
-        "fixed inset-0 z-50 bg-black/80",
-        "data-[state=open]:animate-in data-[state=open]:fade-in-0",
-        "data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
-        className,
-      )}
+      className={dialogOverlayVariants({ className })}
       {...props}
     />
   );
@@ -35,12 +38,7 @@ function AlertDialogContent({
     <AlertDialogPortal>
       <AlertDialogOverlay />
       <AlertDialogPrimitive.Content
-        className={cn(
-          "fixed left-1/2 top-1/2 z-50 grid w-[calc(100%-3rem)] max-w-128 -translate-x-1/2 -translate-y-1/2 rounded-4 border bg-background p-6",
-          "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]",
-          "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]",
-          className,
-        )}
+        className={dialogContentVariants({ className })}
         {...props}
       />
     </AlertDialogPortal>
@@ -52,7 +50,12 @@ function AlertDialogHeader({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("flex flex-col gap-y-1.5", className)} {...props} />
+    <div
+      className={dialogHeaderVariants({
+        className: cn("pb-0 xs:pb-0", className),
+      })}
+      {...props}
+    />
   );
 }
 
@@ -60,16 +63,7 @@ function AlertDialogFooter({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  return (
-    <div
-      className={cn(
-        "flex flex-col-reverse gap-y-3 pt-7",
-        "xs:flex-row xs:justify-end xs:gap-x-4 xs:pt-8",
-        className,
-      )}
-      {...props}
-    />
-  );
+  return <div className={dialogFooterVariants({ className })} {...props} />;
 }
 
 function AlertDialogTitle({
@@ -78,7 +72,7 @@ function AlertDialogTitle({
 }: React.ComponentProps<typeof AlertDialogPrimitive.Title>) {
   return (
     <AlertDialogPrimitive.Title
-      className={cn("text-5 font-semibold", className)}
+      className={dialogTitleVariants({ className })}
       {...props}
     />
   );
@@ -90,7 +84,7 @@ function AlertDialogDescription({
 }: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {
   return (
     <AlertDialogPrimitive.Description
-      className={cn("text-3.5 leading-6 text-muted-foreground", className)}
+      className={dialogDescriptionVariants({ className })}
       {...props}
     />
   );

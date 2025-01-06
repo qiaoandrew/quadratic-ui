@@ -79,6 +79,8 @@ import SelectDemo from "~/components/docs/demos/select/SelectDemo";
 import SelectScrollableDemo from "~/components/docs/demos/select/SelectScrollableDemo";
 import SelectFormDemo from "~/components/docs/demos/select/SelectFormDemo";
 import SeparatorDemo from "~/components/docs/demos/separator/SeparatorDemo";
+import SheetDemo from "~/components/docs/demos/sheet/SheetDemo";
+import SheetSideDemo from "~/components/docs/demos/sheet/SheetSideDemo";
 import SkeletonDemo from "~/components/docs/demos/skeleton/SkeletonDemo";
 import SliderDemo from "~/components/docs/demos/slider/SliderDemo";
 import SliderMultipleThumbsDemo from "~/components/docs/demos/slider/SliderMultipleThumbsDemo";
@@ -437,6 +439,14 @@ export const COMPONENT_PREVIEWS = {
   separator: {
     Preview: SeparatorDemo,
     path: "src/components/docs/demos/separator/SeparatorDemo.tsx",
+  },
+  sheet: {
+    Preview: SheetDemo,
+    path: "src/components/docs/demos/sheet/SheetDemo.tsx",
+  },
+  sheetSide: {
+    Preview: SheetSideDemo,
+    path: "src/components/docs/demos/sheet/SheetSideDemo.tsx",
   },
   skeleton: {
     Preview: SkeletonDemo,
