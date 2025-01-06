@@ -53,6 +53,7 @@ import DrawerDemo from "~/components/docs/demos/drawer/DrawerDemo";
 import DropdownMenuDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuDemo";
 import DropdownMenuCheckboxDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuCheckboxDemo";
 import DropdownMenuRadioGroupDemo from "~/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo";
+import FormDemo from "~/components/docs/demos/form/FormDemo";
 import HoverCardDemo from "~/components/docs/demos/hover-card/HoverCardDemo";
 import InputDemo from "~/components/docs/demos/input/InputDemo";
 import InputDisabledDemo from "~/components/docs/demos/input/InputDisabledDemo";
@@ -332,6 +333,10 @@ export const COMPONENT_PREVIEWS = {
   dropdownMenuRadioGroup: {
     Preview: DropdownMenuRadioGroupDemo,
     path: "src/components/docs/demos/dropdown-menu/DropdownMenuRadioGroupDemo.tsx",
+  },
+  form: {
+    Preview: FormDemo,
+    path: "src/components/docs/demos/form/FormDemo.tsx",
   },
   hoverCard: {
     Preview: HoverCardDemo,
