@@ -2,6 +2,11 @@
 
 import { createContext, useContext, useId, useMemo } from "react";
 import * as RechartsPrimitive from "recharts";
+import type {
+  NameType,
+  Payload,
+  ValueType,
+} from "recharts/types/component/DefaultTooltipContent";
 
 import { cn } from "~/utils/tailwind";
 
@@ -199,7 +204,95 @@ function ChartTooltipContent({
 
   const nestLabel = payload.length === 1 && indicator !== "dot";
 
-  return <div ref={ref} className=""></div>;
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "grid min-w-32 items-start gap-1.5 rounded-1.5 border border-border/50 bg-background px-2.5 py-1.5 text-3",
+        className,
+      )}
+    >
+      {!nestLabel && tooltipLabel}
+      <div className="flex flex-col gap-y-1.5">
+        {payload.map((item, index) => {
+          const key = `${nameKey ?? item.name ?? item.dataKey ?? "value"}`;
+          const itemConfig = getPayloadConfigFromPayload({
+            config,
+            payload: item,
+            key,
+          });
+          const indicatorColor =
+            color ?? (item.payload as { fill: string }) ?? item.color;
+
+          return (
+            <div
+              className={cn(
+                "flex w-full flex-wrap items-stretch gap-x-2",
+                "[&>svg]:size-2.5 [&>svg]:text-muted-foreground",
+                indicator === "dot" && "items-center",
+              )}
+              key={item.dataKey}
+            >
+              {formatter && item.value !== undefined && item.name ? (
+                formatter(
+                  item.value,
+                  item.name,
+                  item,
+                  index,
+                  item.payload as Payload<ValueType, NameType>[],
+                )
+              ) : (
+                <>
+                  {itemConfig?.icon ? (
+                    <itemConfig.icon />
+                  ) : (
+                    !hideIndicator && (
+                      <div
+                        className={cn(
+                          "shrink-0 rounded-0.5 border-[--color-border] bg-[--color-bg]",
+                          {
+                            "size-2.5": indicator === "dot",
+                            "w-1": indicator === "line",
+                            "w-0 border-[1.5px] border-dashed bg-transparent":
+                              indicator === "dashed",
+                            "my-0.5": nestLabel && indicator === "dashed",
+                          },
+                        )}
+                        style={
+                          {
+                            "--color-bg": indicatorColor,
+                            "--color-border": indicatorColor,
+                          } as React.CSSProperties
+                        }
+                      />
+                    )
+                  )}
+                  <div
+                    className={cn(
+                      "leading-none flex flex-1 justify-between",
+                      nestLabel ? "items-end" : "items-center",
+                    )}
+                  >
+                    <div className="flex flex-col gap-y-1.5">
+                      {nestLabel && tooltipLabel}
+                      <span className="text-muted-foreground">
+                        {itemConfig?.label ?? item.name}
+                      </span>
+                    </div>
+                    {item.value && (
+                      <span className="font-mono font-medium tabular-nums">
+                        {item.value.toLocaleString()}
+                      </span>
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 const ChartLegend = RechartsPrimitive.Legend;
