@@ -116,6 +116,11 @@ import ToggleGroupLargeDemo from "~/components/docs/demos/primitives/toggle-grou
 import ToggleGroupDisabledDemo from "~/components/docs/demos/primitives/toggle-group/ToggleGroupDisabledDemo";
 import TooltipDemo from "~/components/docs/demos/primitives/tooltip/TooltipDemo";
 import AreaChartDemo from "~/components/docs/demos/recharts/area-chart/AreaChartDemo";
+import BarChartDemo from "~/components/docs/demos/recharts/bar-chart/BarChartDemo";
+import LineChartDemo from "~/components/docs/demos/recharts/line-chart/LineChartDemo";
+import PieChartDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDemo";
+import RadarChartDemo from "~/components/docs/demos/recharts/radial-chart/RadarChartDemo";
+import RadialChartDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -589,5 +594,25 @@ export const COMPONENT_PREVIEWS = {
   rechartsAreaChart: {
     Preview: AreaChartDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartDemo.tsx",
+  },
+  rechartsBarChart: {
+    Preview: BarChartDemo,
+    path: "src/components/docs/demos/recharts/bar-chart/BarChartDemo.tsx",
+  },
+  rechartsLineChart: {
+    Preview: LineChartDemo,
+    path: "src/components/docs/demos/recharts/line-chart/LineChartDemo.tsx",
+  },
+  rechartsPieChart: {
+    Preview: PieChartDemo,
+    path: "src/components/docs/demos/recharts/pie-chart/PieChartDemo.tsx",
+  },
+  rechartsRadarChart: {
+    Preview: RadarChartDemo,
+    path: "src/components/docs/demos/recharts/radial-chart/RadarChartDemo.tsx",
+  },
+  rechartsRadialChart: {
+    Preview: RadialChartDemo,
+    path: "src/components/docs/demos/recharts/radar-chart/RadarChartDemo.tsx",
   },
 };
