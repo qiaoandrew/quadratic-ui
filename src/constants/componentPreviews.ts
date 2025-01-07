@@ -115,6 +115,7 @@ import ToggleGroupSmallDemo from "~/components/docs/demos/primitives/toggle-grou
 import ToggleGroupLargeDemo from "~/components/docs/demos/primitives/toggle-group/ToggleGroupLargeDemo";
 import ToggleGroupDisabledDemo from "~/components/docs/demos/primitives/toggle-group/ToggleGroupDisabledDemo";
 import TooltipDemo from "~/components/docs/demos/primitives/tooltip/TooltipDemo";
+import AreaChartDemo from "~/components/docs/demos/recharts/area-chart/AreaChartDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -584,5 +585,9 @@ export const COMPONENT_PREVIEWS = {
   tooltip: {
     Preview: TooltipDemo,
     path: "src/components/docs/demos/primitives/tooltip/TooltipDemo.tsx",
+  },
+  rechartsAreaChart: {
+    Preview: AreaChartDemo,
+    path: "src/components/docs/demos/recharts/area-chart/AreaChartDemo.tsx",
   },
 };
