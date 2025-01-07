@@ -119,7 +119,7 @@ import AreaChartDemo from "~/components/docs/demos/recharts/area-chart/AreaChart
 import BarChartDemo from "~/components/docs/demos/recharts/bar-chart/BarChartDemo";
 import LineChartDemo from "~/components/docs/demos/recharts/line-chart/LineChartDemo";
 import PieChartDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDemo";
-import RadarChartDemo from "~/components/docs/demos/recharts/radial-chart/RadarChartDemo";
+import RadarChartDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartDemo";
 import RadialChartDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -609,10 +609,10 @@ export const COMPONENT_PREVIEWS = {
   },
   rechartsRadarChart: {
     Preview: RadarChartDemo,
-    path: "src/components/docs/demos/recharts/radial-chart/RadarChartDemo.tsx",
+    path: "src/components/docs/demos/recharts/radar-chart/RadarChartDemo.tsx",
   },
   rechartsRadialChart: {
     Preview: RadialChartDemo,
-    path: "src/components/docs/demos/recharts/radar-chart/RadarChartDemo.tsx",
+    path: "src/components/docs/demos/recharts/radial-chart/RadialChartDemo.tsx",
   },
 };

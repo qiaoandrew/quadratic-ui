@@ -1,3 +1,3 @@
-export default function RadialChartDemo() {
+export default function RadarChartDemo() {
   return <></>;
 }
