@@ -73,10 +73,20 @@ export async function getTOCs() {
     }),
   );
 
+  const rechartsPages = await readDirectory("src/app/docs/charts/recharts");
+  await Promise.all(
+    rechartsPages.map(async (page) => {
+      const filePath = `src/app/docs/charts/recharts/${page}/page.mdx`;
+      const content = await readFile(filePath);
+      const toc = extractSectionIds(content);
+      tocs[`charts/recharts/${page}`] = toc;
+    }),
+  );
+
   return tocs;
 }
 
-export const getComponentsMenuItems = async () => {
+export const getMenuItems = async () => {
   const primitives = await readDirectory("src/app/docs/components/primitives");
   const primitivesMenuItems: DocsItem[] = await Promise.all(
     primitives.map(async (name) => ({
@@ -86,7 +96,24 @@ export const getComponentsMenuItems = async () => {
     })),
   );
 
+  const rechartCharts = await readDirectory("src/app/docs/charts/recharts");
+  const rechartsMenuItems: DocsItem[] = await Promise.all(
+    rechartCharts.map(async (name) => ({
+      id: name,
+      href: `/docs/charts/recharts/${name}`,
+      label: formatLabel(name),
+    })),
+  );
+  const rechartsQuickstartIndex = rechartsMenuItems.findIndex(
+    (item) => item.id === "quickstart",
+  );
+  const [item] = rechartsMenuItems.splice(rechartsQuickstartIndex, 1);
+  if (item) {
+    rechartsMenuItems.unshift(item);
+  }
+
   return {
     primitivesMenuItems,
+    rechartsMenuItems,
   };
 };
