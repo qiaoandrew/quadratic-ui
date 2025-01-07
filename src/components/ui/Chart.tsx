@@ -74,6 +74,7 @@ function ChartContainer({
           "[&_.recharts-sector[stroke='#fff']]:stroke-transparent",
           "[&_.recharts-sector]:outline-none",
           "[&_.recharts-surface]:outline-none",
+          className,
         )}
         {...props}
       >
@@ -164,7 +165,12 @@ function ChartTooltipContent({
     }
 
     const [item] = payload;
-    const key = `${labelKey ?? item?.dataKey ?? item?.name ?? "value"}`;
+
+    if (!item) {
+      return null;
+    }
+
+    const key = `${labelKey ?? item.dataKey ?? item.name ?? "value"}`;
     const itemConfig = getPayloadConfigFromPayload({
       config,
       payload: item,
@@ -222,12 +228,12 @@ function ChartTooltipContent({
             key,
           });
           const indicatorColor =
-            color ?? (item.payload as { fill: string }) ?? item.color;
+            color ?? (item.payload as { fill: string }).fill ?? item.color;
 
           return (
             <div
               className={cn(
-                "flex w-full flex-wrap items-stretch gap-x-2",
+                "flex w-full items-stretch gap-x-2",
                 "[&>svg]:size-2.5 [&>svg]:text-muted-foreground",
                 indicator === "dot" && "items-center",
               )}
