@@ -1,3 +1,3 @@
-export default function TooltipLableFormatterDemo() {
+export default function TooltipLabelFormatterDemo() {
   return <div>TooltipLableFormatterDemo</div>;
 }
