@@ -43,10 +43,7 @@ export default function BarChartStackedLegendDemo() {
           axisLine={false}
           tickFormatter={(value: string) => value.slice(0, 3)}
         />
-        <ChartTooltip
-          animationDuration={150}
-          content={<ChartTooltipContent hideLabel />}
-        />
+        <ChartTooltip content={<ChartTooltipContent hideLabel />} />
         <ChartLegend content={<ChartLegendContent />} />
         <Bar
           dataKey="desktop"

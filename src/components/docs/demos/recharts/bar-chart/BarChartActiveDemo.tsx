@@ -58,7 +58,6 @@ export default function BarChartActiveDemo() {
           }
         />
         <ChartTooltip
-          animationDuration={150}
           cursor={false}
           content={<ChartTooltipContent hideLabel />}
         />

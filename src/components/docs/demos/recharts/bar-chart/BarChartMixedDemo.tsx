@@ -64,7 +64,6 @@ export default function BarChartMixedDemo() {
         />
         <XAxis dataKey="visitors" type="number" hide />
         <ChartTooltip
-          animationDuration={150}
           cursor={false}
           content={<ChartTooltipContent hideLabel />}
         />

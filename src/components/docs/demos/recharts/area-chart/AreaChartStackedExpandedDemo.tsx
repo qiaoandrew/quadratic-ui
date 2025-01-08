@@ -51,7 +51,6 @@ export default function AreaChartStackedExpandedDemo() {
           tickFormatter={(value: string) => value.slice(0, 3)}
         />
         <ChartTooltip
-          animationDuration={150}
           cursor={false}
           content={<ChartTooltipContent indicator="line" />}
         />

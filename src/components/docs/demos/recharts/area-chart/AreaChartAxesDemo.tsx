@@ -46,11 +46,7 @@ export default function AreaChartAxesDemo() {
           tickFormatter={(value: string) => value.slice(0, 3)}
         />
         <YAxis tickLine={false} axisLine={false} tickMargin={8} tickCount={3} />
-        <ChartTooltip
-          animationDuration={150}
-          cursor={false}
-          content={<ChartTooltipContent />}
-        />
+        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
         <Area
           dataKey="mobile"
           type="natural"

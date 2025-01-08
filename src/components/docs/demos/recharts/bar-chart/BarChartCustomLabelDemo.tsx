@@ -57,7 +57,6 @@ export default function BarChartMultipleDemo() {
         />
         <XAxis dataKey="desktop" type="number" hide />
         <ChartTooltip
-          animationDuration={150}
           cursor={false}
           content={<ChartTooltipContent hideIndicator />}
         />

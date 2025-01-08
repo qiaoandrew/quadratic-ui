@@ -38,7 +38,6 @@ export default function BarChartDemo() {
           tickFormatter={(value: string) => value.slice(0, 3)}
         />
         <ChartTooltip
-          animationDuration={150}
           cursor={false}
           content={<ChartTooltipContent hideIndicator />}
         />

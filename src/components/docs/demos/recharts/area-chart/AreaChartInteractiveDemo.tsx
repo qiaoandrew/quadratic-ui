@@ -194,7 +194,6 @@ export default function AreaChartInteractiveDemo() {
             tickFormatter={(value: string) => format(parseISO(value), "MMM d")}
           />
           <ChartTooltip
-            animationDuration={150}
             cursor={false}
             content={
               <ChartTooltipContent

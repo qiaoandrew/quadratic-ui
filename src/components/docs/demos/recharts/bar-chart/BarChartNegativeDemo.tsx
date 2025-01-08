@@ -48,7 +48,6 @@ export default function BarChartNegativeDemo() {
           ))}
         </Bar>
         <ChartTooltip
-          animationDuration={150}
           cursor={false}
           content={<ChartTooltipContent hideLabel hideIndicator />}
         />
