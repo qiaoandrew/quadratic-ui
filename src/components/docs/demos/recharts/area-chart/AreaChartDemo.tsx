@@ -43,7 +43,7 @@ export default function AreaChartDemo() {
         />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent indicator="line" />}
+          content={<ChartTooltipContent hideIndicator />}
         />
         <Area
           dataKey="desktop"
