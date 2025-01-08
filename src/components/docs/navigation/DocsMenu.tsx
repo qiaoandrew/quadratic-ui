@@ -11,9 +11,13 @@ import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 
 interface DocsMenuProps {
   primitivesMenuItems: DocsItem[];
+  rechartsMenuItems: DocsItem[];
 }
 
-export default function DocsMenu({ primitivesMenuItems }: DocsMenuProps) {
+export default function DocsMenu({
+  primitivesMenuItems,
+  rechartsMenuItems,
+}: DocsMenuProps) {
   const pathname = usePathname();
 
   return (
@@ -33,6 +37,13 @@ export default function DocsMenu({ primitivesMenuItems }: DocsMenuProps) {
               pathname={pathname}
               label="Primitives"
               items={primitivesMenuItems}
+            />
+          )}
+          {pathname.includes("charts") && (
+            <DocsMenuSection
+              pathname={pathname}
+              label="Recharts"
+              items={rechartsMenuItems}
             />
           )}
         </nav>

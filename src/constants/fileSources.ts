@@ -45,6 +45,8 @@ export const FILE_SOURCES = {
   toggle: "src/components/ui/Toggle.tsx",
   toggleGroup: "src/components/ui/ToggleGroup.tsx",
   tooltip: "src/components/ui/Tooltip.tsx",
-  comboboxDemo: "src/components/docs/demos/combobox/ComboboxDemo.tsx",
-  datePickerDemo: "src/components/docs/demos/date-picker/DatePickerDemo.tsx",
+  comboboxDemo:
+    "src/components/docs/demos/primitives/combobox/ComboboxDemo.tsx",
+  datePickerDemo:
+    "src/components/docs/demos/primitives/date-picker/DatePickerDemo.tsx",
 };

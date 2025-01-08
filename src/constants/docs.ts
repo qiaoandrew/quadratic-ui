@@ -1,6 +1,7 @@
 import { SiGithub, SiFigma } from "@icons-pack/react-simple-icons";
 import {
   AtomIcon,
+  ChartColumnBigIcon,
   CircleCheckIcon,
   ComponentIcon,
   GitMergeIcon,
@@ -26,6 +27,13 @@ export const DOCS_GROUPS = [
     groupHrefPrefix: "/docs/components",
     label: "Components",
     Icon: ComponentIcon,
+  },
+  {
+    id: "charts",
+    href: "/docs/charts/recharts/area-chart",
+    groupHrefPrefix: "/docs/charts",
+    label: "Charts",
+    Icon: ChartColumnBigIcon,
   },
   {
     id: "github",
