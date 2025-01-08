@@ -45,7 +45,11 @@ export default function AreaChartStackedDemo() {
           tickMargin={8}
           tickFormatter={(value: string) => value.slice(0, 3)}
         />
-        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+        <ChartTooltip
+          animationDuration={150}
+          cursor={false}
+          content={<ChartTooltipContent />}
+        />
         <Area
           dataKey="mobile"
           type="natural"

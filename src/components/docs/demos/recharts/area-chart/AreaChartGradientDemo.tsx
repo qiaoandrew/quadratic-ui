@@ -48,7 +48,11 @@ export default function AreaChartGradientDemo() {
           tickMargin={8}
           tickFormatter={(value: string) => value.slice(0, 3)}
         />
-        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+        <ChartTooltip
+          animationDuration={150}
+          cursor={false}
+          content={<ChartTooltipContent />}
+        />
         <defs>
           <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
             <stop

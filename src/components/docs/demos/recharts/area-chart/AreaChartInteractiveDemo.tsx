@@ -199,6 +199,7 @@ export default function AreaChartInteractiveDemo() {
             }}
           />
           <ChartTooltip
+            animationDuration={150}
             cursor={false}
             content={
               <ChartTooltipContent
