@@ -43,7 +43,7 @@ export default function AreaChartLinearDemo() {
         />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent indicator="dot" hideLabel />}
+          content={<ChartTooltipContent hideIndicator />}
         />
         <Area
           dataKey="desktop"
