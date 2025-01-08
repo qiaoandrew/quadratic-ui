@@ -329,7 +329,7 @@ function ChartLegendContent({
       ref={ref}
       className={cn(
         "flex items-center justify-center gap-x-4",
-        verticalAlign === "top" ? "pb-3" : "pt-3",
+        verticalAlign === "top" ? "mb-6" : "mt-6",
         className,
       )}
     >
@@ -347,7 +347,7 @@ function ChartLegendContent({
               "flex items-center gap-x-1.5",
               "[&>svg]:size-3 [&>svg]:text-muted-foreground",
             )}
-            key={key}
+            key={item.value as string}
           >
             {itemConfig?.icon && !hideIcon ? (
               <itemConfig.icon />
@@ -355,10 +355,9 @@ function ChartLegendContent({
               <div
                 className="size-2 shrink-0 rounded-0.5"
                 style={{ backgroundColor: item.color }}
-              >
-                {itemConfig?.label}
-              </div>
+              />
             )}
+            {itemConfig?.label}
           </div>
         );
       })}
