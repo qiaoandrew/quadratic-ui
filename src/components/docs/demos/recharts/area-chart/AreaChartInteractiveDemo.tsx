@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { format, parseISO } from "date-fns";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import {
@@ -132,7 +133,7 @@ export default function AreaChartInteractiveDemo() {
 
   const filteredData = CHART_DATA.filter((item) => {
     const date = new Date(item.date);
-    const now = new Date("2024-07-01");
+    const now = new Date("2024-06-30");
     let daysToSubtract = 90;
     if (timeRange === "30d") {
       daysToSubtract = 30;
@@ -190,25 +191,16 @@ export default function AreaChartInteractiveDemo() {
             axisLine={false}
             tickMargin={8}
             minTickGap={32}
-            tickFormatter={(value: string) => {
-              const date = new Date(value);
-              return date.toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-              });
-            }}
+            tickFormatter={(value: string) => format(parseISO(value), "MMM d")}
           />
           <ChartTooltip
             animationDuration={150}
             cursor={false}
             content={
               <ChartTooltipContent
-                labelFormatter={(value: string) => {
-                  return new Date(value).toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                  });
-                }}
+                labelFormatter={(value: string) =>
+                  format(parseISO(value), "MMM d")
+                }
                 indicator="dot"
               />
             }
