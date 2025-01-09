@@ -175,7 +175,7 @@ import RadialChartGridDemo from "~/components/docs/demos/recharts/radial-chart/R
 import RadialChartTextDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartTextDemo";
 import RadialChartShapeDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartShapeDemo";
 import RadialChartStackedDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartStackedDemo";
-import TooltipDefaultDemo from "~/components/docs/demos/recharts/tooltip/TooltipDefaultDemo";
+import RechartsTooltipDemo from "~/components/docs/demos/recharts/tooltip/TooltipDemo";
 import TooltipLineIndicatorDemo from "~/components/docs/demos/recharts/tooltip/TooltipLineIndicatorDemo";
 import TooltipNoIndicatorDemo from "~/components/docs/demos/recharts/tooltip/TooltipNoIndicatorDemo";
 import TooltipCustomLabelDemo from "~/components/docs/demos/recharts/tooltip/TooltipCustomLabelDemo";
@@ -894,9 +894,9 @@ export const COMPONENT_PREVIEWS = {
     Preview: RadialChartStackedDemo,
     path: "src/components/docs/demos/recharts/radial-chart/RadialChartStackedDemo.tsx",
   },
-  rechartsTooltipDefault: {
-    Preview: TooltipDefaultDemo,
-    path: "src/components/docs/demos/recharts/tooltip/TooltipDefaultDemo.tsx",
+  rechartsTooltip: {
+    Preview: RechartsTooltipDemo,
+    path: "src/components/docs/demos/recharts/tooltip/TooltipDemo.tsx",
   },
   rechartsTooltipLineIndicator: {
     Preview: TooltipLineIndicatorDemo,
