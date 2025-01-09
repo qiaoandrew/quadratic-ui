@@ -20,12 +20,17 @@ import {
   PopoverTrigger,
 } from "~/components/ui/Popover";
 
+type ComboboxDisplayValue = {
+  label: string;
+  value: string;
+};
+
 type ComboboxContextProps = {
   value: string | undefined;
   setValue: (value: string | undefined) => void;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
-  items: Array<{ label: string; value: string }>;
+  items: ComboboxDisplayValue[];
 };
 
 const ComboboxContext = createContext<ComboboxContextProps>({
@@ -44,12 +49,12 @@ interface ComboboxProps extends React.ComponentProps<typeof Popover> {
   value?: string;
   onChange?: (value: string | undefined) => void;
   defaultValue?: string;
-  items?: Array<{ label: string; value: string }>;
+  items?: ComboboxDisplayValue[];
 }
 
 function Combobox({
   value: controlledValue,
-  onChange,
+  onChange: setControlledValue,
   defaultValue,
   items = [],
   ...props
@@ -60,7 +65,7 @@ function Combobox({
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const value = controlledValue ?? uncontrolledValue;
-  const setValue = onChange ?? setUnControlledValue;
+  const setValue = setControlledValue ?? setUnControlledValue;
 
   return (
     <ComboboxContext.Provider
