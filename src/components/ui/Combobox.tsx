@@ -59,13 +59,13 @@ function Combobox({
   items = [],
   ...props
 }: ComboboxProps) {
-  const [uncontrolledValue, setUnControlledValue] = useState<
+  const [uncontrolledValue, setUncontrolledValue] = useState<
     string | undefined
   >(defaultValue);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const value = controlledValue ?? uncontrolledValue;
-  const setValue = setControlledValue ?? setUnControlledValue;
+  const setValue = setControlledValue ?? setUncontrolledValue;
 
   return (
     <ComboboxContext.Provider
