@@ -26,7 +26,7 @@ const CHART_DATA = [
   { month: "may", desktop: 209, fill: "var(--color-may)" },
 ];
 
-const chartConfig = {
+const CHART_CONFIG = {
   visitors: {
     label: "Visitors",
   },
@@ -75,7 +75,7 @@ export default function PieChartInteractiveDemo() {
         </SelectTrigger>
         <SelectContent align="end">
           {months.map((key) => {
-            const config = chartConfig[key as keyof typeof chartConfig];
+            const config = CHART_CONFIG[key as keyof typeof CHART_CONFIG];
 
             if (!config) return null;
 
@@ -87,7 +87,10 @@ export default function PieChartInteractiveDemo() {
           })}
         </SelectContent>
       </Select>
-      <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
+      <ChartContainer
+        config={CHART_CONFIG}
+        className="min-h-64 w-full max-w-96"
+      >
         <PieChart>
           <ChartTooltip
             cursor={false}

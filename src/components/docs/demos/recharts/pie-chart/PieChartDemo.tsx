@@ -17,7 +17,7 @@ const CHART_DATA = [
   { browser: "other", visitors: 90, fill: "var(--color-other)" },
 ];
 
-const chartConfig = {
+const CHART_CONFIG = {
   visitors: {
     label: "Visitors",
   },
@@ -45,7 +45,7 @@ const chartConfig = {
 
 export default function PieChartDemo() {
   return (
-    <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
+    <ChartContainer config={CHART_CONFIG} className="min-h-64 w-full max-w-96">
       <PieChart>
         <ChartTooltip
           cursor={false}
