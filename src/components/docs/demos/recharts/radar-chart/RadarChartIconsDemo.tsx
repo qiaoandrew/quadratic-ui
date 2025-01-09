@@ -10,7 +10,7 @@ import {
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
-} from "~/components/ui/Chart";
+} from "~/components/ui/RechartChart";
 
 const CHART_DATA = [
   { month: "January", desktop: 186, mobile: 80 },
