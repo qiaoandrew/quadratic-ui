@@ -18,7 +18,7 @@ import {
 export default function ContextMenuDemo() {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="z-10 flex aspect-video max-h-36 w-full max-w-64 items-center justify-center rounded-2 border border-dashed bg-background text-4 font-medium">
+      <ContextMenuTrigger className="z-10 flex aspect-video max-h-36 w-full max-w-64 items-center justify-center rounded-2 border border-dashed border-muted-foreground bg-background text-4 font-medium">
         Right click here
       </ContextMenuTrigger>
       <ContextMenuContent className="w-72">

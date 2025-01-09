@@ -9,7 +9,7 @@ interface LandingDemoProps {
 export default function LandingDemo({ label, href, Demo }: LandingDemoProps) {
   return (
     <div>
-      <div className="relative flex h-64 items-center justify-center bg-muted/15 p-6 transition-colors hover:bg-muted/30">
+      <div className="relative flex h-64 items-center justify-center overflow-x-visible bg-muted/15 p-6 transition-colors hover:bg-muted/30">
         <Link href={href} className="absolute inset-0" />
         <Demo />
       </div>

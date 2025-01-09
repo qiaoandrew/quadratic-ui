@@ -90,10 +90,13 @@ function PaginationEllipsis({
   return (
     <span
       aria-hidden
-      className={cn("flex size-9 items-center justify-center", className)}
+      className={cn(
+        "flex size-9 items-center justify-center [&>svg]:size-4.5",
+        className,
+      )}
       {...props}
     >
-      <MoreHorizontalIcon className="size-4.5" />
+      <MoreHorizontalIcon />
       <span className="sr-only">More pages</span>
     </span>
   );

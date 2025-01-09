@@ -1,5 +1,3 @@
-"use client";
-
 import { Checkbox } from "~/components/ui/Checkbox";
 import { Label } from "~/components/ui/Label";
 
