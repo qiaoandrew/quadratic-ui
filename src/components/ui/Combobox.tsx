@@ -1,3 +1,6 @@
+"use client";
+
+import { createContext, useContext, useState } from "react";
 import { CheckIcon, ChevronsUpDownIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
@@ -17,18 +20,64 @@ import {
   PopoverTrigger,
 } from "~/components/ui/Popover";
 
-function Combobox(props: React.ComponentProps<typeof Popover>) {
-  return <Popover {...props} />;
+type ComboboxContextProps = {
+  value: string | undefined;
+  setValue: (value: string | undefined) => void;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  items: Array<{ label: string; value: string }>;
+};
+
+const ComboboxContext = createContext<ComboboxContextProps>({
+  value: undefined,
+  setValue: () => {
+    return;
+  },
+  isOpen: false,
+  setIsOpen: () => {
+    return;
+  },
+  items: [],
+});
+
+interface ComboboxProps extends React.ComponentProps<typeof Popover> {
+  value?: string;
+  onChange?: (value: string | undefined) => void;
+  defaultValue?: string;
+  items?: Array<{ label: string; value: string }>;
+}
+
+function Combobox({
+  value: controlledValue,
+  onChange,
+  defaultValue,
+  items = [],
+  ...props
+}: ComboboxProps) {
+  const [uncontrolledValue, setUnControlledValue] = useState<
+    string | undefined
+  >(defaultValue);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const value = controlledValue ?? uncontrolledValue;
+  const setValue = onChange ?? setUnControlledValue;
+
+  return (
+    <ComboboxContext.Provider
+      value={{ value, setValue, isOpen, setIsOpen, items }}
+    >
+      <Popover open={isOpen} onOpenChange={setIsOpen} {...props} />
+    </ComboboxContext.Provider>
+  );
 }
 
 function ComboboxTrigger({
-  isOpen,
   children,
   className,
   ...props
-}: Omit<React.ComponentProps<typeof Button>, "variant" | "size" | "subject"> & {
-  isOpen: boolean;
-}) {
+}: Omit<React.ComponentProps<typeof Button>, "variant" | "size" | "subject">) {
+  const { isOpen } = useContext(ComboboxContext);
+
   return (
     <PopoverTrigger asChild>
       <Button
@@ -47,6 +96,18 @@ function ComboboxTrigger({
       </Button>
     </PopoverTrigger>
   );
+}
+
+interface ComboboxValueProps {
+  placeholder: string;
+}
+
+function ComboboxValue({ placeholder }: ComboboxValueProps) {
+  const { value, items } = useContext(ComboboxContext);
+
+  return value
+    ? items.find((item) => item.value === value)?.label
+    : placeholder;
 }
 
 function ComboboxContent({
@@ -88,18 +149,36 @@ function ComboboxGroup({
   return <CommandGroup {...props} className={cn("p-1", className)} />;
 }
 
+interface ComboboxItemProps
+  extends Omit<React.ComponentProps<typeof CommandItem>, "onSelect"> {
+  value: string;
+  onSelect?: (value: string | undefined) => void;
+}
+
 function ComboboxItem({
-  isActive,
+  value: itemValue,
+  onSelect,
   className,
   children,
   ...props
-}: React.ComponentProps<typeof CommandItem> & { isActive: boolean }) {
+}: ComboboxItemProps) {
+  const { value, setValue, setIsOpen } = useContext(ComboboxContext);
+
   return (
     <CommandItem
-      {...props}
+      value={itemValue}
+      onSelect={(currentValue) => {
+        const newValue = currentValue === value ? undefined : currentValue;
+        setValue(newValue);
+        onSelect?.(newValue);
+        setIsOpen(false);
+      }}
       className={cn("h-8 rounded-1 pl-8 text-3.5 [&>svg]:size-3.5", className)}
+      {...props}
     >
-      <CheckIcon className={cn(isActive ? "opacity-100" : "opacity-0")} />
+      <CheckIcon
+        className={cn(value === itemValue ? "opacity-100" : "opacity-0")}
+      />
       <span>{children}</span>
     </CommandItem>
   );
@@ -108,6 +187,7 @@ function ComboboxItem({
 export {
   Combobox,
   ComboboxTrigger,
+  ComboboxValue,
   ComboboxContent,
   ComboboxInput,
   ComboboxList,

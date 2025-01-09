@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 import {
   Combobox,
   ComboboxTrigger,
@@ -11,6 +7,7 @@ import {
   ComboboxGroup,
   ComboboxItem,
   ComboboxList,
+  ComboboxValue,
 } from "~/components/ui/Combobox";
 
 const FRAMEWORKS = [
@@ -37,15 +34,10 @@ const FRAMEWORKS = [
 ];
 
 export default function ComboboxDemo() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [value, setValue] = useState("");
-
   return (
-    <Combobox open={isOpen} onOpenChange={setIsOpen}>
-      <ComboboxTrigger isOpen={isOpen}>
-        {value
-          ? FRAMEWORKS.find((framework) => framework.value === value)?.label
-          : "Select framework..."}
+    <Combobox items={FRAMEWORKS}>
+      <ComboboxTrigger>
+        <ComboboxValue placeholder="Select framework..." />
       </ComboboxTrigger>
       <ComboboxContent>
         <ComboboxInput placeholder="Search frameworks..." />
@@ -53,15 +45,7 @@ export default function ComboboxDemo() {
           <ComboboxEmpty>No framework found.</ComboboxEmpty>
           <ComboboxGroup>
             {FRAMEWORKS.map((framework) => (
-              <ComboboxItem
-                isActive={value === framework.value}
-                value={framework.value}
-                onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue);
-                  setIsOpen(false);
-                }}
-                key={framework.value}
-              >
+              <ComboboxItem value={framework.value} key={framework.value}>
                 {framework.label}
               </ComboboxItem>
             ))}
