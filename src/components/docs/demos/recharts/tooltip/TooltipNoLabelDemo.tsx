@@ -38,7 +38,7 @@ export default function TooltipNoLabelDemo() {
           tickLine={false}
           tickMargin={10}
           axisLine={false}
-          tickFormatter={(value) => {
+          tickFormatter={(value: string) => {
             return new Date(value).toLocaleDateString("en-US", {
               weekday: "short",
             });
