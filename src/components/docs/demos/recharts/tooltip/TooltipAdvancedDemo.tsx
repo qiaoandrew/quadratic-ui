@@ -87,7 +87,10 @@ export default function TooltipAdvancedDemo() {
                     <div className="mt-1.5 flex basis-full items-center border-t pt-1.5 text-3 font-medium text-foreground">
                       Total
                       <div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums text-foreground">
-                        {item.payload.running + item.payload.swimming}
+                        {
+                          ((item.payload.running as number) +
+                            item.payload.swimming) as number
+                        }
                         <span className="font-normal text-muted-foreground">
                           kcal
                         </span>

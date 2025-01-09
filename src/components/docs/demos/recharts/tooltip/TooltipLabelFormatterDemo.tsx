@@ -59,7 +59,7 @@ export default function TooltipLabelFormatterDemo() {
         <ChartTooltip
           content={
             <ChartTooltipContent
-              labelFormatter={(value) => {
+              labelFormatter={(value: string) => {
                 return new Date(value).toLocaleDateString("en-US", {
                   day: "numeric",
                   month: "long",
