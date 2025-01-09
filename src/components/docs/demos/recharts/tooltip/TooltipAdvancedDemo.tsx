@@ -9,7 +9,13 @@ import {
   ChartTooltipContent,
 } from "~/components/ui/Chart";
 
-const CHART_DATA = [
+interface DataPoint {
+  date: string;
+  running: number;
+  swimming: number;
+}
+
+const CHART_DATA: DataPoint[] = [
   { date: "2024-07-15", running: 450, swimming: 300 },
   { date: "2024-07-16", running: 380, swimming: 420 },
   { date: "2024-07-17", running: 520, swimming: 120 },
@@ -61,7 +67,12 @@ export default function TooltipAdvancedDemo() {
             <ChartTooltipContent
               hideLabel
               className="w-44"
-              formatter={(value, name, item, index) => (
+              formatter={(
+                value,
+                name,
+                item: { payload?: DataPoint },
+                index,
+              ) => (
                 <div className="flex flex-1 flex-col">
                   <div className="flex items-center">
                     <div className="flex items-center gap-x-2">
@@ -83,14 +94,11 @@ export default function TooltipAdvancedDemo() {
                       </span>
                     </div>
                   </div>
-                  {index === 1 && (
+                  {index === 1 && item.payload && (
                     <div className="mt-1.5 flex basis-full items-center border-t pt-1.5 text-3 font-medium text-foreground">
                       Total
                       <div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums text-foreground">
-                        {
-                          ((item.payload.running as number) +
-                            item.payload.swimming) as number
-                        }
+                        {item.payload.running + item.payload.swimming}
                         <span className="font-normal text-muted-foreground">
                           kcal
                         </span>
