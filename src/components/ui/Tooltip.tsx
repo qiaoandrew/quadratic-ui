@@ -4,7 +4,12 @@ import { cn } from "~/utils/tailwind";
 
 const TooltipProvider = TooltipPrimitive.Provider;
 
-const Tooltip = TooltipPrimitive.Root;
+function Tooltip({
+  delayDuration = 150,
+  ...props
+}: React.ComponentProps<typeof TooltipPrimitive.Root>) {
+  return <TooltipPrimitive.Root delayDuration={delayDuration} {...props} />;
+}
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
