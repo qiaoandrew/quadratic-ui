@@ -1,11 +1,5 @@
 import { Checkbox } from "~/components/ui/Checkbox";
-import { Label } from "~/components/ui/Label";
 
 export default function CheckboxDemo() {
-  return (
-    <div className="z-10 flex items-center gap-x-2">
-      <Checkbox id="terms" />
-      <Label htmlFor="terms">Accept terms and conditions</Label>
-    </div>
-  );
+  return <Checkbox id="checkbox" className="z-10" />;
 }

@@ -39,7 +39,7 @@ import SwitchDemo from "~/components/landing/demos/SwitchDemo";
 import TabsDemo from "~/components/landing/demos/TabsDemo";
 import TextareaDemo from "~/components/landing/demos/TextareaDemo";
 import ToastDemo from "~/components/landing/demos/ToastDemo";
-import ToggleDemo from "~/components/landing/demos/Toggle";
+import ToggleDemo from "~/components/landing/demos/ToggleDemo";
 import ToggleGroupDemo from "~/components/landing/demos/ToggleGroupDemo";
 import TooltipDemo from "~/components/landing/demos/TooltipDemo";
 
