@@ -54,6 +54,8 @@ export default function CommandMenu({
   return (
     <>
       <button
+        type="button"
+        onClick={() => setIsOpen(true)}
         className={cn(
           "relative hidden h-9 w-68 items-center justify-between rounded-2 border bg-background pl-7.5 pr-3 text-3.5 text-muted-foreground transition-colors",
           "xl:flex",
