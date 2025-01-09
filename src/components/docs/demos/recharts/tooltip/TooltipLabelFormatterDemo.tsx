@@ -29,7 +29,7 @@ const CHART_CONFIG = {
   },
 } satisfies ChartConfig;
 
-export default function TooltipFormatterDemo() {
+export default function TooltipLabelFormatterDemo() {
   return (
     <ChartContainer config={CHART_CONFIG} className="min-h-64 w-full max-w-96">
       <BarChart accessibilityLayer data={CHART_DATA}>
@@ -59,19 +59,13 @@ export default function TooltipFormatterDemo() {
         <ChartTooltip
           content={
             <ChartTooltipContent
-              hideLabel
-              formatter={(value, name) => (
-                <div className="text-xs flex min-w-[130px] items-center text-muted-foreground">
-                  {CHART_CONFIG[name as keyof typeof CHART_CONFIG].label ??
-                    name}
-                  <div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums text-foreground">
-                    {value}
-                    <span className="font-normal text-muted-foreground">
-                      kcal
-                    </span>
-                  </div>
-                </div>
-              )}
+              labelFormatter={(value) => {
+                return new Date(value).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                });
+              }}
             />
           }
           cursor={false}
