@@ -146,7 +146,6 @@ import LineChartLabelDemo from "~/components/docs/demos/recharts/line-chart/Line
 import LineChartCustomLabelDemo from "~/components/docs/demos/recharts/line-chart/LineChartCustomLabelDemo";
 import LineChartInteractiveDemo from "~/components/docs/demos/recharts/line-chart/LineChartInteractiveDemo";
 import PieChartDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDemo";
-import PieChartSeparatorNoneDemo from "~/components/docs/demos/recharts/pie-chart/PieChartSeparatorNoneDemo";
 import PieChartLabelDemo from "~/components/docs/demos/recharts/pie-chart/PieChartLabelDemo";
 import PieChartCustomLabelDemo from "~/components/docs/demos/recharts/pie-chart/PieChartCustomLabelDemo";
 import PieChartLabelListDemo from "~/components/docs/demos/recharts/pie-chart/PieChartLabelListDemo";
@@ -778,10 +777,6 @@ export const COMPONENT_PREVIEWS = {
   rechartsPieChart: {
     Preview: PieChartDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartDemo.tsx",
-  },
-  rechartsPieChartSeparatorNone: {
-    Preview: PieChartSeparatorNoneDemo,
-    path: "src/components/docs/demos/recharts/pie-chart/PieChartSeparatorNoneDemo.tsx",
   },
   rechartsPieChartLabel: {
     Preview: PieChartLabelDemo,

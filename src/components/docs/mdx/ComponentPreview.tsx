@@ -8,9 +8,13 @@ import CodeBlock from "~/components/docs/mdx/CodeBlock";
 
 interface ComponentPreviewProps {
   id: keyof typeof COMPONENT_PREVIEWS;
+  previewContainerClassName?: string;
 }
 
-export default async function ComponentPreview({ id }: ComponentPreviewProps) {
+export default async function ComponentPreview({
+  id,
+  previewContainerClassName,
+}: ComponentPreviewProps) {
   const { Preview, path } = COMPONENT_PREVIEWS[id];
 
   const code = await readFile(path);
@@ -23,7 +27,10 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
   return (
     <Tabs
       defaultValue="preview"
-      className="mt-6 overflow-visible rounded-3 border [&:where([data-spacing=large]+&)]:mt-9 [&:where(h3+&)]:mt-4"
+      className={cn(
+        "mt-6 overflow-visible rounded-3 border",
+        "[&:where([data-spacing=large]+&)]:mt-9 [&:where(h3+&)]:mt-4",
+      )}
     >
       <TabsList className="h-auto w-full justify-start rounded-0 border-b bg-transparent p-0">
         <TabsTrigger value="preview" className={tabsTriggerStyles}>
@@ -34,7 +41,12 @@ export default async function ComponentPreview({ id }: ComponentPreviewProps) {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="preview" className="mt-0">
-        <div className="flex min-h-64 items-center justify-center p-4 md:min-h-96 md:p-8">
+        <div
+          className={cn(
+            "mt-0 flex min-h-64 items-center justify-center p-4 md:min-h-96 md:p-8",
+            previewContainerClassName,
+          )}
+        >
           <Preview />
         </div>
       </TabsContent>

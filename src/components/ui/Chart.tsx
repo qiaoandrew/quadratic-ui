@@ -87,7 +87,21 @@ function ChartContainer({
   );
 }
 
-const ChartTooltip = RechartsPrimitive.Tooltip;
+function ChartTooltip({
+  animationDuration = 150,
+  ...props
+}: React.ComponentProps<typeof RechartsPrimitive.Tooltip>) {
+  return (
+    <RechartsPrimitive.Tooltip
+      animationDuration={animationDuration}
+      {...props}
+    />
+  );
+}
+// defaultProps and displayName need to be set for the tooltip to work
+// https://github.com/recharts/recharts/issues/412#issuecomment-472491968
+ChartTooltip.defaultProps = RechartsPrimitive.Tooltip.defaultProps;
+ChartTooltip.displayName = RechartsPrimitive.Tooltip.displayName;
 
 interface GetPayloadConfigFromPayloadParams {
   config: ChartConfig;
@@ -329,7 +343,7 @@ function ChartLegendContent({
       ref={ref}
       className={cn(
         "flex items-center justify-center gap-x-4",
-        verticalAlign === "top" ? "pb-3" : "pt-3",
+        verticalAlign === "top" ? "mb-6" : "mt-6",
         className,
       )}
     >
@@ -347,7 +361,7 @@ function ChartLegendContent({
               "flex items-center gap-x-1.5",
               "[&>svg]:size-3 [&>svg]:text-muted-foreground",
             )}
-            key={key}
+            key={item.value as string}
           >
             {itemConfig?.icon && !hideIcon ? (
               <itemConfig.icon />
@@ -355,10 +369,9 @@ function ChartLegendContent({
               <div
                 className="size-2 shrink-0 rounded-0.5"
                 style={{ backgroundColor: item.color }}
-              >
-                {itemConfig?.label}
-              </div>
+              />
             )}
+            {itemConfig?.label}
           </div>
         );
       })}

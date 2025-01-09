@@ -17,7 +17,7 @@ const CHART_DATA = [
   { browser: "other", visitors: 90, fill: "var(--color-other)" },
 ];
 
-const CHART_CONFIG = {
+const chartConfig = {
   visitors: {
     label: "Visitors",
   },
@@ -45,13 +45,13 @@ const CHART_CONFIG = {
 
 export default function RadialChartDemo() {
   return (
-    <ChartContainer config={CHART_CONFIG} className="min-h-64 w-full max-w-96">
+    <ChartContainer config={chartConfig} className="min-h-64 w-full max-w-96">
       <RadialBarChart data={CHART_DATA} innerRadius={30} outerRadius={110}>
-        <RadialBar dataKey="visitors" background />
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent nameKey="browser" />}
+          content={<ChartTooltipContent hideLabel nameKey="browser" />}
         />
+        <RadialBar dataKey="visitors" background />
       </RadialBarChart>
     </ChartContainer>
   );
