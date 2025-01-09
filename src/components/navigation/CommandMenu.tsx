@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { ChartColumnBigIcon, ComponentIcon, SearchIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
@@ -102,6 +103,16 @@ export default function CommandMenu({
                 {item.label}
               </CommandItem>
             ))}
+          </CommandGroup>
+          <CommandGroup heading="Theme">
+            <CommandItem onSelect={() => handleSelect(() => setTheme("light"))}>
+              <SunIcon />
+              Light
+            </CommandItem>
+            <CommandItem onSelect={() => handleSelect(() => setTheme("dark"))}>
+              <MoonIcon />
+              Dark
+            </CommandItem>
           </CommandGroup>
         </CommandList>
       </CommandDialog>
