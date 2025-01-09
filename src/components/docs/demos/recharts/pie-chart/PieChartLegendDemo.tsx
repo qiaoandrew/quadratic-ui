@@ -7,7 +7,7 @@ import {
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
-} from "~/components/ui/Chart";
+} from "~/components/ui/RechartChart";
 
 const CHART_DATA = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },

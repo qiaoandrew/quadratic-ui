@@ -29,7 +29,7 @@ const CHART_CONFIG = {
   },
 } satisfies ChartConfig;
 
-export default function TooltipLineIndicatorDemo() {
+export default function TooltipLabelFormatterDemo() {
   return (
     <ChartContainer config={CHART_CONFIG} className="min-h-64 w-full max-w-96">
       <BarChart accessibilityLayer data={CHART_DATA}>
@@ -57,7 +57,17 @@ export default function TooltipLineIndicatorDemo() {
           radius={[4, 4, 0, 0]}
         />
         <ChartTooltip
-          content={<ChartTooltipContent indicator="line" />}
+          content={
+            <ChartTooltipContent
+              labelFormatter={(value: string) => {
+                return new Date(value).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                });
+              }}
+            />
+          }
           cursor={false}
           defaultIndex={1}
         />

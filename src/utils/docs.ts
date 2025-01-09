@@ -107,9 +107,16 @@ export const getMenuItems = async () => {
   const rechartsQuickstartIndex = rechartsMenuItems.findIndex(
     (item) => item.id === "quickstart",
   );
-  const [item] = rechartsMenuItems.splice(rechartsQuickstartIndex, 1);
-  if (item) {
-    rechartsMenuItems.unshift(item);
+  const [quickstartItem] = rechartsMenuItems.splice(rechartsQuickstartIndex, 1);
+  if (quickstartItem) {
+    rechartsMenuItems.unshift(quickstartItem);
+  }
+  const rechartsTooltipIndex = rechartsMenuItems.findIndex(
+    (item) => item.id === "tooltip",
+  );
+  const [tooltipItem] = rechartsMenuItems.splice(rechartsTooltipIndex, 1);
+  if (tooltipItem) {
+    rechartsMenuItems.push(tooltipItem);
   }
 
   return {

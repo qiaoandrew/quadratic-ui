@@ -29,7 +29,7 @@ const CHART_CONFIG = {
   },
 } satisfies ChartConfig;
 
-export default function TooltipLineIndicatorDemo() {
+export default function TooltipDemo() {
   return (
     <ChartContainer config={CHART_CONFIG} className="min-h-64 w-full max-w-96">
       <BarChart accessibilityLayer data={CHART_DATA}>
@@ -38,11 +38,9 @@ export default function TooltipLineIndicatorDemo() {
           tickLine={false}
           tickMargin={10}
           axisLine={false}
-          tickFormatter={(value: string) => {
-            return new Date(value).toLocaleDateString("en-US", {
-              weekday: "short",
-            });
-          }}
+          tickFormatter={(value: string) =>
+            new Date(value).toLocaleDateString("en-US", { weekday: "short" })
+          }
         />
         <Bar
           dataKey="running"
@@ -57,7 +55,7 @@ export default function TooltipLineIndicatorDemo() {
           radius={[4, 4, 0, 0]}
         />
         <ChartTooltip
-          content={<ChartTooltipContent indicator="line" />}
+          content={<ChartTooltipContent />}
           cursor={false}
           defaultIndex={1}
         />

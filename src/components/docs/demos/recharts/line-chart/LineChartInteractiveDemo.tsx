@@ -11,7 +11,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "~/components/ui/Chart";
+} from "~/components/ui/RechartChart";
 
 const CHART_DATA = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },

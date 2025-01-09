@@ -9,7 +9,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "~/components/ui/Chart";
+} from "~/components/ui/RechartChart";
 import {
   Select,
   SelectContent,

@@ -10,7 +10,6 @@ export const FILE_SOURCES = {
   callout: "src/components/ui/Callout.tsx",
   card: "src/components/ui/Card.tsx",
   carousel: "src/components/ui/Carousel.tsx",
-  chart: "src/components/ui/Chart.tsx",
   checkbox: "src/components/ui/Checkbox.tsx",
   collapsible: "src/components/ui/Collapsible.tsx",
   command: "src/components/ui/Command.tsx",
@@ -49,4 +48,5 @@ export const FILE_SOURCES = {
     "src/components/docs/demos/primitives/combobox/ComboboxDemo.tsx",
   datePickerDemo:
     "src/components/docs/demos/primitives/date-picker/DatePickerDemo.tsx",
+  chart: "src/components/ui/RechartChart.tsx",
 };
