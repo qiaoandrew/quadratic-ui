@@ -5,7 +5,8 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 
 import { cn } from "~/utils/tailwind";
-import { type DesktopHeaderGroupItem } from "~/types/navigation";
+import type { DocsItem } from "~/types/docs";
+import type { DesktopHeaderGroupItem } from "~/types/navigation";
 import {
   MOBILE_NAVIGATION_ITEMS,
   DESKTOP_NAVIGATION_ITEMS,
@@ -15,13 +16,22 @@ import DesktopHeaderItem from "~/components/navigation/DesktopHeaderItem";
 import DesktopMenuGroupItem from "~/components/navigation/DesktopMenuGroupItem";
 import Logo from "~/components/navigation/Logo";
 import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
+import CommandMenu from "~/components/navigation/CommandMenu";
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
   loading: () => <div className="size-8" />,
 });
 
-export default function Header() {
+interface HeaderProps {
+  primitivesMenuItems: DocsItem[];
+  rechartsMenuItems: DocsItem[];
+}
+
+export default function Header({
+  primitivesMenuItems,
+  rechartsMenuItems,
+}: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState<boolean>(false);
 
@@ -104,7 +114,10 @@ export default function Header() {
             onMouseEnter={closeDesktopMenu}
             className="hidden grow items-center justify-end gap-x-2 xl:flex"
           >
-            {/* TODO: add command */}
+            <CommandMenu
+              primitivesMenuItems={primitivesMenuItems}
+              rechartsMenuItems={rechartsMenuItems}
+            />
             <ThemeToggle />
           </div>
         </div>
