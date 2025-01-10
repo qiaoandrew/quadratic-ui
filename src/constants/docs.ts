@@ -1,4 +1,7 @@
-import { SiGithub, SiFigma } from "@icons-pack/react-simple-icons";
+import {
+  SiGithub as GithubIcon,
+  SiFigma as FigmaIcon,
+} from "@icons-pack/react-simple-icons";
 import {
   AtomIcon,
   ChartColumnBigIcon,
@@ -39,12 +42,12 @@ export const DOCS_GROUPS = [
     id: "github",
     href: "https://github.com/qiaoandrew/quadratic-ui",
     label: "GitHub",
-    Icon: SiGithub,
+    Icon: GithubIcon,
   },
   {
     id: "figma",
     label: "Figma",
-    Icon: SiFigma,
+    Icon: FigmaIcon,
     href: "https://www.figma.com/community/file/1351315753275186770/quadratic-ui",
   },
 ];
@@ -74,7 +77,7 @@ export const GUIDES_ITEMS: DocsItem[] = [
   {
     id: "create-t3-app",
     href: "/docs/getting-started/create-t3-app",
-    label: "create-t3-app",
+    label: "Create T3 App",
     Icon: AtomIcon,
   },
   {

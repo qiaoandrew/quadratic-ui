@@ -49,4 +49,5 @@ export const FILE_SOURCES = {
   datePickerDemo:
     "src/components/docs/demos/primitives/date-picker/DatePickerDemo.tsx",
   chart: "src/components/ui/RechartChart.tsx",
+  tailwind: "src/utils/tailwind.ts",
 };

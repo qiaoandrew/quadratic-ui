@@ -37,10 +37,13 @@ export function useMDXComponents(components: MDXComponents) {
         return null;
       }
 
-      const props = children.props as { children: string };
+      const props = children.props as { children: string; className: string };
 
       return (
-        <CodeBlock className="mt-4 [&:where(p+&)]:mt-6">
+        <CodeBlock
+          shouldHighlight={props.className === "language-tsx"}
+          className="mt-4 [&:where(p+&)]:mt-6"
+        >
           {props.children}
         </CodeBlock>
       );
