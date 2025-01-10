@@ -9,7 +9,7 @@ function Label({
   return (
     <LabelPrimitive.Root
       className={cn(
-        "leading-none text-3.5 font-medium",
+        "leading-none relative text-3.5 font-medium",
         "peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
         className,
       )}

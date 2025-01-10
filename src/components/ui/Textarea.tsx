@@ -4,7 +4,7 @@ import { tv, cn } from "~/utils/tailwind";
 
 const textareaVariants = tv({
   base: [
-    "flex min-h-24 w-full border border-input bg-background ring-offset-background",
+    "relative flex min-h-24 w-full border border-input bg-background ring-offset-background",
     "placeholder:text-muted-foreground",
     "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
     "disabled:cursor-not-allowed disabled:opacity-50",

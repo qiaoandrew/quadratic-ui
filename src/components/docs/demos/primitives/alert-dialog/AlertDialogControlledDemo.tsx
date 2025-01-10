@@ -33,7 +33,7 @@ export default function AlertDialogControlledDemo() {
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
-        <Button variant="outline">Show Dialog</Button>
+        <Button variant="outline">Open Dialog</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
