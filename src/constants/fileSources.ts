@@ -51,4 +51,6 @@ export const FILE_SOURCES = {
   chart: "src/components/ui/RechartChart.tsx",
   tailwind: "src/utils/tailwind.ts",
   themeToggle: "src/components/navigation/ThemeToggle.tsx",
+  _dialog: "src/components/ui/_Dialog.tsx",
+  _menu: "src/components/ui/_Menu.tsx",
 };
