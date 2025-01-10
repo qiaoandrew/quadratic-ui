@@ -25,7 +25,7 @@ export default function DatePickerDemo() {
           subject="icon-text"
           size="md"
           className={cn(
-            "z-10 w-48 justify-start",
+            "z-10 w-48 justify-start bg-background",
             !date && "text-muted-foreground",
           )}
         >

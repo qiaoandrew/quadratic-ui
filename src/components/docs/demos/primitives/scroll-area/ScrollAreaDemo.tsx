@@ -9,7 +9,7 @@ const tags = Array.from({ length: 50 }).map(
 
 export default function ScrollAreaDemo() {
   return (
-    <ScrollArea className="h-72 w-44 rounded-2 border">
+    <ScrollArea className="h-full max-h-72 w-44 rounded-2 border bg-background">
       <div className="p-3">
         <h4 className="mb-3 text-3.5 font-medium">Tags</h4>
         {tags.map((tag, i) => (

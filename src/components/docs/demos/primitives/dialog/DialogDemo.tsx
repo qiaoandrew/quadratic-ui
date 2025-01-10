@@ -16,7 +16,7 @@ export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Button variant="outline">Open Dialog</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

@@ -21,6 +21,7 @@ import {
   CommandShortcut,
   CommandShortcutGroup,
 } from "~/components/ui/Command";
+import { Shortcut, ShortcutGroup } from "~/components/ui/_Menu";
 
 export default function CommandDialogDemo() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,12 +40,13 @@ export default function CommandDialogDemo() {
 
   return (
     <>
-      <p className="flex items-center gap-x-2 text-3.5 text-muted-foreground">
-        Press{" "}
-        <kbd className="inline-flex select-none items-center gap-x-1 rounded-1 bg-muted px-2 py-0.5 font-mono text-3 font-medium">
-          <span className="text-3.5">⌘</span>J
-        </kbd>
-      </p>
+      <div className="flex items-center gap-x-2">
+        <p className="text-4">Press</p>
+        <ShortcutGroup>
+          <Shortcut>⌘</Shortcut>
+          <Shortcut>J</Shortcut>
+        </ShortcutGroup>
+      </div>
       <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>

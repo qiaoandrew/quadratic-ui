@@ -23,7 +23,10 @@ function ToggleGroup({
   VariantProps<typeof toggleVariants>) {
   return (
     <ToggleGroupPrimitive.Root
-      className={cn("flex items-center justify-center gap-x-1", className)}
+      className={cn(
+        "relative flex items-center justify-center gap-x-1",
+        className,
+      )}
       {...props}
     >
       <ToggleGroupContext.Provider value={{ variant, size }}>

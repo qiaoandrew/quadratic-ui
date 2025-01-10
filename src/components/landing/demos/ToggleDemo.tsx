@@ -7,7 +7,7 @@ export default function ToggleDemo() {
     <Toggle
       aria-label="Toggle bold"
       variant="outline"
-      className="z-10 bg-background"
+      className="bg-background"
     >
       <Bold />
     </Toggle>

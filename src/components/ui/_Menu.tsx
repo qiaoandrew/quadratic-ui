@@ -86,15 +86,15 @@ function Shortcut({
   ...props
 }: React.ComponentProps<"span">) {
   return (
-    <span
+    <kbd
       className={cn(
-        "flex size-4.5 items-center justify-center overflow-hidden rounded-1 border bg-background text-3 text-muted-foreground",
+        "flex size-5 items-center justify-center overflow-hidden rounded-1 border bg-background font-mono text-3.5 text-muted-foreground",
         className,
       )}
       {...props}
     >
       {children}
-    </span>
+    </kbd>
   );
 }
 

@@ -9,7 +9,7 @@ function RadioGroup({
 }: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {
   return (
     <RadioGroupPrimitive.Root
-      className={cn("grid gap-y-2", className)}
+      className={cn("relative grid gap-y-2", className)}
       {...props}
     />
   );

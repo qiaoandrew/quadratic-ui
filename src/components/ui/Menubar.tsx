@@ -31,7 +31,7 @@ function Menubar({
   return (
     <MenubarPrimitive.Root
       className={cn(
-        "flex items-center gap-x-1 rounded-2 border bg-background p-1",
+        "relative flex items-center gap-x-1 rounded-2 border bg-background p-1",
         className,
       )}
       {...props}
