@@ -12,7 +12,7 @@ import Spotlight from "~/components/effects/Spotlight";
 import { Toaster } from "~/components/ui/Toaster";
 
 export const metadata: Metadata = {
-  title: "quadratic/ui",
+  title: "quadratic/ui | Beautiful shadcn/ui components.",
   description:
     "Beautiful, slightly styled components to build your next side project faster. Built on shadcn/ui.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],

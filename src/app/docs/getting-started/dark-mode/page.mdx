@@ -1,0 +1,85 @@
+import Description from "~/components/docs/mdx/Description";
+import FileSource from "~/components/docs/mdx/FileSource";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+export const metadata = {
+  title: "Dark Mode | quadratic/ui",
+  description: "Quickly set up dark mode using next-themes.",
+};
+
+<Title>Dark Mode</Title>
+<Description>Quickly set up dark mode using `next-themes`.</Description>
+
+<Steps>
+
+<StepTitle>Install the next-themes package.</StepTitle>
+<StepContent>
+```bash
+pnpm add next-themes
+```
+</StepContent>
+
+<StepTitle>Edit your root `layout.tsx` file to include the `ThemeProvider` component.</StepTitle>
+<StepContent>
+```tsx
+import "~/styles/globals.css";
+
+import { ThemeProvider } from "next-themes";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body>
+        <ThemeProvider
+          defaultTheme="dark"
+          attribute="class"
+          disableTransitionOnChange
+        >
+          <Header />
+          <main>{children}</main>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+</StepContent>
+
+<StepTitle>Add your theme toggle component. Mine looks like this.</StepTitle>
+<StepContent>
+<FileSource id="themeToggle" />
+</StepContent>
+
+<StepTitle>Import the `ThemeToggle` using `next/dynamic`. Learn why you need to do this [here](https://github.com/pacocoursey/next-themes?tab=readme-ov-file#usetheme).</StepTitle>
+<StepContent>
+```tsx
+import { dynamic } from "next/dynamic";
+
+const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
+  ssr: false,
+  loading: () => <div className="size-8" />,
+});
+
+export default function Header() {
+    return (
+        <>
+            ...
+            <ThemeToggle />
+            ...
+        </>
+    )
+}
+
+```
+</StepContent>
+
+</Steps>
+
+<Footer previousLabel="create-t3-app" previousHref="/docs/getting-started/create-t3-app" nextLabel="Customization" nextHref="/docs/getting-started/customization" />
