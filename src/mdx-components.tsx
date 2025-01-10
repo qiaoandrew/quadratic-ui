@@ -52,7 +52,7 @@ export function useMDXComponents(components: MDXComponents) {
       href?.startsWith("/") ? (
         <Link
           href={href}
-          className="text-muted-foreground underline underline-offset-[5px]"
+          className="text-muted-foreground underline underline-offset-[5px] transition-colors hover:text-foreground"
         >
           {children}
         </Link>
@@ -61,7 +61,7 @@ export function useMDXComponents(components: MDXComponents) {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground underline underline-offset-[5px]"
+          className="text-muted-foreground underline underline-offset-[5px] transition-colors hover:text-foreground"
         >
           {children}
         </a>
