@@ -194,18 +194,12 @@ export const LANDING_DEMOS = [
     href: "/docs/components/primitives/",
     Demo: MenubarDemo,
   },
-  {
-    id: "navigation-menu",
-    label: "Navigation Menu",
-    href: "/docs/components/primitives/",
-    Demo: NavigationMenuDemo,
-  },
-  {
-    id: "pagination",
-    label: "Pagination",
-    href: "/docs/components/primitives/",
-    Demo: PaginationDemo,
-  },
+  // {
+  //   id: "pagination",
+  //   label: "Pagination",
+  //   href: "/docs/components/primitives/",
+  //   Demo: PaginationDemo,
+  // },
   {
     id: "popover",
     label: "Popover",
