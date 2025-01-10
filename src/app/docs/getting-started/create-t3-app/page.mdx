@@ -1,0 +1,190 @@
+import Description from "~/components/docs/mdx/Description";
+import Footer from "~/components/docs/mdx/Footer";
+import { Steps, StepTitle, StepContent } from "~/components/docs/mdx/Steps";
+import Title from "~/components/docs/mdx/Title";
+
+export const metadata = {
+  title: "Create T3 App | quadratic/ui",
+  description: "The easiest and fastest way to create full-stack Next.js apps.",
+};
+
+<Title>Create T3 App</Title>
+<Description>The easiest and fastest way to create full-stack Next.js apps.</Description>
+
+<Steps>
+
+<StepTitle>If you haven't already, install the [pnpm](https://pnpm.io/installation) package manager.</StepTitle>
+
+<StepTitle>Run the [`create-t3-app`](https://create.t3.gg/) script in your terminal.</StepTitle>
+<StepContent>
+```bash
+pnpm create t3-app@latest
+```
+</StepContent>
+
+<StepTitle>If prompted, type `y` to install the `create-t3-app` package.</StepTitle>
+<StepContent>
+```bash
+Need to install the following packages:
+create-t3-app@7.38.1
+Ok to proceed? (y) y
+```
+</StepContent>
+
+<StepTitle>Enter the name of your project.</StepTitle>
+<StepContent>
+```bash
+◆  What will your project be called?
+│  quadratic-ui_
+```
+</StepContent>
+
+<StepTitle>Select TypeScript.</StepTitle>
+<StepContent>
+```bash
+◆  Will you be using TypeScript or JavaScript?
+│  ● TypeScript
+│  ○ JavaScript
+```
+</StepContent>
+
+<StepTitle>Select "Yes" Tailwind CSS.</StepTitle>
+<StepContent>
+```bash
+◆  Will you be using Tailwind CSS for styling?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Choose whether or not you would like to use [tRPC](https://trpc.io/). If you don't know what it is, feel free to select "No".</StepTitle>
+<StepContent>
+```bash
+◆  Would you like to use tRPC?
+│  ○ Yes / ● No
+```
+</StepContent>
+
+<StepTitle>Select your authentication provider. If you don't need authentication or aren't using NextAuth.js, choose "None".</StepTitle>
+<StepContent>
+```bash
+◆  What authentication provider would you like to use?
+│  ● None
+│  ○ NextAuth.js
+```
+</StepContent>
+<StepTitle>Select your database ORM. If you don't need a database, select "None". Otherwise, I recommend Drizzle if your database is compatible.</StepTitle>
+<StepContent>
+```bash
+◆  What database ORM would you like to use?
+│  ○ None
+│  ○ Prisma
+│  ● Drizzle
+```
+</StepContent>
+
+<StepTitle>Select Next.js App Router.</StepTitle>
+<StepContent>
+```bash
+◆  Would you like to use Next.js App Router?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Select your database provider. If you don't need a database, select any of them. Otherwise, I recommend PostgreSQL.</StepTitle>
+<StepContent>
+```bash
+◆  What database provider would you like to use?
+│  ○ SQLite (LibSQL)
+│  ○ MySQL
+│  ● PostgreSQL
+│  ○ PlanetScale
+```
+</StepContent>
+
+<StepTitle>Select "Yes" to initialize a Git repository.</StepTitle>
+<StepContent>
+```bash
+◆  Should we initialize a Git repository and stage the changes?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Choose "Yes" to run `pnpm install`.</StepTitle>
+<StepContent>
+```bash
+◆  Should we run 'pnpm install' for you?
+│  ● Yes / ○ No
+```
+</StepContent>
+
+<StepTitle>Select the default import alias.</StepTitle>
+<StepContent>
+```bash
+◆  What import alias would you like to use?
+│  ~/
+```
+</StepContent>
+
+<StepTitle>Wait for the installation to complete. Afterwards, your terminal should look like this.</StepTitle>
+<StepContent>
+```plaintext
+✔ quadratic-ui scaffolded successfully!
+
+Adding boilerplate...
+✔ Successfully setup boilerplate for drizzle
+✔ Successfully setup boilerplate for tailwind
+✔ Successfully setup boilerplate for dbContainer
+✔ Successfully setup boilerplate for envVariables
+✔ Successfully setup boilerplate for eslint
+
+Installing dependencies...
+✔ Successfully installed dependencies!
+
+Initializing Git...
+✔ Successfully initialized and staged git
+
+Next steps:
+  cd test
+  Start up a database, if needed using './start-database.sh'
+  pnpm db:push
+  pnpm dev
+  git commit -m "initial commit"
+```
+</StepContent>
+
+<StepTitle>Create a repository on GitHub and copy the repository's URL. It should look something like this: `https://github.com/qiaoandrew/quadratic-ui.git`.</StepTitle>
+
+<StepTitle>Change into your project's root director by running the following command, replacing `quadratic-ui` with the name of your project.</StepTitle>
+<StepContent>
+```bash
+cd quadratic-ui
+```
+</StepContent>
+
+<StepTitle>Push your repository to GitHub through by running the following commands in your project's root folder. Replace the GitHub link with your own.</StepTitle>
+<StepContent>
+```bash
+git remote add origin https://github.com/qiaoandrew/quadratic-ui.git
+git branch -M main
+git add .
+git commit -m 'initial commit'
+git push -u origin main
+```
+</StepContent>
+
+<StepTitle>Create a new project on [Vercel](https://vercel.com/new). Log in using your GitHub account and connect your new GitHub repository to the project under the "Import Git Repository" section.</StepTitle>
+
+<StepTitle>Add the following environment variable as a placeholder under the "Environment Variables" section.</StepTitle>
+<StepContent>
+```plaintext
+DATABASE_URL="postgresql://postgres:password@localhost:5432/test"
+```
+</StepContent>
+
+<StepTitle>Click deploy!</StepTitle>
+
+<StepTitle>Follow the [quickstart guide](/docs/getting-started/quickstart) to get started with quadratic/ui.</StepTitle>
+
+</Steps>
+
+<Footer previousLabel="Credits" previousHref="/docs/getting-started/credits" nextLabel="Dark Mode" nextHref="/docs/getting-started/dark-mode" />

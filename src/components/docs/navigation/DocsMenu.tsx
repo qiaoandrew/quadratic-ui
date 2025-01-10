@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 
 import type { DocsItem } from "~/types/docs";
-import { GETTING_STARTED_ITEMS } from "~/constants/docs";
+import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/docs";
 
 import DocsMenuGroups from "~/components/docs/navigation/DocsMenuGroups";
 import DocsMenuSection from "~/components/docs/navigation/DocsMenuSection";
@@ -30,6 +30,13 @@ export default function DocsMenu({
               pathname={pathname}
               label="Getting Started"
               items={GETTING_STARTED_ITEMS}
+            />
+          )}
+          {pathname.includes("getting-started") && (
+            <DocsMenuSection
+              pathname={pathname}
+              label="Guides"
+              items={GUIDES_ITEMS}
             />
           )}
           {pathname.includes("components") && (

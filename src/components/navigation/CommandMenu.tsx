@@ -6,7 +6,7 @@ import { ChartColumnBigIcon, ComponentIcon, SearchIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
 import type { DocsItem } from "~/types/docs";
-import { GETTING_STARTED_ITEMS } from "~/constants/docs";
+import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/docs";
 
 import { Shortcut, ShortcutGroup } from "~/components/ui/_Menu";
 import {
@@ -75,6 +75,17 @@ export default function CommandMenu({
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Getting Started">
             {GETTING_STARTED_ITEMS.map((item) => (
+              <CommandItem
+                onSelect={() => handleSelect(() => router.push(item.href))}
+                key={item.id}
+              >
+                {item.Icon && <item.Icon />}
+                {item.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Guides">
+            {GUIDES_ITEMS.map((item) => (
               <CommandItem
                 onSelect={() => handleSelect(() => router.push(item.href))}
                 key={item.id}
