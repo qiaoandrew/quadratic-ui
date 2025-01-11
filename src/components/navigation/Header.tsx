@@ -58,6 +58,16 @@ export default function Header({
     setActiveDesktopMenuGroupIdx(-1);
   };
 
+  const openMobileMenu = () => {
+    setIsMobileMenuOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    document.body.style.overflow = "unset";
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -135,7 +145,8 @@ export default function Header({
           </div>
           <MobileHeaderToggle
             isMobileMenuOpen={isMobileMenuOpen}
-            setIsMobileMenuOpen={setIsMobileMenuOpen}
+            openMobileMenu={openMobileMenu}
+            closeMobileMenu={closeMobileMenu}
           />
           <div
             onMouseEnter={closeDesktopMenu}
@@ -155,7 +166,7 @@ export default function Header({
                 {group.map((item) => (
                   <Link
                     href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={closeMobileMenu}
                     className={cn(
                       "text-6 font-semibold",
                       item.variant === "secondary" && "text-muted-foreground",
