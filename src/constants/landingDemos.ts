@@ -6,7 +6,6 @@ import BreadcrumbDemo from "~/components/landing/demos/BreadcrumbDemo";
 import ButtonDemo from "~/components/landing/demos/ButtonDemo";
 import CalendarDemo from "~/components/landing/demos/CalendarDemo";
 import CalloutDemo from "~/components/landing/demos/CalloutDemo";
-import CardDemo from "~/components/landing/demos/CardDemo";
 import CarouselDemo from "~/components/landing/demos/CarouselDemo";
 import CheckboxDemo from "~/components/landing/demos/CheckboxDemo";
 import CollapsibleDemo from "~/components/landing/demos/CollapsibleDemo";
@@ -23,7 +22,6 @@ import InputDemo from "~/components/landing/demos/InputDemo";
 import InputOTPDemo from "~/components/landing/demos/InputOTPDemo";
 import LabelDemo from "~/components/docs/demos/primitives/label/LabelDemo";
 import MenubarDemo from "~/components/docs/demos/primitives/menubar/MenubarDemo";
-import PaginationDemo from "~/components/landing/demos/PaginationDemo";
 import PopoverDemo from "~/components/docs/demos/primitives/popover/PopoverDemo";
 import ProgressDemo from "~/components/docs/demos/primitives/progress/ProgressDemo";
 import RadioGroupDemo from "~/components/docs/demos/primitives/radio-group/RadioGroupDemo";
@@ -90,12 +88,6 @@ export const LANDING_DEMOS = [
     label: "Callout",
     href: "/docs/components/primitives/callout",
     Demo: CalloutDemo,
-  },
-  {
-    id: "card",
-    label: "Card",
-    href: "/docs/components/primitives/card",
-    Demo: CardDemo,
   },
   {
     id: "carousel",
@@ -193,12 +185,6 @@ export const LANDING_DEMOS = [
     href: "/docs/components/primitives/menubar",
     Demo: MenubarDemo,
   },
-  // {
-  //   id: "pagination",
-  //   label: "Pagination",
-  //   href: "/docs/components/primitives/",
-  //   Demo: PaginationDemo,
-  // },
   {
     id: "popover",
     label: "Popover",

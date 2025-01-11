@@ -19,7 +19,7 @@ import {
 export default function BreadcrumbDemo() {
   return (
     <Breadcrumb className="relative z-10">
-      <BreadcrumbList className="gap-x-1.5 text-3">
+      <BreadcrumbList className="gap-1.5 text-3">
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
             <Link href="/">Home</Link>
@@ -29,7 +29,7 @@ export default function BreadcrumbDemo() {
         <BreadcrumbItem>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-x-1">
-              <BreadcrumbEllipsis className="[&>svg]:size-3.5" />
+              <BreadcrumbEllipsis className="size-4 [&>svg]:size-3.5" />
               <span className="sr-only">Toggle menu</span>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="min-w-40">
