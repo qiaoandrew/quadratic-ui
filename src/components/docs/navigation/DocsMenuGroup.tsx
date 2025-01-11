@@ -1,7 +1,7 @@
-import Link from "next/link";
-
 import { cn } from "~/utils/tailwind";
 import type { Icon } from "~/types/ui";
+
+import _Link from "~/components/ui/_Link";
 
 interface DocsMenuGroupProps {
   href: string;
@@ -16,45 +16,28 @@ export default function DocsMenuGroup({
   Icon,
   children,
 }: DocsMenuGroupProps) {
-  const icon = (
-    <div
+  return (
+    <_Link
+      href={href}
       className={cn(
-        "flex size-6 items-center justify-center rounded-1.5 border",
-        isActive ? "bg-foreground/20" : "group-hover:bg-border",
+        "group flex items-center gap-x-2 text-3.5 font-medium",
+        isActive ? "text-foreground" : "text-muted-foreground",
       )}
     >
-      <Icon
+      <div
         className={cn(
-          "size-4",
-          isActive ? "text-foreground" : "text-muted-foreground",
+          "flex size-6 items-center justify-center rounded-1.5 border",
+          isActive ? "bg-foreground/20" : "group-hover:bg-border",
         )}
-      />
-    </div>
-  );
-
-  const styles = cn(
-    "group flex items-center gap-x-2 text-3.5 font-medium",
-    isActive ? "text-foreground" : "text-muted-foreground",
-  );
-
-  if (href.startsWith("/")) {
-    return (
-      <Link href={href} className={styles}>
-        {icon}
-        {children}
-      </Link>
-    );
-  } else {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles}
       >
-        {icon}
-        {children}
-      </a>
-    );
-  }
+        <Icon
+          className={cn(
+            "size-4",
+            isActive ? "text-foreground" : "text-muted-foreground",
+          )}
+        />
+      </div>
+      {children}
+    </_Link>
+  );
 }

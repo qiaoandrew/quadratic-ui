@@ -125,7 +125,7 @@ export default function Header({
           )}
         >
           <div className="flex items-stretch">
-            <Logo onMouseEnter={closeDesktopMenu} />
+            <Logo size="md" onMouseEnter={closeDesktopMenu} />
             <div
               onMouseEnter={closeDesktopMenu}
               className="hidden w-4 xl:block"

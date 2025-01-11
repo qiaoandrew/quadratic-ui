@@ -53,4 +53,5 @@ export const FILE_SOURCES = {
   themeToggle: "src/components/navigation/ThemeToggle.tsx",
   _dialog: "src/components/ui/_Dialog.tsx",
   _menu: "src/components/ui/_Menu.tsx",
+  _link: "src/components/ui/_Link.tsx",
 };
