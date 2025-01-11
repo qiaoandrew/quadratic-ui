@@ -1,9 +1,19 @@
 import type { JSX } from "react";
 
-export type MobileHeaderItem = {
+export type NavigationItem = {
   id: string;
   label: string;
   href: string;
+};
+
+export type DesktopHeaderNavigationItem = NavigationItem & {
+  description: string;
+  size: "sm" | "lg";
+  Graphic?: () => JSX.Element;
+};
+
+export type MobileHeaderNavigationItem = NavigationItem & {
+  variant: "primary" | "secondary";
 };
 
 export enum DesktopHeaderItemType {
@@ -18,14 +28,7 @@ export type DesktopHeaderItem = {
 
 export type DesktopHeaderGroupItem = {
   type: DesktopHeaderItemType.Group;
-  items: Array<{
-    id: string;
-    label: string;
-    description: string;
-    href: string;
-    size: "sm" | "lg";
-    Graphic?: () => JSX.Element;
-  }>;
+  items: DesktopHeaderNavigationItem[];
 };
 
 export type DesktopHeaderLinkItem = {
@@ -36,9 +39,5 @@ export type DesktopHeaderLinkItem = {
 export type FooterGroup = {
   id: string;
   label: string;
-  items: Array<{
-    id: string;
-    label: string;
-    href: string;
-  }>;
+  items: NavigationItem[];
 };

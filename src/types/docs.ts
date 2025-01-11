@@ -1,3 +1,4 @@
+import type { NavigationItem } from "~/types/navigation";
 import type { Icon } from "~/types/ui";
 
 export type DocsTOCItem = {
@@ -6,17 +7,11 @@ export type DocsTOCItem = {
   text: string;
 };
 
-export type DocsGroup = {
-  id: string;
-  href: string;
+export type DocsGroup = NavigationItem & {
   groupHrefPrefix?: string;
-  label: string;
   Icon: Icon;
 };
 
-export type DocsItem = {
-  id: string;
-  href: string;
-  label: string;
+export type DocsItem = NavigationItem & {
   Icon?: Icon;
 };
