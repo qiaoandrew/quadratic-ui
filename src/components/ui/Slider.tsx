@@ -31,6 +31,7 @@ function SliderThumb({
     <SliderPrimitive.Thumb
       className={cn(
         "block size-4 rounded-full border border-primary/50 bg-background ring-offset-background transition-colors",
+        "hover:cursor-pointer",
         "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
         "disabled:pointer-events-none disabled:opacity-50",
         className,
