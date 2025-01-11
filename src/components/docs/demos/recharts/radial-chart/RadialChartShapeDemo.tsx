@@ -8,7 +8,10 @@ import {
   RadialBarChart,
 } from "recharts";
 
-import { type ChartConfig, ChartContainer } from "~/components/ui/RechartChart";
+import {
+  type ChartConfig,
+  ChartContainer,
+} from "~/components/ui/RechartsChart";
 
 const CHART_DATA = [
   { browser: "safari", visitors: 1260, fill: "var(--color-safari)" },
