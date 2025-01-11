@@ -19,7 +19,7 @@ export const MOBILE_NAVIGATION_ITEMS: MobileHeaderItem[] = [
   {
     id: "components",
     label: "Components",
-    href: "/docs/components/accordion",
+    href: "/docs/components/primitives/accordion",
   },
   {
     id: "quickstart",
@@ -39,52 +39,52 @@ export const MOBILE_NAVIGATION_ITEMS: MobileHeaderItem[] = [
   {
     id: "figma",
     label: "Figma",
-    href: "/docs/getting-started/introduction",
+    href: "https://www.figma.com/community/file/1351315753275186770/quadratic-ui-shadcn-ui-design-system-component-library",
   },
   {
     id: "github",
     label: "GitHub",
-    href: "/docs/getting-started/introduction",
+    href: "https://github.com/qiaoandrew/quadratic-ui",
   },
   {
     id: "dark-mode",
     label: "Dark Mode",
-    href: "/docs/getting-started/introduction",
+    href: "/docs/getting-started/dark-mode",
   },
   {
     id: "credits",
     label: "Credits",
-    href: "/docs/getting-started/introduction",
+    href: "/docs/getting-started/credits",
   },
   {
     id: "shadcn-ui",
     label: "shadcn/ui",
-    href: "/docs/getting-started/introduction",
+    href: "https://ui.shadcn.com",
   },
   {
     id: "next-js",
     label: "Next.js",
-    href: "/docs/getting-started/introduction",
+    href: "https://nextjs.org",
   },
   {
     id: "react",
     label: "React",
-    href: "/docs/getting-started/introduction",
+    href: "https://reactjs.org",
   },
   {
     id: "t3",
     label: "T3",
-    href: "/docs/getting-started/introduction",
+    href: "https://create.t3.gg",
   },
   {
     id: "tailwind-css",
     label: "Tailwind CSS",
-    href: "/docs/getting-started/introduction",
+    href: "https://tailwindcss.com",
   },
   {
     id: "tailwind-variants",
     label: "Tailwind Variants",
-    href: "/docs/getting-started/introduction",
+    href: "https://www.tailwind-variants.org",
   },
 ];
 
