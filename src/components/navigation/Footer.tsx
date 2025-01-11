@@ -1,6 +1,7 @@
 import { FOOTER_NAVIGATION_ITEMS } from "~/constants/navigation";
 
 import Logo from "~/components/navigation/Logo";
+import _Link from "~/components/ui/_Link";
 
 export default function Footer() {
   return (
@@ -14,13 +15,13 @@ export default function Footer() {
           >
             <p className="text-3.5 font-medium">{group.label}</p>
             {group.items.map((item) => (
-              <a
+              <_Link
                 href={item.href}
                 className="text-3.5 text-muted-foreground transition-colors hover:text-foreground"
                 key={item.id}
               >
                 {item.label}
-              </a>
+              </_Link>
             ))}
           </div>
         ))}

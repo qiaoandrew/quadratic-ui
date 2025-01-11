@@ -1,11 +1,11 @@
-import Link from "next/link";
-
 import { cn } from "~/utils/tailwind";
 import {
   DesktopHeaderItemType,
   type DesktopHeaderGroupItem,
   type DesktopHeaderItem,
 } from "~/types/navigation";
+
+import _Link from "~/components/ui/_Link";
 
 interface DesktopHeaderItemProps {
   idx: number;
@@ -39,23 +39,11 @@ export default function DesktopHeaderItem({
         {item.label}
       </span>
     );
-  } else if (item.href.startsWith("/")) {
-    return (
-      <Link href={item.href} onMouseEnter={closeDesktopMenu} className={styles}>
-        {item.label}
-      </Link>
-    );
-  } else {
-    return (
-      <a
-        href={item.href}
-        target="_blank"
-        rel="noreferrer noopener"
-        onMouseEnter={closeDesktopMenu}
-        className={styles}
-      >
-        {item.label}
-      </a>
-    );
   }
+
+  return (
+    <_Link href={item.href} onMouseEnter={closeDesktopMenu} className={styles}>
+      {item.label}
+    </_Link>
+  );
 }

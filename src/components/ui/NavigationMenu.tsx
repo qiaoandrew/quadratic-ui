@@ -1,10 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import type { VariantProps } from "tailwind-variants";
 import { ChevronDownIcon } from "lucide-react";
 
 import { tv, cn } from "~/utils/tailwind";
+
+import _Link from "~/components/ui/_Link";
 
 function NavigationMenu({
   className,
@@ -199,7 +200,7 @@ type NavigationMenuDropdownItemProps = Omit<
       }
     | { variant: "default"; cardImgSrc?: never; cardImgAlt?: never }
   ) &
-  (React.ComponentProps<typeof Link> | React.ComponentProps<"a">);
+  (React.ComponentProps<typeof _Link> | React.ComponentProps<"a">);
 
 function NavigationMenuDropdownItem({
   title,
@@ -237,27 +238,14 @@ function NavigationMenuDropdownItem({
       </>
     );
 
-  if (href.startsWith("/")) {
-    return (
-      <NavigationMenuLink
-        className={navigationMenuDropdownItemVariants({ variant, className })}
-        asChild
-      >
-        <Link href={href} {...props}>
-          {listItemContent}
-        </Link>
-      </NavigationMenuLink>
-    );
-  }
-
   return (
     <NavigationMenuLink
       className={navigationMenuDropdownItemVariants({ variant, className })}
       asChild
     >
-      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+      <_Link href={href} {...props}>
         {listItemContent}
-      </a>
+      </_Link>
     </NavigationMenuLink>
   );
 }
