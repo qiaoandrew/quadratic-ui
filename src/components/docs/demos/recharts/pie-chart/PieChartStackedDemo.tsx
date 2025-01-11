@@ -7,7 +7,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "~/components/ui/RechartChart";
+} from "~/components/ui/RechartsChart";
 
 const DESKTOP_DATA = [
   { month: "january", desktop: 186, fill: "var(--color-january)" },

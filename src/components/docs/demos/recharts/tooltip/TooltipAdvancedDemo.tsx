@@ -7,7 +7,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "~/components/ui/RechartChart";
+} from "~/components/ui/RechartsChart";
 
 interface DataPoint {
   date: string;

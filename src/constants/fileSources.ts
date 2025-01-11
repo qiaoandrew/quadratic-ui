@@ -48,7 +48,7 @@ export const FILE_SOURCES = {
     "src/components/docs/demos/primitives/combobox/ComboboxDemo.tsx",
   datePickerDemo:
     "src/components/docs/demos/primitives/date-picker/DatePickerDemo.tsx",
-  chart: "src/components/ui/RechartChart.tsx",
+  rechartsChart: "src/components/ui/RechartsChart.tsx",
   tailwind: "src/utils/tailwind.ts",
   themeToggle: "src/components/navigation/ThemeToggle.tsx",
   _dialog: "src/components/ui/_Dialog.tsx",

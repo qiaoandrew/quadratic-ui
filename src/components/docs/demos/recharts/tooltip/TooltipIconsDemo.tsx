@@ -8,7 +8,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "~/components/ui/RechartChart";
+} from "~/components/ui/RechartsChart";
 
 const CHART_DATA = [
   { date: "2024-07-15", running: 450, swimming: 300 },

@@ -7,7 +7,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "~/components/ui/RechartChart";
+} from "~/components/ui/RechartsChart";
 
 const CHART_DATA = [
   { browser: "chrome", visitors: 187, fill: "var(--color-chrome)" },
