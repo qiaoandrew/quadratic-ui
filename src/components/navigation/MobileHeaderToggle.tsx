@@ -2,17 +2,19 @@ import { cn } from "~/utils/tailwind";
 
 interface MobileHeaderToggleProps {
   isMobileMenuOpen: boolean;
-  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  openMobileMenu: () => void;
+  closeMobileMenu: () => void;
 }
 
 export default function MobileHeaderToggle({
   isMobileMenuOpen,
-  setIsMobileMenuOpen,
+  openMobileMenu,
+  closeMobileMenu,
 }: MobileHeaderToggleProps) {
   return (
     <button
       type="button"
-      onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+      onClick={() => (isMobileMenuOpen ? closeMobileMenu() : openMobileMenu())}
       className={cn(
         "flex size-9 items-center justify-center self-center",
         "xl:hidden",
