@@ -5,12 +5,15 @@ import {
   type MobileHeaderItem,
 } from "~/types/navigation";
 
+import CreateT3AppGraphic from "~/components/navigation/graphics/CreateT3AppGraphic";
+import FigmaGraphic from "~/components/navigation/graphics/FigmaGraphic";
 import NextGraphic from "~/components/navigation/graphics/NextGraphic";
 import ReactGraphic from "~/components/navigation/graphics/ReactGraphic";
 import ShadcnUIGraphic from "~/components/navigation/graphics/ShadcnUIGraphic";
 import T3Graphic from "~/components/navigation/graphics/T3Graphic";
 import TailwindCSSGraphic from "~/components/navigation/graphics/TailwindCSSGraphic";
 import TailwindVariantsGraphic from "~/components/navigation/graphics/TailwindVariantsGraphic";
+import QuickstartGraphic from "~/components/navigation/graphics/QuickstartGraphic";
 
 export const MOBILE_NAVIGATION_ITEMS: MobileHeaderItem[] = [
   {
@@ -98,6 +101,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
           "Add quadratic/ui to your Next.js app and start building instantly.",
         href: "/docs/getting-started/quickstart",
         size: "lg",
+        Graphic: QuickstartGraphic,
       },
       {
         id: "create-t3-app",
@@ -105,6 +109,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
         description: "Start your brand new Next.js project the best way.",
         href: "/docs/getting-started/create-t3-app",
         size: "sm",
+        Graphic: CreateT3AppGraphic,
       },
       {
         id: "introduction",
@@ -119,6 +124,7 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
         description: "Design with quadratic/ui components in Figma.",
         href: "/docs/getting-started/introduction",
         size: "lg",
+        Graphic: FigmaGraphic,
       },
       {
         id: "dark-mode",
