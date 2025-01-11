@@ -1,10 +1,17 @@
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function ShadcnUIGraphic() {
+  const { theme } = useTheme();
+
   return (
     <div className="absolute inset-0">
       <Image
-        src="/img/logos/radix.svg"
+        src={
+          theme === "light"
+            ? "/img/logos/radix-ui-light.svg"
+            : "/img/logos/radix-ui-dark.svg"
+        }
         alt="Radix UI"
         width={121}
         height={193}
