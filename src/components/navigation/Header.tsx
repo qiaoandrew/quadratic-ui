@@ -21,6 +21,7 @@ import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
 import CommandMenu from "~/components/navigation/CommandMenu";
 import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 import _Link from "~/components/ui/_Link";
+import { dialogOverlayVariants } from "~/components/ui/_Dialog";
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
@@ -108,6 +109,13 @@ export default function Header({
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur xl:h-6" />
+      {(isMobileMenuOpen || isDesktopMenuOpen) && (
+        <div
+          className={dialogOverlayVariants({
+            className: "z-40 backdrop-blur-sm",
+          })}
+        />
+      )}
       <header
         onMouseLeave={closeDesktopMenu}
         className={cn(
