@@ -1,5 +1,6 @@
+import type { DocsItem } from "~/types/navigation";
+
 import DocsMenuSectionItem from "~/components/docs/navigation/DocsMenuSectionItem";
-import type { DocsItem } from "~/types/docs";
 
 interface DocsMenuSectionProps {
   pathname: string;

@@ -1,6 +1,24 @@
 import {
+  SiGithub as GithubIcon,
+  SiFigma as FigmaIcon,
+} from "@icons-pack/react-simple-icons";
+import {
+  AtomIcon,
+  ChartColumnBigIcon,
+  CircleCheckIcon,
+  ComponentIcon,
+  GitMergeIcon,
+  MoonIcon,
+  PaletteIcon,
+  RocketIcon,
+  SmileIcon,
+} from "lucide-react";
+
+import {
   DesktopHeaderItemType,
   type DesktopHeaderItem,
+  type DocsGroup,
+  type DocsItem,
   type FooterGroup,
   type MobileHeaderNavigationItem,
 } from "~/types/navigation";
@@ -15,7 +33,7 @@ import TailwindCSSGraphic from "~/components/navigation/graphics/TailwindCSSGrap
 import TailwindVariantsGraphic from "~/components/navigation/graphics/TailwindVariantsGraphic";
 import QuickstartGraphic from "~/components/navigation/graphics/QuickstartGraphic";
 
-const NAVIGATION_ITEMS = {
+export const NAVIGATION_ITEMS = {
   home: {
     id: "home",
     label: "Home",
@@ -85,6 +103,11 @@ const NAVIGATION_ITEMS = {
     id: "components",
     label: "Components",
     href: "/docs/components/primitives/accordion",
+  },
+  charts: {
+    id: "charts",
+    label: "Charts",
+    href: "/docs/charts/recharts/quickstart",
   },
   recharts: {
     id: "recharts",
@@ -280,4 +303,37 @@ export const FOOTER_NAVIGATION_ITEMS: FooterGroup[] = [
       NAVIGATION_ITEMS["tailwind-css"],
     ],
   },
+];
+
+export const DOCS_GROUPS: DocsGroup[] = [
+  {
+    ...NAVIGATION_ITEMS["getting-started"],
+    groupHrefPrefix: "/docs/getting-started",
+    Icon: RocketIcon,
+  },
+  {
+    ...NAVIGATION_ITEMS.components,
+    groupHrefPrefix: "/docs/components",
+    Icon: ComponentIcon,
+  },
+  {
+    ...NAVIGATION_ITEMS.charts,
+    groupHrefPrefix: "/docs/charts",
+    Icon: ChartColumnBigIcon,
+  },
+  { ...NAVIGATION_ITEMS.github, Icon: GithubIcon },
+  { ...NAVIGATION_ITEMS.figma, Icon: FigmaIcon },
+];
+
+export const GETTING_STARTED_ITEMS: DocsItem[] = [
+  { ...NAVIGATION_ITEMS["getting-started"], Icon: SmileIcon },
+  { ...NAVIGATION_ITEMS.quickstart, Icon: RocketIcon },
+  { ...NAVIGATION_ITEMS.credits, Icon: CircleCheckIcon },
+];
+
+export const GUIDES_ITEMS: DocsItem[] = [
+  { ...NAVIGATION_ITEMS["create-t3-app"], Icon: AtomIcon },
+  { ...NAVIGATION_ITEMS["dark-mode"], Icon: MoonIcon },
+  { ...NAVIGATION_ITEMS.customization, Icon: PaletteIcon },
+  { ...NAVIGATION_ITEMS.contributing, Icon: GitMergeIcon },
 ];

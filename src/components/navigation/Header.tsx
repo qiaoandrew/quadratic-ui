@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 
 import { cn } from "~/utils/tailwind";
-import type { DocsItem } from "~/types/docs";
 import type {
   DesktopHeaderGroupItem,
+  DocsItem,
   MobileHeaderNavigationItem,
 } from "~/types/navigation";
 import {
@@ -21,6 +20,7 @@ import Logo from "~/components/navigation/Logo";
 import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
 import CommandMenu from "~/components/navigation/CommandMenu";
 import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
+import _Link from "~/components/ui/_Link";
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
@@ -160,11 +160,11 @@ export default function Header({
           </div>
         </div>
         <ScrollArea className="h-full">
-          <nav className="grid gap-x-3 gap-y-8 p-3 xs:gap-y-8 xl:hidden">
+          <nav className="grid gap-x-3 gap-y-8 px-3 pb-3 xs:gap-y-8 xl:hidden">
             {mobileNavigationItems.map((group, i) => (
               <div className="flex flex-col gap-y-3" key={i}>
                 {group.map((item) => (
-                  <Link
+                  <_Link
                     href={item.href}
                     onClick={closeMobileMenu}
                     className={cn(
@@ -174,14 +174,13 @@ export default function Header({
                     key={item.id}
                   >
                     {item.label}
-                  </Link>
+                  </_Link>
                 ))}
               </div>
             ))}
           </nav>
           <ScrollAreaBar />
         </ScrollArea>
-
         <nav className="hidden grid-flow-col grid-cols-4 gap-4 px-4 pb-4 xl:grid xl:h-[260px] xl:min-h-[260px] 2xl:h-[296px] 2xl:min-h-[296px]">
           {activeDesktopMenuGroupItems.map((item) => (
             <DesktopMenuGroupItem

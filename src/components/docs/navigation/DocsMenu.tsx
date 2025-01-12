@@ -2,8 +2,8 @@
 
 import { usePathname } from "next/navigation";
 
-import type { DocsItem } from "~/types/docs";
-import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/docs";
+import type { DocsItem } from "~/types/navigation";
+import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/navigation";
 
 import DocsMenuGroups from "~/components/docs/navigation/DocsMenuGroups";
 import DocsMenuSection from "~/components/docs/navigation/DocsMenuSection";
