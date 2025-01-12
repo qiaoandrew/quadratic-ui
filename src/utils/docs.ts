@@ -1,5 +1,5 @@
 import { readDirectory, readFile } from "~/utils/fs";
-import type { DocsItem, DocsTOCItem } from "~/types/docs";
+import type { DocsItem, DocsTOCItem } from "~/types/navigation";
 
 export function textToHtmlId(text: string) {
   if (!text.trim()) {
@@ -119,8 +119,5 @@ export const getMenuItems = async () => {
     rechartsMenuItems.push(tooltipItem);
   }
 
-  return {
-    primitivesMenuItems,
-    rechartsMenuItems,
-  };
+  return { primitivesMenuItems, rechartsMenuItems };
 };

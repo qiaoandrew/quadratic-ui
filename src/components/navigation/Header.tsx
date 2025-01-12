@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 import { cn } from "~/utils/tailwind";
-import type { DocsItem } from "~/types/docs";
 import type {
   DesktopHeaderGroupItem,
+  DocsItem,
   MobileHeaderNavigationItem,
 } from "~/types/navigation";
 import {

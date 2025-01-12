@@ -5,8 +5,8 @@ import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { ChartColumnBigIcon, ComponentIcon, SearchIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
-import type { DocsItem } from "~/types/docs";
-import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/docs";
+import type { DocsItem } from "~/types/navigation";
+import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/navigation";
 
 import { Shortcut, ShortcutGroup } from "~/components/ui/_Menu";
 import {

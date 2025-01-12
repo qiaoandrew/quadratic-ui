@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "~/utils/tailwind";
-import type { DocsTOCItem } from "~/types/docs";
+import type { DocsTOCItem } from "~/types/navigation";
+
 import useActiveId from "~/hooks/useActiveId";
 import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 

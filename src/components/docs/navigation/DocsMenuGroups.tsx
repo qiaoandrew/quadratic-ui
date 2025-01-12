@@ -1,4 +1,4 @@
-import { DOCS_GROUPS } from "~/constants/docs";
+import { DOCS_GROUPS } from "~/constants/navigation";
 
 import DocsMenuGroup from "~/components/docs/navigation/DocsMenuGroup";
 
