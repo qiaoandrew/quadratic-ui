@@ -326,7 +326,7 @@ export const DOCS_GROUPS: DocsGroup[] = [
 ];
 
 export const GETTING_STARTED_ITEMS: DocsItem[] = [
-  { ...NAVIGATION_ITEMS["getting-started"], Icon: SmileIcon },
+  { ...NAVIGATION_ITEMS.introduction, Icon: SmileIcon },
   { ...NAVIGATION_ITEMS.quickstart, Icon: RocketIcon },
   { ...NAVIGATION_ITEMS.credits, Icon: CircleCheckIcon },
 ];
