@@ -1,7 +1,5 @@
 # quadratic/ui
 
-Beautiful, slightly styled components to build your next side project faster.
-
 ![hero](/public/og.jpg)
 
 ## Documentation
