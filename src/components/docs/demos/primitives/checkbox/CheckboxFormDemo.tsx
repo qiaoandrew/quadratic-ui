@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-// import { toast } from "sonner";
+import { toast } from "sonner";
 
 import { Button } from "~/components/ui/Button";
 import { Checkbox } from "~/components/ui/Checkbox";
@@ -59,18 +59,18 @@ export default function CheckboxFormDemo() {
   });
 
   function onSubmit(data: z.infer<typeof formSchema>) {
-    // toast(
-    //   <div className="flex w-full flex-col gap-y-3">
-    //     <p className="text-3.5 font-medium">
-    //       You submitted the following values:
-    //     </p>
-    //     <pre className="rounded-1.5 bg-border/30 px-3 py-2">
-    //       <code className="font-mono text-3.5">
-    //         {JSON.stringify(data, null, 2)}
-    //       </code>
-    //     </pre>
-    //   </div>,
-    // );
+    toast(
+      <div className="flex w-full flex-col gap-y-3">
+        <p className="text-3.5 font-medium">
+          You submitted the following values:
+        </p>
+        <pre className="rounded-1.5 bg-border/30 px-3 py-2">
+          <code className="font-mono text-3.5">
+            {JSON.stringify(data, null, 2)}
+          </code>
+        </pre>
+      </div>,
+    );
   }
 
   return (

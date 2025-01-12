@@ -1,6 +1,6 @@
 "use client";
 
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
+import { PolarAngleAxis, Radar, RadarChart } from "recharts";
 
 import {
   type ChartConfig,

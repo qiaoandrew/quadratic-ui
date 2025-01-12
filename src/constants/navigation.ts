@@ -104,6 +104,11 @@ export const NAVIGATION_ITEMS = {
     label: "Components",
     href: "/docs/components/primitives/accordion",
   },
+  charts: {
+    id: "charts",
+    label: "Charts",
+    href: "/docs/charts/recharts/quickstart",
+  },
   recharts: {
     id: "recharts",
     label: "Recharts",
@@ -312,7 +317,7 @@ export const DOCS_GROUPS: DocsGroup[] = [
     Icon: ComponentIcon,
   },
   {
-    ...NAVIGATION_ITEMS.recharts,
+    ...NAVIGATION_ITEMS.charts,
     groupHrefPrefix: "/docs/charts",
     Icon: ChartColumnBigIcon,
   },
