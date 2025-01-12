@@ -15,7 +15,7 @@ import {
 } from "~/constants/navigation";
 
 import DesktopHeaderItem from "~/components/navigation/DesktopHeaderItem";
-import DesktopMenuGroupItem from "~/components/navigation/DesktopMenuGroupItem";
+import DesktopMenuItem from "~/components/navigation/DesktopMenuItem";
 import Logo from "~/components/navigation/Logo";
 import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
 import CommandMenu from "~/components/navigation/CommandMenu";
@@ -183,7 +183,7 @@ export default function Header({
         </ScrollArea>
         <nav className="hidden grid-flow-col grid-cols-4 gap-4 px-4 pb-4 xl:grid xl:h-[260px] xl:min-h-[260px] 2xl:h-[296px] 2xl:min-h-[296px]">
           {activeDesktopMenuGroupItems.map((item) => (
-            <DesktopMenuGroupItem
+            <DesktopMenuItem
               closeDesktopMenu={closeDesktopMenu}
               item={item}
               key={item.id}

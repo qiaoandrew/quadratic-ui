@@ -1,19 +1,19 @@
-import Link from "next/link";
-
 import { cn } from "~/utils/tailwind";
 import type { DesktopHeaderGroupItem } from "~/types/navigation";
 
-interface DesktopMenuGroupItemProps {
+import _Link from "~/components/ui/_Link";
+
+interface DesktopMenuItemProps {
   closeDesktopMenu: () => void;
   item: DesktopHeaderGroupItem["items"][number];
 }
 
-export default function DesktopMenuGroupItem({
+export default function DesktopMenuItem({
   closeDesktopMenu,
   item,
-}: DesktopMenuGroupItemProps) {
+}: DesktopMenuItemProps) {
   return (
-    <Link
+    <_Link
       href={item.href}
       onClick={closeDesktopMenu}
       className={cn(
@@ -30,6 +30,6 @@ export default function DesktopMenuGroupItem({
       <p className="relative line-clamp-2 max-w-[220px] text-3.5 leading-6 text-muted-foreground">
         {item.description}
       </p>
-    </Link>
+    </_Link>
   );
 }
