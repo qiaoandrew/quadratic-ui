@@ -7,6 +7,10 @@ Component library for Next 15 + React 19 built using [shadcn/ui](https://ui.shad
 
 Visit https://quadratic-ui.com to install and start using components.
 
+## Figma
+
+Check out quadratic.ui's [Figma design file](https://www.figma.com/community/file/1351315753275186770/quadratic-ui-shadcn-ui-design-system-component-library)!
+
 ## License
 
 License under the [MIT license](https://github.com/qiaoandrew/quadratic-ui/LICENSE).
