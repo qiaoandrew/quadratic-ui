@@ -1,0 +1,7 @@
+This project is licensed under the MIT license, with the exception of the following parts, which are derived from [Tremor](https://github.com/tremorlabs/tremor) and are licensed under the Apache License 2.0:
+
+- [src/utils/tremor.ts](src/utils/tremor.ts)
+- [src/components/charts/tremor](src/components/charts/tremor)
+- [src/app/docs/charts/tremor](src/app/docs/charts/tremor)
+
+For details on the Apache License 2.0, see [LICENSE-APACHE-2.0](LICENSE-APACHE-2.0).

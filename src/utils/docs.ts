@@ -72,6 +72,16 @@ export async function getTOCs() {
     }
   }
 
+  const tremorPages = await readDirectory("src/app/docs/charts/tremor");
+  await Promise.all(
+    tremorPages.map(async (page) => {
+      const filePath = `src/app/docs/charts/tremor/${page}/page.mdx`;
+      const content = await readFile(filePath);
+      const toc = extractSectionIds(content);
+      tocs[`charts/tremor/${page}`] = toc;
+    }),
+  );
+
   return tocs;
 }
 
