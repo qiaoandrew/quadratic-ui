@@ -45,6 +45,7 @@ import CommandDemo from "~/components/docs/demos/primitives/command/CommandDemo"
 import CommandDialogDemo from "~/components/docs/demos/primitives/command/CommandDialogDemo";
 import ContextMenuDemo from "~/components/docs/demos/primitives/context-menu/ContextMenuDemo";
 import DataTableDemo from "~/components/docs/demos/primitives/data-table/DataTableDemo";
+import DataTableVirtualizedDemo from "~/components/docs/demos/primitives/data-table/DataTableVirtualizedDemo";
 import DatePickerDemo from "~/components/docs/demos/primitives/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/primitives/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/primitives/date-picker/DatePickerFormDemo";
@@ -380,6 +381,10 @@ export const COMPONENT_PREVIEWS = {
   dataTable: {
     Preview: DataTableDemo,
     path: "src/components/docs/demos/primitives/data-table/DataTableDemo.tsx",
+  },
+  dataTableVirtualized: {
+    Preview: DataTableVirtualizedDemo,
+    path: "src/components/docs/demos/primitives/data-table/DataTableVirtualizedDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,

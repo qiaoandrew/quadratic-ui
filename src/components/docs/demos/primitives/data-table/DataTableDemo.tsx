@@ -313,7 +313,7 @@ export default function DataTableDemo() {
           <Input
             placeholder="Search for tests..."
             inputSize="sm"
-            value={table.getColumn("name")?.getFilterValue() as string}
+            value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
