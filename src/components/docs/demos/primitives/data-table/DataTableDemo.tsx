@@ -507,9 +507,9 @@ function UptimeCell({ uptime }: { uptime: number | null }) {
       {uptime !== null && (
         <span className="flex items-center justify-between gap-x-1 font-semibold">
           {uptime}%
-          <span className="relative h-4 w-20 bg-success-foreground">
+          <span className="relative h-4 w-20 bg-emerald-600">
             <span
-              className="absolute inset-y-0 right-0 bg-destructive-foreground"
+              className="absolute inset-y-0 right-0 bg-red-600"
               style={{ width: failureWidth }}
             />
           </span>
