@@ -7,6 +7,7 @@ import { RectClipPath } from "@visx/clip-path";
 import { voronoi, Polygon } from "@visx/delaunay";
 import { localPoint } from "@visx/event";
 import { getSeededRandom } from "@visx/mock-data";
+
 import useElementSize from "~/hooks/useElementSize";
 
 type Datum = {
