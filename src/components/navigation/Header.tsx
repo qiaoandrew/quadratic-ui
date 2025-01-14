@@ -5,24 +5,19 @@ import dynamic from "next/dynamic";
 
 import { cn } from "~/utils/tailwind";
 import {
-  DocsMenuItemType,
   type DesktopHeaderGroupItem,
   type DocsMenuItem,
-  type MobileMenuItem,
 } from "~/types/navigation";
-import {
-  MOBILE_NAVIGATION_ITEMS,
-  DESKTOP_NAVIGATION_ITEMS,
-} from "~/constants/navigation";
+import { DESKTOP_NAVIGATION_ITEMS } from "~/constants/navigation";
 
 import DesktopHeaderItem from "~/components/navigation/DesktopHeaderItem";
 import DesktopMenuItem from "~/components/navigation/DesktopMenuItem";
 import Logo from "~/components/navigation/Logo";
 import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
 import CommandMenu from "~/components/navigation/CommandMenu";
-import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 import _Link from "~/components/ui/_Link";
 import { dialogOverlayVariants } from "~/components/ui/_Dialog";
+import MobileMenu from "~/components/navigation/MobileMenu";
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
@@ -80,48 +75,13 @@ export default function Header({ docsMenuItems }: HeaderProps) {
     };
   }, []);
 
-  const mobileDocsNavigationItems: MobileMenuItem[][] = [];
-
-  for (const group of docsMenuItems) {
-    if (group.type === DocsMenuItemType.Group) {
-      for (const section of group.sections) {
-        const sectionItems: MobileMenuItem[] = [];
-
-        sectionItems.push({
-          id: section.id,
-          label: section.label,
-          variant: "primary",
-          isLabel: true,
-        });
-
-        for (const item of section.items) {
-          sectionItems.push({
-            id: item.id,
-            label: item.label,
-            variant: "secondary",
-            href: item.href,
-            isLabel: false,
-          });
-        }
-
-        mobileDocsNavigationItems.push(sectionItems);
-      }
-    }
-  }
-
-  const mobileNavigationItems: MobileMenuItem[][] = [
-    ...MOBILE_NAVIGATION_ITEMS.slice(0, 1),
-    ...mobileDocsNavigationItems,
-    ...MOBILE_NAVIGATION_ITEMS.slice(1),
-  ];
-
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur xl:h-6" />
       {(isMobileMenuOpen || isDesktopMenuOpen) && (
         <div
           className={dialogOverlayVariants({
-            className: "z-40 backdrop-blur-sm",
+            className: "z-40 bg-white/80 backdrop-blur-sm dark:bg-black/80",
           })}
         />
       )}
@@ -173,40 +133,10 @@ export default function Header({ docsMenuItems }: HeaderProps) {
             <ThemeToggle />
           </div>
         </div>
-        <ScrollArea className="h-full">
-          <nav className="grid gap-x-3 gap-y-8 px-3 pb-3 xs:gap-y-8 xl:hidden">
-            {mobileNavigationItems.map((group, i) => (
-              <div className="flex flex-col gap-y-3" key={i}>
-                {group.map((item) =>
-                  item.isLabel ? (
-                    <p
-                      className={cn(
-                        "text-6 font-semibold",
-                        item.variant === "secondary" && "text-muted-foreground",
-                      )}
-                      key={item.id}
-                    >
-                      {item.label}
-                    </p>
-                  ) : (
-                    <_Link
-                      href={item.href}
-                      onClick={closeMobileMenu}
-                      className={cn(
-                        "text-6 font-semibold",
-                        item.variant === "secondary" && "text-muted-foreground",
-                      )}
-                      key={item.id}
-                    >
-                      {item.label}
-                    </_Link>
-                  ),
-                )}
-              </div>
-            ))}
-          </nav>
-          <ScrollAreaBar />
-        </ScrollArea>
+        <MobileMenu
+          docsMenuItems={docsMenuItems}
+          closeMobileMenu={closeMobileMenu}
+        />
         <nav className="hidden grid-flow-col grid-cols-4 gap-4 px-4 pb-4 xl:grid xl:h-[260px] xl:min-h-[260px] 2xl:h-[296px] 2xl:min-h-[296px]">
           {activeDesktopMenuGroupItems.map((item) => (
             <DesktopMenuItem
