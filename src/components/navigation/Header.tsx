@@ -4,24 +4,20 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 import { cn } from "~/utils/tailwind";
-import type {
-  DesktopHeaderGroupItem,
-  DocsItem,
-  MobileHeaderNavigationItem,
-} from "~/types/navigation";
 import {
-  MOBILE_NAVIGATION_ITEMS,
-  DESKTOP_NAVIGATION_ITEMS,
-} from "~/constants/navigation";
+  type DesktopHeaderGroupItem,
+  type DocsMenuItem,
+} from "~/types/navigation";
+import { DESKTOP_NAVIGATION_ITEMS } from "~/constants/navigation";
 
 import DesktopHeaderItem from "~/components/navigation/DesktopHeaderItem";
 import DesktopMenuItem from "~/components/navigation/DesktopMenuItem";
 import Logo from "~/components/navigation/Logo";
 import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
 import CommandMenu from "~/components/navigation/CommandMenu";
-import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 import _Link from "~/components/ui/_Link";
 import { dialogOverlayVariants } from "~/components/ui/_Dialog";
+import MobileMenu from "~/components/navigation/MobileMenu";
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
@@ -29,14 +25,10 @@ const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
 });
 
 interface HeaderProps {
-  primitivesMenuItems: DocsItem[];
-  rechartsMenuItems: DocsItem[];
+  docsMenuItems: DocsMenuItem[];
 }
 
-export default function Header({
-  primitivesMenuItems,
-  rechartsMenuItems,
-}: HeaderProps) {
+export default function Header({ docsMenuItems }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState<boolean>(false);
 
@@ -83,36 +75,13 @@ export default function Header({
     };
   }, []);
 
-  const mobileNavigationItems: MobileHeaderNavigationItem[][] =
-    MOBILE_NAVIGATION_ITEMS.map((group, index) => {
-      if (index === 2) {
-        return [
-          ...group,
-          ...primitivesMenuItems.map(
-            (item) =>
-              ({ ...item, variant: "secondary" }) as MobileHeaderNavigationItem,
-          ),
-        ];
-      } else if (index === 3) {
-        return [
-          ...group,
-          ...rechartsMenuItems.map(
-            (item) =>
-              ({ ...item, variant: "secondary" }) as MobileHeaderNavigationItem,
-          ),
-        ];
-      } else {
-        return group;
-      }
-    });
-
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur xl:h-6" />
       {(isMobileMenuOpen || isDesktopMenuOpen) && (
         <div
           className={dialogOverlayVariants({
-            className: "z-40 backdrop-blur-sm",
+            className: "z-40 bg-white/80 backdrop-blur-sm dark:bg-black/80",
           })}
         />
       )}
@@ -160,35 +129,14 @@ export default function Header({
             onMouseEnter={closeDesktopMenu}
             className="hidden grow items-center justify-end gap-x-2 xl:flex"
           >
-            <CommandMenu
-              primitivesMenuItems={primitivesMenuItems}
-              rechartsMenuItems={rechartsMenuItems}
-            />
+            <CommandMenu docsMenuItems={docsMenuItems} />
             <ThemeToggle />
           </div>
         </div>
-        <ScrollArea className="h-full">
-          <nav className="grid gap-x-3 gap-y-8 px-3 pb-3 xs:gap-y-8 xl:hidden">
-            {mobileNavigationItems.map((group, i) => (
-              <div className="flex flex-col gap-y-3" key={i}>
-                {group.map((item) => (
-                  <_Link
-                    href={item.href}
-                    onClick={closeMobileMenu}
-                    className={cn(
-                      "text-6 font-semibold",
-                      item.variant === "secondary" && "text-muted-foreground",
-                    )}
-                    key={item.id}
-                  >
-                    {item.label}
-                  </_Link>
-                ))}
-              </div>
-            ))}
-          </nav>
-          <ScrollAreaBar />
-        </ScrollArea>
+        <MobileMenu
+          docsMenuItems={docsMenuItems}
+          closeMobileMenu={closeMobileMenu}
+        />
         <nav className="hidden grid-flow-col grid-cols-4 gap-4 px-4 pb-4 xl:grid xl:h-[260px] xl:min-h-[260px] 2xl:h-[296px] 2xl:min-h-[296px]">
           {activeDesktopMenuGroupItems.map((item) => (
             <DesktopMenuItem

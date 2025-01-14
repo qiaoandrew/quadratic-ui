@@ -61,8 +61,6 @@ export default function RadarChartCustomLabelDemo() {
           }) => {
             const data = CHART_DATA[index];
 
-            console.log(data);
-
             return (
               <text
                 x={x}

@@ -12,15 +12,16 @@ import {
   PaletteIcon,
   RocketIcon,
   SmileIcon,
+  TableIcon,
 } from "lucide-react";
 
 import {
   DesktopHeaderItemType,
   type DesktopHeaderItem,
-  type DocsGroup,
-  type DocsItem,
+  type DocsMenuItemSetup,
   type FooterGroup,
-  type MobileHeaderNavigationItem,
+  type MobileMenuItem,
+  DocsMenuItemType,
 } from "~/types/navigation";
 
 import CreateT3AppGraphic from "~/components/navigation/graphics/CreateT3AppGraphic";
@@ -33,7 +34,7 @@ import TailwindCSSGraphic from "~/components/navigation/graphics/TailwindCSSGrap
 import TailwindVariantsGraphic from "~/components/navigation/graphics/TailwindVariantsGraphic";
 import QuickstartGraphic from "~/components/navigation/graphics/QuickstartGraphic";
 
-export const NAVIGATION_ITEMS = {
+const NAVIGATION_ITEMS = {
   home: {
     id: "home",
     label: "Home",
@@ -42,52 +43,51 @@ export const NAVIGATION_ITEMS = {
   "getting-started": {
     id: "getting-started",
     label: "Getting Started",
-    href: "/docs/getting-started/quickstart",
+    href: "/docs/getting-started/guides/quickstart",
   },
   introduction: {
     id: "introduction",
     label: "Introduction",
-    href: "/docs/getting-started/introduction",
+    href: "/docs/getting-started/guides/introduction",
   },
   quickstart: {
     id: "quickstart",
     label: "Quickstart",
-    href: "/docs/getting-started/quickstart",
+    href: "/docs/getting-started/guides/quickstart",
   },
   credits: {
     id: "credits",
     label: "Credits",
-    href: "/docs/getting-started/credits",
+    href: "/docs/getting-started/learn-more/credits",
   },
   guides: {
     id: "guides",
     label: "Guides",
-    href: "/docs/getting-started/create-t3-app",
+    href: "/docs/getting-started/guides/create-t3-app",
   },
   "create-t3-app": {
     id: "create-t3-app",
     label: "Create T3 App",
-    href: "/docs/getting-started/create-t3-app",
+    href: "/docs/getting-started/guides/create-t3-app",
   },
   "dark-mode": {
     id: "dark-mode",
     label: "Dark Mode",
-    href: "/docs/getting-started/dark-mode",
+    href: "/docs/getting-started/guides/dark-mode",
   },
   customization: {
     id: "customization",
     label: "Customization",
-    href: "/docs/getting-started/customization",
+    href: "/docs/getting-started/learn-more/customization",
   },
   contributing: {
     id: "contributing",
     label: "Contributing",
-    href: "/docs/getting-started/contributing",
+    href: "/docs/getting-started/learn-more/contributing",
   },
   resources: {
     id: "resources",
     label: "Resources",
-    href: "/docs/getting-started/resources",
   },
   figma: {
     id: "figma",
@@ -104,15 +104,15 @@ export const NAVIGATION_ITEMS = {
     label: "Components",
     href: "/docs/components/primitives/accordion",
   },
-  charts: {
-    id: "charts",
-    label: "Charts",
-    href: "/docs/charts/recharts/quickstart",
+  visualizations: {
+    id: "visualizations",
+    label: "Visualizations",
+    href: "/docs/visualizations/recharts/quickstart",
   },
   recharts: {
     id: "recharts",
     label: "Recharts",
-    href: "/docs/charts/recharts/quickstart",
+    href: "/docs/visualizations/recharts/quickstart",
   },
   "shadcn/ui": {
     id: "shadcn-ui",
@@ -151,32 +151,28 @@ export const NAVIGATION_ITEMS = {
   },
 };
 
-export const MOBILE_NAVIGATION_ITEMS: MobileHeaderNavigationItem[][] = [
+export const MOBILE_NAVIGATION_ITEMS: MobileMenuItem[][] = [
   [
-    { ...NAVIGATION_ITEMS.home, variant: "primary" },
-    { ...NAVIGATION_ITEMS.github, variant: "primary" },
-    { ...NAVIGATION_ITEMS.figma, variant: "primary" },
+    { ...NAVIGATION_ITEMS.home, variant: "primary", isLabel: false },
+    { ...NAVIGATION_ITEMS.github, variant: "primary", isLabel: false },
+    { ...NAVIGATION_ITEMS.figma, variant: "primary", isLabel: false },
   ],
   [
-    { ...NAVIGATION_ITEMS["getting-started"], variant: "primary" },
-    { ...NAVIGATION_ITEMS.introduction, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.quickstart, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.credits, variant: "secondary" },
-    { ...NAVIGATION_ITEMS["create-t3-app"], variant: "secondary" },
-    { ...NAVIGATION_ITEMS["dark-mode"], variant: "secondary" },
-    { ...NAVIGATION_ITEMS.customization, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.contributing, variant: "secondary" },
-  ],
-  [{ ...NAVIGATION_ITEMS.components, variant: "primary" }],
-  [{ ...NAVIGATION_ITEMS.recharts, variant: "primary" }],
-  [
-    { ...NAVIGATION_ITEMS.resources, variant: "primary" },
-    { ...NAVIGATION_ITEMS["shadcn/ui"], variant: "secondary" },
-    { ...NAVIGATION_ITEMS.next, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.react, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.t3, variant: "secondary" },
-    { ...NAVIGATION_ITEMS["tailwind-css"], variant: "secondary" },
-    { ...NAVIGATION_ITEMS["tailwind-variants"], variant: "secondary" },
+    { id: "resources", label: "Resources", variant: "primary", isLabel: true },
+    { ...NAVIGATION_ITEMS["shadcn/ui"], variant: "secondary", isLabel: false },
+    { ...NAVIGATION_ITEMS.next, variant: "secondary", isLabel: false },
+    { ...NAVIGATION_ITEMS.react, variant: "secondary", isLabel: false },
+    { ...NAVIGATION_ITEMS.t3, variant: "secondary", isLabel: false },
+    {
+      ...NAVIGATION_ITEMS["tailwind-css"],
+      variant: "secondary",
+      isLabel: false,
+    },
+    {
+      ...NAVIGATION_ITEMS["tailwind-variants"],
+      variant: "secondary",
+      isLabel: false,
+    },
   ],
 ];
 
@@ -223,7 +219,10 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
       },
     ],
   },
-  { ...NAVIGATION_ITEMS.components, type: DesktopHeaderItemType.Link },
+  {
+    ...NAVIGATION_ITEMS.components,
+    type: DesktopHeaderItemType.Link,
+  },
   {
     ...NAVIGATION_ITEMS.resources,
     type: DesktopHeaderItemType.Group,
@@ -304,36 +303,109 @@ export const FOOTER_NAVIGATION_ITEMS: FooterGroup[] = [
     ],
   },
 ];
-
-export const DOCS_GROUPS: DocsGroup[] = [
+export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
   {
-    ...NAVIGATION_ITEMS["getting-started"],
-    groupHrefPrefix: "/docs/getting-started",
-    Icon: RocketIcon,
+    id: "getting-started",
+    label: "Getting Started",
+    type: DocsMenuItemType.Group,
+    href: "/docs/getting-started/guides/quickstart",
+    icon: <RocketIcon />,
+    sections: [
+      {
+        id: "guides",
+        label: "Guides",
+        moveToFront: [
+          "introduction",
+          "quickstart",
+          "create-t3-app",
+          "dark-mode",
+        ],
+        iconOverrides: {
+          introduction: <SmileIcon />,
+          quickstart: <RocketIcon />,
+          "create-t3-app": <AtomIcon />,
+          "dark-mode": <MoonIcon />,
+        },
+      },
+      {
+        id: "learn-more",
+        label: "Learn More",
+        moveToFront: ["credits", "contributing", "customization"],
+        iconOverrides: {
+          credits: <CircleCheckIcon />,
+          contributing: <GitMergeIcon />,
+          customization: <PaletteIcon />,
+        },
+      },
+    ],
   },
   {
-    ...NAVIGATION_ITEMS.components,
-    groupHrefPrefix: "/docs/components",
-    Icon: ComponentIcon,
+    id: "components",
+    label: "Components",
+    type: DocsMenuItemType.Group,
+    href: "/docs/components/primitives/accordion",
+    icon: <ComponentIcon />,
+    sections: [
+      {
+        id: "primitives",
+        label: "Primitives",
+        defaultIcon: <ComponentIcon />,
+      },
+    ],
   },
   {
-    ...NAVIGATION_ITEMS.charts,
-    groupHrefPrefix: "/docs/charts",
-    Icon: ChartColumnBigIcon,
+    id: "visualizations",
+    label: "Visualizations",
+    type: DocsMenuItemType.Group,
+    href: "/docs/visualizations/recharts/quickstart",
+    icon: <ChartColumnBigIcon />,
+    sections: [
+      {
+        id: "recharts",
+        label: "Recharts",
+        moveToFront: ["quickstart"],
+        moveToBack: ["tooltip"],
+        defaultIcon: <ChartColumnBigIcon />,
+      },
+      // {
+      //   id: "visx",
+      //   label: "Visx",
+      //   moveToFront: ["quickstart"],
+      //   moveToBack: ["axes", "legend", "tooltip"],
+      //   defaultIcon: <ChartColumnBigIcon />,
+      // },
+    ],
   },
-  { ...NAVIGATION_ITEMS.github, Icon: GithubIcon },
-  { ...NAVIGATION_ITEMS.figma, Icon: FigmaIcon },
-];
-
-export const GETTING_STARTED_ITEMS: DocsItem[] = [
-  { ...NAVIGATION_ITEMS.introduction, Icon: SmileIcon },
-  { ...NAVIGATION_ITEMS.quickstart, Icon: RocketIcon },
-  { ...NAVIGATION_ITEMS.credits, Icon: CircleCheckIcon },
-];
-
-export const GUIDES_ITEMS: DocsItem[] = [
-  { ...NAVIGATION_ITEMS["create-t3-app"], Icon: AtomIcon },
-  { ...NAVIGATION_ITEMS["dark-mode"], Icon: MoonIcon },
-  { ...NAVIGATION_ITEMS.customization, Icon: PaletteIcon },
-  { ...NAVIGATION_ITEMS.contributing, Icon: GitMergeIcon },
+  // {
+  //   id: "table",
+  //   label: "Table",
+  //   type: DocsSectionType.Group,
+  //   Icon: TableIcon,
+  //   sections: [
+  //     {
+  //       id: "basic",
+  //       label: "Basic",
+  //       defaultIcon: TableIcon,
+  //     },
+  //     {
+  //       id: "tanstack",
+  //       label: "TanStack",
+  //       defaultIcon: TableIcon,
+  //     },
+  //   ],
+  // },
+  {
+    id: "github",
+    label: "GitHub",
+    type: DocsMenuItemType.Link,
+    href: "https://github.com/qiaoandrew/quadratic-ui",
+    icon: <GithubIcon />,
+  },
+  {
+    id: "figma",
+    label: "Figma",
+    type: DocsMenuItemType.Link,
+    href: "https://www.figma.com/community/file/1351315753275186770/quadratic-ui-shadcn-ui-design-system-component-library",
+    icon: <FigmaIcon />,
+  },
 ];

@@ -1,19 +1,18 @@
 import { cn } from "~/utils/tailwind";
-import type { Icon } from "~/types/ui";
 
 import _Link from "~/components/ui/_Link";
 
 interface DocsMenuGroupProps {
   href: string;
   isActive: boolean;
-  Icon: Icon;
+  icon: React.ReactNode;
   children: React.ReactNode;
 }
 
 export default function DocsMenuGroup({
   href,
   isActive,
-  Icon,
+  icon,
   children,
 }: DocsMenuGroupProps) {
   return (
@@ -28,14 +27,13 @@ export default function DocsMenuGroup({
         className={cn(
           "flex size-6 items-center justify-center rounded-1.5 border",
           isActive ? "bg-foreground/20" : "group-hover:bg-border",
+          "[&>svg]:size-4",
+          isActive
+            ? "[&>svg]:text-foreground"
+            : "[&>svg]:text-muted-foreground",
         )}
       >
-        <Icon
-          className={cn(
-            "size-4",
-            isActive ? "text-foreground" : "text-muted-foreground",
-          )}
-        />
+        {icon}
       </div>
       {children}
     </_Link>

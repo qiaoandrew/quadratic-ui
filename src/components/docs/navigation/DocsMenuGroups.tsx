@@ -1,4 +1,5 @@
-import { DOCS_GROUPS } from "~/constants/navigation";
+import { DOCS_MENU_ITEMS } from "~/constants/navigation";
+import { DocsMenuItemType } from "~/types/navigation";
 
 import DocsMenuGroup from "~/components/docs/navigation/DocsMenuGroup";
 
@@ -9,17 +10,17 @@ interface DocsMenuGroupsProps {
 export default function DocsMenuGroups({ pathname }: DocsMenuGroupsProps) {
   return (
     <div className="flex flex-col gap-y-2 px-3">
-      {DOCS_GROUPS.map((group) => (
+      {DOCS_MENU_ITEMS.map((menuItem) => (
         <DocsMenuGroup
-          href={group.href}
+          href={menuItem.href}
           isActive={
-            !!group.groupHrefPrefix &&
-            pathname.startsWith(group.groupHrefPrefix)
+            menuItem.type === DocsMenuItemType.Group &&
+            pathname.startsWith(`/docs/${menuItem.id}`)
           }
-          Icon={group.Icon}
-          key={group.id}
+          icon={menuItem.icon}
+          key={menuItem.id}
         >
-          {group.label}
+          {menuItem.label}
         </DocsMenuGroup>
       ))}
     </div>

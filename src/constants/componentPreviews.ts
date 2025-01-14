@@ -184,6 +184,7 @@ import TooltipNoLabelDemo from "~/components/docs/demos/recharts/tooltip/Tooltip
 import TooltipFormatterDemo from "~/components/docs/demos/recharts/tooltip/TooltipFormatterDemo";
 import TooltipIconsDemo from "~/components/docs/demos/recharts/tooltip/TooltipIconsDemo";
 import TooltipAdvancedDemo from "~/components/docs/demos/recharts/tooltip/TooltipAdvancedDemo";
+import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -929,5 +930,9 @@ export const COMPONENT_PREVIEWS = {
   rechartsTooltipAdvanced: {
     Preview: TooltipAdvancedDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipAdvancedDemo.tsx",
+  },
+  visxVoronoiChart: {
+    Preview: VisxVoronoiChartDemo,
+    path: "src/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo.tsx",
   },
 };
