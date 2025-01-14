@@ -15,7 +15,6 @@ import DesktopMenuItem from "~/components/navigation/DesktopMenuItem";
 import Logo from "~/components/navigation/Logo";
 import MobileHeaderToggle from "~/components/navigation/MobileHeaderToggle";
 import CommandMenu from "~/components/navigation/CommandMenu";
-import _Link from "~/components/ui/_Link";
 import { dialogOverlayVariants } from "~/components/ui/_Dialog";
 import MobileMenu from "~/components/navigation/MobileMenu";
 

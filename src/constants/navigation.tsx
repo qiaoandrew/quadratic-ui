@@ -12,7 +12,7 @@ import {
   PaletteIcon,
   RocketIcon,
   SmileIcon,
-  TableIcon,
+  // TableIcon,
 } from "lucide-react";
 
 import {

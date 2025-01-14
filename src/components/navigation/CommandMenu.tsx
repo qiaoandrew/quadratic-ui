@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { ComponentIcon, SearchIcon } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
 import { DocsMenuItemType, type DocsMenuItem } from "~/types/navigation";
