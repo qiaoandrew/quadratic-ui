@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 import { cn } from "~/utils/tailwind";
-import type {
-  DesktopHeaderGroupItem,
-  DocsMenuItem,
-  MobileMenuItem,
+import {
+  DocsMenuItemType,
+  type DesktopHeaderGroupItem,
+  type DocsMenuItem,
+  type MobileMenuItem,
 } from "~/types/navigation";
 import {
   MOBILE_NAVIGATION_ITEMS,
@@ -79,29 +80,40 @@ export default function Header({ docsMenuItems }: HeaderProps) {
     };
   }, []);
 
-  const mobileNavigationItems: MobileMenuItem[][] = [];
-  // TODO: fix
-  // MOBILE_NAVIGATION_ITEMS.map(
-  //   (group, index) => {
-  //     if (index === 2) {
-  //       return [
-  //         ...group,
-  //         ...primitivesMenuItems.map(
-  //           (item) => ({ ...item, variant: "secondary" }) as MobileMenuItem,
-  //         ),
-  //       ];
-  //     } else if (index === 3) {
-  //       return [
-  //         ...group,
-  //         ...rechartsMenuItems.map(
-  //           (item) => ({ ...item, variant: "secondary" }) as MobileMenuItem,
-  //         ),
-  //       ];
-  //     } else {
-  //       return group;
-  //     }
-  //   },
-  // );
+  const mobileDocsNavigationItems: MobileMenuItem[][] = [];
+
+  for (const group of docsMenuItems) {
+    if (group.type === DocsMenuItemType.Group) {
+      const sectionItems: MobileMenuItem[] = [];
+
+      sectionItems.push({
+        id: group.id,
+        label: group.label,
+        variant: "primary",
+        isLabel: true,
+      });
+
+      for (const section of group.sections) {
+        for (const item of section.items) {
+          sectionItems.push({
+            id: item.id,
+            label: item.label,
+            variant: "secondary",
+            href: item.href,
+            isLabel: false,
+          });
+        }
+      }
+
+      mobileDocsNavigationItems.push(sectionItems);
+    }
+  }
+
+  const mobileNavigationItems: MobileMenuItem[][] = [
+    ...MOBILE_NAVIGATION_ITEMS.slice(0, 1),
+    ...mobileDocsNavigationItems,
+    ...MOBILE_NAVIGATION_ITEMS.slice(1),
+  ];
 
   return (
     <>
@@ -165,19 +177,31 @@ export default function Header({ docsMenuItems }: HeaderProps) {
           <nav className="grid gap-x-3 gap-y-8 px-3 pb-3 xs:gap-y-8 xl:hidden">
             {mobileNavigationItems.map((group, i) => (
               <div className="flex flex-col gap-y-3" key={i}>
-                {group.map((item) => (
-                  <_Link
-                    href={item.href}
-                    onClick={closeMobileMenu}
-                    className={cn(
-                      "text-6 font-semibold",
-                      item.variant === "secondary" && "text-muted-foreground",
-                    )}
-                    key={item.id}
-                  >
-                    {item.label}
-                  </_Link>
-                ))}
+                {group.map((item) =>
+                  item.isLabel ? (
+                    <p
+                      className={cn(
+                        "text-6 font-semibold",
+                        item.variant === "secondary" && "text-muted-foreground",
+                      )}
+                      key={item.id}
+                    >
+                      {item.label}
+                    </p>
+                  ) : (
+                    <_Link
+                      href={item.href}
+                      onClick={closeMobileMenu}
+                      className={cn(
+                        "text-6 font-semibold",
+                        item.variant === "secondary" && "text-muted-foreground",
+                      )}
+                      key={item.id}
+                    >
+                      {item.label}
+                    </_Link>
+                  ),
+                )}
               </div>
             ))}
           </nav>

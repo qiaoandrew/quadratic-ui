@@ -88,7 +88,6 @@ const NAVIGATION_ITEMS = {
   resources: {
     id: "resources",
     label: "Resources",
-    href: "/docs/getting-started/resources",
   },
   figma: {
     id: "figma",
@@ -154,30 +153,26 @@ const NAVIGATION_ITEMS = {
 
 export const MOBILE_NAVIGATION_ITEMS: MobileMenuItem[][] = [
   [
-    { ...NAVIGATION_ITEMS.home, variant: "primary" },
-    { ...NAVIGATION_ITEMS.github, variant: "primary" },
-    { ...NAVIGATION_ITEMS.figma, variant: "primary" },
+    { ...NAVIGATION_ITEMS.home, variant: "primary", isLabel: false },
+    { ...NAVIGATION_ITEMS.github, variant: "primary", isLabel: false },
+    { ...NAVIGATION_ITEMS.figma, variant: "primary", isLabel: false },
   ],
   [
-    { ...NAVIGATION_ITEMS["getting-started"], variant: "primary" },
-    { ...NAVIGATION_ITEMS.introduction, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.quickstart, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.credits, variant: "secondary" },
-    { ...NAVIGATION_ITEMS["create-t3-app"], variant: "secondary" },
-    { ...NAVIGATION_ITEMS["dark-mode"], variant: "secondary" },
-    { ...NAVIGATION_ITEMS.customization, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.contributing, variant: "secondary" },
-  ],
-  [{ ...NAVIGATION_ITEMS.components, variant: "primary" }],
-  [{ ...NAVIGATION_ITEMS.recharts, variant: "primary" }],
-  [
-    { ...NAVIGATION_ITEMS.resources, variant: "primary" },
-    { ...NAVIGATION_ITEMS["shadcn/ui"], variant: "secondary" },
-    { ...NAVIGATION_ITEMS.next, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.react, variant: "secondary" },
-    { ...NAVIGATION_ITEMS.t3, variant: "secondary" },
-    { ...NAVIGATION_ITEMS["tailwind-css"], variant: "secondary" },
-    { ...NAVIGATION_ITEMS["tailwind-variants"], variant: "secondary" },
+    { id: "resources", label: "Resources", variant: "primary", isLabel: true },
+    { ...NAVIGATION_ITEMS["shadcn/ui"], variant: "secondary", isLabel: false },
+    { ...NAVIGATION_ITEMS.next, variant: "secondary", isLabel: false },
+    { ...NAVIGATION_ITEMS.react, variant: "secondary", isLabel: false },
+    { ...NAVIGATION_ITEMS.t3, variant: "secondary", isLabel: false },
+    {
+      ...NAVIGATION_ITEMS["tailwind-css"],
+      variant: "secondary",
+      isLabel: false,
+    },
+    {
+      ...NAVIGATION_ITEMS["tailwind-variants"],
+      variant: "secondary",
+      isLabel: false,
+    },
   ],
 ];
 

@@ -30,9 +30,11 @@ export type DesktopMenuItem = NavigationItem & {
   Graphic?: () => React.ReactNode;
 };
 
-export type MobileMenuItem = NavigationItem & {
+export type MobileMenuItem = {
+  id: string;
+  label: string;
   variant: "primary" | "secondary";
-};
+} & ({ isLabel: false; href: string } | { isLabel: true });
 
 export type FooterGroup = {
   id: string;
