@@ -84,16 +84,16 @@ export default function Header({ docsMenuItems }: HeaderProps) {
 
   for (const group of docsMenuItems) {
     if (group.type === DocsMenuItemType.Group) {
-      const sectionItems: MobileMenuItem[] = [];
-
-      sectionItems.push({
-        id: group.id,
-        label: group.label,
-        variant: "primary",
-        isLabel: true,
-      });
-
       for (const section of group.sections) {
+        const sectionItems: MobileMenuItem[] = [];
+
+        sectionItems.push({
+          id: section.id,
+          label: section.label,
+          variant: "primary",
+          isLabel: true,
+        });
+
         for (const item of section.items) {
           sectionItems.push({
             id: item.id,
@@ -103,9 +103,9 @@ export default function Header({ docsMenuItems }: HeaderProps) {
             isLabel: false,
           });
         }
-      }
 
-      mobileDocsNavigationItems.push(sectionItems);
+        mobileDocsNavigationItems.push(sectionItems);
+      }
     }
   }
 
