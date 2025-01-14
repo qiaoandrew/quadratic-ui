@@ -1,5 +1,14 @@
+import { ComponentIcon } from "lucide-react";
+
 import { readDirectory, readFile } from "~/utils/fs";
-import type { DocsItem, DocsTOCItem } from "~/types/navigation";
+import { DOCS_MENU_ITEMS } from "~/constants/navigation";
+import {
+  DocsMenuItemType,
+  type DocsTOCItem,
+  type DocsMenuGroupSectionItem,
+  type DocsMenuGroupSection,
+  type DocsMenuItem,
+} from "~/types/navigation";
 
 export function textToHtmlId(text: string) {
   if (!text.trim()) {
@@ -49,75 +58,87 @@ function extractSectionIds(content: string) {
 export async function getTOCs() {
   const tocs: Record<string, DocsTOCItem[]> = {};
 
-  const gettingStartedPages = await readDirectory(
-    "src/app/docs/getting-started",
-  );
-  await Promise.all(
-    gettingStartedPages.map(async (page) => {
-      const filePath = `src/app/docs/getting-started/${page}/page.mdx`;
-      const content = await readFile(filePath);
-      const toc = extractSectionIds(content);
-      tocs[`getting-started/${page}`] = toc;
-    }),
-  );
+  for (const group of DOCS_MENU_ITEMS) {
+    if (group.type === DocsMenuItemType.Link) continue;
 
-  const primitivesPages = await readDirectory(
-    "src/app/docs/components/primitives",
-  );
-  await Promise.all(
-    primitivesPages.map(async (page) => {
-      const filePath = `src/app/docs/components/primitives/${page}/page.mdx`;
-      const content = await readFile(filePath);
-      const toc = extractSectionIds(content);
-      tocs[`components/primitives/${page}`] = toc;
-    }),
-  );
-
-  const rechartsPages = await readDirectory("src/app/docs/charts/recharts");
-  await Promise.all(
-    rechartsPages.map(async (page) => {
-      const filePath = `src/app/docs/charts/recharts/${page}/page.mdx`;
-      const content = await readFile(filePath);
-      const toc = extractSectionIds(content);
-      tocs[`charts/recharts/${page}`] = toc;
-    }),
-  );
+    for (const section of group.sections) {
+      const ids = await readDirectory(`src/app/docs/${group.id}/${section.id}`);
+      await Promise.all(
+        ids.map(async (id) => {
+          const filePath = `src/app/docs/${group.id}/${section.id}/${id}/page.mdx`;
+          const content = await readFile(filePath);
+          const toc = extractSectionIds(content);
+          tocs[`${group.id}/${section.id}/${id}`] = toc;
+        }),
+      );
+    }
+  }
 
   return tocs;
 }
 
-export const getMenuItems = async () => {
-  const primitives = await readDirectory("src/app/docs/components/primitives");
-  const primitivesMenuItems: DocsItem[] = await Promise.all(
-    primitives.map(async (name) => ({
-      id: name,
-      href: `/docs/components/primitives/${name}`,
-      label: formatLabel(name),
-    })),
-  );
+export const getDocsMenuItems = async () => {
+  const docsMenu: DocsMenuItem[] = [];
 
-  const rechartCharts = await readDirectory("src/app/docs/charts/recharts");
-  const rechartsMenuItems: DocsItem[] = await Promise.all(
-    rechartCharts.map(async (name) => ({
-      id: name,
-      href: `/docs/charts/recharts/${name}`,
-      label: formatLabel(name),
-    })),
-  );
-  const rechartsQuickstartIndex = rechartsMenuItems.findIndex(
-    (item) => item.id === "quickstart",
-  );
-  const [quickstartItem] = rechartsMenuItems.splice(rechartsQuickstartIndex, 1);
-  if (quickstartItem) {
-    rechartsMenuItems.unshift(quickstartItem);
-  }
-  const rechartsTooltipIndex = rechartsMenuItems.findIndex(
-    (item) => item.id === "tooltip",
-  );
-  const [tooltipItem] = rechartsMenuItems.splice(rechartsTooltipIndex, 1);
-  if (tooltipItem) {
-    rechartsMenuItems.push(tooltipItem);
+  for (const group of DOCS_MENU_ITEMS) {
+    if (group.type === DocsMenuItemType.Group) {
+      const sections: DocsMenuGroupSection[] = [];
+
+      for (const section of group.sections) {
+        const ids = await readDirectory(
+          `src/app/docs/${group.id}/${section.id}`,
+        );
+        const items: DocsMenuGroupSectionItem[] = await Promise.all(
+          ids.map(async (id) => ({
+            id,
+            href: `/docs/${group.id}/${section.id}/${id}`,
+            label: formatLabel(id),
+            // Icon:
+            //   section.iconOverrides?.[id] ??
+            //   section.defaultIcon ??
+            //   ComponentIcon,
+          })),
+        );
+
+        if (section.moveToFront) {
+          for (let i = section.moveToFront.length - 1; i >= 0; i--) {
+            const idx = items.findIndex(
+              (item) => item.id === section.moveToFront![i],
+            );
+            if (idx === -1) continue;
+
+            const [item] = items.splice(idx, 1);
+            if (item) items.unshift(item);
+          }
+        }
+
+        if (section.moveToBack) {
+          for (let i = 0; i < section.moveToBack.length; i++) {
+            const idx = items.findIndex(
+              (item) => item.id === section.moveToBack![i],
+            );
+            if (idx === -1) continue;
+
+            const [item] = items.splice(idx, 1);
+            if (item) items.push(item);
+          }
+        }
+
+        sections.push({ id: section.id, label: section.label, items });
+      }
+
+      docsMenu.push({
+        id: group.id,
+        label: group.label,
+        href: group.href,
+        type: group.type,
+        // Icon: group.Icon,
+        sections,
+      });
+    } else {
+      docsMenu.push(group);
+    }
   }
 
-  return { primitivesMenuItems, rechartsMenuItems };
+  return docsMenu;
 };

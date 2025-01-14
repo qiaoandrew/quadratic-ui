@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "next-themes";
 
 import { inter, interDisplay } from "~/utils/fonts";
-import { getMenuItems } from "~/utils/docs";
+import { getDocsMenuItems } from "~/utils/docs";
 
 import Header from "~/components/navigation/Header";
 import Spotlight from "~/components/effects/Spotlight";
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const { primitivesMenuItems, rechartsMenuItems } = await getMenuItems();
+  const docsMenuItems = await getDocsMenuItems();
 
   return (
     <html
@@ -37,10 +37,7 @@ export default async function RootLayout({
           disableTransitionOnChange
           enableSystem={false}
         >
-          <Header
-            primitivesMenuItems={primitivesMenuItems}
-            rechartsMenuItems={rechartsMenuItems}
-          />
+          <Header docsMenuItems={docsMenuItems} />
           <Spotlight />
           <main>{children}</main>
           <Toaster visibleToasts={10} />

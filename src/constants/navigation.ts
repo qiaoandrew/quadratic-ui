@@ -12,15 +12,16 @@ import {
   PaletteIcon,
   RocketIcon,
   SmileIcon,
+  TableIcon,
 } from "lucide-react";
 
 import {
   DesktopHeaderItemType,
   type DesktopHeaderItem,
-  type DocsGroup,
-  type DocsItem,
+  type DocsMenuItemSetup,
   type FooterGroup,
-  type MobileHeaderNavigationItem,
+  type MobileMenuItem,
+  DocsMenuItemType,
 } from "~/types/navigation";
 
 import CreateT3AppGraphic from "~/components/navigation/graphics/CreateT3AppGraphic";
@@ -151,7 +152,7 @@ export const NAVIGATION_ITEMS = {
   },
 };
 
-export const MOBILE_NAVIGATION_ITEMS: MobileHeaderNavigationItem[][] = [
+export const MOBILE_NAVIGATION_ITEMS: MobileMenuItem[][] = [
   [
     { ...NAVIGATION_ITEMS.home, variant: "primary" },
     { ...NAVIGATION_ITEMS.github, variant: "primary" },
@@ -223,7 +224,10 @@ export const DESKTOP_NAVIGATION_ITEMS: DesktopHeaderItem[] = [
       },
     ],
   },
-  { ...NAVIGATION_ITEMS.components, type: DesktopHeaderItemType.Link },
+  {
+    ...NAVIGATION_ITEMS.components,
+    type: DesktopHeaderItemType.Link,
+  },
   {
     ...NAVIGATION_ITEMS.resources,
     type: DesktopHeaderItemType.Group,
@@ -304,36 +308,109 @@ export const FOOTER_NAVIGATION_ITEMS: FooterGroup[] = [
     ],
   },
 ];
-
-export const DOCS_GROUPS: DocsGroup[] = [
+export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
   {
-    ...NAVIGATION_ITEMS["getting-started"],
-    groupHrefPrefix: "/docs/getting-started",
-    Icon: RocketIcon,
+    id: "getting-started",
+    label: "Getting Started",
+    type: DocsMenuItemType.Group,
+    href: "/docs/getting-started/guides/quickstart",
+    // Icon: RocketIcon,
+    sections: [
+      {
+        id: "guides",
+        label: "Guides",
+        moveToFront: [
+          "introduction",
+          "quickstart",
+          "create-t3-app",
+          "dark-mode",
+        ],
+        iconOverrides: {
+          introduction: SmileIcon,
+          quickstart: RocketIcon,
+          "create-t3-app": AtomIcon,
+          darkMode: MoonIcon,
+        },
+      },
+      {
+        id: "learn-more",
+        label: "Learn More",
+        moveToFront: ["credits", "contributing", "customization"],
+        iconOverrides: {
+          credits: CircleCheckIcon,
+          contributing: GitMergeIcon,
+          customization: PaletteIcon,
+        },
+      },
+    ],
   },
   {
-    ...NAVIGATION_ITEMS.components,
-    groupHrefPrefix: "/docs/components",
-    Icon: ComponentIcon,
+    id: "components",
+    label: "Components",
+    type: DocsMenuItemType.Group,
+    href: "/docs/components/primitives/accordion",
+    // Icon: ComponentIcon,
+    sections: [
+      {
+        id: "primitives",
+        label: "Primitives",
+        defaultIcon: ComponentIcon,
+      },
+    ],
   },
   {
-    ...NAVIGATION_ITEMS.charts,
-    groupHrefPrefix: "/docs/charts",
-    Icon: ChartColumnBigIcon,
+    id: "visualizations",
+    label: "Visualizations",
+    type: DocsMenuItemType.Group,
+    href: "/docs/visualizations/recharts/quickstart",
+    // Icon: ChartColumnBigIcon,
+    sections: [
+      {
+        id: "recharts",
+        label: "Recharts",
+        moveToFront: ["quickstart"],
+        moveToBack: ["tooltip"],
+        defaultIcon: ChartColumnBigIcon,
+      },
+      {
+        id: "visx",
+        label: "Visx",
+        moveToFront: ["quickstart"],
+        moveToBack: ["axes", "legend", "tooltip"],
+        defaultIcon: ChartColumnBigIcon,
+      },
+    ],
   },
-  { ...NAVIGATION_ITEMS.github, Icon: GithubIcon },
-  { ...NAVIGATION_ITEMS.figma, Icon: FigmaIcon },
-];
-
-export const GETTING_STARTED_ITEMS: DocsItem[] = [
-  { ...NAVIGATION_ITEMS.introduction, Icon: SmileIcon },
-  { ...NAVIGATION_ITEMS.quickstart, Icon: RocketIcon },
-  { ...NAVIGATION_ITEMS.credits, Icon: CircleCheckIcon },
-];
-
-export const GUIDES_ITEMS: DocsItem[] = [
-  { ...NAVIGATION_ITEMS["create-t3-app"], Icon: AtomIcon },
-  { ...NAVIGATION_ITEMS["dark-mode"], Icon: MoonIcon },
-  { ...NAVIGATION_ITEMS.customization, Icon: PaletteIcon },
-  { ...NAVIGATION_ITEMS.contributing, Icon: GitMergeIcon },
+  // {
+  //   id: "table",
+  //   label: "Table",
+  //   type: DocsSectionType.Group,
+  //   Icon: TableIcon,
+  //   sections: [
+  //     {
+  //       id: "basic",
+  //       label: "Basic",
+  //       defaultIcon: TableIcon,
+  //     },
+  //     {
+  //       id: "tanstack",
+  //       label: "TanStack",
+  //       defaultIcon: TableIcon,
+  //     },
+  //   ],
+  // },
+  {
+    id: "github",
+    label: "GitHub",
+    type: DocsMenuItemType.Link,
+    href: "https://github.com/qiaoandrew/quadratic-ui",
+    // Icon: GithubIcon,
+  },
+  {
+    id: "figma",
+    label: "Figma",
+    type: DocsMenuItemType.Link,
+    href: "https://www.figma.com/community/file/1351315753275186770/quadratic-ui-shadcn-ui-design-system-component-library",
+    // Icon: FigmaIcon,
+  },
 ];

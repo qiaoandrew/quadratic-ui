@@ -1,11 +1,11 @@
-import type { DocsItem } from "~/types/navigation";
+import type { DocsMenuGroupSectionItem } from "~/types/navigation";
 
 import DocsMenuSectionItem from "~/components/docs/navigation/DocsMenuSectionItem";
 
 interface DocsMenuSectionProps {
   pathname: string;
   label: string;
-  items: DocsItem[];
+  items: DocsMenuGroupSectionItem[];
 }
 
 export default function DocsMenuSection({

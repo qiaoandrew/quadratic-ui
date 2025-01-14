@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { ChartColumnBigIcon, ComponentIcon, SearchIcon } from "lucide-react";
+import { ComponentIcon, SearchIcon } from "lucide-react";
 
 import { cn } from "~/utils/tailwind";
-import type { DocsItem } from "~/types/navigation";
-import { GETTING_STARTED_ITEMS, GUIDES_ITEMS } from "~/constants/navigation";
+import { DocsMenuItemType, type DocsMenuItem } from "~/types/navigation";
 
 import { Shortcut, ShortcutGroup } from "~/components/ui/_Menu";
 import {
@@ -19,14 +18,10 @@ import {
 } from "~/components/ui/Command";
 
 interface CommandMenuProps {
-  primitivesMenuItems: DocsItem[];
-  rechartsMenuItems: DocsItem[];
+  docsMenuItems: DocsMenuItem[];
 }
 
-export default function CommandMenu({
-  primitivesMenuItems,
-  rechartsMenuItems,
-}: CommandMenuProps) {
+export default function CommandMenu({ docsMenuItems }: CommandMenuProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const router = useRouter();
   const { setTheme } = useTheme();
@@ -73,49 +68,47 @@ export default function CommandMenu({
         <CommandInput placeholder="Search documentation..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Getting Started">
-            {GETTING_STARTED_ITEMS.map((item) => (
-              <CommandItem
-                onSelect={() => handleSelect(() => router.push(item.href))}
-                key={item.id}
-              >
-                {item.Icon && <item.Icon />}
-                {item.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-          <CommandGroup heading="Guides">
-            {GUIDES_ITEMS.map((item) => (
-              <CommandItem
-                onSelect={() => handleSelect(() => router.push(item.href))}
-                key={item.id}
-              >
-                {item.Icon && <item.Icon />}
-                {item.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-          <CommandGroup heading="Primitives">
-            {primitivesMenuItems.map((item) => (
-              <CommandItem
-                onSelect={() => handleSelect(() => router.push(item.href))}
-                key={item.id}
-              >
-                <ComponentIcon />
-                {item.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-          <CommandGroup heading="Recharts">
-            {rechartsMenuItems.map((item) => (
-              <CommandItem
-                onSelect={() => handleSelect(() => router.push(item.href))}
-                key={item.id}
-              >
-                <ChartColumnBigIcon />
-                {item.label}
-              </CommandItem>
-            ))}
+          {docsMenuItems.map((menuItem) => {
+            if (menuItem.type === DocsMenuItemType.Link) return null;
+
+            return (
+              <Fragment key={menuItem.id}>
+                {menuItem.sections.map((section) => (
+                  <CommandGroup heading={section.label} key={section.id}>
+                    {section.items.map((item) => (
+                      <CommandItem
+                        onSelect={() =>
+                          handleSelect(() => router.push(item.href))
+                        }
+                        key={`${section.id}-${item.id}`}
+                      >
+                        {/* <item.Icon /> */}
+                        <ComponentIcon />
+                        {item.label}
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                ))}
+              </Fragment>
+            );
+          })}
+          <CommandGroup heading="Links">
+            {docsMenuItems.map((menuItem) => {
+              if (menuItem.type === DocsMenuItemType.Group) return null;
+
+              return (
+                <CommandItem
+                  onSelect={() =>
+                    handleSelect(() => router.push(menuItem.href))
+                  }
+                  key={menuItem.id}
+                >
+                  {/* <menuItem.Icon /> */}
+                  <ComponentIcon />
+                  {menuItem.label}
+                </CommandItem>
+              );
+            })}
           </CommandGroup>
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => handleSelect(() => setTheme("light"))}>
