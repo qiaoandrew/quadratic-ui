@@ -1,5 +1,3 @@
-import { ComponentIcon } from "lucide-react";
-
 import { readDirectory, readFile } from "~/utils/fs";
 import { DOCS_MENU_ITEMS } from "~/constants/navigation";
 import {
@@ -93,10 +91,7 @@ export const getDocsMenuItems = async () => {
             id,
             href: `/docs/${group.id}/${section.id}/${id}`,
             label: formatLabel(id),
-            // Icon:
-            //   section.iconOverrides?.[id] ??
-            //   section.defaultIcon ??
-            //   ComponentIcon,
+            icon: section.iconOverrides?.[id] ?? section.defaultIcon ?? null,
           })),
         );
 
@@ -132,7 +127,7 @@ export const getDocsMenuItems = async () => {
         label: group.label,
         href: group.href,
         type: group.type,
-        // Icon: group.Icon,
+        icon: group.icon,
         sections,
       });
     } else {

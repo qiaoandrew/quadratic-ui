@@ -82,8 +82,7 @@ export default function CommandMenu({ docsMenuItems }: CommandMenuProps) {
                         }
                         key={`${section.id}-${item.id}`}
                       >
-                        {/* <item.Icon /> */}
-                        <ComponentIcon />
+                        {item.icon}
                         {item.label}
                       </CommandItem>
                     ))}
@@ -103,8 +102,7 @@ export default function CommandMenu({ docsMenuItems }: CommandMenuProps) {
                   }
                   key={menuItem.id}
                 >
-                  {/* <menuItem.Icon /> */}
-                  <ComponentIcon />
+                  {menuItem.icon}
                   {menuItem.label}
                 </CommandItem>
               );

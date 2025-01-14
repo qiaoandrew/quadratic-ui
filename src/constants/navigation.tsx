@@ -314,7 +314,7 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
     label: "Getting Started",
     type: DocsMenuItemType.Group,
     href: "/docs/getting-started/guides/quickstart",
-    // Icon: RocketIcon,
+    icon: <RocketIcon />,
     sections: [
       {
         id: "guides",
@@ -326,10 +326,10 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
           "dark-mode",
         ],
         iconOverrides: {
-          introduction: SmileIcon,
-          quickstart: RocketIcon,
-          "create-t3-app": AtomIcon,
-          darkMode: MoonIcon,
+          introduction: <SmileIcon />,
+          quickstart: <RocketIcon />,
+          "create-t3-app": <AtomIcon />,
+          "dark-mode": <MoonIcon />,
         },
       },
       {
@@ -337,9 +337,9 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
         label: "Learn More",
         moveToFront: ["credits", "contributing", "customization"],
         iconOverrides: {
-          credits: CircleCheckIcon,
-          contributing: GitMergeIcon,
-          customization: PaletteIcon,
+          credits: <CircleCheckIcon />,
+          contributing: <GitMergeIcon />,
+          customization: <PaletteIcon />,
         },
       },
     ],
@@ -349,12 +349,12 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
     label: "Components",
     type: DocsMenuItemType.Group,
     href: "/docs/components/primitives/accordion",
-    // Icon: ComponentIcon,
+    icon: <ComponentIcon />,
     sections: [
       {
         id: "primitives",
         label: "Primitives",
-        defaultIcon: ComponentIcon,
+        defaultIcon: <ComponentIcon />,
       },
     ],
   },
@@ -363,21 +363,21 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
     label: "Visualizations",
     type: DocsMenuItemType.Group,
     href: "/docs/visualizations/recharts/quickstart",
-    // Icon: ChartColumnBigIcon,
+    icon: <ChartColumnBigIcon />,
     sections: [
       {
         id: "recharts",
         label: "Recharts",
         moveToFront: ["quickstart"],
         moveToBack: ["tooltip"],
-        defaultIcon: ChartColumnBigIcon,
+        defaultIcon: <ChartColumnBigIcon />,
       },
       {
         id: "visx",
         label: "Visx",
         moveToFront: ["quickstart"],
         moveToBack: ["axes", "legend", "tooltip"],
-        defaultIcon: ChartColumnBigIcon,
+        defaultIcon: <ChartColumnBigIcon />,
       },
     ],
   },
@@ -404,13 +404,13 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
     label: "GitHub",
     type: DocsMenuItemType.Link,
     href: "https://github.com/qiaoandrew/quadratic-ui",
-    // Icon: GithubIcon,
+    icon: <GithubIcon />,
   },
   {
     id: "figma",
     label: "Figma",
     type: DocsMenuItemType.Link,
     href: "https://www.figma.com/community/file/1351315753275186770/quadratic-ui-shadcn-ui-design-system-component-library",
-    // Icon: FigmaIcon,
+    icon: <FigmaIcon />,
   },
 ];

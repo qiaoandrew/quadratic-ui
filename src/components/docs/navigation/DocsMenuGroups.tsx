@@ -18,10 +18,7 @@ export default function DocsMenuGroups({ pathname }: DocsMenuGroupsProps) {
             menuItem.type === DocsMenuItemType.Group &&
             pathname.startsWith(`/docs/${menuItem.id}`)
           }
-          Icon={
-            // menuItem.Icon
-            ComponentIcon
-          }
+          icon={menuItem.icon}
           key={menuItem.id}
         >
           {menuItem.label}

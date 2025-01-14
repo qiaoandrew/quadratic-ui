@@ -1,5 +1,3 @@
-import { Icon } from "~/types/ui";
-
 export type NavigationItem = {
   id: string;
   label: string;
@@ -48,7 +46,7 @@ export enum DocsMenuItemType {
 }
 
 export type DocsMenuItemSetup = NavigationItem & {
-  // Icon: Icon;
+  icon: React.ReactNode;
 } & (
     | {
         type: DocsMenuItemType.Group;
@@ -57,8 +55,8 @@ export type DocsMenuItemSetup = NavigationItem & {
           label: string;
           moveToFront?: string[];
           moveToBack?: string[];
-          defaultIcon?: Icon;
-          iconOverrides?: Record<string, Icon>;
+          defaultIcon?: React.ReactNode;
+          iconOverrides?: Record<string, React.ReactNode>;
         }[];
       }
     | { type: DocsMenuItemType.Link }
@@ -66,7 +64,7 @@ export type DocsMenuItemSetup = NavigationItem & {
 
 export type DocsMenuGroup = NavigationItem & {
   type: DocsMenuItemType.Group;
-  // Icon: Icon;
+  icon: React.ReactNode;
   sections: DocsMenuGroupSection[];
 };
 
@@ -77,12 +75,12 @@ export type DocsMenuGroupSection = {
 };
 
 export type DocsMenuGroupSectionItem = NavigationItem & {
-  // Icon: Icon;
+  icon: React.ReactNode;
 };
 
 export type DocsMenuLink = DocsMenuGroupSectionItem & {
   type: DocsMenuItemType.Link;
-  // Icon: Icon;
+  icon: React.ReactNode;
 };
 
 export type DocsMenuItem = DocsMenuGroup | DocsMenuLink;
