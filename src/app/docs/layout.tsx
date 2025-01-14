@@ -1,4 +1,4 @@
-import { getDocsMenuItems, getTOCs } from "~/utils/docs";
+import { getDocsMenuItems, getTOCs } from "~/utils/navigation";
 
 import DocsMenu from "~/components/docs/navigation/DocsMenu";
 import DocsTOC from "~/components/docs/navigation/DocsTOC";

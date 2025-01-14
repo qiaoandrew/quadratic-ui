@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "next-themes";
 
 import { inter, interDisplay } from "~/utils/fonts";
-import { getDocsMenuItems } from "~/utils/docs";
+import { getDocsMenuItems } from "~/utils/navigation";
 
 import Header from "~/components/navigation/Header";
 import Spotlight from "~/components/effects/Spotlight";

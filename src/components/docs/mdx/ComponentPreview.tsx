@@ -8,11 +8,13 @@ import CodeBlock from "~/components/docs/mdx/CodeBlock";
 
 interface ComponentPreviewProps {
   id: keyof typeof COMPONENT_PREVIEWS;
+  tabsClassName?: string;
   previewContainerClassName?: string;
 }
 
 export default async function ComponentPreview({
   id,
+  tabsClassName,
   previewContainerClassName,
 }: ComponentPreviewProps) {
   const { Preview, path } = COMPONENT_PREVIEWS[id];
@@ -30,6 +32,7 @@ export default async function ComponentPreview({
       className={cn(
         "mt-6 overflow-visible rounded-3 border",
         "[&:where(h3+&)]:mt-4",
+        tabsClassName,
       )}
     >
       <TabsList className="h-auto w-full justify-start rounded-0 border-b bg-transparent p-0">

@@ -22,16 +22,13 @@ export default function useActiveId({
 }: UseActiveIdProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  // Cache DOM elements to avoid repeated querySelector calls
   const elementsCache = useRef<Map<string, HTMLElement>>(new Map());
   const intersectingElements = useRef<Map<string, number>>(new Map());
 
-  // Memoize the update function to avoid recreation
   const updateActiveId = useDebouncedCallback(
     (entries: IntersectionObserverEntry[]) => {
       let shouldUpdate = false;
 
-      // Batch process all entries
       entries.forEach((entry) => {
         const id = entry.target.id;
         if (entry.isIntersecting) {
@@ -48,10 +45,8 @@ export default function useActiveId({
         }
       });
 
-      // Only proceed if there were actual changes
       if (!shouldUpdate && activeId !== null) return;
 
-      // Get all visible elements in one batch
       const visibleElements: CachedElement[] = [];
       intersectingElements.current.forEach((ratio, id) => {
         const element = elementsCache.current.get(id);
@@ -61,13 +56,11 @@ export default function useActiveId({
       });
 
       if (visibleElements.length > 0) {
-        // Batch read all DOM measurements
         const measurements = visibleElements.map(({ element, id }) => ({
           id,
           top: element.getBoundingClientRect().top,
         }));
 
-        // Sort based on the measurements
         const topId = measurements.sort((a, b) => a.top - b.top)[0]?.id ?? "";
 
         if (topId !== activeId) {
@@ -81,7 +74,6 @@ export default function useActiveId({
   );
 
   useEffect(() => {
-    // Clear and rebuild element cache
     elementsCache.current.clear();
     intersectingElements.current.clear();
 
@@ -97,24 +89,20 @@ export default function useActiveId({
 
     if (elements.length === 0) return;
 
-    // Create new observer
     observerRef.current = new IntersectionObserver(updateActiveId, {
       root: null,
       rootMargin,
       threshold: Array.isArray(threshold) ? threshold : [threshold],
     });
 
-    // Observe all elements
     elements.forEach((element) => {
       observerRef.current?.observe(element);
     });
 
-    // Store refs for cleanup
     const observer = observerRef.current;
     const cache = elementsCache.current;
     const intersecting = intersectingElements.current;
 
-    // Cleanup
     return () => {
       observer?.disconnect();
       observerRef.current = null;
