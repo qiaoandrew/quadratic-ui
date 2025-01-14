@@ -91,7 +91,7 @@ export default function Header({ docsMenuItems }: HeaderProps) {
           "xl:top-6 xl:rounded-3.5",
           "3xl:inset-x-[calc((100vw-1280px)/2)]",
           isMobileMenuOpen ? "h-[calc(100dvh-1.5rem)]" : "h-11",
-          isDesktopMenuOpen ? "xl:h-80 2xl:h-[356px]" : "xl:h-13",
+          isDesktopMenuOpen ? "xl:h-[328px] 2xl:h-[364px]" : "xl:h-13",
         )}
       >
         <div
