@@ -940,29 +940,29 @@ export const COMPONENT_PREVIEWS = {
   visxVoronoiChart: {
     Preview: VisxVoronoiChartDemo,
     path: "src/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo.tsx",
-    tremorBarList: {
-      Preview: TremorBarListDemo,
-      path: "src/components/docs/demos/tremor/bar-list/BarListDemo.tsx",
-    },
-    tremorCategoryBar: {
-      Preview: TremorCategoryBarDemo,
-      path: "src/components/docs/demos/tremor/category-bar/CategoryBarDemo.tsx",
-    },
-    tremorCategoryBarMarker: {
-      Preview: TremorCategoryBarMarkerDemo,
-      path: "src/components/docs/demos/tremor/category-bar/CategoryBarMarkerDemo.tsx",
-    },
-    tremorProgressBar: {
-      Preview: TremorProgressBarDemo,
-      path: "src/components/docs/demos/tremor/progress-bar/ProgressBarDemo.tsx",
-    },
-    tremorProgressCircle: {
-      Preview: TremorProgressCircleDemo,
-      path: "src/components/docs/demos/tremor/progress-circle/ProgressCircleDemo.tsx",
-    },
-    tremorTracker: {
-      Preview: TremorTrackerDemo,
-      path: "src/components/docs/demos/tremor/tracker/TrackerDemo.tsx",
-    },
+  },
+  tremorBarList: {
+    Preview: TremorBarListDemo,
+    path: "src/components/docs/demos/tremor/bar-list/BarListDemo.tsx",
+  },
+  tremorCategoryBar: {
+    Preview: TremorCategoryBarDemo,
+    path: "src/components/docs/demos/tremor/category-bar/CategoryBarDemo.tsx",
+  },
+  tremorCategoryBarMarker: {
+    Preview: TremorCategoryBarMarkerDemo,
+    path: "src/components/docs/demos/tremor/category-bar/CategoryBarMarkerDemo.tsx",
+  },
+  tremorProgressBar: {
+    Preview: TremorProgressBarDemo,
+    path: "src/components/docs/demos/tremor/progress-bar/ProgressBarDemo.tsx",
+  },
+  tremorProgressCircle: {
+    Preview: TremorProgressCircleDemo,
+    path: "src/components/docs/demos/tremor/progress-circle/ProgressCircleDemo.tsx",
+  },
+  tremorTracker: {
+    Preview: TremorTrackerDemo,
+    path: "src/components/docs/demos/tremor/tracker/TrackerDemo.tsx",
   },
 };
