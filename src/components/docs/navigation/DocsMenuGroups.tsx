@@ -2,7 +2,6 @@ import { DOCS_MENU_ITEMS } from "~/constants/navigation";
 import { DocsMenuItemType } from "~/types/navigation";
 
 import DocsMenuGroup from "~/components/docs/navigation/DocsMenuGroup";
-import { ComponentIcon } from "lucide-react";
 
 interface DocsMenuGroupsProps {
   pathname: string;
