@@ -34,7 +34,7 @@ import TailwindCSSGraphic from "~/components/navigation/graphics/TailwindCSSGrap
 import TailwindVariantsGraphic from "~/components/navigation/graphics/TailwindVariantsGraphic";
 import QuickstartGraphic from "~/components/navigation/graphics/QuickstartGraphic";
 
-export const NAVIGATION_ITEMS = {
+const NAVIGATION_ITEMS = {
   home: {
     id: "home",
     label: "Home",
@@ -43,47 +43,47 @@ export const NAVIGATION_ITEMS = {
   "getting-started": {
     id: "getting-started",
     label: "Getting Started",
-    href: "/docs/getting-started/quickstart",
+    href: "/docs/getting-started/guides/quickstart",
   },
   introduction: {
     id: "introduction",
     label: "Introduction",
-    href: "/docs/getting-started/introduction",
+    href: "/docs/getting-started/guides/introduction",
   },
   quickstart: {
     id: "quickstart",
     label: "Quickstart",
-    href: "/docs/getting-started/quickstart",
+    href: "/docs/getting-started/guides/quickstart",
   },
   credits: {
     id: "credits",
     label: "Credits",
-    href: "/docs/getting-started/credits",
+    href: "/docs/getting-started/learn-more/credits",
   },
   guides: {
     id: "guides",
     label: "Guides",
-    href: "/docs/getting-started/create-t3-app",
+    href: "/docs/getting-started/guides/create-t3-app",
   },
   "create-t3-app": {
     id: "create-t3-app",
     label: "Create T3 App",
-    href: "/docs/getting-started/create-t3-app",
+    href: "/docs/getting-started/guides/create-t3-app",
   },
   "dark-mode": {
     id: "dark-mode",
     label: "Dark Mode",
-    href: "/docs/getting-started/dark-mode",
+    href: "/docs/getting-started/guides/dark-mode",
   },
   customization: {
     id: "customization",
     label: "Customization",
-    href: "/docs/getting-started/customization",
+    href: "/docs/getting-started/learn-more/customization",
   },
   contributing: {
     id: "contributing",
     label: "Contributing",
-    href: "/docs/getting-started/contributing",
+    href: "/docs/getting-started/learn-more/contributing",
   },
   resources: {
     id: "resources",
@@ -105,15 +105,15 @@ export const NAVIGATION_ITEMS = {
     label: "Components",
     href: "/docs/components/primitives/accordion",
   },
-  charts: {
-    id: "charts",
-    label: "Charts",
-    href: "/docs/charts/recharts/quickstart",
+  visualizations: {
+    id: "visualizations",
+    label: "Visualizations",
+    href: "/docs/visualizations/recharts/quickstart",
   },
   recharts: {
     id: "recharts",
     label: "Recharts",
-    href: "/docs/charts/recharts/quickstart",
+    href: "/docs/visualizations/recharts/quickstart",
   },
   "shadcn/ui": {
     id: "shadcn-ui",

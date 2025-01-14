@@ -20,9 +20,7 @@ export default function DocsTOC({ tocs }: DocsTOCProps) {
 
   const activeId = useActiveId({ ids: (toc ?? []).map((item) => item.id) });
 
-  if (!toc) {
-    throw new Error(`No toc found for ${tocId}`);
-  }
+  if (!toc) return null;
 
   return (
     <div className="hidden w-48 shrink-0 pr-4 xl:block">
