@@ -11,7 +11,7 @@ import {
 import {
   type ChartConfig,
   ChartContainer,
-} from "~/components/ui/RechartsChart";
+} from "~/components/charts/recharts/Chart";
 
 const CHART_DATA = [
   { browser: "safari", visitors: 1260, fill: "var(--color-safari)" },

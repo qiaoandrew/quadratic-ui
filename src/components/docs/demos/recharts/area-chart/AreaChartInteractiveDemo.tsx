@@ -11,7 +11,7 @@ import {
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
-} from "~/components/ui/RechartsChart";
+} from "~/components/charts/recharts/Chart";
 import {
   Select,
   SelectContent,

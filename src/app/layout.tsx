@@ -27,10 +27,10 @@ export default async function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${interDisplay.variable} ${GeistMono.variable}`}
+      className={`${inter.variable} ${interDisplay.variable} ${GeistMono.variable} scroll-smooth`}
     >
       <head />
-      <body>
+      <body className="bg-background font-sans text-foreground antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -125,12 +125,7 @@
     @apply border-border;
   }
 
-  html {
-    @apply scroll-smooth;
-  }
-
   body {
-    @apply bg-background font-sans text-foreground antialiased;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;

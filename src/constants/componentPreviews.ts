@@ -115,75 +115,81 @@ import ToggleGroupSmallDemo from "~/components/docs/demos/primitives/toggle-grou
 import ToggleGroupLargeDemo from "~/components/docs/demos/primitives/toggle-group/ToggleGroupLargeDemo";
 import ToggleGroupDisabledDemo from "~/components/docs/demos/primitives/toggle-group/ToggleGroupDisabledDemo";
 import TooltipDemo from "~/components/docs/demos/primitives/tooltip/TooltipDemo";
-import AreaChartDemo from "~/components/docs/demos/recharts/area-chart/AreaChartDemo";
-import AreaChartLinearDemo from "~/components/docs/demos/recharts/area-chart/AreaChartLinearDemo";
-import AreaChartStepDemo from "~/components/docs/demos/recharts/area-chart/AreaChartStepDemo";
-import AreaChartStackedDemo from "~/components/docs/demos/recharts/area-chart/AreaChartStackedDemo";
-import AreaChartStackedExpandedDemo from "~/components/docs/demos/recharts/area-chart/AreaChartStackedExpandedDemo";
-import AreaChartLegendDemo from "~/components/docs/demos/recharts/area-chart/AreaChartLegendDemo";
-import AreaChartIconsDemo from "~/components/docs/demos/recharts/area-chart/AreaChartIconsDemo";
-import AreaChartGradientDemo from "~/components/docs/demos/recharts/area-chart/AreaChartGradientDemo";
-import AreaChartAxesDemo from "~/components/docs/demos/recharts/area-chart/AreaChartAxesDemo";
-import AreaChartInteractiveDemo from "~/components/docs/demos/recharts/area-chart/AreaChartInteractiveDemo";
-import BarChartDemo from "~/components/docs/demos/recharts/bar-chart/BarChartDemo";
-import BarChartHorizontalDemo from "~/components/docs/demos/recharts/bar-chart/BarChartHorizontalDemo";
-import BarChartMultipleDemo from "~/components/docs/demos/recharts/bar-chart/BarChartMultipleDemo";
-import BarChartLabelDemo from "~/components/docs/demos/recharts/bar-chart/BarChartLabelDemo";
-import BarChartCustomLabelDemo from "~/components/docs/demos/recharts/bar-chart/BarChartCustomLabelDemo";
-import BarChartMixedDemo from "~/components/docs/demos/recharts/bar-chart/BarChartMixedDemo";
-import BarChartStackedLegendDemo from "~/components/docs/demos/recharts/bar-chart/BarChartStackedLegendDemo";
-import BarChartActiveDemo from "~/components/docs/demos/recharts/bar-chart/BarChartActiveDemo";
-import BarChartNegativeDemo from "~/components/docs/demos/recharts/bar-chart/BarChartNegativeDemo";
-import BarChartInteractiveDemo from "~/components/docs/demos/recharts/bar-chart/BarChartInteractiveDemo";
-import LineChartDemo from "~/components/docs/demos/recharts/line-chart/LineChartDemo";
-import LineChartLinearDemo from "~/components/docs/demos/recharts/line-chart/LineChartLinearDemo";
-import LineChartStepDemo from "~/components/docs/demos/recharts/line-chart/LineChartStepDemo";
-import LineChartMultipleDemo from "~/components/docs/demos/recharts/line-chart/LineChartMultipleDemo";
-import LineChartDotsDemo from "~/components/docs/demos/recharts/line-chart/LineChartDotsDemo";
-import LineChartCustomDotsDemo from "~/components/docs/demos/recharts/line-chart/LineChartCustomDotsDemo";
-import LineChartDotsColorDemo from "~/components/docs/demos/recharts/line-chart/LineChartDotsColorDemo";
-import LineChartLabelDemo from "~/components/docs/demos/recharts/line-chart/LineChartLabelDemo";
-import LineChartCustomLabelDemo from "~/components/docs/demos/recharts/line-chart/LineChartCustomLabelDemo";
-import LineChartInteractiveDemo from "~/components/docs/demos/recharts/line-chart/LineChartInteractiveDemo";
-import PieChartDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDemo";
-import PieChartLabelDemo from "~/components/docs/demos/recharts/pie-chart/PieChartLabelDemo";
-import PieChartCustomLabelDemo from "~/components/docs/demos/recharts/pie-chart/PieChartCustomLabelDemo";
-import PieChartLabelListDemo from "~/components/docs/demos/recharts/pie-chart/PieChartLabelListDemo";
-import PieChartLegendDemo from "~/components/docs/demos/recharts/pie-chart/PieChartLegendDemo";
-import PieChartDonutDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDonutDemo";
-import PieChartDonutActiveDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDonutActiveDemo";
-import PieChartDonutWithTextDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDonutWithTextDemo";
-import PieChartStackedDemo from "~/components/docs/demos/recharts/pie-chart/PieChartStackedDemo";
-import PieChartInteractiveDemo from "~/components/docs/demos/recharts/pie-chart/PieChartInteractiveDemo";
-import RadarChartDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartDemo";
-import RadarChartDotsDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartDotsDemo";
-import RadarChartMultipleDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartMultipleDemo";
-import RadarChartLinesOnlyDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartLinesOnlyDemo";
-import RadarChartCustomLabelDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartCustomLabelDemo";
-import RadarChartRadiusAxisDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartRadiusAxisDemo";
-import RadarChartGridCustomDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridCustomDemo";
-import RadarChartGridFilledDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridFilledDemo";
-import RadarChartGridNoneDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridNoneDemo";
-import RadarChartGridCircleDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridCircleDemo";
-import RadarChartGridCircleNoLinesDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridCircleNoLinesDemo";
-import RadarChartGridCircleFilledDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridCircleFilledDemo";
-import RadarChartLegendDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartLegendDemo";
-import RadarChartIconsDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartIconsDemo";
-import RadialChartDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartDemo";
-import RadialChartLabelDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartLabelDemo";
-import RadialChartGridDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartGridDemo";
-import RadialChartTextDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartTextDemo";
-import RadialChartShapeDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartShapeDemo";
-import RadialChartStackedDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartStackedDemo";
+import RechartsAreaChartDemo from "~/components/docs/demos/recharts/area-chart/AreaChartDemo";
+import RechartsAreaChartLinearDemo from "~/components/docs/demos/recharts/area-chart/AreaChartLinearDemo";
+import RechartsAreaChartStepDemo from "~/components/docs/demos/recharts/area-chart/AreaChartStepDemo";
+import RechartsAreaChartStackedDemo from "~/components/docs/demos/recharts/area-chart/AreaChartStackedDemo";
+import RechartsAreaChartStackedExpandedDemo from "~/components/docs/demos/recharts/area-chart/AreaChartStackedExpandedDemo";
+import RechartsAreaChartLegendDemo from "~/components/docs/demos/recharts/area-chart/AreaChartLegendDemo";
+import RechartsAreaChartIconsDemo from "~/components/docs/demos/recharts/area-chart/AreaChartIconsDemo";
+import RechartsAreaChartGradientDemo from "~/components/docs/demos/recharts/area-chart/AreaChartGradientDemo";
+import RechartsAreaChartAxesDemo from "~/components/docs/demos/recharts/area-chart/AreaChartAxesDemo";
+import RechartsAreaChartInteractiveDemo from "~/components/docs/demos/recharts/area-chart/AreaChartInteractiveDemo";
+import RechartsBarChartDemo from "~/components/docs/demos/recharts/bar-chart/BarChartDemo";
+import RechartsBarChartHorizontalDemo from "~/components/docs/demos/recharts/bar-chart/BarChartHorizontalDemo";
+import RechartsBarChartMultipleDemo from "~/components/docs/demos/recharts/bar-chart/BarChartMultipleDemo";
+import RechartsBarChartLabelDemo from "~/components/docs/demos/recharts/bar-chart/BarChartLabelDemo";
+import RechartsBarChartCustomLabelDemo from "~/components/docs/demos/recharts/bar-chart/BarChartCustomLabelDemo";
+import RechartsBarChartMixedDemo from "~/components/docs/demos/recharts/bar-chart/BarChartMixedDemo";
+import RechartsBarChartStackedLegendDemo from "~/components/docs/demos/recharts/bar-chart/BarChartStackedLegendDemo";
+import RechartsBarChartActiveDemo from "~/components/docs/demos/recharts/bar-chart/BarChartActiveDemo";
+import RechartsBarChartNegativeDemo from "~/components/docs/demos/recharts/bar-chart/BarChartNegativeDemo";
+import RechartsBarChartInteractiveDemo from "~/components/docs/demos/recharts/bar-chart/BarChartInteractiveDemo";
+import RechartsLineChartDemo from "~/components/docs/demos/recharts/line-chart/LineChartDemo";
+import RechartsLineChartLinearDemo from "~/components/docs/demos/recharts/line-chart/LineChartLinearDemo";
+import RechartsLineChartStepDemo from "~/components/docs/demos/recharts/line-chart/LineChartStepDemo";
+import RechartsLineChartMultipleDemo from "~/components/docs/demos/recharts/line-chart/LineChartMultipleDemo";
+import RechartsLineChartDotsDemo from "~/components/docs/demos/recharts/line-chart/LineChartDotsDemo";
+import RechartsLineChartCustomDotsDemo from "~/components/docs/demos/recharts/line-chart/LineChartCustomDotsDemo";
+import RechartsLineChartDotsColorDemo from "~/components/docs/demos/recharts/line-chart/LineChartDotsColorDemo";
+import RechartsLineChartLabelDemo from "~/components/docs/demos/recharts/line-chart/LineChartLabelDemo";
+import RechartsLineChartCustomLabelDemo from "~/components/docs/demos/recharts/line-chart/LineChartCustomLabelDemo";
+import RechartsLineChartInteractiveDemo from "~/components/docs/demos/recharts/line-chart/LineChartInteractiveDemo";
+import RechartsPieChartDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDemo";
+import RechartsPieChartLabelDemo from "~/components/docs/demos/recharts/pie-chart/PieChartLabelDemo";
+import RechartsPieChartCustomLabelDemo from "~/components/docs/demos/recharts/pie-chart/PieChartCustomLabelDemo";
+import RechartsPieChartLabelListDemo from "~/components/docs/demos/recharts/pie-chart/PieChartLabelListDemo";
+import RechartsPieChartLegendDemo from "~/components/docs/demos/recharts/pie-chart/PieChartLegendDemo";
+import RechartsPieChartDonutDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDonutDemo";
+import RechartsPieChartDonutActiveDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDonutActiveDemo";
+import RechartsPieChartDonutWithTextDemo from "~/components/docs/demos/recharts/pie-chart/PieChartDonutWithTextDemo";
+import RechartsPieChartStackedDemo from "~/components/docs/demos/recharts/pie-chart/PieChartStackedDemo";
+import RechartsPieChartInteractiveDemo from "~/components/docs/demos/recharts/pie-chart/PieChartInteractiveDemo";
+import RechartsRadarChartDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartDemo";
+import RechartsRadarChartDotsDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartDotsDemo";
+import RechartsRadarChartMultipleDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartMultipleDemo";
+import RechartsRadarChartLinesOnlyDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartLinesOnlyDemo";
+import RechartsRadarChartCustomLabelDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartCustomLabelDemo";
+import RechartsRadarChartRadiusAxisDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartRadiusAxisDemo";
+import RechartsRadarChartGridCustomDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridCustomDemo";
+import RechartsRadarChartGridFilledDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridFilledDemo";
+import RechartsRadarChartGridNoneDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridNoneDemo";
+import RechartsRadarChartGridCircleDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridCircleDemo";
+import RechartsRadarChartGridCircleNoLinesDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridCircleNoLinesDemo";
+import RechartsRadarChartGridCircleFilledDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartGridCircleFilledDemo";
+import RechartsRadarChartLegendDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartLegendDemo";
+import RechartsRadarChartIconsDemo from "~/components/docs/demos/recharts/radar-chart/RadarChartIconsDemo";
+import RechartsRadialChartDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartDemo";
+import RechartsRadialChartLabelDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartLabelDemo";
+import RechartsRadialChartGridDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartGridDemo";
+import RechartsRadialChartTextDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartTextDemo";
+import RechartsRadialChartShapeDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartShapeDemo";
+import RechartsRadialChartStackedDemo from "~/components/docs/demos/recharts/radial-chart/RadialChartStackedDemo";
 import RechartsTooltipDemo from "~/components/docs/demos/recharts/tooltip/TooltipDemo";
-import TooltipLineIndicatorDemo from "~/components/docs/demos/recharts/tooltip/TooltipLineIndicatorDemo";
-import TooltipNoIndicatorDemo from "~/components/docs/demos/recharts/tooltip/TooltipNoIndicatorDemo";
-import TooltipCustomLabelDemo from "~/components/docs/demos/recharts/tooltip/TooltipCustomLabelDemo";
-import TooltipLabelFormatterDemo from "~/components/docs/demos/recharts/tooltip/TooltipLabelFormatterDemo";
-import TooltipNoLabelDemo from "~/components/docs/demos/recharts/tooltip/TooltipNoLabelDemo";
-import TooltipFormatterDemo from "~/components/docs/demos/recharts/tooltip/TooltipFormatterDemo";
-import TooltipIconsDemo from "~/components/docs/demos/recharts/tooltip/TooltipIconsDemo";
-import TooltipAdvancedDemo from "~/components/docs/demos/recharts/tooltip/TooltipAdvancedDemo";
+import RechartsTooltipLineIndicatorDemo from "~/components/docs/demos/recharts/tooltip/TooltipLineIndicatorDemo";
+import RechartsTooltipNoIndicatorDemo from "~/components/docs/demos/recharts/tooltip/TooltipNoIndicatorDemo";
+import RechartsTooltipCustomLabelDemo from "~/components/docs/demos/recharts/tooltip/TooltipCustomLabelDemo";
+import RechartsTooltipLabelFormatterDemo from "~/components/docs/demos/recharts/tooltip/TooltipLabelFormatterDemo";
+import RechartsTooltipNoLabelDemo from "~/components/docs/demos/recharts/tooltip/TooltipNoLabelDemo";
+import RechartsTooltipFormatterDemo from "~/components/docs/demos/recharts/tooltip/TooltipFormatterDemo";
+import RechartsTooltipIconsDemo from "~/components/docs/demos/recharts/tooltip/TooltipIconsDemo";
+import RechartsTooltipAdvancedDemo from "~/components/docs/demos/recharts/tooltip/TooltipAdvancedDemo";
+import TremorBarListDemo from "~/components/docs/demos/tremor/bar-list/BarListDemo";
+import TremorCategoryBarDemo from "~/components/docs/demos/tremor/category-bar/CategoryBarDemo";
+import TremorCategoryBarMarkerDemo from "~/components/docs/demos/tremor/category-bar/CategoryBarMarkerDemo";
+import TremorProgressBarDemo from "~/components/docs/demos/tremor/progress-bar/ProgressBarDemo";
+import TremorProgressCircleDemo from "~/components/docs/demos/tremor/progress-circle/ProgressCircleDemo";
+import TremorTrackerDemo from "~/components/docs/demos/tremor/tracker/TrackerDemo";
 import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -656,243 +662,243 @@ export const COMPONENT_PREVIEWS = {
     path: "src/components/docs/demos/primitives/tooltip/TooltipDemo.tsx",
   },
   rechartsAreaChart: {
-    Preview: AreaChartDemo,
+    Preview: RechartsAreaChartDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartDemo.tsx",
   },
   rechartsAreaChartLinear: {
-    Preview: AreaChartLinearDemo,
+    Preview: RechartsAreaChartLinearDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartLinearDemo.tsx",
   },
   rechartsAreaChartStep: {
-    Preview: AreaChartStepDemo,
+    Preview: RechartsAreaChartStepDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartStepDemo.tsx",
   },
   rechartsAreaChartStacked: {
-    Preview: AreaChartStackedDemo,
+    Preview: RechartsAreaChartStackedDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartStackedDemo.tsx",
   },
   rechartsAreaChartStackedExpanded: {
-    Preview: AreaChartStackedExpandedDemo,
+    Preview: RechartsAreaChartStackedExpandedDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartStackedExpandedDemo.tsx",
   },
   rechartsAreaChartLegend: {
-    Preview: AreaChartLegendDemo,
+    Preview: RechartsAreaChartLegendDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartLegendDemo.tsx",
   },
   rechartsAreaChartIcons: {
-    Preview: AreaChartIconsDemo,
+    Preview: RechartsAreaChartIconsDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartIconsDemo.tsx",
   },
   rechartsAreaChartGradient: {
-    Preview: AreaChartGradientDemo,
+    Preview: RechartsAreaChartGradientDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartGradientDemo.tsx",
   },
   rechartsAreaChartAxes: {
-    Preview: AreaChartAxesDemo,
+    Preview: RechartsAreaChartAxesDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartAxesDemo.tsx",
   },
   rechartsAreaChartInteractive: {
-    Preview: AreaChartInteractiveDemo,
+    Preview: RechartsAreaChartInteractiveDemo,
     path: "src/components/docs/demos/recharts/area-chart/AreaChartInteractiveDemo.tsx",
   },
   rechartsBarChart: {
-    Preview: BarChartDemo,
+    Preview: RechartsBarChartDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartDemo.tsx",
   },
   rechartsBarChartHorizontal: {
-    Preview: BarChartHorizontalDemo,
+    Preview: RechartsBarChartHorizontalDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartHorizontalDemo.tsx",
   },
   rechartsBarChartMultiple: {
-    Preview: BarChartMultipleDemo,
+    Preview: RechartsBarChartMultipleDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartMultipleDemo.tsx",
   },
   rechartsBarChartLabel: {
-    Preview: BarChartLabelDemo,
+    Preview: RechartsBarChartLabelDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartLabelDemo.tsx",
   },
   rechartsBarChartCustomLabel: {
-    Preview: BarChartCustomLabelDemo,
+    Preview: RechartsBarChartCustomLabelDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartCustomLabelDemo.tsx",
   },
   rechartsBarChartMixed: {
-    Preview: BarChartMixedDemo,
+    Preview: RechartsBarChartMixedDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartMixedDemo.tsx",
   },
   rechartsBarChartStackedLegend: {
-    Preview: BarChartStackedLegendDemo,
+    Preview: RechartsBarChartStackedLegendDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartStackedLegendDemo.tsx",
   },
   rechartsBarChartActive: {
-    Preview: BarChartActiveDemo,
+    Preview: RechartsBarChartActiveDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartActiveDemo.tsx",
   },
   rechartsBarChartNegative: {
-    Preview: BarChartNegativeDemo,
+    Preview: RechartsBarChartNegativeDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartNegativeDemo.tsx",
   },
   rechartsBarChartInteractive: {
-    Preview: BarChartInteractiveDemo,
+    Preview: RechartsBarChartInteractiveDemo,
     path: "src/components/docs/demos/recharts/bar-chart/BarChartInteractiveDemo.tsx",
   },
   rechartsLineChart: {
-    Preview: LineChartDemo,
+    Preview: RechartsLineChartDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartDemo.tsx",
   },
   rechartsLineChartLinear: {
-    Preview: LineChartLinearDemo,
+    Preview: RechartsLineChartLinearDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartLinearDemo.tsx",
   },
   rechartsLineChartStep: {
-    Preview: LineChartStepDemo,
+    Preview: RechartsLineChartStepDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartStepDemo.tsx",
   },
   rechartsLineChartMultiple: {
-    Preview: LineChartMultipleDemo,
+    Preview: RechartsLineChartMultipleDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartMultipleDemo.tsx",
   },
   rechartsLineChartDots: {
-    Preview: LineChartDotsDemo,
+    Preview: RechartsLineChartDotsDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartDotsDemo.tsx",
   },
   rechartsLineChartCustomDots: {
-    Preview: LineChartCustomDotsDemo,
+    Preview: RechartsLineChartCustomDotsDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartCustomDotsDemo.tsx",
   },
   rechartsLineChartDotsColor: {
-    Preview: LineChartDotsColorDemo,
+    Preview: RechartsLineChartDotsColorDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartDotsColorDemo.tsx",
   },
   rechartsLineChartLabel: {
-    Preview: LineChartLabelDemo,
+    Preview: RechartsLineChartLabelDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartLabelDemo.tsx",
   },
   rechartsLineChartCustomLabel: {
-    Preview: LineChartCustomLabelDemo,
+    Preview: RechartsLineChartCustomLabelDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartCustomLabelDemo.tsx",
   },
   rechartsLineChartInteractive: {
-    Preview: LineChartInteractiveDemo,
+    Preview: RechartsLineChartInteractiveDemo,
     path: "src/components/docs/demos/recharts/line-chart/LineChartInteractiveDemo.tsx",
   },
   rechartsPieChart: {
-    Preview: PieChartDemo,
+    Preview: RechartsPieChartDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartDemo.tsx",
   },
   rechartsPieChartLabel: {
-    Preview: PieChartLabelDemo,
+    Preview: RechartsPieChartLabelDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartLabelDemo.tsx",
   },
   rechartsPieChartCustomLabel: {
-    Preview: PieChartCustomLabelDemo,
+    Preview: RechartsPieChartCustomLabelDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartCustomLabelDemo.tsx",
   },
   rechartsPieChartLabelList: {
-    Preview: PieChartLabelListDemo,
+    Preview: RechartsPieChartLabelListDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartLabelListDemo.tsx",
   },
   rechartsPieChartLegend: {
-    Preview: PieChartLegendDemo,
+    Preview: RechartsPieChartLegendDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartLegendDemo.tsx",
   },
   rechartsPieChartDonut: {
-    Preview: PieChartDonutDemo,
+    Preview: RechartsPieChartDonutDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartDonutDemo.tsx",
   },
   rechartsPieChartDonutActive: {
-    Preview: PieChartDonutActiveDemo,
+    Preview: RechartsPieChartDonutActiveDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartDonutActiveDemo.tsx",
   },
   rechartsPieChartDonutWithText: {
-    Preview: PieChartDonutWithTextDemo,
+    Preview: RechartsPieChartDonutWithTextDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartDonutWithTextDemo.tsx",
   },
   rechartsPieChartStacked: {
-    Preview: PieChartStackedDemo,
+    Preview: RechartsPieChartStackedDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartStackedDemo.tsx",
   },
   rechartsPieChartInteractive: {
-    Preview: PieChartInteractiveDemo,
+    Preview: RechartsPieChartInteractiveDemo,
     path: "src/components/docs/demos/recharts/pie-chart/PieChartInteractiveDemo.tsx",
   },
   rechartsRadarChart: {
-    Preview: RadarChartDemo,
+    Preview: RechartsRadarChartDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartDemo.tsx",
   },
   rechartsRadarChartDots: {
-    Preview: RadarChartDotsDemo,
+    Preview: RechartsRadarChartDotsDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartDotsDemo.tsx",
   },
   rechartsRadarChartMultiple: {
-    Preview: RadarChartMultipleDemo,
+    Preview: RechartsRadarChartMultipleDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartMultipleDemo.tsx",
   },
   rechartsRadarChartLinesOnly: {
-    Preview: RadarChartLinesOnlyDemo,
+    Preview: RechartsRadarChartLinesOnlyDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartLinesOnlyDemo.tsx",
   },
   rechartsRadarChartCustomLabel: {
-    Preview: RadarChartCustomLabelDemo,
+    Preview: RechartsRadarChartCustomLabelDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartCustomLabelDemo.tsx",
   },
   rechartsRadarChartRadiusAxis: {
-    Preview: RadarChartRadiusAxisDemo,
+    Preview: RechartsRadarChartRadiusAxisDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartRadiusAxisDemo.tsx",
   },
   rechartsRadarChartGridCustom: {
-    Preview: RadarChartGridCustomDemo,
+    Preview: RechartsRadarChartGridCustomDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartGridCustomDemo.tsx",
   },
   rechartsRadarChartGridFilled: {
-    Preview: RadarChartGridFilledDemo,
+    Preview: RechartsRadarChartGridFilledDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartGridFilledDemo.tsx",
   },
   rechartsRadarChartGridNone: {
-    Preview: RadarChartGridNoneDemo,
+    Preview: RechartsRadarChartGridNoneDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartGridNoneDemo.tsx",
   },
   rechartsRadarChartGridCircle: {
-    Preview: RadarChartGridCircleDemo,
+    Preview: RechartsRadarChartGridCircleDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartGridCircleDemo.tsx",
   },
   rechartsRadarChartGridCircleNoLines: {
-    Preview: RadarChartGridCircleNoLinesDemo,
+    Preview: RechartsRadarChartGridCircleNoLinesDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartGridCircleNoLinesDemo.tsx",
   },
   rechartsRadarChartGridCircleFilled: {
-    Preview: RadarChartGridCircleFilledDemo,
+    Preview: RechartsRadarChartGridCircleFilledDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartGridCircleFilledDemo.tsx",
   },
   rechartsRadarChartLegend: {
-    Preview: RadarChartLegendDemo,
+    Preview: RechartsRadarChartLegendDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartLegendDemo.tsx",
   },
   rechartsRadarChartIcons: {
-    Preview: RadarChartIconsDemo,
+    Preview: RechartsRadarChartIconsDemo,
     path: "src/components/docs/demos/recharts/radar-chart/RadarChartIconsDemo.tsx",
   },
   rechartsRadialChart: {
-    Preview: RadialChartDemo,
+    Preview: RechartsRadialChartDemo,
     path: "src/components/docs/demos/recharts/radial-chart/RadialChartDemo.tsx",
   },
   rechartsRadialChartLabel: {
-    Preview: RadialChartLabelDemo,
+    Preview: RechartsRadialChartLabelDemo,
     path: "src/components/docs/demos/recharts/radial-chart/RadialChartLabelDemo.tsx",
   },
   rechartsRadialChartGrid: {
-    Preview: RadialChartGridDemo,
+    Preview: RechartsRadialChartGridDemo,
     path: "src/components/docs/demos/recharts/radial-chart/RadialChartGridDemo.tsx",
   },
   rechartsRadialChartText: {
-    Preview: RadialChartTextDemo,
+    Preview: RechartsRadialChartTextDemo,
     path: "src/components/docs/demos/recharts/radial-chart/RadialChartTextDemo.tsx",
   },
   rechartsRadialChartShape: {
-    Preview: RadialChartShapeDemo,
+    Preview: RechartsRadialChartShapeDemo,
     path: "src/components/docs/demos/recharts/radial-chart/RadialChartShapeDemo.tsx",
   },
   rechartsRadialChartStacked: {
-    Preview: RadialChartStackedDemo,
+    Preview: RechartsRadialChartStackedDemo,
     path: "src/components/docs/demos/recharts/radial-chart/RadialChartStackedDemo.tsx",
   },
   rechartsTooltip: {
@@ -900,39 +906,63 @@ export const COMPONENT_PREVIEWS = {
     path: "src/components/docs/demos/recharts/tooltip/TooltipDemo.tsx",
   },
   rechartsTooltipLineIndicator: {
-    Preview: TooltipLineIndicatorDemo,
+    Preview: RechartsTooltipLineIndicatorDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipLineIndicatorDemo.tsx",
   },
   rechartsTooltipNoIndicator: {
-    Preview: TooltipNoIndicatorDemo,
+    Preview: RechartsTooltipNoIndicatorDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipNoIndicatorDemo.tsx",
   },
   rechartsTooltipCustomLabel: {
-    Preview: TooltipCustomLabelDemo,
+    Preview: RechartsTooltipCustomLabelDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipCustomLabelDemo.tsx",
   },
   rechartsTooltipLabelFormatter: {
-    Preview: TooltipLabelFormatterDemo,
+    Preview: RechartsTooltipLabelFormatterDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipLabelFormatterDemo.tsx",
   },
   rechartsTooltipNoLabel: {
-    Preview: TooltipNoLabelDemo,
+    Preview: RechartsTooltipNoLabelDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipNoLabelDemo.tsx",
   },
   rechartsTooltipFormatter: {
-    Preview: TooltipFormatterDemo,
+    Preview: RechartsTooltipFormatterDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipFormatterDemo.tsx",
   },
   rechartsTooltipIcons: {
-    Preview: TooltipIconsDemo,
+    Preview: RechartsTooltipIconsDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipIconsDemo.tsx",
   },
   rechartsTooltipAdvanced: {
-    Preview: TooltipAdvancedDemo,
+    Preview: RechartsTooltipAdvancedDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipAdvancedDemo.tsx",
   },
   visxVoronoiChart: {
     Preview: VisxVoronoiChartDemo,
     path: "src/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo.tsx",
+  },
+  tremorBarList: {
+    Preview: TremorBarListDemo,
+    path: "src/components/docs/demos/tremor/bar-list/BarListDemo.tsx",
+  },
+  tremorCategoryBar: {
+    Preview: TremorCategoryBarDemo,
+    path: "src/components/docs/demos/tremor/category-bar/CategoryBarDemo.tsx",
+  },
+  tremorCategoryBarMarker: {
+    Preview: TremorCategoryBarMarkerDemo,
+    path: "src/components/docs/demos/tremor/category-bar/CategoryBarMarkerDemo.tsx",
+  },
+  tremorProgressBar: {
+    Preview: TremorProgressBarDemo,
+    path: "src/components/docs/demos/tremor/progress-bar/ProgressBarDemo.tsx",
+  },
+  tremorProgressCircle: {
+    Preview: TremorProgressCircleDemo,
+    path: "src/components/docs/demos/tremor/progress-circle/ProgressCircleDemo.tsx",
+  },
+  tremorTracker: {
+    Preview: TremorTrackerDemo,
+    path: "src/components/docs/demos/tremor/tracker/TrackerDemo.tsx",
   },
 };
