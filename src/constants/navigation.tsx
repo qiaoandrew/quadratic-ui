@@ -372,13 +372,13 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
         moveToBack: ["tooltip"],
         defaultIcon: <ChartColumnBigIcon />,
       },
-      {
-        id: "visx",
-        label: "Visx",
-        moveToFront: ["quickstart"],
-        moveToBack: ["axes", "legend", "tooltip"],
-        defaultIcon: <ChartColumnBigIcon />,
-      },
+      // {
+      //   id: "visx",
+      //   label: "Visx",
+      //   moveToFront: ["quickstart"],
+      //   moveToBack: ["axes", "legend", "tooltip"],
+      //   defaultIcon: <ChartColumnBigIcon />,
+      // },
     ],
   },
   // {

@@ -1,5 +1,4 @@
 import { cn } from "~/utils/tailwind";
-import type { Icon } from "~/types/ui";
 
 import _Link from "~/components/ui/_Link";
 
