@@ -44,8 +44,8 @@ import ComboboxFormDemo from "~/components/docs/demos/primitives/combobox/Combob
 import CommandDemo from "~/components/docs/demos/primitives/command/CommandDemo";
 import CommandDialogDemo from "~/components/docs/demos/primitives/command/CommandDialogDemo";
 import ContextMenuDemo from "~/components/docs/demos/primitives/context-menu/ContextMenuDemo";
-import DataTableDemo from "~/components/docs/demos/primitives/data-table/DataTableDemo";
-import DataTableVirtualizedDemo from "~/components/docs/demos/primitives/data-table/DataTableVirtualizedDemo";
+import DataTableDemo from "~/components/docs/demos/tables/DataTableDemo";
+import DataTableVirtualizedDemo from "~/components/docs/demos/tables/DataTableVirtualizedDemo";
 import DatePickerDemo from "~/components/docs/demos/primitives/date-picker/DatePickerDemo";
 import DatePickerRangeDemo from "~/components/docs/demos/primitives/date-picker/DatePickerRangeDemo";
 import DatePickerFormDemo from "~/components/docs/demos/primitives/date-picker/DatePickerFormDemo";
@@ -89,7 +89,7 @@ import SliderMultipleThumbsDemo from "~/components/docs/demos/primitives/slider/
 import SliderFormDemo from "~/components/docs/demos/primitives/slider/SliderFormDemo";
 import SwitchDemo from "~/components/docs/demos/primitives/switch/SwitchDemo";
 import SwitchFormDemo from "~/components/docs/demos/primitives/switch/SwitchFormDemo";
-import TableDemo from "~/components/docs/demos/primitives/table/TableDemo";
+import TableDemo from "~/components/docs/demos/tables/TableDemo";
 import TabsDemo from "~/components/docs/demos/primitives/tabs/TabsDemo";
 import TextareaDemo from "~/components/docs/demos/primitives/textarea/TextareaDemo";
 import TextareaDisabledDemo from "~/components/docs/demos/primitives/textarea/TextareaDisabledDemo";
@@ -380,11 +380,11 @@ export const COMPONENT_PREVIEWS = {
   },
   dataTable: {
     Preview: DataTableDemo,
-    path: "src/components/docs/demos/primitives/data-table/DataTableDemo.tsx",
+    path: "src/components/docs/demos/tables/DataTableDemo.tsx",
   },
   dataTableVirtualized: {
     Preview: DataTableVirtualizedDemo,
-    path: "src/components/docs/demos/primitives/data-table/DataTableVirtualizedDemo.tsx",
+    path: "src/components/docs/demos/tables/DataTableVirtualizedDemo.tsx",
   },
   datePicker: {
     Preview: DatePickerDemo,
@@ -560,7 +560,7 @@ export const COMPONENT_PREVIEWS = {
   },
   table: {
     Preview: TableDemo,
-    path: "src/components/docs/demos/primitives/table/TableDemo.tsx",
+    path: "src/components/docs/demos/tables/TableDemo.tsx",
   },
   tabs: {
     Preview: TabsDemo,

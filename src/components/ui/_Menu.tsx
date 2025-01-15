@@ -44,7 +44,7 @@ const menuItemVariants = tv({
     "relative flex cursor-pointer select-none items-center rounded-1 py-1.5 pr-2 text-3.5 outline-none transition-colors",
     "focus:bg-accent focus:text-accent-foreground",
     "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-    "[&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:left-2 [&>svg]:top-1/2 [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:-translate-y-1/2",
+    "[&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:left-2 [&>svg]:size-4 [&>svg]:shrink-0",
   ],
   variants: {
     inset: {

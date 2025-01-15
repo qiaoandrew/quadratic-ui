@@ -12,7 +12,7 @@ import {
   PaletteIcon,
   RocketIcon,
   SmileIcon,
-  // TableIcon,
+  TableIcon,
 } from "lucide-react";
 
 import {
@@ -376,24 +376,25 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
       // },
     ],
   },
-  // {
-  //   id: "table",
-  //   label: "Table",
-  //   type: DocsSectionType.Group,
-  //   Icon: TableIcon,
-  //   sections: [
-  //     {
-  //       id: "basic",
-  //       label: "Basic",
-  //       defaultIcon: TableIcon,
-  //     },
-  //     {
-  //       id: "tanstack",
-  //       label: "TanStack",
-  //       defaultIcon: TableIcon,
-  //     },
-  //   ],
-  // },
+  {
+    id: "tables",
+    label: "Tables",
+    type: DocsMenuItemType.Group,
+    href: "/docs/tables/primitives/table",
+    icon: <TableIcon />,
+    sections: [
+      {
+        id: "primitives",
+        label: "Primitives",
+        defaultIcon: <TableIcon />,
+      },
+      {
+        id: "tanstack",
+        label: "TanStack",
+        defaultIcon: <TableIcon />,
+      },
+    ],
+  },
   {
     id: "github",
     label: "GitHub",

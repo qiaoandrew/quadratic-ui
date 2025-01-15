@@ -71,7 +71,7 @@ const columns: ColumnDef<Test, ColumnMeta>[] = [
   {
     id: "select",
     header: ({ table }) => (
-      <TableHead className="pr-3">
+      <TableHead>
         <Checkbox
           checked={
             table.getIsAllPageRowsSelected() ||
@@ -84,7 +84,7 @@ const columns: ColumnDef<Test, ColumnMeta>[] = [
       </TableHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="px-3">
+      <TableCell>
         <Checkbox
           checked={row.getIsSelected()}
           onCheckedChange={(value) => row.toggleSelected(!!value)}
@@ -104,9 +104,7 @@ const columns: ColumnDef<Test, ColumnMeta>[] = [
       <DataTableSortingHead column={column}>Name</DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="w-44 max-w-44 overflow-hidden truncate">
-        {row.getValue("name")}
-      </TableCell>
+      <TableCell className="w-44 max-w-44">{row.getValue("name")}</TableCell>
     ),
     meta: {
       name: "Name",
@@ -141,9 +139,7 @@ const columns: ColumnDef<Test, ColumnMeta>[] = [
       <DataTableSortingHead column={column}>Domain</DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="w-40 max-w-40 overflow-hidden truncate">
-        {row.getValue("domain")}
-      </TableCell>
+      <TableCell className="w-40 max-w-40">{row.getValue("domain")}</TableCell>
     ),
     meta: {
       name: "Domain",
@@ -169,7 +165,7 @@ const columns: ColumnDef<Test, ColumnMeta>[] = [
       <DataTableSortingHead column={column}>Envs</DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TagsCell tags={row.getValue("envs")} className="w-36" />
+      <TagsCell tags={row.getValue("envs")} className="w-36 max-w-36" />
     ),
     meta: {
       name: "Envs",
@@ -209,7 +205,7 @@ const columns: ColumnDef<Test, ColumnMeta>[] = [
       </DataTableSortingHead>
     ),
     cell: ({ row }) => (
-      <TableCell className="w-36 text-right">
+      <TableCell className="w-36 max-w-36 text-right">
         {getTimeAgo(row.getValue("lastModified"))}
       </TableCell>
     ),
@@ -224,50 +220,47 @@ const columns: ColumnDef<Test, ColumnMeta>[] = [
       <TableCell className="last:pr-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="size-6 rounded-1">
+            <Button
+              variant="ghost"
+              size="xs"
+              subject="icon"
+              className="size-6 rounded-1"
+            >
               <span className="sr-only">Open menu</span>
-              <MoreVerticalIcon size={16} />
+              <MoreVerticalIcon />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-48">
             <DropdownMenuItem inset>
-              <PauseIcon
-                size={14}
-                fill="text-muted-foreground"
-                className="mr-2 text-muted-foreground"
-              />
+              <PauseIcon className="text-muted-foreground" />
               Pause
             </DropdownMenuItem>
             <DropdownMenuItem inset>
-              <ZapIcon
-                size={14}
-                fill="text-muted-foreground"
-                className="mr-2 text-muted-foreground"
-              />
+              <ZapIcon className="text-muted-foreground" />
               Run Test Now
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem inset>
-              <EditIcon size={14} className="mr-2 text-muted-foreground" />
+              <EditIcon className="text-muted-foreground" />
               Edit Test
             </DropdownMenuItem>
             <DropdownMenuItem inset>
-              <VideoIcon size={14} className="mr-2 text-muted-foreground" />
+              <VideoIcon className="text-muted-foreground" />
               Edit Recording
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem inset>
-              <CopyIcon size={14} className="mr-2 text-muted-foreground" />
+              <CopyIcon className="text-muted-foreground" />
               Clone
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem inset>
-              <LockIcon size={14} className="mr-2 text-muted-foreground" />
+              <LockIcon className="text-muted-foreground" />
               Permissions
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem inset>
-              <TrashIcon size={14} className="mr-2 text-muted-foreground" />
+              <TrashIcon className="text-muted-foreground" />
               Delete
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -431,13 +424,14 @@ function DataTableSortingHead({
     <TableHead className="p-0">
       <Button
         variant="ghost"
+        size="md"
         onClick={() => column.toggleSorting()}
         className={cn(
-          "w-full justify-start gap-x-1 p-0 py-2 pl-3 hover:bg-transparent",
+          "size-full justify-start gap-x-1 px-3 hover:bg-transparent",
           className,
         )}
       >
-        {children} {Icon && <Icon size={14} />}
+        {children} {Icon && <Icon />}
       </Button>
     </TableHead>
   );
@@ -445,7 +439,7 @@ function DataTableSortingHead({
 
 function StatusCell({ status }: { status: TestStatus }) {
   return (
-    <TableCell className="w-24">
+    <TableCell className="w-24 max-w-24">
       <div
         className={cn(
           "w-18 rounded-1 py-1 text-center text-3 font-medium uppercase",
@@ -465,7 +459,7 @@ function TypeCell({ type }: { type: TestType }) {
   const Icon = TEST_TYPE_ICON[type];
 
   return (
-    <TableCell className="w-32 max-w-32 overflow-hidden">
+    <TableCell className="w-32 max-w-32">
       <div className="flex items-center gap-x-1.5">
         <Icon size={14} className="shrink-0 text-muted-foreground" />
         <p className="overlow-hidden grow truncate">{type}</p>

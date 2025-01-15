@@ -1,3 +1,4 @@
+import { formatDistanceToNowStrict } from "date-fns";
 import {
   CodeIcon,
   CodeXmlIcon,
@@ -18,11 +19,12 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/Table";
+import { ScrollArea, ScrollAreaBar } from "~/components/ui/ScrollArea";
 
 export default function TableDemo() {
   return (
-    <div className="overflow-auto rounded-2 border">
-      <Table className="w-max">
+    <ScrollArea className="rounded-2 border">
+      <Table>
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
@@ -33,41 +35,38 @@ export default function TableDemo() {
             <TableHead>Envs</TableHead>
             <TableHead>Teams</TableHead>
             <TableHead>Uptime</TableHead>
-            <TableHead className="text-right">Last Modified</TableHead>
+            <TableHead>Last Modified</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {TESTS.map((test) => (
             <TableRow key={test.id}>
-              <TableCell className="w-44 max-w-44 overflow-hidden truncate">
-                {test.name}
-              </TableCell>
+              <TableCell className="w-44 max-w-44">{test.name}</TableCell>
               <StatusCell status={test.status} />
               <TypeCell type={test.type} />
-              <TableCell className="w-40 max-w-40 overflow-hidden truncate">
-                {test.domain}
-              </TableCell>
-              <TagsCell tags={test.tags} className="w-16" />
-              <TagsCell tags={test.envs} className="w-36" />
+              <TableCell className="w-40 max-w-40">{test.domain}</TableCell>
+              <TagsCell tags={test.tags} className="w-28 max-w-28" />
+              <TagsCell tags={test.envs} className="w-36 max-w-36" />
               <TeamCell team={test.team} />
               <UptimeCell uptime={test.uptime} />
-              <TableCell className="w-36 text-right">
+              <TableCell className="w-36">
                 {getTimeAgo(test.lastModified)}
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-    </div>
+      <ScrollAreaBar orientation="horizontal" />
+    </ScrollArea>
   );
 }
 
 function StatusCell({ status }: { status: TestStatus }) {
   return (
-    <TableCell className="w-24">
+    <TableCell className="w-24 max-w-24">
       <div
         className={cn(
-          "w-18 rounded-1 py-1 text-center text-3 font-medium uppercase",
+          "rounded-1 py-1 text-center text-3 font-medium uppercase",
           status === TestStatus.OK && "bg-success text-success-foreground",
           status === TestStatus.Alert &&
             "bg-destructive text-destructive-foreground",
@@ -84,7 +83,7 @@ function TypeCell({ type }: { type: TestType }) {
   const Icon = TEST_TYPE_ICON[type];
 
   return (
-    <TableCell className="w-32 max-w-32 overflow-hidden">
+    <TableCell className="w-32 max-w-32">
       <div className="flex items-center gap-x-1.5">
         <Icon size={14} className="shrink-0 text-muted-foreground" />
         <p className="overlow-hidden grow truncate">{type}</p>
@@ -109,7 +108,7 @@ function TagsCell({ tags, className }: { tags: string[]; className?: string }) {
 
 function TeamCell({ team }: { team: string }) {
   return (
-    <TableCell className="w-36">
+    <TableCell className="w-36 max-w-36">
       <span className="rounded-full border px-2 py-1">{team}</span>
     </TableCell>
   );
@@ -120,15 +119,14 @@ function UptimeCell({ uptime }: { uptime: number | null }) {
 
   return (
     <TableCell className="w-40 max-w-40">
-      {uptime === null && (
+      {uptime === null ? (
         <span className="italic text-muted-foreground">No uptime data</span>
-      )}
-      {uptime !== null && (
+      ) : (
         <span className="flex items-center justify-between gap-x-1 font-semibold">
           {uptime}%
-          <span className="relative h-4 w-20 bg-success-foreground">
+          <span className="relative h-4 w-20 bg-emerald-500">
             <span
-              className="absolute inset-y-0 right-0 bg-destructive-foreground"
+              className="absolute inset-y-0 right-0 bg-red-500"
               style={{ width: failureWidth }}
             />
           </span>
@@ -138,32 +136,8 @@ function UptimeCell({ uptime }: { uptime: number | null }) {
   );
 }
 
-const getTimeAgo = (timestamp: string) => {
-  const date = new Date(timestamp);
-  const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
-  let interval = Math.floor(seconds / 31536000);
-
-  if (interval > 1) {
-    return `${interval} Years Ago`;
-  }
-  interval = Math.floor(seconds / 2592000);
-  if (interval > 1) {
-    return `${interval} Months Ago`;
-  }
-  interval = Math.floor(seconds / 86400);
-  if (interval > 1) {
-    return `${interval} Days Ago`;
-  }
-  interval = Math.floor(seconds / 3600);
-  if (interval > 1) {
-    return `${interval} Hours Ago`;
-  }
-  interval = Math.floor(seconds / 60);
-  if (interval > 1) {
-    return `${interval} Minutes Ago`;
-  }
-  return `${Math.floor(seconds)} Seconds Ago`;
-};
+const getTimeAgo = (timestamp: string) =>
+  formatDistanceToNowStrict(new Date(timestamp), { addSuffix: true });
 
 enum TestStatus {
   OK = "OK",
@@ -211,7 +185,7 @@ const TESTS: Test[] = [
     status: TestStatus.OK,
     type: TestType.Browser,
     domain: "www.notion.so/login",
-    tags: ["p0"],
+    tags: ["p0", "auth"],
     envs: ["prod"],
     team: "Authentication",
     uptime: 100,
@@ -223,7 +197,7 @@ const TESTS: Test[] = [
     status: TestStatus.Paused,
     type: TestType.Browser,
     domain: "www.notion.so/signup",
-    tags: ["p1"],
+    tags: ["p1", "auth"],
     envs: ["staging"],
     team: "Onboarding",
     uptime: 95,
@@ -235,7 +209,7 @@ const TESTS: Test[] = [
     status: TestStatus.OK,
     type: TestType.API,
     domain: "api.notion.so/user",
-    tags: ["p0"],
+    tags: ["p0", "api"],
     envs: ["prod"],
     team: "Backend",
     uptime: 90.7,
@@ -247,7 +221,7 @@ const TESTS: Test[] = [
     status: TestStatus.OK,
     type: TestType.Browser,
     domain: "www.notion.so/create-document",
-    tags: ["p2"],
+    tags: ["p2", "editor"],
     envs: ["prod", "staging"],
     team: "Editor",
     uptime: 100,
@@ -259,7 +233,7 @@ const TESTS: Test[] = [
     status: TestStatus.OK,
     type: TestType.Mobile,
     domain: "m.notion.so/login",
-    tags: ["p0"],
+    tags: ["p0", "auth"],
     envs: ["prod"],
     team: "Mobile",
     uptime: 99.9,
@@ -271,7 +245,7 @@ const TESTS: Test[] = [
     status: TestStatus.Alert,
     type: TestType.WebSocket,
     domain: "ws.notion.so/connect",
-    tags: ["p1"],
+    tags: ["p1", "api"],
     envs: ["prod"],
     team: "Realtime",
     uptime: 97.3,
@@ -283,7 +257,7 @@ const TESTS: Test[] = [
     status: TestStatus.OK,
     type: TestType.API,
     domain: "api.notion.so/payment",
-    tags: ["p0"],
+    tags: ["p0", "api"],
     envs: ["prod"],
     team: "Payments",
     uptime: 100,
@@ -295,7 +269,7 @@ const TESTS: Test[] = [
     status: TestStatus.OK,
     type: TestType.SSL,
     domain: "www.notion.so",
-    tags: ["p0"],
+    tags: ["p0", "ssl"],
     envs: ["prod"],
     team: "Security",
     uptime: null,
@@ -307,7 +281,7 @@ const TESTS: Test[] = [
     status: TestStatus.OK,
     type: TestType.gRPC,
     domain: "api.notion.so/user",
-    tags: ["p1"],
+    tags: ["p1", "api"],
     envs: ["prod"],
     team: "Backend",
     uptime: 99.2,
@@ -319,7 +293,7 @@ const TESTS: Test[] = [
     status: TestStatus.OK,
     type: TestType.Browser,
     domain: "www.notion.so/profile",
-    tags: ["p2"],
+    tags: ["p2", "ui"],
     envs: ["prod"],
     team: "Frontend",
     uptime: 99.8,
