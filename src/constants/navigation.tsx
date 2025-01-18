@@ -374,6 +374,13 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
         moveToBack: ["axes", "legend", "tooltip"],
         defaultIcon: <ChartColumnBigIcon />,
       },
+      {
+        id: "tremor",
+        label: "Tremor",
+        moveToFront: ["quickstart"],
+        moveToBack: [],
+        defaultIcon: <ChartColumnBigIcon />,
+      },
     ],
   },
   // {
