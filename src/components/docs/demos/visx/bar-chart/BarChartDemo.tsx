@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef } from "react";
-import { AxisBottom } from "@visx/axis";
+import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { Group } from "@visx/group";
 import { scaleBand, scaleLinear } from "@visx/scale";
@@ -70,13 +70,13 @@ export default function BarChartDemo() {
   return (
     <div ref={parentRef} className="h-64 w-full max-w-96 md:h-96">
       <svg ref={containerRef} width={width} height={height}>
-        <Group top={48} left={24}>
+        <Group top={48} left={48}>
           {CHART_DATA.map((d) => {
             const label = d.month.slice(0, 3);
             const barWidth = xScale.bandwidth();
             const barHeight = yMax - yScale(d.desktop);
             const barX = xScale(label) ?? 0;
-            const barY = yMax - barHeight ?? 0;
+            const barY = yMax - barHeight;
 
             return (
               <Bar
@@ -100,29 +100,38 @@ export default function BarChartDemo() {
                 onMouseLeave={() => {
                   tooltipTimeout = window.setTimeout(() => {
                     hideTooltip();
-                  }, 300);
+                  }, 150);
                 }}
                 key={`bar-${label}`}
               />
             );
           })}
+          <AxisLeft
+            scale={yScale}
+            stroke="hsl(var(--muted-foreground))"
+            tickStroke="hsl(var(--muted-foreground))"
+            tickLabelProps={{
+              fill: "hsl(var(--muted-foreground))",
+              fontSize: 12,
+              fontFamily: "var(--font-sans)",
+              dx: -4,
+            }}
+          />
+          <AxisBottom
+            top={yMax}
+            scale={xScale}
+            tickFormat={(month) => month.slice(0, 3)}
+            stroke="hsl(var(--muted-foreground))"
+            tickStroke="hsl(var(--muted-foreground))"
+            tickLabelProps={{
+              fill: "hsl(var(--muted-foreground))",
+              fontSize: 12,
+              textAnchor: "middle",
+              fontFamily: "var(--font-sans)",
+            }}
+          />
         </Group>
-        <AxisBottom
-          left={24}
-          top={yMax + 48}
-          scale={xScale}
-          tickFormat={(month) => month.slice(0, 3)}
-          stroke="hsl(var(--muted-foreground))"
-          tickStroke="hsl(var(--muted-foreground))"
-          tickLabelProps={{
-            fill: "hsl(var(--muted-foreground))",
-            fontSize: 12,
-            textAnchor: "middle",
-            fontFamily: "var(--font-sans)",
-          }}
-        />
       </svg>
-
       {tooltipOpen && tooltipData && (
         <TooltipInPortal
           top={tooltipTop}
