@@ -190,6 +190,7 @@ import TremorCategoryBarMarkerDemo from "~/components/docs/demos/tremor/category
 import TremorProgressBarDemo from "~/components/docs/demos/tremor/progress-bar/ProgressBarDemo";
 import TremorProgressCircleDemo from "~/components/docs/demos/tremor/progress-circle/ProgressCircleDemo";
 import TremorTrackerDemo from "~/components/docs/demos/tremor/tracker/TrackerDemo";
+import VisxBarChartDemo from "~/components/docs/demos/visx/bar-chart/BarChartDemo";
 import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -936,6 +937,10 @@ export const COMPONENT_PREVIEWS = {
   rechartsTooltipAdvanced: {
     Preview: RechartsTooltipAdvancedDemo,
     path: "src/components/docs/demos/recharts/tooltip/TooltipAdvancedDemo.tsx",
+  },
+  visxBarChart: {
+    Preview: VisxBarChartDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartDemo.tsx",
   },
   visxVoronoiChart: {
     Preview: VisxVoronoiChartDemo,
