@@ -3,6 +3,7 @@
 import { useMemo, useRef } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
+import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { scaleBand, scaleLinear } from "@visx/scale";
 import { Bar } from "@visx/shape";
@@ -22,6 +23,7 @@ const CHART_DATA = [
   { month: "April", desktop: 73 },
   { month: "May", desktop: 209 },
   { month: "June", desktop: 214 },
+  { month: "July", desktop: 142 },
 ];
 
 let tooltipTimeout: number;
@@ -30,8 +32,8 @@ export default function BarChartDemo() {
   const parentRef = useRef<HTMLDivElement>(null);
   const { width, height } = useElementSize(parentRef);
 
-  const xMax = width - 48;
-  const yMax = height - 96;
+  const xMax = width - 72;
+  const yMax = height - 112;
 
   const xScale = useMemo(
     () =>
@@ -39,7 +41,8 @@ export default function BarChartDemo() {
         range: [0, xMax],
         round: true,
         domain: CHART_DATA.map((d) => d.month.slice(0, 3)),
-        padding: 0.4,
+        paddingInner: 0.25,
+        paddingOuter: 0.1,
       }),
     [xMax],
   );
@@ -49,7 +52,7 @@ export default function BarChartDemo() {
       scaleLinear<number>({
         range: [yMax, 0],
         round: true,
-        domain: [0, Math.max(...CHART_DATA.map((d) => d.desktop))],
+        domain: [0, 360],
       }),
     [yMax],
   );
@@ -68,9 +71,17 @@ export default function BarChartDemo() {
   });
 
   return (
-    <div ref={parentRef} className="h-64 w-full max-w-96 md:h-96">
+    <div ref={parentRef} className="h-96 w-full max-w-[480px]">
       <svg ref={containerRef} width={width} height={height}>
-        <Group top={48} left={48}>
+        <Group top={48} left={68}>
+          <GridRows
+            scale={yScale}
+            numTicks={7}
+            tickValues={[0, 60, 120, 180, 240, 300, 360]}
+            width={xMax}
+            height={yMax}
+            stroke="hsl(var(--border))"
+          />
           {CHART_DATA.map((d) => {
             const label = d.month.slice(0, 3);
             const barWidth = xScale.bandwidth();
@@ -85,6 +96,7 @@ export default function BarChartDemo() {
                 width={barWidth}
                 height={barHeight}
                 fill="hsl(var(--chart-1))"
+                rx={6}
                 onMouseMove={(e) => {
                   if (tooltipTimeout) clearTimeout(tooltipTimeout);
 
@@ -108,26 +120,43 @@ export default function BarChartDemo() {
           })}
           <AxisLeft
             scale={yScale}
-            stroke="hsl(var(--muted-foreground))"
-            tickStroke="hsl(var(--muted-foreground))"
+            numTicks={7}
+            tickValues={[0, 60, 120, 180, 240, 300, 360]}
+            stroke="transparent"
+            tickStroke="transparent"
             tickLabelProps={{
               fill: "hsl(var(--muted-foreground))",
               fontSize: 12,
               fontFamily: "var(--font-sans)",
+              lineHeight: 0,
               dx: -4,
+            }}
+            label="Views"
+            labelOffset={48}
+            labelProps={{
+              fill: "hsl(var(--foreground))",
+              fontSize: 14,
+              fontFamily: "var(--font-sans)",
+              fontWeight: 500,
             }}
           />
           <AxisBottom
             top={yMax}
             scale={xScale}
             tickFormat={(month) => month.slice(0, 3)}
-            stroke="hsl(var(--muted-foreground))"
-            tickStroke="hsl(var(--muted-foreground))"
             tickLabelProps={{
               fill: "hsl(var(--muted-foreground))",
               fontSize: 12,
               textAnchor: "middle",
               fontFamily: "var(--font-sans)",
+            }}
+            label="Month"
+            labelOffset={24}
+            labelProps={{
+              fill: "hsl(var(--foreground))",
+              fontSize: 14,
+              fontFamily: "var(--font-sans)",
+              fontWeight: 500,
             }}
           />
         </Group>
@@ -138,14 +167,30 @@ export default function BarChartDemo() {
           left={tooltipLeft}
           style={{
             ...defaultStyles,
-            minWidth: 60,
-            backgroundColor: "rgba(0,0,0,0.9)",
+            padding: "8px",
+            minWidth: 120,
+            backgroundColor: "hsl(var(--background))",
             borderColor: "hsl(var(--border))",
             borderWidth: 1,
-            color: "white",
+            fontSize: 14,
+            display: "flex",
+            flexDirection: "column",
+            rowGap: 4,
+            borderRadius: 6,
           }}
         >
-          <div>{tooltipData.month}</div>
+          <p className="text-3 font-medium text-foreground">
+            {tooltipData.month}
+          </p>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-x-1.5">
+              <div className="size-2 rounded-0.5 bg-[hsl(var(--chart-1))]" />
+              <p className="text-3 text-muted-foreground">Views</p>
+            </div>
+            <p className="text-3 font-medium text-foreground">
+              {tooltipData.desktop}
+            </p>
+          </div>
         </TooltipInPortal>
       )}
     </div>
