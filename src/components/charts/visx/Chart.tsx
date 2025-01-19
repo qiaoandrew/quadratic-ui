@@ -11,18 +11,20 @@ import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import useElementSize from "~/hooks/useElementSize";
 
-interface ChartConfig {
+export interface ChartConfig {
   margin: { top: number; right: number; bottom: number; left: number };
   tickValues: number[];
-  axisLabelOffset: { bottom: number; left: number };
+  axisLabelOffset: { top: number; right: number; bottom: number; left: number };
   axisLabelClassName?: string;
+  axisLabels: { top?: string; right?: string; bottom?: string; left?: string };
 }
 
 const DEFAULT_CONFIG: ChartConfig = {
   margin: { top: 48, right: 4, bottom: 64, left: 64 },
   tickValues: [0, 60, 120, 180, 240, 300, 360],
-  axisLabelOffset: { bottom: 24, left: 44 },
+  axisLabelOffset: { top: 0, right: 0, bottom: 24, left: 44 },
   axisLabelClassName: "fill-foreground text-3.5 font-medium font-sans",
+  axisLabels: {},
 } as const;
 
 const TICK_LABEL_PROPS = {
@@ -37,12 +39,14 @@ interface TooltipContentProps<T> {
   datum: T;
   getLabel: (d: T) => string;
   getValue: (d: T) => number;
+  axisLabel?: string;
 }
 
 function TooltipContent<T>({
   datum,
   getLabel,
   getValue,
+  axisLabel,
 }: TooltipContentProps<T>) {
   return (
     <>
@@ -50,7 +54,7 @@ function TooltipContent<T>({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-x-1.5">
           <div className="size-2 rounded-0.5 bg-[hsl(var(--chart-1))]" />
-          <p className="text-muted-foreground">Views</p>
+          <p className="text-muted-foreground">{axisLabel}</p>
         </div>
         <p className="font-medium text-foreground">{getValue(datum)}</p>
       </div>
@@ -66,10 +70,14 @@ interface BarChartProps<T> {
 }
 
 function BarChart<T>({ data, getValue, getLabel, config }: BarChartProps<T>) {
-  const { margin, tickValues, axisLabelOffset, axisLabelClassName } = {
-    ...DEFAULT_CONFIG,
-    ...config,
-  };
+  const fullConfig = { ...DEFAULT_CONFIG, ...config };
+  const {
+    margin,
+    tickValues,
+    axisLabelOffset,
+    axisLabelClassName,
+    axisLabels,
+  } = fullConfig;
 
   const parentRef = useRef<HTMLDivElement>(null);
   const { width, height } = useElementSize(parentRef);
@@ -177,7 +185,7 @@ function BarChart<T>({ data, getValue, getLabel, config }: BarChartProps<T>) {
             stroke="transparent"
             tickStroke="transparent"
             tickLabelProps={TICK_LABEL_PROPS}
-            label="Views"
+            label={axisLabels.left}
             labelOffset={axisLabelOffset.left}
             labelClassName={axisLabelClassName}
           />
@@ -186,7 +194,7 @@ function BarChart<T>({ data, getValue, getLabel, config }: BarChartProps<T>) {
             scale={xScale}
             tickFormat={formatLabel}
             tickLabelProps={TICK_LABEL_PROPS}
-            label="Month"
+            label={axisLabels.bottom}
             labelOffset={axisLabelOffset.bottom}
             labelClassName={axisLabelClassName}
           />
@@ -203,6 +211,7 @@ function BarChart<T>({ data, getValue, getLabel, config }: BarChartProps<T>) {
             datum={tooltipData}
             getLabel={getLabel}
             getValue={getValue}
+            axisLabel={axisLabels.left}
           />
         </TooltipInPortal>
       )}
