@@ -94,6 +94,7 @@ export default {
       16: ["4rem", "4.5rem"],
     },
     lineHeight: {
+      0: "0",
       4: "1rem",
       5: "1.25rem",
       6: "1.5rem",

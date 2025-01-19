@@ -7,7 +7,7 @@ import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { scaleBand, scaleLinear } from "@visx/scale";
 import { Bar } from "@visx/shape";
-import { useTooltip, useTooltipInPortal, defaultStyles } from "@visx/tooltip";
+import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import useElementSize from "~/hooks/useElementSize";
 
@@ -28,12 +28,27 @@ const CHART_DATA = [
 
 let tooltipTimeout: number;
 
+const MARGIN = { top: 48, right: 4, bottom: 64, left: 64 } as const;
+const TICK_VALUES = [0, 60, 120, 180, 240, 300, 360];
+const AXIS_LABEL_OFFSET = {
+  bottom: 24,
+  left: 44,
+};
+const TICK_LABEL_PROPS = {
+  fill: "hsl(var(--muted-foreground))",
+  fontSize: 12,
+  fontFamily: "var(--font-sans)",
+};
+const AXIS_LABEL_CLASS_NAME = "fill-foreground text-3.5 font-medium font-sans";
+
+const formatLabel = (month: string) => month.slice(0, 3);
+
 export default function BarChartDemo() {
   const parentRef = useRef<HTMLDivElement>(null);
   const { width, height } = useElementSize(parentRef);
 
-  const xMax = width - 72;
-  const yMax = height - 112;
+  const xMax = width - MARGIN.left - MARGIN.right;
+  const yMax = height - MARGIN.top - MARGIN.bottom;
 
   const xScale = useMemo(
     () =>
@@ -52,7 +67,7 @@ export default function BarChartDemo() {
       scaleLinear<number>({
         range: [yMax, 0],
         round: true,
-        domain: [0, 360],
+        domain: [TICK_VALUES.at(0) ?? 0, TICK_VALUES.at(-1) ?? 0],
       }),
     [yMax],
   );
@@ -71,21 +86,21 @@ export default function BarChartDemo() {
   });
 
   return (
-    <div ref={parentRef} className="h-96 w-full max-w-[480px]">
+    <div ref={parentRef} className="h-96 w-full max-w-112">
       <svg ref={containerRef} width={width} height={height}>
-        <Group top={48} left={68}>
+        <Group top={MARGIN.top} left={MARGIN.left}>
           <GridRows
             scale={yScale}
-            numTicks={7}
-            tickValues={[0, 60, 120, 180, 240, 300, 360]}
+            numTicks={TICK_VALUES.length}
+            tickValues={TICK_VALUES}
             width={xMax}
             height={yMax}
             stroke="hsl(var(--border))"
           />
           {CHART_DATA.map((d) => {
-            const label = d.month.slice(0, 3);
+            const label = formatLabel(d.month);
             const barWidth = xScale.bandwidth();
-            const barHeight = yMax - yScale(d.desktop);
+            const barHeight = Math.max(yMax - yScale(d.desktop), 0);
             const barX = xScale(label) ?? 0;
             const barY = yMax - barHeight;
 
@@ -110,9 +125,7 @@ export default function BarChartDemo() {
                   });
                 }}
                 onMouseLeave={() => {
-                  tooltipTimeout = window.setTimeout(() => {
-                    hideTooltip();
-                  }, 150);
+                  tooltipTimeout = window.setTimeout(() => hideTooltip(), 150);
                 }}
                 key={`bar-${label}`}
               />
@@ -120,44 +133,23 @@ export default function BarChartDemo() {
           })}
           <AxisLeft
             scale={yScale}
-            numTicks={7}
-            tickValues={[0, 60, 120, 180, 240, 300, 360]}
+            numTicks={TICK_VALUES.length}
+            tickValues={TICK_VALUES}
             stroke="transparent"
             tickStroke="transparent"
-            tickLabelProps={{
-              fill: "hsl(var(--muted-foreground))",
-              fontSize: 12,
-              fontFamily: "var(--font-sans)",
-              lineHeight: 0,
-              dx: -4,
-            }}
+            tickLabelProps={TICK_LABEL_PROPS}
             label="Views"
-            labelOffset={48}
-            labelProps={{
-              fill: "hsl(var(--foreground))",
-              fontSize: 14,
-              fontFamily: "var(--font-sans)",
-              fontWeight: 500,
-            }}
+            labelOffset={AXIS_LABEL_OFFSET.left}
+            labelClassName={AXIS_LABEL_CLASS_NAME}
           />
           <AxisBottom
             top={yMax}
             scale={xScale}
-            tickFormat={(month) => month.slice(0, 3)}
-            tickLabelProps={{
-              fill: "hsl(var(--muted-foreground))",
-              fontSize: 12,
-              textAnchor: "middle",
-              fontFamily: "var(--font-sans)",
-            }}
+            tickFormat={formatLabel}
+            tickLabelProps={TICK_LABEL_PROPS}
             label="Month"
-            labelOffset={24}
-            labelProps={{
-              fill: "hsl(var(--foreground))",
-              fontSize: 14,
-              fontFamily: "var(--font-sans)",
-              fontWeight: 500,
-            }}
+            labelOffset={AXIS_LABEL_OFFSET.bottom}
+            labelClassName={AXIS_LABEL_CLASS_NAME}
           />
         </Group>
       </svg>
@@ -165,31 +157,16 @@ export default function BarChartDemo() {
         <TooltipInPortal
           top={tooltipTop}
           left={tooltipLeft}
-          style={{
-            ...defaultStyles,
-            padding: "8px",
-            minWidth: 120,
-            backgroundColor: "hsl(var(--background))",
-            borderColor: "hsl(var(--border))",
-            borderWidth: 1,
-            fontSize: 14,
-            display: "flex",
-            flexDirection: "column",
-            rowGap: 4,
-            borderRadius: 6,
-          }}
+          style={{}}
+          className="pointer-events-none absolute flex min-w-28 flex-col gap-y-1 rounded-1.5 border bg-background p-2 text-3"
         >
-          <p className="text-3 font-medium text-foreground">
-            {tooltipData.month}
-          </p>
+          <p className="font-medium text-foreground">{tooltipData.month}</p>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-x-1.5">
               <div className="size-2 rounded-0.5 bg-[hsl(var(--chart-1))]" />
-              <p className="text-3 text-muted-foreground">Views</p>
+              <p className="text-muted-foreground">Views</p>
             </div>
-            <p className="text-3 font-medium text-foreground">
-              {tooltipData.desktop}
-            </p>
+            <p className="font-medium text-foreground">{tooltipData.desktop}</p>
           </div>
         </TooltipInPortal>
       )}
