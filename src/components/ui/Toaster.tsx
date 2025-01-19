@@ -44,7 +44,6 @@ const Toaster = ({ ...props }: ToasterProps) => {
           ),
         },
       }}
-      cn={cn}
       className="toaster group"
       {...props}
     />
