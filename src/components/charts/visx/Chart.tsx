@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
@@ -8,8 +8,6 @@ import { Group } from "@visx/group";
 import { scaleBand, scaleLinear } from "@visx/scale";
 import { Bar } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
-
-import useElementSize from "~/hooks/useElementSize";
 
 export interface ChartConfig {
   margin: { top: number; right: number; bottom: number; left: number };
@@ -67,9 +65,18 @@ interface BarChartProps<T> {
   getValue: (d: T) => number;
   getLabel: (d: T) => string;
   config?: Partial<ChartConfig>;
+  className?: string;
+  aspectRatio?: number;
 }
 
-function BarChart<T>({ data, getValue, getLabel, config }: BarChartProps<T>) {
+function BarChart<T>({
+  data,
+  getValue,
+  getLabel,
+  config,
+  className,
+  aspectRatio = 4 / 3,
+}: BarChartProps<T>) {
   const fullConfig = { ...DEFAULT_CONFIG, ...config };
   const {
     margin,
@@ -79,10 +86,25 @@ function BarChart<T>({ data, getValue, getLabel, config }: BarChartProps<T>) {
     axisLabels,
   } = fullConfig;
 
-  const parentRef = useRef<HTMLDivElement>(null);
-  const { width, height } = useElementSize(parentRef);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
 
-  const xMax = width - margin.left - margin.right;
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (entry) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const height = containerWidth / aspectRatio;
+  const xMax = containerWidth - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
   const xScale = useMemo(
@@ -118,9 +140,10 @@ function BarChart<T>({ data, getValue, getLabel, config }: BarChartProps<T>) {
 
   const tooltipTimeoutRef = useRef<number>(0);
 
-  const { containerRef, TooltipInPortal } = useTooltipInPortal({
-    scroll: true,
-  });
+  const { containerRef: tooltipContainerRef, TooltipInPortal } =
+    useTooltipInPortal({
+      scroll: true,
+    });
 
   useEffect(() => {
     return () => {
@@ -129,8 +152,13 @@ function BarChart<T>({ data, getValue, getLabel, config }: BarChartProps<T>) {
   });
 
   return (
-    <div ref={parentRef} className="h-96 w-full max-w-112">
-      <svg ref={containerRef} width={width} height={height}>
+    <div ref={containerRef} className={className}>
+      <svg
+        ref={tooltipContainerRef}
+        style={{ width: "100%", height: "auto" }}
+        viewBox={`0 0 ${containerWidth} ${height}`}
+        preserveAspectRatio="xMidYMid meet"
+      >
         <Group top={margin.top} left={margin.left}>
           <GridRows
             scale={yScale}

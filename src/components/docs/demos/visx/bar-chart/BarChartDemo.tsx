@@ -31,6 +31,8 @@ export default function BarChartDemo() {
       getValue={getValue}
       data={CHART_DATA}
       config={CHART_CONFIG}
+      className="w-full max-w-112"
+      aspectRatio={5 / 4}
     />
   );
 }
