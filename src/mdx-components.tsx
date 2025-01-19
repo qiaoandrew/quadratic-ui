@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { MDXComponents } from "mdx/types";
 
-import { textToHtmlId } from "~/utils/docs";
+import { textToHtmlId } from "~/utils/navigation";
 
 import Id from "~/components/docs/mdx/Id";
 import CodeBlock from "~/components/docs/mdx/CodeBlock";

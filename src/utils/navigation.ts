@@ -21,7 +21,7 @@ export function textToHtmlId(text: string) {
     .replace(/[^\w-]+/g, "");
 }
 
-const CAPITAL_WORDS = ["otp"];
+const CAPITAL_WORDS = ["otp", "xy"];
 
 export function formatLabel(label: string) {
   return label
