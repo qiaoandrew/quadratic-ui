@@ -12,8 +12,8 @@ importers:
         specifier: ^3.10.0
         version: 3.10.0(react-hook-form@7.54.2(react@19.0.0))
       '@icons-pack/react-simple-icons':
-        specifier: ^11.0.1
-        version: 11.0.1(react@19.0.0)
+        specifier: ^11.1.0
+        version: 11.1.0(react@19.0.0)
       '@mdx-js/loader':
         specifier: ^3.1.0
         version: 3.1.0(acorn@8.14.0)
@@ -637,8 +637,8 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
 
-  '@icons-pack/react-simple-icons@11.0.1':
-    resolution: {integrity: sha512-K+PsqUAIuWHztSIlUc55CjTXpjSGkrM6Dl0YMKseJCLgbGZKnabaJZ5j8wtSizNaKRjadoQQ5fhjh1OSepdMeg==}
+  '@icons-pack/react-simple-icons@11.1.0':
+    resolution: {integrity: sha512-y85zq6i16cgKEEcxI/lNNKOlhxnCpNm0PCn4PY6aYNUsEZtrK/uxS6Kize4ZqzGCD+/HXiC58K1TcrDJOi54LA==}
     peerDependencies:
       react: ^16.13 || ^17 || ^18 || ^19
 
@@ -4134,7 +4134,7 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@icons-pack/react-simple-icons@11.0.1(react@19.0.0)':
+  '@icons-pack/react-simple-icons@11.1.0(react@19.0.0)':
     dependencies:
       react: 19.0.0
 

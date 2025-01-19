@@ -9,20 +9,30 @@ import { scaleBand, scaleLinear } from "@visx/scale";
 import { Bar } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
-export interface ChartConfig {
+interface ChartConfig {
   margin: { top: number; right: number; bottom: number; left: number };
   tickValues: number[];
-  axisLabelOffset: { top: number; right: number; bottom: number; left: number };
+  axisLabelOffset: Partial<{
+    top: number;
+    right: number;
+    bottom: number;
+    left: number;
+  }>;
   axisLabelClassName?: string;
-  axisLabels: { top?: string; right?: string; bottom?: string; left?: string };
+  axisLabels: Partial<{
+    top: string;
+    right: string;
+    bottom: string;
+    left: string;
+  }>;
 }
 
 const DEFAULT_CONFIG: ChartConfig = {
-  margin: { top: 48, right: 4, bottom: 64, left: 64 },
+  margin: { top: 12, right: 4, bottom: 64, left: 64 },
   tickValues: [0, 60, 120, 180, 240, 300, 360],
   axisLabelOffset: { top: 0, right: 0, bottom: 24, left: 44 },
   axisLabelClassName: "fill-foreground text-3.5 font-medium font-sans",
-  axisLabels: {},
+  axisLabels: { top: "", right: "", bottom: "", left: "" },
 } as const;
 
 const TICK_LABEL_PROPS = {
@@ -30,8 +40,6 @@ const TICK_LABEL_PROPS = {
   fontSize: 12,
   fontFamily: "var(--font-sans)",
 } as const;
-
-const formatLabel = (month: string) => month.slice(0, 3);
 
 interface TooltipContentProps<T> {
   datum: T;
@@ -47,7 +55,7 @@ function TooltipContent<T>({
   axisLabel,
 }: TooltipContentProps<T>) {
   return (
-    <>
+    <div className="flex min-w-28 flex-col gap-y-1 rounded-1.5 border bg-background p-2 text-3">
       <p className="font-medium text-foreground">{getLabel(datum)}</p>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-x-1.5">
@@ -56,7 +64,7 @@ function TooltipContent<T>({
         </div>
         <p className="font-medium text-foreground">{getValue(datum)}</p>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -64,18 +72,20 @@ interface BarChartProps<T> {
   data: T[];
   getValue: (d: T) => number;
   getLabel: (d: T) => string;
+  formatLabel: (label: string) => string;
   config?: Partial<ChartConfig>;
-  className?: string;
   aspectRatio?: number;
+  className?: string;
 }
 
 function BarChart<T>({
   data,
   getValue,
   getLabel,
+  formatLabel,
   config,
-  className,
   aspectRatio = 4 / 3,
+  className,
 }: BarChartProps<T>) {
   const fullConfig = { ...DEFAULT_CONFIG, ...config };
   const {
@@ -103,6 +113,26 @@ function BarChart<T>({
     return () => observer.disconnect();
   }, []);
 
+  const {
+    tooltipOpen,
+    tooltipLeft,
+    tooltipTop,
+    tooltipData,
+    hideTooltip,
+    showTooltip,
+  } = useTooltip<T>();
+
+  const tooltipTimeoutRef = useRef<number>(0);
+
+  const { containerRef: tooltipContainerRef, TooltipInPortal } =
+    useTooltipInPortal({ scroll: true });
+
+  useEffect(() => {
+    return () => {
+      if (tooltipTimeoutRef.current) clearTimeout(tooltipTimeoutRef.current);
+    };
+  });
+
   const height = containerWidth / aspectRatio;
   const xMax = containerWidth - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
@@ -128,28 +158,6 @@ function BarChart<T>({
       }),
     [yMax, tickValues],
   );
-
-  const {
-    tooltipOpen,
-    tooltipLeft,
-    tooltipTop,
-    tooltipData,
-    hideTooltip,
-    showTooltip,
-  } = useTooltip<T>();
-
-  const tooltipTimeoutRef = useRef<number>(0);
-
-  const { containerRef: tooltipContainerRef, TooltipInPortal } =
-    useTooltipInPortal({
-      scroll: true,
-    });
-
-  useEffect(() => {
-    return () => {
-      if (tooltipTimeoutRef.current) clearTimeout(tooltipTimeoutRef.current);
-    };
-  });
 
   return (
     <div ref={containerRef} className={className}>
@@ -233,7 +241,7 @@ function BarChart<T>({
           top={tooltipTop}
           left={tooltipLeft}
           style={{}}
-          className="pointer-events-none absolute flex min-w-28 flex-col gap-y-1 rounded-1.5 border bg-background p-2 text-3"
+          className="pointer-events-none absolute"
         >
           <TooltipContent<T>
             datum={tooltipData}
@@ -247,4 +255,4 @@ function BarChart<T>({
   );
 }
 
-export { BarChart };
+export { type ChartConfig, BarChart };

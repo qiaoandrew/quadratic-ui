@@ -22,17 +22,19 @@ const CHART_CONFIG: Partial<ChartConfig> = {
 };
 
 const getLabel = (d: Datum) => d.month.slice(0, 3);
+const formatLabel = (month: string) => month.slice(0, 3);
 const getValue = (d: Datum) => d.views;
 
 export default function BarChartDemo() {
   return (
     <BarChart<Datum>
-      getLabel={getLabel}
       getValue={getValue}
+      getLabel={getLabel}
+      formatLabel={formatLabel}
       data={CHART_DATA}
       config={CHART_CONFIG}
-      className="w-full max-w-112"
-      aspectRatio={5 / 4}
+      className="aspect-[4/3] w-full max-w-112"
+      aspectRatio={4 / 3}
     />
   );
 }
