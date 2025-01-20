@@ -20,14 +20,12 @@ export default function DocsTOC({ tocs }: DocsTOCProps) {
 
   const activeId = useActiveId({ ids: (toc ?? []).map((item) => item.id) });
 
-  if (!toc) return null;
-
   return (
     <div className="hidden w-48 shrink-0 pr-4 xl:block">
       <div className="fixed bottom-0 top-19 w-full">
         <ScrollArea className="h-full">
           <nav className="flex flex-col items-start gap-y-2.5 py-9">
-            {toc.map((item) => (
+            {toc?.map((item) => (
               <Link
                 href={`#${item.id}`}
                 className={cn(

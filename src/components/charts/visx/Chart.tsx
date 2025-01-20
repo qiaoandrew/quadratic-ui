@@ -240,7 +240,7 @@ function BarChart<T>({
         <TooltipInPortal
           top={tooltipTop}
           left={tooltipLeft}
-          style={{}}
+          unstyled
           className="pointer-events-none absolute"
         >
           <TooltipContent<T>
