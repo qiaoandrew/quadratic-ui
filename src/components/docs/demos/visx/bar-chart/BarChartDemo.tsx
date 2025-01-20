@@ -1,6 +1,10 @@
 "use client";
 
-import { BarChart, type ChartConfig } from "~/components/charts/visx/Chart";
+import {
+  ChartContainer,
+  type ChartConfig,
+} from "~/components/charts/visx/Chart";
+import { BarChart } from "~/components/charts/visx/BarChart";
 
 type Datum = {
   month: string;
@@ -21,20 +25,21 @@ const CHART_CONFIG: Partial<ChartConfig> = {
   axisLabels: { bottom: "Month", left: "Views" },
 };
 
-const getLabel = (d: Datum) => d.month.slice(0, 3);
+const getLabel = (d: Datum) => d.month;
 const formatLabel = (month: string) => month.slice(0, 3);
 const getValue = (d: Datum) => d.views;
 
 export default function BarChartDemo() {
   return (
-    <BarChart<Datum>
-      getValue={getValue}
-      getLabel={getLabel}
-      formatLabel={formatLabel}
-      data={CHART_DATA}
-      config={CHART_CONFIG}
-      className="aspect-[4/3] w-full max-w-112"
-      aspectRatio={4 / 3}
-    />
+    <ChartContainer configOverrides={CHART_CONFIG}>
+      <BarChart<Datum>
+        getValue={getValue}
+        getLabel={getLabel}
+        formatLabel={formatLabel}
+        data={CHART_DATA}
+        className="aspect-[4/3] w-full max-w-112"
+        aspectRatio={4 / 3}
+      />
+    </ChartContainer>
   );
 }
