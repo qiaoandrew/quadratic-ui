@@ -1,8 +1,8 @@
 "use client";
 
+import { createContext, useContext, useMemo } from "react";
 import type { AxisScale, TickLabelProps } from "@visx/axis";
 import type { ScaleInput } from "@visx/scale";
-import { createContext, useContext } from "react";
 
 interface ChartContextProps {
   config: ChartConfig;
@@ -26,7 +26,10 @@ interface ChartContainerProps {
 }
 
 function ChartContainer({ configOverrides, children }: ChartContainerProps) {
-  const config = { ...DEFAULT_CONFIG, ...configOverrides };
+  const config: ChartConfig = useMemo(
+    () => ({ ...DEFAULT_CONFIG, ...configOverrides }),
+    [configOverrides],
+  );
 
   return (
     <ChartContext.Provider value={{ config }}>{children}</ChartContext.Provider>

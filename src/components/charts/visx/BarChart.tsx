@@ -6,6 +6,7 @@ import { Group } from "@visx/group";
 import { scaleBand, scaleLinear } from "@visx/scale";
 import { Bar } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
+import debounce from "lodash.debounce";
 
 import { useChartConfig } from "~/components/charts/visx/Chart";
 import { TooltipContent } from "~/components/charts/visx/Tooltip";
@@ -43,15 +44,20 @@ function BarChart<T>({
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const observer = new ResizeObserver((entries) => {
+    const handleResize = debounce((entries: ResizeObserverEntry[]) => {
       const entry = entries[0];
       if (entry) {
         setContainerWidth(entry.contentRect.width);
       }
-    });
+    }, 100);
 
+    const observer = new ResizeObserver(handleResize);
     observer.observe(containerRef.current);
-    return () => observer.disconnect();
+
+    return () => {
+      observer.disconnect();
+      handleResize.cancel();
+    };
   }, []);
 
   const {
@@ -74,9 +80,15 @@ function BarChart<T>({
     };
   });
 
-  const height = containerWidth / aspectRatio;
-  const xMax = containerWidth - margin.left - margin.right;
-  const yMax = height - margin.top - margin.bottom;
+  const dimensions = useMemo(() => {
+    const height = containerWidth / aspectRatio;
+    const xMax = containerWidth - margin.left - margin.right;
+    const yMax = height - margin.top - margin.bottom;
+
+    return { height, xMax, yMax };
+  }, [containerWidth, aspectRatio, margin]);
+
+  const { height, xMax, yMax } = dimensions;
 
   const xScale = useMemo(
     () =>
