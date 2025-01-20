@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
@@ -6,7 +6,6 @@ import { Group } from "@visx/group";
 import { scaleBand, scaleLinear } from "@visx/scale";
 import { Bar } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
-import debounce from "lodash.debounce";
 
 import { useChartConfig } from "~/components/charts/visx/Chart";
 import { TooltipContent } from "~/components/charts/visx/Tooltip";
@@ -17,7 +16,6 @@ interface BarChartProps<T> {
   getLabel: (d: T) => string;
   formatLabel?: (label: string) => string;
   aspectRatio?: number;
-  className?: string;
 }
 
 function BarChart<T>({
@@ -26,9 +24,8 @@ function BarChart<T>({
   getLabel,
   formatLabel,
   aspectRatio = 4 / 3,
-  className,
 }: BarChartProps<T>) {
-  const { config } = useChartConfig();
+  const { config, containerWidth } = useChartConfig();
   const {
     margin,
     tickValues,
@@ -37,28 +34,6 @@ function BarChart<T>({
     axisLabels,
     tickLabelProps,
   } = config;
-
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [containerWidth, setContainerWidth] = useState(0);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const handleResize = debounce((entries: ResizeObserverEntry[]) => {
-      const entry = entries[0];
-      if (entry) {
-        setContainerWidth(entry.contentRect.width);
-      }
-    }, 100);
-
-    const observer = new ResizeObserver(handleResize);
-    observer.observe(containerRef.current);
-
-    return () => {
-      observer.disconnect();
-      handleResize.cancel();
-    };
-  }, []);
 
   const {
     tooltipOpen,
@@ -113,7 +88,7 @@ function BarChart<T>({
   );
 
   return (
-    <div ref={containerRef} className={className}>
+    <>
       <svg
         ref={tooltipContainerRef}
         style={{ width: "100%", height: "auto" }}
@@ -204,7 +179,7 @@ function BarChart<T>({
           />
         </TooltipInPortal>
       )}
-    </div>
+    </>
   );
 }
 

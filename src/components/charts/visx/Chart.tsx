@@ -1,11 +1,20 @@
 "use client";
 
-import { createContext, useContext, useMemo } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import type { AxisScale, TickLabelProps } from "@visx/axis";
 import type { ScaleInput } from "@visx/scale";
+import debounce from "lodash.debounce";
 
 interface ChartContextProps {
   config: ChartConfig;
+  containerWidth: number;
 }
 
 const ChartContext = createContext<ChartContextProps | null>(null);
@@ -22,17 +31,48 @@ function useChartConfig() {
 
 interface ChartContainerProps {
   configOverrides: Partial<ChartConfig>;
+  className?: string;
   children: React.ReactNode;
 }
 
-function ChartContainer({ configOverrides, children }: ChartContainerProps) {
+function ChartContainer({
+  configOverrides,
+  className,
+  children,
+}: ChartContainerProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+
   const config: ChartConfig = useMemo(
     () => ({ ...DEFAULT_CONFIG, ...configOverrides }),
     [configOverrides],
   );
 
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const handleResize = debounce((entries: ResizeObserverEntry[]) => {
+      const entry = entries[0];
+      if (entry) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    }, 100);
+
+    const observer = new ResizeObserver(handleResize);
+    observer.observe(containerRef.current);
+
+    return () => {
+      observer.disconnect();
+      handleResize.cancel();
+    };
+  }, []);
+
   return (
-    <ChartContext.Provider value={{ config }}>{children}</ChartContext.Provider>
+    <ChartContext.Provider value={{ config, containerWidth }}>
+      <div ref={containerRef} className={className}>
+        {children}
+      </div>
+    </ChartContext.Provider>
   );
 }
 

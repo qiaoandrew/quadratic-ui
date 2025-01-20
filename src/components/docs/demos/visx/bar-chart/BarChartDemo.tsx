@@ -31,13 +31,15 @@ const getValue = (d: Datum) => d.views;
 
 export default function BarChartDemo() {
   return (
-    <ChartContainer configOverrides={CHART_CONFIG}>
+    <ChartContainer
+      configOverrides={CHART_CONFIG}
+      className="aspect-[4/3] w-full max-w-112"
+    >
       <BarChart<Datum>
         getValue={getValue}
         getLabel={getLabel}
         formatLabel={formatLabel}
         data={CHART_DATA}
-        className="aspect-[4/3] w-full max-w-112"
         aspectRatio={4 / 3}
       />
     </ChartContainer>
