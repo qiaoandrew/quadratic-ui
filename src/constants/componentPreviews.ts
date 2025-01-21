@@ -191,6 +191,8 @@ import TremorProgressBarDemo from "~/components/docs/demos/tremor/progress-bar/P
 import TremorProgressCircleDemo from "~/components/docs/demos/tremor/progress-circle/ProgressCircleDemo";
 import TremorTrackerDemo from "~/components/docs/demos/tremor/tracker/TrackerDemo";
 import VisxBarChartDemo from "~/components/docs/demos/visx/bar-chart/BarChartDemo";
+import VisxBarChartGroupDemo from "~/components/docs/demos/visx/bar-chart/BarChartGroupDemo";
+import VisxBarChartStackedDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackedDemo";
 import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -941,6 +943,14 @@ export const COMPONENT_PREVIEWS = {
   visxBarChart: {
     Preview: VisxBarChartDemo,
     path: "src/components/docs/demos/visx/bar-chart/BarChartDemo.tsx",
+  },
+  visxBarChartGroup: {
+    Preview: VisxBarChartGroupDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartGroupDemo.tsx",
+  },
+  visxBarChartStacked: {
+    Preview: VisxBarChartStackedDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartStackedDemo.tsx",
   },
   visxVoronoiChart: {
     Preview: VisxVoronoiChartDemo,
