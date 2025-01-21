@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
@@ -12,6 +12,7 @@ import { TooltipContent } from "~/components/charts/visx/Tooltip";
 
 interface BarChartProps<T> {
   data: T[];
+  getKey: (d: T) => string;
   getValue: (d: T) => number;
   getLabel: (d: T) => string;
   formatLabel?: (label: string) => string;
@@ -20,6 +21,7 @@ interface BarChartProps<T> {
 
 function BarChart<T>({
   data,
+  getKey,
   getValue,
   getLabel,
   formatLabel,
@@ -87,6 +89,27 @@ function BarChart<T>({
     [yMax, tickValues],
   );
 
+  const handleMouseMove = useCallback(
+    (barX: number, barWidth: number, d: T) =>
+      (e: React.MouseEvent<SVGRectElement>) => {
+        if (tooltipTimeoutRef.current) clearTimeout(tooltipTimeoutRef.current);
+
+        const eventSVGCoords = localPoint(e);
+        const left = barX + barWidth / 2;
+
+        showTooltip({
+          tooltipData: d,
+          tooltipTop: eventSVGCoords?.y,
+          tooltipLeft: left,
+        });
+      },
+    [showTooltip],
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    tooltipTimeoutRef.current = window.setTimeout(() => hideTooltip(), 150);
+  }, [hideTooltip]);
+
   return (
     <>
       <svg
@@ -104,44 +127,19 @@ function BarChart<T>({
             height={yMax}
             stroke="hsl(var(--border))"
           />
-          {data.map((d) => {
-            const label = getLabel(d);
-            const barWidth = xScale.bandwidth();
-            const barHeight = Math.max(yMax - yScale(getValue(d)), 0);
-            const barX = xScale(label) ?? 0;
-            const barY = yMax - barHeight;
-
-            return (
-              <Bar
-                x={barX}
-                y={barY}
-                width={barWidth}
-                height={barHeight}
-                fill="hsl(var(--chart-1))"
-                rx={6}
-                onMouseMove={(e) => {
-                  if (tooltipTimeoutRef.current)
-                    clearTimeout(tooltipTimeoutRef.current);
-
-                  const eventSVGCoords = localPoint(e);
-                  const left = barX + barWidth / 2;
-
-                  showTooltip({
-                    tooltipData: d,
-                    tooltipTop: eventSVGCoords?.y,
-                    tooltipLeft: left,
-                  });
-                }}
-                onMouseLeave={() => {
-                  tooltipTimeoutRef.current = window.setTimeout(
-                    () => hideTooltip(),
-                    150,
-                  );
-                }}
-                key={`bar-${label}`}
-              />
-            );
-          })}
+          {data.map((d) => (
+            <BarChartBar
+              datum={d}
+              getValue={getValue}
+              getLabel={getLabel}
+              xScale={xScale}
+              yScale={yScale}
+              yMax={yMax}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              key={getKey(d)}
+            />
+          ))}
           <AxisLeft
             scale={yScale}
             numTicks={tickValues.length}
@@ -180,6 +178,52 @@ function BarChart<T>({
         </TooltipInPortal>
       )}
     </>
+  );
+}
+
+interface BarChartBarProps<T> {
+  datum: T;
+  xScale: ReturnType<typeof scaleBand<string>>;
+  yScale: ReturnType<typeof scaleLinear<number>>;
+  yMax: number;
+  getLabel: (d: T) => string;
+  getValue: (d: T) => number;
+  onMouseMove: (
+    barX: number,
+    barWidth: number,
+    d: T,
+  ) => (e: React.MouseEvent<SVGRectElement>) => void;
+  onMouseLeave: () => void;
+}
+
+function BarChartBar<T>({
+  datum,
+  xScale,
+  yScale,
+  yMax,
+  getLabel,
+  getValue,
+  onMouseMove,
+  onMouseLeave,
+}: BarChartBarProps<T>) {
+  const label = getLabel(datum);
+  const barWidth = xScale.bandwidth();
+  const barHeight = Math.max(yMax - yScale(getValue(datum)), 0);
+  const barX = xScale(label) ?? 0;
+  const barY = yMax - barHeight;
+
+  return (
+    <Bar
+      x={barX}
+      y={barY}
+      width={barWidth}
+      height={barHeight}
+      fill="hsl(var(--chart-1))"
+      rx={6}
+      onMouseMove={onMouseMove(barX, barWidth, datum)}
+      onMouseLeave={onMouseLeave}
+      key={`bar-${label}`}
+    />
   );
 }
 
