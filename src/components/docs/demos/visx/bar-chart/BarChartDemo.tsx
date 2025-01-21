@@ -25,10 +25,6 @@ const CHART_CONFIG: Partial<ChartConfig> = {
   axisLabels: { bottom: "Month", left: "Views" },
 };
 
-const getLabel = (d: Datum) => d.month;
-const formatLabel = (month: string) => month.slice(0, 3);
-const getValue = (d: Datum) => d.views;
-
 export default function BarChartDemo() {
   return (
     <ChartContainer
@@ -36,9 +32,9 @@ export default function BarChartDemo() {
       className="aspect-[4/3] w-full max-w-112"
     >
       <BarChart<Datum>
-        getValue={getValue}
-        getLabel={getLabel}
-        formatLabel={formatLabel}
+        getValue={(d: Datum) => d.views}
+        getLabel={(d: Datum) => d.month}
+        formatLabel={(month: string) => month.slice(0, 3)}
         data={CHART_DATA}
         aspectRatio={4 / 3}
       />
