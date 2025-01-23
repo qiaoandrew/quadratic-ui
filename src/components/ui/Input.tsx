@@ -6,7 +6,7 @@ const inputVariants = tv({
   base: [
     "flex w-full border border-input bg-background ring-offset-background",
     "placeholder:text-muted-foreground",
-    "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
+    "focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
     "disabled:cursor-not-allowed disabled:opacity-50",
   ],
   variants: {

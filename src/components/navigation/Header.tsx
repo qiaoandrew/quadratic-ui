@@ -76,18 +76,18 @@ export default function Header({ docsMenuItems }: HeaderProps) {
 
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur xl:h-6" />
+      <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur-sm xl:h-6" />
       {(isMobileMenuOpen || isDesktopMenuOpen) && (
         <div
           className={dialogOverlayVariants({
-            className: "z-40 bg-white/80 backdrop-blur-sm dark:bg-black/80",
+            className: "z-40 bg-white/80 backdrop-blur-xs dark:bg-black/80",
           })}
         />
       )}
       <header
         onMouseLeave={closeDesktopMenu}
         className={cn(
-          "fixed inset-x-3 top-3 z-40 flex flex-col gap-y-2 overflow-hidden rounded-2.5 border border-border/50 bg-background/60 backdrop-blur transition-[height]",
+          "fixed inset-x-3 top-3 z-40 flex flex-col gap-y-2 overflow-hidden rounded-2.5 border border-border/50 bg-background/60 backdrop-blur-sm transition-[height]",
           "xl:top-6 xl:rounded-3.5",
           "3xl:inset-x-[calc((100vw-1280px)/2)]",
           isMobileMenuOpen ? "h-[calc(100dvh-1.5rem)]" : "h-11",

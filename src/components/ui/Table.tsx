@@ -25,7 +25,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
   return (
     <tfoot
       className={cn(
-        "border-t bg-accent/50 font-medium [&>tr]:last:border-b-0",
+        "border-t bg-accent/50 font-medium last:[&>tr]:border-b-0",
         className,
       )}
       {...props}

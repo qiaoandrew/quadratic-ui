@@ -78,7 +78,7 @@ function BarList<T>({
               className={cn(
                 "flex h-8 items-center rounded-1 bg-blue-200 transition-colors dark:bg-blue-900",
                 onValueChange &&
-                  "group-hover:bg-blue-300 group-hover:dark:bg-blue-800",
+                  "group-hover:bg-blue-300 dark:group-hover:bg-blue-800",
               )}
               style={{ width: `${widths[idx]}%` }}
             >

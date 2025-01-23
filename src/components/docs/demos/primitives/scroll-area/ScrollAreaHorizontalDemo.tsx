@@ -34,7 +34,7 @@ export default function ScrollAreaHorizontalDemo() {
             <Image
               src={artwork.art}
               alt={`Photo by ${artwork.artist}`}
-              className="aspect-[3/4] w-[200px] rounded-1.5 object-cover"
+              className="aspect-3/4 w-[200px] rounded-1.5 object-cover"
               width={300}
               height={400}
             />

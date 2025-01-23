@@ -77,7 +77,7 @@ export default function TooltipAdvancedDemo() {
                   <div className="flex items-center">
                     <div className="flex items-center gap-x-2">
                       <div
-                        className="size-2.5 shrink-0 rounded-0.5 bg-[--color-bg]"
+                        className="size-2.5 shrink-0 rounded-0.5 bg-(--color-bg)"
                         style={
                           {
                             "--color-bg": `var(--color-${name})`,

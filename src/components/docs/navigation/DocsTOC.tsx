@@ -29,7 +29,7 @@ export default function DocsTOC({ tocs }: DocsTOCProps) {
               <Link
                 href={`#${item.id}`}
                 className={cn(
-                  "text-3.5 focus-visible:outline-none",
+                  "text-3.5 focus-visible:outline-hidden",
                   item.id === activeId
                     ? "font-medium text-foreground"
                     : "text-muted-foreground hover:text-foreground focus-visible:text-foreground",

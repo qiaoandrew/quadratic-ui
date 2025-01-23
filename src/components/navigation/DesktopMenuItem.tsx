@@ -23,7 +23,7 @@ export default function DesktopMenuItem({
       )}
     >
       {item.Graphic && <item.Graphic />}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent to-background" />
       <h3 className="relative text-3.5 font-medium text-foreground 3xl:text-4">
         {item.label}
       </h3>

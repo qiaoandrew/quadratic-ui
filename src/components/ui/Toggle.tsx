@@ -7,7 +7,7 @@ const toggleVariants = tv({
   base: [
     "relative inline-flex items-center justify-center gap-x-2 rounded-1.5 bg-transparent text-3.5 font-medium ring-offset-background transition-colors",
     "hover:bg-muted hover:text-muted-foreground",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+    "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
     "disabled:pointer-events-none disabled:opacity-50",
     "data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",

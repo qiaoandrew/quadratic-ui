@@ -2,7 +2,7 @@ import { cn, tv } from "~/utils/tailwind";
 
 const menuSubTriggerVariants = tv({
   base: [
-    "flex cursor-default select-none items-center rounded-1 py-1.5 pr-2 text-3.5 outline-none",
+    "flex cursor-default select-none items-center rounded-1 py-1.5 pr-2 text-3.5 outline-hidden",
     "focus:bg-accent focus:text-accent-foreground",
     "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
     "[&>svg]:pointer-events-none [&>svg]:ml-auto [&>svg]:size-4.5 [&>svg]:shrink-0",
@@ -41,9 +41,9 @@ const menuContentVariants = tv({
 
 const menuItemVariants = tv({
   base: [
-    "relative flex cursor-pointer select-none items-center rounded-1 py-1.5 pr-2 text-3.5 outline-none transition-colors",
+    "relative flex cursor-pointer select-none items-center rounded-1 py-1.5 pr-2 text-3.5 outline-hidden transition-colors",
     "focus:bg-accent focus:text-accent-foreground",
-    "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    "data-disabled:pointer-events-none data-disabled:opacity-50",
     "[&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:left-2 [&>svg]:top-1/2 [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:-translate-y-1/2",
   ],
   variants: {

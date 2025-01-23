@@ -40,7 +40,7 @@ function Calendar({
           buttonVariants({ variant: "ghost", subject: "icon", size: "xs" }),
           "p-0 text-3.5 font-normal",
           props.mode === "range" &&
-            "[&.day-range-end[aria-selected='true']]:rounded-r-1.5 [&.day-range-start[aria-selected='true']]:rounded-l-1.5 [&[aria-selected]]:rounded-0",
+            "[&.day-range-end[aria-selected='true']]:rounded-r-1.5 [&.day-range-start[aria-selected='true']]:rounded-l-1.5 aria-[selected]:rounded-0",
         ),
         day_button: "size-full",
         range_start: "day-range-start",

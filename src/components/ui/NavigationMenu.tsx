@@ -52,9 +52,9 @@ const navigationMenuTriggerStyle = tv({
   base: [
     "group inline-flex h-9 w-max items-center justify-center gap-x-1.5 rounded-2 px-2 text-3.5 font-medium transition-colors",
     "hover:bg-accent hover:text-accent-foreground",
-    "focus:bg-accent focus:text-accent-foreground focus:outline-none",
+    "focus:bg-accent focus:text-accent-foreground focus:outline-hidden",
     "disabled:pointer-events-none disabled:opacity-50",
-    "data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
+    "data-active:bg-accent/50 data-[state=open]:bg-accent/50",
   ],
 });
 
@@ -126,7 +126,7 @@ function NavigationMenuIndicator({
   return (
     <NavigationMenuPrimitive.Indicator
       className={cn(
-        "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden",
+        "top-full z-1 flex h-1.5 items-end justify-center overflow-hidden",
         "data-[state=visible]:animate-in data-[state=visible]:fade-in",
         "data-[state=hidden]:animate-out data-[state=hidden]:fade-out",
         className,
@@ -169,7 +169,7 @@ function NavigationMenuDropdownList({
 }
 
 const navigationMenuDropdownItemVariants = tv({
-  base: "flex select-none flex-col rounded-2 no-underline outline-none",
+  base: "flex select-none flex-col rounded-2 no-underline outline-hidden",
   variants: {
     variant: {
       default: cn(
@@ -177,7 +177,7 @@ const navigationMenuDropdownItemVariants = tv({
         "hover:bg-accent hover:text-accent-foreground",
         "focus:bg-accent focus:text-accent-foreground",
       ),
-      card: "row-span-3 size-full flex-col justify-end bg-gradient-to-b from-muted/50 to-muted p-6",
+      card: "row-span-3 size-full flex-col justify-end bg-linear-to-b from-muted/50 to-muted p-6",
     },
   },
   defaultVariants: {
@@ -215,7 +215,7 @@ function NavigationMenuDropdownItem({
   const listItemContent =
     variant === "card" ? (
       <>
-        <div className="relative mb-4 flex-grow">
+        <div className="relative mb-4 grow">
           <Image
             src={cardImgSrc}
             alt={cardImgAlt}

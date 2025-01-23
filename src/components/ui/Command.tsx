@@ -54,9 +54,9 @@ function CommandInput({
       className={cn(
         "relative flex items-center border-b pl-9 pr-3",
         "[&>svg]:absolute [&>svg]:left-3 [&>svg]:top-1/2 [&>svg]:size-4 [&>svg]:-translate-y-1/2 [&>svg]:text-muted-foreground",
-        "[&>[cmdk-input]]:h-11 [&>[cmdk-input]]:w-full [&>[cmdk-input]]:items-center [&>[cmdk-input]]:bg-transparent [&>[cmdk-input]]:text-3.5 [&>[cmdk-input]]:outline-none",
+        "[&>[cmdk-input]]:h-11 [&>[cmdk-input]]:w-full [&>[cmdk-input]]:items-center [&>[cmdk-input]]:bg-transparent [&>[cmdk-input]]:text-3.5 [&>[cmdk-input]]:outline-hidden",
         "[&>[cmdk-input]]:placeholder:text-muted-foreground",
-        "[&>[cmdk-input]]:disabled:cursor-not-allowed [&>[cmdk-input]]:disabled:opacity-50",
+        "disabled:[&>[cmdk-input]]:cursor-not-allowed disabled:[&>[cmdk-input]]:opacity-50",
         className,
       )}
     >
@@ -130,7 +130,7 @@ function CommandItem({
   return (
     <CommandPrimitive.Item
       className={cn(
-        "relative flex h-10 cursor-pointer select-none items-center rounded-1.5 pl-8.5 pr-3 text-3.5 outline-none",
+        "relative flex h-10 cursor-pointer select-none items-center rounded-1.5 pl-8.5 pr-3 text-3.5 outline-hidden",
         "data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground",
         "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
         "[&>svg]:left-2 [&>svg]:top-1/2 [&>svg]:-translate-y-1/2 [&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:size-4.5",
