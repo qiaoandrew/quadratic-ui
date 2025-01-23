@@ -5,9 +5,9 @@ import { tv, cn } from "~/utils/tailwind";
 
 const toggleVariants = tv({
   base: [
-    "relative inline-flex items-center justify-center gap-x-2 rounded-1.5 bg-transparent text-3.5 font-medium ring-offset-background transition-colors",
+    "rounded-1.5 text-3-5 ring-offset-background relative inline-flex items-center justify-center gap-x-2 bg-transparent font-medium transition-colors",
     "hover:bg-muted hover:text-muted-foreground",
-    "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+    "focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden",
     "disabled:pointer-events-none disabled:opacity-50",
     "data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",
@@ -15,7 +15,7 @@ const toggleVariants = tv({
   variants: {
     variant: {
       default: "",
-      outline: "border border-input",
+      outline: "border-input border",
     },
     size: {
       sm: "h-8 min-w-8 px-2 [&_svg]:size-3.5",

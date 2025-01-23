@@ -15,7 +15,7 @@ export default function DocsMenuSection({
 }: DocsMenuSectionProps) {
   return (
     <div className="flex flex-col gap-y-1.5">
-      <p className="mx-3 truncate text-3.5 font-semibold">{label}</p>
+      <p className="text-3-5 mx-3 truncate font-semibold">{label}</p>
       <div className="flex flex-col gap-y-0.5">
         {items.map((item) => (
           <DocsMenuSectionItem

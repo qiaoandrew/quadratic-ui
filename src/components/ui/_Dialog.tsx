@@ -10,10 +10,10 @@ const dialogOverlayVariants = tv({
 
 const dialogContentVariants = tv({
   base: [
-    "fixed left-1/2 top-1/2 z-50 grid w-[calc(100%-2.5rem)] max-w-128 -translate-x-1/2 -translate-y-1/2 rounded-4 border bg-background p-6",
+    "rounded-4 bg-background fixed top-1/2 left-1/2 z-50 grid w-[calc(100%-2.5rem)] max-w-128 -translate-x-1/2 -translate-y-1/2 border p-6",
     "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]",
     "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]",
-    "[&>button]:absolute [&>button]:right-2.5 [&>button]:top-2.5",
+    "[&>button]:absolute [&>button]:top-2.5 [&>button]:right-2.5",
   ],
 });
 
@@ -33,7 +33,7 @@ const dialogTitleVariants = tv({
 });
 
 const dialogDescriptionVariants = tv({
-  base: "text-3.5 leading-6 text-muted-foreground",
+  base: "text-3-5 text-muted-foreground leading-6",
 });
 
 export {

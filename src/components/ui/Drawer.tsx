@@ -44,12 +44,12 @@ function DrawerContent({
       <DrawerOverlay />
       <DrawerPrimitive.Content
         className={cn(
-          "fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col rounded-t-2.5 border bg-background p-4",
+          "rounded-t-2.5 bg-background fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col border p-4",
           className,
         )}
         {...props}
       >
-        <div className="mx-auto mb-3 h-2 w-24 rounded-full bg-muted active:cursor-grabbing" />
+        <div className="bg-muted mx-auto mb-3 h-2 w-24 rounded-full active:cursor-grabbing" />
         {children}
       </DrawerPrimitive.Content>
     </DrawerPortal>
@@ -93,7 +93,7 @@ function DrawerDescription({
 }: React.ComponentProps<typeof DrawerPrimitive.Description>) {
   return (
     <DrawerPrimitive.Description
-      className={cn("text-3.5 text-muted-foreground", className)}
+      className={cn("text-3-5 text-muted-foreground", className)}
       {...props}
     />
   );

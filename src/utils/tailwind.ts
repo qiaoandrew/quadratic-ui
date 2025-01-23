@@ -3,9 +3,10 @@ import { extendTailwindMerge } from "tailwind-merge";
 import { createTV } from "tailwind-variants";
 
 import config from "../../tailwind.config";
+import { FONT_SIZES } from "~/constants/tailwind";
 
 const classGroups = {
-  "font-size": Object.keys(config.theme.fontSize).map((key) => `text-${key}`),
+  "font-size": FONT_SIZES.map((key) => `text-${key}`),
   "text-color": Object.keys(config.theme.extend.colors).map(
     (key) => `text-${key}`,
   ),

@@ -152,7 +152,7 @@ export default function LineChartInteractiveDemo() {
               <span className="text-3 text-muted-foreground">
                 {CHART_CONFIG[chart].label}
               </span>
-              <span className="leading-none text-4.5 font-bold sm:text-6">
+              <span className="text-4-5 sm:text-6 leading-none font-bold">
                 {total[key as keyof typeof total].toLocaleString()}
               </span>
             </button>

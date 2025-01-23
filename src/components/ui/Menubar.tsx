@@ -31,7 +31,7 @@ function Menubar({
   return (
     <MenubarPrimitive.Root
       className={cn(
-        "relative flex items-center gap-x-1 rounded-2 border bg-background p-1",
+        "rounded-2 bg-background relative flex items-center gap-x-1 border p-1",
         className,
       )}
       {...props}
@@ -46,7 +46,7 @@ function MenubarTrigger({
   return (
     <MenubarPrimitive.Trigger
       className={cn(
-        "flex cursor-default select-none items-center rounded-1 px-3 py-1 text-3.5 font-medium outline-hidden",
+        "rounded-1 text-3-5 flex cursor-default items-center px-3 py-1 font-medium outline-hidden select-none",
         "focus:bg-accent focus:text-accent-foreground",
         "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
         className,

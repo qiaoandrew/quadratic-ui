@@ -148,7 +148,7 @@ function CategoryBar({
                     <div
                       aria-hidden="true"
                       className={cn(
-                        "relative mx-auto h-4 w-1 rounded-full ring-2 ring-background",
+                        "ring-background relative mx-auto h-4 w-1 rounded-full ring-2",
                         markerBackgroundColor,
                       )}
                     >
@@ -166,7 +166,7 @@ function CategoryBar({
             ) : (
               <div
                 className={cn(
-                  "mx-auto h-4 w-1 rounded-full ring-2 ring-background",
+                  "ring-background mx-auto h-4 w-1 rounded-full ring-2",
                   markerBackgroundColor,
                 )}
               />
@@ -188,7 +188,7 @@ function CategoryBarLabels({ values }: CategoryBarLabelsProps) {
   let sumConsecutiveHiddenLabels = 0;
 
   return (
-    <div className="relative mb-2 flex h-5 w-full text-3.5 font-medium">
+    <div className="text-3-5 relative mb-2 flex h-5 w-full font-medium">
       <div className="absolute bottom-0 left-0 flex items-center">0</div>
       {values.map((widthPercentage, idx) => {
         prefixSum += widthPercentage;
@@ -213,14 +213,14 @@ function CategoryBarLabels({ values }: CategoryBarLabelsProps) {
             key={`item-${idx}`}
           >
             {showLabel && (
-              <span className="leading-none block translate-x-1/2 tabular-nums">
+              <span className="block translate-x-1/2 leading-none tabular-nums">
                 {formatNumber(prefixSum)}
               </span>
             )}
           </div>
         );
       })}
-      <div className="absolute bottom-0 right-0 flex items-center">
+      <div className="absolute right-0 bottom-0 flex items-center">
         {formatNumber(sumValues)}
       </div>
     </div>

@@ -11,7 +11,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
   return (
     <ol
       className={cn(
-        "flex flex-wrap items-center gap-2.5 break-words text-3.5 text-muted-foreground",
+        "text-3-5 text-muted-foreground flex flex-wrap items-center gap-2.5 break-words",
         className,
       )}
       {...props}
@@ -39,7 +39,7 @@ function BreadcrumbLink({
 
   return (
     <Comp
-      className={cn("transition-colors hover:text-foreground", className)}
+      className={cn("hover:text-foreground transition-colors", className)}
       {...props}
     />
   );
@@ -83,7 +83,7 @@ function BreadcrumbEllipsis({
       role="presentation"
       aria-hidden="true"
       className={cn(
-        "flex size-6 items-center justify-center rounded-1 transition-colors",
+        "rounded-1 flex size-6 items-center justify-center transition-colors",
         "hover:bg-accent",
         "[&>svg]:size-4",
         className,

@@ -109,13 +109,13 @@ export default function BarChartInteractiveDemo() {
             <button
               key={chart}
               data-active={activeChart === chart}
-              className="relative z-30 flex flex-1 flex-col justify-center gap-y-0.5 px-5 py-3 text-left data-[active=true]:bg-muted/50 sm:gap-y-1 sm:px-8 sm:py-6"
+              className="data-[active=true]:bg-muted/50 relative z-30 flex flex-1 flex-col justify-center gap-y-0.5 px-5 py-3 text-left sm:gap-y-1 sm:px-8 sm:py-6"
               onClick={() => setActiveChart(chart)}
             >
               <span className="text-3 text-muted-foreground">
                 {CHART_CONFIG[chart].label}
               </span>
-              <span className="leading-none text-4.5 font-bold sm:text-6">
+              <span className="text-4-5 sm:text-6 leading-none font-bold">
                 {total[key as keyof typeof total].toLocaleString()}
               </span>
             </button>

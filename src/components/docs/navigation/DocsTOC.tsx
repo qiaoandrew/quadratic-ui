@@ -22,16 +22,16 @@ export default function DocsTOC({ tocs }: DocsTOCProps) {
 
   return (
     <div className="hidden w-48 shrink-0 pr-4 xl:block">
-      <div className="fixed bottom-0 top-19 w-full">
+      <div className="fixed top-19 bottom-0 w-full">
         <ScrollArea className="h-full">
           <nav className="flex flex-col items-start gap-y-2.5 py-9">
             {toc?.map((item) => (
               <Link
                 href={`#${item.id}`}
                 className={cn(
-                  "text-3.5 focus-visible:outline-hidden",
+                  "text-3-5 focus-visible:outline-hidden",
                   item.id === activeId
-                    ? "font-medium text-foreground"
+                    ? "text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground focus-visible:text-foreground",
                   item.type === "h3" && "ml-6",
                 )}

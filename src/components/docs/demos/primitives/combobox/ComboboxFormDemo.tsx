@@ -52,11 +52,11 @@ export default function ComboboxFormDemo() {
   function onSubmit(data: z.infer<typeof formSchema>) {
     toast(
       <div className="flex w-full flex-col gap-y-3">
-        <p className="text-3.5 font-medium">
+        <p className="text-3-5 font-medium">
           You submitted the following values:
         </p>
         <pre className="rounded-1.5 bg-border/30 px-3 py-2">
-          <code className="font-mono text-3.5">
+          <code className="text-3-5 font-mono">
             {JSON.stringify(data, null, 2)}
           </code>
         </pre>
@@ -111,7 +111,7 @@ export default function ComboboxFormDemo() {
                               field.onChange(framework.value);
                               setIsOpen(false);
                             }}
-                            className="h-8 rounded-1 pl-8 text-3.5 [&>svg]:size-3.5"
+                            className="rounded-1 text-3-5 h-8 pl-8 [&>svg]:size-3.5"
                           >
                             <CheckIcon
                               className={cn(

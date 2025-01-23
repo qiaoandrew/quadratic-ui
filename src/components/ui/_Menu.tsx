@@ -2,7 +2,7 @@ import { cn, tv } from "~/utils/tailwind";
 
 const menuSubTriggerVariants = tv({
   base: [
-    "flex cursor-default select-none items-center rounded-1 py-1.5 pr-2 text-3.5 outline-hidden",
+    "rounded-1 text-3-5 flex cursor-default items-center py-1.5 pr-2 outline-hidden select-none",
     "focus:bg-accent focus:text-accent-foreground",
     "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
     "[&>svg]:pointer-events-none [&>svg]:ml-auto [&>svg]:size-4.5 [&>svg]:shrink-0",
@@ -17,7 +17,7 @@ const menuSubTriggerVariants = tv({
 
 const menuSubContentVariants = tv({
   base: [
-    "z-50 min-w-32 overflow-hidden rounded-2 border bg-popover p-1 text-popover-foreground",
+    "rounded-2 bg-popover text-popover-foreground z-50 min-w-32 overflow-hidden border p-1",
     "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
     "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
     "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
@@ -26,7 +26,7 @@ const menuSubContentVariants = tv({
 
 const menuContentVariants = tv({
   base: [
-    "z-50 min-w-32 overflow-hidden rounded-2 border bg-popover p-1 text-popover-foreground",
+    "rounded-2 bg-popover text-popover-foreground z-50 min-w-32 overflow-hidden border p-1",
     "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
     "data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
     "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
@@ -41,10 +41,10 @@ const menuContentVariants = tv({
 
 const menuItemVariants = tv({
   base: [
-    "relative flex cursor-pointer select-none items-center rounded-1 py-1.5 pr-2 text-3.5 outline-hidden transition-colors",
+    "rounded-1 text-3-5 relative flex cursor-pointer items-center py-1.5 pr-2 outline-hidden transition-colors select-none",
     "focus:bg-accent focus:text-accent-foreground",
     "data-disabled:pointer-events-none data-disabled:opacity-50",
-    "[&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:left-2 [&>svg]:top-1/2 [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:-translate-y-1/2",
+    "[&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:left-2 [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:-translate-y-1/2",
   ],
   variants: {
     inset: {
@@ -55,7 +55,7 @@ const menuItemVariants = tv({
 });
 
 const menuLabelVariants = tv({
-  base: "py-1 pr-2 text-3.5 font-semibold",
+  base: "text-3-5 py-1 pr-2 font-semibold",
   variants: {
     inset: {
       true: "pl-8",
@@ -65,7 +65,7 @@ const menuLabelVariants = tv({
 });
 
 const menuSeparatorVariants = tv({
-  base: "-mx-1 my-1 h-0.25 w-full shrink-0 bg-border",
+  base: "bg-border -mx-1 my-1 h-0.25 w-full shrink-0",
 });
 
 function ShortcutGroup({
@@ -88,7 +88,7 @@ function Shortcut({
   return (
     <kbd
       className={cn(
-        "flex size-5 items-center justify-center overflow-hidden rounded-1 border bg-background font-mono text-3.5 text-muted-foreground",
+        "rounded-1 bg-background text-3-5 text-muted-foreground flex size-5 items-center justify-center overflow-hidden border font-mono",
         className,
       )}
       {...props}

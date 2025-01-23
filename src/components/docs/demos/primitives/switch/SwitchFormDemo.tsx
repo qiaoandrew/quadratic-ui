@@ -33,11 +33,11 @@ export default function SwitchFormDemo() {
   function onSubmit(data: z.infer<typeof formSchema>) {
     toast(
       <div className="flex w-full flex-col gap-y-3">
-        <p className="text-3.5 font-medium">
+        <p className="text-3-5 font-medium">
           You submitted the following values:
         </p>
         <pre className="rounded-1.5 bg-border/30 px-3 py-2">
-          <code className="font-mono text-3.5">
+          <code className="text-3-5 font-mono">
             {JSON.stringify(data, null, 2)}
           </code>
         </pre>
@@ -58,7 +58,7 @@ export default function SwitchFormDemo() {
               control={form.control}
               name="marketing_emails"
               render={({ field }) => (
-                <FormItem className="flex items-center justify-between rounded-2 border px-3 py-4">
+                <FormItem className="rounded-2 flex items-center justify-between border px-3 py-4">
                   <div className="flex flex-col gap-y-0.5">
                     <FormLabel>Marketing emails</FormLabel>
                     <FormDescription>
@@ -78,7 +78,7 @@ export default function SwitchFormDemo() {
               control={form.control}
               name="security_emails"
               render={({ field }) => (
-                <FormItem className="flex items-center justify-between rounded-2 border px-3 py-4">
+                <FormItem className="rounded-2 flex items-center justify-between border px-3 py-4">
                   <div className="flex flex-col gap-y-0.5">
                     <FormLabel>Security emails</FormLabel>
                     <FormDescription>

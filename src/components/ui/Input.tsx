@@ -4,17 +4,17 @@ import { tv, cn } from "~/utils/tailwind";
 
 const inputVariants = tv({
   base: [
-    "flex w-full border border-input bg-background ring-offset-background",
+    "border-input bg-background ring-offset-background flex w-full border",
     "placeholder:text-muted-foreground",
-    "focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
+    "focus-visible:ring-ring focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:outline-hidden",
     "disabled:cursor-not-allowed disabled:opacity-50",
   ],
   variants: {
     inputSize: {
-      xs: "h-8 rounded-1.5 px-2 text-3.5",
-      sm: "h-9 rounded-2 px-2.5 text-3.5",
-      md: "h-10 rounded-2 px-3 text-3.5",
-      lg: "h-11 rounded-2.5 px-3.5 text-4",
+      xs: "rounded-1.5 text-3-5 h-8 px-2",
+      sm: "rounded-2 text-3-5 h-9 px-2.5",
+      md: "rounded-2 text-3-5 h-10 px-3",
+      lg: "rounded-2.5 text-4 h-11 px-3.5",
     },
   },
   defaultVariants: {

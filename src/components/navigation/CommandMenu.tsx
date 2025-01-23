@@ -52,12 +52,12 @@ export default function CommandMenu({ docsMenuItems }: CommandMenuProps) {
         type="button"
         onClick={() => setIsOpen(true)}
         className={cn(
-          "relative hidden h-9 w-68 items-center justify-between rounded-2 border bg-background pl-7.5 pr-3 text-3.5 text-muted-foreground transition-colors",
+          "rounded-2 bg-background text-3-5 text-muted-foreground relative hidden h-9 w-68 items-center justify-between border pr-3 pl-7.5 transition-colors",
           "xl:flex",
           "hover:bg-accent",
         )}
       >
-        <SearchIcon className="absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2" />
+        <SearchIcon className="absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2" />
         Search documentation...
         <ShortcutGroup>
           <Shortcut>⌘</Shortcut>

@@ -19,13 +19,13 @@ export default function DocsMenuGroup({
     <_Link
       href={href}
       className={cn(
-        "group flex items-center gap-x-2 text-3.5 font-medium",
+        "group text-3-5 flex items-center gap-x-2 font-medium",
         isActive ? "text-foreground" : "text-muted-foreground",
       )}
     >
       <div
         className={cn(
-          "flex size-6 items-center justify-center rounded-1.5 border",
+          "rounded-1.5 flex size-6 items-center justify-center border",
           isActive ? "bg-foreground/20" : "group-hover:bg-border",
           "[&>svg]:size-4",
           isActive
