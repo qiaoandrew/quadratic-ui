@@ -61,7 +61,7 @@ function ChartContainer({
       <div
         data-chart={chartId}
         className={cn(
-          "flex aspect-video justify-center text-3",
+          "text-3 flex aspect-video justify-center",
           "[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground",
           "[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50",
           "[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border",
@@ -228,7 +228,7 @@ function ChartTooltipContent({
     <div
       ref={ref}
       className={cn(
-        "grid min-w-32 items-start gap-1.5 rounded-1.5 border border-border/50 bg-background px-2.5 py-1.5 text-3",
+        "rounded-1-5 border-border/50 bg-background text-3 grid min-w-32 items-start gap-1.5 border px-2.5 py-1.5",
         className,
       )}
     >
@@ -248,7 +248,7 @@ function ChartTooltipContent({
             <div
               className={cn(
                 "flex w-full items-stretch gap-x-2",
-                "[&>svg]:size-2.5 [&>svg]:text-muted-foreground",
+                "[&>svg]:text-muted-foreground [&>svg]:size-2.5",
                 indicator === "dot" && "items-center",
               )}
               key={item.dataKey}
@@ -269,7 +269,7 @@ function ChartTooltipContent({
                     !hideIndicator && (
                       <div
                         className={cn(
-                          "shrink-0 rounded-0.5 border-(--color-border) bg-(--color-bg)",
+                          "rounded-0-5 shrink-0 border-(--color-border) bg-(--color-bg)",
                           {
                             "size-2.5": indicator === "dot",
                             "w-1": indicator === "line",
@@ -289,7 +289,7 @@ function ChartTooltipContent({
                   )}
                   <div
                     className={cn(
-                      "leading-none flex flex-1 justify-between",
+                      "flex flex-1 justify-between leading-none",
                       nestLabel ? "items-end" : "items-center",
                     )}
                   >
@@ -359,7 +359,7 @@ function ChartLegendContent({
           <div
             className={cn(
               "flex items-center gap-x-1.5",
-              "[&>svg]:size-3 [&>svg]:text-muted-foreground",
+              "[&>svg]:text-muted-foreground [&>svg]:size-3",
             )}
             key={item.value as string}
           >
@@ -367,7 +367,7 @@ function ChartLegendContent({
               <itemConfig.icon />
             ) : (
               <div
-                className="size-2 shrink-0 rounded-0.5"
+                className="rounded-0-5 size-2 shrink-0"
                 style={{ backgroundColor: item.color }}
               />
             )}

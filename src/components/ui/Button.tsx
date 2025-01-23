@@ -47,7 +47,7 @@ const buttonVariants = tv({
     {
       size: "xs",
       subject: ["text", "text-icon", "icon-text"],
-      className: "rounded-1.5 text-3-5 h-8 gap-x-1 px-2 [&_svg]:size-3",
+      className: "rounded-1-5 text-3-5 h-8 gap-x-1 px-2 [&_svg]:size-3",
     },
     {
       size: "sm",
@@ -62,7 +62,7 @@ const buttonVariants = tv({
     {
       size: "lg",
       subject: ["text", "text-icon", "icon-text"],
-      className: "rounded-2.5 text-4 h-12 gap-x-2 px-4.5 [&_svg]:size-4.5",
+      className: "rounded-2-5 text-4 h-12 gap-x-2 px-4.5 [&_svg]:size-4.5",
     },
     {
       size: "xs",
@@ -107,7 +107,7 @@ const buttonVariants = tv({
     {
       size: "xs",
       subject: "icon",
-      className: "rounded-1.5 size-8 [&_svg]:size-4",
+      className: "rounded-1-5 size-8 [&_svg]:size-4",
     },
     {
       size: "sm",
@@ -122,7 +122,7 @@ const buttonVariants = tv({
     {
       size: "lg",
       subject: "icon",
-      className: "rounded-2.5 size-12 [&_svg]:size-6",
+      className: "rounded-2-5 size-12 [&_svg]:size-6",
     },
   ],
   defaultVariants: {

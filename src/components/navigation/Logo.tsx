@@ -8,8 +8,8 @@ const logoVariants = tv({
   slots: {
     base: "flex items-center",
     iconContainer: "relative",
-    rectangle1: "absolute bottom-0 left-0 bg-muted-foreground",
-    rectangle2: "absolute right-0 top-0 border border-foreground",
+    rectangle1: "bg-muted-foreground absolute bottom-0 left-0",
+    rectangle2: "border-foreground absolute top-0 right-0 border",
     text: "font-display font-semibold",
   },
   variants: {
@@ -17,15 +17,15 @@ const logoVariants = tv({
       md: {
         base: "gap-x-2",
         iconContainer: "size-4.5",
-        rectangle1: "size-4 rounded-1",
-        rectangle2: "size-4 rounded-1",
+        rectangle1: "rounded-1 size-4",
+        rectangle2: "rounded-1 size-4",
         text: "text-4",
       },
       lg: {
         base: "gap-x-2.5",
         iconContainer: "size-6",
-        rectangle1: "size-[21px] rounded-1.5",
-        rectangle2: "size-[21px] rounded-1.5",
+        rectangle1: "rounded-1-5 size-[21px]",
+        rectangle2: "rounded-1-5 size-[21px]",
         text: "text-6",
       },
     },

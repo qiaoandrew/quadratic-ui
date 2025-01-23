@@ -77,7 +77,7 @@ export default function TooltipAdvancedDemo() {
                   <div className="flex items-center">
                     <div className="flex items-center gap-x-2">
                       <div
-                        className="size-2.5 shrink-0 rounded-0.5 bg-(--color-bg)"
+                        className="rounded-0-5 size-2.5 shrink-0 bg-(--color-bg)"
                         style={
                           {
                             "--color-bg": `var(--color-${name})`,
@@ -87,19 +87,19 @@ export default function TooltipAdvancedDemo() {
                       {CHART_CONFIG[name as keyof typeof CHART_CONFIG].label ??
                         name}
                     </div>
-                    <div className="ml-auto flex items-baseline gap-x-0.5 font-mono font-medium tabular-nums text-foreground">
+                    <div className="text-foreground ml-auto flex items-baseline gap-x-0.5 font-mono font-medium tabular-nums">
                       {value}
-                      <span className="font-normal text-muted-foreground">
+                      <span className="text-muted-foreground font-normal">
                         kcal
                       </span>
                     </div>
                   </div>
                   {index === 1 && item.payload && (
-                    <div className="mt-1.5 flex basis-full items-center border-t pt-1.5 text-3 font-medium text-foreground">
+                    <div className="text-3 text-foreground mt-1.5 flex basis-full items-center border-t pt-1.5 font-medium">
                       Total
-                      <div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums text-foreground">
+                      <div className="text-foreground ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums">
                         {item.payload.running + item.payload.swimming}
-                        <span className="font-normal text-muted-foreground">
+                        <span className="text-muted-foreground font-normal">
                           kcal
                         </span>
                       </div>

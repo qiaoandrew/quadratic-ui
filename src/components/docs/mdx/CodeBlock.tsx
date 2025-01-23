@@ -16,7 +16,7 @@ export default function CodeBlock({
   className,
 }: CodeBlockProps) {
   return (
-    <div className={cn("rounded-2.5 bg-accent/70 relative border", className)}>
+    <div className={cn("rounded-2-5 bg-accent/70 relative border", className)}>
       <pre className="max-h-112 overflow-auto p-4">
         <code
           className="text-3-5 text-foreground/70 leading-6"

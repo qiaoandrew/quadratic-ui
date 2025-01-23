@@ -4,7 +4,7 @@ import { tv, cn } from "~/utils/tailwind";
 
 const calloutVariants = tv({
   base: [
-    "rounded-2.5 text-3-5 relative flex w-full gap-x-2.5 border px-3 py-3.5",
+    "rounded-2-5 text-3-5 relative flex w-full gap-x-2.5 border px-3 py-3.5",
     "[&>svg]:size-5 [&>svg]:shrink-0",
   ],
   variants: {

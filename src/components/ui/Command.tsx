@@ -130,7 +130,7 @@ function CommandItem({
   return (
     <CommandPrimitive.Item
       className={cn(
-        "rounded-1.5 text-3-5 relative flex h-10 cursor-pointer items-center pr-3 pl-8.5 outline-hidden select-none",
+        "rounded-1-5 text-3-5 relative flex h-10 cursor-pointer items-center pr-3 pl-8.5 outline-hidden select-none",
         "data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground",
         "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
         "[&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:left-2 [&>svg]:size-4.5 [&>svg]:-translate-y-1/2",

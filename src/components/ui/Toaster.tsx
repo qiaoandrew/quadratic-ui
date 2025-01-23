@@ -25,10 +25,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
             "group-[.toast]:text-3-5 group-[.toast]:text-muted-foreground",
           ),
           actionButton: cn(
-            "group-[.toast]:rounded-1.5 group-[.toast]:bg-primary group-[.toast]:text-3 group-[.toast]:text-primary-foreground group-[.toast]:h-8 group-[.toast]:px-2 group-[.toast]:font-medium",
+            "group-[.toast]:rounded-1-5 group-[.toast]:bg-primary group-[.toast]:text-3 group-[.toast]:text-primary-foreground group-[.toast]:h-8 group-[.toast]:px-2 group-[.toast]:font-medium",
           ),
           cancelButton: cn(
-            "group-[.toast]:rounded-1.5 group-[.toast]:bg-muted group-[.toast]:text-3 group-[.toast]:text-muted-foreground group-[.toast]:h-8 group-[.toast]:px-2 group-[.toast]:font-medium",
+            "group-[.toast]:rounded-1-5 group-[.toast]:bg-muted group-[.toast]:text-3 group-[.toast]:text-muted-foreground group-[.toast]:h-8 group-[.toast]:px-2 group-[.toast]:font-medium",
           ),
           success: cn(
             "group-[.toaster]:bg-success group-[.toaster]:text-success-foreground group-[.toaster]:border-[var(--success-border)]",

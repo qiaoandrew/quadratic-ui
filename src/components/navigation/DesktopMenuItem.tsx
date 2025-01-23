@@ -17,7 +17,7 @@ export default function DesktopMenuItem({
       href={item.href}
       onClick={closeDesktopMenu}
       className={cn(
-        "rounded-2.5 border-border/50 bg-accent/30 relative flex flex-col gap-y-0.5 overflow-hidden border p-3.5 transition-colors",
+        "rounded-2-5 border-border/50 bg-accent/30 relative flex flex-col gap-y-0.5 overflow-hidden border p-3.5 transition-colors",
         "hover:bg-accent/80",
         item.size === "lg" && "row-span-2",
       )}

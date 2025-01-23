@@ -24,7 +24,7 @@ export default function CollapsibleDemo() {
           @peduarte starred 3 repositories
         </h4>
         <CollapsibleTrigger asChild>
-          <Button variant="ghost" size="icon" className="rounded-1.5 size-7">
+          <Button variant="ghost" size="icon" className="rounded-1-5 size-7">
             {isOpen ? (
               <ChevronsDownUpIcon className="size-4" />
             ) : (
@@ -34,14 +34,14 @@ export default function CollapsibleDemo() {
           </Button>
         </CollapsibleTrigger>
       </div>
-      <div className="rounded-1.5 text-3-5 border px-4 py-2 font-mono">
+      <div className="rounded-1-5 text-3-5 border px-4 py-2 font-mono">
         @radix-ui/primitives
       </div>
       <CollapsibleContent className="flex flex-col gap-y-2">
-        <div className="rounded-1.5 text-3-5 border px-4 py-2 font-mono">
+        <div className="rounded-1-5 text-3-5 border px-4 py-2 font-mono">
           @radix-ui/colors
         </div>
-        <div className="rounded-1.5 text-3-5 border px-4 py-2 font-mono">
+        <div className="rounded-1-5 text-3-5 border px-4 py-2 font-mono">
           @stitches/react
         </div>
       </CollapsibleContent>

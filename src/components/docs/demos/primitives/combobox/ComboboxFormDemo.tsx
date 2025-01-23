@@ -55,7 +55,7 @@ export default function ComboboxFormDemo() {
         <p className="text-3-5 font-medium">
           You submitted the following values:
         </p>
-        <pre className="rounded-1.5 bg-border/30 px-3 py-2">
+        <pre className="rounded-1-5 bg-border/30 px-3 py-2">
           <code className="text-3-5 font-mono">
             {JSON.stringify(data, null, 2)}
           </code>

@@ -76,7 +76,7 @@ export default function Header({ docsMenuItems }: HeaderProps) {
 
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-40 h-3 bg-background/60 backdrop-blur-sm xl:h-6" />
+      <div className="bg-background/60 fixed inset-x-0 top-0 z-40 h-3 backdrop-blur-sm xl:h-6" />
       {(isMobileMenuOpen || isDesktopMenuOpen) && (
         <div
           className={dialogOverlayVariants({
@@ -87,8 +87,8 @@ export default function Header({ docsMenuItems }: HeaderProps) {
       <header
         onMouseLeave={closeDesktopMenu}
         className={cn(
-          "fixed inset-x-3 top-3 z-40 flex flex-col gap-y-2 overflow-hidden rounded-2.5 border border-border/50 bg-background/60 backdrop-blur-sm transition-[height]",
-          "xl:top-6 xl:rounded-3.5",
+          "rounded-2-5 border-border/50 bg-background/60 fixed inset-x-3 top-3 z-40 flex flex-col gap-y-2 overflow-hidden border backdrop-blur-sm transition-[height]",
+          "xl:rounded-3-5 xl:top-6",
           "3xl:inset-x-[calc((100vw-1280px)/2)]",
           isMobileMenuOpen ? "h-[calc(100dvh-1.5rem)]" : "h-11",
           isDesktopMenuOpen ? "xl:h-[328px] 2xl:h-[364px]" : "xl:h-13",
@@ -96,7 +96,7 @@ export default function Header({ docsMenuItems }: HeaderProps) {
       >
         <div
           className={cn(
-            "flex h-[42px] shrink-0 items-stretch justify-between pl-3 pr-1.5",
+            "flex h-[42px] shrink-0 items-stretch justify-between pr-1.5 pl-3",
             "xl:h-[50px] xl:pr-3",
           )}
         >

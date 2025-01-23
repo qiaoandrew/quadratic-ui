@@ -25,7 +25,7 @@ export default function DocsMenuGroup({
     >
       <div
         className={cn(
-          "rounded-1.5 flex size-6 items-center justify-center border",
+          "rounded-1-5 flex size-6 items-center justify-center border",
           isActive ? "bg-foreground/20" : "group-hover:bg-border",
           "[&>svg]:size-4",
           isActive

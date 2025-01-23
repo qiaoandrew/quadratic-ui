@@ -36,7 +36,7 @@ export default function CopyToClipboardButton({
       variant={hasCopied ? "success-outline" : "secondary"}
       size="xs"
       className={cn(
-        "absolute right-4 top-4 size-6 rounded-1.5 [&_svg]:size-3.5",
+        "rounded-1-5 absolute top-4 right-4 size-6 [&_svg]:size-3.5",
         hasCopied && "hover:bg-success",
       )}
       aria-label="Copy to clipboard"
