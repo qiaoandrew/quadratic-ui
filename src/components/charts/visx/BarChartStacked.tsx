@@ -3,30 +3,31 @@ import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
+import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear } from "@visx/scale";
-import { Bar } from "@visx/shape";
+import { Bar, BarStack } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import { useChartConfig } from "~/components/charts/visx/Chart";
 import { TooltipContent } from "~/components/charts/visx/Tooltip";
 
-interface BarChartProps<T> {
+interface BarChartStackedProps<T> {
   data: T[];
   getKey: (d: T) => string;
-  getValue: (d: T) => number;
+  getValues: ((d: T) => number)[];
   getLabel: (d: T) => string;
   formatLabel?: (label: string) => string;
   aspectRatio?: number;
 }
 
-function BarChart<T>({
+function BarChartStacked<T>({
   data,
   getKey,
-  getValue,
+  getValues,
   getLabel,
   formatLabel,
   aspectRatio = 4 / 3,
-}: BarChartProps<T>) {
+}: BarChartStackedProps<T>) {
   const { config, containerWidth } = useChartConfig();
   const {
     margin,
@@ -130,19 +131,22 @@ function BarChart<T>({
             height={yMax}
             stroke="hsl(var(--border))"
           />
-          {data.map((d) => (
-            <BarChartBar
-              datum={d}
-              getValue={getValue}
-              getLabel={getLabel}
-              xScale={xScale}
-              yScale={yScale}
-              yMax={yMax}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              key={getKey(d)}
-            />
-          ))}
+          <BarStack<T, string>
+            data={data}
+            keys={["desktopViews", "mobileViews", "tabletViews"]}
+            xScale={xScale}
+            yScale={yScale}
+            color={() => "hsl(var(--chart-1))"}
+            x={getLabel}
+          >
+            {(barStacks) =>
+              barStacks.map((barStack) =>
+                barStack.bars.map((bar) => (
+                  <rect key={`${barStack.index}-${bar.index}`}></rect>
+                )),
+              )
+            }
+          </BarStack>
           <AxisLeft
             scale={yScale}
             numTicks={tickValues.length}
@@ -175,7 +179,7 @@ function BarChart<T>({
           <TooltipContent<T>
             datum={tooltipData}
             getLabel={getLabel}
-            getValue={getValue}
+            getValue={getValues[0]!}
             axisLabel={axisLabels.left}
           />
         </TooltipInPortal>
@@ -184,50 +188,4 @@ function BarChart<T>({
   );
 }
 
-interface BarChartBarProps<T> {
-  datum: T;
-  xScale: ReturnType<typeof scaleBand<string>>;
-  yScale: ReturnType<typeof scaleLinear<number>>;
-  yMax: number;
-  getLabel: (d: T) => string;
-  getValue: (d: T) => number;
-  onMouseMove: (
-    barX: number,
-    barWidth: number,
-    d: T,
-  ) => (e: React.MouseEvent<SVGRectElement>) => void;
-  onMouseLeave: () => void;
-}
-
-function BarChartBar<T>({
-  datum,
-  xScale,
-  yScale,
-  yMax,
-  getLabel,
-  getValue,
-  onMouseMove,
-  onMouseLeave,
-}: BarChartBarProps<T>) {
-  const label = getLabel(datum);
-  const barWidth = xScale.bandwidth();
-  const barHeight = Math.max(yMax - yScale(getValue(datum)), 0);
-  const barX = xScale(label) ?? 0;
-  const barY = yMax - barHeight;
-
-  return (
-    <Bar
-      x={barX}
-      y={barY}
-      width={barWidth}
-      height={barHeight}
-      fill="hsl(var(--chart-1))"
-      rx={6}
-      onMouseMove={onMouseMove(barX, barWidth, datum)}
-      onMouseLeave={onMouseLeave}
-      key={`bar-${label}`}
-    />
-  );
-}
-
-export { BarChart };
+export { BarChartStacked };
