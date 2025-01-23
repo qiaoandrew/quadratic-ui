@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-@config '../../tailwind.config.ts';
-
 @variant dark (&:where(.dark, .dark *));
+
+@plugin "tailwindcss-animate";
 
 @font-face {
   font-family: Inter;
@@ -45,6 +45,13 @@
 }
 
 @theme {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-scale-in: scale-in 0.2s ease;
+  --animate-scale-out: scale-out 0.2s ease;
+  --animate-fade-in: fade-in 0.2s ease;
+  --animate-fade-out: fade-out 0.2s ease;
+
   --breakpoint-3xs: 18.75rem;
   --breakpoint-2xs: 22.5rem;
   --breakpoint-xs: 30rem;
@@ -121,6 +128,64 @@
   --text-15: 3.75rem;
   --text-15--line-height: 4.25rem;
   --text-16: 4rem;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: rotateX(-10deg) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
+  }
+
+  @keyframes scale-out {
+    0% {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: rotateX(-10deg) scale(0.95);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }
 
 @theme inline {
@@ -215,6 +280,11 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
+    --brand-gradient: 90deg, #000000 0%, #8f8f8f 100%;
+    --spotlight-gradient: 68.54% 68.72% at 55.02% 31.46%,
+      hsla(0, 0%, 85%, 0.08) 0, hsla(0, 0%, 55%, 0.02) 50%,
+      hsla(0, 0%, 45%, 0) 80%;
+
     --sh-class: #267f99;
     --sh-identifier: #0070c1;
     --sh-sign: #444444;
@@ -273,6 +343,11 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 160 60% 45%;
+
+    --brand-gradient: 90deg, #f7f8f8 0%, #919191 100%;
+    --spotlight-gradient: 68.54% 68.72% at 55.02% 31.46%,
+      hsla(0, 0%, 85%, 0.08) 0, hsla(0, 0%, 55%, 0.02) 50%,
+      hsla(0, 0%, 45%, 0) 80%;
 
     --sh-class: #4ec9b0;
     --sh-identifier: #9cdcfe;

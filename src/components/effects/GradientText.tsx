@@ -13,7 +13,7 @@ export default function GradientText({
   return (
     <span
       className={cn(
-        "bg-light-gradient dark:bg-dark-gradient inline-block bg-clip-text text-transparent",
+        "inline-block bg-linear-(--brand-gradient) bg-clip-text text-transparent",
         className,
       )}
     >
