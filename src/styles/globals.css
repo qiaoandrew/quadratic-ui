@@ -52,6 +52,30 @@
   --font-mono: "GeistMono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
 
+  --radius-0: 0;
+  --radius-0-25: 0.0625rem;
+  --radius-0-5: 0.125rem;
+  --radius-1: 0.25rem;
+  --radius-1-5: 0.375rem;
+  --radius-2: 0.5rem;
+  --radius-2-5: 0.625rem;
+  --radius-3: 0.75rem;
+  --radius-3-5: 0.875rem;
+  --radius-4: 1rem;
+  --radius-5: 1.25rem;
+  --radius-6: 1.5rem;
+  --radius-7: 1.75rem;
+  --radius-8: 2rem;
+  --radius-9: 2.25rem;
+  --radius-10: 2.5rem;
+  --radius-11: 2.75rem;
+  --radius-12: 3rem;
+  --radius-13: 3.25rem;
+  --radius-14: 3.5rem;
+  --radius-15: 3.75rem;
+  --radius-16: 4rem;
+  --radius-full: 9999px;
+
   --text-2-5: 0.625rem;
   --text-2-5--line-height: 0.875rem;
   --text-3: 0.75rem;

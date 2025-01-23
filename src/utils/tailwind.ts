@@ -3,16 +3,14 @@ import { extendTailwindMerge } from "tailwind-merge";
 import { createTV } from "tailwind-variants";
 
 import config from "../../tailwind.config";
-import { FONT_SIZES } from "~/constants/tailwind";
+import { BORDER_RADII, FONT_SIZES } from "~/constants/tailwind";
 
 const classGroups = {
   "font-size": FONT_SIZES.map((key) => `text-${key}`),
   "text-color": Object.keys(config.theme.extend.colors).map(
     (key) => `text-${key}`,
   ),
-  rounded: Object.keys(config.theme.borderRadius).map(
-    (key) => `rounded-${key}`,
-  ),
+  rounded: BORDER_RADII.map((key) => `rounded-${key}`),
   "border-color": Object.keys(config.theme.extend.colors).map(
     (key) => `border-${key}`,
   ),
