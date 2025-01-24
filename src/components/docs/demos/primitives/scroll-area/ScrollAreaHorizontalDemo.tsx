@@ -24,7 +24,7 @@ export const WORKS: Artwork[] = [
 
 export default function ScrollAreaHorizontalDemo() {
   return (
-    <ScrollArea className="w-96 whitespace-nowrap rounded-2 border">
+    <ScrollArea className="rounded-2 w-96 border whitespace-nowrap">
       <div className="flex gap-x-4 py-3">
         {WORKS.map((artwork) => (
           <figure
@@ -34,13 +34,13 @@ export default function ScrollAreaHorizontalDemo() {
             <Image
               src={artwork.art}
               alt={`Photo by ${artwork.artist}`}
-              className="aspect-[3/4] w-[200px] rounded-1.5 object-cover"
+              className="rounded-1-5 aspect-3/4 w-[200px] object-cover"
               width={300}
               height={400}
             />
-            <figcaption className="pt-2 text-3 text-muted-foreground">
+            <figcaption className="text-3 text-muted-foreground pt-2">
               Photo by{" "}
-              <span className="font-semibold text-foreground">
+              <span className="text-foreground font-semibold">
                 {artwork.artist}
               </span>
             </figcaption>

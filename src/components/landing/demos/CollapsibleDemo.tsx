@@ -20,14 +20,14 @@ export default function CollapsibleDemo() {
       className="flex w-full max-w-76 flex-col gap-y-2"
     >
       <div className="flex items-center justify-between px-4">
-        <h4 className="text-3.5 font-medium text-foreground">
+        <h4 className="text-3-5 text-foreground font-medium">
           @peduarte starred 3 repositories
         </h4>
         <CollapsibleTrigger asChild>
           <Button
             variant="ghost"
             size="icon"
-            className="size-7 rounded-1.5 hover:bg-background"
+            className="rounded-1-5 hover:bg-background size-7"
           >
             {isOpen ? (
               <ChevronsDownUpIcon className="size-4" />
@@ -38,14 +38,14 @@ export default function CollapsibleDemo() {
           </Button>
         </CollapsibleTrigger>
       </div>
-      <div className="rounded-1.5 border bg-background px-4 py-2 font-mono text-3.5">
+      <div className="rounded-1-5 bg-background text-3-5 border px-4 py-2 font-mono">
         @radix-ui/primitives
       </div>
       <CollapsibleContent className="flex flex-col gap-y-2">
-        <div className="rounded-1.5 border bg-background px-4 py-2 font-mono text-3.5">
+        <div className="rounded-1-5 bg-background text-3-5 border px-4 py-2 font-mono">
           @radix-ui/colors
         </div>
-        <div className="rounded-1.5 border bg-background px-4 py-2 font-mono text-3.5">
+        <div className="rounded-1-5 bg-background text-3-5 border px-4 py-2 font-mono">
           @stitches/react
         </div>
       </CollapsibleContent>

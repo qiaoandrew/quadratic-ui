@@ -30,7 +30,7 @@ export default async function RootLayout({
       className={`${inter.variable} ${interDisplay.variable} ${GeistMono.variable} scroll-smooth`}
     >
       <head />
-      <body className="bg-background font-sans text-foreground antialiased">
+      <body className="bg-background text-foreground font-sans antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

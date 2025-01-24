@@ -69,16 +69,16 @@ function BarList<T>({
           <Comp
             onClick={() => onValueChange?.(item)}
             className={cn(
-              "group w-full rounded-1",
-              onValueChange && "cursor-pointer hover:bg-accent",
+              "group rounded-1 w-full",
+              onValueChange && "hover:bg-accent cursor-pointer",
             )}
             key={item.key ?? idx}
           >
             <div
               className={cn(
-                "flex h-8 items-center rounded-1 bg-blue-200 transition-colors dark:bg-blue-900",
+                "rounded-1 flex h-8 items-center bg-blue-200 transition-colors dark:bg-blue-900",
                 onValueChange &&
-                  "group-hover:bg-blue-300 group-hover:dark:bg-blue-800",
+                  "group-hover:bg-blue-300 dark:group-hover:bg-blue-800",
               )}
               style={{ width: `${widths[idx]}%` }}
             >
@@ -87,14 +87,14 @@ function BarList<T>({
                   <_Link
                     href={item.href}
                     className={cn(
-                      "truncate whitespace-nowrap rounded-1 text-3.5",
+                      "rounded-1 text-3-5 truncate whitespace-nowrap",
                       "hover:underline hover:underline-offset-2",
                     )}
                   >
                     {item.name}
                   </_Link>
                 ) : (
-                  <p className="truncate whitespace-nowrap rounded-1 text-3.5">
+                  <p className="rounded-1 text-3-5 truncate whitespace-nowrap">
                     {item.name}
                   </p>
                 )}
@@ -109,7 +109,7 @@ function BarList<T>({
             className="flex h-8 items-center justify-end"
             key={item.key ?? item.name}
           >
-            <p className="truncate whitespace-nowrap text-3.5">
+            <p className="text-3-5 truncate whitespace-nowrap">
               {valueFormatter(item.value)}
             </p>
           </div>

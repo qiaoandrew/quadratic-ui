@@ -22,12 +22,12 @@ function SelectTrigger({
   return (
     <SelectPrimitive.Trigger
       className={cn(
-        "relative flex h-10 w-full items-center justify-between rounded-2 border border-input bg-background px-3 text-3.5 ring-offset-background",
+        "rounded-2 border-input bg-background text-3-5 ring-offset-background relative flex h-10 w-full items-center justify-between border px-3",
         "placeholder:text-muted-foreground",
-        "focus:outline-none focus:ring-1 focus:ring-ring",
+        "focus:ring-ring focus:ring-1 focus:outline-hidden",
         "disabled:cursor-not-allowed disabled:opacity-50",
         "[&>span]:line-clamp-1 [&>span]:text-left",
-        "[&>svg]:size-4 [&>svg]:text-muted-foreground [&>svg]:transition-transform [&>svg]:data-[state=open]:rotate-180",
+        "[&>svg]:text-muted-foreground [&>svg]:size-4 [&>svg]:transition-transform data-[state=open]:[&>svg]:rotate-180",
         className,
       )}
       {...props}
@@ -84,7 +84,7 @@ function SelectContent({
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         className={cn(
-          "relative z-50 max-h-96 min-w-32 overflow-hidden rounded-2 border bg-popover text-popover-foreground",
+          "rounded-2 bg-popover text-popover-foreground relative z-50 max-h-96 min-w-32 overflow-hidden border",
           "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
           "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
           "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
@@ -131,9 +131,9 @@ function SelectItem({
   return (
     <SelectPrimitive.Item
       className={cn(
-        "relative flex w-full cursor-default select-none items-center rounded-1 py-1.5 pl-2 pr-8 text-3.5 outline-none",
+        "rounded-1 text-3-5 relative flex w-full cursor-default items-center py-1.5 pr-8 pl-2 outline-hidden select-none",
         "focus:bg-accent focus:text-accent-foreground",
-        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "data-disabled:pointer-events-none data-disabled:opacity-50",
         className,
       )}
       {...props}

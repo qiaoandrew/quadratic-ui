@@ -70,7 +70,7 @@ export default function BarChartMultipleDemo() {
             dataKey="month"
             position="insideLeft"
             offset={8}
-            className="fill-[--color-label]"
+            className="fill-(--color-label)"
           />
           <LabelList
             dataKey="desktop"

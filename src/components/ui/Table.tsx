@@ -4,7 +4,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     <div className="relative w-full overflow-auto">
       <table
-        className={cn("w-full caption-bottom text-3.5", className)}
+        className={cn("text-3-5 w-full caption-bottom", className)}
         {...props}
       />
     </div>
@@ -25,7 +25,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
   return (
     <tfoot
       className={cn(
-        "border-t bg-accent/50 font-medium [&>tr]:last:border-b-0",
+        "bg-accent/50 border-t font-medium last:[&>tr]:border-b-0",
         className,
       )}
       {...props}
@@ -37,7 +37,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
   return (
     <tr
       className={cn(
-        "border-b transition-colors hover:bg-accent/50 data-[state=selected]:bg-accent/50",
+        "hover:bg-accent/50 data-[state=selected]:bg-accent/50 border-b transition-colors",
         className,
       )}
       {...props}
@@ -49,7 +49,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
   return (
     <th
       className={cn(
-        "h-9 pl-3 text-left align-middle font-medium text-muted-foreground",
+        "text-muted-foreground h-9 pl-3 text-left align-middle font-medium",
         "last:pr-3",
         "[&:has([role=checkbox])]:pr-0",
         className,
@@ -79,7 +79,7 @@ function TableCaption({
 }: React.ComponentProps<"caption">) {
   return (
     <caption
-      className={cn("mt-3 text-muted-foreground", className)}
+      className={cn("text-muted-foreground mt-3", className)}
       {...props}
     />
   );

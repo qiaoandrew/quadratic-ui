@@ -34,7 +34,7 @@ export default function RadarChartGridCircleFilledDemo() {
           content={<ChartTooltipContent hideIndicator />}
         />
         <PolarGrid
-          className="fill-[--color-desktop] opacity-20"
+          className="fill-(--color-desktop) opacity-20"
           gridType="circle"
         />
         <PolarAngleAxis dataKey="month" />

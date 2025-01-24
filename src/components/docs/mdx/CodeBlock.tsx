@@ -16,10 +16,10 @@ export default function CodeBlock({
   className,
 }: CodeBlockProps) {
   return (
-    <div className={cn("relative rounded-2.5 border bg-accent/70", className)}>
+    <div className={cn("rounded-2-5 bg-accent/70 relative border", className)}>
       <pre className="max-h-112 overflow-auto p-4">
         <code
-          className="text-3.5 leading-6 text-foreground/70"
+          className="text-3-5 text-foreground/70 leading-6"
           dangerouslySetInnerHTML={{
             __html: shouldHighlight ? highlight(children) : children,
           }}

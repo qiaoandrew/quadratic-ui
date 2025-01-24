@@ -26,7 +26,7 @@ export default function DesktopHeaderItem({
   closeDesktopMenu,
 }: DesktopHeaderItemProps) {
   const styles = cn(
-    "flex cursor-pointer items-center px-4 text-3.5 font-medium text-muted-foreground transition-colors hover:text-foreground",
+    "text-3-5 text-muted-foreground hover:text-foreground flex cursor-pointer items-center px-4 font-medium transition-colors",
     idx === activeDesktopMenuGroupIdx && "text-foreground",
   );
 

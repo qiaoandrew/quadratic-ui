@@ -74,7 +74,7 @@ export default function BarChartStackedDemo() {
   return (
     <ChartContainer
       configOverrides={CHART_CONFIG}
-      className="aspect-[4/3] w-full max-w-112"
+      className="aspect-4/3 w-full max-w-112"
     >
       <BarChart<Datum>
         getKey={(d: Datum) => d.key}

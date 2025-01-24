@@ -1,18 +1,20 @@
-import NextLink from "next/link";
+import Link from "next/link";
 
-interface _LinkProps extends React.ComponentProps<"a"> {
+interface _LinkProps extends React.ComponentProps<typeof Link> {
   href: string;
-  className?: string;
 }
 
 export default function _Link({ href, className, ...props }: _LinkProps) {
-  const Comp = href.startsWith("/") ? NextLink : "a";
+  const Comp = href.startsWith("/") ? Link : "a";
 
   return (
     <Comp
       href={href}
       className={className}
-      {...(Comp === "a" && { target: "_blank", rel: "noopener noreferrer" })}
+      {...(!href.startsWith("/") && {
+        target: "_blank",
+        rel: "noopener noreferrer",
+      })}
       {...props}
     />
   );

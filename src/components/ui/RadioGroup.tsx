@@ -23,7 +23,7 @@ function RadioGroupItem({
     <RadioGroupPrimitive.Item
       className={cn(
         "aspect-square size-4 rounded-full border border-primary text-primary ring-offset-background",
-        "focus:outline-none",
+        "focus:outline-hidden",
         "focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1",
         "disabled:cursor-not-allowed disabled:opacity-50",
         className,

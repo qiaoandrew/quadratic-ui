@@ -19,7 +19,7 @@ import {
 export default function BreadcrumbDemo() {
   return (
     <Breadcrumb className="relative z-10">
-      <BreadcrumbList className="gap-1.5 text-3">
+      <BreadcrumbList className="text-3 gap-1.5">
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
             <Link href="/">Home</Link>
@@ -32,11 +32,11 @@ export default function BreadcrumbDemo() {
               <BreadcrumbEllipsis className="size-4 [&>svg]:size-3.5" />
               <span className="sr-only">Toggle menu</span>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="min-w-36 rounded-1.5">
-              <DropdownMenuItem className="px-1.5 py-1 text-3" asChild>
+            <DropdownMenuContent align="start" className="rounded-1-5 min-w-36">
+              <DropdownMenuItem className="text-3 px-1.5 py-1" asChild>
                 <a href="/docs/getting-started/quickstart">Documentation</a>
               </DropdownMenuItem>
-              <DropdownMenuItem className="px-1.5 py-1 text-3" asChild>
+              <DropdownMenuItem className="text-3 px-1.5 py-1" asChild>
                 <a
                   href="https://github.com/qiaoandrew/quadratic-ui"
                   rel="noreferrer noopenner"
@@ -44,7 +44,7 @@ export default function BreadcrumbDemo() {
                   GitHub
                 </a>
               </DropdownMenuItem>
-              <DropdownMenuItem className="px-1.5 py-1 text-3" asChild>
+              <DropdownMenuItem className="text-3 px-1.5 py-1" asChild>
                 <a
                   href="https://www.figma.com/community/file/1351315753275186770/quadratic-ui"
                   rel="noreferrer noopenner"

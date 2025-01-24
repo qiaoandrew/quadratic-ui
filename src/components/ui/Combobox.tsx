@@ -178,7 +178,7 @@ function ComboboxItem({
         onSelect?.(newValue);
         setIsOpen(false);
       }}
-      className={cn("h-8 rounded-1 pl-8 text-3.5 [&>svg]:size-3.5", className)}
+      className={cn("rounded-1 text-3-5 h-8 pl-8 [&>svg]:size-3.5", className)}
       {...props}
     >
       <CheckIcon

@@ -5,8 +5,8 @@ import { cn, tv } from "~/utils/tailwind";
 
 const buttonVariants = tv({
   base: [
-    "relative inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors",
-    "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
+    "relative inline-flex items-center justify-center font-medium whitespace-nowrap transition-colors",
+    "focus-visible:ring-ring focus-visible:ring-1 focus-visible:outline-hidden",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",
   ],
@@ -15,19 +15,19 @@ const buttonVariants = tv({
       primary: "bg-primary text-primary-foreground hover:bg-primary/90",
       secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
       outline:
-        "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        "border-input bg-background hover:bg-accent hover:text-accent-foreground border",
       ghost: "hover:bg-accent hover:text-accent-foreground",
       link: "text-primary underline-offset-4 hover:underline",
       destructive:
         "bg-destructive text-destructive-foreground hover:bg-destructive/50",
       "destructive-outline":
-        "border border-destructive-border bg-destructive text-destructive-foreground hover:bg-destructive/50",
+        "border-destructive-border bg-destructive text-destructive-foreground hover:bg-destructive/50 border",
       warning: "bg-warning text-warning-foreground hover:bg-warning/50",
       "warning-outline":
-        "border border-warning-border bg-warning text-warning-foreground hover:bg-warning/50",
+        "border-warning-border bg-warning text-warning-foreground hover:bg-warning/50 border",
       success: "bg-success text-success-foreground hover:bg-success/50",
       "success-outline":
-        "border border-success-border bg-success text-success-foreground hover:bg-success/50",
+        "border-success-border bg-success text-success-foreground hover:bg-success/50 border",
     },
     size: {
       xs: "",
@@ -47,22 +47,22 @@ const buttonVariants = tv({
     {
       size: "xs",
       subject: ["text", "text-icon", "icon-text"],
-      className: "h-8 gap-x-1 rounded-1.5 px-2 text-3.5 [&_svg]:size-3",
+      className: "rounded-1-5 text-3-5 h-8 gap-x-1 px-2 [&_svg]:size-3",
     },
     {
       size: "sm",
       subject: ["text", "text-icon", "icon-text"],
-      className: "h-9 gap-x-1 rounded-2 px-2.5 text-3.5 [&_svg]:size-3.5",
+      className: "rounded-2 text-3-5 h-9 gap-x-1 px-2.5 [&_svg]:size-3.5",
     },
     {
       size: "md",
       subject: ["text", "text-icon", "icon-text"],
-      className: "h-10 gap-x-1.5 rounded-2 px-3.5 text-3.5 [&_svg]:size-3.5",
+      className: "rounded-2 text-3-5 h-10 gap-x-1.5 px-3.5 [&_svg]:size-3.5",
     },
     {
       size: "lg",
       subject: ["text", "text-icon", "icon-text"],
-      className: "h-12 gap-x-2 rounded-2.5 px-4.5 text-4 [&_svg]:size-4.5",
+      className: "rounded-2-5 text-4 h-12 gap-x-2 px-4.5 [&_svg]:size-4.5",
     },
     {
       size: "xs",
@@ -107,22 +107,22 @@ const buttonVariants = tv({
     {
       size: "xs",
       subject: "icon",
-      className: "size-8 rounded-1.5 [&_svg]:size-4",
+      className: "rounded-1-5 size-8 [&_svg]:size-4",
     },
     {
       size: "sm",
       subject: "icon",
-      className: "size-9 rounded-2 [&_svg]:size-4.5",
+      className: "rounded-2 size-9 [&_svg]:size-4.5",
     },
     {
       size: "md",
       subject: "icon",
-      className: "size-10 rounded-2 [&_svg]:size-5",
+      className: "rounded-2 size-10 [&_svg]:size-5",
     },
     {
       size: "lg",
       subject: "icon",
-      className: "size-12 rounded-2.5 [&_svg]:size-6",
+      className: "rounded-2-5 size-12 [&_svg]:size-6",
     },
   ],
   defaultVariants: {
