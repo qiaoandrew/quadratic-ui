@@ -144,7 +144,7 @@ Initializing Git...
 ✔ Successfully initialized and staged git
 
 Next steps:
-  cd test
+  cd quadratic-ui
   Start up a database, if needed using './start-database.sh'
   pnpm db:push
   pnpm dev
@@ -166,6 +166,7 @@ cd quadratic-ui
 ```bash
 pnpm dlx @tailwindcss/upgrade@next
 ```
+</StepContent>
 
 <StepTitle>Push your repository to GitHub through by running the following commands in your project's root folder. Replace the GitHub link with your own.</StepTitle>
 <StepContent>
@@ -183,7 +184,7 @@ git push -u origin main
 <StepTitle>Add the following environment variable as a placeholder under the "Environment Variables" section.</StepTitle>
 <StepContent>
 ```plaintext
-DATABASE_URL="postgresql://postgres:password@localhost:5432/test"
+DATABASE_URL="postgresql://postgres:password@localhost:5432/quadratic-ui"
 ```
 </StepContent>
 
