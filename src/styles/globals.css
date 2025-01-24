@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-@variant dark (&:where(.dark, .dark *));
-
 @plugin "tailwindcss-animate";
+
+@variant dark (&:where(.dark, .dark *));
 
 @font-face {
   font-family: Inter;
