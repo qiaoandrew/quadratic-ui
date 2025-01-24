@@ -27,7 +27,7 @@ export function useMDXComponents(components: MDXComponents) {
       </p>
     ),
     code: ({ children }: React.ComponentProps<"code">) => (
-      <code className="rounded-1 bg-muted text-muted-foreground -my-1 p-1 font-mono">
+      <code className="rounded-1 bg-muted text-muted-foreground -my-1 px-1 py-0.5 font-mono">
         {children}
       </code>
     ),
