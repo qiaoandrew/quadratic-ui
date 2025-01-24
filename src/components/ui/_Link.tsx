@@ -1,8 +1,7 @@
 import Link from "next/link";
 
-interface _LinkProps extends React.ComponentProps<"a"> {
+interface _LinkProps extends React.ComponentProps<typeof Link> {
   href: string;
-  className?: string;
 }
 
 export default function _Link({ href, className, ...props }: _LinkProps) {
