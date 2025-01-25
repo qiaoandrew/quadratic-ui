@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useMemo } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
@@ -46,19 +46,8 @@ function BarChart<T>({
     showTooltip,
   } = useTooltip<T>();
 
-  const tooltipTimeoutRef = useRef<number>(0);
-
   const { containerRef: tooltipContainerRef, TooltipInPortal } =
     useTooltipInPortal({ scroll: true });
-
-  useEffect(() => {
-    const timeoutRefValue = tooltipTimeoutRef.current;
-    return () => {
-      if (timeoutRefValue) {
-        clearTimeout(timeoutRefValue);
-      }
-    };
-  });
 
   const dimensions = useMemo(() => {
     const height = containerWidth / aspectRatio;
@@ -95,8 +84,6 @@ function BarChart<T>({
   const handleMouseMove = useCallback(
     (barX: number, barWidth: number, d: T) =>
       (e: React.MouseEvent<SVGRectElement>) => {
-        if (tooltipTimeoutRef.current) clearTimeout(tooltipTimeoutRef.current);
-
         const eventSVGCoords = localPoint(e);
         const left = barX + barWidth / 2;
 
@@ -108,10 +95,6 @@ function BarChart<T>({
       },
     [showTooltip],
   );
-
-  const handleMouseLeave = useCallback(() => {
-    tooltipTimeoutRef.current = window.setTimeout(() => hideTooltip(), 150);
-  }, [hideTooltip]);
 
   return (
     <>
@@ -139,7 +122,7 @@ function BarChart<T>({
               yScale={yScale}
               yMax={yMax}
               onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
+              onMouseLeave={hideTooltip}
               key={getKey(d)}
             />
           ))}
