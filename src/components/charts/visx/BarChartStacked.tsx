@@ -4,12 +4,11 @@ import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
-import { scaleBand, scaleLinear } from "@visx/scale";
+import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { Bar, BarStack } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import { useChartConfig } from "~/components/charts/visx/Chart";
-import { TooltipContent } from "~/components/charts/visx/Tooltip";
 
 interface BarChartStackedProps<T> {
   data: T[];
@@ -93,6 +92,19 @@ function BarChartStacked<T>({
     [yMax, tickValues],
   );
 
+  const colorScale = useMemo(
+    () =>
+      scaleOrdinal({
+        domain: ["desktopViews", "mobileViews", "tabletViews"],
+        range: [
+          "hsl(var(--chart-1))",
+          "hsl(var(--chart-2))",
+          "hsl(var(--chart-3))",
+        ],
+      }),
+    [],
+  );
+
   const handleMouseMove = useCallback(
     (barX: number, barWidth: number, d: T) =>
       (e: React.MouseEvent<SVGRectElement>) => {
@@ -109,10 +121,6 @@ function BarChartStacked<T>({
       },
     [showTooltip],
   );
-
-  const handleMouseLeave = useCallback(() => {
-    tooltipTimeoutRef.current = window.setTimeout(() => hideTooltip(), 150);
-  }, [hideTooltip]);
 
   return (
     <>
@@ -136,14 +144,41 @@ function BarChartStacked<T>({
             keys={["desktopViews", "mobileViews", "tabletViews"]}
             xScale={xScale}
             yScale={yScale}
-            color={() => "hsl(var(--chart-1))"}
+            color={colorScale}
             x={getLabel}
           >
             {(barStacks) =>
-              barStacks.map((barStack) =>
-                barStack.bars.map((bar) => (
-                  <rect key={`${barStack.index}-${bar.index}`}></rect>
-                )),
+              barStacks.map((barStack, barStackIdx) =>
+                barStack.bars.map((bar, barIdx) => {
+                  const isFirstBar = barStackIdx === 0;
+                  const isLastBar = barStackIdx === barStacks.length - 1;
+
+                  const path = `
+                    M ${bar.x + (isLastBar ? 6 : 0)} ${bar.y}
+                    h ${bar.width - (isLastBar ? 6 : 0) - (isLastBar ? 6 : 0)}
+                    ${isLastBar ? `a 6 6 0 0 1 6 6` : ""}
+                    v ${bar.height - (isLastBar ? 6 : 0) - (isFirstBar ? 6 : 0)}
+                    ${isFirstBar ? `a 6 6 0 0 1 -6 6` : ""}
+                    h -${bar.width - (isFirstBar ? 6 : 0) - (isFirstBar ? 6 : 0)}
+                    ${isFirstBar ? `a 6 6 0 0 1 -6 -6` : ""}
+                    v -${bar.height - (isFirstBar ? 6 : 0) - (isLastBar ? 6 : 0)}
+                    ${isLastBar ? `a 6 6 0 0 1 6 -6` : ""}
+                  `;
+
+                  return (
+                    <path
+                      d={path}
+                      fill={bar.color}
+                      onMouseMove={handleMouseMove(
+                        bar.x,
+                        bar.width,
+                        data[barIdx]!,
+                      )}
+                      onMouseLeave={hideTooltip}
+                      key={`${barStack.index}-${bar.index}`}
+                    />
+                  );
+                }),
               )
             }
           </BarStack>
@@ -175,14 +210,7 @@ function BarChartStacked<T>({
           left={tooltipLeft}
           unstyled
           className="pointer-events-none absolute"
-        >
-          <TooltipContent<T>
-            datum={tooltipData}
-            getLabel={getLabel}
-            getValue={getValues[0]!}
-            axisLabel={axisLabels.left}
-          />
-        </TooltipInPortal>
+        ></TooltipInPortal>
       )}
     </>
   );

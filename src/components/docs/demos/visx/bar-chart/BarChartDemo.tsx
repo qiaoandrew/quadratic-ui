@@ -23,6 +23,7 @@ const CHART_DATA: Datum[] = [
 ];
 
 const CHART_CONFIG: Partial<ChartConfig> = {
+  tickValues: [0, 60, 120, 180, 240, 300, 360],
   axisLabels: { bottom: "Month", left: "Views" },
 };
 

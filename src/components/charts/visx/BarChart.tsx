@@ -8,7 +8,7 @@ import { Bar } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import { useChartConfig } from "~/components/charts/visx/Chart";
-import { TooltipContent } from "~/components/charts/visx/Tooltip";
+import { Tooltip } from "~/components/charts/visx/Tooltip";
 
 interface BarChartProps<T> {
   data: T[];
@@ -155,11 +155,16 @@ function BarChart<T>({
           unstyled
           className="pointer-events-none absolute"
         >
-          <TooltipContent<T>
-            datum={tooltipData}
-            getLabel={getLabel}
-            getValue={getValue}
-            axisLabel={axisLabels.left}
+          <Tooltip
+            title={axisLabels.left ?? ""}
+            items={[
+              {
+                key: axisLabels.left ?? "",
+                label: getLabel(tooltipData),
+                value: getValue(tooltipData),
+                color: "hsl(var(--chart-1))",
+              },
+            ]}
           />
         </TooltipInPortal>
       )}

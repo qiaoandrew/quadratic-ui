@@ -1,28 +1,28 @@
-interface TooltipContentProps<T> {
-  datum: T;
-  getLabel: (d: T) => string;
-  getValue: (d: T) => number;
-  axisLabel?: string;
+interface TooltipProps {
+  title: string;
+  items: { key: string; label: string; value: number; color: string }[];
 }
 
-function TooltipContent<T>({
-  datum,
-  getLabel,
-  getValue,
-  axisLabel,
-}: TooltipContentProps<T>) {
+function Tooltip({ title, items }: TooltipProps) {
   return (
     <div className="rounded-1-5 bg-background text-3 flex min-w-28 flex-col gap-y-1 border p-2">
-      <p className="text-foreground font-medium">{getLabel(datum)}</p>
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-x-1.5">
-          <div className="rounded-0-5 size-2 bg-[hsl(var(--chart-1))]" />
-          <p className="text-muted-foreground">{axisLabel}</p>
-        </div>
-        <p className="text-foreground font-medium">{getValue(datum)}</p>
-      </div>
+      <p className="font-medium">{title}</p>
+      <ul className="flex flex-col gap-y-1">
+        {items.map((item) => (
+          <li className="flex items-center justify-between" key={item.key}>
+            <div className="flex items-center gap-x-1.5">
+              <span
+                className="rounded-0-5 size-2"
+                style={{ backgroundColor: item.color }}
+              />
+              <p className="text-muted-foreground">{item.label}</p>
+            </div>
+            <p className="font-medium">{item.value}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
-export { TooltipContent };
+export { Tooltip };

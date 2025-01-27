@@ -97,7 +97,7 @@ interface ChartConfig {
 
 const DEFAULT_CONFIG: ChartConfig = {
   margin: { top: 12, right: 4, bottom: 64, left: 64 },
-  tickValues: [0, 60, 120, 180, 240, 300, 360],
+  tickValues: [0, 100, 200, 300, 400, 500, 600],
   axisLabelOffset: { top: 0, right: 0, bottom: 24, left: 44 },
   axisLabelClassName: "fill-foreground text-3-5 font-medium font-sans",
   axisLabels: { top: "", right: "", bottom: "", left: "" },

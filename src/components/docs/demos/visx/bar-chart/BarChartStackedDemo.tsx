@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart } from "~/components/charts/visx/BarChart";
+import { BarChartStacked } from "~/components/charts/visx/BarChartStacked";
 import {
   ChartContainer,
   type ChartConfig,
@@ -67,6 +67,7 @@ const CHART_DATA: Datum[] = [
 ];
 
 const CHART_CONFIG: Partial<ChartConfig> = {
+  tickValues: [0, 150, 300, 450, 600, 750],
   axisLabels: { bottom: "Month", left: "Views" },
 };
 
@@ -76,9 +77,9 @@ export default function BarChartStackedDemo() {
       configOverrides={CHART_CONFIG}
       className="aspect-4/3 w-full max-w-112"
     >
-      <BarChart<Datum>
+      <BarChartStacked<Datum>
         getKey={(d: Datum) => d.key}
-        getValue={(d: Datum) => d.desktopViews}
+        getValues={[(d: Datum) => d.desktopViews]}
         getLabel={(d: Datum) => d.month}
         formatLabel={(month: string) => month.slice(0, 3)}
         data={CHART_DATA}
