@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
-import { BarStack } from "@visx/shape";
+import { BarRounded, BarStack } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import { useChart } from "~/components/charts/visx/Chart";
@@ -13,19 +13,25 @@ import { Tooltip } from "~/components/charts/visx/Tooltip";
 
 interface BarChartStackedProps<T> {
   data: T[];
-  getKey: (d: T) => string;
-  getValues: ((d: T) => number)[];
-  getLabel: (d: T) => string;
-  formatLabel?: (label: string) => string;
+  keys: string[];
+  keyLabels: string[];
+  getXAxisLabel: (d: T) => string;
+  formatXAxisLabel?: (label: string) => string;
   aspectRatio?: number;
 }
 
+const COLORS = [
+  "hsl(var(--chart-1))",
+  "hsl(var(--chart-2))",
+  "hsl(var(--chart-3))",
+];
+
 function BarChartStacked<T>({
   data,
-  getKey,
-  getValues,
-  getLabel,
-  formatLabel,
+  keys,
+  keyLabels,
+  getXAxisLabel,
+  formatXAxisLabel,
   aspectRatio = 4 / 3,
 }: BarChartStackedProps<T>) {
   const { config, containerWidth } = useChart();
@@ -34,7 +40,7 @@ function BarChartStacked<T>({
     tickValues,
     axisLabelOffset,
     axisLabelClassName,
-    axisLabels,
+    axisTitles,
     tickLabelProps,
   } = config;
 
@@ -52,15 +58,6 @@ function BarChartStacked<T>({
   const { containerRef: tooltipContainerRef, TooltipInPortal } =
     useTooltipInPortal({ scroll: true });
 
-  useEffect(() => {
-    const timeoutRefValue = tooltipTimeoutRef.current;
-    return () => {
-      if (timeoutRefValue) {
-        clearTimeout(timeoutRefValue);
-      }
-    };
-  });
-
   const dimensions = useMemo(() => {
     const height = containerWidth / aspectRatio;
     const xMax = containerWidth - margin.left - margin.right;
@@ -76,11 +73,11 @@ function BarChartStacked<T>({
       scaleBand<string>({
         range: [0, xMax],
         round: true,
-        domain: data.map((d) => getLabel(d)),
+        domain: data.map((d) => getXAxisLabel(d)),
         paddingInner: 0.25,
         paddingOuter: 0.1,
       }),
-    [xMax, getLabel, data],
+    [xMax, getXAxisLabel, data],
   );
 
   const yScale = useMemo(
@@ -94,16 +91,8 @@ function BarChartStacked<T>({
   );
 
   const colorScale = useMemo(
-    () =>
-      scaleOrdinal({
-        domain: ["desktopViews", "mobileViews", "tabletViews"],
-        range: [
-          "hsl(var(--chart-1))",
-          "hsl(var(--chart-2))",
-          "hsl(var(--chart-3))",
-        ],
-      }),
-    [],
+    () => scaleOrdinal({ domain: keys, range: COLORS }),
+    [keys],
   );
 
   const handleMouseMove = useCallback(
@@ -142,44 +131,33 @@ function BarChartStacked<T>({
           />
           <BarStack<T, string>
             data={data}
-            keys={["desktopViews", "mobileViews", "tabletViews"]}
+            keys={keys}
             xScale={xScale}
             yScale={yScale}
             color={colorScale}
-            x={getLabel}
+            x={getXAxisLabel}
           >
             {(barStacks) =>
               barStacks.map((barStack, barStackIdx) =>
-                barStack.bars.map((bar, barIdx) => {
-                  const isFirstBar = barStackIdx === 0;
-                  const isLastBar = barStackIdx === barStacks.length - 1;
-
-                  const path = `
-                    M ${bar.x + (isLastBar ? 6 : 0)} ${bar.y}
-                    h ${bar.width - (isLastBar ? 6 : 0) - (isLastBar ? 6 : 0)}
-                    ${isLastBar ? `a 6 6 0 0 1 6 6` : ""}
-                    v ${bar.height - (isLastBar ? 6 : 0) - (isFirstBar ? 6 : 0)}
-                    ${isFirstBar ? `a 6 6 0 0 1 -6 6` : ""}
-                    h -${bar.width - (isFirstBar ? 6 : 0) - (isFirstBar ? 6 : 0)}
-                    ${isFirstBar ? `a 6 6 0 0 1 -6 -6` : ""}
-                    v -${bar.height - (isFirstBar ? 6 : 0) - (isLastBar ? 6 : 0)}
-                    ${isLastBar ? `a 6 6 0 0 1 6 -6` : ""}
-                  `;
-
-                  return (
-                    <path
-                      d={path}
-                      fill={bar.color}
-                      onMouseMove={handleMouseMove(
-                        bar.x,
-                        bar.width,
-                        data[barIdx]!,
-                      )}
-                      onMouseLeave={hideTooltip}
-                      key={`${barStack.index}-${bar.index}`}
-                    />
-                  );
-                }),
+                barStack.bars.map((bar, barIdx) => (
+                  <BarRounded
+                    x={bar.x}
+                    y={bar.y}
+                    width={bar.width}
+                    height={bar.height}
+                    fill={bar.color}
+                    radius={6}
+                    top={barStackIdx === barStacks.length - 1}
+                    bottom={barStackIdx === 0}
+                    onMouseMove={handleMouseMove(
+                      bar.x,
+                      bar.width,
+                      data[barIdx]!,
+                    )}
+                    onMouseLeave={hideTooltip}
+                    key={`${barStackIdx}-${barIdx}`}
+                  />
+                )),
               )
             }
           </BarStack>
@@ -190,16 +168,16 @@ function BarChartStacked<T>({
             stroke="transparent"
             tickStroke="transparent"
             tickLabelProps={tickLabelProps}
-            label={axisLabels.left}
+            label={axisTitles.left}
             labelOffset={axisLabelOffset.left}
             labelClassName={axisLabelClassName}
           />
           <AxisBottom
             top={yMax}
             scale={xScale}
-            tickFormat={formatLabel}
+            tickFormat={formatXAxisLabel}
             tickLabelProps={tickLabelProps}
-            label={axisLabels.bottom}
+            label={axisTitles.bottom}
             labelOffset={axisLabelOffset.bottom}
             labelClassName={axisLabelClassName}
           />
@@ -212,7 +190,15 @@ function BarChartStacked<T>({
           unstyled
           className="pointer-events-none absolute"
         >
-          <Tooltip title={axisLabels.left ?? ""} items={[]} />
+          <Tooltip
+            title={getXAxisLabel(tooltipData)}
+            items={keys.map((key, i) => ({
+              key,
+              label: keyLabels[i] ?? "",
+              value: (tooltipData as Record<string, number>)[key] ?? 0,
+              color: COLORS[i] ?? "",
+            }))}
+          />
         </TooltipInPortal>
       )}
     </>

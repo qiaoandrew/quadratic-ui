@@ -86,7 +86,7 @@ interface ChartConfig {
     left: number;
   }>;
   axisLabelClassName: string;
-  axisLabels: Partial<{
+  axisTitles: Partial<{
     top: string;
     right: string;
     bottom: string;
@@ -100,7 +100,7 @@ const DEFAULT_CONFIG: ChartConfig = {
   tickValues: [0, 100, 200, 300, 400, 500, 600],
   axisLabelOffset: { top: 0, right: 0, bottom: 24, left: 44 },
   axisLabelClassName: "fill-foreground text-3-5 font-medium font-sans",
-  axisLabels: { top: "", right: "", bottom: "", left: "" },
+  axisTitles: { top: "", right: "", bottom: "", left: "" },
   tickLabelProps: {
     fill: "hsl(var(--muted-foreground))",
     fontSize: 12,

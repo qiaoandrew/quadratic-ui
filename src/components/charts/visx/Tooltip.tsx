@@ -5,7 +5,7 @@ interface TooltipProps {
 
 function Tooltip({ title, items }: TooltipProps) {
   return (
-    <div className="rounded-1-5 bg-background text-3 flex min-w-28 flex-col gap-y-1 border p-2">
+    <div className="rounded-1-5 bg-background text-3 flex min-w-32 flex-col gap-y-1 border p-2">
       <p className="font-medium">{title}</p>
       <ul className="flex flex-col gap-y-1">
         {items.map((item) => (

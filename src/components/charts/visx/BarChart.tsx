@@ -4,7 +4,7 @@ import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { scaleBand, scaleLinear } from "@visx/scale";
-import { Bar } from "@visx/shape";
+import { BarRounded } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import { useChart } from "~/components/charts/visx/Chart";
@@ -12,19 +12,17 @@ import { Tooltip } from "~/components/charts/visx/Tooltip";
 
 interface BarChartProps<T> {
   data: T[];
-  getKey: (d: T) => string;
   getValue: (d: T) => number;
-  getLabel: (d: T) => string;
-  formatLabel?: (label: string) => string;
+  getXAxisLabel: (d: T) => string;
+  formatXAxisLabel?: (label: string) => string;
   aspectRatio?: number;
 }
 
 function BarChart<T>({
   data,
-  getKey,
   getValue,
-  getLabel,
-  formatLabel,
+  getXAxisLabel,
+  formatXAxisLabel,
   aspectRatio = 4 / 3,
 }: BarChartProps<T>) {
   const { config, containerWidth } = useChart();
@@ -33,7 +31,7 @@ function BarChart<T>({
     tickValues,
     axisLabelOffset,
     axisLabelClassName,
-    axisLabels,
+    axisTitles,
     tickLabelProps,
   } = config;
 
@@ -64,11 +62,11 @@ function BarChart<T>({
       scaleBand<string>({
         range: [0, xMax],
         round: true,
-        domain: data.map((d) => getLabel(d)),
+        domain: data.map((d) => getXAxisLabel(d)),
         paddingInner: 0.25,
         paddingOuter: 0.1,
       }),
-    [xMax, getLabel, data],
+    [xMax, getXAxisLabel, data],
   );
 
   const yScale = useMemo(
@@ -113,19 +111,28 @@ function BarChart<T>({
             height={yMax}
             stroke="hsl(var(--border))"
           />
-          {data.map((d) => (
-            <BarChartBar
-              datum={d}
-              getValue={getValue}
-              getLabel={getLabel}
-              xScale={xScale}
-              yScale={yScale}
-              yMax={yMax}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={hideTooltip}
-              key={getKey(d)}
-            />
-          ))}
+          {data.map((d, i) => {
+            const label = getXAxisLabel(d);
+            const width = xScale.bandwidth();
+            const height = Math.max(yMax - yScale(getValue(d)), 0);
+            const x = xScale(label) ?? 0;
+            const y = yMax - height;
+
+            return (
+              <BarRounded
+                x={x}
+                y={y}
+                width={width}
+                height={height}
+                fill="hsl(var(--chart-1))"
+                radius={6}
+                all
+                onMouseMove={handleMouseMove(x, width, d)}
+                onMouseLeave={hideTooltip}
+                key={`bar-${i}`}
+              />
+            );
+          })}
           <AxisLeft
             scale={yScale}
             numTicks={tickValues.length}
@@ -133,16 +140,16 @@ function BarChart<T>({
             stroke="transparent"
             tickStroke="transparent"
             tickLabelProps={tickLabelProps}
-            label={axisLabels.left}
+            label={axisTitles.left}
             labelOffset={axisLabelOffset.left}
             labelClassName={axisLabelClassName}
           />
           <AxisBottom
             top={yMax}
             scale={xScale}
-            tickFormat={formatLabel}
+            tickFormat={formatXAxisLabel}
             tickLabelProps={tickLabelProps}
-            label={axisLabels.bottom}
+            label={axisTitles.bottom}
             labelOffset={axisLabelOffset.bottom}
             labelClassName={axisLabelClassName}
           />
@@ -156,11 +163,11 @@ function BarChart<T>({
           className="pointer-events-none absolute"
         >
           <Tooltip
-            title={getLabel(tooltipData)}
+            title={getXAxisLabel(tooltipData)}
             items={[
               {
-                key: getLabel(tooltipData),
-                label: axisLabels.left ?? "",
+                key: getXAxisLabel(tooltipData),
+                label: axisTitles.left ?? "",
                 value: getValue(tooltipData),
                 color: "hsl(var(--chart-1))",
               },
@@ -169,51 +176,6 @@ function BarChart<T>({
         </TooltipInPortal>
       )}
     </>
-  );
-}
-
-interface BarChartBarProps<T> {
-  datum: T;
-  xScale: ReturnType<typeof scaleBand<string>>;
-  yScale: ReturnType<typeof scaleLinear<number>>;
-  yMax: number;
-  getLabel: (d: T) => string;
-  getValue: (d: T) => number;
-  onMouseMove: (
-    barX: number,
-    barWidth: number,
-    d: T,
-  ) => (e: React.MouseEvent<SVGRectElement>) => void;
-  onMouseLeave: () => void;
-}
-
-function BarChartBar<T>({
-  datum,
-  xScale,
-  yScale,
-  yMax,
-  getLabel,
-  getValue,
-  onMouseMove,
-  onMouseLeave,
-}: BarChartBarProps<T>) {
-  const label = getLabel(datum);
-  const width = xScale.bandwidth();
-  const height = Math.max(yMax - yScale(getValue(datum)), 0);
-  const x = xScale(label) ?? 0;
-  const y = yMax - height;
-
-  return (
-    <Bar
-      x={x}
-      y={y}
-      width={width}
-      height={height}
-      fill="hsl(var(--chart-1))"
-      rx={6}
-      onMouseMove={onMouseMove(x, width, datum)}
-      onMouseLeave={onMouseLeave}
-    />
   );
 }
 
