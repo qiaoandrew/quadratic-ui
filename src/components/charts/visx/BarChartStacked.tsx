@@ -5,10 +5,11 @@ import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
-import { Bar, BarStack } from "@visx/shape";
+import { BarStack } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
-import { useChartConfig } from "~/components/charts/visx/Chart";
+import { useChart } from "~/components/charts/visx/Chart";
+import { Tooltip } from "~/components/charts/visx/Tooltip";
 
 interface BarChartStackedProps<T> {
   data: T[];
@@ -27,7 +28,7 @@ function BarChartStacked<T>({
   formatLabel,
   aspectRatio = 4 / 3,
 }: BarChartStackedProps<T>) {
-  const { config, containerWidth } = useChartConfig();
+  const { config, containerWidth } = useChart();
   const {
     margin,
     tickValues,
@@ -210,7 +211,9 @@ function BarChartStacked<T>({
           left={tooltipLeft}
           unstyled
           className="pointer-events-none absolute"
-        ></TooltipInPortal>
+        >
+          <Tooltip title={axisLabels.left ?? ""} items={[]} />
+        </TooltipInPortal>
       )}
     </>
   );

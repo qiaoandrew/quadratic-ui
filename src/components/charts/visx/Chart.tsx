@@ -19,7 +19,7 @@ interface ChartContextProps {
 
 const ChartContext = createContext<ChartContextProps | null>(null);
 
-function useChartConfig() {
+function useChart() {
   const context = useContext(ChartContext);
 
   if (!context) {
@@ -108,4 +108,4 @@ const DEFAULT_CONFIG: ChartConfig = {
   },
 } as const;
 
-export { type ChartConfig, ChartContainer, useChartConfig };
+export { type ChartConfig, ChartContainer, useChart };

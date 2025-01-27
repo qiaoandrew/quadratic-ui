@@ -7,7 +7,7 @@ import { scaleBand, scaleLinear } from "@visx/scale";
 import { Bar } from "@visx/shape";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
-import { useChartConfig } from "~/components/charts/visx/Chart";
+import { useChart } from "~/components/charts/visx/Chart";
 import { Tooltip } from "~/components/charts/visx/Tooltip";
 
 interface BarChartProps<T> {
@@ -27,7 +27,7 @@ function BarChart<T>({
   formatLabel,
   aspectRatio = 4 / 3,
 }: BarChartProps<T>) {
-  const { config, containerWidth } = useChartConfig();
+  const { config, containerWidth } = useChart();
   const {
     margin,
     tickValues,
@@ -156,11 +156,11 @@ function BarChart<T>({
           className="pointer-events-none absolute"
         >
           <Tooltip
-            title={axisLabels.left ?? ""}
+            title={getLabel(tooltipData)}
             items={[
               {
-                key: axisLabels.left ?? "",
-                label: getLabel(tooltipData),
+                key: getLabel(tooltipData),
+                label: axisLabels.left ?? "",
                 value: getValue(tooltipData),
                 color: "hsl(var(--chart-1))",
               },
@@ -198,22 +198,21 @@ function BarChartBar<T>({
   onMouseLeave,
 }: BarChartBarProps<T>) {
   const label = getLabel(datum);
-  const barWidth = xScale.bandwidth();
-  const barHeight = Math.max(yMax - yScale(getValue(datum)), 0);
-  const barX = xScale(label) ?? 0;
-  const barY = yMax - barHeight;
+  const width = xScale.bandwidth();
+  const height = Math.max(yMax - yScale(getValue(datum)), 0);
+  const x = xScale(label) ?? 0;
+  const y = yMax - height;
 
   return (
     <Bar
-      x={barX}
-      y={barY}
-      width={barWidth}
-      height={barHeight}
+      x={x}
+      y={y}
+      width={width}
+      height={height}
       fill="hsl(var(--chart-1))"
       rx={6}
-      onMouseMove={onMouseMove(barX, barWidth, datum)}
+      onMouseMove={onMouseMove(x, width, datum)}
       onMouseLeave={onMouseLeave}
-      key={`bar-${label}`}
     />
   );
 }

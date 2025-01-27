@@ -228,7 +228,7 @@ function ChartTooltipContent({
     <div
       ref={ref}
       className={cn(
-        "rounded-1-5 border-border/50 bg-background text-3 grid min-w-32 items-start gap-1.5 border px-2.5 py-1.5",
+        "rounded-1-5 border-border/50 bg-background text-3 grid min-w-32 items-start gap-y-1.5 border px-2.5 py-2",
         className,
       )}
     >
