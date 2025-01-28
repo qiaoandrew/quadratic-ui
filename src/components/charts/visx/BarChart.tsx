@@ -89,14 +89,14 @@ function BarChart<T>({
     useTooltipInPortal({ scroll: true });
 
   const handleMouseMove = useCallback(
-    ({ barX, barWidth, title, items }: TooltipHandleMouseMoveParams) =>
+    ({ left, title, items }: TooltipHandleMouseMoveParams) =>
       (e: React.MouseEvent<SVGRectElement>) => {
         const eventSVGCoords = localPoint(e);
 
         showTooltip({
           tooltipData: { title, items },
           tooltipTop: eventSVGCoords?.y,
-          tooltipLeft: barX + barWidth / 2,
+          tooltipLeft: left,
         });
       },
     [showTooltip],
@@ -136,8 +136,7 @@ function BarChart<T>({
                 radius={6}
                 all
                 onMouseMove={handleMouseMove({
-                  barX: x,
-                  barWidth: width,
+                  left: x + width / 2,
                   title: getXAxisTickLabel(data[i]!),
                   items: [
                     {

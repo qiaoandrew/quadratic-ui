@@ -111,14 +111,14 @@ function BarChartGroup<T extends DatumObject>({
     useTooltipInPortal({ scroll: true });
 
   const handleMouseMove = useCallback(
-    ({ barX, barWidth, title, items }: TooltipHandleMouseMoveParams) =>
+    ({ left, title, items }: TooltipHandleMouseMoveParams) =>
       (e: React.MouseEvent<SVGRectElement>) => {
         const eventSVGCoords = localPoint(e);
 
         showTooltip({
           tooltipData: { title, items },
           tooltipTop: eventSVGCoords?.y,
-          tooltipLeft: barX + barWidth / 2,
+          tooltipLeft: left,
         });
       },
     [showTooltip],
@@ -167,8 +167,7 @@ function BarChartGroup<T extends DatumObject>({
                       radius={4}
                       all
                       onMouseMove={handleMouseMove({
-                        barX: barGroup.x0 + bar.x,
-                        barWidth: bar.width,
+                        left: barGroup.x0 + bar.x + bar.width / 2,
                         title: getXAxisTickLabel(data[barGroupIdx]!),
                         items: [
                           {
