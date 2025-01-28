@@ -10,30 +10,67 @@ import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 import { useChart } from "~/components/charts/visx/Chart";
 import { Tooltip } from "~/components/charts/visx/Tooltip";
 
+const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
+  top: 12,
+  right: 4,
+  bottom: showXAxisLabel ? 64 : 12,
+  left: showYAxisLabel ? 64 : 4,
+});
+
 interface BarChartProps<T> {
   data: T[];
   getValue: (d: T) => number;
-  getXAxisLabel: (d: T) => string;
-  formatXAxisLabel?: (label: string) => string;
+  getXAxisTickLabel: (d: T) => string;
+  formatXAxisTickLabel?: (label: string) => string;
+  xAxisLabel: string;
+  yAxisLabel: string;
+  showXAxisLabel?: boolean;
+  showYAxisLabel?: boolean;
+  tickValues: number[];
+  color: string;
   aspectRatio?: number;
 }
 
 function BarChart<T>({
   data,
   getValue,
-  getXAxisLabel,
-  formatXAxisLabel,
+  getXAxisTickLabel,
+  formatXAxisTickLabel,
+  xAxisLabel,
+  yAxisLabel,
+  showXAxisLabel = true,
+  showYAxisLabel = true,
+  tickValues,
+  color,
   aspectRatio = 4 / 3,
 }: BarChartProps<T>) {
-  const { config, containerWidth } = useChart();
-  const {
-    margin,
-    tickValues,
-    axisLabelOffset,
-    axisLabelClassName,
-    axisTitles,
-    tickLabelProps,
-  } = config;
+  const { width } = useChart();
+  const margin = getMargin(showXAxisLabel, showYAxisLabel);
+  const height = width / aspectRatio;
+  const xMax = width - margin.left - margin.right;
+  const yMax = height - margin.top - margin.bottom;
+
+  const xScale = useMemo(
+    () =>
+      scaleBand<string>({
+        range: [0, xMax],
+        round: true,
+        domain: data.map((d) => getXAxisTickLabel(d)),
+        paddingInner: 0.25,
+        paddingOuter: 0.1,
+      }),
+    [xMax, getXAxisTickLabel, data],
+  );
+
+  const yScale = useMemo(
+    () =>
+      scaleLinear<number>({
+        range: [yMax, 0],
+        round: true,
+        domain: [tickValues[0] ?? 0, tickValues[-1] ?? 0],
+      }),
+    [yMax, tickValues],
+  );
 
   const {
     tooltipOpen,
@@ -43,41 +80,8 @@ function BarChart<T>({
     hideTooltip,
     showTooltip,
   } = useTooltip<T>();
-
   const { containerRef: tooltipContainerRef, TooltipInPortal } =
     useTooltipInPortal({ scroll: true });
-
-  const dimensions = useMemo(() => {
-    const height = containerWidth / aspectRatio;
-    const xMax = containerWidth - margin.left - margin.right;
-    const yMax = height - margin.top - margin.bottom;
-
-    return { height, xMax, yMax };
-  }, [containerWidth, aspectRatio, margin]);
-
-  const { height, xMax, yMax } = dimensions;
-
-  const xScale = useMemo(
-    () =>
-      scaleBand<string>({
-        range: [0, xMax],
-        round: true,
-        domain: data.map((d) => getXAxisLabel(d)),
-        paddingInner: 0.25,
-        paddingOuter: 0.1,
-      }),
-    [xMax, getXAxisLabel, data],
-  );
-
-  const yScale = useMemo(
-    () =>
-      scaleLinear<number>({
-        range: [yMax, 0],
-        round: true,
-        domain: [tickValues.at(0) ?? 0, tickValues.at(-1) ?? 0],
-      }),
-    [yMax, tickValues],
-  );
 
   const handleMouseMove = useCallback(
     (barX: number, barWidth: number, d: T) =>
@@ -98,9 +102,9 @@ function BarChart<T>({
     <>
       <svg
         ref={tooltipContainerRef}
-        style={{ width: "100%", height: "auto" }}
-        viewBox={`0 0 ${containerWidth} ${height}`}
+        viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="xMidYMid meet"
+        className="size-full"
       >
         <Group top={margin.top} left={margin.left}>
           <GridRows
@@ -112,7 +116,7 @@ function BarChart<T>({
             stroke="hsl(var(--border))"
           />
           {data.map((d, i) => {
-            const label = getXAxisLabel(d);
+            const label = getXAxisTickLabel(d);
             const width = xScale.bandwidth();
             const height = Math.max(yMax - yScale(getValue(d)), 0);
             const x = xScale(label) ?? 0;
@@ -124,7 +128,7 @@ function BarChart<T>({
                 y={y}
                 width={width}
                 height={height}
-                fill="hsl(var(--chart-1))"
+                fill={color}
                 radius={6}
                 all
                 onMouseMove={handleMouseMove(x, width, d)}
@@ -139,19 +143,27 @@ function BarChart<T>({
             tickValues={tickValues}
             stroke="transparent"
             tickStroke="transparent"
-            tickLabelProps={tickLabelProps}
-            label={axisTitles.left}
-            labelOffset={axisLabelOffset.left}
-            labelClassName={axisLabelClassName}
+            tickLabelProps={{
+              fill: "hsl(var(--muted-foreground))",
+              fontSize: 12,
+              fontFamily: "var(--font-sans)",
+            }}
+            label={showYAxisLabel ? yAxisLabel : ""}
+            labelOffset={margin.left}
+            labelClassName="fill-foreground text-3-5 font-medium font-sans"
           />
           <AxisBottom
             top={yMax}
             scale={xScale}
-            tickFormat={formatXAxisLabel}
-            tickLabelProps={tickLabelProps}
-            label={axisTitles.bottom}
-            labelOffset={axisLabelOffset.bottom}
-            labelClassName={axisLabelClassName}
+            tickFormat={formatXAxisTickLabel}
+            tickLabelProps={{
+              fill: "hsl(var(--muted-foreground))",
+              fontSize: 12,
+              fontFamily: "var(--font-sans)",
+            }}
+            label={showXAxisLabel ? xAxisLabel : ""}
+            labelOffset={margin.bottom}
+            labelClassName="fill-foreground text-3-5 font-medium font-sans"
           />
         </Group>
       </svg>
@@ -163,13 +175,13 @@ function BarChart<T>({
           className="pointer-events-none absolute"
         >
           <Tooltip
-            title={getXAxisLabel(tooltipData)}
+            title={getXAxisTickLabel(tooltipData)}
             items={[
               {
-                key: getXAxisLabel(tooltipData),
-                label: axisTitles.left ?? "",
+                key: getXAxisTickLabel(tooltipData),
+                label: yAxisLabel,
                 value: getValue(tooltipData),
-                color: "hsl(var(--chart-1))",
+                color,
               },
             ]}
           />

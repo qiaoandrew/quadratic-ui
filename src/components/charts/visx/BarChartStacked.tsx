@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef } from "react";
+import { useCallback, useMemo } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
@@ -11,73 +11,60 @@ import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 import { useChart } from "~/components/charts/visx/Chart";
 import { Tooltip } from "~/components/charts/visx/Tooltip";
 
+const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
+  top: 12,
+  right: 4,
+  bottom: showXAxisLabel ? 64 : 12,
+  left: showYAxisLabel ? 64 : 4,
+});
+
 interface BarChartStackedProps<T> {
   data: T[];
   keys: string[];
+  getValue: (d: T, key: string) => number;
   keyLabels: string[];
-  getXAxisLabel: (d: T) => string;
-  formatXAxisLabel?: (label: string) => string;
+  getXAxisTickLabel: (d: T) => string;
+  formatXAxisTickLabel?: (label: string) => string;
+  xAxisLabel: string;
+  yAxisLabel: string;
+  showXAxisLabel?: boolean;
+  showYAxisLabel?: boolean;
+  tickValues: number[];
+  colors: string[];
   aspectRatio?: number;
 }
-
-const COLORS = [
-  "hsl(var(--chart-1))",
-  "hsl(var(--chart-2))",
-  "hsl(var(--chart-3))",
-];
 
 function BarChartStacked<T>({
   data,
   keys,
+  getValue,
   keyLabels,
-  getXAxisLabel,
-  formatXAxisLabel,
+  getXAxisTickLabel,
+  formatXAxisTickLabel,
+  xAxisLabel,
+  yAxisLabel,
+  showXAxisLabel = true,
+  showYAxisLabel = true,
+  tickValues,
+  colors,
   aspectRatio = 4 / 3,
 }: BarChartStackedProps<T>) {
-  const { config, containerWidth } = useChart();
-  const {
-    margin,
-    tickValues,
-    axisLabelOffset,
-    axisLabelClassName,
-    axisTitles,
-    tickLabelProps,
-  } = config;
-
-  const {
-    tooltipOpen,
-    tooltipLeft,
-    tooltipTop,
-    tooltipData,
-    hideTooltip,
-    showTooltip,
-  } = useTooltip<T>();
-
-  const tooltipTimeoutRef = useRef<number>(0);
-
-  const { containerRef: tooltipContainerRef, TooltipInPortal } =
-    useTooltipInPortal({ scroll: true });
-
-  const dimensions = useMemo(() => {
-    const height = containerWidth / aspectRatio;
-    const xMax = containerWidth - margin.left - margin.right;
-    const yMax = height - margin.top - margin.bottom;
-
-    return { height, xMax, yMax };
-  }, [containerWidth, aspectRatio, margin]);
-
-  const { height, xMax, yMax } = dimensions;
+  const { width } = useChart();
+  const margin = getMargin(showXAxisLabel, showYAxisLabel);
+  const height = width / aspectRatio;
+  const xMax = width - margin.left - margin.right;
+  const yMax = height - margin.top - margin.bottom;
 
   const xScale = useMemo(
     () =>
       scaleBand<string>({
         range: [0, xMax],
         round: true,
-        domain: data.map((d) => getXAxisLabel(d)),
+        domain: data.map((d) => getXAxisTickLabel(d)),
         paddingInner: 0.25,
         paddingOuter: 0.1,
       }),
-    [xMax, getXAxisLabel, data],
+    [xMax, getXAxisTickLabel, data],
   );
 
   const yScale = useMemo(
@@ -91,15 +78,24 @@ function BarChartStacked<T>({
   );
 
   const colorScale = useMemo(
-    () => scaleOrdinal({ domain: keys, range: COLORS }),
-    [keys],
+    () => scaleOrdinal({ domain: keys, range: colors }),
+    [keys, colors],
   );
+
+  const {
+    tooltipOpen,
+    tooltipLeft,
+    tooltipTop,
+    tooltipData,
+    hideTooltip,
+    showTooltip,
+  } = useTooltip<T>();
+  const { containerRef: tooltipContainerRef, TooltipInPortal } =
+    useTooltipInPortal({ scroll: true });
 
   const handleMouseMove = useCallback(
     (barX: number, barWidth: number, d: T) =>
       (e: React.MouseEvent<SVGRectElement>) => {
-        if (tooltipTimeoutRef.current) clearTimeout(tooltipTimeoutRef.current);
-
         const eventSVGCoords = localPoint(e);
         const left = barX + barWidth / 2;
 
@@ -116,9 +112,9 @@ function BarChartStacked<T>({
     <>
       <svg
         ref={tooltipContainerRef}
-        style={{ width: "100%", height: "auto" }}
-        viewBox={`0 0 ${containerWidth} ${height}`}
+        viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="xMidYMid meet"
+        className="size-full"
       >
         <Group top={margin.top} left={margin.left}>
           <GridRows
@@ -132,10 +128,11 @@ function BarChartStacked<T>({
           <BarStack<T, string>
             data={data}
             keys={keys}
+            value={getValue}
             xScale={xScale}
             yScale={yScale}
             color={colorScale}
-            x={getXAxisLabel}
+            x={getXAxisTickLabel}
           >
             {(barStacks) =>
               barStacks.map((barStack, barStackIdx) =>
@@ -149,11 +146,10 @@ function BarChartStacked<T>({
                     radius={6}
                     top={barStackIdx === barStacks.length - 1}
                     bottom={barStackIdx === 0}
-                    onMouseMove={handleMouseMove(
-                      bar.x,
-                      bar.width,
-                      data[barIdx]!,
-                    )}
+                    onMouseMove={
+                      data[barIdx] &&
+                      handleMouseMove(bar.x, bar.width, data[barIdx])
+                    }
                     onMouseLeave={hideTooltip}
                     key={`${barStackIdx}-${barIdx}`}
                   />
@@ -167,19 +163,27 @@ function BarChartStacked<T>({
             tickValues={tickValues}
             stroke="transparent"
             tickStroke="transparent"
-            tickLabelProps={tickLabelProps}
-            label={axisTitles.left}
-            labelOffset={axisLabelOffset.left}
-            labelClassName={axisLabelClassName}
+            tickLabelProps={{
+              fill: "hsl(var(--muted-foreground))",
+              fontSize: 12,
+              fontFamily: "var(--font-sans)",
+            }}
+            label={showYAxisLabel ? yAxisLabel : ""}
+            labelOffset={margin.left}
+            labelClassName="fill-foreground text-3-5 font-medium font-sans"
           />
           <AxisBottom
             top={yMax}
             scale={xScale}
-            tickFormat={formatXAxisLabel}
-            tickLabelProps={tickLabelProps}
-            label={axisTitles.bottom}
-            labelOffset={axisLabelOffset.bottom}
-            labelClassName={axisLabelClassName}
+            tickFormat={formatXAxisTickLabel}
+            tickLabelProps={{
+              fill: "hsl(var(--muted-foreground))",
+              fontSize: 12,
+              fontFamily: "var(--font-sans)",
+            }}
+            label={showXAxisLabel ? xAxisLabel : ""}
+            labelOffset={margin.bottom}
+            labelClassName="fill-foreground text-3-5 font-medium font-sans"
           />
         </Group>
       </svg>
@@ -191,12 +195,12 @@ function BarChartStacked<T>({
           className="pointer-events-none absolute"
         >
           <Tooltip
-            title={getXAxisLabel(tooltipData)}
+            title={getXAxisTickLabel(tooltipData)}
             items={keys.map((key, i) => ({
               key,
               label: keyLabels[i] ?? "",
-              value: (tooltipData as Record<string, number>)[key] ?? 0,
-              color: COLORS[i] ?? "",
+              value: getValue(tooltipData, key),
+              color: colors[i] ?? "",
             }))}
           />
         </TooltipInPortal>

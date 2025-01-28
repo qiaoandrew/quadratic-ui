@@ -1,10 +1,7 @@
 "use client";
 
 import { BarChartStacked } from "~/components/charts/visx/BarChartStacked";
-import {
-  ChartContainer,
-  type ChartConfig,
-} from "~/components/charts/visx/Chart";
+import { ChartContainer } from "~/components/charts/visx/Chart";
 
 type Datum = {
   month: string;
@@ -58,24 +55,24 @@ const CHART_DATA: Datum[] = [
   },
 ];
 
-const CHART_CONFIG: Partial<ChartConfig> = {
-  tickValues: [0, 150, 300, 450, 600, 750],
-  axisTitles: { bottom: "Month", left: "Views" },
-};
-
 export default function BarChartStackedDemo() {
   return (
-    <ChartContainer
-      configOverrides={CHART_CONFIG}
-      className="aspect-4/3 w-full max-w-112"
-    >
+    <ChartContainer className="aspect-4/3 w-full max-w-112">
       <BarChartStacked<Datum>
         data={CHART_DATA}
-        keys={["desktopViews", "mobileViews", "tabletViews"]}
+        keys={["desktopViews", "mobileViews", "tabletViews"] as const}
+        getValue={(d, key) => Number(d[key as keyof typeof d])}
         keyLabels={["Desktop", "Mobile", "Tablet"]}
-        getXAxisLabel={(d: Datum) => d.month}
-        formatXAxisLabel={(month: string) => month.slice(0, 3)}
-        aspectRatio={4 / 3}
+        getXAxisTickLabel={(d: Datum) => d.month}
+        formatXAxisTickLabel={(month: string) => month.slice(0, 3)}
+        xAxisLabel="Month"
+        yAxisLabel="Views"
+        tickValues={[0, 60, 120, 180, 240, 300, 360]}
+        colors={[
+          "hsl(var(--chart-1))",
+          "hsl(var(--chart-2))",
+          "hsl(var(--chart-3))",
+        ]}
       />
     </ChartContainer>
   );

@@ -1,20 +1,9 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import type { AxisScale, TickLabelProps } from "@visx/axis";
-import type { ScaleInput } from "@visx/scale";
-import debounce from "lodash.debounce";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 interface ChartContextProps {
-  config: ChartConfig;
-  containerWidth: number;
+  width: number;
 }
 
 const ChartContext = createContext<ChartContextProps | null>(null);
@@ -30,45 +19,34 @@ function useChart() {
 }
 
 interface ChartContainerProps {
-  configOverrides: Partial<ChartConfig>;
   className?: string;
   children: React.ReactNode;
 }
 
-function ChartContainer({
-  configOverrides,
-  className,
-  children,
-}: ChartContainerProps) {
+function ChartContainer({ className, children }: ChartContainerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [containerWidth, setContainerWidth] = useState(0);
-
-  const config: ChartConfig = useMemo(
-    () => ({ ...DEFAULT_CONFIG, ...configOverrides }),
-    [configOverrides],
-  );
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const handleResize = debounce((entries: ResizeObserverEntry[]) => {
+    const handleResize = (entries: ResizeObserverEntry[]) => {
       const entry = entries[0];
       if (entry) {
-        setContainerWidth(entry.contentRect.width);
+        setWidth(entry.contentRect.width);
       }
-    }, 100);
+    };
 
     const observer = new ResizeObserver(handleResize);
     observer.observe(containerRef.current);
 
     return () => {
       observer.disconnect();
-      handleResize.cancel();
     };
   }, []);
 
   return (
-    <ChartContext.Provider value={{ config, containerWidth }}>
+    <ChartContext.Provider value={{ width }}>
       <div ref={containerRef} className={className}>
         {children}
       </div>
@@ -76,36 +54,4 @@ function ChartContainer({
   );
 }
 
-interface ChartConfig {
-  margin: { top: number; right: number; bottom: number; left: number };
-  tickValues: number[];
-  axisLabelOffset: Partial<{
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-  }>;
-  axisLabelClassName: string;
-  axisTitles: Partial<{
-    top: string;
-    right: string;
-    bottom: string;
-    left: string;
-  }>;
-  tickLabelProps: TickLabelProps<ScaleInput<AxisScale>>;
-}
-
-const DEFAULT_CONFIG: ChartConfig = {
-  margin: { top: 12, right: 4, bottom: 64, left: 64 },
-  tickValues: [0, 100, 200, 300, 400, 500, 600],
-  axisLabelOffset: { top: 0, right: 0, bottom: 24, left: 44 },
-  axisLabelClassName: "fill-foreground text-3-5 font-medium font-sans",
-  axisTitles: { top: "", right: "", bottom: "", left: "" },
-  tickLabelProps: {
-    fill: "hsl(var(--muted-foreground))",
-    fontSize: 12,
-    fontFamily: "var(--font-sans)",
-  },
-} as const;
-
-export { type ChartConfig, ChartContainer, useChart };
+export { ChartContainer, useChart };
