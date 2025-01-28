@@ -30,6 +30,7 @@ interface BarChartStackedProps<T> {
   showXAxisLabel?: boolean;
   showYAxisLabel?: boolean;
   tickValues: number[];
+  showLegend?: boolean;
   colors: string[];
   aspectRatio?: number;
 }
@@ -46,6 +47,7 @@ function BarChartStacked<T>({
   showXAxisLabel = true,
   showYAxisLabel = true,
   tickValues,
+  showLegend = false,
   colors,
   aspectRatio = 4 / 3,
 }: BarChartStackedProps<T>) {
@@ -204,6 +206,19 @@ function BarChartStacked<T>({
             }))}
           />
         </TooltipInPortal>
+      )}
+      {showLegend && (
+        <div className="text-3-5 absolute top-0 left-0 ml-[calc(100%+16px)]">
+          <LegendOrdinal
+            scale={colorScale}
+            direction="column"
+            itemMargin={2}
+            shapeWidth={8}
+            shapeHeight={8}
+            labelFormat={(_, i) => keyLabels[i] ?? ""}
+            shapeStyle={() => ({ borderRadius: 2 })}
+          />
+        </div>
       )}
     </>
   );

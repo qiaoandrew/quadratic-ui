@@ -47,7 +47,7 @@ function ChartContainer({ className, children }: ChartContainerProps) {
 
   return (
     <ChartContext.Provider value={{ width }}>
-      <div ref={containerRef} className={className}>
+      <div ref={containerRef} className={`relative ${className}`}>
         {children}
       </div>
     </ChartContext.Provider>

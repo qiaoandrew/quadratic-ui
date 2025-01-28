@@ -1,3 +1,3 @@
 export default function BarChartGroupDemo() {
-  return <></>;
+  return <div>BarChartGroupDemo</div>;
 }
