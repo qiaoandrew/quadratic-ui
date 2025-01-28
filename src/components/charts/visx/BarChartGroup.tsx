@@ -19,6 +19,14 @@ const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
   left: showYAxisLabel ? 64 : 4,
 });
 
+interface TooltipHandleMouseMoveParams {
+  barX: number;
+  barWidth: number;
+  title: string;
+  value: number;
+  color: string;
+}
+
 interface BarChartGroupProps<T extends DatumObject> {
   data: T[];
   keys: string[];
@@ -107,28 +115,21 @@ function BarChartGroup<T extends DatumObject>({
     useTooltipInPortal({ scroll: true });
 
   const handleMouseMove = useCallback(
-    (barX: number, barWidth: number, d: T, key: string) =>
+    ({ barX, barWidth, title, value, color }: TooltipHandleMouseMoveParams) =>
       (e: React.MouseEvent<SVGRectElement>) => {
         const eventSVGCoords = localPoint(e);
         const left = barX + barWidth / 2;
 
         showTooltip({
           tooltipData: {
-            title: getXAxisTickLabel(d),
-            items: [
-              {
-                key: getXAxisTickLabel(d),
-                label: yAxisLabel,
-                value: getValue(d, key),
-                color: colors[0] ?? "",
-              },
-            ],
+            title,
+            items: [{ key: title, label: yAxisLabel, value, color }],
           },
           tooltipTop: eventSVGCoords?.y,
           tooltipLeft: left,
         });
       },
-    [showTooltip, getXAxisTickLabel, getValue, yAxisLabel, colors],
+    [showTooltip, yAxisLabel],
   );
 
   return (
@@ -175,12 +176,13 @@ function BarChartGroup<T extends DatumObject>({
                       all
                       onMouseMove={
                         data[barIdx] &&
-                        handleMouseMove(
-                          bar.x,
-                          bar.width,
-                          data[barGroupIdx]!,
-                          keys[barIdx]!,
-                        )
+                        handleMouseMove({
+                          barX: barGroup.x0 + bar.x,
+                          barWidth: bar.width,
+                          title: getXAxisTickLabel(data[barGroupIdx]!),
+                          value: getValue(data[barGroupIdx]!, keys[barIdx]!),
+                          color: colors[barIdx]!,
+                        })
                       }
                       onMouseLeave={hideTooltip}
                       key={`bar-group-bar-${barGroupIdx}-${barIdx}}`}
