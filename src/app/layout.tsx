@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "next-themes";
 
@@ -42,6 +43,7 @@ export default async function RootLayout({
           <main>{children}</main>
           <Toaster visibleToasts={10} />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
