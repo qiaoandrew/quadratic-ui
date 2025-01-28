@@ -149,7 +149,7 @@ function BarChartGroup<T extends DatumObject>({
             height={yMax}
             stroke="hsl(var(--border))"
           />
-          <BarGroup
+          <BarGroup<T, string>
             data={data}
             keys={keys}
             height={yMax}
