@@ -6,10 +6,15 @@ import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { BarRounded, BarStack } from "@visx/shape";
+import type { Accessor } from "@visx/shape/lib/types";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import { useChart } from "~/components/charts/visx/Chart";
-import { Tooltip } from "~/components/charts/visx/Tooltip";
+import {
+  Tooltip,
+  type TooltipData,
+  type TooltipHandleMouseMoveParams,
+} from "~/components/charts/visx/Tooltip";
 
 const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
   top: 12,
@@ -23,7 +28,7 @@ interface BarChartStackProps<T> {
   keys: string[];
   getValue: (d: T, key: string) => number;
   keyLabels: string[];
-  getXAxisTickLabel: (d: T) => string;
+  getXAxisTickLabel: Accessor<T, string>;
   formatXAxisTickLabel?: (label: string) => string;
   xAxisLabel: string;
   yAxisLabel: string;
@@ -91,20 +96,19 @@ function BarChartStack<T>({
     tooltipData,
     hideTooltip,
     showTooltip,
-  } = useTooltip<T>();
+  } = useTooltip<TooltipData>();
   const { containerRef: tooltipContainerRef, TooltipInPortal } =
     useTooltipInPortal({ scroll: true });
 
   const handleMouseMove = useCallback(
-    (barX: number, barWidth: number, d: T) =>
+    ({ barX, barWidth, title, items }: TooltipHandleMouseMoveParams) =>
       (e: React.MouseEvent<SVGRectElement>) => {
         const eventSVGCoords = localPoint(e);
-        const left = barX + barWidth / 2;
 
         showTooltip({
-          tooltipData: d,
+          tooltipData: { title, items },
           tooltipTop: eventSVGCoords?.y,
-          tooltipLeft: left,
+          tooltipLeft: barX + barWidth / 2,
         });
       },
     [showTooltip],
@@ -148,10 +152,17 @@ function BarChartStack<T>({
                     radius={6}
                     top={barStackIdx === barStacks.length - 1}
                     bottom={barStackIdx === 0}
-                    onMouseMove={
-                      data[barIdx] &&
-                      handleMouseMove(bar.x, bar.width, data[barIdx])
-                    }
+                    onMouseMove={handleMouseMove({
+                      barX: bar.x,
+                      barWidth: bar.width,
+                      title: getXAxisTickLabel(data[barIdx]!),
+                      items: keys.map((key, i) => ({
+                        key,
+                        label: keyLabels[i] ?? "",
+                        value: getValue(data[barIdx]!, key),
+                        color: colors[i] ?? "",
+                      })),
+                    })}
                     onMouseLeave={hideTooltip}
                     key={`${barStackIdx}-${barIdx}`}
                   />
@@ -196,15 +207,7 @@ function BarChartStack<T>({
           unstyled
           className="pointer-events-none absolute"
         >
-          <Tooltip
-            title={getXAxisTickLabel(tooltipData)}
-            items={keys.map((key, i) => ({
-              key,
-              label: keyLabels[i] ?? "",
-              value: getValue(tooltipData, key),
-              color: colors[i] ?? "",
-            }))}
-          />
+          <Tooltip title={tooltipData.title} items={tooltipData.items} />
         </TooltipInPortal>
       )}
       {showLegend && (
