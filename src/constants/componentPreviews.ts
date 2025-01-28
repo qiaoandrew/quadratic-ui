@@ -194,8 +194,8 @@ import VisxBarChartDemo from "~/components/docs/demos/visx/bar-chart/BarChartDem
 import VisxBarChartHorizontalDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalDemo";
 import VisxBarChartGroupDemo from "~/components/docs/demos/visx/bar-chart/BarChartGroupDemo";
 import VisxBarChartHorizontalGroupDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalGroupDemo";
-import VisxBarChartStackedDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackedDemo";
-import VisxBarChartHorizontalStackedDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalStackedDemo";
+import VisxBarChartStackDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackDemo";
+import VisxBarChartHorizontalStackDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalStackDemo";
 import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -959,13 +959,13 @@ export const COMPONENT_PREVIEWS = {
     Preview: VisxBarChartHorizontalGroupDemo,
     path: "src/components/docs/demos/visx/bar-chart/BarChartHorizontalGroupDemo.tsx",
   },
-  visxBarChartStacked: {
-    Preview: VisxBarChartStackedDemo,
-    path: "src/components/docs/demos/visx/bar-chart/BarChartStackedDemo.tsx",
+  visxBarChartStack: {
+    Preview: VisxBarChartStackDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartStackDemo.tsx",
   },
-  visxBarChartHorizontalStacked: {
-    Preview: VisxBarChartHorizontalStackedDemo,
-    path: "src/components/docs/demos/visx/bar-chart/BarChartHorizontalStackedDemo.tsx",
+  visxBarChartHorizontalStack: {
+    Preview: VisxBarChartHorizontalStackDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartHorizontalStackDemo.tsx",
   },
   visxVoronoiChart: {
     Preview: VisxVoronoiChartDemo,

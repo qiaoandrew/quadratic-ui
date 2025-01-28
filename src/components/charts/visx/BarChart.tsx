@@ -139,31 +139,32 @@ function BarChart<T>({
           })}
           <AxisLeft
             scale={yScale}
+            stroke="transparent"
+            label={showYAxisLabel ? yAxisLabel : ""}
+            labelClassName="fill-foreground text-3-5 font-medium font-sans"
+            labelOffset={44}
             numTicks={tickValues.length}
             tickValues={tickValues}
-            stroke="transparent"
-            tickStroke="transparent"
             tickLabelProps={{
               fill: "hsl(var(--muted-foreground))",
               fontSize: 12,
               fontFamily: "var(--font-sans)",
             }}
-            label={showYAxisLabel ? yAxisLabel : ""}
-            labelOffset={44}
-            labelClassName="fill-foreground text-3-5 font-medium font-sans"
+            tickStroke="transparent"
           />
           <AxisBottom
             top={yMax}
             scale={xScale}
+            label={showXAxisLabel ? xAxisLabel : ""}
+            labelClassName="fill-foreground text-3-5 font-medium font-sans"
+            labelOffset={24}
             tickFormat={formatXAxisTickLabel}
             tickLabelProps={{
               fill: "hsl(var(--muted-foreground))",
               fontSize: 12,
               fontFamily: "var(--font-sans)",
             }}
-            label={showXAxisLabel ? xAxisLabel : ""}
-            labelOffset={24}
-            labelClassName="fill-foreground text-3-5 font-medium font-sans"
+            tickStroke="transparent"
           />
         </Group>
       </svg>

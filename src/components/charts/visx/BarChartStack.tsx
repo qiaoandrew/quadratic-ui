@@ -18,7 +18,7 @@ const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
   left: showYAxisLabel ? 64 : 4,
 });
 
-interface BarChartStackedProps<T> {
+interface BarChartStackProps<T> {
   data: T[];
   keys: string[];
   getValue: (d: T, key: string) => number;
@@ -35,7 +35,7 @@ interface BarChartStackedProps<T> {
   aspectRatio?: number;
 }
 
-function BarChartStacked<T>({
+function BarChartStack<T>({
   data,
   keys,
   getValue,
@@ -50,7 +50,7 @@ function BarChartStacked<T>({
   showLegend = false,
   colors,
   aspectRatio = 4 / 3,
-}: BarChartStackedProps<T>) {
+}: BarChartStackProps<T>) {
   const { width } = useChart();
   const margin = getMargin(showXAxisLabel, showYAxisLabel);
   const height = width / aspectRatio;
@@ -224,4 +224,4 @@ function BarChartStacked<T>({
   );
 }
 
-export { BarChartStacked };
+export { BarChartStack as BarChartStacked };
