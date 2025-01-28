@@ -72,7 +72,7 @@ function BarChartStacked<T>({
       scaleLinear<number>({
         range: [yMax, 0],
         round: true,
-        domain: [tickValues.at(0) ?? 0, tickValues.at(-1) ?? 0],
+        domain: [tickValues[0] ?? 0, tickValues[tickValues.length - 1] ?? 0],
       }),
     [yMax, tickValues],
   );
@@ -169,7 +169,7 @@ function BarChartStacked<T>({
               fontFamily: "var(--font-sans)",
             }}
             label={showYAxisLabel ? yAxisLabel : ""}
-            labelOffset={margin.left}
+            labelOffset={44}
             labelClassName="fill-foreground text-3-5 font-medium font-sans"
           />
           <AxisBottom
@@ -182,7 +182,7 @@ function BarChartStacked<T>({
               fontFamily: "var(--font-sans)",
             }}
             label={showXAxisLabel ? xAxisLabel : ""}
-            labelOffset={margin.bottom}
+            labelOffset={24}
             labelClassName="fill-foreground text-3-5 font-medium font-sans"
           />
         </Group>

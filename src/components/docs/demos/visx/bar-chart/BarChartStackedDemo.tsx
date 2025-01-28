@@ -67,7 +67,7 @@ export default function BarChartStackedDemo() {
         formatXAxisTickLabel={(month: string) => month.slice(0, 3)}
         xAxisLabel="Month"
         yAxisLabel="Views"
-        tickValues={[0, 60, 120, 180, 240, 300, 360]}
+        tickValues={[0, 120, 240, 360, 480, 600, 720]}
         colors={[
           "hsl(var(--chart-1))",
           "hsl(var(--chart-2))",
