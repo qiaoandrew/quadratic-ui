@@ -1,3 +1,8 @@
+interface TooltipHandleMouseMoveParams extends TooltipData {
+  barX: number;
+  barWidth: number;
+}
+
 type TooltipData = {
   title: string;
   items: { key: string; label: string; value: number; color: string }[];
@@ -25,4 +30,4 @@ function Tooltip({ title, items }: TooltipData) {
   );
 }
 
-export { Tooltip, type TooltipData };
+export { Tooltip, type TooltipData, type TooltipHandleMouseMoveParams };
