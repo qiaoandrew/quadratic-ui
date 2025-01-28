@@ -88,6 +88,7 @@ export default function Header({ docsMenuItems }: HeaderProps) {
         onMouseLeave={closeDesktopMenu}
         className={cn(
           "rounded-2-5 border-border/50 bg-background/60 fixed inset-x-3 top-3 z-40 flex flex-col gap-y-2 overflow-hidden border backdrop-blur-sm transition-[height]",
+          "md:inset-x-6",
           "xl:rounded-3-5 xl:top-6",
           "3xl:inset-x-[calc((100vw-1280px)/2)]",
           isMobileMenuOpen ? "h-[calc(100dvh-1.5rem)]" : "h-11",

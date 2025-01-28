@@ -1,3 +1,4 @@
+import { cn } from "~/utils/tailwind";
 import { LANDING_DEMOS } from "~/constants/landingDemos";
 
 import LandingDemo from "~/components/landing/demos/LandingDemo";
@@ -6,7 +7,13 @@ import VerticalDividers from "~/components/landing/dividers/VerticalDividers";
 
 export default function Demos() {
   return (
-    <section className="relative grid gap-x-8 overflow-hidden px-6 pb-12 pt-7 md:grid-cols-2 3xl:grid-cols-3 3xl:px-[calc((100vw-1256px)/2)]">
+    <section
+      className={cn(
+        "relative grid gap-x-8 overflow-hidden px-6 pt-7 pb-12",
+        "md:grid-cols-2 md:px-9",
+        "3xl:grid-cols-3 3xl:px-[calc((100vw-1256px)/2)]",
+      )}
+    >
       <VerticalDividers />
       <HorizontalDividers />
       {LANDING_DEMOS.map((demo) => (
