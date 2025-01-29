@@ -40,7 +40,7 @@ export default function CommandDialogDemo() {
 
   return (
     <>
-      <div className="flex items-center gap-x-2">
+      <div className="relative flex items-center gap-x-2">
         <p className="text-4">Press</p>
         <ShortcutGroup>
           <Shortcut>⌘</Shortcut>
