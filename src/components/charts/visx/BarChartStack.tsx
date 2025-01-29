@@ -1,20 +1,14 @@
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { BarRounded, BarStack } from "@visx/shape";
 import type { Accessor } from "@visx/shape/lib/types";
-import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import { useChart } from "~/components/charts/visx/Chart";
-import {
-  Tooltip,
-  type TooltipData,
-  type TooltipHandleMouseMoveParams,
-} from "~/components/charts/visx/Tooltip";
+import { Tooltip } from "~/components/charts/visx/Tooltip";
 
 const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
   top: 12,
@@ -56,7 +50,16 @@ function BarChartStack<T>({
   colors,
   aspectRatio = 4 / 3,
 }: BarChartStackProps<T>) {
-  const { width } = useChart();
+  const {
+    width,
+    tooltipParams,
+    tooltipContainerRef,
+    TooltipInPortal,
+    handleMouseMove,
+  } = useChart();
+  const { tooltipOpen, tooltipLeft, tooltipTop, tooltipData, hideTooltip } =
+    tooltipParams;
+
   const margin = getMargin(showXAxisLabel, showYAxisLabel);
   const height = width / aspectRatio;
   const xMax = width - margin.left - margin.right;
@@ -87,31 +90,6 @@ function BarChartStack<T>({
   const colorScale = useMemo(
     () => scaleOrdinal({ domain: keys, range: colors }),
     [keys, colors],
-  );
-
-  const {
-    tooltipOpen,
-    tooltipLeft,
-    tooltipTop,
-    tooltipData,
-    hideTooltip,
-    showTooltip,
-  } = useTooltip<TooltipData>();
-  const { containerRef: tooltipContainerRef, TooltipInPortal } =
-    useTooltipInPortal({ scroll: true });
-
-  const handleMouseMove = useCallback(
-    ({ left, title, items }: TooltipHandleMouseMoveParams) =>
-      (e: React.MouseEvent<SVGRectElement>) => {
-        const eventSVGCoords = localPoint(e);
-
-        showTooltip({
-          tooltipData: { title, items },
-          tooltipTop: eventSVGCoords?.y,
-          tooltipLeft: left,
-        });
-      },
-    [showTooltip],
   );
 
   return (
