@@ -1,9 +1,13 @@
-interface TooltipProps {
-  title: string;
-  items: { key: string; label: string; value: number; color: string }[];
+interface TooltipHandleMouseMoveParams extends TooltipData {
+  left: number;
 }
 
-function Tooltip({ title, items }: TooltipProps) {
+type TooltipData = {
+  title: string;
+  items: { key: string; label: string; value: number; color: string }[];
+};
+
+function Tooltip({ title, items }: TooltipData) {
   return (
     <div className="rounded-1-5 bg-background text-3 flex min-w-32 flex-col gap-y-1 border p-2">
       <p className="font-medium">{title}</p>
@@ -25,4 +29,4 @@ function Tooltip({ title, items }: TooltipProps) {
   );
 }
 
-export { Tooltip };
+export { Tooltip, type TooltipData, type TooltipHandleMouseMoveParams };

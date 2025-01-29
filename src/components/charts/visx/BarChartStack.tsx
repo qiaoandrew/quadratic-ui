@@ -1,12 +1,11 @@
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { BarRounded, BarStack } from "@visx/shape";
-import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
+import type { Accessor } from "@visx/shape/lib/types";
 
 import { useChart } from "~/components/charts/visx/Chart";
 import { Tooltip } from "~/components/charts/visx/Tooltip";
@@ -18,23 +17,24 @@ const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
   left: showYAxisLabel ? 64 : 4,
 });
 
-interface BarChartStackedProps<T> {
+interface BarChartStackProps<T> {
   data: T[];
   keys: string[];
   getValue: (d: T, key: string) => number;
   keyLabels: string[];
-  getXAxisTickLabel: (d: T) => string;
+  getXAxisTickLabel: Accessor<T, string>;
   formatXAxisTickLabel?: (label: string) => string;
   xAxisLabel: string;
   yAxisLabel: string;
   showXAxisLabel?: boolean;
   showYAxisLabel?: boolean;
   tickValues: number[];
+  showLegend?: boolean;
   colors: string[];
   aspectRatio?: number;
 }
 
-function BarChartStacked<T>({
+function BarChartStack<T>({
   data,
   keys,
   getValue,
@@ -46,10 +46,20 @@ function BarChartStacked<T>({
   showXAxisLabel = true,
   showYAxisLabel = true,
   tickValues,
+  showLegend = false,
   colors,
   aspectRatio = 4 / 3,
-}: BarChartStackedProps<T>) {
-  const { width } = useChart();
+}: BarChartStackProps<T>) {
+  const {
+    width,
+    tooltipParams,
+    tooltipContainerRef,
+    TooltipInPortal,
+    handleMouseMove,
+  } = useChart();
+  const { tooltipOpen, tooltipLeft, tooltipTop, tooltipData, hideTooltip } =
+    tooltipParams;
+
   const margin = getMargin(showXAxisLabel, showYAxisLabel);
   const height = width / aspectRatio;
   const xMax = width - margin.left - margin.right;
@@ -80,32 +90,6 @@ function BarChartStacked<T>({
   const colorScale = useMemo(
     () => scaleOrdinal({ domain: keys, range: colors }),
     [keys, colors],
-  );
-
-  const {
-    tooltipOpen,
-    tooltipLeft,
-    tooltipTop,
-    tooltipData,
-    hideTooltip,
-    showTooltip,
-  } = useTooltip<T>();
-  const { containerRef: tooltipContainerRef, TooltipInPortal } =
-    useTooltipInPortal({ scroll: true });
-
-  const handleMouseMove = useCallback(
-    (barX: number, barWidth: number, d: T) =>
-      (e: React.MouseEvent<SVGRectElement>) => {
-        const eventSVGCoords = localPoint(e);
-        const left = barX + barWidth / 2;
-
-        showTooltip({
-          tooltipData: d,
-          tooltipTop: eventSVGCoords?.y,
-          tooltipLeft: left,
-        });
-      },
-    [showTooltip],
   );
 
   return (
@@ -146,10 +130,16 @@ function BarChartStacked<T>({
                     radius={6}
                     top={barStackIdx === barStacks.length - 1}
                     bottom={barStackIdx === 0}
-                    onMouseMove={
-                      data[barIdx] &&
-                      handleMouseMove(bar.x, bar.width, data[barIdx])
-                    }
+                    onMouseMove={handleMouseMove({
+                      left: bar.x + bar.width / 2,
+                      title: getXAxisTickLabel(data[barIdx]!),
+                      items: keys.map((key, i) => ({
+                        key,
+                        label: keyLabels[i] ?? "",
+                        value: getValue(data[barIdx]!, key),
+                        color: colors[i] ?? "",
+                      })),
+                    })}
                     onMouseLeave={hideTooltip}
                     key={`${barStackIdx}-${barIdx}`}
                   />
@@ -194,19 +184,24 @@ function BarChartStacked<T>({
           unstyled
           className="pointer-events-none absolute"
         >
-          <Tooltip
-            title={getXAxisTickLabel(tooltipData)}
-            items={keys.map((key, i) => ({
-              key,
-              label: keyLabels[i] ?? "",
-              value: getValue(tooltipData, key),
-              color: colors[i] ?? "",
-            }))}
-          />
+          <Tooltip title={tooltipData.title} items={tooltipData.items} />
         </TooltipInPortal>
+      )}
+      {showLegend && (
+        <div className="text-3-5 absolute top-0 left-0 ml-[calc(100%+16px)]">
+          <LegendOrdinal
+            scale={colorScale}
+            direction="column"
+            itemMargin={2}
+            shapeWidth={8}
+            shapeHeight={8}
+            labelFormat={(_, i) => keyLabels[i] ?? ""}
+            shapeStyle={() => ({ borderRadius: 2 })}
+          />
+        </div>
       )}
     </>
   );
 }
 
-export { BarChartStacked };
+export { BarChartStack as BarChartStacked };

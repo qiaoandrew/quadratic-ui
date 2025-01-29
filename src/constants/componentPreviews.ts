@@ -191,8 +191,11 @@ import TremorProgressBarDemo from "~/components/docs/demos/tremor/progress-bar/P
 import TremorProgressCircleDemo from "~/components/docs/demos/tremor/progress-circle/ProgressCircleDemo";
 import TremorTrackerDemo from "~/components/docs/demos/tremor/tracker/TrackerDemo";
 import VisxBarChartDemo from "~/components/docs/demos/visx/bar-chart/BarChartDemo";
+import VisxBarChartHorizontalDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalDemo";
 import VisxBarChartGroupDemo from "~/components/docs/demos/visx/bar-chart/BarChartGroupDemo";
-import VisxBarChartStackedDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackedDemo";
+import VisxBarChartHorizontalGroupDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalGroupDemo";
+import VisxBarChartStackDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackDemo";
+import VisxBarChartHorizontalStackDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalStackDemo";
 import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -944,13 +947,25 @@ export const COMPONENT_PREVIEWS = {
     Preview: VisxBarChartDemo,
     path: "src/components/docs/demos/visx/bar-chart/BarChartDemo.tsx",
   },
+  visxBarChartHorizontal: {
+    Preview: VisxBarChartHorizontalDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartHorizontalDemo.tsx",
+  },
   visxBarChartGroup: {
     Preview: VisxBarChartGroupDemo,
     path: "src/components/docs/demos/visx/bar-chart/BarChartGroupDemo.tsx",
   },
-  visxBarChartStacked: {
-    Preview: VisxBarChartStackedDemo,
-    path: "src/components/docs/demos/visx/bar-chart/BarChartStackedDemo.tsx",
+  visxBarChartHorizontalGroup: {
+    Preview: VisxBarChartHorizontalGroupDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartHorizontalGroupDemo.tsx",
+  },
+  visxBarChartStack: {
+    Preview: VisxBarChartStackDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartStackDemo.tsx",
+  },
+  visxBarChartHorizontalStack: {
+    Preview: VisxBarChartHorizontalStackDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartHorizontalStackDemo.tsx",
   },
   visxVoronoiChart: {
     Preview: VisxVoronoiChartDemo,
