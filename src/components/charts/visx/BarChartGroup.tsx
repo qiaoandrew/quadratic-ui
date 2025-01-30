@@ -7,21 +7,14 @@ import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { BarRounded, BarGroup } from "@visx/shape";
 import type { Accessor, DatumObject } from "@visx/shape/lib/types";
 
-import { useChart } from "~/components/charts/visx/Chart";
-import { Tooltip } from "~/components/charts/visx/Tooltip";
+import { getBarChartMargin } from "~/utils/visx";
 
-const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
-  top: 12,
-  right: 4,
-  bottom: showXAxisLabel ? 64 : 12,
-  left: showYAxisLabel ? 64 : 4,
-});
+import { useChart } from "~/components/charts/visx/Chart";
 
 interface BarChartGroupProps<T extends DatumObject> {
   data: T[];
-  keys: string[];
-  getValue: (d: T, key: string) => number;
-  keyLabels: string[];
+  dataKeys: string[];
+  dataKeyLabels: string[];
   getXAxisTickLabel: Accessor<T, string>;
   formatXAxisTickLabel?: (label: string) => string;
   xAxisLabel: string;
@@ -31,14 +24,12 @@ interface BarChartGroupProps<T extends DatumObject> {
   tickValues: number[];
   showLegend?: boolean;
   colors: string[];
-  aspectRatio?: number;
 }
 
 function BarChartGroup<T extends DatumObject>({
   data,
-  keys,
-  getValue,
-  keyLabels,
+  dataKeys,
+  dataKeyLabels,
   getXAxisTickLabel,
   formatXAxisTickLabel,
   xAxisLabel,
@@ -48,20 +39,10 @@ function BarChartGroup<T extends DatumObject>({
   tickValues,
   showLegend = false,
   colors,
-  aspectRatio = 4 / 3,
 }: BarChartGroupProps<T>) {
-  const {
-    width,
-    tooltipParams,
-    tooltipContainerRef,
-    TooltipInPortal,
-    handleMouseMove,
-  } = useChart();
-  const { tooltipOpen, tooltipLeft, tooltipTop, tooltipData, hideTooltip } =
-    tooltipParams;
+  const { width, height, handleMouseMove, hideTooltip } = useChart();
 
-  const margin = getMargin(showXAxisLabel, showYAxisLabel);
-  const height = width / aspectRatio;
+  const margin = getBarChartMargin(showXAxisLabel, showYAxisLabel);
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
@@ -80,11 +61,11 @@ function BarChartGroup<T extends DatumObject>({
   const x1Scale = useMemo(
     () =>
       scaleBand<string>({
-        domain: keys,
+        domain: dataKeys,
         range: [0, x0Scale.bandwidth()],
         paddingInner: 0.2,
       }),
-    [keys, x0Scale],
+    [dataKeys, x0Scale],
   );
 
   const yScale = useMemo(
@@ -98,12 +79,13 @@ function BarChartGroup<T extends DatumObject>({
   );
 
   const colorScale = useMemo(
-    () => scaleOrdinal({ domain: keys, range: colors }),
-    [keys, colors],
+    () => scaleOrdinal({ domain: dataKeys, range: colors }),
+    [dataKeys, colors],
   );
 
   return (
     <>
+<<<<<<< HEAD
       <svg
         ref={tooltipContainerRef}
         viewBox={`0 0 ${width} ${height}`}
@@ -200,10 +182,91 @@ function BarChartGroup<T extends DatumObject>({
           left={tooltipLeft}
           unstyled
           className="pointer-events-none absolute"
+=======
+      <Group top={margin.top} left={margin.left}>
+        <GridRows
+          scale={yScale}
+          numTicks={tickValues.length}
+          tickValues={tickValues}
+          width={xMax}
+          height={yMax}
+          stroke="hsl(var(--border))"
+        />
+        <BarGroup<T, string>
+          data={data}
+          keys={dataKeys}
+          height={yMax}
+          x0={getXAxisTickLabel}
+          x0Scale={x0Scale}
+          x1Scale={x1Scale}
+          yScale={yScale}
+          color={colorScale}
+>>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
         >
-          <Tooltip title={tooltipData.title} items={tooltipData.items} />
-        </TooltipInPortal>
-      )}
+          {(barGroups) =>
+            barGroups.map((barGroup, barGroupIdx) => (
+              <Group
+                key={`bar-group-${barGroupIdx}-${barGroup.x0}`}
+                left={barGroup.x0}
+              >
+                {barGroup.bars.map((bar, barIdx) => (
+                  <BarRounded
+                    x={bar.x}
+                    y={bar.y}
+                    width={bar.width}
+                    height={bar.height}
+                    fill={bar.color}
+                    radius={4}
+                    all
+                    onMouseMove={handleMouseMove({
+                      left: barGroup.x0 + bar.x + bar.width / 2,
+                      title: getXAxisTickLabel(data[barGroupIdx]!),
+                      items: [
+                        {
+                          key: dataKeys[barIdx]!,
+                          label: dataKeyLabels[barIdx]!,
+                          value: Number(data[barGroupIdx]![dataKeys[barIdx]!]),
+                          color: colors[barIdx]!,
+                        },
+                      ],
+                    })}
+                    onMouseLeave={hideTooltip}
+                    key={`bar-group-bar-${barGroupIdx}-${barIdx}}`}
+                  />
+                ))}
+              </Group>
+            ))
+          }
+        </BarGroup>
+        <AxisLeft
+          scale={yScale}
+          numTicks={tickValues.length}
+          tickValues={tickValues}
+          stroke="transparent"
+          tickStroke="transparent"
+          tickLabelProps={{
+            fill: "hsl(var(--muted-foreground))",
+            fontSize: 12,
+            fontFamily: "var(--font-sans)",
+          }}
+          label={showYAxisLabel ? yAxisLabel : ""}
+          labelOffset={44}
+          labelClassName="fill-foreground text-3-5 font-medium font-sans"
+        />
+        <AxisBottom
+          top={yMax}
+          scale={x0Scale}
+          tickFormat={formatXAxisTickLabel}
+          tickLabelProps={{
+            fill: "hsl(var(--muted-foreground))",
+            fontSize: 12,
+            fontFamily: "var(--font-sans)",
+          }}
+          label={showXAxisLabel ? xAxisLabel : ""}
+          labelOffset={24}
+          labelClassName="fill-foreground text-3-5 font-medium font-sans"
+        />
+      </Group>
       {showLegend && (
         <div className="text-3.5 absolute top-0 left-0 ml-[calc(100%+16px)]">
           <LegendOrdinal
@@ -212,7 +275,7 @@ function BarChartGroup<T extends DatumObject>({
             itemMargin={2}
             shapeWidth={8}
             shapeHeight={8}
-            labelFormat={(_, i) => keyLabels[i] ?? ""}
+            labelFormat={(_, i) => dataKeyLabels[i] ?? ""}
             shapeStyle={() => ({ borderRadius: 2 })}
           />
         </div>

@@ -39,12 +39,11 @@ const CHART_DATA: Datum[] = [
 
 export default function BarChartGroupDemo() {
   return (
-    <ChartContainer className="aspect-9/6 w-full max-w-124">
+    <ChartContainer aspectRatio={9 / 6} className="w-full max-w-124">
       <BarChartGroup<Datum>
         data={CHART_DATA}
-        keys={["desktopViews", "mobileViews", "tabletViews"] as const}
-        getValue={(d, key) => Number(d[key as keyof typeof d])}
-        keyLabels={["Desktop", "Mobile", "Tablet"]}
+        dataKeys={["desktopViews", "mobileViews", "tabletViews"] as const}
+        dataKeyLabels={["Desktop", "Mobile", "Tablet"]}
         getXAxisTickLabel={(d: Datum) => d.month}
         formatXAxisTickLabel={(month: string) => month.slice(0, 3)}
         xAxisLabel="Month"
@@ -55,7 +54,6 @@ export default function BarChartGroupDemo() {
           "hsl(var(--chart-2))",
           "hsl(var(--chart-3))",
         ]}
-        aspectRatio={9 / 6}
       />
     </ChartContainer>
   );

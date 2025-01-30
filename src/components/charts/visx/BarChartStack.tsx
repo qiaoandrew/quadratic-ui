@@ -7,21 +7,14 @@ import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { BarRounded, BarStack } from "@visx/shape";
 import type { Accessor } from "@visx/shape/lib/types";
 
-import { useChart } from "~/components/charts/visx/Chart";
-import { Tooltip } from "~/components/charts/visx/Tooltip";
+import { getBarChartMargin } from "~/utils/visx";
 
-const getMargin = (showXAxisLabel: boolean, showYAxisLabel: boolean) => ({
-  top: 12,
-  right: 4,
-  bottom: showXAxisLabel ? 64 : 12,
-  left: showYAxisLabel ? 64 : 4,
-});
+import { useChart } from "~/components/charts/visx/Chart";
 
 interface BarChartStackProps<T> {
   data: T[];
-  keys: string[];
-  getValue: (d: T, key: string) => number;
-  keyLabels: string[];
+  dataKeys: Extract<keyof T, string>[];
+  dataKeyLabels: string[];
   getXAxisTickLabel: Accessor<T, string>;
   formatXAxisTickLabel?: (label: string) => string;
   xAxisLabel: string;
@@ -30,15 +23,13 @@ interface BarChartStackProps<T> {
   showYAxisLabel?: boolean;
   tickValues: number[];
   showLegend?: boolean;
-  colors: string[];
-  aspectRatio?: number;
+  barColors: string[];
 }
 
 function BarChartStack<T>({
   data,
-  keys,
-  getValue,
-  keyLabels,
+  dataKeys,
+  dataKeyLabels,
   getXAxisTickLabel,
   formatXAxisTickLabel,
   xAxisLabel,
@@ -47,21 +38,11 @@ function BarChartStack<T>({
   showYAxisLabel = true,
   tickValues,
   showLegend = false,
-  colors,
-  aspectRatio = 4 / 3,
+  barColors,
 }: BarChartStackProps<T>) {
-  const {
-    width,
-    tooltipParams,
-    tooltipContainerRef,
-    TooltipInPortal,
-    handleMouseMove,
-  } = useChart();
-  const { tooltipOpen, tooltipLeft, tooltipTop, tooltipData, hideTooltip } =
-    tooltipParams;
+  const { width, height, handleMouseMove, hideTooltip } = useChart();
 
-  const margin = getMargin(showXAxisLabel, showYAxisLabel);
-  const height = width / aspectRatio;
+  const margin = getBarChartMargin(showXAxisLabel, showYAxisLabel);
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
@@ -88,12 +69,17 @@ function BarChartStack<T>({
   );
 
   const colorScale = useMemo(
-    () => scaleOrdinal({ domain: keys, range: colors }),
-    [keys, colors],
+    () =>
+      scaleOrdinal({
+        domain: dataKeys as string[],
+        range: barColors,
+      }),
+    [dataKeys, barColors],
   );
 
   return (
     <>
+<<<<<<< HEAD
       <svg
         ref={tooltipContainerRef}
         viewBox={`0 0 ${width} ${height}`}
@@ -183,10 +169,83 @@ function BarChartStack<T>({
           left={tooltipLeft}
           unstyled
           className="pointer-events-none absolute"
+=======
+      <Group top={margin.top} left={margin.left}>
+        <GridRows
+          scale={yScale}
+          numTicks={tickValues.length}
+          tickValues={tickValues}
+          width={xMax}
+          height={yMax}
+          stroke="hsl(var(--border))"
+        />
+        <BarStack<T, string>
+          data={data}
+          keys={dataKeys}
+          xScale={xScale}
+          yScale={yScale}
+          color={colorScale}
+          x={getXAxisTickLabel}
+>>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
         >
-          <Tooltip title={tooltipData.title} items={tooltipData.items} />
-        </TooltipInPortal>
-      )}
+          {(barStacks) =>
+            barStacks.map((barStack, barStackIdx) =>
+              barStack.bars.map((bar, barIdx) => (
+                <BarRounded
+                  x={bar.x}
+                  y={bar.y}
+                  width={bar.width}
+                  height={bar.height}
+                  fill={bar.color}
+                  radius={6}
+                  top={barStackIdx === barStacks.length - 1}
+                  bottom={barStackIdx === 0}
+                  onMouseMove={handleMouseMove({
+                    left: bar.x + bar.width / 2,
+                    title: getXAxisTickLabel(data[barIdx]!),
+                    items: dataKeys.map((key, i) => ({
+                      key,
+                      label: dataKeyLabels[i] ?? "",
+                      value: Number(data[barIdx]![key]),
+                      color: barColors[i] ?? "",
+                    })),
+                  })}
+                  onMouseLeave={hideTooltip}
+                  key={`${barStackIdx}-${barIdx}`}
+                />
+              )),
+            )
+          }
+        </BarStack>
+        <AxisLeft
+          scale={yScale}
+          numTicks={tickValues.length}
+          tickValues={tickValues}
+          stroke="transparent"
+          tickStroke="transparent"
+          tickLabelProps={{
+            fill: "hsl(var(--muted-foreground))",
+            fontSize: 12,
+            fontFamily: "var(--font-sans)",
+          }}
+          label={showYAxisLabel ? yAxisLabel : ""}
+          labelOffset={44}
+          labelClassName="fill-foreground text-3-5 font-medium font-sans"
+        />
+        <AxisBottom
+          top={yMax}
+          scale={xScale}
+          tickFormat={formatXAxisTickLabel}
+          tickLabelProps={{
+            fill: "hsl(var(--muted-foreground))",
+            fontSize: 12,
+            fontFamily: "var(--font-sans)",
+          }}
+          label={showXAxisLabel ? xAxisLabel : ""}
+          labelOffset={24}
+          labelClassName="fill-foreground text-3-5 font-medium font-sans"
+        />
+      </Group>
       {showLegend && (
         <div className="text-3.5 absolute top-0 left-0 ml-[calc(100%+16px)]">
           <LegendOrdinal
@@ -195,7 +254,7 @@ function BarChartStack<T>({
             itemMargin={2}
             shapeWidth={8}
             shapeHeight={8}
-            labelFormat={(_, i) => keyLabels[i] ?? ""}
+            labelFormat={(_, i) => dataKeyLabels[i] ?? ""}
             shapeStyle={() => ({ borderRadius: 2 })}
           />
         </div>
