@@ -4,7 +4,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     <div className="relative w-full overflow-auto">
       <table
-        className={cn("text-3-5 w-full caption-bottom", className)}
+        className={cn("text-3.5 w-full caption-bottom", className)}
         {...props}
       />
     </div>

@@ -11,10 +11,10 @@ const textareaVariants = tv({
   ],
   variants: {
     size: {
-      xs: "rounded-1 text-3-5 px-2 py-1.5",
-      sm: "rounded-1-5 text-3-5 px-2.5 py-2",
-      md: "rounded-2 text-3-5 px-3 py-2.5",
-      lg: "rounded-2-5 text-4 px-3.5 py-3",
+      xs: "rounded-1 text-3.5 px-2 py-1.5",
+      sm: "rounded-1.5 text-3.5 px-2.5 py-2",
+      md: "rounded-2 text-3.5 px-3 py-2.5",
+      lg: "rounded-2.5 text-4 px-3.5 py-3",
     },
   },
   defaultVariants: {

@@ -74,7 +74,7 @@ function TrackerBlock({
         >
           <div
             className={cn(
-              "rounded-0-25 size-full",
+              "rounded-0.25 size-full",
               color ?? defaultBackgroundColor,
               showHoverEffect && "hover:opacity-50",
             )}
@@ -87,7 +87,7 @@ function TrackerBlock({
           side="top"
           align="center"
           avoidCollisions
-          className="rounded-1-5 bg-primary text-3 text-primary-foreground w-auto px-1.5 py-1"
+          className="rounded-1.5 bg-primary text-3 text-primary-foreground w-auto px-1.5 py-1"
         >
           {tooltip}
         </HoverCardPrimitives.Content>

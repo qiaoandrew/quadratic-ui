@@ -32,7 +32,7 @@ export default function BreadcrumbDemo() {
               <BreadcrumbEllipsis className="size-4 [&>svg]:size-3.5" />
               <span className="sr-only">Toggle menu</span>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="rounded-1-5 min-w-36">
+            <DropdownMenuContent align="start" className="rounded-1.5 min-w-36">
               <DropdownMenuItem className="text-3 px-1.5 py-1" asChild>
                 <a href="/docs/getting-started/quickstart">Documentation</a>
               </DropdownMenuItem>

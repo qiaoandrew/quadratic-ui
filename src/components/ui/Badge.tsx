@@ -3,7 +3,7 @@ import type { VariantProps } from "tailwind-variants";
 import { cn, tv } from "~/utils/tailwind";
 
 const badgeVariants = tv({
-  base: "text-3-5 inline-flex h-7 items-center rounded-full px-2.5 font-medium",
+  base: "text-3.5 inline-flex h-7 items-center rounded-full px-2.5 font-medium",
   variants: {
     variant: {
       default: "bg-primary text-primary-foreground",

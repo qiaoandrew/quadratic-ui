@@ -14,7 +14,7 @@ export default function LandingDemo({ label, href, Demo }: LandingDemoProps) {
         <Demo />
       </div>
       <div className="h-16 p-3">
-        <p className="text-3-5 font-mono">{label}</p>
+        <p className="text-3.5 font-mono">{label}</p>
       </div>
     </div>
   );

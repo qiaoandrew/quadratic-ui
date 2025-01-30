@@ -50,7 +50,7 @@ const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = tv({
   base: [
-    "group rounded-2 text-3-5 inline-flex h-9 w-max items-center justify-center gap-x-1.5 px-2 font-medium transition-colors",
+    "group rounded-2 text-3.5 inline-flex h-9 w-max items-center justify-center gap-x-1.5 px-2 font-medium transition-colors",
     "hover:bg-accent hover:text-accent-foreground",
     "focus:bg-accent focus:text-accent-foreground focus:outline-hidden",
     "disabled:pointer-events-none disabled:opacity-50",
@@ -225,14 +225,14 @@ function NavigationMenuDropdownItem({
           />
         </div>
         <h4 className="text-4 mb-1 font-medium">{title}</h4>
-        <p className="text-3-5 text-muted-foreground leading-6">
+        <p className="text-3.5 text-muted-foreground leading-6">
           {description}
         </p>
       </>
     ) : (
       <>
-        <p className="text-3-5 text-foreground mb-1 font-medium">{title}</p>
-        <p className="text-3-5 text-muted-foreground line-clamp-2 leading-6">
+        <p className="text-3.5 text-foreground mb-1 font-medium">{title}</p>
+        <p className="text-3.5 text-muted-foreground line-clamp-2 leading-6">
           {description}
         </p>
       </>

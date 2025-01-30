@@ -24,8 +24,8 @@ const logoVariants = tv({
       lg: {
         base: "gap-x-2.5",
         iconContainer: "size-6",
-        rectangle1: "rounded-1-5 size-[21px]",
-        rectangle2: "rounded-1-5 size-[21px]",
+        rectangle1: "rounded-1.5 size-[21px]",
+        rectangle2: "rounded-1.5 size-[21px]",
         text: "text-6",
       },
     },

@@ -160,7 +160,7 @@ function BarChartStack<T>({
             }}
             label={showYAxisLabel ? yAxisLabel : ""}
             labelOffset={44}
-            labelClassName="fill-foreground text-3-5 font-medium font-sans"
+            labelClassName="fill-foreground text-3.5 font-medium font-sans"
           />
           <AxisBottom
             top={yMax}
@@ -173,7 +173,7 @@ function BarChartStack<T>({
             }}
             label={showXAxisLabel ? xAxisLabel : ""}
             labelOffset={24}
-            labelClassName="fill-foreground text-3-5 font-medium font-sans"
+            labelClassName="fill-foreground text-3.5 font-medium font-sans"
           />
         </Group>
       </svg>
@@ -188,7 +188,7 @@ function BarChartStack<T>({
         </TooltipInPortal>
       )}
       {showLegend && (
-        <div className="text-3-5 absolute top-0 left-0 ml-[calc(100%+16px)]">
+        <div className="text-3.5 absolute top-0 left-0 ml-[calc(100%+16px)]">
           <LegendOrdinal
             scale={colorScale}
             direction="column"

@@ -11,10 +11,10 @@ const inputVariants = tv({
   ],
   variants: {
     inputSize: {
-      xs: "rounded-1-5 text-3-5 h-8 px-2",
-      sm: "rounded-2 text-3-5 h-9 px-2.5",
-      md: "rounded-2 text-3-5 h-10 px-3",
-      lg: "rounded-2-5 text-4 h-11 px-3.5",
+      xs: "rounded-1.5 text-3.5 h-8 px-2",
+      sm: "rounded-2 text-3.5 h-9 px-2.5",
+      md: "rounded-2 text-3.5 h-10 px-3",
+      lg: "rounded-2.5 text-4 h-11 px-3.5",
     },
   },
   defaultVariants: {

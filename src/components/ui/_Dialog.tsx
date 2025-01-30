@@ -33,7 +33,7 @@ const dialogTitleVariants = tv({
 });
 
 const dialogDescriptionVariants = tv({
-  base: "text-3-5 text-muted-foreground leading-6",
+  base: "text-3.5 text-muted-foreground leading-6",
 });
 
 export {

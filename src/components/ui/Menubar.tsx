@@ -46,7 +46,7 @@ function MenubarTrigger({
   return (
     <MenubarPrimitive.Trigger
       className={cn(
-        "rounded-1 text-3-5 flex cursor-default items-center px-3 py-1 font-medium outline-hidden select-none",
+        "rounded-1 text-3.5 flex cursor-default items-center px-3 py-1 font-medium outline-hidden select-none",
         "focus:bg-accent focus:text-accent-foreground",
         "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
         className,

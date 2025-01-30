@@ -188,7 +188,7 @@ function CategoryBarLabels({ values }: CategoryBarLabelsProps) {
   let sumConsecutiveHiddenLabels = 0;
 
   return (
-    <div className="text-3-5 relative mb-2 flex h-5 w-full font-medium">
+    <div className="text-3.5 relative mb-2 flex h-5 w-full font-medium">
       <div className="absolute bottom-0 left-0 flex items-center">0</div>
       {values.map((widthPercentage, idx) => {
         prefixSum += widthPercentage;
