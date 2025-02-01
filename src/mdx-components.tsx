@@ -27,7 +27,7 @@ export function useMDXComponents(components: MDXComponents) {
       </p>
     ),
     code: ({ children }: React.ComponentProps<"code">) => (
-      <code className="rounded-1 bg-muted text-muted-foreground -my-1 px-1 py-0.5 font-mono">
+      <code className="rounded-1 bg-muted text-muted-foreground -my-1 px-1 py-0.5 font-mono transition-colors">
         {children}
       </code>
     ),
@@ -50,7 +50,7 @@ export function useMDXComponents(components: MDXComponents) {
     a: ({ href, children }: React.ComponentProps<"a">) => (
       <_Link
         href={href ?? ""}
-        className="text-muted-foreground hover:text-foreground underline underline-offset-[5px] transition-colors"
+        className="text-muted-foreground hover:text-foreground hover:[&>code]:text-foreground underline underline-offset-[5px] transition-colors"
       >
         {children}
       </_Link>
