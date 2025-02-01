@@ -81,76 +81,6 @@ function BarChart<T>({
         const x = xScale(label) ?? 0;
         const y = yMax - height;
 
-<<<<<<< HEAD
-            return (
-              <BarRounded
-                x={x}
-                y={y}
-                width={width}
-                height={height}
-                fill={color}
-                radius={6}
-                all
-                onMouseMove={handleMouseMove({
-                  left: x + width / 2,
-                  title: getXAxisTickLabel(data[i]!),
-                  items: [
-                    {
-                      key: getXAxisTickLabel(d),
-                      label: yAxisLabel,
-                      value: getValue(d),
-                      color,
-                    },
-                  ],
-                })}
-                onMouseLeave={hideTooltip}
-                key={`bar-${i}`}
-              />
-            );
-          })}
-          <AxisLeft
-            scale={yScale}
-            stroke="transparent"
-            label={showYAxisLabel ? yAxisLabel : ""}
-            labelClassName="fill-foreground text-3.5 font-medium font-sans"
-            labelOffset={44}
-            numTicks={tickValues.length}
-            tickValues={tickValues}
-            tickLabelProps={{
-              fill: "hsl(var(--muted-foreground))",
-              fontSize: 12,
-              fontFamily: "var(--font-sans)",
-            }}
-            tickStroke="transparent"
-          />
-          <AxisBottom
-            top={yMax}
-            scale={xScale}
-            label={showXAxisLabel ? xAxisLabel : ""}
-            labelClassName="fill-foreground text-3.5 font-medium font-sans"
-            labelOffset={24}
-            tickFormat={formatXAxisTickLabel}
-            tickLabelProps={{
-              fill: "hsl(var(--muted-foreground))",
-              fontSize: 12,
-              fontFamily: "var(--font-sans)",
-            }}
-            tickStroke="transparent"
-          />
-        </Group>
-      </svg>
-      {tooltipOpen && tooltipData && (
-        <TooltipInPortal
-          top={tooltipTop}
-          left={tooltipLeft}
-          unstyled
-          className="pointer-events-none absolute"
-        >
-          <Tooltip title={tooltipData.title} items={tooltipData.items} />
-        </TooltipInPortal>
-      )}
-    </>
-=======
         return (
           <BarRounded
             x={x}
@@ -207,7 +137,6 @@ function BarChart<T>({
         tickStroke="transparent"
       />
     </Group>
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
   );
 }
 

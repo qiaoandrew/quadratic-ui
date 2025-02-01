@@ -85,104 +85,6 @@ function BarChartGroup<T extends DatumObject>({
 
   return (
     <>
-<<<<<<< HEAD
-      <svg
-        ref={tooltipContainerRef}
-        viewBox={`0 0 ${width} ${height}`}
-        preserveAspectRatio="xMidYMid meet"
-        className="size-full"
-      >
-        <Group top={margin.top} left={margin.left}>
-          <GridRows
-            scale={yScale}
-            numTicks={tickValues.length}
-            tickValues={tickValues}
-            width={xMax}
-            height={yMax}
-            stroke="hsl(var(--border))"
-          />
-          <BarGroup<T, string>
-            data={data}
-            keys={keys}
-            height={yMax}
-            x0={getXAxisTickLabel}
-            x0Scale={x0Scale}
-            x1Scale={x1Scale}
-            yScale={yScale}
-            color={colorScale}
-          >
-            {(barGroups) =>
-              barGroups.map((barGroup, barGroupIdx) => (
-                <Group
-                  key={`bar-group-${barGroupIdx}-${barGroup.x0}`}
-                  left={barGroup.x0}
-                >
-                  {barGroup.bars.map((bar, barIdx) => (
-                    <BarRounded
-                      x={bar.x}
-                      y={bar.y}
-                      width={bar.width}
-                      height={bar.height}
-                      fill={bar.color}
-                      radius={4}
-                      all
-                      onMouseMove={handleMouseMove({
-                        left: barGroup.x0 + bar.x + bar.width / 2,
-                        title: getXAxisTickLabel(data[barGroupIdx]!),
-                        items: [
-                          {
-                            key: keys[barIdx]!,
-                            label: keyLabels[barIdx]!,
-                            value: getValue(data[barGroupIdx]!, keys[barIdx]!),
-                            color: colors[barIdx]!,
-                          },
-                        ],
-                      })}
-                      onMouseLeave={hideTooltip}
-                      key={`bar-group-bar-${barGroupIdx}-${barIdx}}`}
-                    />
-                  ))}
-                </Group>
-              ))
-            }
-          </BarGroup>
-          <AxisLeft
-            scale={yScale}
-            numTicks={tickValues.length}
-            tickValues={tickValues}
-            stroke="transparent"
-            tickStroke="transparent"
-            tickLabelProps={{
-              fill: "hsl(var(--muted-foreground))",
-              fontSize: 12,
-              fontFamily: "var(--font-sans)",
-            }}
-            label={showYAxisLabel ? yAxisLabel : ""}
-            labelOffset={44}
-            labelClassName="fill-foreground text-3.5 font-medium font-sans"
-          />
-          <AxisBottom
-            top={yMax}
-            scale={x0Scale}
-            tickFormat={formatXAxisTickLabel}
-            tickLabelProps={{
-              fill: "hsl(var(--muted-foreground))",
-              fontSize: 12,
-              fontFamily: "var(--font-sans)",
-            }}
-            label={showXAxisLabel ? xAxisLabel : ""}
-            labelOffset={24}
-            labelClassName="fill-foreground text-3.5 font-medium font-sans"
-          />
-        </Group>
-      </svg>
-      {tooltipOpen && tooltipData && (
-        <TooltipInPortal
-          top={tooltipTop}
-          left={tooltipLeft}
-          unstyled
-          className="pointer-events-none absolute"
-=======
       <Group top={margin.top} left={margin.left}>
         <GridRows
           scale={yScale}
@@ -201,7 +103,6 @@ function BarChartGroup<T extends DatumObject>({
           x1Scale={x1Scale}
           yScale={yScale}
           color={colorScale}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
         >
           {(barGroups) =>
             barGroups.map((barGroup, barGroupIdx) => (

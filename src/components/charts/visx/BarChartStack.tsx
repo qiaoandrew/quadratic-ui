@@ -79,97 +79,6 @@ function BarChartStack<T>({
 
   return (
     <>
-<<<<<<< HEAD
-      <svg
-        ref={tooltipContainerRef}
-        viewBox={`0 0 ${width} ${height}`}
-        preserveAspectRatio="xMidYMid meet"
-        className="size-full"
-      >
-        <Group top={margin.top} left={margin.left}>
-          <GridRows
-            scale={yScale}
-            numTicks={tickValues.length}
-            tickValues={tickValues}
-            width={xMax}
-            height={yMax}
-            stroke="hsl(var(--border))"
-          />
-          <BarStack<T, string>
-            data={data}
-            keys={keys}
-            value={getValue}
-            xScale={xScale}
-            yScale={yScale}
-            color={colorScale}
-            x={getXAxisTickLabel}
-          >
-            {(barStacks) =>
-              barStacks.map((barStack, barStackIdx) =>
-                barStack.bars.map((bar, barIdx) => (
-                  <BarRounded
-                    x={bar.x}
-                    y={bar.y}
-                    width={bar.width}
-                    height={bar.height}
-                    fill={bar.color}
-                    radius={6}
-                    top={barStackIdx === barStacks.length - 1}
-                    bottom={barStackIdx === 0}
-                    onMouseMove={handleMouseMove({
-                      left: bar.x + bar.width / 2,
-                      title: getXAxisTickLabel(data[barIdx]!),
-                      items: keys.map((key, i) => ({
-                        key,
-                        label: keyLabels[i] ?? "",
-                        value: getValue(data[barIdx]!, key),
-                        color: colors[i] ?? "",
-                      })),
-                    })}
-                    onMouseLeave={hideTooltip}
-                    key={`${barStackIdx}-${barIdx}`}
-                  />
-                )),
-              )
-            }
-          </BarStack>
-          <AxisLeft
-            scale={yScale}
-            numTicks={tickValues.length}
-            tickValues={tickValues}
-            stroke="transparent"
-            tickStroke="transparent"
-            tickLabelProps={{
-              fill: "hsl(var(--muted-foreground))",
-              fontSize: 12,
-              fontFamily: "var(--font-sans)",
-            }}
-            label={showYAxisLabel ? yAxisLabel : ""}
-            labelOffset={44}
-            labelClassName="fill-foreground text-3.5 font-medium font-sans"
-          />
-          <AxisBottom
-            top={yMax}
-            scale={xScale}
-            tickFormat={formatXAxisTickLabel}
-            tickLabelProps={{
-              fill: "hsl(var(--muted-foreground))",
-              fontSize: 12,
-              fontFamily: "var(--font-sans)",
-            }}
-            label={showXAxisLabel ? xAxisLabel : ""}
-            labelOffset={24}
-            labelClassName="fill-foreground text-3.5 font-medium font-sans"
-          />
-        </Group>
-      </svg>
-      {tooltipOpen && tooltipData && (
-        <TooltipInPortal
-          top={tooltipTop}
-          left={tooltipLeft}
-          unstyled
-          className="pointer-events-none absolute"
-=======
       <Group top={margin.top} left={margin.left}>
         <GridRows
           scale={yScale}
@@ -186,7 +95,6 @@ function BarChartStack<T>({
           yScale={yScale}
           color={colorScale}
           x={getXAxisTickLabel}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
         >
           {(barStacks) =>
             barStacks.map((barStack, barStackIdx) =>
