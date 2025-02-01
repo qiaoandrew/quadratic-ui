@@ -134,7 +134,7 @@ function BarChart<T>({
             scale={yScale}
             stroke="transparent"
             label={showYAxisLabel ? yAxisLabel : ""}
-            labelClassName="fill-foreground text-3-5 font-medium font-sans"
+            labelClassName="fill-foreground text-3.5 font-medium font-sans"
             labelOffset={44}
             numTicks={tickValues.length}
             tickValues={tickValues}
@@ -149,7 +149,7 @@ function BarChart<T>({
             top={yMax}
             scale={xScale}
             label={showXAxisLabel ? xAxisLabel : ""}
-            labelClassName="fill-foreground text-3-5 font-medium font-sans"
+            labelClassName="fill-foreground text-3.5 font-medium font-sans"
             labelOffset={24}
             tickFormat={formatXAxisTickLabel}
             tickLabelProps={{

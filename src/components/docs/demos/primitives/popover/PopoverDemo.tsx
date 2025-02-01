@@ -17,7 +17,7 @@ export default function PopoverDemo() {
         <div className="flex flex-col gap-y-4">
           <div className="flex flex-col gap-y-1">
             <h4 className="text-4 font-medium">Dimensions</h4>
-            <p className="text-3-5 text-muted-foreground">
+            <p className="text-3.5 text-muted-foreground">
               Set the dimensions for the layer.
             </p>
           </div>

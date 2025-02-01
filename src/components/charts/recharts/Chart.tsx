@@ -228,7 +228,7 @@ function ChartTooltipContent({
     <div
       ref={ref}
       className={cn(
-        "rounded-1-5 border-border/50 bg-background text-3 grid min-w-32 items-start gap-y-1.5 border px-2.5 py-2",
+        "rounded-1.5 border-border/50 bg-background text-3 grid min-w-32 items-start gap-y-1.5 border px-2.5 py-2",
         className,
       )}
     >
@@ -269,7 +269,7 @@ function ChartTooltipContent({
                     !hideIndicator && (
                       <div
                         className={cn(
-                          "rounded-0-5 shrink-0 border-(--color-border) bg-(--color-bg)",
+                          "rounded-0.5 shrink-0 border-(--color-border) bg-(--color-bg)",
                           {
                             "size-2.5": indicator === "dot",
                             "w-1": indicator === "line",
@@ -367,7 +367,7 @@ function ChartLegendContent({
               <itemConfig.icon />
             ) : (
               <div
-                className="rounded-0-5 size-2 shrink-0"
+                className="rounded-0.5 size-2 shrink-0"
                 style={{ backgroundColor: item.color }}
               />
             )}

@@ -24,7 +24,7 @@ export default function HoverCardDemo() {
             <AvatarFallback>VC</AvatarFallback>
           </Avatar>
           <div>
-            <h4 className="text-3-5 mb-1.5 font-semibold">@nextjs</h4>
+            <h4 className="text-3.5 mb-1.5 font-semibold">@nextjs</h4>
             <p className="text-3 mb-3 leading-5">
               The React Framework - created and maintained by @vercel.
             </p>

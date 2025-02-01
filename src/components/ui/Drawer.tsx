@@ -93,7 +93,7 @@ function DrawerDescription({
 }: React.ComponentProps<typeof DrawerPrimitive.Description>) {
   return (
     <DrawerPrimitive.Description
-      className={cn("text-3-5 text-muted-foreground", className)}
+      className={cn("text-3.5 text-muted-foreground", className)}
       {...props}
     />
   );

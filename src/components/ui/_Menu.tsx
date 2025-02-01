@@ -2,7 +2,7 @@ import { cn, tv } from "~/utils/tailwind";
 
 const menuSubTriggerVariants = tv({
   base: [
-    "rounded-1 text-3-5 flex cursor-default items-center py-1.5 pr-2 outline-hidden select-none",
+    "rounded-1 text-3.5 flex cursor-default items-center py-1.5 pr-2 outline-hidden select-none",
     "focus:bg-accent focus:text-accent-foreground",
     "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
     "[&>svg]:pointer-events-none [&>svg]:ml-auto [&>svg]:size-4.5 [&>svg]:shrink-0",
@@ -41,7 +41,7 @@ const menuContentVariants = tv({
 
 const menuItemVariants = tv({
   base: [
-    "rounded-1 text-3-5 relative flex cursor-pointer items-center py-1.5 pr-2 outline-hidden transition-colors select-none",
+    "rounded-1 text-3.5 relative flex cursor-pointer items-center py-1.5 pr-2 outline-hidden transition-colors select-none",
     "focus:bg-accent focus:text-accent-foreground",
     "data-disabled:pointer-events-none data-disabled:opacity-50",
     "[&>svg]:pointer-events-none [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:left-2 [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:-translate-y-1/2",
@@ -55,7 +55,7 @@ const menuItemVariants = tv({
 });
 
 const menuLabelVariants = tv({
-  base: "text-3-5 py-1 pr-2 font-semibold",
+  base: "text-3.5 py-1 pr-2 font-semibold",
   variants: {
     inset: {
       true: "pl-8",
@@ -88,7 +88,7 @@ function Shortcut({
   return (
     <kbd
       className={cn(
-        "rounded-1 bg-background text-3-5 text-muted-foreground flex size-5 items-center justify-center overflow-hidden border font-mono",
+        "rounded-1 bg-background text-3.5 text-muted-foreground flex size-5 items-center justify-center overflow-hidden border font-mono",
         className,
       )}
       {...props}

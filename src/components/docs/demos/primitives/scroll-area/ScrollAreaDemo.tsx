@@ -11,10 +11,10 @@ export default function ScrollAreaDemo() {
   return (
     <ScrollArea className="rounded-2 bg-background h-full max-h-72 w-44 border">
       <div className="p-3">
-        <h4 className="text-3-5 mb-3 font-medium">Tags</h4>
+        <h4 className="text-3.5 mb-3 font-medium">Tags</h4>
         {tags.map((tag, i) => (
           <Fragment key={tag}>
-            <div className="text-3-5">{tag}</div>
+            <div className="text-3.5">{tag}</div>
             {i !== tags.length - 1 && <Separator className="my-2" />}
           </Fragment>
         ))}

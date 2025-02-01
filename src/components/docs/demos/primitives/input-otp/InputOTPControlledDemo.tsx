@@ -34,7 +34,7 @@ export default function InputOTPControlledDemo() {
           <InputOTPSlot index={5} className={slotStyles} />
         </InputOTPGroup>
       </InputOTP>
-      <p className="text-3-5 text-center">
+      <p className="text-3.5 text-center">
         {value === ""
           ? "Enter your one-time password."
           : `You entered: ${value}`}

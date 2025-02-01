@@ -12,6 +12,7 @@ export const FILE_SOURCES = {
   carousel: "src/components/ui/Carousel.tsx",
   checkbox: "src/components/ui/Checkbox.tsx",
   collapsible: "src/components/ui/Collapsible.tsx",
+  combobox: "src/components/ui/Combobox.tsx",
   command: "src/components/ui/Command.tsx",
   contextMenu: "src/components/ui/ContextMenu.tsx",
   dataTable: "src/components/ui/DataTable.tsx",
@@ -55,4 +56,5 @@ export const FILE_SOURCES = {
   _dialog: "src/components/ui/_Dialog.tsx",
   _menu: "src/components/ui/_Menu.tsx",
   _link: "src/components/ui/_Link.tsx",
+  _visuallyHidden: "src/components/ui/_VisuallyHidden.tsx",
 };

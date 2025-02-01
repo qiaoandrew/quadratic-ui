@@ -87,14 +87,14 @@ function BarList<T>({
                   <_Link
                     href={item.href}
                     className={cn(
-                      "rounded-1 text-3-5 truncate whitespace-nowrap",
+                      "rounded-1 text-3.5 truncate whitespace-nowrap",
                       "hover:underline hover:underline-offset-2",
                     )}
                   >
                     {item.name}
                   </_Link>
                 ) : (
-                  <p className="rounded-1 text-3-5 truncate whitespace-nowrap">
+                  <p className="rounded-1 text-3.5 truncate whitespace-nowrap">
                     {item.name}
                   </p>
                 )}
@@ -109,7 +109,7 @@ function BarList<T>({
             className="flex h-8 items-center justify-end"
             key={item.key ?? item.name}
           >
-            <p className="text-3-5 truncate whitespace-nowrap">
+            <p className="text-3.5 truncate whitespace-nowrap">
               {valueFormatter(item.value)}
             </p>
           </div>

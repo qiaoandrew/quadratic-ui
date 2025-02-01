@@ -115,7 +115,7 @@ export default function BarChartInteractiveDemo() {
               <span className="text-3 text-muted-foreground">
                 {CHART_CONFIG[chart].label}
               </span>
-              <span className="text-4-5 sm:text-6 leading-none font-bold">
+              <span className="text-4.5 sm:text-6 leading-none font-bold">
                 {total[key as keyof typeof total].toLocaleString()}
               </span>
             </button>

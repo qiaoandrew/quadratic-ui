@@ -52,7 +52,7 @@ export default function CommandMenu({ docsMenuItems }: CommandMenuProps) {
         type="button"
         onClick={() => setIsOpen(true)}
         className={cn(
-          "rounded-2 bg-background text-3-5 text-muted-foreground relative hidden h-9 w-68 items-center justify-between border pr-3 pl-7.5 transition-colors",
+          "rounded-2 bg-background text-3.5 text-muted-foreground relative hidden h-9 w-68 items-center justify-between border pr-3 pl-7.5 transition-colors",
           "xl:flex",
           "hover:bg-accent",
         )}

@@ -22,7 +22,7 @@ function Calendar({
       classNames={{
         months: "flex flex-col sm:flex-row gap-4 relative",
         month_caption: "flex justify-center h-8 items-center",
-        caption_label: "text-3-5 font-medium",
+        caption_label: "text-3.5 font-medium",
         nav: "absolute inset-x-0",
         button_previous: cn(
           buttonVariants({ variant: "ghost", subject: "icon", size: "xs" }),
@@ -35,10 +35,10 @@ function Calendar({
         weekdays: "flex",
         week: "flex",
         weekday:
-          "size-8 p-0 text-3-5 font-normal flex items-center justify-center text-muted-foreground",
+          "size-8 p-0 text-3.5 font-normal flex items-center justify-center text-muted-foreground",
         day: cn(
           buttonVariants({ variant: "ghost", subject: "icon", size: "xs" }),
-          "text-3-5 p-0 font-normal",
+          "text-3.5 p-0 font-normal",
           props.mode === "range" &&
             "[&.day-range-end[aria-selected='true']]:rounded-r-1.5 [&.day-range-start[aria-selected='true']]:rounded-l-1.5 aria-[selected]:rounded-0",
         ),

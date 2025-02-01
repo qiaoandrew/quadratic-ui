@@ -11,7 +11,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
   return (
     <ol
       className={cn(
-        "text-3-5 text-muted-foreground flex flex-wrap items-center gap-2.5 break-words",
+        "text-3.5 text-muted-foreground flex flex-wrap items-center gap-2.5 break-words",
         className,
       )}
       {...props}
