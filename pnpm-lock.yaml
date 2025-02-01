@@ -231,13 +231,8 @@ importers:
         specifier: ^2.15.1
         version: 2.15.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       sonner:
-<<<<<<< HEAD
         specifier: ^1.7.4
         version: 1.7.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-=======
-        specifier: ^1.7.3
-        version: 1.7.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       sugar-high:
         specifier: ^0.8.4
         version: 0.8.4
@@ -246,17 +241,10 @@ importers:
         version: 3.0.1
       tailwind-variants:
         specifier: ^0.3.1
-<<<<<<< HEAD
         version: 0.3.1(tailwindcss@4.0.2)
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.0.2)
-=======
-        version: 0.3.1(tailwindcss@4.0.1)
-      tailwindcss-animate:
-        specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.0.1)
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       use-debounce:
         specifier: ^10.0.4
         version: 10.0.4(react@19.0.0)
@@ -268,13 +256,8 @@ importers:
         version: 3.24.1
     devDependencies:
       '@tailwindcss/postcss':
-<<<<<<< HEAD
         specifier: ^4.0.2
         version: 4.0.2
-=======
-        specifier: ^4.0.1
-        version: 4.0.1
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.12
@@ -282,13 +265,8 @@ importers:
         specifier: ^4.0.9
         version: 4.0.9
       '@types/node':
-<<<<<<< HEAD
         specifier: ^22.13.0
         version: 22.13.0
-=======
-        specifier: ^22.12.0
-        version: 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       '@types/react':
         specifier: ^19.0.8
         version: 19.0.8
@@ -323,13 +301,8 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(prettier@3.4.2)
       tailwindcss:
-<<<<<<< HEAD
         specifier: ^4.0.2
         version: 4.0.2
-=======
-        specifier: ^4.0.1
-        version: 4.0.1
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -2393,148 +2366,81 @@ packages:
       zod:
         optional: true
 
-<<<<<<< HEAD
   '@tailwindcss/node@4.0.2':
     resolution: {integrity: sha512-/q5HXvgEc5GaaAhoVj8oeAw1TPRlZtRAnzWz2ChpFdKsEAVoHUAW6EX/tDr3tkUfQ1VVSBpxeGUg0V0gPZSs1A==}
 
   '@tailwindcss/oxide-android-arm64@4.0.2':
     resolution: {integrity: sha512-GQZjJzFpCBDlb5GjS5weTCqjC38kOR0IsUEZ+TNLxLP593Lu6hdxNaYtkwSmN03B92mzT0kkwmYKbsFS0u3Z8g==}
-=======
-  '@tailwindcss/node@4.0.1':
-    resolution: {integrity: sha512-lc+ly6PKHqgCVl7eO8D2JlV96Lks5bmL6pdtM6UasyUHLU2zmrOqU6jfgln120IVnCh3VC8GG/ca24xVTtSokw==}
-
-  '@tailwindcss/oxide-android-arm64@4.0.1':
-    resolution: {integrity: sha512-eP/rI9WaAElpeiiHDqGtDqga9iDsOClXxIqdHayHsw93F24F03b60CwgGhrGF9Io/EuWIpz3TMRhPVOLhoXivw==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [android]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-darwin-arm64@4.0.2':
     resolution: {integrity: sha512-EVd0UZ8sUl4Eycw9iWLQdaKBDSyrr3OMIMPcgWyDM1iLDAR2Ws0EbT/zsXl8OW3b291ElbiDbNvvnPvQkEhICg==}
-=======
-  '@tailwindcss/oxide-darwin-arm64@4.0.1':
-    resolution: {integrity: sha512-jZVUo0kNd1IjxdCYwg4dwegDNsq7PoUx4LM814RmgY3gfJ63Y6GlpJXHOpd5FLv1igpeZox5LzRk2oz8MQoJwQ==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-darwin-x64@4.0.2':
     resolution: {integrity: sha512-LDo96FeSTyFNtuGxoBkRjjbPbVcnq3VAPb0Nxrn5DvGq5jxauwnUzEnNAiP4hbQWLOAfCLwcO7q+kGX1clVj1w==}
-=======
-  '@tailwindcss/oxide-darwin-x64@4.0.1':
-    resolution: {integrity: sha512-E31wHiIf4LB0aKRohrS4U6XfFSACCL9ifUFfPQ16FhcBIL4wU5rcBidvWvT9TQFGPkpE69n5dyXUcqiMrnF/Ig==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-freebsd-x64@4.0.2':
     resolution: {integrity: sha512-TyBNTI5ye1nV35Ycxst5NLsa9ux+I6fEBuy2VBA8FCJaAbsMIhj+t0U9rlZ1SNy9bEDDV8mgH/R99EJO5onqaw==}
-=======
-  '@tailwindcss/oxide-freebsd-x64@4.0.1':
-    resolution: {integrity: sha512-8/3ZKLMYqgAsBzTeczOKWtT4geF02g9S7cntY5gvqQZ4E0ImX724cHcZJi9k6fkE6aLbvwxxHxaShFvRxblwKQ==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [freebsd]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-linux-arm-gnueabihf@4.0.2':
     resolution: {integrity: sha512-rv3RtH0Di6ijWCT1i20Cju9ZFx+Nhl3cv+Ix5n0UiomfN0sZRg8jUz12MqJIOeCdwqo4r3VvMYbF7A6+p66nzA==}
-=======
-  '@tailwindcss/oxide-linux-arm-gnueabihf@4.0.1':
-    resolution: {integrity: sha512-EYjbh225klQfWzy6LeIAfdjHCK+p71yLV/GjdPNW47Bfkkq05fTzIhHhCgshUvNp78EIA33iQU+ktWpW06NgHw==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [linux]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-linux-arm64-gnu@4.0.2':
     resolution: {integrity: sha512-GNuVpsb0M4OejM27PlFWM2A+8v/jWusCK25g17CnIESvq5hZvHYCzBvla6V8XCk5G0x/WwLc/H8NurLuBgjLCw==}
-=======
-  '@tailwindcss/oxide-linux-arm64-gnu@4.0.1':
-    resolution: {integrity: sha512-PrX2SwIqWNP5cYeSyQfrhbk4ffOM338T6CrEwIAGvLPoUZiklt19yknlsBme6bReSw7TSAMy+8KFdLLi5fcWNQ==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-linux-arm64-musl@4.0.2':
     resolution: {integrity: sha512-0Rlln/bs2dVzB2kYQee1bxHxlFO7yoaOkFuIBkWeoEtACTrzqhaceRRaGSPlcucye9ZpRuoBCGCG/ZCPUf3eJg==}
-=======
-  '@tailwindcss/oxide-linux-arm64-musl@4.0.1':
-    resolution: {integrity: sha512-iuoFGhKDojtfloi5uj6MIk4kxEOGcsAk/kPbZItF9Dp7TnzVhxo2U/718tXhxGrg6jSL3ST3cQHIjA6yw3OeXw==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-linux-x64-gnu@4.0.2':
     resolution: {integrity: sha512-pBeqHB0dbwztF7PaKqW32b2v9lNdardjJjBISeqZMotdUrMtDf7MeIQ1w6/WIr2xMvZpMl76dz02KZlUVWiiXg==}
-=======
-  '@tailwindcss/oxide-linux-x64-gnu@4.0.1':
-    resolution: {integrity: sha512-pNUrGQYyE8RK+N9yvkPmHnlKDfFbni9A3lsi37u4RoA/6Yn+zWVoegvAQMZu3w+jqnpb2A/bYJ+LumcclUZ3yg==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-linux-x64-musl@4.0.2':
     resolution: {integrity: sha512-jZXgEIxacVjm2ByzLNpJPcuWzXUtfxX8J2mxePqVfUhb0jP8zEeEGpFV8skX5FRAfakR6htEaxEsoGA4MS7zVA==}
-=======
-  '@tailwindcss/oxide-linux-x64-musl@4.0.1':
-    resolution: {integrity: sha512-xSGWaDcT6SJ75su9zWXj8GYb2jM/przXwZGH96RTS7HGDIoI1tvgpls88YajG5Sx7hXaqAWCufjw5L/dlu+lzg==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-win32-arm64-msvc@4.0.2':
     resolution: {integrity: sha512-7SXjWupT8FTeTHVQUrckxXwWWaFsareruW8ZdaLEYoVtA8TjfdUdDVj9xGjfVB6C1lwvC3Ok5fkVLdmfbeMBzw==}
-=======
-  '@tailwindcss/oxide-win32-arm64-msvc@4.0.1':
-    resolution: {integrity: sha512-BUNL2isUZ2yWnbplPddggJpZxsqGHPZ1RJAYpu63W4znUnKCzI4m/jiy0WpyYqqOKL9jDM5q0QdsQ9mc3aw5YQ==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide-win32-x64-msvc@4.0.2':
     resolution: {integrity: sha512-mZv1nq3OiVzpW3r2/S21I4ZJAanVXf40R7sQUBvl+63Xiycn9EYbtzgJJ+VEaLGstTfZmBI9PS+8wu41dhm7rw==}
-=======
-  '@tailwindcss/oxide-win32-x64-msvc@4.0.1':
-    resolution: {integrity: sha512-ZtcVu+XXOddGsPlvO5nh2fnbKmwly2C07ZB1lcYCf/b8qIWF04QY9o6vy6/+6ioLRfbp3E7H/ipFio38DZX4oQ==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-<<<<<<< HEAD
   '@tailwindcss/oxide@4.0.2':
     resolution: {integrity: sha512-q8YHIs0qNlMjgwiJc6nqwCJLsJrjCh7osKISoQ4Dh+tYnSSsHTzjgDt5caVz4B7PvUvVEga8xZaxXmgRV9O0AA==}
     engines: {node: '>= 10'}
 
   '@tailwindcss/postcss@4.0.2':
     resolution: {integrity: sha512-+VB4Csd7BY06XY1sxcJ/xZ/kLlJ7spxG2uJwj0qIiS4RvliznfbI33lrSUb9WKpWFgnzJFx3kClmrmMj9FgVsw==}
-=======
-  '@tailwindcss/oxide@4.0.1':
-    resolution: {integrity: sha512-3z1SpWoDeaA6K6jd92CRrGyDghOcRILEgyWVHRhaUm/tcpiazwJpU9BSG0xB7GGGnl9capojaC+zme/nKsZd/w==}
-    engines: {node: '>= 10'}
-
-  '@tailwindcss/postcss@4.0.1':
-    resolution: {integrity: sha512-fZHL49vCDauQymdm2U1jehuUeX8msYVDKB/2v+jWhTQleH3QE8J1dJ2dnL5tqRvB0udjBP4kwUC1ZIVIdv66YA==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
 
   '@tanstack/react-table@8.20.6':
     resolution: {integrity: sha512-w0jluT718MrOKthRcr2xsjqzx+oEM7B7s/XXyfs19ll++hlId3fjTm+B2zrR3ijpANpkzBAr15j1XGVOMxpggQ==}
@@ -2682,13 +2588,8 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
-<<<<<<< HEAD
   '@types/node@22.13.0':
     resolution: {integrity: sha512-ClIbNe36lawluuvq3+YYhnIN2CELi+6q8NpnM7PYp4hBn/TatfboPgVSm2rwKRfnV2M+Ty9GWDFI64KEe+kysA==}
-=======
-  '@types/node@22.12.0':
-    resolution: {integrity: sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
 
   '@types/react-dom@19.0.3':
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
@@ -3540,13 +3441,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-<<<<<<< HEAD
   electron-to-chromium@1.5.90:
     resolution: {integrity: sha512-C3PN4aydfW91Natdyd449Kw+BzhLmof6tzy5W1pFC5SpQxVXT+oyiyOG9AgYYSN9OdA/ik3YkCrpwqI8ug5Tug==}
-=======
-  electron-to-chromium@1.5.89:
-    resolution: {integrity: sha512-okLMJSmbI+XHr8aG+wCK+VPH+d38sHMED6/q1CTsCNkqfdOZL3k2ThWnh44HL6bJKj9cabPCSVLDv9ynsIm8qg==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
 
   embla-carousel-react@8.5.2:
     resolution: {integrity: sha512-Tmx+uY3MqseIGdwp0ScyUuxpBgx5jX1f7od4Cm5mDwg/dptEiTKf9xp6tw0lZN2VA9JbnVMl/aikmbc53c6QFA==}
@@ -5409,13 +5305,8 @@ packages:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
 
-<<<<<<< HEAD
   sonner@1.7.4:
     resolution: {integrity: sha512-DIS8z4PfJRbIyfVFDVnK9rO3eYDtse4Omcm6bt0oEr5/jtLgysmjuBl1frJ9E/EQZrFmKx2A8m/s5s9CRXIzhw==}
-=======
-  sonner@1.7.3:
-    resolution: {integrity: sha512-KXLWQfyR6AHpYZuQk8eO8fCbZSJY3JOpgsu/tbGc++jgPjj8JsR1ZpO8vFhqR/OxvWMQCSAmnSShY0gr4FPqHg==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     peerDependencies:
       react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
@@ -5569,13 +5460,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-<<<<<<< HEAD
   tailwindcss@4.0.2:
     resolution: {integrity: sha512-cjWQjZEbzQNqH4IiSjRcYg96zjlu+rjzTFkqTc/fN3FNnIU4CoNlQvwCsIomwG/2EPWYT9ysFL1QF6Av3fZeNg==}
-=======
-  tailwindcss@4.0.1:
-    resolution: {integrity: sha512-UK5Biiit/e+r3i0O223bisoS5+y7ZT1PM8Ojn0MxRHzXN1VPZ2KY6Lo6fhu1dOfCfyUAlK7Lt6wSxowRabATBw==}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -7027,22 +6913,14 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       jest-mock: 29.7.0
 
   '@jest/fake-timers@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -7076,11 +6954,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -8106,7 +7980,6 @@ snapshots:
       typescript: 5.7.3
       zod: 3.24.1
 
-<<<<<<< HEAD
   '@tailwindcss/node@4.0.2':
     dependencies:
       enhanced-resolve: 5.18.0
@@ -8168,69 +8041,6 @@ snapshots:
       lightningcss: 1.29.1
       postcss: 8.5.1
       tailwindcss: 4.0.2
-=======
-  '@tailwindcss/node@4.0.1':
-    dependencies:
-      enhanced-resolve: 5.18.0
-      jiti: 2.4.2
-      tailwindcss: 4.0.1
-
-  '@tailwindcss/oxide-android-arm64@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-darwin-arm64@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-darwin-x64@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-freebsd-x64@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-linux-arm-gnueabihf@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-linux-arm64-gnu@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-linux-arm64-musl@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-linux-x64-gnu@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-linux-x64-musl@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-win32-arm64-msvc@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide-win32-x64-msvc@4.0.1':
-    optional: true
-
-  '@tailwindcss/oxide@4.0.1':
-    optionalDependencies:
-      '@tailwindcss/oxide-android-arm64': 4.0.1
-      '@tailwindcss/oxide-darwin-arm64': 4.0.1
-      '@tailwindcss/oxide-darwin-x64': 4.0.1
-      '@tailwindcss/oxide-freebsd-x64': 4.0.1
-      '@tailwindcss/oxide-linux-arm-gnueabihf': 4.0.1
-      '@tailwindcss/oxide-linux-arm64-gnu': 4.0.1
-      '@tailwindcss/oxide-linux-arm64-musl': 4.0.1
-      '@tailwindcss/oxide-linux-x64-gnu': 4.0.1
-      '@tailwindcss/oxide-linux-x64-musl': 4.0.1
-      '@tailwindcss/oxide-win32-arm64-msvc': 4.0.1
-      '@tailwindcss/oxide-win32-x64-msvc': 4.0.1
-
-  '@tailwindcss/postcss@4.0.1':
-    dependencies:
-      '@alloc/quick-lru': 5.2.0
-      '@tailwindcss/node': 4.0.1
-      '@tailwindcss/oxide': 4.0.1
-      lightningcss: 1.29.1
-      postcss: 8.5.1
-      tailwindcss: 4.0.1
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
 
   '@tanstack/react-table@8.20.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -8342,11 +8152,7 @@ snapshots:
 
   '@types/graceful-fs@4.1.9':
     dependencies:
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
 
   '@types/hast@3.0.4':
     dependencies:
@@ -8382,15 +8188,9 @@ snapshots:
 
   '@types/node-forge@1.3.11':
     dependencies:
-<<<<<<< HEAD
       '@types/node': 22.13.0
 
   '@types/node@22.13.0':
-=======
-      '@types/node': 22.12.0
-
-  '@types/node@22.12.0':
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     dependencies:
       undici-types: 6.20.0
 
@@ -8963,11 +8763,7 @@ snapshots:
   browserslist@4.24.4:
     dependencies:
       caniuse-lite: 1.0.30001696
-<<<<<<< HEAD
       electron-to-chromium: 1.5.90
-=======
-      electron-to-chromium: 1.5.89
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       node-releases: 2.0.19
       update-browserslist-db: 1.1.2(browserslist@4.24.4)
 
@@ -9040,11 +8836,7 @@ snapshots:
 
   chrome-launcher@0.15.2:
     dependencies:
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -9053,11 +8845,7 @@ snapshots:
 
   chromium-edge-launcher@0.2.0:
     dependencies:
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -9333,11 +9121,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-<<<<<<< HEAD
   electron-to-chromium@1.5.90: {}
-=======
-  electron-to-chromium@1.5.89: {}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
 
   embla-carousel-react@8.5.2(react@19.0.0):
     dependencies:
@@ -10291,11 +10075,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -10305,11 +10085,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@types/graceful-fs': 4.1.9
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -10336,11 +10112,7 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       jest-util: 29.7.0
 
   jest-regex-util@29.6.3: {}
@@ -10348,11 +10120,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -10369,11 +10137,7 @@ snapshots:
 
   jest-worker@29.7.0:
     dependencies:
-<<<<<<< HEAD
       '@types/node': 22.13.0
-=======
-      '@types/node': 22.12.0
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
@@ -11883,11 +11647,7 @@ snapshots:
 
   slash@3.0.0: {}
 
-<<<<<<< HEAD
   sonner@1.7.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
-=======
-  sonner@1.7.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
@@ -12031,7 +11791,6 @@ snapshots:
 
   tailwind-merge@3.0.1: {}
 
-<<<<<<< HEAD
   tailwind-variants@0.3.1(tailwindcss@4.0.2):
     dependencies:
       tailwind-merge: 2.5.4
@@ -12042,18 +11801,6 @@ snapshots:
       tailwindcss: 4.0.2
 
   tailwindcss@4.0.2: {}
-=======
-  tailwind-variants@0.3.1(tailwindcss@4.0.1):
-    dependencies:
-      tailwind-merge: 2.5.4
-      tailwindcss: 4.0.1
-
-  tailwindcss-animate@1.0.7(tailwindcss@4.0.1):
-    dependencies:
-      tailwindcss: 4.0.1
-
-  tailwindcss@4.0.1: {}
->>>>>>> 6b6607f (remove getValue from bar charts in favor of passing in data keys, move tooltip rendering into chart component, upgrade dependencies)
 
   tapable@2.2.1: {}
 
