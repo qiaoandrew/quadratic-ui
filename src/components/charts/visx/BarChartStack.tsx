@@ -9,7 +9,7 @@ import type { Accessor } from "@visx/shape/lib/types";
 
 import { getBarChartMargin } from "~/utils/visx";
 
-import { useChart } from "~/components/charts/visx/Chart";
+import { useChart } from "~/components/charts/visx/ChartContainer";
 
 interface BarChartStackProps<T> {
   data: T[];
@@ -138,7 +138,7 @@ function BarChartStack<T>({
           }}
           label={showYAxisLabel ? yAxisLabel : ""}
           labelOffset={44}
-          labelClassName="fill-foreground text-3-5 font-medium font-sans"
+          labelClassName="fill-foreground text-3.5 font-medium font-sans"
         />
         <AxisBottom
           top={yMax}
@@ -151,7 +151,7 @@ function BarChartStack<T>({
           }}
           label={showXAxisLabel ? xAxisLabel : ""}
           labelOffset={24}
-          labelClassName="fill-foreground text-3-5 font-medium font-sans"
+          labelClassName="fill-foreground text-3.5 font-medium font-sans"
         />
       </Group>
       {showLegend && (

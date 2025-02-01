@@ -8,17 +8,17 @@ import type { Accessor } from "@visx/shape/lib/types";
 
 import { getBarChartMargin } from "~/utils/visx";
 
-import { useChart } from "~/components/charts/visx/Chart";
+import { useChart } from "~/components/charts/visx/ChartContainer";
 
 interface BarChartProps<T> {
   data: T[];
   dataKey: Extract<keyof T, string>;
-  getXAxisTickLabel: Accessor<T, string>;
-  formatXAxisTickLabel?: (label: string) => string;
-  xAxisLabel: string;
-  yAxisLabel: string;
-  showXAxisLabel?: boolean;
-  showYAxisLabel?: boolean;
+  getCategoryAxisTickLabel: Accessor<T, string>;
+  formatCategoryAxisTickLabel?: (label: string) => string;
+  categoryAxisLabel: string;
+  numericAxisLabel: string;
+  showCategoryAxisLabel?: boolean;
+  showNumericAxisLabel?: boolean;
   tickValues: number[];
   barColor: string;
 }
@@ -26,18 +26,18 @@ interface BarChartProps<T> {
 function BarChart<T>({
   data,
   dataKey,
-  getXAxisTickLabel,
-  formatXAxisTickLabel,
-  xAxisLabel,
-  yAxisLabel,
-  showXAxisLabel = true,
-  showYAxisLabel = true,
+  getCategoryAxisTickLabel,
+  formatCategoryAxisTickLabel,
+  categoryAxisLabel,
+  numericAxisLabel,
+  showCategoryAxisLabel = true,
+  showNumericAxisLabel = true,
   tickValues,
   barColor,
 }: BarChartProps<T>) {
   const { width, height, handleMouseMove, hideTooltip } = useChart();
 
-  const margin = getBarChartMargin(showXAxisLabel, showYAxisLabel);
+  const margin = getBarChartMargin(showCategoryAxisLabel, showNumericAxisLabel);
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
@@ -46,11 +46,11 @@ function BarChart<T>({
       scaleBand<string>({
         range: [0, xMax],
         round: true,
-        domain: data.map((d) => getXAxisTickLabel(d)),
+        domain: data.map((d) => getCategoryAxisTickLabel(d)),
         paddingInner: 0.25,
         paddingOuter: 0.1,
       }),
-    [xMax, getXAxisTickLabel, data],
+    [xMax, getCategoryAxisTickLabel, data],
   );
 
   const yScale = useMemo(
@@ -75,7 +75,7 @@ function BarChart<T>({
       />
       {data.map((d, i) => {
         const value = Number(d[dataKey]);
-        const label = getXAxisTickLabel(d);
+        const label = getCategoryAxisTickLabel(d);
         const width = xScale.bandwidth();
         const height = Math.max(yMax - yScale(value), 0);
         const x = xScale(label) ?? 0;
@@ -92,11 +92,11 @@ function BarChart<T>({
             all
             onMouseMove={handleMouseMove({
               left: x + width / 2,
-              title: getXAxisTickLabel(data[i]!),
+              title: getCategoryAxisTickLabel(data[i]!),
               items: [
                 {
-                  key: getXAxisTickLabel(d),
-                  label: yAxisLabel,
+                  key: getCategoryAxisTickLabel(d),
+                  label: numericAxisLabel,
                   value,
                   color: barColor,
                 },
@@ -110,8 +110,8 @@ function BarChart<T>({
       <AxisLeft
         scale={yScale}
         stroke="transparent"
-        label={showYAxisLabel ? yAxisLabel : ""}
-        labelClassName="fill-foreground text-3-5 font-medium font-sans"
+        label={showNumericAxisLabel ? numericAxisLabel : ""}
+        labelClassName="fill-foreground text-3.5 font-medium font-sans"
         labelOffset={44}
         numTicks={tickValues.length}
         tickValues={tickValues}
@@ -125,10 +125,10 @@ function BarChart<T>({
       <AxisBottom
         top={yMax}
         scale={xScale}
-        label={showXAxisLabel ? xAxisLabel : ""}
-        labelClassName="fill-foreground text-3-5 font-medium font-sans"
+        label={showCategoryAxisLabel ? categoryAxisLabel : ""}
+        labelClassName="fill-foreground text-3.5 font-medium font-sans"
         labelOffset={24}
-        tickFormat={formatXAxisTickLabel}
+        tickFormat={formatCategoryAxisTickLabel}
         tickLabelProps={{
           fill: "hsl(var(--muted-foreground))",
           fontSize: 12,

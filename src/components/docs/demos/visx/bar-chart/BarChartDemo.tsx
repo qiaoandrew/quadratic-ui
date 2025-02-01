@@ -1,6 +1,6 @@
 "use client";
 
-import { ChartContainer } from "~/components/charts/visx/Chart";
+import { ChartContainer } from "~/components/charts/visx/ChartContainer";
 import { BarChart } from "~/components/charts/visx/BarChart";
 
 type Datum = {
@@ -24,10 +24,10 @@ export default function BarChartDemo() {
       <BarChart<Datum>
         data={CHART_DATA}
         dataKey="views"
-        getXAxisTickLabel={(d: Datum) => d.month}
-        formatXAxisTickLabel={(month: string) => month.slice(0, 3)}
-        xAxisLabel="Month"
-        yAxisLabel="Views"
+        getCategoryAxisTickLabel={(d: Datum) => d.month}
+        formatCategoryAxisTickLabel={(month: string) => month.slice(0, 3)}
+        categoryAxisLabel="Month"
+        numericAxisLabel="Views"
         tickValues={[0, 60, 120, 180, 240, 300, 360]}
         barColor="hsl(var(--chart-1))"
       />

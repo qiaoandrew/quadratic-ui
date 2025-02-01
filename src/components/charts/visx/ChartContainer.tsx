@@ -12,9 +12,9 @@ import { localPoint } from "@visx/event";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 
 import {
-  Tooltip,
   type TooltipData,
   type TooltipHandleMouseMoveParams,
+  Tooltip,
 } from "~/components/charts/visx/Tooltip";
 
 interface ChartContextProps {

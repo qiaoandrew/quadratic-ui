@@ -1,6 +1,6 @@
 "use client";
 
-import { ChartContainer } from "~/components/charts/visx/Chart";
+import { ChartContainer } from "~/components/charts/visx/ChartContainer";
 import { BarChartGroup } from "~/components/charts/visx/BarChartGroup";
 
 type Datum = {
