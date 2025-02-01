@@ -17,6 +17,8 @@ export const metadata = {
 ## Installation
 <Steps>
 
+<StepTitle>Follow the [Quickstart](/docs/getting-started/guides/quickstart) guide if you haven't already.</StepTitle>
+
 <StepTitle>Install the following dependencies:</StepTitle>
 <StepContent>
 ```bash
@@ -31,30 +33,6 @@ pnpm add input-otp
 
 <StepTitle>Update the import paths to match your project setup.</StepTitle>
 
-<StepTitle>Add the following animations to your `tailwind.config.ts` file.</StepTitle>
-<StepContent>
-```ts
-import { type Config } from "tailwindcss";
-
-export default {
-  darkMode: ["class"],
-  content: ["./src/**/*.tsx"],
-  theme: {
-    extend: {
-      animation: {
-        "caret-blink": "caret-blink 1.25s ease-out infinite",
-      },
-      keyframes: {
-        "caret-blink": {
-          "0%,70%,100%": { opacity: "1" },
-          "20%,50%": { opacity: "0" },
-        },
-      },
-    },
-  },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
-```
 </StepContent>
 
 </Steps>
