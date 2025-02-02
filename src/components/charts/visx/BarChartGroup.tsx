@@ -42,7 +42,7 @@ function BarChartGroup<T extends DatumObject>({
 }: BarChartGroupProps<T>) {
   const { width, height, handleMouseMove, hideTooltip } = useChart();
 
-  const margin = getBarChartMargin(showXAxisLabel, showYAxisLabel);
+  const margin = getBarChartMargin(showXAxisLabel, showYAxisLabel, "vertical");
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
