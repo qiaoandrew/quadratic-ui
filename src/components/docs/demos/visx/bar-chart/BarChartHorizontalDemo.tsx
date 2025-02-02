@@ -1,7 +1,7 @@
 "use client";
 
 import { ChartContainer } from "~/components/charts/visx/ChartContainer";
-import { BarChart } from "~/components/charts/visx/BarChart";
+import { BarChart } from "~/components/charts/visx/BarChartHorizontal";
 
 type Datum = {
   month: string;

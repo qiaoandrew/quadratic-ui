@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { GridRows } from "@visx/grid";
+import { GridColumns } from "@visx/grid";
 import { Group } from "@visx/group";
 import { scaleBand, scaleLinear } from "@visx/scale";
 import { BarRounded } from "@visx/shape";
@@ -40,7 +40,7 @@ function BarChart<T>({
   const margin = getBarChartMargin(
     showCategoryAxisLabel,
     showNumericAxisLabel,
-    "vertical",
+    "horizontal",
   );
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
@@ -48,28 +48,28 @@ function BarChart<T>({
   const categoricalScale = useMemo(
     () =>
       scaleBand<string>({
-        range: [0, xMax],
+        range: [0, yMax],
         round: true,
         domain: data.map((d) => getCategoryAxisTickLabel(d)),
         paddingInner: 0.25,
         paddingOuter: 0.1,
       }),
-    [xMax, getCategoryAxisTickLabel, data],
+    [yMax, getCategoryAxisTickLabel, data],
   );
 
   const numericScale = useMemo(
     () =>
       scaleLinear<number>({
-        range: [yMax, 0],
+        range: [0, xMax],
         round: true,
         domain: [tickValues[0] ?? 0, tickValues[tickValues.length - 1] ?? 0],
       }),
-    [yMax, tickValues],
+    [xMax, tickValues],
   );
 
   return (
     <Group top={margin.top} left={margin.left}>
-      <GridRows
+      <GridColumns
         scale={numericScale}
         numTicks={tickValues.length}
         tickValues={tickValues}
@@ -80,10 +80,10 @@ function BarChart<T>({
       {data.map((d, i) => {
         const value = Number(d[dataKey]);
         const label = getCategoryAxisTickLabel(d);
-        const width = categoricalScale.bandwidth();
-        const height = Math.max(yMax - numericScale(value), 0);
-        const x = categoricalScale(label) ?? 0;
-        const y = yMax - height;
+        const width = Math.max(numericScale(value), 0);
+        const height = categoricalScale.bandwidth();
+        const x = 0;
+        const y = categoricalScale(label) ?? 0;
 
         return (
           <BarRounded
@@ -112,13 +112,11 @@ function BarChart<T>({
         );
       })}
       <AxisLeft
-        scale={numericScale}
-        stroke="transparent"
-        label={showNumericAxisLabel ? numericAxisLabel : ""}
+        scale={categoricalScale}
+        label={showCategoryAxisLabel ? categoryAxisLabel : ""}
         labelClassName="fill-foreground text-3.5 font-medium font-sans"
         labelOffset={44}
-        numTicks={tickValues.length}
-        tickValues={tickValues}
+        tickFormat={formatCategoryAxisTickLabel}
         tickLabelProps={{
           fill: "hsl(var(--muted-foreground))",
           fontSize: 12,
@@ -128,11 +126,12 @@ function BarChart<T>({
       />
       <AxisBottom
         top={yMax}
-        scale={categoricalScale}
-        label={showCategoryAxisLabel ? categoryAxisLabel : ""}
+        scale={numericScale}
+        label={showNumericAxisLabel ? numericAxisLabel : ""}
         labelClassName="fill-foreground text-3.5 font-medium font-sans"
         labelOffset={24}
-        tickFormat={formatCategoryAxisTickLabel}
+        numTicks={tickValues.length}
+        tickValues={tickValues}
         tickLabelProps={{
           fill: "hsl(var(--muted-foreground))",
           fontSize: 12,
