@@ -117,12 +117,12 @@ function BarChart<T>({
         labelClassName="fill-foreground text-3.5 font-medium font-sans"
         labelOffset={44}
         tickFormat={formatCategoryAxisTickLabel}
+        tickStroke="transparent"
         tickLabelProps={{
           fill: "hsl(var(--muted-foreground))",
           fontSize: 12,
           fontFamily: "var(--font-sans)",
         }}
-        tickStroke="transparent"
       />
       <AxisBottom
         top={yMax}

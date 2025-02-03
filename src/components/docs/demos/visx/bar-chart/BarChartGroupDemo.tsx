@@ -44,12 +44,12 @@ export default function BarChartGroupDemo() {
         data={CHART_DATA}
         dataKeys={["desktopViews", "mobileViews", "tabletViews"] as const}
         dataKeyLabels={["Desktop", "Mobile", "Tablet"]}
-        getXAxisTickLabel={(d: Datum) => d.month}
-        formatXAxisTickLabel={(month: string) => month.slice(0, 3)}
-        xAxisLabel="Month"
-        yAxisLabel="Views"
+        getCategoryAxisTickLabel={(d: Datum) => d.month}
+        formatCategoryAxisTickLabel={(month: string) => month.slice(0, 3)}
+        categoryAxisLabel="Month"
+        numericAxisLabel="Views"
         tickValues={[0, 60, 120, 180, 240, 300, 360]}
-        colors={[
+        barColors={[
           "hsl(var(--chart-1))",
           "hsl(var(--chart-2))",
           "hsl(var(--chart-3))",
