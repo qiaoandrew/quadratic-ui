@@ -1,7 +1,7 @@
 "use client";
 
 import { ChartContainer } from "~/components/charts/visx/ChartContainer";
-import { BarChartGroup } from "~/components/charts/visx/BarChartGroup";
+import { BarChartStackHorizontal } from "~/components/charts/visx/BarChartStackHorizontal";
 
 type Datum = {
   month: string;
@@ -20,13 +20,13 @@ const CHART_DATA: Datum[] = [
   {
     month: "February",
     desktopViews: 305,
-    mobileViews: 268,
+    mobileViews: 31,
     tabletViews: 240,
   },
   {
     month: "March",
     desktopViews: 237,
-    mobileViews: 350,
+    mobileViews: 22,
     tabletViews: 328,
   },
   {
@@ -35,12 +35,30 @@ const CHART_DATA: Datum[] = [
     mobileViews: 231,
     tabletViews: 239,
   },
+  {
+    month: "May",
+    desktopViews: 209,
+    mobileViews: 100,
+    tabletViews: 32,
+  },
+  {
+    month: "June",
+    desktopViews: 214,
+    mobileViews: 321,
+    tabletViews: 68,
+  },
+  {
+    month: "July",
+    desktopViews: 142,
+    mobileViews: 123,
+    tabletViews: 129,
+  },
 ];
 
-export default function BarChartGroupDemo() {
+export default function BarChartStackHorizontalDemo() {
   return (
-    <ChartContainer aspectRatio={9 / 6} className="w-full max-w-124">
-      <BarChartGroup<Datum>
+    <ChartContainer aspectRatio={3 / 4} className="w-full max-w-84">
+      <BarChartStackHorizontal<Datum>
         data={CHART_DATA}
         dataKeys={["desktopViews", "mobileViews", "tabletViews"] as const}
         dataKeyLabels={["Desktop", "Mobile", "Tablet"]}
@@ -48,7 +66,7 @@ export default function BarChartGroupDemo() {
         formatCategoryAxisTickLabel={(month: string) => month.slice(0, 3)}
         categoryAxisLabel="Month"
         numericAxisLabel="Views"
-        tickValues={[0, 60, 120, 180, 240, 300, 360]}
+        tickValues={[0, 120, 240, 360, 480, 600, 720]}
         barColors={[
           "hsl(var(--chart-1))",
           "hsl(var(--chart-2))",

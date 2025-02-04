@@ -10,19 +10,16 @@ import {
 } from "react";
 import { localPoint } from "@visx/event";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
-import type { UseTooltipParams } from "@visx/tooltip/lib/hooks/useTooltip";
-import type { TooltipInPortalProps } from "@visx/tooltip/lib/hooks/useTooltipInPortal";
 
-import type {
-  TooltipData,
-  TooltipHandleMouseMoveParams,
+import {
+  type TooltipData,
+  type TooltipHandleMouseMoveParams,
+  Tooltip,
 } from "~/components/charts/visx/Tooltip";
 
 interface ChartContextProps {
   width: number;
-  tooltipParams: UseTooltipParams<TooltipData>;
-  tooltipContainerRef: (element: HTMLElement | SVGElement | null) => void;
-  TooltipInPortal: React.FC<TooltipInPortalProps>;
+  height: number;
   handleMouseMove: ({
     left,
     title,
@@ -30,6 +27,7 @@ interface ChartContextProps {
   }: TooltipHandleMouseMoveParams) => (
     e: React.MouseEvent<SVGRectElement>,
   ) => void;
+  hideTooltip: () => void;
 }
 
 const ChartContext = createContext<ChartContextProps | null>(null);
@@ -45,13 +43,20 @@ function useChart() {
 }
 
 interface ChartContainerProps {
+  aspectRatio: number;
   className?: string;
   children: React.ReactNode;
 }
 
-function ChartContainer({ className, children }: ChartContainerProps) {
+function ChartContainer({
+  aspectRatio,
+  className,
+  children,
+}: ChartContainerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+
   const [width, setWidth] = useState(0);
+  const height = width / aspectRatio;
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -71,7 +76,14 @@ function ChartContainer({ className, children }: ChartContainerProps) {
     };
   }, []);
 
-  const tooltipParams = useTooltip<TooltipData>();
+  const {
+    tooltipOpen,
+    tooltipLeft,
+    tooltipTop,
+    tooltipData,
+    showTooltip,
+    hideTooltip,
+  } = useTooltip<TooltipData>();
   const { containerRef: tooltipContainerRef, TooltipInPortal } =
     useTooltipInPortal({ scroll: true });
 
@@ -80,27 +92,42 @@ function ChartContainer({ className, children }: ChartContainerProps) {
       (e: React.MouseEvent<SVGRectElement>) => {
         const eventSVGCoords = localPoint(e);
 
-        tooltipParams.showTooltip({
+        showTooltip({
           tooltipData: { title, items },
           tooltipTop: eventSVGCoords?.y,
           tooltipLeft: left,
         });
       },
-    [tooltipParams],
+    [showTooltip],
   );
 
   return (
     <ChartContext.Provider
-      value={{
-        width,
-        tooltipParams,
-        tooltipContainerRef,
-        TooltipInPortal,
-        handleMouseMove,
-      }}
+      value={{ width, height, handleMouseMove, hideTooltip }}
     >
-      <div ref={containerRef} className={`relative ${className}`}>
-        {children}
+      <div
+        ref={containerRef}
+        className={`relative ${className}`}
+        style={{ aspectRatio }}
+      >
+        <svg
+          ref={tooltipContainerRef}
+          viewBox={`0 0 ${width} ${height}`}
+          preserveAspectRatio="xMidYMid meet"
+          className="size-full"
+        >
+          {children}
+        </svg>
+        {tooltipOpen && tooltipData && (
+          <TooltipInPortal
+            top={tooltipTop}
+            left={tooltipLeft}
+            unstyled
+            className="pointer-events-none absolute"
+          >
+            <Tooltip title={tooltipData.title} items={tooltipData.items} />
+          </TooltipInPortal>
+        )}
       </div>
     </ChartContext.Provider>
   );

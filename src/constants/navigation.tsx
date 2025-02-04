@@ -369,7 +369,7 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
       },
       // {
       //   id: "visx",
-      //   label: "Visx",
+      //   label: "visx",
       //   moveToFront: ["quickstart"],
       //   moveToBack: ["axes", "legend", "tooltip"],
       //   defaultIcon: <ChartColumnBigIcon />,

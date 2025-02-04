@@ -1,17 +1,17 @@
 import { useMemo } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { GridRows } from "@visx/grid";
+import { GridColumns } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
-import { BarRounded, BarGroup } from "@visx/shape";
+import { BarRounded, BarGroupHorizontal } from "@visx/shape";
 import type { Accessor, DatumObject } from "@visx/shape/lib/types";
 
 import { getBarChartMargin } from "~/utils/visx";
 
 import { useChart } from "~/components/charts/visx/ChartContainer";
 
-interface BarChartGroupProps<T extends DatumObject> {
+interface BarChartGroupHorizontalProps<T extends DatumObject> {
   data: T[];
   dataKeys: string[];
   dataKeyLabels: string[];
@@ -23,10 +23,10 @@ interface BarChartGroupProps<T extends DatumObject> {
   showNumericAxisLabel?: boolean;
   tickValues: number[];
   showLegend?: boolean;
-  barColors: string[];
+  colors: string[];
 }
 
-function BarChartGroup<T extends DatumObject>({
+function BarChartGroupHorizontal<T extends DatumObject>({
   data,
   dataKeys,
   dataKeyLabels,
@@ -38,14 +38,14 @@ function BarChartGroup<T extends DatumObject>({
   showNumericAxisLabel = true,
   tickValues,
   showLegend = false,
-  barColors,
-}: BarChartGroupProps<T>) {
+  colors,
+}: BarChartGroupHorizontalProps<T>) {
   const { width, height, handleMouseMove, hideTooltip } = useChart();
 
   const margin = getBarChartMargin(
     showCategoryAxisLabel,
     showNumericAxisLabel,
-    "vertical",
+    "horizontal",
   );
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
@@ -53,13 +53,13 @@ function BarChartGroup<T extends DatumObject>({
   const categoricalScale = useMemo(
     () =>
       scaleBand<string>({
-        range: [0, xMax],
+        range: [0, yMax],
         round: true,
         domain: data.map((d) => getCategoryAxisTickLabel(d)),
         paddingInner: 0.25,
         paddingOuter: 0.1,
       }),
-    [xMax, getCategoryAxisTickLabel, data],
+    [yMax, getCategoryAxisTickLabel, data],
   );
 
   const categorialGroupScale = useMemo(
@@ -75,22 +75,22 @@ function BarChartGroup<T extends DatumObject>({
   const numericScale = useMemo(
     () =>
       scaleLinear<number>({
-        range: [yMax, 0],
+        range: [0, xMax],
         round: true,
         domain: [tickValues[0] ?? 0, tickValues[tickValues.length - 1] ?? 0],
       }),
-    [yMax, tickValues],
+    [xMax, tickValues],
   );
 
   const colorScale = useMemo(
-    () => scaleOrdinal({ domain: dataKeys, range: barColors }),
-    [dataKeys, barColors],
+    () => scaleOrdinal({ domain: dataKeys, range: colors }),
+    [dataKeys, colors],
   );
 
   return (
     <>
       <Group top={margin.top} left={margin.left}>
-        <GridRows
+        <GridColumns
           scale={numericScale}
           numTicks={tickValues.length}
           tickValues={tickValues}
@@ -98,22 +98,22 @@ function BarChartGroup<T extends DatumObject>({
           height={yMax}
           stroke="hsl(var(--border))"
         />
-        <BarGroup<T, string>
+        <BarGroupHorizontal<T, string>
           data={data}
           keys={dataKeys}
-          height={yMax}
           width={xMax}
-          x0={getCategoryAxisTickLabel}
-          x0Scale={categoricalScale}
-          x1Scale={categorialGroupScale}
-          yScale={numericScale}
+          height={yMax}
+          y0={getCategoryAxisTickLabel}
+          y0Scale={categoricalScale}
+          y1Scale={categorialGroupScale}
+          xScale={numericScale}
           color={colorScale}
         >
           {(barGroups) =>
             barGroups.map((barGroup, barGroupIdx) => (
               <Group
-                key={`bar-group-${barGroupIdx}-${barGroup.x0}`}
-                left={barGroup.x0}
+                key={`bar-group-${barGroupIdx}-${barGroup.y0}`}
+                top={barGroup.y0}
               >
                 {barGroup.bars.map((bar, barIdx) => (
                   <BarRounded
@@ -125,14 +125,14 @@ function BarChartGroup<T extends DatumObject>({
                     radius={4}
                     all
                     onMouseMove={handleMouseMove({
-                      left: barGroup.x0 + bar.x + bar.width / 2,
+                      left: bar.x + bar.width / 2,
                       title: getCategoryAxisTickLabel(data[barGroupIdx]!),
                       items: [
                         {
                           key: dataKeys[barIdx]!,
                           label: dataKeyLabels[barIdx]!,
                           value: Number(data[barGroupIdx]![dataKeys[barIdx]!]),
-                          color: barColors[barIdx]!,
+                          color: colors[barIdx]!,
                         },
                       ],
                     })}
@@ -143,34 +143,34 @@ function BarChartGroup<T extends DatumObject>({
               </Group>
             ))
           }
-        </BarGroup>
+        </BarGroupHorizontal>
         <AxisLeft
-          scale={numericScale}
-          numTicks={tickValues.length}
-          tickValues={tickValues}
-          stroke="transparent"
+          scale={categoricalScale}
+          label={showCategoryAxisLabel ? categoryAxisLabel : ""}
+          labelClassName="fill-foreground text-3.5 font-medium font-sans"
+          labelOffset={44}
+          tickFormat={formatCategoryAxisTickLabel}
           tickStroke="transparent"
           tickLabelProps={{
             fill: "hsl(var(--muted-foreground))",
             fontSize: 12,
             fontFamily: "var(--font-sans)",
           }}
-          label={showNumericAxisLabel ? numericAxisLabel : ""}
-          labelOffset={44}
-          labelClassName="fill-foreground text-3.5 font-medium font-sans"
         />
         <AxisBottom
           top={yMax}
-          scale={categoricalScale}
-          tickFormat={formatCategoryAxisTickLabel}
+          scale={numericScale}
+          label={showNumericAxisLabel ? numericAxisLabel : ""}
+          labelClassName="fill-foreground text-3.5 font-medium font-sans"
+          labelOffset={24}
+          numTicks={tickValues.length}
+          tickValues={tickValues}
           tickLabelProps={{
             fill: "hsl(var(--muted-foreground))",
             fontSize: 12,
             fontFamily: "var(--font-sans)",
           }}
-          label={showCategoryAxisLabel ? categoryAxisLabel : ""}
-          labelOffset={24}
-          labelClassName="fill-foreground text-3.5 font-medium font-sans"
+          tickStroke="transparent"
         />
       </Group>
       {showLegend && (
@@ -190,4 +190,4 @@ function BarChartGroup<T extends DatumObject>({
   );
 }
 
-export { BarChartGroup };
+export { BarChartGroupHorizontal };

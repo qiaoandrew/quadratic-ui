@@ -1,7 +1,7 @@
 "use client";
 
 import { ChartContainer } from "~/components/charts/visx/ChartContainer";
-import { BarChartGroup } from "~/components/charts/visx/BarChartGroup";
+import { BarChartGroupHorizontal } from "~/components/charts/visx/BarChartGroupHorizontal";
 
 type Datum = {
   month: string;
@@ -37,10 +37,10 @@ const CHART_DATA: Datum[] = [
   },
 ];
 
-export default function BarChartGroupDemo() {
+export default function BarChartGroupHorizontalDemo() {
   return (
-    <ChartContainer aspectRatio={9 / 6} className="w-full max-w-124">
-      <BarChartGroup<Datum>
+    <ChartContainer aspectRatio={6 / 9} className="w-full max-w-84">
+      <BarChartGroupHorizontal<Datum>
         data={CHART_DATA}
         dataKeys={["desktopViews", "mobileViews", "tabletViews"] as const}
         dataKeyLabels={["Desktop", "Mobile", "Tablet"]}
@@ -49,7 +49,7 @@ export default function BarChartGroupDemo() {
         categoryAxisLabel="Month"
         numericAxisLabel="Views"
         tickValues={[0, 60, 120, 180, 240, 300, 360]}
-        barColors={[
+        colors={[
           "hsl(var(--chart-1))",
           "hsl(var(--chart-2))",
           "hsl(var(--chart-3))",
