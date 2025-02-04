@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { GridColumns, GridRows } from "@visx/grid";
+import { GridColumns } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
-import { BarRounded, BarStack, BarStackHorizontal } from "@visx/shape";
+import { BarRounded, BarStackHorizontal } from "@visx/shape";
 import type { Accessor } from "@visx/shape/lib/types";
 
 import { getBarChartMargin } from "~/utils/visx";
