@@ -1,7 +1,7 @@
 "use client";
 
-import { BarChartStack } from "~/components/charts/visx/BarChartStack";
 import { ChartContainer } from "~/components/charts/visx/ChartContainer";
+import { BarChartStackHorizontal } from "~/components/charts/visx/BarChartStackHorizontal";
 
 type Datum = {
   month: string;
@@ -55,10 +55,10 @@ const CHART_DATA: Datum[] = [
   },
 ];
 
-export default function BarChartStackedDemo() {
+export default function BarChartStackHorizontalDemo() {
   return (
-    <ChartContainer aspectRatio={4 / 3} className="w-full max-w-112">
-      <BarChartStack<Datum>
+    <ChartContainer aspectRatio={3 / 4} className="w-full max-w-84">
+      <BarChartStackHorizontal<Datum>
         data={CHART_DATA}
         dataKeys={["desktopViews", "mobileViews", "tabletViews"] as const}
         dataKeyLabels={["Desktop", "Mobile", "Tablet"]}

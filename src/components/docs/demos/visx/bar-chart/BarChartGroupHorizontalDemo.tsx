@@ -37,7 +37,7 @@ const CHART_DATA: Datum[] = [
   },
 ];
 
-export default function BarChartHorizontalGroupDemo() {
+export default function BarChartGroupHorizontalDemo() {
   return (
     <ChartContainer aspectRatio={6 / 9} className="w-full max-w-84">
       <BarChartGroupHorizontal<Datum>

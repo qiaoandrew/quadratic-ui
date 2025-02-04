@@ -10,7 +10,7 @@ import { getBarChartMargin } from "~/utils/visx";
 
 import { useChart } from "~/components/charts/visx/ChartContainer";
 
-interface BarChartProps<T> {
+interface BarChartHorizontalProps<T> {
   data: T[];
   dataKey: Extract<keyof T, string>;
   getCategoryAxisTickLabel: Accessor<T, string>;
@@ -23,7 +23,7 @@ interface BarChartProps<T> {
   barColor: string;
 }
 
-function BarChart<T>({
+function BarChartHorizontal<T>({
   data,
   dataKey,
   getCategoryAxisTickLabel,
@@ -34,7 +34,7 @@ function BarChart<T>({
   showNumericAxisLabel = true,
   tickValues,
   barColor,
-}: BarChartProps<T>) {
+}: BarChartHorizontalProps<T>) {
   const { width, height, handleMouseMove, hideTooltip } = useChart();
 
   const margin = getBarChartMargin(
@@ -143,4 +143,4 @@ function BarChart<T>({
   );
 }
 
-export { BarChart };
+export { BarChartHorizontal };

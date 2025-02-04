@@ -1,17 +1,17 @@
 import { useMemo } from "react";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { GridRows } from "@visx/grid";
+import { GridColumns, GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
-import { BarRounded, BarStack } from "@visx/shape";
+import { BarRounded, BarStack, BarStackHorizontal } from "@visx/shape";
 import type { Accessor } from "@visx/shape/lib/types";
 
 import { getBarChartMargin } from "~/utils/visx";
 
 import { useChart } from "~/components/charts/visx/ChartContainer";
 
-interface BarChartStackProps<T> {
+interface BarChartStackHorizontalProps<T> {
   data: T[];
   dataKeys: Extract<keyof T, string>[];
   dataKeyLabels: string[];
@@ -26,7 +26,7 @@ interface BarChartStackProps<T> {
   barColors: string[];
 }
 
-function BarChartStack<T>({
+function BarChartStackHorizontal<T>({
   data,
   dataKeys,
   dataKeyLabels,
@@ -39,13 +39,13 @@ function BarChartStack<T>({
   tickValues,
   showLegend = false,
   barColors,
-}: BarChartStackProps<T>) {
+}: BarChartStackHorizontalProps<T>) {
   const { width, height, handleMouseMove, hideTooltip } = useChart();
 
   const margin = getBarChartMargin(
     showCategoryAxisLabel,
     showNumericAxisLabel,
-    "vertical",
+    "horizontal",
   );
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
@@ -53,23 +53,23 @@ function BarChartStack<T>({
   const categoricalScale = useMemo(
     () =>
       scaleBand<string>({
-        range: [0, xMax],
+        range: [0, yMax],
         round: true,
         domain: data.map((d) => getCategoryAxisTickLabel(d)),
         paddingInner: 0.25,
         paddingOuter: 0.1,
       }),
-    [xMax, getCategoryAxisTickLabel, data],
+    [yMax, getCategoryAxisTickLabel, data],
   );
 
   const numericScale = useMemo(
     () =>
       scaleLinear<number>({
-        range: [yMax, 0],
+        range: [0, xMax],
         round: true,
         domain: [tickValues[0] ?? 0, tickValues[tickValues.length - 1] ?? 0],
       }),
-    [yMax, tickValues],
+    [xMax, tickValues],
   );
 
   const colorScale = useMemo(
@@ -84,7 +84,7 @@ function BarChartStack<T>({
   return (
     <>
       <Group top={margin.top} left={margin.left}>
-        <GridRows
+        <GridColumns
           scale={numericScale}
           numTicks={tickValues.length}
           tickValues={tickValues}
@@ -92,13 +92,13 @@ function BarChartStack<T>({
           height={yMax}
           stroke="hsl(var(--border))"
         />
-        <BarStack<T, string>
+        <BarStackHorizontal<T, string>
           data={data}
           keys={dataKeys}
-          xScale={categoricalScale}
-          yScale={numericScale}
+          xScale={numericScale}
+          yScale={categoricalScale}
           color={colorScale}
-          x={getCategoryAxisTickLabel}
+          y={getCategoryAxisTickLabel}
         >
           {(barStacks) =>
             barStacks.map((barStack, barStackIdx) =>
@@ -110,8 +110,8 @@ function BarChartStack<T>({
                   height={bar.height}
                   fill={bar.color}
                   radius={6}
-                  top={barStackIdx === barStacks.length - 1}
-                  bottom={barStackIdx === 0}
+                  left={barStackIdx === 0}
+                  right={barStackIdx === barStacks.length - 1}
                   onMouseMove={handleMouseMove({
                     left: bar.x + bar.width / 2,
                     title: getCategoryAxisTickLabel(data[barIdx]!),
@@ -128,34 +128,34 @@ function BarChartStack<T>({
               )),
             )
           }
-        </BarStack>
+        </BarStackHorizontal>
         <AxisLeft
-          scale={numericScale}
-          numTicks={tickValues.length}
-          tickValues={tickValues}
-          stroke="transparent"
+          scale={categoricalScale}
+          label={showCategoryAxisLabel ? categoryAxisLabel : ""}
+          labelClassName="fill-foreground text-3.5 font-medium font-sans"
+          labelOffset={44}
+          tickFormat={formatCategoryAxisTickLabel}
           tickStroke="transparent"
           tickLabelProps={{
             fill: "hsl(var(--muted-foreground))",
             fontSize: 12,
             fontFamily: "var(--font-sans)",
           }}
-          label={showNumericAxisLabel ? numericAxisLabel : ""}
-          labelOffset={44}
-          labelClassName="fill-foreground text-3.5 font-medium font-sans"
         />
         <AxisBottom
           top={yMax}
-          scale={categoricalScale}
-          tickFormat={formatCategoryAxisTickLabel}
+          scale={numericScale}
+          label={showNumericAxisLabel ? numericAxisLabel : ""}
+          labelClassName="fill-foreground text-3.5 font-medium font-sans"
+          labelOffset={24}
+          numTicks={tickValues.length}
+          tickValues={tickValues}
           tickLabelProps={{
             fill: "hsl(var(--muted-foreground))",
             fontSize: 12,
             fontFamily: "var(--font-sans)",
           }}
-          label={showCategoryAxisLabel ? categoryAxisLabel : ""}
-          labelOffset={24}
-          labelClassName="fill-foreground text-3.5 font-medium font-sans"
+          tickStroke="transparent"
         />
       </Group>
       {showLegend && (
@@ -175,4 +175,4 @@ function BarChartStack<T>({
   );
 }
 
-export { BarChartStack };
+export { BarChartStackHorizontal };

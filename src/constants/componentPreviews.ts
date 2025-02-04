@@ -193,9 +193,9 @@ import TremorTrackerDemo from "~/components/docs/demos/tremor/tracker/TrackerDem
 import VisxBarChartDemo from "~/components/docs/demos/visx/bar-chart/BarChartDemo";
 import VisxBarChartHorizontalDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalDemo";
 import VisxBarChartGroupDemo from "~/components/docs/demos/visx/bar-chart/BarChartGroupDemo";
-import VisxBarChartHorizontalGroupDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalGroupDemo";
+import VisxBarChartGroupHorizontalDemo from "~/components/docs/demos/visx/bar-chart/BarChartGroupHorizontalDemo";
 import VisxBarChartStackDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackDemo";
-import VisxBarChartHorizontalStackDemo from "~/components/docs/demos/visx/bar-chart/BarChartHorizontalStackDemo";
+import VisxBarChartStackHorizontalDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackHorizontalDemo";
 import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
 
 export const COMPONENT_PREVIEWS = {
@@ -955,17 +955,17 @@ export const COMPONENT_PREVIEWS = {
     Preview: VisxBarChartGroupDemo,
     path: "src/components/docs/demos/visx/bar-chart/BarChartGroupDemo.tsx",
   },
-  visxBarChartHorizontalGroup: {
-    Preview: VisxBarChartHorizontalGroupDemo,
-    path: "src/components/docs/demos/visx/bar-chart/BarChartHorizontalGroupDemo.tsx",
+  visxBarChartGroupHorizontal: {
+    Preview: VisxBarChartGroupHorizontalDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartGroupHorizontalDemo.tsx",
   },
   visxBarChartStack: {
     Preview: VisxBarChartStackDemo,
     path: "src/components/docs/demos/visx/bar-chart/BarChartStackDemo.tsx",
   },
-  visxBarChartHorizontalStack: {
-    Preview: VisxBarChartHorizontalStackDemo,
-    path: "src/components/docs/demos/visx/bar-chart/BarChartHorizontalStackDemo.tsx",
+  visxBarChartStackHorizontal: {
+    Preview: VisxBarChartStackHorizontalDemo,
+    path: "src/components/docs/demos/visx/bar-chart/BarChartStackHorizontalDemo.tsx",
   },
   visxVoronoiChart: {
     Preview: VisxVoronoiChartDemo,
