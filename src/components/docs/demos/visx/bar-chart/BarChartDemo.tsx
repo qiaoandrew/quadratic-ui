@@ -30,6 +30,7 @@ export default function BarChartDemo() {
         numericAxisLabel="Views"
         tickValues={[0, 60, 120, 180, 240, 300, 360]}
         barColor="hsl(var(--chart-1))"
+        orientation="vertical"
       />
     </ChartContainer>
   );
