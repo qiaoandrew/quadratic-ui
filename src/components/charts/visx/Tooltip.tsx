@@ -1,5 +1,6 @@
 interface TooltipHandleMouseMoveParams extends TooltipData {
-  left: number;
+  top?: number;
+  left?: number;
 }
 
 type TooltipData = {

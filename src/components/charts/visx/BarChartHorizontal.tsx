@@ -82,12 +82,11 @@ function BarChartHorizontal<T>({
         const label = getCategoryAxisTickLabel(d);
         const width = Math.max(numericScale(value), 0);
         const height = categoricalScale.bandwidth();
-        const x = 0;
         const y = categoricalScale(label) ?? 0;
 
         return (
           <BarRounded
-            x={x}
+            x={0}
             y={y}
             width={width}
             height={height}
@@ -95,7 +94,7 @@ function BarChartHorizontal<T>({
             radius={6}
             all
             onMouseMove={handleMouseMove({
-              left: x + width / 2,
+              top: y + height / 2,
               title: getCategoryAxisTickLabel(data[i]!),
               items: [
                 {
