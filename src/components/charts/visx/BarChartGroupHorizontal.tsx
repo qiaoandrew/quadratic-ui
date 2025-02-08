@@ -125,7 +125,7 @@ function BarChartGroupHorizontal<T extends DatumObject>({
                     radius={4}
                     all
                     onMouseMove={handleMouseMove({
-                      left: bar.x + bar.width / 2,
+                      top: barGroup.y0 + bar.y + bar.height / 2,
                       title: getCategoryAxisTickLabel(data[barGroupIdx]!),
                       items: [
                         {

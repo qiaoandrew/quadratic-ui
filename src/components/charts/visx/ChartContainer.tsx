@@ -21,6 +21,7 @@ interface ChartContextProps {
   width: number;
   height: number;
   handleMouseMove: ({
+    top,
     left,
     title,
     items,
@@ -88,15 +89,13 @@ function ChartContainer({
     useTooltipInPortal({ scroll: true });
 
   const handleMouseMove = useCallback(
-    ({ left, title, items }: TooltipHandleMouseMoveParams) =>
-      (e: React.MouseEvent<SVGRectElement>) => {
+    ({ top, left, title, items }: TooltipHandleMouseMoveParams) =>
+      (e: React.MouseEvent<SVGElement>) => {
         const eventSVGCoords = localPoint(e);
+        const tooltipTop = top ?? eventSVGCoords?.y;
+        const tooltipLeft = left ?? eventSVGCoords?.x;
 
-        showTooltip({
-          tooltipData: { title, items },
-          tooltipTop: eventSVGCoords?.y,
-          tooltipLeft: left,
-        });
+        showTooltip({ tooltipData: { title, items }, tooltipTop, tooltipLeft });
       },
     [showTooltip],
   );

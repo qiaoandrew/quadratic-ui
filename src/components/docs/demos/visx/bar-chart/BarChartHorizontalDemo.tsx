@@ -1,7 +1,7 @@
 "use client";
 
 import { ChartContainer } from "~/components/charts/visx/ChartContainer";
-import { BarChartHorizontal } from "~/components/charts/visx/BarChartHorizontal";
+import { BarChart } from "~/components/charts/visx/BarChart";
 
 type Datum = {
   month: string;
@@ -21,7 +21,7 @@ const CHART_DATA: Datum[] = [
 export default function BarChartHorizontalDemo() {
   return (
     <ChartContainer aspectRatio={3 / 4} className="w-full max-w-84">
-      <BarChartHorizontal<Datum>
+      <BarChart<Datum>
         data={CHART_DATA}
         dataKey="views"
         getCategoryAxisTickLabel={(d: Datum) => d.month}
@@ -30,6 +30,7 @@ export default function BarChartHorizontalDemo() {
         numericAxisLabel="Views"
         tickValues={[0, 60, 120, 180, 240, 300, 360]}
         barColor="hsl(var(--chart-1))"
+        orientation="horizontal"
       />
     </ChartContainer>
   );

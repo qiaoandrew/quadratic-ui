@@ -113,7 +113,7 @@ function BarChartStackHorizontal<T>({
                   left={barStackIdx === 0}
                   right={barStackIdx === barStacks.length - 1}
                   onMouseMove={handleMouseMove({
-                    left: bar.x + bar.width / 2,
+                    top: bar.y + bar.height / 2,
                     title: getCategoryAxisTickLabel(data[barIdx]!),
                     items: dataKeys.map((key, i) => ({
                       key,
