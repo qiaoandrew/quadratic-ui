@@ -197,6 +197,7 @@ import VisxBarChartGroupHorizontalDemo from "~/components/docs/demos/visx/bar-ch
 import VisxBarChartStackDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackDemo";
 import VisxBarChartStackHorizontalDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackHorizontalDemo";
 import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
+import VegaLiteBarChartDemo from "~/components/docs/demos/vega-lite/bar-chart/BarChartDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -994,5 +995,9 @@ export const COMPONENT_PREVIEWS = {
   tremorTracker: {
     Preview: TremorTrackerDemo,
     path: "src/components/docs/demos/tremor/tracker/TrackerDemo.tsx",
+  },
+  vegaLiteBarChart: {
+    Preview: VegaLiteBarChartDemo,
+    path: "src/components/docs/demos/vega-lite/bar-chart/BarChartDemo.tsx",
   },
 };

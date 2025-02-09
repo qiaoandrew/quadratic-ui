@@ -368,6 +368,13 @@ export const DOCS_MENU_ITEMS: DocsMenuItemSetup[] = [
         defaultIcon: <ChartColumnBigIcon />,
       },
       // {
+      //   id: "vega-lite",
+      //   label: "Vega-Lite",
+      //   moveToFront: ["quickstart"],
+      //   moveToBack: [],
+      //   defaultIcon: <ChartColumnBigIcon />,
+      // },
+      // {
       //   id: "visx",
       //   label: "visx",
       //   moveToFront: ["quickstart"],
