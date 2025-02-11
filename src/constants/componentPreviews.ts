@@ -198,6 +198,7 @@ import VisxBarChartStackDemo from "~/components/docs/demos/visx/bar-chart/BarCha
 import VisxBarChartStackHorizontalDemo from "~/components/docs/demos/visx/bar-chart/BarChartStackHorizontalDemo";
 import VisxVoronoiChartDemo from "~/components/docs/demos/visx/voronoi-chart/VoronoiChartDemo";
 import VegaLiteBarChartDemo from "~/components/docs/demos/vega-lite/bar-chart/BarChartDemo";
+import HighchartsBarChartDemo from "~/components/docs/demos/highcharts/bar-chart/BarChartDemo";
 
 export const COMPONENT_PREVIEWS = {
   accordion: {
@@ -999,5 +1000,9 @@ export const COMPONENT_PREVIEWS = {
   vegaLiteBarChart: {
     Preview: VegaLiteBarChartDemo,
     path: "src/components/docs/demos/vega-lite/bar-chart/BarChartDemo.tsx",
+  },
+  highchartsBarChart: {
+    Preview: HighchartsBarChartDemo,
+    path: "src/components/docs/demos/highcharts/bar-chart/BarChartDemo.tsx",
   },
 };
