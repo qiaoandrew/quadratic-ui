@@ -5,7 +5,7 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 export default function BarChartDemo() {
-  const [chartOptions, setChartOptions] = useState<Highcharts.Options>({
+  const [chartOptions] = useState<Highcharts.Options>({
     chart: {
       type: "column",
     },

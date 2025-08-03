@@ -58,7 +58,7 @@ export default function MobileMenu({
 
   return (
     <ScrollArea className="h-full">
-      <nav className="grid gap-x-3 gap-y-8 px-3 pb-3 xs:gap-y-8 xl:hidden">
+      <nav className="xs:gap-y-8 grid gap-x-3 gap-y-8 px-3 pb-3 xl:hidden">
         {mobileNavigationItems.map((group, i) => (
           <div className="flex flex-col gap-y-3" key={i}>
             {group.map((item) =>
